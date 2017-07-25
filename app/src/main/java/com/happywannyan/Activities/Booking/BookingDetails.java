@@ -217,7 +217,6 @@ public class BookingDetails extends AppCompatActivity {
     }
 
     private void AcceptButton() {
-        // kjfnfkjndfjkndfjkv
     }
 
     private void Deny_Button() {

@@ -205,7 +205,7 @@ public class MyProfile extends Fragment {
                     Loader.Dismiss();
                     JSONObject Ob = new JSONObject(Result);
                     UserInfo = Ob.getJSONObject("users_information");
-                    Glide.with(getActivity()).load(UserInfo.getString("photo")).transform(new CircleTransform(getActivity())).into(ProfileImg);
+                    Glide.with(getActivity()).load(UserInfo.getString("photo")).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
                     ((EditText) Mview.findViewById(R.id.EDX_FNAME)).setText(UserInfo.getString("firstname"));
                     ((EditText) Mview.findViewById(R.id.EDX_Lname)).setText(UserInfo.getString("lastname"));
                     ((EditText) Mview.findViewById(R.id.EDX_F_FName)).setText(UserInfo.getString("firstname_phonetic"));
@@ -386,7 +386,7 @@ public class MyProfile extends Fragment {
                 Uri selectedImageURI = data.getData();
                 try {
                     photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
-                    Glide.with(getApplicationContext()).load(photofile).transform(new CircleTransform(getActivity())).into(ProfileImg);
+                    Glide.with(getApplicationContext()).load(photofile).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -399,7 +399,7 @@ public class MyProfile extends Fragment {
             Uri selectedImageURI = data.getData();
             try {
                 photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
-                Glide.with(getApplicationContext()).load(photofile).transform(new CircleTransform(getActivity())).into(ProfileImg);
+                Glide.with(getApplicationContext()).load(photofile).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -429,7 +429,7 @@ public class MyProfile extends Fragment {
             FileOutputStream fos = new FileOutputStream(uriSting);
             image.compress(Bitmap.CompressFormat.PNG, 90, fos);
             fos.close();
-            Glide.with(getApplicationContext()).load(photofile).transform(new CircleTransform(getActivity())).into(ProfileImg);
+            Glide.with(getApplicationContext()).load(photofile).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
         } catch (FileNotFoundException e) {
             Loger.MSG("@@", "File not found: " + e.getMessage());
         } catch (IOException e) {
