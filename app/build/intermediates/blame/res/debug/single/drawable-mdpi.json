@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_walkingpets.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_walkingpets.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_fab_plus.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_fab_plus.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_swipe_left.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_swipe_left.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_tindermode.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_tindermode.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_swipe_right.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_swipe_right.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_calender_balack.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_calender_balack.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/float_map.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/float_map.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_fab_like.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_fab_like.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_fab_minus.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_fab_minus.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_calender_white.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_calender_white.png"
+    }
+]

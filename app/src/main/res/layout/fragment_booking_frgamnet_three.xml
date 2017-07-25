@@ -1,0 +1,286 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorwhite"
+    android:clickable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    tools:context="com.happywannyan.SitterBooking.BookingFrgamnetThree">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--<com.happywannyan.Font.SFNFTextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:text="@string/service"-->
+            <!--android:id="@+id/Tag1"-->
+            <!--android:padding="5dp"-->
+            <!--android:layout_height="wrap_content" />-->
+        <com.happywannyan.Font.SFNFBoldTextView
+            android:id="@+id/TXT_ServiceName"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:text="Service NAME"
+            android:layout_height="wrap_content" />
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/TXT_Unit"
+            android:layout_toRightOf="@+id/TXT_ServiceName"
+            android:layout_width="wrap_content"
+            android:text="Per Unit"
+            android:gravity="right"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_project"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/LL_DoubleDate"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.happywannyan.Font.SFNFTextView
+                android:layout_width="wrap_content"
+                android:text="@string/StartDate"
+                android:padding="5dp"
+                android:layout_height="wrap_content" />
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/TXT_StartDate"
+                android:layout_width="wrap_content"
+                android:text="1"
+                android:textColor="@color/Black"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.happywannyan.Font.SFNFTextView
+                android:layout_width="wrap_content"
+                android:text="@string/Enddate"
+                android:padding="5dp"
+                android:layout_height="wrap_content" />
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/TXT_EndDte"
+                android:layout_width="wrap_content"
+                android:text="1"
+                android:textColor="@color/Black"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.happywannyan.Font.SFNFTextView
+                android:layout_width="wrap_content"
+                android:text="@string/noofnight"
+                android:padding="5dp"
+                android:layout_height="wrap_content" />
+            <com.happywannyan.Font.SFNFTextView
+                android:layout_width="wrap_content"
+                android:text="1"
+                android:id="@+id/TXT_No_OfNight"
+                android:textColor="@color/Black"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL_ForSingleDate"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.happywannyan.Font.SFNFTextView
+                android:layout_width="wrap_content"
+                android:text="@string/Date"
+                android:padding="5dp"
+                android:layout_height="wrap_content" />
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/TXT_DAte"
+                android:layout_width="wrap_content"
+                android:text="1"
+                android:textColor="@color/Black"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RL_Times"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.happywannyan.Font.SFNFTextView
+                android:layout_width="wrap_content"
+                android:text="@string/OfTime"
+                android:padding="5dp"
+                android:layout_height="wrap_content" />
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/TXT_ofTome"
+                android:layout_width="wrap_content"
+                android:text="1"
+                android:textColor="@color/Black"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="wrap_content"
+            android:text="@string/noofpet"
+            android:padding="5dp"
+            android:layout_height="wrap_content" />
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/TXT_no_pets"
+            android:layout_width="wrap_content"
+            android:text="1"
+            android:textColor="@color/Black"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_project"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="wrap_content"
+            android:text="@string/trust_safty"
+            android:padding="5dp"
+            android:id="@+id/l1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_toRightOf="@+id/l1"
+            android:src="@drawable/ic_info"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/TXT_saftyPrice"
+            android:layout_width="wrap_content"
+            android:text="1"
+            android:textColor="@color/Black"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_project"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="wrap_content"
+            android:text="@string/tota_amnt"
+            android:padding="5dp"
+            android:textColor="@color/btn_red"
+            android:layout_height="wrap_content" />
+
+        <com.happywannyan.Font.SFNFBoldTextView
+            android:id="@+id/TXT_TotalPrice"
+            android:layout_width="wrap_content"
+            android:text="143343"
+            android:textColor="@color/Black"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_project"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="wrap_content"
+            android:text="@string/cancelpolicy"
+            android:padding="5dp"
+            android:id="@+id/TT"
+            android:layout_height="wrap_content" />
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_below="@+id/TT"
+            android:padding="5dp"
+            android:textColor="@color/Black"
+            android:id="@+id/TXT_CancelPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+</LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Card_next"
+        android:layout_marginTop="40dp"
+        android:layout_width="210dp"
+        app:cardElevation="3dp"
+        android:onClick="onClick"
+        app:cardCornerRadius="23dp"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="@color/btn_red"
+        android:layout_height="45dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="match_parent">
+            <com.happywannyan.Font.SFNFTextView
+
+                android:layout_width="wrap_content"
+                android:text="@string/pay_now"
+                android:textSize="18sp"
+                android:textAllCaps="true"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorwhite"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="5dp"
+                android:src="@drawable/ic_right_arrow_white"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

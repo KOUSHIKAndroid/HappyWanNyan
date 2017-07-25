@@ -1,0 +1,252 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/colorwhite">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:paddingBottom="100dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/RL_ChoseCat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/EDX_Fname"
+                        android:layout_width="match_parent"
+                        android:editable="false"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/FirestName" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/a">
+
+                    <EditText
+                        android:id="@+id/EDX_Lname"
+                        android:editable="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/LastName" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/mypets" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="15dp"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_arrow_black" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/LL_MYPETS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/H1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_project" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="match_parent"
+                    android:text="@string/letthesitter"
+                    android:textColor="@color/btn_red"
+                    android:paddingTop="15dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/RL_ChoseCat"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:id="@+id/RL_PickupTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingRight="7dp">
+
+                    <com.happywannyan.Font.SFNFTextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pickuptime" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="2dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_time" />
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:id="@+id/TXT_PickupTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/T2"
+                        android:paddingBottom="15dp"
+                        android:hint="@string/select"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/h1_label" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/T2"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="15dp"
+                        android:src="@drawable/ic_arrow_black" />
+
+                    <View
+                        android:id="@+id/T2"
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/gray_project" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RL_DropOffTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="7dp">
+
+                    <com.happywannyan.Font.SFNFTextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dropofftime" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="2dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_time" />
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:id="@+id/TXT_dropTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/T3"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="15dp"
+                        android:hint="@string/select"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/h1_label" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/T3"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="15dp"
+                        android:src="@drawable/ic_arrow_black" />
+
+                    <View
+                        android:id="@+id/T3"
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/gray_project" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Card_next"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="40dp"
+        app:cardBackgroundColor="@color/btn_red"
+        app:cardCornerRadius="23dp"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <com.happywannyan.Font.SFNFTextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/next"
+                android:textAllCaps="true"
+                android:textColor="@color/colorwhite"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="5dp"
+                android:src="@drawable/ic_right_arrow_white" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

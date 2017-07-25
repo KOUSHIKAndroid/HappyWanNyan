@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/LL_Sender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/IMG_SenderUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />'
+        </android.support.v7.widget.CardView>
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/TXT_sender_name_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="name,date" />
+
+    </LinearLayout>
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/TXT_Sender_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_receverbackground"
+        android:elevation="3dp"
+        android:layout_marginBottom="5dp"
+        android:text="sdjhbcshdjcb dhjsbcjhkbjhsdbchbssd kdscjkdk kjsdcjk sdkjsdckjds
+sd      jhbcdhsjbc hjsdc jksdckj dsjcb bds
+dschjbsdhb" />
+    <ImageView
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        android:background="#FFB6C9"
+        android:padding="1px"
+        android:id="@+id/IMG_Sender_Attach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        android:background="#FFB6C9"
+        android:padding="1px"
+        android:id="@+id/IMG_Sender_Map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

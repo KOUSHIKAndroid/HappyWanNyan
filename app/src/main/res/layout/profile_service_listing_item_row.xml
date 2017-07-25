@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:background="@color/gray_project"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorwhite"
+        android:orientation="vertical">
+        <com.happywannyan.Font.SFNFBoldTextView
+            android:id="@+id/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="DAY CARE FOR DYNAMIC CREATURE"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="dynamic description will be here from api describing the nature of dervice for dynamic creature......"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+           >
+
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/PricePer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:layout_centerVertical="true"
+                android:text="ost/per day "
+                android:textColor="@color/btn_red"
+                android:textSize="14sp" />
+
+
+
+                <RelativeLayout
+                    android:id="@+id/RL_Book"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/profile_button_background_oval_red"
+                    android:elevation="5dp"
+                    android:gravity="center_vertical">
+
+                    <com.happywannyan.Font.SFNFBoldTextView
+                        android:id="@+id/text_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/booknow"
+                        android:textColor="@color/colorwhite"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/text_ac"
+                        android:src="@drawable/profile_ic_chevron_right_white" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "279432934653",
+    "firebase_url": "https://happywannyan-168107.firebaseio.com",
+    "project_id": "happywannyan-168107",
+    "storage_bucket": "happywannyan-168107.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279432934653:android:ab824595d924efdf",
+        "android_client_info": {
+          "package_name": "com.happywannyan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279432934653-8a28nsfq9l66ds7knqk1c7o08a30peua.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "279432934653-1rf1kpshns2nold0v7rs39ibrq5i7g14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.happywannyan",
+            "certificate_hash": "40ba2daa17ee284addc7f6a2ffb5a8b14a85eaf0"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc3KazLjS3IxyJ33NeEDVAKppZ1NLeB-c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279432934653-8a28nsfq9l66ds7knqk1c7o08a30peua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

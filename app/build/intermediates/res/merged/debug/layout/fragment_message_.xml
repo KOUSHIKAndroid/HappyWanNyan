@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.happywannyan.Fragments.Message_Fragment">
+
+
+    <RelativeLayout
+        android:id="@+id/RL_HEADER"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/IMG_icon_drwaer"
+            android:layout_width="54dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@mipmap/ic_menu_drwaer" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/PAGE_Titile"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/all_messages"
+            android:textColor="@color/colorwhite"
+            android:textSize="@dimen/page_titiel" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/RL_HEADER"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gray_project"
+        android:layout_height="match_parent">
+        <HorizontalScrollView
+            android:id="@+id/scrollView_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorwhite"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_all_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/all_messages"
+                    android:textColor="@color/text_dark_gray"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"/>
+
+                <View
+                    android:id="@+id/view_between_all_unread_message"
+                    android:layout_gravity="center"
+                    android:layout_width="1dip"
+                    android:layout_height="15dp"
+                    android:background="@color/gray_project"
+                    />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_reservation_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/reservation"
+                    android:textColor="@color/text_dark_gray"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"/>
+
+
+                <View
+                    android:id="@+id/view_unResponded_reservation_message"
+                    android:layout_gravity="center"
+                    android:layout_width="1dip"
+                    android:layout_height="15dp"
+                    android:background="@color/gray_project"
+                    />
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_unResponded_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/meetgreet"
+                    android:textColor="@color/text_dark_gray"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"/>
+
+                <View
+                    android:id="@+id/view_between_unread_unResponded_message"
+                    android:layout_gravity="center"
+                    android:layout_width="1dip"
+                    android:layout_height="15dp"
+                    android:background="@color/gray_project"
+                    />
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_unread_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/generalequerys"
+                    android:textColor="@color/text_dark_gray"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"/>
+
+
+            </LinearLayout>
+
+
+
+        </HorizontalScrollView>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="8px"
+            android:id="@+id/Rec_MSG"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

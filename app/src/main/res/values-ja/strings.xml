@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Happy Wan Nyan</string>
+    <string name="Email">Eメール</string>
+    <string name="Login">ログイン</string>
+    <string name="Loginnow">ここでログイン</string>
+    <string name="Password">パスワード</string>
+    <string name="signuplebel">アカウントの作成またはFacebookでの登録をクリックすると、利用規約に同意することが確認されます</string>
+    <string name="skip">スキップ</string>
+    <string name="youcanloginwith">あなたはでログインすることができます</string>
+    <string name="youcansignupwith">一緒にサインアップすることができます</string>
+    <string name="signupnow">今すぐ申し込む</string>
+    <string name="alreadymember">既にメンバー</string>
+    <string name="SignUp">サインアップ</string>
+</resources>

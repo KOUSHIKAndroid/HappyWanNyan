@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent"
+    tools:context="com.happywannyan.Login_Slider.slider1">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/IMG"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:layout_height="match_parent" />
+
+    <com.happywannyan.Font.SFNFTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/colorwhite"
+        android:textSize="46sp"
+        android:paddingTop="40dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="100dp"
+        android:text="@string/slide1_text" />
+
+</RelativeLayout>

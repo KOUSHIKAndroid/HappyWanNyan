@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/img_card_view_pets"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        card_view:cardCornerRadius="10dp">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/img_view_pets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+    </android.support.v7.widget.CardView>
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/tv_name_pet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="37dp"
+        android:layout_toLeftOf="@+id/img_edit"
+        android:layout_toRightOf="@+id/img_card_view_pets"
+        android:text="Name"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="14sp" />
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/tv_pet_name_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name_pet"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/img_edit"
+        android:layout_toRightOf="@+id/img_card_view_pets"
+        android:text="Ghanta"
+        android:textAllCaps="true"
+        android:textColor="@color/Black"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/horizontal_line_one_pets"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/img_card_view_pets"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_project" />
+
+    <LinearLayout
+        android:id="@+id/LLYearMonthGenderSizeValuePets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontal_line_one_pets"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <com.happywannyan.Font.SFNFBoldTextView
+            android:id="@+id/tv_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="0dp"
+            android:text="1"
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+
+
+        <com.happywannyan.Font.SFNFBoldTextView
+            android:id="@+id/tv_month"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+
+
+        <com.happywannyan.Font.SFNFBoldTextView
+            android:id="@+id/tv_gender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Male"
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+
+        <com.happywannyan.Font.SFNFBoldTextView
+            android:id="@+id/tv_breed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="Akita"
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLYearMonthGenderSizeName_pets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LLYearMonthGenderSizeValuePets"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/year_lbl"
+            android:text="@string/adapter_your_pets_year"
+            android:textColor="@color/text_dark_gray"
+            android:textSize="14sp" />
+
+
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="0dp"
+            android:id="@+id/tv_month_lbl"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/adapter_your_pets_month"
+            android:textColor="@color/text_dark_gray"
+            android:textSize="14sp" />
+
+
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/tv_gender_lbl"
+            android:gravity="center"
+            android:text="@string/adapter_your_pets_gender"
+            android:textColor="@color/text_dark_gray"
+            android:textSize="14sp" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:id="@+id/tv_breed_lbl"
+            android:text="@string/breed"
+            android:textColor="@color/text_dark_gray"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/horizontal_line_two"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/LLYearMonthGenderSizeName_pets"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_project" />
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/tv_size_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontal_line_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="SIZE"
+        android:textSize="14sp"
+        android:textColor="@color/text_dark_gray"/>
+
+    <com.happywannyan.Font.SFNFBoldTextView
+        android:id="@+id/tv_size_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontal_line_two"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Small(10-20kg)"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:textColor="@color/Black"
+        android:layout_toRightOf="@+id/tv_size_name" />
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/tv_describe_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tv_size_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="13sp"
+        android:text="Describe your dog"/>
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_describe_value"
+        android:layout_below="@id/tv_describe_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="@color/Black"
+        android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit ,sed do eiusmod tempor incididunt ut labore et dolore manga aliqua.Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"/>
+
+
+    <View
+        android:id="@+id/horizontal_line_three_pets"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_describe_value"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_project" />
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/tv_question_one"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/horizontal_line_three_pets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="is your dog spayed or neutered?"
+        android:textSize="12sp"
+        android:textColor="@color/text_dark_gray"/>
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:textColor="@color/Black"
+        android:id="@+id/tv_answer_one"
+        android:layout_below="@+id/tv_question_one"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="Yes"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/tv_question_two"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/tv_answer_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="is your dog spayed or neutered?"
+        android:textSize="12sp"
+        android:textColor="@color/text_dark_gray"/>
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:textColor="@color/Black"
+        android:id="@+id/tv_answer_two"
+        android:layout_below="@+id/tv_question_two"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="No"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.happywannyan.Activities.LoginChoser">
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    </android.support.v4.view.ViewPager>
+    
+
+
+    <LinearLayout
+        android:id="@+id/LL_SINGIN"
+        android:layout_above="@+id/LL_Facbook"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/login_signin"
+        android:layout_height="wrap_content">
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="wrap_content"
+            android:text="@string/Login"
+            android:paddingLeft="35dp"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LL_Facbook"
+        android:layout_above="@+id/LL_SIGNUP"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:background="@drawable/login_facebook"
+        android:layout_height="wrap_content">
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="wrap_content"
+            android:text="@string/facebook"
+            android:paddingLeft="35dp"
+            android:textColor="@color/colorwhite"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LL_SIGNUP"
+        android:layout_above="@+id/RL_FooterPart"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/login_signup"
+        android:layout_height="wrap_content">
+        <com.happywannyan.Font.SFNFTextView
+            android:layout_width="wrap_content"
+            android:text="@string/SignUp"
+            android:paddingLeft="35dp"
+            android:textColor="@color/colorwhite"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:id="@+id/RL_FooterPart"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <LinearLayout
+            android:id="@+id/LL_dotc"
+            android:paddingLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"></LinearLayout>
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/TXT_skip"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorwhite"
+            android:text="@string/skip"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="30dp"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>

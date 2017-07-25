@@ -1,0 +1,323 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.happywannyan.Fragments.MyProfile">
+
+    <RelativeLayout
+        android:id="@+id/RL_HEADER"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/IMG_icon_drwaer"
+            android:layout_width="54dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@mipmap/ic_menu_drwaer" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/PAGE_Titile"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/nav_profile"
+            android:textColor="@color/colorwhite"
+            android:textSize="@dimen/page_titiel" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/RL_HEADER"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:paddingBottom="100dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="150dp">
+                <ImageView
+                    android:id="@+id/IMG_Profile"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/ic_profile"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_photo_camera"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="3dp"
+                    android:layout_height="54dp">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_height="match_parent">
+                        <EditText
+                            android:id="@+id/EDX_FNAME"
+                            android:layout_width="match_parent"
+                            android:hint="@string/FirestName"
+                            android:background="@android:color/transparent"
+                            android:layout_height="match_parent" />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/gray_project"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="3dp"
+                    android:layout_height="54dp">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <EditText
+                            android:id="@+id/EDX_Lname"
+                            android:layout_width="match_parent"
+                            android:hint="@string/LastName"
+                            android:background="@android:color/transparent"
+                            android:layout_height="match_parent" />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/gray_project"/>
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="3dp"
+                    android:layout_height="54dp">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_height="match_parent">
+                        <EditText
+                            android:id="@+id/EDX_F_FName"
+                            android:inputType="textPhonetic"
+                            android:layout_width="match_parent"
+                            android:hint="@string/FirestName_photo"
+                            android:background="@android:color/transparent"
+                            android:layout_height="match_parent" />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/gray_project"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="3dp"
+                    android:layout_height="54dp">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <EditText
+                            android:id="@+id/EDX_F_LName"
+                            android:inputType="textPhonetic"
+                            android:layout_width="match_parent"
+                            android:hint="@string/LastName_photo"
+                            android:background="@android:color/transparent"
+                            android:layout_height="match_parent" />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/gray_project"/>
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content">
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="match_parent"
+                    android:text="Japan"
+                    android:gravity="bottom"
+                    android:paddingBottom="10dp"
+                    android:layout_height="54dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/gray_project"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="wrap_content">
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/TXT_Address"
+                    android:layout_width="match_parent"
+                    android:text="Address"
+                    android:gravity="bottom"
+                    android:paddingBottom="10dp"
+                    android:layout_height="54dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/gray_project"/>
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/RL_Code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="54dp">
+                    <com.happywannyan.Font.SFNFTextView
+                        android:id="@+id/TXT_Country_Code"
+                        android:layout_width="wrap_content"
+                        android:text="+91"
+                        android:gravity="bottom"
+                        android:paddingBottom="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_height="54dp" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_toRightOf="@+id/TXT_Country_Code"
+                        android:src="@drawable/ic_arrow_drop_down_black"
+                        android:layout_height="25dp" />
+                </RelativeLayout>
+
+
+
+
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:hint="Phone"
+                    android:id="@+id/EDX_Phone"
+                    android:paddingLeft="10dp"
+                    android:layout_toRightOf="@+id/RL_Code"
+                    android:gravity="bottom"
+                    android:inputType="phone"
+                    android:background="@android:color/transparent"
+                    android:paddingBottom="10dp"
+                    android:layout_height="54dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_project"/>
+            </RelativeLayout>
+
+
+            <CheckBox
+                android:id="@+id/Checked"
+                android:layout_width="wrap_content"
+                android:checked="true"
+                android:text="I agree to the Terms of Service"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Card_submit"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="40dp"
+        app:cardBackgroundColor="@color/btn_red"
+        app:cardCornerRadius="23dp"
+        android:onClick="onClick"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/TXT_Save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/save"
+                android:textAllCaps="true"
+                android:textColor="@color/colorwhite"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="5dp"
+                android:src="@drawable/ic_right_arrow_white" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

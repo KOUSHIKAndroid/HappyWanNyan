@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_range_thumb.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_range_thumb.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher1.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_launcher1.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_profile.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_profile.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round1.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_launcher_round1.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_yourpet.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_yourpet.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_msg.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_msg.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_booking.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_booking.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_past_fav.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_past_fav.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_menu_drwaer.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_menu_drwaer.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_logout.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_logout.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_pymnt.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_pymnt.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_help.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_help.png"
+    }
+]

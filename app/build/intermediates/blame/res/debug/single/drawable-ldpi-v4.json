@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_jcb.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_jcb.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_discover.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_discover.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_unknown.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_unknown.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_cvc.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_cvc.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_visa.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_visa.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_cvc_amex.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_cvc_amex.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_error.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_error.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_amex.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_amex.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_error_amex.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_error_amex.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_diners.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_diners.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_mastercard.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_mastercard.png"
+    }
+]

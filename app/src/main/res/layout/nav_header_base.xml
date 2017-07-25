@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:id="@+id/RL_HEADER"
+    android:background="@color/colorPrimary"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="35dp"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/nav_header_vertical_spacing"
+        app:srcCompat="@drawable/ic_user" />
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/TXT_UserName"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/nav_header_vertical_spacing"
+        android:textSize="@dimen/h1_label"
+        android:text="Android Studio"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/TXT_loginlabel"
+    android:layout_width="wrap_content"
+    android:layout_below="@+id/TXT_UserName"
+    android:layout_toRightOf="@+id/imageView"
+    android:text="@string/Login"
+    android:textSize="12sp"
+    android:paddingLeft="10dp"
+    android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

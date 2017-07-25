@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#558F9B</color>
+    <color name="colorPrimaryDark">#558F9B</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorwhite">#FFFFFF</color>
+    <color name="btn_red">#bf3e49</color>
+    <color name="dividerline">#e3e3e3</color>
+    <color name="Black">#000000</color>
+    <color name="gray_project">#e8e8e8</color>
+    <color name="text_dark_gray">#b7b7b7</color>
+    <color name="RatingColor">#FFCC00</color>
+    <color name="BlueColor">#0B6C8C</color>
+</resources>

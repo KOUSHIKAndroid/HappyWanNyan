@@ -1,0 +1,20 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="raw" type="Native" />
+      <mapping pattern="corner_mold_blue_bg.xml" type="PLAIN_TEXT" />
+      <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
+      <mapping pattern="._.DS_Store" type="PLAIN_TEXT" />
+      <mapping pattern="performance_test_data" type="PLAIN_TEXT" />
+      <mapping pattern="gdbserver" type="PLAIN_TEXT" />
+      <mapping pattern="feed_details_page" type="PLAIN_TEXT" />
+      <mapping ext="so" type="PLAIN_TEXT" />
+      <mapping ext="rtf" type="PLAIN_TEXT" />
+      <mapping ext="otf" type="PLAIN_TEXT" />
+      <removed_mapping ext="so" type="UNKNOWN" />
+      <mapping pattern="swaure_ourline_white" type="XML" />
+      <mapping pattern="corner_mold_orange" type="XML" />
+      <mapping pattern="scale_up_real" type="XML" />
+    </extensionMap>
+  </component>
+</application>

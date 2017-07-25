@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="10dp"
+    android:id="@+id/LLMain"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="5dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/RL_Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/TXT_date"
+            android:background="@color/text_dark_gray" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/TXT_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:text="12 july 2017" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/TXT_date"
+            android:background="@color/text_dark_gray" />
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
