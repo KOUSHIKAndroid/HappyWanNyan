@@ -9,20 +9,28 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
+import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
+import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
+import com.happywannyan.Utils.AppLoader;
+import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class BookingDetails extends AppCompatActivity {
 
     JSONObject jsonObject;
     JSONArray PetInfo;
     LinearLayout LLPetInfo, LL_FOOTER1, LL_FOOTER2;
+    AppLoader Loader;
 
 
     @Override
@@ -30,6 +38,7 @@ public class BookingDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_details);
         try {
+            Loader=new AppLoader(this);
             jsonObject = new JSONObject(getIntent().getStringExtra("data"));
             PetInfo = jsonObject.getJSONArray("pet_details");
             Loger.MSG("@@ Booking Details", jsonObject.toString());
@@ -78,7 +87,7 @@ public class BookingDetails extends AppCompatActivity {
                 else
                     LL_FOOTER2.addView(ButtomView);
                 
-                Deny_Button();
+                Deny_Button(jsonObject.getJSONObject("booking_info").getString("booking_id"));
             }
 
 
@@ -91,8 +100,13 @@ public class BookingDetails extends AppCompatActivity {
                     LL_FOOTER1.addView(ButtomView);
                 else
                     LL_FOOTER2.addView(ButtomView);
-                
-                Send_Message();
+
+
+                if(jsonObject.getJSONObject("booking_info").has("send_msg_show") && jsonObject.getJSONObject("booking_info").getInt("send_msg_show")==0)
+                Send_Message(jsonObject.getJSONObject("booking_info").getString("send_msg_status"),getString(R.string.please_enter_message),getString(R.string.submit));
+                else
+                    GotoMessage();
+
 
             }
 
@@ -216,13 +230,51 @@ public class BookingDetails extends AppCompatActivity {
 
     }
 
+    private void GotoMessage() {
+
+    }
+
     private void AcceptButton() {
     }
 
-    private void Deny_Button() {
+    private void Deny_Button(String BookingID) {
+        Loader.Show();
+
+        String URL= AppContsnat.BASEURL+"booking_deny_confirm?user_id="+AppContsnat.UserId+"&booking_id="+BookingID;
+        new JSONPerser().API_FOR_GET(URL, new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+            @Override
+            public void OnSuccess(String Result) {
+                Loader.Dismiss();
+
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                Loader.Dismiss();
+            }
+
+            @Override
+            public void OnError(String Error) {
+                Loader.Dismiss();
+            }
+        });
+
+
     }
 
-    private void Send_Message() {
+    private void Send_Message(String Title,String Hint,String ButtonName) {
+        new MYAlert(this).AlertBoxMessageSend(Title, Hint, ButtonName, new MYAlert.OnEditTexSubmit() {
+            @Override
+            public void OnEditSubmit(String Messge) {
+
+            }
+
+            @Override
+            public void OnCancel(boolean cancel) {
+
+            }
+        });
+
     }
 
     private void Delete_Button() {
