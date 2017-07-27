@@ -17,7 +17,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_2.png",
-        "source": "/Users/apple/.android/build-cache/f97def26fcf2b77c62ecf0c7d44586b0f54e50d2/output/res/drawable-xhdpi-v4/cast_ic_notification_2.png"
+        "source": "/Users/apple/.android/build-cache/11fc4407060a8a7d1fd09cde0c3f0c1d59d508c7/output/res/drawable-xhdpi-v4/cast_ic_notification_2.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_05_dark.png",
@@ -33,7 +33,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png",
-        "source": "/Users/apple/.android/build-cache/8bb824a98d2fdbb419e0d7f72a637453583a1677/output/res/drawable-xhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+        "source": "/Users/apple/.android/build-cache/622b16d2e40326f34e7715c7d74de383f4a31254/output/res/drawable-xhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
@@ -48,28 +48,28 @@
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_on_00_light.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cvc.png",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-xhdpi-v4/ic_cvc.png"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png",
+        "source": "/Users/apple/.android/build-cache/622b16d2e40326f34e7715c7d74de383f4a31254/output/res/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png",
-        "source": "/Users/apple/.android/build-cache/8bb824a98d2fdbb419e0d7f72a637453583a1677/output/res/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cvc.png",
+        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-xhdpi-v4/ic_cvc.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_audiotrack.png",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_audiotrack.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_01_dark.png",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_on_01_dark.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_17_light.png",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_connecting_17_light.png"
     },
     {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_01_dark.png",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_on_01_dark.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/googleg_disabled_color_18.png",
-        "source": "/Users/apple/.android/build-cache/8bb824a98d2fdbb419e0d7f72a637453583a1677/output/res/drawable-xhdpi-v4/googleg_disabled_color_18.png"
+        "source": "/Users/apple/.android/build-cache/622b16d2e40326f34e7715c7d74de383f4a31254/output/res/drawable-xhdpi-v4/googleg_disabled_color_18.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/messenger_bubble_large_white.png",
@@ -80,20 +80,20 @@
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_pause_light.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_replay_30_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_replay_30_white_24.png"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_10_light.png",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_on_10_light.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_20_light.png",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_on_20_light.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_10_light.png",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_on_10_light.png"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_replay_30_white_24.png",
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_replay_30_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_standard_off_client.png",
-        "source": "/Users/apple/.android/build-cache/01ba267f1917143975c65123fe7b7c2a2df3f0c3/output/res/drawable-xhdpi-v4/ic_plusone_standard_off_client.png"
+        "source": "/Users/apple/.android/build-cache/38155cc37a302f21190c0ae4c71f63f66aa62655/output/res/drawable-xhdpi-v4/ic_plusone_standard_off_client.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_07_light.png",
@@ -109,7 +109,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_replay_30_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_replay_30_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_replay_30_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_06_dark.png",
@@ -117,15 +117,15 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_volume_up_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_volume_up_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_volume_up_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_clear_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_clear_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_clear_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_pause_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_pause_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_pause_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png",
@@ -141,15 +141,15 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_play_arrow_grey600_48.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_play_arrow_grey600_48.png"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/messenger_button_send_round_shadow.png",
-        "source": "/Users/apple/.android/build-cache/1a3b0c307a326076a9f45b9c1f2615b2aad9759a/output/res/drawable-xhdpi-v4/messenger_button_send_round_shadow.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_play_arrow_grey600_48.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_black_36dp.png",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable-xhdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/messenger_button_send_round_shadow.png",
+        "source": "/Users/apple/.android/build-cache/1a3b0c307a326076a9f45b9c1f2615b2aad9759a/output/res/drawable-xhdpi-v4/messenger_button_send_round_shadow.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_disabled_mono_dark.png",
@@ -173,15 +173,15 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_pause_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_pause_grey600_36.png"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_pause_dark.png",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_pause_dark.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_pause_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_18_light.png",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_connecting_18_light.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_pause_dark.png",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_pause_dark.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/com_facebook_close.png",
@@ -193,7 +193,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/googleg_standard_color_18.png",
-        "source": "/Users/apple/.android/build-cache/8bb824a98d2fdbb419e0d7f72a637453583a1677/output/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
+        "source": "/Users/apple/.android/build-cache/622b16d2e40326f34e7715c7d74de383f4a31254/output/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_off_mono_dark.png",
@@ -213,7 +213,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_cast_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_cast_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_cast_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_15_dark.png",
@@ -224,16 +224,16 @@
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_on_17_light.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_08_light.png",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_connecting_08_light.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_08_light.png",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable-xhdpi-v4/ic_media_route_connecting_08_light.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_pause_grey600_48.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_pause_grey600_48.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_pause_grey600_48.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/com_facebook_button_icon_blue.png",
@@ -269,7 +269,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_on.png",
-        "source": "/Users/apple/.android/build-cache/f97def26fcf2b77c62ecf0c7d44586b0f54e50d2/output/res/drawable-xhdpi-v4/cast_ic_notification_on.png"
+        "source": "/Users/apple/.android/build-cache/11fc4407060a8a7d1fd09cde0c3f0c1d59d508c7/output/res/drawable-xhdpi-v4/cast_ic_notification_on.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_05_light.png",
@@ -301,7 +301,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_replay_10_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_replay_10_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_replay_10_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/messenger_bubble_large_blue.png",
@@ -313,7 +313,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_volume_off_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_volume_off_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_volume_off_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_audiotrack_light.png",
@@ -321,7 +321,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_refresh_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_refresh_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_refresh_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_13_dark.png",
@@ -337,7 +337,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_skip_previous_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_skip_previous_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_skip_previous_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_pause.png",
@@ -349,7 +349,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png",
-        "source": "/Users/apple/.android/build-cache/8bb824a98d2fdbb419e0d7f72a637453583a1677/output/res/drawable-xhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+        "source": "/Users/apple/.android/build-cache/622b16d2e40326f34e7715c7d74de383f4a31254/output/res/drawable-xhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_09_dark.png",
@@ -397,11 +397,11 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_stop_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_stop_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_stop_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_stop_circle_filled_grey600.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/cast_ic_stop_circle_filled_grey600.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/cast_ic_stop_circle_filled_grey600.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_20_dark.png",
@@ -409,7 +409,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_closed_caption_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_closed_caption_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_closed_caption_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png",
@@ -417,7 +417,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png",
-        "source": "/Users/apple/.android/build-cache/8bb824a98d2fdbb419e0d7f72a637453583a1677/output/res/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+        "source": "/Users/apple/.android/build-cache/622b16d2e40326f34e7715c7d74de383f4a31254/output/res/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_16_light.png",
@@ -461,7 +461,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_replay_30_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_replay_30_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_replay_30_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_00_dark.png",
@@ -481,7 +481,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_play_circle_filled_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_play_circle_filled_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_play_circle_filled_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",
@@ -489,11 +489,11 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_forward_30_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_forward_30_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_forward_30_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_0.png",
-        "source": "/Users/apple/.android/build-cache/f97def26fcf2b77c62ecf0c7d44586b0f54e50d2/output/res/drawable-xhdpi-v4/cast_ic_notification_0.png"
+        "source": "/Users/apple/.android/build-cache/11fc4407060a8a7d1fd09cde0c3f0c1d59d508c7/output/res/drawable-xhdpi-v4/cast_ic_notification_0.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_17_dark.png",
@@ -513,11 +513,11 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_small_off_client.png",
-        "source": "/Users/apple/.android/build-cache/01ba267f1917143975c65123fe7b7c2a2df3f0c3/output/res/drawable-xhdpi-v4/ic_plusone_small_off_client.png"
+        "source": "/Users/apple/.android/build-cache/38155cc37a302f21190c0ae4c71f63f66aa62655/output/res/drawable-xhdpi-v4/ic_plusone_small_off_client.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_art_track_grey600_48.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_art_track_grey600_48.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_art_track_grey600_48.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_06_dark.png",
@@ -529,7 +529,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_skip_previous_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_skip_previous_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_skip_previous_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_21_light.png",
@@ -541,7 +541,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_skip_next_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_skip_next_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_skip_next_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png",
@@ -549,7 +549,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_pause_circle_filled_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_pause_circle_filled_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_pause_circle_filled_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png",
@@ -557,7 +557,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_stop_grey600_48.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_stop_grey600_48.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_stop_grey600_48.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
@@ -565,11 +565,11 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_play_circle_filled_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_play_circle_filled_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_play_circle_filled_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/places_ic_clear.png",
-        "source": "/Users/apple/.android/build-cache/6c371f11b6e19f1537317d2c4afdf13ab91be895/output/res/drawable-xhdpi-v4/places_ic_clear.png"
+        "source": "/Users/apple/.android/build-cache/f2dee23d4cc5975c70516bb6dc0786d2ae40323f/output/res/drawable-xhdpi-v4/places_ic_clear.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_09_light.png",
@@ -605,7 +605,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_skip_next_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_skip_next_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_skip_next_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_16_dark.png",
@@ -617,7 +617,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_skip_previous_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_skip_previous_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_skip_previous_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_light.png",
@@ -629,15 +629,15 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_abc_scrubber_control_off_mtrl_alpha.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/cast_abc_scrubber_control_off_mtrl_alpha.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/cast_abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_abc_scrubber_control_to_pressed_mtrl_005.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/cast_abc_scrubber_control_to_pressed_mtrl_005.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/cast_abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_bigtop_updates_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_bigtop_updates_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_bigtop_updates_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png",
@@ -645,7 +645,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_volume_off_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_volume_off_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_volume_off_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_light.png",
@@ -653,19 +653,19 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_volume_up_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_volume_up_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_volume_up_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_forward_30_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_forward_30_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_forward_30_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_skip_next_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_skip_next_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_skip_next_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_stop_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_stop_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_stop_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_black_48dp.png",
@@ -697,7 +697,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_abc_scrubber_primary_mtrl_alpha.9.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/cast_abc_scrubber_primary_mtrl_alpha.9.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/cast_abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_15_dark.png",
@@ -749,7 +749,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/powered_by_google_dark.png",
-        "source": "/Users/apple/.android/build-cache/6c371f11b6e19f1537317d2c4afdf13ab91be895/output/res/drawable-xhdpi-v4/powered_by_google_dark.png"
+        "source": "/Users/apple/.android/build-cache/f2dee23d4cc5975c70516bb6dc0786d2ae40323f/output/res/drawable-xhdpi-v4/powered_by_google_dark.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_22_dark.png",
@@ -765,7 +765,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_play_arrow_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_play_arrow_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_play_arrow_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_04_light.png",
@@ -785,7 +785,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_1.png",
-        "source": "/Users/apple/.android/build-cache/f97def26fcf2b77c62ecf0c7d44586b0f54e50d2/output/res/drawable-xhdpi-v4/cast_ic_notification_1.png"
+        "source": "/Users/apple/.android/build-cache/11fc4407060a8a7d1fd09cde0c3f0c1d59d508c7/output/res/drawable-xhdpi-v4/cast_ic_notification_1.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png",
@@ -801,7 +801,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_keyboard_arrow_down_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_keyboard_arrow_down_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_keyboard_arrow_down_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
@@ -809,7 +809,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_closed_caption_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_closed_caption_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_closed_caption_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_speaker_group_dark.png",
@@ -817,7 +817,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_medium_off_client.png",
-        "source": "/Users/apple/.android/build-cache/01ba267f1917143975c65123fe7b7c2a2df3f0c3/output/res/drawable-xhdpi-v4/ic_plusone_medium_off_client.png"
+        "source": "/Users/apple/.android/build-cache/38155cc37a302f21190c0ae4c71f63f66aa62655/output/res/drawable-xhdpi-v4/ic_plusone_medium_off_client.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_19_light.png",
@@ -837,11 +837,11 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_stop_circle_filled_white.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/cast_ic_stop_circle_filled_white.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/cast_ic_stop_circle_filled_white.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_cast_connected_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_cast_connected_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_cast_connected_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png",
@@ -853,11 +853,11 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/places_ic_search.png",
-        "source": "/Users/apple/.android/build-cache/6c371f11b6e19f1537317d2c4afdf13ab91be895/output/res/drawable-xhdpi-v4/places_ic_search.png"
+        "source": "/Users/apple/.android/build-cache/f2dee23d4cc5975c70516bb6dc0786d2ae40323f/output/res/drawable-xhdpi-v4/places_ic_search.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_play_arrow_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_play_arrow_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_play_arrow_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png",
@@ -957,11 +957,11 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/powered_by_google_light.png",
-        "source": "/Users/apple/.android/build-cache/6c371f11b6e19f1537317d2c4afdf13ab91be895/output/res/drawable-xhdpi-v4/powered_by_google_light.png"
+        "source": "/Users/apple/.android/build-cache/f2dee23d4cc5975c70516bb6dc0786d2ae40323f/output/res/drawable-xhdpi-v4/powered_by_google_light.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_forward_30_grey600_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_forward_30_grey600_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_forward_30_grey600_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_tv_light.png",
@@ -981,7 +981,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_abc_scrubber_control_to_pressed_mtrl_000.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/cast_abc_scrubber_control_to_pressed_mtrl_000.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/cast_abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_03_dark.png",
@@ -1001,7 +1001,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_replay_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_replay_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_replay_white_24.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
@@ -1009,7 +1009,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_pause_circle_filled_white_36.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_pause_circle_filled_white_36.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_pause_circle_filled_white_36.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_speaker_light.png",
@@ -1017,7 +1017,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_tall_off_client.png",
-        "source": "/Users/apple/.android/build-cache/01ba267f1917143975c65123fe7b7c2a2df3f0c3/output/res/drawable-xhdpi-v4/ic_plusone_tall_off_client.png"
+        "source": "/Users/apple/.android/build-cache/38155cc37a302f21190c0ae4c71f63f66aa62655/output/res/drawable-xhdpi-v4/ic_plusone_tall_off_client.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_13_light.png",
@@ -1057,7 +1057,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_full_open_on_phone.png",
-        "source": "/Users/apple/.android/build-cache/8bb824a98d2fdbb419e0d7f72a637453583a1677/output/res/drawable-xhdpi-v4/common_full_open_on_phone.png"
+        "source": "/Users/apple/.android/build-cache/622b16d2e40326f34e7715c7d74de383f4a31254/output/res/drawable-xhdpi-v4/common_full_open_on_phone.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_09_dark.png",
@@ -1065,6 +1065,6 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_forward_10_white_24.png",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/drawable-xhdpi-v4/quantum_ic_forward_10_white_24.png"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/drawable-xhdpi-v4/quantum_ic_forward_10_white_24.png"
     }
 ]

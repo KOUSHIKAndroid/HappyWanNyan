@@ -1,4 +1,4 @@
-#Tue Jul 25 18:39:56 IST 2017
+#Thu Jul 27 19:40:28 IST 2017
 base.0=/Users/apple/Documents/HappyWanNyan/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.1=classes.dex
 renamed.0=classes2.dex

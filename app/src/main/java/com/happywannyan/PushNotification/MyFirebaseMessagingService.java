@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 //import com.firebase.jobdispatcher.FirebaseJobDispatcher;
@@ -20,6 +21,9 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by apple on 23/05/17.
@@ -74,7 +78,23 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         Loger.MSG("@@@ PUSH",remoteMessage.getNotification().getBody());
 
-        sendNotification(remoteMessage.getNotification().getBody());
+        try {
+            JSONObject Object=new JSONObject(remoteMessage.getNotification().getBody());
+            if(Object.getString("type_notification").equals("message"))
+            {
+                Intent intent=new Intent("CONNECT_MESSAGE_LIVE");
+                intent.putExtra("MSG_DATA",Object.toString());
+                LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+
+            }else {
+                sendNotification(remoteMessage.getNotification().getBody());
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
     }
     // [END receive_message]
 

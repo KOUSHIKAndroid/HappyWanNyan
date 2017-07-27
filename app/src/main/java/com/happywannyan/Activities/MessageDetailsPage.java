@@ -1,7 +1,10 @@
 package com.happywannyan.Activities;
 
 import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -9,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -75,6 +79,9 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
     private int PICK_IMAGE_REQUEST = 100;
     private int CAMERA_CAPTURE = 200;
 
+    private BroadcastReceiver Localreceiver;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,6 +106,12 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
         TXT_MessageType = (SFNFTextView) findViewById(R.id.TXT_MessageType);
         EDX_Text = (EditText) findViewById(R.id.EDX_Text);
         LL_USER_TIME = (LinearLayout) findViewById(R.id.LL_USER_TIME);
+
+        Localreceiver= mMessageReceiver;
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("CONNECT_MESSAGE_LIVE");
+        LocalBroadcastManager.getInstance(this).registerReceiver(Localreceiver,filter);
+
 
         RL_ButtomSheet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,7 +245,6 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
                     new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "reply_message", Params, new JSONPerser.JSONRESPONSE() {
                         @Override
                         public void OnSuccess(String Result) {
-
                             try {
                                 ARRAy.getJSONObject(ARRAy.length()-1).getJSONArray("info").put(new JSONObject(Result).getJSONObject("info"));
                                 messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
@@ -576,4 +588,34 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
         File image = File.createTempFile(imagefilename, ".jpg", storageDirectory);/////new approach
         return image;
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(Localreceiver);
+    }
+
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            String message = intent.getStringExtra("MSG_DATA");
+            Log.d("receiver", "Got message: " + message);
+
+            try {
+                if(new JSONObject(message).getString("receiver_id").equals(AppContsnat.UserId) &&
+                        MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("message_id"))) {
+                    ARRAy.getJSONObject(ARRAy.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
+                    messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
+                    LL_UserInfo.setAdapter(messageADapter);
+                }else {
+                    /*
+                    Integrate Notification Message if needed
+                     */
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    };
 }

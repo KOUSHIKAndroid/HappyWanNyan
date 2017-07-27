@@ -2,6 +2,7 @@ package com.happywannyan.Activities.Booking;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -24,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TimeZone;
 
 public class BookingDetails extends AppCompatActivity {
 
@@ -32,11 +35,24 @@ public class BookingDetails extends AppCompatActivity {
     LinearLayout LLPetInfo, LL_FOOTER1, LL_FOOTER2;
     AppLoader Loader;
 
+    AlertDialog Dialog;
+    TimeZone Tz;
+
+    MYAlert MYALERT;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_details);
+        Tz=TimeZone.getDefault();
+        MYALERT=new MYAlert(this);
+        findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         try {
             Loader=new AppLoader(this);
             jsonObject = new JSONObject(getIntent().getStringExtra("data"));
@@ -60,12 +76,7 @@ public class BookingDetails extends AppCompatActivity {
             ((SFNFBoldTextView) findViewById(R.id.tv_service_value)).setText(jsonObject.getJSONObject("booking_info").getString("booking_service"));
 
 
-            findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onBackPressed();
-                }
-            });
+
 
 
             if (jsonObject.getJSONObject("booking_info").has("accept_button") && !jsonObject.getJSONObject("booking_info").getString("accept_button").trim().equals("")) {
@@ -74,8 +85,14 @@ public class BookingDetails extends AppCompatActivity {
                 ((CardView)ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("accept_button"));
                 LL_FOOTER1.addView(ButtomView);
+                ButtomView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AcceptButton();
+                    }
+                });
                 
-                AcceptButton();
+
                 
             }
 
@@ -86,8 +103,18 @@ public class BookingDetails extends AppCompatActivity {
                     LL_FOOTER1.addView(ButtomView);
                 else
                     LL_FOOTER2.addView(ButtomView);
-                
-                Deny_Button(jsonObject.getJSONObject("booking_info").getString("booking_id"));
+
+                ButtomView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            Deny_Button(jsonObject.getJSONObject("booking_info").getString("booking_id"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
             }
 
 
@@ -101,13 +128,20 @@ public class BookingDetails extends AppCompatActivity {
                 else
                     LL_FOOTER2.addView(ButtomView);
 
-
-                if(jsonObject.getJSONObject("booking_info").has("send_msg_show") && jsonObject.getJSONObject("booking_info").getInt("send_msg_show")==0)
-                Send_Message(jsonObject.getJSONObject("booking_info").getString("send_msg_status"),getString(R.string.please_enter_message),getString(R.string.submit));
-                else
-                    GotoMessage();
-
-
+                ButtomView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            if(jsonObject.getJSONObject("booking_info").has("send_msg_show") && jsonObject.getJSONObject("booking_info").getInt("send_msg_show")==0)
+                                Send_Message(jsonObject.getJSONObject("booking_info").getString("send_msg_status"),getString(R.string.please_enter_message),getString(R.string.submit)
+                                ,jsonObject.getJSONObject("booking_info").getString("booking_id"),jsonObject.getJSONObject("booking_info").getString("booking_type"));
+                            else
+                                GotoMessage();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
             }
 
 
@@ -118,8 +152,14 @@ public class BookingDetails extends AppCompatActivity {
                     LL_FOOTER1.addView(ButtomView);
                 else
                     LL_FOOTER2.addView(ButtomView);
+                ButtomView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Delete_Button();
+                    }
+                });
                 
-                Delete_Button();
+
             }
 
 
@@ -130,7 +170,13 @@ public class BookingDetails extends AppCompatActivity {
                     LL_FOOTER1.addView(ButtomView);
                 else
                     LL_FOOTER2.addView(ButtomView);
-                Review_Status();
+                ButtomView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Review_Status();
+                    }
+                });
+
             }
 
             if (jsonObject.getJSONObject("booking_info").has("cancel_status") && !jsonObject.getJSONObject("booking_info").getString("cancel_status").trim().equals("")) {
@@ -142,7 +188,17 @@ public class BookingDetails extends AppCompatActivity {
                 else
                     LL_FOOTER2.addView(ButtomView);
 
-                CancelStatusWork();
+                ButtomView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            CancelStatusWork(jsonObject.getJSONObject("booking_info").getString("booking_id"),jsonObject.getJSONObject("booking_info").getString("booking_type"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
             }
 
             if (jsonObject.getJSONObject("booking_info").has("cancel_status_button") && !jsonObject.getJSONObject("booking_info").getString("cancel_status_button").trim().equals("")) {
@@ -262,10 +318,56 @@ public class BookingDetails extends AppCompatActivity {
 
     }
 
-    private void Send_Message(String Title,String Hint,String ButtonName) {
+    private void Send_Message(String Title, String Hint, String ButtonName, final String BookingID, final String BookingType) {
         new MYAlert(this).AlertBoxMessageSend(Title, Hint, ButtonName, new MYAlert.OnEditTexSubmit() {
             @Override
             public void OnEditSubmit(String Messge) {
+
+                Loader.Show();
+                HashMap<String,String> Params=new HashMap<String, String>();
+                Params.put("booking_id",BookingID);
+                Params.put("message",Messge);
+                Params.put("user_id",AppContsnat.UserId);
+                Params.put("lang_id",AppContsnat.Language);
+                Params.put("user_timezone",Tz.getID());
+
+                new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "start_message_api", Params, new JSONPerser.JSONRESPONSE() {
+                    @Override
+                    public void OnSuccess(String Result) {
+                        Loader.Dismiss();
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Result, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void OnError(String Error, String Response) {
+                        Loader.Dismiss();
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Response, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void OnError(String Error) {
+                        Loader.Dismiss();
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+
+                    }
+                });
 
             }
 
@@ -283,7 +385,67 @@ public class BookingDetails extends AppCompatActivity {
     private void Review_Status() {
     }
 
-    private void CancelStatusWork() {
+    private void CancelStatusWork(final String BookingID,final String BookingType) {
+
+        new MYAlert(BookingDetails.this).AlertOkCancel(getString(R.string.cancel), getString(R.string.do_you_want_to_cancel_booking), new MYAlert.OnlyMessage() {
+            @Override
+            public void OnOk(boolean res) {
+
+                Loader.Show();
+                HashMap<String,String> Params=new HashMap<String, String>();
+                Params.put("booking_id",BookingID);
+                Params.put("booking_type",BookingType);
+                Params.put("user_id",AppContsnat.UserId);
+                Params.put("lang_id",AppContsnat.Language);
+                Params.put("user_timezone",Tz.getID());
+
+                new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new JSONPerser.JSONRESPONSE() {
+                    @Override
+                    public void OnSuccess(String Result) {
+                        Loader.Dismiss();
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Result, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void OnError(String Error, String Response) {
+                        Loader.Dismiss();
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Response, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void OnError(String Error) {
+                        Loader.Dismiss();
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+
+                    }
+                });
+
+
+
+
+
+
+            }
+        });
+
+
     }
 
     private void CancelStatusButtonWork() {

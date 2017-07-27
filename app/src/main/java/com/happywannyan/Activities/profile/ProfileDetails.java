@@ -68,21 +68,8 @@ public class ProfileDetails extends AppCompatActivity implements View.OnClickLis
         reservation = (LinearLayout) findViewById(R.id.reservation);
 
         try {
-            new AppContsnat(this).GET_SHAREDATA(App_data_holder.UserData, new App_data_holder.App_sharePrefData() {
-                @Override
-                public void Avialable(boolean avilavle, JSONObject data) {
-                    try {
-                        UserData = data.getJSONObject("info_array").getString("id");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                @Override
-                public void NotAvilable(String Error) {
-
-                }
-            });
+           new AppContsnat(this);
+            UserData=AppContsnat.UserId;
             this.PrevJSON = new JSONObject(getIntent().getStringExtra("data"));
             Loger.MSG("@@@ PROFILE DATA ",""+PrevJSON);
             if(PrevJSON.has("sitter_user_id"))

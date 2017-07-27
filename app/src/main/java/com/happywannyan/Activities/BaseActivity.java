@@ -142,6 +142,9 @@ Events events;
                 navigationView.findViewById(R.id.LL_Payment).setVisibility(View.GONE);
                 navigationView.findViewById(R.id.LL_Profile).setVisibility(View.GONE);
                 navigationView.findViewById(R.id.LL_Logout).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Favorite).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Past_Favorite).setVisibility(View.GONE);
+
                 navigationView.getHeaderView(0).findViewById(R.id.RL_HEADER).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

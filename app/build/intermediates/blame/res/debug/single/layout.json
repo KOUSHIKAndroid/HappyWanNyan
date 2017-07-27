@@ -16,24 +16,24 @@
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_intro_overlay.xml",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/layout/cast_intro_overlay.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_profile_main.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/activity_profile_main.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/mr_playback_control.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/layout/mr_playback_control.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_profile_main.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/activity_profile_main.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/profile_fragment_listing_only.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/profile_fragment_listing_only.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_intro_overlay.xml",
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/layout/cast_intro_overlay.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
         "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/profile_fragment_listing_only.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/profile_fragment_listing_only.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_booking_details.xml",
@@ -84,8 +84,12 @@
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/layout/mr_controller_material_dialog_b.xml"
     },
     {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cancel_booking.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/cancel_booking.xml"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_help_text.xml",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/layout/cast_help_text.xml"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/layout/cast_help_text.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/com_facebook_tooltip_bubble.xml",
@@ -269,7 +273,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml",
-        "source": "/Users/apple/.android/build-cache/6c371f11b6e19f1537317d2c4afdf13ab91be895/output/res/layout/place_autocomplete_item_powered_by_google.xml"
+        "source": "/Users/apple/.android/build-cache/f2dee23d4cc5975c70516bb6dc0786d2ae40323f/output/res/layout/place_autocomplete_item_powered_by_google.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
@@ -301,7 +305,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml",
-        "source": "/Users/apple/.android/build-cache/6c371f11b6e19f1537317d2c4afdf13ab91be895/output/res/layout/place_autocomplete_progress.xml"
+        "source": "/Users/apple/.android/build-cache/f2dee23d4cc5975c70516bb6dc0786d2ae40323f/output/res/layout/place_autocomplete_progress.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
@@ -313,7 +317,11 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_expanded_controller_activity.xml",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/layout/cast_expanded_controller_activity.xml"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/layout/cast_expanded_controller_activity.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/alert_dialog_api_response.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/alert_dialog_api_response.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
@@ -329,7 +337,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml",
-        "source": "/Users/apple/.android/build-cache/6c371f11b6e19f1537317d2c4afdf13ab91be895/output/res/layout/place_autocomplete_item_prediction.xml"
+        "source": "/Users/apple/.android/build-cache/f2dee23d4cc5975c70516bb6dc0786d2ae40323f/output/res/layout/place_autocomplete_item_prediction.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/pet_details_list_row.xml",
@@ -445,7 +453,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_mini_controller.xml",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/layout/cast_mini_controller.xml"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/layout/cast_mini_controller.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/fragment_search_list.xml",
@@ -465,7 +473,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_tracks_chooser_dialog_layout.xml",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/layout/cast_tracks_chooser_dialog_layout.xml"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/layout/cast_tracks_chooser_dialog_layout.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/profile_about_items.xml",
@@ -473,7 +481,7 @@
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_tracks_chooser_dialog_row_layout.xml",
-        "source": "/Users/apple/.android/build-cache/7a3c0dfd66f521546cdb96387b5ff7bcbb904a12/output/res/layout/cast_tracks_chooser_dialog_row_layout.xml"
+        "source": "/Users/apple/.android/build-cache/ed19a2ce7c2a80f5ebfd747d13710be71dcc1278/output/res/layout/cast_tracks_chooser_dialog_row_layout.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/fragment_slider1.xml",
@@ -494,6 +502,10 @@
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
         "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/layout/design_layout_tab_text.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/edit_msg_layout.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/edit_msg_layout.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/tinder_card_view.xml",

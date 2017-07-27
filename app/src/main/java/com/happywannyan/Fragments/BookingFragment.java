@@ -243,7 +243,7 @@ public class BookingFragment extends Fragment{
                 try {
 
                     JSONObject jsonObject=    new JSONObject(Response);
-                    if(jsonObject.getInt("next_data")==0 && jsonObject.getInt("start_form")==0){
+                    if(jsonObject.getInt("next_data")==0 && jsonObject.getInt("start_form")==0 && AllBooking.size()==0){
                         recyclerView.setAdapter(null);
                         new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.app_name), Error, new MYAlert.OnlyMessage() {
                             @Override

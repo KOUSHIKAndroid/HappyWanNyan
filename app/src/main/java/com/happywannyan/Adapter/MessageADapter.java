@@ -123,8 +123,10 @@ public class MessageADapter extends RecyclerView.Adapter<MessageADapter.ViewHold
                     ImageView IMG_Sender_Map=(ImageView)SenderItem.findViewById(R.id.IMG_Sender_Map);
                     LinearLayout LL_Sender=(LinearLayout)SenderItem.findViewById(R.id.LL_Sender);
 
+                    Loger.MSG("@@ ITEM ",i+" - "+MsgItem);
 
-                    if(!MsgItem.getString("msg_lat").equals("") && !MsgItem.getString("msg_long").equals(""))
+
+                    if(MsgItem.getString("msg_lat").length()>0 && MsgItem.getString("msg_long").length()>0)
                     {
                         Picasso.with(mContext).load(MsgItem.getString("url_location")).into(IMG_Sender_Map);
 
