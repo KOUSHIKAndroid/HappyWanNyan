@@ -1,5 +1,6 @@
 package com.happywannyan.Fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -232,6 +233,10 @@ public class Message_Fragment extends Fragment {
 
     }
 
+    public void CallDetailsPage(Intent intent) {
+        startActivityForResult(intent,111);
+    }
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
@@ -297,5 +302,15 @@ public class Message_Fragment extends Fragment {
                 appLoader.Dismiss();
             }
         });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==111)
+        {
+            loadList("0");
+        }
+
     }
 }

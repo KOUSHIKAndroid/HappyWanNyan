@@ -601,13 +601,14 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
             // Get extra data included in the Intent
             String message = intent.getStringExtra("MSG_DATA");
             Log.d("receiver", "Got message: " + message);
+            Log.d("receiver", "ID message: " + MessageId);
 
             try {
-                if(new JSONObject(message).getString("receiver_id").equals(AppContsnat.UserId) &&
-                        MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("message_id"))) {
+                if(MessageId.equals(new JSONObject(message).getString("message_id"))) {
                     ARRAy.getJSONObject(ARRAy.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
                     messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
                     LL_UserInfo.setAdapter(messageADapter);
+                    Log.d("receiver", "Got message:2 " + message);
                 }else {
                     /*
                     Integrate Notification Message if needed

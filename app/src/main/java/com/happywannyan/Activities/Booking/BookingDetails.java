@@ -1,5 +1,6 @@
 package com.happywannyan.Activities.Booking;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.MessageDetailsPage;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
@@ -134,9 +136,9 @@ public class BookingDetails extends AppCompatActivity {
                         try {
                             if(jsonObject.getJSONObject("booking_info").has("send_msg_show") && jsonObject.getJSONObject("booking_info").getInt("send_msg_show")==0)
                                 Send_Message(jsonObject.getJSONObject("booking_info").getString("send_msg_status"),getString(R.string.please_enter_message),getString(R.string.submit)
-                                ,jsonObject.getJSONObject("booking_info").getString("booking_id"),jsonObject.getJSONObject("booking_info").getString("booking_type"));
+                                ,jsonObject.getJSONObject("booking_info").getString("id"),jsonObject.getJSONObject("booking_info").getString("booking_type"));
                             else
-                                GotoMessage();
+                                GotoMessage(jsonObject.getJSONObject("booking_info").getString("message_id"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -192,7 +194,13 @@ public class BookingDetails extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try {
+                            if(jsonObject.getJSONObject("booking_info").getInt("refund_status")==0)
                             CancelStatusWork(jsonObject.getJSONObject("booking_info").getString("booking_id"),jsonObject.getJSONObject("booking_info").getString("booking_type"));
+                            if(jsonObject.getJSONObject("booking_info").getInt("refund_status")==1)
+                            {
+                                CancelWith_Reasons(jsonObject);
+                            }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -286,7 +294,20 @@ public class BookingDetails extends AppCompatActivity {
 
     }
 
-    private void GotoMessage() {
+    private void CancelWith_Reasons(JSONObject jsonObject) {
+
+        Intent intent=new Intent(this,CancelBookingWithReasons.class);
+        startActivity(intent);
+
+    }
+
+    private void GotoMessage(String MsgId) {
+
+        Intent intent=new Intent(this, MessageDetailsPage.class);
+        intent.putExtra("receiver_id",AppContsnat.UserId);
+        intent.putExtra("message_id",MsgId);
+        startActivity(intent);
+
 
     }
 
@@ -300,7 +321,19 @@ public class BookingDetails extends AppCompatActivity {
         new JSONPerser().API_FOR_GET(URL, new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
-                Loader.Dismiss();
+
+                String Message="";
+                try {
+                    Message=new JSONObject(Result).getString("message");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                MYALERT.AlertForAPIRESPONSE(getString(R.string.Deny), Message, new MYAlert.OnlyMessage() {
+                    @Override
+                    public void OnOk(boolean res) {
+
+                    }
+                });
 
             }
 
@@ -325,6 +358,11 @@ public class BookingDetails extends AppCompatActivity {
 
                 Loader.Show();
                 HashMap<String,String> Params=new HashMap<String, String>();
+//                try {
+//                    Params.put("booking_id",jsonObject.getJSONObject("booking_info").getString("id"));
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
                 Params.put("booking_id",BookingID);
                 Params.put("message",Messge);
                 Params.put("user_id",AppContsnat.UserId);
@@ -335,7 +373,13 @@ public class BookingDetails extends AppCompatActivity {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();
-                        MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Result, new MYAlert.OnlyMessage() {
+                        String Message="";
+                        try {
+                            Message=new JSONObject(Result).getString("message");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Message, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
 
@@ -387,10 +431,9 @@ public class BookingDetails extends AppCompatActivity {
 
     private void CancelStatusWork(final String BookingID,final String BookingType) {
 
-        new MYAlert(BookingDetails.this).AlertOkCancel(getString(R.string.cancel), getString(R.string.do_you_want_to_cancel_booking), new MYAlert.OnlyMessage() {
+        new MYAlert(BookingDetails.this).AlertOkCancel(getString(R.string.cancel), getString(R.string.do_you_want_to_cancel_booking), new MYAlert.OnOkCancel() {
             @Override
-            public void OnOk(boolean res) {
-
+            public void OnOk() {
                 Loader.Show();
                 HashMap<String,String> Params=new HashMap<String, String>();
                 Params.put("booking_id",BookingID);
@@ -403,7 +446,13 @@ public class BookingDetails extends AppCompatActivity {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();
-                        MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Result, new MYAlert.OnlyMessage() {
+                        String Message="";
+                        try {
+                            Message=new JSONObject(Result).getString("message");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Message, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
 
@@ -439,10 +488,14 @@ public class BookingDetails extends AppCompatActivity {
 
 
 
+            }
 
-
+            @Override
+            public void OnCancel() {
 
             }
+
+
         });
 
 

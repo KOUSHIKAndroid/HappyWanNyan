@@ -6,34 +6,34 @@
     tools:context="com.happywannyan.Activities.Booking.BookingDetails">
 
     <RelativeLayout
-        android:id="@+id/RL_HEADER"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp">
+    android:id="@+id/RL_HEADER"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="0dp">
 
-        <ImageView
-            android:id="@+id/IMG_icon_back"
-            android:layout_width="54dp"
-            android:layout_height="50dp"
-            android:padding="15dp"
-            android:src="@drawable/ic_arrow_back_white" />
+    <ImageView
+        android:id="@+id/IMG_icon_back"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
+        android:padding="15dp"
+        android:src="@drawable/ic_arrow_back_white" />
 
-        <com.happywannyan.Font.SFNFTextView
-            android:id="@+id/PAGE_Titile"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_toRightOf="@+id/IMG_icon_back"
-            android:gravity="center"
-            android:padding="5dp"
-            android:paddingLeft="20dp"
-            android:text="@string/Booking"
-            android:textColor="@color/colorwhite"
-            android:textSize="@dimen/page_titiel" />
-    </RelativeLayout>
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/PAGE_Titile"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/IMG_icon_back"
+        android:gravity="center"
+        android:padding="5dp"
+        android:paddingLeft="20dp"
+        android:text="@string/Booking"
+        android:textColor="@color/colorwhite"
+        android:textSize="@dimen/page_titiel" />
+</RelativeLayout>
 
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"

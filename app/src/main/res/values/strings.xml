@@ -182,4 +182,5 @@
     <string name="pleasenteraddress">Please Enter Address</string>
     <string name="do_you_want_to_cancel_booking">Are you sure you want to cancel this booking?</string>
     <string name="Error">Error</string>
+    <string name="Deny">Deny</string>
 </resources>

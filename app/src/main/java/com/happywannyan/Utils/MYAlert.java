@@ -33,6 +33,10 @@ public class MYAlert {
     public interface OnlyMessage {
         public void OnOk(boolean res);
     }
+    public interface  OnOkCancel{
+        void OnOk();
+        void  OnCancel();
+    }
 
     public interface OnSignleListTextSelected {
         public void OnSelectedTEXT(JSONObject jsonObject);
@@ -71,7 +75,7 @@ public class MYAlert {
 
     }
 
-    public void AlertOkCancel(String Title, String Message, final OnlyMessage onlyMessage) {
+    public void AlertOkCancel(String Title, String Message, final OnOkCancel onlyMessage) {
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
                 (Context.LAYOUT_INFLATER_SERVICE);
@@ -86,7 +90,7 @@ public class MYAlert {
         BTN_OK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onlyMessage.OnOk(true);
+                onlyMessage.OnOk();
                 Dialog.dismiss();
             }
         });
@@ -94,7 +98,7 @@ public class MYAlert {
         BTN_CANCEL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onlyMessage.OnOk(false);
+                onlyMessage.OnCancel();
                 Dialog.dismiss();
             }
         });
