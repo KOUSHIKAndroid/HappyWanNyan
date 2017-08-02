@@ -72,6 +72,7 @@ public class JSONPerser {
                         Response response = client.newCall(request).execute();
 
                         respose = response.body().string();
+                        new JSONObject(respose);
 
                        Loger.MSG("response", "respose_::" + respose);
                        Loger.MSG("response", "respose_ww_message::" + response.message());
@@ -212,7 +213,7 @@ public class JSONPerser {
                 try {
                     if (!isCancelled()) {
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(5000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(60000, TimeUnit.MILLISECONDS).retryOnConnectionFailure(true).build();
                         Request request = new Request.Builder().url(URL) .method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();

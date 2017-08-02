@@ -66,10 +66,10 @@ public class Booking_Adapter extends RecyclerView.Adapter<Booking_Adapter.MyView
                 @Override
                 public void onClick(View view) {
 
-                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
+//                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                     Intent intent = new Intent(context, BookingDetails.class);
                     intent.putExtra("data",""+object);
-                    context. startActivity(intent, options.toBundle());
+                    bookingFragment. startActivityForResult(intent,222);
 //                    context.startActivity(new Intent(context, BookingDetails.class));
                 }
             });

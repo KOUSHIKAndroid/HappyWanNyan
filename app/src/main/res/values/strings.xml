@@ -183,4 +183,11 @@
     <string name="do_you_want_to_cancel_booking">Are you sure you want to cancel this booking?</string>
     <string name="Error">Error</string>
     <string name="Deny">Deny</string>
+    <string name="Instruction_for_Cancel_req">According to the cancellation policy you will be charged for 50% of the booking total, up to ¥5000.</string>
+    <string name="select_cancel_reason">Select a cancellation reason </string>
+    <string name="explain_why_cancel">Explain why you are cancelling this booking</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_somple_msg">Are you sure that you want to accept this booking ?</string>
+    <string name="submit_review">Submit Review</string>
+    <string name="upload_attachment">Upload Attachment</string>
 </resources>

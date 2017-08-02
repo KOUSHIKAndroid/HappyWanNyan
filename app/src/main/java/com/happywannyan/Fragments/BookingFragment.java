@@ -1,5 +1,6 @@
 package com.happywannyan.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -197,6 +198,17 @@ public class BookingFragment extends Fragment{
             }
         });
         tv_up_coming.performClick();
+
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==222)
+        {
+            loadList("0");
+        }
 
     }
 

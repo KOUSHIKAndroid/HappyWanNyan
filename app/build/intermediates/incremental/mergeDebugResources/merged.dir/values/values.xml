@@ -1108,6 +1108,7 @@
     <string name="FirestName_photo">First Name (Phonetic)</string>
     <string name="ForgotPassword">Forgot Password</string>
     <string name="Gender">Gender</string>
+    <string name="Instruction_for_Cancel_req">According to the cancellation policy you will be charged for 50% of the booking total, up to ¥5000.</string>
     <string name="LastName">Last Name</string>
     <string name="LastName_photo">Last Name (Phonetic)</string>
     <string name="Login">Login</string>
@@ -1230,6 +1231,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">b6c34fa0-3ccf-4f94-a7ab-fe038d593702</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1270,6 +1272,8 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_somple_msg">Are you sure that you want to accept this booking ?</string>
     <string name="contact">Contact</string>
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
@@ -1290,6 +1294,7 @@
     <string name="donthaveanacc">Don\'t have an account?</string>
     <string name="dropofftime">Drop-Off Time</string>
     <string name="expiry_date_hint">MM/YY</string>
+    <string name="explain_why_cancel">Explain why you are cancelling this booking</string>
     <string name="facebook">Facebook</string>
     <string name="facebook_app_id">1381434255240015</string>
     <string name="favorite_sitters_delete">Delete</string>
@@ -1392,6 +1397,7 @@
     <string name="search_menu_title">Search</string>
     <string name="searchpage_txt">Our Community helps pet parent find the perfect solution for their sitting needs.</string>
     <string name="select">Please Seclect</string>
+    <string name="select_cancel_reason">Select a cancellation reason </string>
     <string name="send">Send</string>
     <string name="service">Service</string>
     <string name="signup_password_checkingtext">Password should contain alphanumeric character and at least one special character and should be at least 6 characters</string>
@@ -1407,6 +1413,7 @@
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
     <string name="submit">Submit</string>
+    <string name="submit_review">Submit Review</string>
     <string name="sucess">Sucess</string>
     <string name="tagmanager_preview_dialog_button">Continue</string>
     <string name="tagmanager_preview_dialog_message">Preview mode updated.</string>
@@ -1425,6 +1432,7 @@
     <string name="up_coming_booking_start_date">Start date</string>
     <string name="up_coming_booking_total_amount">Total Amount</string>
     <string name="up_coming_booking_total_pets">Total Pet\'s</string>
+    <string name="upload_attachment">Upload Attachment</string>
     <string name="wallet_buy_button_place_holder">Buy with Google</string>
     <string name="wanyanmeetup">Wan-Nyan meet up</string>
     <string name="whatisyourdailybudgetperpet">What is your daily budget per pet?</string>

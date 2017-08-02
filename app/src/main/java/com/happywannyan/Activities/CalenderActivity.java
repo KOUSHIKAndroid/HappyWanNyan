@@ -2,6 +2,7 @@ package com.happywannyan.Activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -514,6 +515,9 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
         tv_date_limit.setText(StartDate);
         else
             tv_date_limit.setText(StartDate+ "  to  "+EndDate);
+
+        TXT_OK.setTextColor(Color.WHITE);
+        TXT_OK.setBackgroundColor(Color.parseColor("#bf3e49"));
     }
 
     @Override

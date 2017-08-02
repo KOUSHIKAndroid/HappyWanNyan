@@ -46,7 +46,6 @@ public abstract Void UserDetaisl(String UserId);
         switch (DataName)
         {
             case UserData:
-                Loger.MSG("@@ "," DADAD "+Data);
                 editor.putString("UserData", Data);
                 editor.commit();
                 break;

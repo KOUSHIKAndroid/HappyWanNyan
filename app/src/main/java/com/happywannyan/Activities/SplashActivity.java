@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.R;
 import com.happywannyan.Utils.App_data_holder;
 
+import io.fabric.sdk.android.Fabric;
 import org.json.JSONObject;
 
 import java.util.Locale;
@@ -20,6 +22,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);
        AppContsnat.Language= Locale.getDefault().getLanguage();
 

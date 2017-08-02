@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-145:12
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-152:12
 	package
 		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:3:5-31
 		INJECTED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml
@@ -15,6 +15,11 @@ ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:
 		INJECTED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /Users/apple/.android/build-cache/e60140e7f2ed6996111fea2ebb3c4f49441fcffb/output/AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:beta:1.2.5] /Users/apple/.android/build-cache/822747d2b9e4b87f70dc73bb2f6c810cc92b696c/output/AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] /Users/apple/.android/build-cache/1edf77e64fdd7038e891dc0ef9f15fe85ca2afc8/output/AndroidManifest.xml:52:5-67
+MERGED from [com.crashlytics.sdk.android:answers:1.3.13] /Users/apple/.android/build-cache/3d4969d2a6684090a2585a443b344a0f403a0abf/output/AndroidManifest.xml:9:5-67
+MERGED from [io.fabric.sdk.android:fabric:1.3.17] /Users/apple/.android/build-cache/a3dad3a16670616dcf87e25ca54176ac1044df12/output/AndroidManifest.xml:29:5-67
 MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /Users/apple/.android/build-cache/12de39c03256126107bf32f320d37d4825068d05/output/AndroidManifest.xml:19:5-66
 MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /Users/apple/.android/build-cache/2dca8c771b0ecc8944b0840b8e9d909de3e52343/output/AndroidManifest.xml:20:5-66
 MERGED from [com.google.android.gms:play-services-appinvite:10.2.4] /Users/apple/.android/build-cache/e8e5d0696c3407eec3bd8fbc16fce774938c6996/output/AndroidManifest.xml:18:5-66
@@ -76,7 +81,12 @@ ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:
 	android:name
 		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:13:22-78
 application
-ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:15:5-143:19
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:15:5-150:19
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /Users/apple/.android/build-cache/e60140e7f2ed6996111fea2ebb3c4f49441fcffb/output/AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:beta:1.2.5] /Users/apple/.android/build-cache/822747d2b9e4b87f70dc73bb2f6c810cc92b696c/output/AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] /Users/apple/.android/build-cache/1edf77e64fdd7038e891dc0ef9f15fe85ca2afc8/output/AndroidManifest.xml:54:5-20
+MERGED from [com.crashlytics.sdk.android:answers:1.3.13] /Users/apple/.android/build-cache/3d4969d2a6684090a2585a443b344a0f403a0abf/output/AndroidManifest.xml:11:5-20
+MERGED from [io.fabric.sdk.android:fabric:1.3.17] /Users/apple/.android/build-cache/a3dad3a16670616dcf87e25ca54176ac1044df12/output/AndroidManifest.xml:31:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/apple/.android/build-cache/f4a9a478383530773c1a084093309d3fdd71c3ef/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.1] /Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] /Users/apple/.android/build-cache/eccdaee10d7aa91225e4d0783f0c64c91ac77ae9/output/AndroidManifest.xml:26:5-20
@@ -356,11 +366,30 @@ ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:
 	android:name
 		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:139:13-58
 activity#com.happywannyan.Activities.Booking.CancelBookingWithReasons
-ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:142:9-90
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:142:9-81
 	android:name
 		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:142:19-78
+meta-data#io.fabric.ApiKey
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:144:9-146:72
+	android:value
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:146:13-69
+	android:name
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:145:13-44
+activity#com.happywannyan.Activities.Booking.ActivityAcceptBooking
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:148:9-78
+	android:name
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:148:19-75
+activity#com.happywannyan.Activities.Booking.Addreview
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:149:9-75
+	android:name
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:149:19-63
 uses-sdk
 INJECTED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /Users/apple/.android/build-cache/e60140e7f2ed6996111fea2ebb3c4f49441fcffb/output/AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:beta:1.2.5] /Users/apple/.android/build-cache/822747d2b9e4b87f70dc73bb2f6c810cc92b696c/output/AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] /Users/apple/.android/build-cache/1edf77e64fdd7038e891dc0ef9f15fe85ca2afc8/output/AndroidManifest.xml:50:5-43
+MERGED from [com.crashlytics.sdk.android:answers:1.3.13] /Users/apple/.android/build-cache/3d4969d2a6684090a2585a443b344a0f403a0abf/output/AndroidManifest.xml:7:5-43
+MERGED from [io.fabric.sdk.android:fabric:1.3.17] /Users/apple/.android/build-cache/a3dad3a16670616dcf87e25ca54176ac1044df12/output/AndroidManifest.xml:27:5-43
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/apple/.android/build-cache/f4a9a478383530773c1a084093309d3fdd71c3ef/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:25.3.1] /Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:transition:25.3.1] /Users/apple/.android/build-cache/eccdaee10d7aa91225e4d0783f0c64c91ac77ae9/output/AndroidManifest.xml:20:5-44

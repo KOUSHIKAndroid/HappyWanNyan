@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -32,7 +33,7 @@ import java.util.TimeZone;
 
 public class BookingDetails extends AppCompatActivity {
 
-    JSONObject jsonObject;
+   public  static  JSONObject jsonObject;
     JSONArray PetInfo;
     LinearLayout LLPetInfo, LL_FOOTER1, LL_FOOTER2;
     AppLoader Loader;
@@ -55,11 +56,12 @@ public class BookingDetails extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        Loger.MSG("## KOUSHIK","dfghjkl---------");
         try {
             Loader=new AppLoader(this);
             jsonObject = new JSONObject(getIntent().getStringExtra("data"));
             PetInfo = jsonObject.getJSONArray("pet_details");
-            Loger.MSG("@@ Booking Details", jsonObject.toString());
             ImageView profimage = (ImageView) findViewById(R.id.img_view);
 
             ImageView backimage = (ImageView) findViewById(R.id.IMG_icon_back);
@@ -76,8 +78,6 @@ public class BookingDetails extends AppCompatActivity {
             ((SFNFBoldTextView) findViewById(R.id.Enddate)).setText(jsonObject.getJSONObject("booking_info").getString("booking_end_date"));
             ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(jsonObject.getJSONObject("booking_info").getString("booking_id"));
             ((SFNFBoldTextView) findViewById(R.id.tv_service_value)).setText(jsonObject.getJSONObject("booking_info").getString("booking_service"));
-
-
 
 
 
@@ -110,7 +110,7 @@ public class BookingDetails extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try {
-                            Deny_Button(jsonObject.getJSONObject("booking_info").getString("booking_id"));
+                            Deny_Button(jsonObject.getJSONObject("booking_info").getString("id"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -198,7 +198,7 @@ public class BookingDetails extends AppCompatActivity {
                             CancelStatusWork(jsonObject.getJSONObject("booking_info").getString("booking_id"),jsonObject.getJSONObject("booking_info").getString("booking_type"));
                             if(jsonObject.getJSONObject("booking_info").getInt("refund_status")==1)
                             {
-                                CancelWith_Reasons(jsonObject);
+                                CancelWith_Reasons();
                             }
 
                         } catch (JSONException e) {
@@ -221,7 +221,7 @@ public class BookingDetails extends AppCompatActivity {
                 ((CardView)ButtomView.findViewById(R.id.Card_AddRevw)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        CancelStatusButtonWork();
+
                     }
                 });
             }
@@ -294,9 +294,11 @@ public class BookingDetails extends AppCompatActivity {
 
     }
 
-    private void CancelWith_Reasons(JSONObject jsonObject) {
+    private void CancelWith_Reasons() {
+        Loger.MSG("@@BBB",jsonObject+" 33");
 
         Intent intent=new Intent(this,CancelBookingWithReasons.class);
+        intent.putExtra("OBJECTDATA",jsonObject+"");
         startActivity(intent);
 
     }
@@ -312,6 +314,88 @@ public class BookingDetails extends AppCompatActivity {
     }
 
     private void AcceptButton() {
+
+        try {
+            if(jsonObject.getJSONObject("booking_info").getString("accept_type_booking").equals("N"))
+            {
+//                Normal Confimation Accpet
+                MYALERT.AlertAccept_Cancel(getString(R.string.accept), getString(R.string.confirm_somple_msg), new MYAlert.OnOkCancel() {
+                    @Override
+                    public void OnOk() {
+                        Loader.Show();
+                        HashMap<String,String>Params=new HashMap<String, String>();
+                        Params.put("user_id",AppContsnat.UserId);
+                        try {
+                            Params.put("booking_id",jsonObject.getJSONObject("booking_info").getString("id"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        Params.put("langid",AppContsnat.Language);
+                        Params.put("user_timezone",TimeZone.getDefault().getID());
+
+                        new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "normal_accept_booking", Params, new JSONPerser.JSONRESPONSE() {
+                            @Override
+                            public void OnSuccess(String Result) {
+                                Loader.Dismiss();
+                                try {
+                                    MYALERT.AlertForAPIRESPONSE(getString(R.string.accept), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
+                                        @Override
+                                        public void OnOk(boolean res) {
+
+                                        }
+                                    });
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+
+                            @Override
+                            public void OnError(String Error, String Response) {
+                                Loader.Dismiss();
+                                try {
+                                    MYALERT.AlertForAPIRESPONSE(getString(R.string.accept), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                        @Override
+                                        public void OnOk(boolean res) {
+
+                                        }
+                                    });
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void OnError(String Error) {
+                                Loader.Dismiss();
+                                MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                    }
+                                });
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void OnCancel() {
+
+                    }
+                });
+
+
+
+            }else  if(jsonObject.getJSONObject("booking_info").getString("accept_type_booking").equals("P")){
+//                Open Popup With pet_info_section and  users_payment_section from JSON
+                startActivity(new Intent(this,ActivityAcceptBooking.class));
+
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void Deny_Button(String BookingID) {
@@ -427,6 +511,9 @@ public class BookingDetails extends AppCompatActivity {
     }
 
     private void Review_Status() {
+
+        startActivity(new Intent(this,Addreview.class));
+
     }
 
     private void CancelStatusWork(final String BookingID,final String BookingType) {
@@ -501,6 +588,4 @@ public class BookingDetails extends AppCompatActivity {
 
     }
 
-    private void CancelStatusButtonWork() {
-    }
 }

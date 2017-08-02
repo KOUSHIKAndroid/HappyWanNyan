@@ -108,6 +108,39 @@ public class MYAlert {
         Dialog.show();
     }
 
+    public void AlertAccept_Cancel(String Title, String Message, final OnOkCancel onlyMessage) {
+        AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);
+        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
+                (Context.LAYOUT_INFLATER_SERVICE);
+        View LayView = inflater.inflate(R.layout.alert_dialog_ok_cancel, null);
+        SFNFTextView TXTMessage = (SFNFTextView) LayView.findViewById(R.id.Message);
+        TXTMessage.setText(Message);
+        SFNFTextView TXTTitle = (SFNFTextView) LayView.findViewById(R.id.Title);
+        TXTTitle.setText(Title);
+        Button BTN_OK = (Button) LayView.findViewById(R.id.BTN_OK);
+        BTN_OK.setText(mContext.getString(R.string.confirm));
+        Button BTN_CANCEL = (Button) LayView.findViewById(R.id.BTN_CANCEL);
+
+        BTN_OK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onlyMessage.OnOk();
+                Dialog.dismiss();
+            }
+        });
+
+        BTN_CANCEL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onlyMessage.OnCancel();
+                Dialog.dismiss();
+            }
+        });
+
+        alertbuilder.setView(LayView);
+        Dialog = alertbuilder.create();
+        Dialog.show();
+    }
 
     public void AlertTextLsit(String Title, JSONArray ListArray, String GetPramsName, final OnSignleListTextSelected onSignleListTextSelected) {
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);

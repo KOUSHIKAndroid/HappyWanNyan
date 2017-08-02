@@ -20,20 +20,20 @@
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_button_send_background.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_skip_ad_label_border.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_skip_ad_label_border.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ratingbar_material.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_user.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_user.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_connecting_dark.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_connecting_dark.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_user.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_user.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_skip_ad_label_border.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_skip_ad_label_border.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
@@ -100,12 +100,12 @@
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_button_like_background.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_closed_caption.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_closed_caption.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_photo_library_white.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_photo_library_white.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_closed_caption.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_closed_caption.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_blue_bg_round.xml",
@@ -476,12 +476,12 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/side_nav_bar.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/notification_tile_bg.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_share_location_white.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_share_location_white.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/notification_tile_bg.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
