@@ -23,11 +23,13 @@
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/PAGE_Titile"
             android:layout_toRightOf="@+id/IMG_icon_back"
+            android:layout_toLeftOf="@+id/IMG_Filter"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:paddingLeft="20dp"
+            android:maxLines="1"
             android:minLines="1"
-            android:gravity="center"
+            android:gravity="center_vertical|left"
             android:padding="5dp"
             android:textColor="@color/colorwhite"
             android:textSize="@dimen/page_titiel" />

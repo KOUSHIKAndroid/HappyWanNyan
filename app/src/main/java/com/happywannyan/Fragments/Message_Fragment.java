@@ -1,6 +1,13 @@
 package com.happywannyan.Fragments;
 
+import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,15 +15,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
+import android.widget.Toast;
 
 import com.happywannyan.Adapter.Adapter_message;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.MessageDataType;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;
@@ -24,6 +34,7 @@ import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 
@@ -50,15 +61,16 @@ public class Message_Fragment extends Fragment {
     public static String MESSAGECODE="";
     RecyclerView recyclerView;
     AppLoader appLoader;
-    ArrayList<JSONObject> AllMessage;
-    SFNFTextView tv_all_message,tv_unread_message,tv_unResponded_message,tv_reservation_message;
-    View view_between_all_unread_message,view_between_unread_unResponded_message,view_unResponded_reservation_message;
+    ArrayList<MessageDataType> AllMessage;
+    SFNFTextView tv_all_message,tv_unread_message,tv_reservation_message;
+    View view_between_all_unread_message,view_unResponded_reservation_message;
 
     HorizontalScrollView scrollView_horizontal;
     ArrayList<APIPOSTDATA> Params ;
     Adapter_message adapter_message;
     String type;
     private OnFragmentInteractionListener mListener;
+    private Paint p = new Paint();
 
     public Message_Fragment() {
         // Required empty public constructor
@@ -110,11 +122,10 @@ public class Message_Fragment extends Fragment {
 
         tv_all_message= (SFNFTextView) view.findViewById(R.id.tv_all_message);
         tv_unread_message= (SFNFTextView) view.findViewById(R.id.tv_unread_message);
-        tv_unResponded_message= (SFNFTextView) view.findViewById(R.id.tv_unResponded_message);
+//        tv_unResponded_message= (SFNFTextView) view.findViewById(R.id.tv_unResponded_message);
         tv_reservation_message= (SFNFTextView) view.findViewById(R.id.tv_reservation_message);
         scrollView_horizontal=(HorizontalScrollView)view.findViewById(R.id.scrollView_horizontal);
         view_between_all_unread_message=view.findViewById(R.id.view_between_all_unread_message);
-        view_between_unread_unResponded_message=view.findViewById(R.id.view_between_unread_unResponded_message);
         view_unResponded_reservation_message=view.findViewById(R.id.view_unResponded_reservation_message);
 
 
@@ -159,11 +170,10 @@ public class Message_Fragment extends Fragment {
                 TAGNAME=tv_all_message.getText().toString();
                 tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
                 tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+//                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
 
                 view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_between_unread_unResponded_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
 
                 type="all_message_list";
@@ -178,47 +188,45 @@ public class Message_Fragment extends Fragment {
 
                 tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+//                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 scrollView_horizontal.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
                 view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                view_between_unread_unResponded_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
                 view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 AllMessage = new ArrayList<>();
                 type="generalinquiry_message_list";
                 loadList("0");
             }
         });
-        tv_unResponded_message.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                TAGNAME=tv_unResponded_message.getText().toString();
-                tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-
-                view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                view_between_unread_unResponded_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-
-                AllMessage = new ArrayList<>();
-                type="meetgreet_message_list";
-                loadList("0");
-            }
-        });
+//        tv_unResponded_message.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                TAGNAME=tv_unResponded_message.getText().toString();
+//                tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+//                tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+//                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
+//                tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+//
+//                view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+//                view_between_unread_unResponded_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
+//                view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
+//
+//                AllMessage = new ArrayList<>();
+//                type="meetgreet_message_list";
+//                loadList("0");
+//            }
+//        });
         tv_reservation_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TAGNAME=tv_reservation_message.getText().toString();
                 tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+//                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
                 scrollView_horizontal.fullScroll(HorizontalScrollView.FOCUS_LEFT);
                 view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_between_unread_unResponded_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
 
                 AllMessage = new ArrayList<>();
@@ -255,14 +263,17 @@ public class Message_Fragment extends Fragment {
             public void OnSuccess(String Result) {
                 try {
                     JSONObject jsonObject=new JSONObject(Result);
-                    JSONArray all_message=jsonObject.getJSONArray("all_message");
+                    final JSONArray all_message=jsonObject.getJSONArray("all_message");
 
                     int next_data=jsonObject.getInt("next_data");
                     Loger.MSG("next_data",""+next_data);
 
                     for(int i=0;i<all_message.length();i++)
                     {
-                        AllMessage.add(all_message.getJSONObject(i));
+                        MessageDataType messageDataType=new MessageDataType();
+                        messageDataType.setJsonObject(all_message.getJSONObject(i));
+                        messageDataType.setScrooll(false);
+                        AllMessage.add(messageDataType);
                     }
                     if(start_from.equals("0")) {
                         adapter_message = new Adapter_message(getActivity(),Message_Fragment.this, AllMessage);
@@ -273,6 +284,72 @@ public class Message_Fragment extends Fragment {
                         adapter_message.nextData=next_data;
                         adapter_message.notifyDataSetChanged();
                     }
+
+                    ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT ) {
+
+                        @Override
+                        public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+
+                            return false;
+                        }
+
+
+
+                        @Override
+                        public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+                            Bitmap icon;
+                            if(actionState == ItemTouchHelper.ACTION_STATE_SWIPE){
+
+
+                                Loger.MSG("@# Swipe X- ",dX+"");
+                                Loger.MSG("@# Swipe Y- ",dY+"");
+
+//                                if(dX<-325)
+//                                {
+//                                    int position = viewHolder.getAdapterPosition();
+//                                    AllMessage.get(position).setScrooll(true);
+//                                    adapter_message.notifyDataSetChanged();
+//                                }
+
+                                View itemView = viewHolder.itemView;
+                                float height = (float) itemView.getBottom() - (float) itemView.getTop();
+                                float width = height / 3;
+
+                                if(dX > 0){
+                                    p.setColor(Color.parseColor("#388E3C"));
+                                    RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop(), dX,(float) itemView.getBottom());
+                                    c.drawRect(background,p);
+                                    icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_vector_favourite_delete_white);
+                                    RectF icon_dest = new RectF((float) itemView.getLeft() + width ,(float) itemView.getTop() + width,(float) itemView.getLeft()+ 2*width,(float)itemView.getBottom() - width);
+                                    c.drawBitmap(icon,null,icon_dest,p);
+                                } else {
+                                    p.setColor(Color.parseColor("#D32F2F"));
+                                    RectF background = new RectF((float) itemView.getRight() + dX, (float) itemView.getTop(),(float) itemView.getRight(), (float) itemView.getBottom());
+                                    c.drawRect(background,p);
+                                    icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_delete);
+                                    RectF icon_dest = new RectF((float) itemView.getRight() - 2*width ,(float) itemView.getTop() + width,(float) itemView.getRight() - width,(float)itemView.getBottom() - width);
+                                    c.drawBitmap(icon,null,icon_dest,p);
+                                }
+                            }
+
+                            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+                        }
+
+                        @Override
+                        public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+                            Toast.makeText(getActivity(), "on Swiped ", Toast.LENGTH_SHORT).show();
+                            //Remove swiped item from list and notify the RecyclerView
+                            int position = viewHolder.getAdapterPosition();
+
+                            DeleteMethodCall(position);
+
+
+
+                        }
+                    };
+
+                    ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+                    itemTouchHelper.attachToRecyclerView(recyclerView);
                     appLoader.Dismiss();
                 }catch (Exception e)
                 {
@@ -300,6 +377,77 @@ public class Message_Fragment extends Fragment {
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+            }
+        });
+    }
+
+    private void DeleteMethodCall(final int position) {
+        new MYAlert(getActivity()).AlertAccept_Cancel(getString(R.string.delete), getString(R.string.delete_message), new MYAlert.OnOkCancel() {
+            @Override
+            public void OnOk() {
+
+                appLoader.Show();
+
+                try {
+                    String MessageID=AllMessage.get(position).getJsonObject().getString("message_id");
+                    String ReciverId=AllMessage.get(position).getJsonObject().getString("receiver_id");
+                    new JSONPerser().API_FOR_GET(AppContsnat.BASEURL+"message_deleted_API?user_id="+AppContsnat.UserId+"&message_id="+MessageID+"&receiver_id="+ReciverId,
+                    new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+                        @Override
+                        public void OnSuccess(String Result) {
+
+                            AllMessage.remove(position);
+                            adapter_message.notifyDataSetChanged();
+                            appLoader.Dismiss();
+
+                        }
+
+                        @Override
+                        public void OnError(String Error, String Response) {
+                            try {
+                                appLoader.Dismiss();
+                                new MYAlert(getActivity()).AlertForAPIRESPONSE(getString(R.string.delete), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                    }
+                                });
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+
+                        @Override
+                        public void OnError(String Error) {
+                            try {
+                                appLoader.Dismiss();
+                                new MYAlert(getActivity()).AlertForAPIRESPONSE(getString(R.string.delete), Error, new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                    }
+                                });
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+
+
+            }
+
+            @Override
+            public void OnCancel() {
+                adapter_message.notifyDataSetChanged();
+
             }
         });
     }

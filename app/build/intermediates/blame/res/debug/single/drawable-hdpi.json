@@ -8,6 +8,38 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/frame_0.png"
     },
     {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/float_map.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/float_map.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_fab_plus.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_fab_plus.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/float_list.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/float_list.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_time.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_time.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_swipe_right.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_swipe_right.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map_icon.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_map_icon.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_watch.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_watch.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_calender_balack.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_calender_balack.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_calender_white.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_calender_white.png"
     },
@@ -20,32 +52,20 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/frame_7.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/float_map.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/float_map.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/frame_4.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/frame_4.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_action_delete.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_action_delete.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/frame_1.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/frame_1.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_fab_plus.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_fab_plus.png"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/float_list.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/float_list.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/start_date_picture.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/start_date_picture.png"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_time.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_time.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/end_date_picture.png",
@@ -68,27 +88,11 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_walkingpets.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_swipe_right.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_swipe_right.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_swipe_left.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_swipe_left.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map_icon.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_map_icon.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_fab_minus.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_fab_minus.png"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_watch.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_watch.png"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_calender_balack.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_calender_balack.png"
     }
 ]

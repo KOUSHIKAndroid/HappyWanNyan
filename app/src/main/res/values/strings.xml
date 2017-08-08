@@ -190,4 +190,5 @@
     <string name="confirm_somple_msg">Are you sure that you want to accept this booking ?</string>
     <string name="submit_review">Submit Review</string>
     <string name="upload_attachment">Upload Attachment</string>
+    <string name="delete_message">Delete this message?</string>
 </resources>

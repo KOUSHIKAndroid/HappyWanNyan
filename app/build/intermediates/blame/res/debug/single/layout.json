@@ -16,24 +16,24 @@
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_intro_overlay.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/layout/cast_intro_overlay.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_profile_main.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/activity_profile_main.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/mr_playback_control.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/layout/mr_playback_control.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_profile_main.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/activity_profile_main.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
-        "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/layout/design_navigation_item_header.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_intro_overlay.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/layout/cast_intro_overlay.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/profile_fragment_listing_only.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/profile_fragment_listing_only.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
+        "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/layout/design_navigation_item_header.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_booking_details.xml",

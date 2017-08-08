@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import com.happywannyan.Constant.AppContsnat;
@@ -39,7 +40,6 @@ public double ne_lng,ne_lat,sw_lng,sw_lat;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
         appLoader = new AppLoader(this);
-
 
 
         try {

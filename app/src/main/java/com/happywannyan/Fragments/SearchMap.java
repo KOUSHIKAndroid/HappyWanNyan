@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +53,7 @@ public class SearchMap extends Fragment implements OnMapReadyCallback, GoogleMap
     private String mParam1;
     private String mParam2;
     LatLngBounds PresetLatBounds;
+    int Screenwidth=0;
     GoogleMap Map;
     public SearchMap() {
         // Required empty public constructor
@@ -74,6 +76,11 @@ public class SearchMap extends Fragment implements OnMapReadyCallback, GoogleMap
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        Screenwidth = displayMetrics.widthPixels;
     }
 
     @Override
@@ -171,7 +178,7 @@ public class SearchMap extends Fragment implements OnMapReadyCallback, GoogleMap
             public View getInfoContents(Marker marker) {
                 // Getting view from the layout file info_window_layout
                 View v = getActivity().getLayoutInflater().inflate(R.layout.map_popup_time, null);
-                v.setLayoutParams(new RelativeLayout.LayoutParams(700,280));
+                v.setLayoutParams(new RelativeLayout.LayoutParams(Screenwidth/2, ViewGroup.LayoutParams.WRAP_CONTENT));
                 LatLng latLng = marker.getPosition();
                 try {
                     JSONObject jsonObject=new JSONObject(marker.getTitle()+"");

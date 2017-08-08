@@ -28,6 +28,10 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/float_map.png"
     },
     {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_delete.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_action_delete.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_fab_like.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable-mdpi/ic_fab_like.png"
     },

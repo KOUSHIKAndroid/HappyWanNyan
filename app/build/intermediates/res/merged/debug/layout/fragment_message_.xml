@@ -85,23 +85,23 @@
                     android:layout_height="15dp"
                     android:background="@color/gray_project"
                     />
-                <com.happywannyan.Font.SFNFTextView
-                    android:id="@+id/tv_unResponded_message"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/meetgreet"
-                    android:textColor="@color/text_dark_gray"
-                    android:paddingLeft="14dp"
-                    android:paddingRight="14dp"/>
+                <!--<com.happywannyan.Font.SFNFTextView-->
+                    <!--android:id="@+id/tv_unResponded_message"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/meetgreet"-->
+                    <!--android:textColor="@color/text_dark_gray"-->
+                    <!--android:paddingLeft="14dp"-->
+                    <!--android:paddingRight="14dp"/>-->
 
-                <View
-                    android:id="@+id/view_between_unread_unResponded_message"
-                    android:layout_gravity="center"
-                    android:layout_width="1dip"
-                    android:layout_height="15dp"
-                    android:background="@color/gray_project"
-                    />
+                <!--<View-->
+                    <!--android:id="@+id/view_between_unread_unResponded_message"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_width="1dip"-->
+                    <!--android:layout_height="15dp"-->
+                    <!--android:background="@color/gray_project"-->
+                    <!--/>-->
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/tv_unread_message"
                     android:layout_width="wrap_content"

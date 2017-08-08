@@ -3,6 +3,7 @@ package com.happywannyan.Fragments;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +17,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -46,6 +49,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -74,6 +78,8 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
     String LowPrice = "", HighPrice = "";
     ImageView IMG_erase_location, IMG_Location;
     boolean GPS = false;
+    RelativeLayout RL_Search;
+    ScrollView SCROLLL;
 
     AlertDialog Dialog;
     ImageView IMG_SERVICE;
@@ -140,14 +146,18 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
         TXT_highestRange = (SFNFTextView) view.findViewById(R.id.TXT_highestRange);
         IMG_Location = (ImageView) view.findViewById(R.id.ImgMyLocation);
         IMG_erase_location = (ImageView) view.findViewById(R.id.IMG_erase_location);
-
+        RL_Search=(RelativeLayout)view.findViewById(R.id.RL_Search);
+        SCROLLL=(ScrollView)view.findViewById(R.id.SCROLLL);
         TXT_petType = (SFNFTextView) view.findViewById(R.id.TXT_petType);
 
         try {
-            if (mParam1.getJSONArray("allPetDetails").length() > 0) {
-                TXT_petType.setText(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
-            }
-            TXT_petType.setTag(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
+
+
+
+//            if (mParam1.getJSONArray("allPetDetails").length() > 0) {
+//                TXT_petType.setText(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
+//            }
+//            TXT_petType.setTag(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
 
             Loger.MSG("mParam_allPetDetails", "" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
 
@@ -310,6 +320,7 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
                                     try {
                                         TXT_petType.setText(jsonObject.getString("name"));
                                         TXT_petType.setTag(jsonObject.getString("id"));
+
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
@@ -374,6 +385,8 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
                                                         } catch (JSONException e) {
 
                                                         }
+
+
                                                     }
 
                                                     @Override
@@ -439,6 +452,14 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
         view.findViewById(R.id.RL_Serach).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                if(TXT_petType.getText().toString().trim().equals(""))
+                {
+                    TXT_petType.setHintTextColor(Color.RED);
+                    SCROLLL.scrollTo(0, TXT_petType.getBottom());
+
+                }else
                 nextIntentShow();
             }
         });

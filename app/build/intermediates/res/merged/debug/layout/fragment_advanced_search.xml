@@ -172,6 +172,7 @@
 
         </RelativeLayout>
     <ScrollView
+        android:id="@+id/SCROLLL"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -200,7 +201,7 @@
                     android:layout_below="@+id/T1"
                     android:layout_centerVertical="true"
                     android:paddingTop="10dp"
-                    android:text="name"
+                    android:hint="@string/pleaseselect"
                     android:textColor="@color/Black"
                     />
 
@@ -358,6 +359,7 @@
                 android:id="@+id/RL_Serach"
                 android:layout_width="170dp"
                 android:layout_height="80dp"
+                android:visibility="visible"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/ic_btn_red">

@@ -1033,7 +1033,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
-    <dimen name="page_titiel">20sp</dimen>
+    <dimen name="page_titiel">18sp</dimen>
     <dimen name="place_autocomplete_button_padding">16dp</dimen>
     <dimen name="place_autocomplete_powered_by_google_height">40dp</dimen>
     <dimen name="place_autocomplete_powered_by_google_start">16dp</dimen>
@@ -1231,7 +1231,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">b6c34fa0-3ccf-4f94-a7ab-fe038d593702</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">5b51920d-d4fc-4daf-8d99-0d451ffa500a</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1288,6 +1288,7 @@
     <string name="decline">Decline</string>
     <string name="default_web_client_id" translatable="false">279432934653-8a28nsfq9l66ds7knqk1c7o08a30peua.apps.googleusercontent.com</string>
     <string name="delete">Delete</string>
+    <string name="delete_message">Delete this message?</string>
     <string name="describeyourcat">Describe your cat</string>
     <string name="do_you_want_to_cancel_booking">Are you sure you want to cancel this booking?</string>
     <string name="do_you_want_to_delete">Do you want to delete ?</string>
