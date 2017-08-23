@@ -245,16 +245,16 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
                     new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "reply_message", Params, new JSONPerser.JSONRESPONSE() {
                         @Override
                         public void OnSuccess(String Result) {
-                            try {
-                                ARRAy.getJSONObject(ARRAy.length()-1).getJSONArray("info").put(new JSONObject(Result).getJSONObject("info"));
-                                messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
-                                LL_UserInfo.setAdapter(messageADapter);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+//                            try {
+//                                ARRAy.getJSONObject(ARRAy.length()-1).getJSONArray("info").put(new JSONObject(Result).getJSONObject("info"));
+//                                messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
+//                                LL_UserInfo.setAdapter(messageADapter);
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
 
 
-//                            FetCh();
+                            FetCh();
                             EDX_Text.setText("");
                             Loader.Dismiss();
                         }
@@ -604,7 +604,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
             Log.d("receiver", "ID message: " + MessageId);
 
             try {
-                if(MessageId.equals(new JSONObject(message).getString("message_id"))) {
+                if(MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("parent_id"))) {
                     ARRAy.getJSONObject(ARRAy.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
                     messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
                     LL_UserInfo.setAdapter(messageADapter);

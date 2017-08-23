@@ -5,14 +5,23 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.happywannyan.Adapter.Adapter_Card;
+import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
+import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
+import com.happywannyan.Utils.AppLoader;
+import com.happywannyan.Utils.JSONPerser;
 import com.stripe.android.model.Card;
 import com.stripe.android.view.CardInputWidget;
+
+import java.util.ArrayList;
 
 
 public class BookingFragmentFoure extends Fragment {
@@ -24,6 +33,9 @@ public class BookingFragmentFoure extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    RecyclerView REC_Card;
+    AppLoader Loader;
 
     private OnFragmentInteractionListener mListener;
 
@@ -56,6 +68,7 @@ public class BookingFragmentFoure extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Loader=new AppLoader(getActivity());
     }
 
     @Override
@@ -73,7 +86,35 @@ public class BookingFragmentFoure extends Fragment {
         if (cardToSave == null) {
 //            mErrorDialogHandler.showError("Invalid Card Data");
         }
+        REC_Card=(RecyclerView)view.findViewById(R.id.REC_Card);
+        REC_Card.setLayoutManager(new LinearLayoutManager(getActivity()));
+        SetCardDetails();
 
+
+    }
+
+    private void SetCardDetails() {
+        Loader.Show();
+        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+                , new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+                    @Override
+                    public void OnSuccess(String Result) {
+                        Loader.Dismiss();
+                        REC_Card.setAdapter(new Adapter_Card(getActivity(),Result));
+                    }
+
+                    @Override
+                    public void OnError(String Error, String Response) {
+                        Loader.Dismiss();
+
+                    }
+
+                    @Override
+                    public void OnError(String Error) {
+                        Loader.Dismiss();
+
+                    }
+                });
 
     }
 

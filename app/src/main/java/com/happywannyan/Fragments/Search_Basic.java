@@ -382,7 +382,7 @@ public class Search_Basic extends Fragment implements AppLocationProvider.Addres
 
                 data = new JSONObject();
                 data.put("name", "pet_type");
-                data.put("value", "");
+                data.put("value", "1");
                 Searchkeyinfor.put(data);
 
                 data = new JSONObject();

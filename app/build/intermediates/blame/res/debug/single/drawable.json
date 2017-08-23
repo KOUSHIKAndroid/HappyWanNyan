@@ -216,6 +216,10 @@
         "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
     },
     {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_circle.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_circle.xml"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_vector_test.xml"
     },

@@ -44,9 +44,11 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
         <RatingBar
+            android:id="@+id/RATINGID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:id="@+id/EDX_message"
             android:layout_width="match_parent"
             android:minLines="5"
             android:layout_marginTop="10dp"
@@ -54,6 +56,8 @@
             android:gravity="top"
             android:layout_height="wrap_content" />
         <LinearLayout
+            android:id="@+id/LL_Attach"
+            android:onClick="onClick"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:gravity="center_vertical"

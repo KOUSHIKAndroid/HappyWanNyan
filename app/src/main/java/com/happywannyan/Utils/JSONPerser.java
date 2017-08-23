@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.happywannyan.POJO.APIPOSTDATA;
 
@@ -185,11 +186,9 @@ public class JSONPerser {
 
 
         new AsyncTask<Void, Void, Void>() {
-
             private String respose = null;
             private Exception exception=null;
             MultipartBody.Builder buildernew;
-
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -282,6 +281,92 @@ public class JSONPerser {
                     buildernew.addFormDataPart(""+ImageParamse, file.getName() + "", RequestBody.create(MEDIA_TYPE_PNG, file));
 
                 }
+
+
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    if (!isCancelled()) {
+
+                        MultipartBody requestBody = buildernew.build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                        Request request = new Request.Builder().url(URL) .method("POST", RequestBody.create(null, new byte[0]))
+                                .post(requestBody).build();
+                        Response response = client.newCall(request).execute();
+
+
+                        respose = response.body().string();
+
+                        Loger.MSG("response", "respose_::" + respose);
+                        Loger.MSG("response", "respose_ww_message::" + response.message());
+                        Loger.MSG("response", "respose_ww_headers::" + response.headers());
+                        Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
+//                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
+                    }
+                } catch (Exception e) {
+                    this.exception=e;
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                if (!isCancelled() && exception==null) {
+
+                    try{
+                        if(new JSONObject(respose).getBoolean("response"))
+                        {
+                            jsonresponse.OnSuccess(respose);
+                        }else {
+                            jsonresponse.OnError(new JSONObject(respose).getString("message")+"",respose);
+                        }
+                    }catch (Exception e){}
+
+
+
+                }else {
+                    jsonresponse.OnError(exception.getMessage()+"");
+                }
+            }
+        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    public void API_FOR_With_Photo_POST_2( final String URL, final HashMap<String,String> apipostdata, final HashMap<String,File> Photos, final JSONRESPONSE jsonresponse){
+
+        final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
+
+        new AsyncTask<Void, Void, Void>() {
+
+            private String respose = null;
+            private Exception exception=null;
+            MultipartBody.Builder buildernew;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
+                Iterator myVeryOwnIterator = apipostdata.keySet().iterator();
+                while(myVeryOwnIterator.hasNext()) {
+                    String key=(String)myVeryOwnIterator.next();
+                    String value=(String)apipostdata.get(key);
+                    Loger.MSG(key,value);
+                    buildernew.addFormDataPart(key, value);
+                }
+
+                myVeryOwnIterator = Photos.keySet().iterator();
+                while(myVeryOwnIterator.hasNext()) {
+                    String key=(String)myVeryOwnIterator.next();
+                    File value=(File) Photos.get(key);
+                    {if(value!=null)
+                        buildernew.addFormDataPart(""+key, value.getName() + "", RequestBody.create(MEDIA_TYPE_PNG, value.getName()));
+
+                    }                }
+
 
 
             }

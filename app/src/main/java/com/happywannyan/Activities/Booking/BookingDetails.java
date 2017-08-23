@@ -511,8 +511,14 @@ public class BookingDetails extends AppCompatActivity {
     }
 
     private void Review_Status() {
+        try {
+            Intent intent=new Intent(this,Addreview.class);
+            intent.putExtra("B_ID",jsonObject.getJSONObject("booking_info").getString("booking_id"));
+            startActivity(new Intent(this,Addreview.class));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-        startActivity(new Intent(this,Addreview.class));
 
     }
 

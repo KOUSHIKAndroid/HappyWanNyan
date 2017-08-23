@@ -332,6 +332,10 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/alert_dialog_api_response.xml"
     },
     {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/card_layout.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/card_layout.xml"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/layout/abc_popup_menu_item_layout.xml"
     },

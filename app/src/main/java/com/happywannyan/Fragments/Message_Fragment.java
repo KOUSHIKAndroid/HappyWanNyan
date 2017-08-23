@@ -342,7 +342,7 @@ public class Message_Fragment extends Fragment {
                             int position = viewHolder.getAdapterPosition();
 
                             DeleteMethodCall(position);
-
+//                            adapter_message.notifyDataSetChanged();
 
 
                         }

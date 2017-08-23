@@ -130,7 +130,7 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
                         Message_Fragment.MESSAGECODE = object.getString("message_type_code");
                         Message_Fragment.TAGNAME = object.getString("message_type");
                         Intent intent = new Intent(context, MessageDetailsPage.class);
-                        intent.putExtra("message_id", object.getString("message_id"));
+                        intent.putExtra("message_id", object.getString("parent_id"));
                         if (!AppContsnat.UserId.equals(object.getString("receiver_id")))
                             intent.putExtra("receiver_id", object.getString("receiver_id"));
                         else
