@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="5dp"
     android:background="@color/gray_project"
     android:orientation="vertical">
@@ -23,17 +24,41 @@
             android:text="DAY CARE FOR DYNAMIC CREATURE"
             android:textColor="@color/Black"
             android:textSize="14sp" />
-
-        <com.happywannyan.Font.SFNFTextView
-            android:id="@+id/Description"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="dynamic description will be here from api describing the nature of dervice for dynamic creature......"
-            android:textColor="#333333"
-            android:textSize="14sp" />
+            android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/IMG_SERVICES"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content" />
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/Description"
+                android:layout_toRightOf="@+id/IMG_SERVICES"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:tag="more"
+                android:paddingRight="20dp"
+                android:text="dynamic description will be from api de for dynamichgvhg yg y yg uygyug ygyg creature......"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/TXT_ViewMore"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/Description"
+                android:paddingRight="20dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:text="@string/viewmore"
+                android:textColor="@color/btn_red"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"

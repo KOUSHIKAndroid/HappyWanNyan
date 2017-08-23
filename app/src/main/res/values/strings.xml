@@ -75,7 +75,7 @@
     <string name="specialskill">SPECIAL SKILLS</string>
     <string name="specialaccomod">SPECIAL ACCOMMODATIONS</string>
     <string name="booknow">BOOK NOW</string>
-    <string name="petrequirement">PET REQUIREMENTS</string>
+    <string name="petrequirement">PET SIZE ACCEPTED</string>
 
 
     <!-- Your Pet-->
@@ -191,4 +191,6 @@
     <string name="submit_review">Submit Review</string>
     <string name="upload_attachment">Upload Attachment</string>
     <string name="delete_message">Delete this message?</string>
+    <string name="viewmore">View More..</string>
+    <string name="description">Description</string>
 </resources>

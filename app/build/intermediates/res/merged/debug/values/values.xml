@@ -1231,7 +1231,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">dc51a56e-e706-4e75-86c9-7895c820f8e8</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">bd00eee8-2b1b-48d1-b4d0-6ced2c1bd6b6</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1290,6 +1290,7 @@
     <string name="delete">Delete</string>
     <string name="delete_message">Delete this message?</string>
     <string name="describeyourcat">Describe your cat</string>
+    <string name="description">Description</string>
     <string name="do_you_want_to_cancel_booking">Are you sure you want to cancel this booking?</string>
     <string name="do_you_want_to_delete">Do you want to delete ?</string>
     <string name="donthaveanacc">Don\'t have an account?</string>
@@ -1381,7 +1382,7 @@
     <string name="pet_age">Pet age</string>
     <string name="pet_homestay">Pet Homestay</string>
     <string name="pet_size">Pet size</string>
-    <string name="petrequirement">PET REQUIREMENTS</string>
+    <string name="petrequirement">PET SIZE ACCEPTED</string>
     <string name="petsitting">Pet Sitting</string>
     <string name="pickuptime">Pick-Up Time</string>
     <string name="place_autocomplete_clear_button">Clear search</string>
@@ -1434,6 +1435,7 @@
     <string name="up_coming_booking_total_amount">Total Amount</string>
     <string name="up_coming_booking_total_pets">Total Pet\'s</string>
     <string name="upload_attachment">Upload Attachment</string>
+    <string name="viewmore">View More..</string>
     <string name="wallet_buy_button_place_holder">Buy with Google</string>
     <string name="wanyanmeetup">Wan-Nyan meet up</string>
     <string name="whatisyourdailybudgetperpet">What is your daily budget per pet?</string>

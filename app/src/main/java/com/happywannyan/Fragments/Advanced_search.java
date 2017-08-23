@@ -154,10 +154,10 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
 
 
 
-//            if (mParam1.getJSONArray("allPetDetails").length() > 0) {
-//                TXT_petType.setText(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
-//            }
-//            TXT_petType.setTag(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
+            if (mParam1.getJSONArray("allPetDetails").length() > 0) {
+                TXT_petType.setText(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
+            }
+            TXT_petType.setTag(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
 
             Loger.MSG("mParam_allPetDetails", "" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
 
@@ -250,6 +250,7 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
 
             Glide.with(getActivity()).load(mParam1.getString("selected_image")).into(IMG_SERVICE);
             (TXT_SERVICENAME).setText(mParam1.getString("name"));
+            TXT_SERVICENAME.setTag(mParam1.getString("id"));
 
             TXT_Loction.setText(mParam1.getString("LocationName"));
 
@@ -620,12 +621,26 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
 
     public void refreshPage(String id, String name, String ImgSelectedName) {
 
+
+        try {
+            if (mParam1.getJSONArray("allPetDetails").length() > 0) {
+                TXT_petType.setText(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
+                TXT_petType.setTag(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
+
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
         LL_PetSizeValue.removeAllViews();
         LL_Pet_Age.removeAllViews();
         LL_OtherOption.removeAllViews();
 
         Glide.with(getActivity()).load(ImgSelectedName).into(IMG_SERVICE);
         (TXT_SERVICENAME).setText(name);
+        (TXT_SERVICENAME).setTag(id);
 
         try {
             new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "pet_type_info?pet_type_id=" + 1 + "&langid=" + AppContsnat.Language,
@@ -724,7 +739,7 @@ public class Advanced_search extends Fragment implements AppLocationProvider.Add
 
             data = new JSONObject();
             data.put("name", "serviceCat");
-            data.put("value", mParam1.getString("id"));
+            data.put("value", ""+TXT_SERVICENAME.getTag());
             Searchkeyinfor.put(data);
 
             data = new JSONObject();

@@ -4,11 +4,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.profile.ProfileDetails;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
@@ -52,7 +55,7 @@ public class ProfileFragAbout extends Fragment {
             LinearLayout LLHightLisgt=(LinearLayout)view.findViewById(R.id.LLHightLisgt);
             JSONArray Skills=jsonObject.getJSONObject("info_array").getJSONArray("special_skills");
             JSONArray SPCLAcco=jsonObject.getJSONObject("info_array").getJSONArray("spe_accommodation");
-            JSONArray hightlight_feature=jsonObject.getJSONObject("info_array").getJSONArray("hightlight_feature");
+            JSONArray hightlight_feature=jsonObject.getJSONObject("info_array").getJSONArray("pet_requirment");
 
             for(int i=0;i<Skills.length();i++){
                 View item=LayoutInflater.from(getActivity()).inflate(R.layout.profile_about_items,null);
@@ -70,11 +73,27 @@ public class ProfileFragAbout extends Fragment {
             }
 
             for(int i=0;i<hightlight_feature.length();i++){
-                View item=LayoutInflater.from(getActivity()).inflate(R.layout.profile_about_items,null);
-                SFNFTextView textView=(SFNFTextView)item.findViewById(R.id.Text);
-                textView.setText(hightlight_feature.getString(i));
-                textView.setTextColor(getResources().getColor(R.color.btn_red));
-                LLHightLisgt.addView(item);
+                SFNFTextView Tittle=new SFNFTextView(getActivity());
+                Tittle.setText(hightlight_feature.getJSONObject(i).getString("heading_name"));
+                LLHightLisgt.addView(Tittle);
+
+
+                LinearLayout Horizental=new LinearLayout(getActivity());
+                Horizental.setOrientation(LinearLayout.HORIZONTAL);
+                Horizental.setGravity(Gravity.BOTTOM);
+                JSONArray TemArr=hightlight_feature.getJSONObject(i).getJSONArray("pet_info");
+                int size=30;
+
+                for(int j=0;j<TemArr.length();j++) {
+                    size=size+40;
+                    View item = LayoutInflater.from(getActivity()).inflate(R.layout.profile_about_items_petsize, null);
+                    ImageView imageView=(ImageView)item.findViewById(R.id.IMAGE);
+                    Glide.with(getActivity()).load(TemArr.getJSONObject(j).getString("pet_image")).override(size,size).into(imageView);
+                    SFNFTextView textView = (SFNFTextView) item.findViewById(R.id.TXT_SIZE);
+                    textView.setText(TemArr.getJSONObject(j).getString("pet_req_name"));
+                    Horizental.addView(item);
+                }
+                LLHightLisgt.addView(Horizental);
             }
             ((SFNFTextView)view.findViewById(R.id.Description)).setText(jsonObject.getJSONObject("info_array").getJSONObject("about_info").getString("description"));
         } catch (JSONException e) {
