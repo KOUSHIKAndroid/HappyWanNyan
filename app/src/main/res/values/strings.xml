@@ -193,4 +193,11 @@
     <string name="delete_message">Delete this message?</string>
     <string name="viewmore">View More..</string>
     <string name="description">Description</string>
+    <string name="lbl_cardno">Credit card Number</string>
+    <string name="lbl_crad_holdername">Name on card</string>
+    <string name="exp_month">Expiry Month and Year</string>
+    <string name="lbl_secrect">Security code</string>
+    <string name="existingcard">Your Cards</string>
+    <string name="addnewcard">Add New Card</string>
+    <string name="add">Add</string>
 </resources>

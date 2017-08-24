@@ -1,8 +1,10 @@
 package com.happywannyan.SitterBooking;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,18 +12,35 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import com.cooltechworks.creditcarddesign.CardEditActivity;
+import com.cooltechworks.creditcarddesign.CreditCardUtils;
 import com.happywannyan.Adapter.Adapter_Card;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
+import com.happywannyan.Utils.AddCreditCard;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
+import com.stripe.android.Stripe;
+import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
+import com.stripe.android.model.Token;
 import com.stripe.android.view.CardInputWidget;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.logging.Logger;
+
+import static android.app.Activity.RESULT_OK;
 
 
 public class BookingFragmentFoure extends Fragment {
@@ -36,6 +55,7 @@ public class BookingFragmentFoure extends Fragment {
 
     RecyclerView REC_Card;
     AppLoader Loader;
+    Card card;
 
     private OnFragmentInteractionListener mListener;
 
@@ -81,15 +101,183 @@ public class BookingFragmentFoure extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        CardInputWidget mCardInputWidget = (CardInputWidget) view.findViewById(R.id.card_input_widget);
-        Card cardToSave = mCardInputWidget.getCard();
-        if (cardToSave == null) {
-//            mErrorDialogHandler.showError("Invalid Card Data");
-        }
+
         REC_Card=(RecyclerView)view.findViewById(R.id.REC_Card);
         REC_Card.setLayoutManager(new LinearLayoutManager(getActivity()));
+        view.findViewById(R.id.NEWCARD).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final int GET_NEW_CARD = 2;
+
+                Intent intent = new Intent(getActivity(), CardEditActivity.class);
+                startActivityForResult(intent,GET_NEW_CARD);
+//                new AddCreditCard(getActivity()).AddNewOnClick(new AddCreditCard.OnCradListener() {
+//                    @Override
+//                    public void OnAddComplete(String data) {
+//
+//                    }
+//
+//                    @Override
+//                    public void OnCancel() {
+//
+//                    }
+//                });
+            }
+        });
+
+
+
         SetCardDetails();
 
+
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK && requestCode==2) {
+            new AppContsnat(getActivity());
+
+            final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
+            final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
+            String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
+            String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
+            Loger.MSG("@@ Exipry-",cardNumber);
+
+            final int year=Integer.parseInt("20"+expiry.split("/")[1]);
+            final int month=Integer.parseInt(expiry.split("/")[0]);
+            Loger.MSG("@@ Exipry-"," YESR-"+year);
+            Loger.MSG("@@ Exipry-"," MOnth-"+month);
+
+
+            card = new Card(cardNumber, month, year, cvv);
+            if (card.validateCard()) {
+                Loger.MSG("@@ Crad ID-",card.getId()+"");
+                Loger.MSG("@@ Crad ID-",card.getNumber()+"");
+                Loger.MSG("@@ Crad-",card.getNumber()+"");
+                card.setName(cardHolderName);
+
+
+                Stripe stripe = new Stripe(getActivity(), AppContsnat.STRIPE_PUBLISH_KEY);
+                Loader.Show();
+
+                stripe.createToken(
+                        card,
+                        new TokenCallback() {
+                            public void onSuccess(final Token token) {
+
+
+                                new JSONPerser().GET_STRIPE_CUSTIMERID(token.getId(), new JSONPerser.JSONRESPONSE() {
+                                    @Override
+                                    public void OnSuccess(String Result) {
+                                        Loger.MSG("@@ CUUU",Result);
+
+                                        String CustomerID="";
+//                                        try {
+//                                            CustomerID=new JSONObject(Result).getString("id");
+//                                        } catch (JSONException e) {
+//                                            e.printStackTrace();
+//                                        }
+
+
+                                        Loger.MSG("@@ TOKEN finger-",token.getCard().getFingerprint()+"");
+                                        Loger.MSG("@@ TOKEN Brand-",token.getCard().getBrand()+"");
+                                        Loger.MSG("@@ TOKEN customerId-",token.getCard().getCustomerId()+"");
+                                        Loger.MSG("@@ TOKEN customerId-",token.getCard().getLast4()+"");
+                                        Loger.MSG("@@ TOKEN ID-",token.getCard().getId()+"");
+                                        HashMap<String,String> Params=new HashMap<String, String>();
+                                        Params.put("user_id",AppContsnat.UserId);
+                                        Params.put("stripe_id",CustomerID+"");
+                                        Params.put("card_id",token.getCard().getId()+"");
+                                        Params.put("name_on_card",cardHolderName);
+                                        Params.put("name_on_card",cardHolderName);
+                                        Params.put("exp_month",month+"");
+                                        Params.put("exp_year",year+"");
+                                        Params.put("card_last_digits",token.getCard().getLast4()+"");
+                                        Params.put("cvv_code",card.getCVC()+"");
+                                        Params.put("new_card","1");
+                                        Params.put("make_default","1");
+                                        new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "add_save_card", Params, new JSONPerser.JSONRESPONSE() {
+                                            @Override
+                                            public void OnSuccess(String Result) {
+                                                Loger.MSG("@@ CRAD RESP-",Result);
+                                                new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+                                                        , new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+                                                            @Override
+                                                            public void OnSuccess(String Result) {
+                                                                Loader.Dismiss();
+                                                                REC_Card.setAdapter(new Adapter_Card(getActivity(),Result));
+                                                            }
+
+                                                            @Override
+                                                            public void OnError(String Error, String Response) {
+                                                                Loader.Dismiss();
+
+                                                            }
+
+                                                            @Override
+                                                            public void OnError(String Error) {
+                                                                Loader.Dismiss();
+
+                                                            }
+                                                        });
+                                            }
+
+                                            @Override
+                                            public void OnError(String Error, String Response) {
+                                                Loger.MSG("@@ CRAD Err'-",Response);
+                                                Loader.Dismiss();
+
+                                            }
+
+                                            @Override
+                                            public void OnError(String Error) {
+                                                Loader.Dismiss();
+
+                                            }
+                                        });
+
+
+                                    }
+
+                                    @Override
+                                    public void OnError(String Error, String Response) {
+
+                                    }
+
+                                    @Override
+                                    public void OnError(String Error) {
+
+                                    }
+                                });
+
+
+
+                            }
+                            public void onError(Exception error) {
+                                Loader.Dismiss();
+                               new MYAlert(getActivity()).AlertOnly("Add Card Error", error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
+                                   @Override
+                                   public void OnOk(boolean res) {
+
+                                   }
+                               });
+
+                            }
+                        }
+                );
+
+            }else {
+                new MYAlert(getActivity()).AlertOnly("Add Card Error", "Invalid card please add a correct card", new MYAlert.OnlyMessage() {
+                    @Override
+                    public void OnOk(boolean res) {
+
+                    }
+                });
+            }
+        }
 
     }
 

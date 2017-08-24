@@ -82,7 +82,7 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
                 holder.tv_booking_id.setVisibility(View.GONE);
             }
 
-            if (object.has("message_status") && !object.getString("message_status").equals("")) {
+            if (object.has("message_status") && !object.getString("message_status").equals("") && object.getString("color_code").equals("#ac2925")) {
                 holder.CARD_STATUS.setCardBackgroundColor(Color.parseColor(object.getString("color_code")));
                 holder.TXT_MSG_STATUS.setText(object.getString("message_status"));
                 holder.CARD_STATUS.setVisibility(View.VISIBLE);

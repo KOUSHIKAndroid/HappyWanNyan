@@ -12,10 +12,6 @@
         "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_btn_radio_material.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_button_send_background.xml",
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_button_send_background.xml"
     },
@@ -24,36 +20,24 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_vector_favourite_delete_white.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_user.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_user.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ratingbar_material.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_connecting_dark.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_connecting_dark.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ratingbar_material.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_skip_ad_label_border.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_skip_ad_label_border.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/notification_bg.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_mono_light.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_mono_light.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_white_bg_round.xml",
-        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/messenger_button_white_bg_round.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_billing_amex_logo1.png",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/ic_billing_amex_logo1.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_on_dark.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_on_dark.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_white_bg_round.xml",
+        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/messenger_button_white_bg_round.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_pause.xml",
@@ -64,36 +48,12 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_edit_background.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_photo_camera.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_photo_camera.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_dot.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_dot.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_mini_controller_gradient_light.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_mini_controller_gradient_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_skip_next.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_skip_next.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_my_location_sky.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_my_location_sky.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml",
         "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_connecting_light.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_connecting_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_info.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_info.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_rewind30.xml",
@@ -112,24 +72,8 @@
         "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_closed_caption.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_blue_bg_round.xml",
-        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/messenger_button_blue_bg_round.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_expanded_controller_actionbar_bg_gradient_light.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_expanded_controller_actionbar_bg_gradient_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_more_white.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_more_white.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_dialog_material_background_dark.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_dialog_material_background_dark.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/calender_tutorail.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/calender_tutorail.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/sign_strip_mod.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/sign_strip_mod.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_favicon_blue.xml",
@@ -144,16 +88,12 @@
         "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_text_light_normal.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_pause_dark.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_pause_dark.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_forward30.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_forward30.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/login_facebook.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/login_facebook.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/visacard_back_bg.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/visacard_back_bg.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
@@ -164,36 +104,16 @@
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_textfield_search_material.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/roundrect.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/roundrect.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_rewind30.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_rewind30.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_menu_gallery.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_menu_gallery.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_close_light.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_close_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_information_white.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_information_white.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_rewind10.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_rewind10.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_disabled.xml",
         "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/visacard_back.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/visacard_back.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_profile.xml",
@@ -202,10 +122,6 @@
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_auth_dialog_background.xml",
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_auth_dialog_background.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_pause_large.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_pause_large.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_play_dark.xml",
@@ -220,24 +136,12 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_circle.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_vector_test.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_audiotrack_light.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_audiotrack_light.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_small_icon.xml",
         "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_small_icon.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cat_loader.gif",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/cat_loader.gif"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_forward.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
@@ -256,44 +160,20 @@
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward10.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_forward10.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_blue_bg_selector.xml",
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/messenger_button_blue_bg_selector.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_play.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_play.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_expand_more_black_24dp.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_expand_more_black_24dp.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_camera_alt_white.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_camera_alt_white.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_close_dark.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_close_dark.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_mute.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_mute.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/img_amex_center_face.png",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/img_amex_center_face.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_menu_share.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_menu_share.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_auth_dialog_cancel_background.xml",
-        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_auth_dialog_cancel_background.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/temp_03.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/temp_03.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_normal.xml",
@@ -306,6 +186,10 @@
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_icon_americalexpress.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_icon_americalexpress.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_clip.xml",
@@ -328,28 +212,12 @@
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ic_go_search_api_material.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_stop_live_stream.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_stop_live_stream.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_stop.xml",
         "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_stop.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_disconnect.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_disconnect.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_dot_outline.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_dot_outline.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_chevron_right_white.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_chevron_right_white.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_sender_background.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_sender_background.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_billing_amex_logo.png",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/ic_billing_amex_logo.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_check_red.xml",
@@ -364,8 +232,12 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/img_slider1.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_item_background_holo_dark.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_icon_discover.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_icon_discover.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/oval.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/oval.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
@@ -376,52 +248,20 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_menu_manage.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ratingbar_indicator_material.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_close_white.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_close_white.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ic_voice_search_api_material.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/chip_inner.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/chip_inner.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ic_clear_material.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_stop_large.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_stop_large.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_skip_prev.xml",
         "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_skip_prev.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_dark.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_cast_dark.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_dialog_material_background_light.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_dialog_material_background_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/login_signin.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/login_signin.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_auth_dialog_header_background.xml",
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_auth_dialog_header_background.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_pause.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_pause.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_play.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_play.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
@@ -434,14 +274,6 @@
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_arrow_drop_down_black.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_arrow_drop_down_black.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_skip_next.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_skip_next.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ic_search_api_material.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_mono_dark.xml",
@@ -460,16 +292,400 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/rotate.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_focused.xml",
-        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_text_light_focused.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_mini_controller_progress_drawable.xml",
         "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_mini_controller_progress_drawable.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_send_appblue_24dp.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_send_appblue_24dp.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_icon_mastercard.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_icon_mastercard.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_button_background.xml",
+        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_button_background.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_rewind30.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_rewind30.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward30.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_forward30.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_closed_caption.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_closed_caption.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_mute.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_mute.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_light.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_cast_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_select_image_from_gallery.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_select_image_from_gallery.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_expanded_controller_seekbar_track.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_expanded_controller_seekbar_track.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_focused.xml",
+        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/master_back.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/master_back.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_stop.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_stop.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/sign_strip.png",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/sign_strip.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_favorite.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_favorite.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_white_bg_selector.xml",
+        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/messenger_button_white_bg_selector.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/login_signup.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/login_signup.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_menu_camera.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_menu_camera.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_expand.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/ic_expand.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_on_light.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_on_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_menu_slideshow.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_menu_slideshow.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_pause.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_pause.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_play_large.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_play_large.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_search_list.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_search_list.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml",
+        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_pause_light.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_pause_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/card_color_round_rect_green.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/card_color_round_rect_green.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_user.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_user.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_skip_ad_label_border.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_skip_ad_label_border.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/chip_yellow.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/chip_yellow.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_on_dark.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_on_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_photo_camera.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_photo_camera.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_mini_controller_gradient_light.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_mini_controller_gradient_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_skip_next.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_skip_next.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_my_location_sky.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_my_location_sky.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_connecting_light.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_connecting_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/card_color_round_rect_brown.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/card_color_round_rect_brown.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/card_color_round_rect_pink.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/card_color_round_rect_pink.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_info.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_info.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_blue_bg_round.xml",
+        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/messenger_button_blue_bg_round.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_expanded_controller_actionbar_bg_gradient_light.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_expanded_controller_actionbar_bg_gradient_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_billing_visa_logo.png",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/ic_billing_visa_logo.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_more_white.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_more_white.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_dialog_material_background_dark.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/calender_tutorail.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/calender_tutorail.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/card_color_round_rect_blue.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/card_color_round_rect_blue.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_pause_dark.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_pause_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_forward30.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_forward30.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/roundrect.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/roundrect.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_favorite_border.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_favorite_border.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_rewind30.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_rewind30.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/card_color_round_rect_default.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/card_color_round_rect_default.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_close_light.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_close_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_rewind10.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_rewind10.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_information_white.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_information_white.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_pause_large.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_pause_large.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cat_loader.gif",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/cat_loader.gif"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_forward.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward10.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_forward10.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_play.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_play.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_camera_alt_white.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_camera_alt_white.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_close_dark.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_close_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_mute.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_mute.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_auth_dialog_cancel_background.xml",
+        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_auth_dialog_cancel_background.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/temp_03.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/temp_03.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/chip_yellow_inner.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/chip_yellow_inner.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_stop_live_stream.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_stop_live_stream.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_disconnect.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_disconnect.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_close_list.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_close_list.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_dot_outline.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_dot_outline.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_chevron_right_white.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_chevron_right_white.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_sender_background.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_sender_background.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_close_white.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_close_white.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_stop_large.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_stop_large.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_dark.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_cast_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_dialog_material_background_light.xml",
+        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/login_signin.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/login_signin.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_pause.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_pause.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_play.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_play.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_skip_next.xml",
+        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_skip_next.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
+        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_focused.xml",
+        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_text_light_focused.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
@@ -492,8 +708,8 @@
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/notification_tile_bg.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_item_background_holo_light.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/card_color_round_rect_purple.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/card_color_round_rect_purple.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
@@ -508,28 +724,12 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_receverbackground.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_button_background.xml",
-        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_button_background.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_rewind30.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_rewind30.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_my_location_white.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_my_location_white.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward30.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_forward30.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_closed_caption.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_closed_caption.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_mute.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_mute.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_favorite_blue.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_favorite_blue.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
@@ -544,52 +744,36 @@
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_send_button_icon.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
-        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_dark.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mastercard_back_bg.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/mastercard_back_bg.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_icon_visa.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_icon_visa.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_connecting.xml",
         "source": "/Users/apple/.android/build-cache/bfd4a4149ef32a4c45b175c98d6a486d08da3e0f/output/res/drawable/cast_ic_notification_connecting.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_light.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_cast_light.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_button_login_silver_background.xml",
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/com_facebook_button_login_silver_background.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
-        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_light_normal.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/chip.xml",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/chip.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_play_light.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_play_light.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_select_image_from_gallery.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_select_image_from_gallery.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_right_arrow_white.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_right_arrow_white.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_expanded_controller_seekbar_track.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_expanded_controller_seekbar_track.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
         "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/drawable/design_fab_background.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_focused.xml",
-        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_rewind.xml",
@@ -604,20 +788,8 @@
         "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_play.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_stop.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_expanded_controller_stop.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_favorite.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_favorite.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_nav_favorite_white.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_nav_favorite_white.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",
@@ -628,14 +800,6 @@
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/notification_bg_low.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
-        "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/drawable/design_snackbar_background.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_dialog_material_background.xml"
     },
@@ -644,52 +808,16 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_arrow_drop_up_red.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_white_bg_selector.xml",
-        "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/drawable/messenger_button_white_bg_selector.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_switch_thumb_material.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_seekbar_track_material.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/login_signup.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/login_signup.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
         "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_menu_camera.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_menu_camera.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_expand.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/ic_expand.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_menu_send.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_menu_send.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_on_light.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_media_route_on_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_menu_slideshow.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_menu_slideshow.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_pause.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_notification_pause.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_play_large.xml",
-        "source": "/Users/apple/.android/build-cache/38ec1ff05da8fec9b81931c85bf7b8a5f198087d/output/res/drawable/cast_ic_mini_controller_play_large.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
@@ -704,8 +832,8 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/logo_hapyywan.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml",
-        "source": "/Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/res/drawable/common_google_signin_btn_icon_light_focused.xml"
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_billing_mastercard_logo.png",
+        "source": "/Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/res/drawable/ic_billing_mastercard_logo.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
@@ -718,13 +846,5 @@
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_arrow_black.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/drawable/ic_arrow_black.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_pause_light.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/drawable/mr_ic_pause_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
-        "source": "/Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/res/drawable/abc_spinner_textfield_background_material.xml"
     }
 ]

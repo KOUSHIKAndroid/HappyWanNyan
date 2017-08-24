@@ -144,6 +144,18 @@ public class ProfileDetails extends AppCompatActivity implements View.OnClickLis
                     ((SFNFTextView) findViewById(R.id.UserName)).setText(BasicInfo.getString("nickname"));
                     ((SFNFTextView) findViewById(R.id.Bussinessname)).setText(BasicInfo.getString("businessname"));
                     ((SFNFTextView) findViewById(R.id.Location)).setText(BasicInfo.getString("place_sitter"));
+                    if(BasicInfo.getInt("favourite_status")==0)
+                    {
+//                        ((ImageView)findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.ic_favorite_border);
+                        ((ImageView)findViewById(R.id.IMG_FAV)).setTag("0");
+                    }else {
+//                        ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
+                        ((ImageView) findViewById(R.id.IMG_FAV)).setTag("1");
+                    }
+
+
+
+
                     ((SFNFTextView) findViewById(R.id.ReviewNo)).setText(BasicInfo.getString("no_of_review") + " " + getResources().getString(R.string.review));
                     findViewById(R.id.map_button).setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -325,6 +337,45 @@ public class ProfileDetails extends AppCompatActivity implements View.OnClickLis
                     inten.putExtra("DATA",SitterId);
                 startActivity(inten);
                 break;
+            case R.id.IMG_FAV:
+                String IDtemp="";
+                if( ((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1"))
+                    IDtemp="0";
+                else
+                    IDtemp="1";
+
+
+                new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_favourite_sitters?user_id=" + AppContsnat.UserId + "" +
+                        "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+                    @Override
+                    public void OnSuccess(String Result) {
+                        try {
+                            JSONObject jsonObject=new JSONObject(Result);
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+
+                    @Override
+                    public void OnError(String Error, String Response) {
+                        try {
+                            JSONObject jsonObject=new JSONObject(Response);
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void OnError(String Error) {
+
+                    }
+                });
+
+
 
 
 

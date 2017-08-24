@@ -1,16 +1,19 @@
 package com.happywannyan.Utils;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.happywannyan.Adapter.Adapter_AlertList;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
@@ -25,6 +28,7 @@ import org.json.JSONObject;
 public class MYAlert {
     Context mContext;
     AlertDialog Dialog;
+    android.app.Dialog dialog;
 
     public void dismised() {
         Dialog.dismiss();
@@ -50,6 +54,7 @@ public class MYAlert {
 
     public MYAlert(Context mContext) {
         this.mContext = mContext;
+        dialog=new Dialog(mContext);
     }
 
     public void AlertOnly(String Title, String Message, final OnlyMessage onlyMessage) {
@@ -231,6 +236,30 @@ public class MYAlert {
         alertbuilder.setView(LayView);
         Dialog = alertbuilder.create();
         Dialog.show();
+    }
+
+
+    public void PhotoAlert(String ImagePath, final OnlyMessage onlyMessage){
+        View LayView = LayoutInflater.from(mContext).inflate(R.layout.alert_for_photo, null);
+        ImageView Image=(ImageView)LayView.findViewById(R.id.IMAGE);
+        ImageView Image_close=(ImageView)LayView.findViewById(R.id.CLOSE);
+        Image_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog.dismiss();
+                onlyMessage.OnOk(true);
+            }
+        });
+        Glide.with(mContext).load(ImagePath).into(Image);
+
+        AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);
+        alertbuilder.setView(LayView);
+        Dialog = alertbuilder.create();
+        Dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        Dialog.setCancelable(false);
+        Dialog.show();
+
+
     }
 
 }

@@ -24,12 +24,13 @@ public class Adapter_Card extends RecyclerView.Adapter<Adapter_Card.CardViewHold
     JSONObject MainObject;
     JSONArray ARRY;
 
-
+    JSONArray Crad;
     public Adapter_Card(Context context,String Response) {
         this.mContext=context;
         try {
             MainObject=new JSONObject(Response);
             ARRY=MainObject.getJSONArray("user_stripe_data");
+             Crad=MainObject.getJSONArray("card_details");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -44,10 +45,10 @@ public class Adapter_Card extends RecyclerView.Adapter<Adapter_Card.CardViewHold
 
     @Override
     public void onBindViewHolder(CardViewHolder holder, int position) {
-        for(int i=0;i<ARRY.length();i++){
+//        for(int i=0;i<ARRY.length();i++){
             try {
-                JSONObject OB=ARRY.getJSONObject(i);
-                JSONArray Crad=MainObject.getJSONArray("card_details");
+                JSONObject OB=ARRY.getJSONObject(position);
+
 
                 for(int j=0;j<Crad.length();j++)
                 {
@@ -64,7 +65,7 @@ public class Adapter_Card extends RecyclerView.Adapter<Adapter_Card.CardViewHold
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }
+//        }
 
     }
 

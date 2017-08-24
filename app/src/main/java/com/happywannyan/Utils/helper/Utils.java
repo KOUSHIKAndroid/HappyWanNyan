@@ -18,4 +18,13 @@ public class Utils {
         DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
         return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
+
+
+    public int GetWeidth()
+    {
+        DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
+        int width = displayMetrics.widthPixels;
+        int height = displayMetrics.heightPixels;
+        return width;
+    }
 }

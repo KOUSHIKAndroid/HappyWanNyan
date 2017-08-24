@@ -24,6 +24,9 @@ public class AppContsnat extends App_data_holder{
     public static String BASEURL=" http://esolz.co.in/lab6/HappywanNyan/";
     public static String Language="en";
     public static String UserId="";
+    public static String STRIPE_PUBLISH_KEY="pk_test_xlxSWhvDxMIkyQYmgmHEWRoM";
+    public static String STRIPE_SECRATE_KEY="sk_test_1HkmfB8tpsf5yd1f8DUmRLdS";
+
 
     public AppContsnat(Activity activity) {
         super(activity);

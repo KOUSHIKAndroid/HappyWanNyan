@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-152:12
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-155:12
 	package
 		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:3:5-31
 		INJECTED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml
@@ -81,7 +81,7 @@ ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:
 	android:name
 		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:13:22-78
 application
-ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:15:5-150:19
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:15:5-153:19
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /Users/apple/.android/build-cache/e60140e7f2ed6996111fea2ebb3c4f49441fcffb/output/AndroidManifest.xml:11:5-20
 MERGED from [com.crashlytics.sdk.android:beta:1.2.5] /Users/apple/.android/build-cache/822747d2b9e4b87f70dc73bb2f6c810cc92b696c/output/AndroidManifest.xml:11:5-20
 MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] /Users/apple/.android/build-cache/1edf77e64fdd7038e891dc0ef9f15fe85ca2afc8/output/AndroidManifest.xml:54:5-20
@@ -129,13 +129,13 @@ MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /Users/apple/.a
 MERGED from [com.google.firebase:firebase-iid:10.2.4] /Users/apple/.android/build-cache/5e1bb3d51164a97a2f26e9fdf5e5c5ec730b897c/output/AndroidManifest.xml:28:5-49:19
 MERGED from [com.google.firebase:firebase-common:10.2.4] /Users/apple/.android/build-cache/df98ddb6091cc8518b6984e32fc05863933a4d84/output/AndroidManifest.xml:4:5-7:19
 MERGED from [com.facebook.android:facebook-android-sdk:4.25.0] /Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/AndroidManifest.xml:28:5-48:19
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/apple/.android/build-cache/9cc3e2c880eb03eab373900b41d8c609a62f7f37/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:customtabs:25.3.1] /Users/apple/.android/build-cache/610d27f06b008852de505a3e8a7750061478bf89/output/AndroidManifest.xml:26:5-20
 MERGED from [com.google.android.gms:play-services-maps:10.2.4] /Users/apple/.android/build-cache/615cc69a9b7e06882f0f1067d6e0034aedf5a3b3/output/AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-location:10.2.4] /Users/apple/.android/build-cache/4a92bf7f2d84a5c5990e4b6985629ddacf7f2a40/output/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-base:10.2.4] /Users/apple/.android/build-cache/d7ac75b1481c4ca756fcb19532710ddc5aef92e3/output/AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.android.gms:play-services-tasks:10.2.4] /Users/apple/.android/build-cache/ca6b7aaab661f0a1f1bc6673530c0583d7ed1711/output/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:10.2.4] /Users/apple/.android/build-cache/dc184580c79ec5128210481404c646d898fde278/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] /Users/apple/.android/build-cache/c804c4bfae4649d05f2e3d6e4e529d49bb602891/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/apple/.android/build-cache/a08e23c3f12abbe75dd7cc831df519d4facfb2e6/output/AndroidManifest.xml:29:5-20
@@ -145,6 +145,8 @@ MERGED from [com.android.support:support-core-utils:25.3.1] /Users/apple/.androi
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/apple/.android/build-cache/52c8b08f2037d25acf6a0ce92474d0032a2759e6/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/apple/.android/build-cache/b75af79fdf86d30c4dddaadc4106d27aa21f10ce/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:25.3.1] /Users/apple/.android/build-cache/3dad979802ff9e115d02b369447ef65c848bf706/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] /Users/apple/.android/build-cache/9cc3e2c880eb03eab373900b41d8c609a62f7f37/output/AndroidManifest.xml:26:5-20
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /Users/apple/.android/build-cache/f274f41525452810fdc00528d05f1432cd686e81/output/AndroidManifest.xml:10:5-20
 	android:label
 		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:18:9-41
 	android:supportsRtl
@@ -369,20 +371,28 @@ activity#com.happywannyan.Activities.Booking.CancelBookingWithReasons
 ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:142:9-81
 	android:name
 		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:142:19-78
+activity#com.cooltechworks.creditcarddesign.CardEditActivity
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:143:9-146:15
+	android:screenOrientation
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:145:13-49
+	android:theme
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:144:13-44
+	android:name
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:143:19-85
 meta-data#io.fabric.ApiKey
-ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:144:9-146:72
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:147:9-149:72
 	android:value
-		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:146:13-69
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:149:13-69
 	android:name
-		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:145:13-44
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:148:13-44
 activity#com.happywannyan.Activities.Booking.ActivityAcceptBooking
-ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:148:9-78
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:151:9-78
 	android:name
-		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:148:19-75
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:151:19-75
 activity#com.happywannyan.Activities.Booking.Addreview
-ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:149:9-75
+ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:152:9-75
 	android:name
-		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:149:19-63
+		ADDED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml:152:19-63
 uses-sdk
 INJECTED from /Users/apple/Documents/HappyWanNyan/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /Users/apple/.android/build-cache/e60140e7f2ed6996111fea2ebb3c4f49441fcffb/output/AndroidManifest.xml:7:5-43
@@ -441,7 +451,6 @@ MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /Users/apple/.a
 MERGED from [com.google.firebase:firebase-iid:10.2.4] /Users/apple/.android/build-cache/5e1bb3d51164a97a2f26e9fdf5e5c5ec730b897c/output/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-common:10.2.4] /Users/apple/.android/build-cache/df98ddb6091cc8518b6984e32fc05863933a4d84/output/AndroidManifest.xml:3:5-43
 MERGED from [com.facebook.android:facebook-android-sdk:4.25.0] /Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/apple/.android/build-cache/9cc3e2c880eb03eab373900b41d8c609a62f7f37/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:customtabs:25.3.1] /Users/apple/.android/build-cache/610d27f06b008852de505a3e8a7750061478bf89/output/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:10.2.4] /Users/apple/.android/build-cache/615cc69a9b7e06882f0f1067d6e0034aedf5a3b3/output/AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-location:10.2.4] /Users/apple/.android/build-cache/4a92bf7f2d84a5c5990e4b6985629ddacf7f2a40/output/AndroidManifest.xml:3:5-43
@@ -451,6 +460,7 @@ MERGED from [com.google.android.gms:play-services-basement:10.2.4] /Users/apple/
 MERGED from [com.mindorks:placeholderview:0.2.7] /Users/apple/.android/build-cache/13528d13a9443aa4a95bd182602925068ab996d1/output/AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/apple/.android/build-cache/c5c84a02f87516a33ca4e826ca23898f98055007/output/AndroidManifest.xml:20:5-43
 MERGED from [com.stripe:stripe-android:4.1.1] /Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /Users/apple/.android/build-cache/52436efe6cb6ce63181216c1d258d6a67085f211/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.1] /Users/apple/.android/build-cache/c804c4bfae4649d05f2e3d6e4e529d49bb602891/output/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/apple/.android/build-cache/a08e23c3f12abbe75dd7cc831df519d4facfb2e6/output/AndroidManifest.xml:21:5-23:60
@@ -460,6 +470,8 @@ MERGED from [com.android.support:support-core-utils:25.3.1] /Users/apple/.androi
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/apple/.android/build-cache/52c8b08f2037d25acf6a0ce92474d0032a2759e6/output/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/apple/.android/build-cache/b75af79fdf86d30c4dddaadc4106d27aa21f10ce/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.1] /Users/apple/.android/build-cache/3dad979802ff9e115d02b369447ef65c848bf706/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:cardview-v7:25.3.1] /Users/apple/.android/build-cache/9cc3e2c880eb03eab373900b41d8c609a62f7f37/output/AndroidManifest.xml:20:5-43
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /Users/apple/.android/build-cache/f274f41525452810fdc00528d05f1432cd686e81/output/AndroidManifest.xml:6:5-8:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] /Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -471,7 +483,6 @@ MERGED from [com.android.support:support-compat:25.3.1] /Users/apple/.android/bu
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.1] /Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:transition:25.3.1] /Users/apple/.android/build-cache/eccdaee10d7aa91225e4d0783f0c64c91ac77ae9/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/apple/.android/build-cache/9cc3e2c880eb03eab373900b41d8c609a62f7f37/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:customtabs:25.3.1] /Users/apple/.android/build-cache/610d27f06b008852de505a3e8a7750061478bf89/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/apple/.android/build-cache/c5c84a02f87516a33ca4e826ca23898f98055007/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/apple/.android/build-cache/f5d1aae4f2c656b207de5731d077f0ed42906f62/output/AndroidManifest.xml:25:5-27:34
@@ -483,6 +494,7 @@ MERGED from [com.android.support:support-core-utils:25.3.1] /Users/apple/.androi
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/apple/.android/build-cache/52c8b08f2037d25acf6a0ce92474d0032a2759e6/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/apple/.android/build-cache/b75af79fdf86d30c4dddaadc4106d27aa21f10ce/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-compat:25.3.1] /Users/apple/.android/build-cache/3dad979802ff9e115d02b369447ef65c848bf706/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:cardview-v7:25.3.1] /Users/apple/.android/build-cache/9cc3e2c880eb03eab373900b41d8c609a62f7f37/output/AndroidManifest.xml:22:5-24:34
 	android:value
 		ADDED from [com.android.support:design:25.3.1] /Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/AndroidManifest.xml:27:9-31
 	android:name

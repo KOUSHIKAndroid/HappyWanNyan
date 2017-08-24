@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.POJO.APIPOSTDATA;
 
 import org.json.JSONObject;
@@ -420,5 +421,70 @@ public class JSONPerser {
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
+
+
+public void GET_STRIPE_CUSTIMERID(final String StripeToken, final JSONRESPONSE jsonresponse)
+{
+
+    new AsyncTask<Void, Void, Void>() {
+
+        private String respose = null;
+        private Exception exception=null;
+        MultipartBody.Builder buildernew;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+//            buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                if (!isCancelled()) {
+
+//                    MultipartBody requestBody = buildernew.build();
+                    OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                    Request request = new Request.Builder().url("https://api.stripe.com/v1/customers")
+//                            .method("POST", RequestBody.create(null, new byte[0]))
+                            .addHeader("authorization", "Bearer "+ AppContsnat.STRIPE_SECRATE_KEY)
+                            .addHeader("source", ""+StripeToken)
+                            .addHeader("content-type", "application/x-www-form-urlencoded")
+                            .addHeader("cache-control", "no-cache")
+//                            .post(requestBody)
+                            .get()
+                            .build();
+                    Response response = client.newCall(request).execute();
+
+
+                    respose = response.body().string();
+
+                    Loger.MSG("response", "respose_::" + respose);
+                    Loger.MSG("response", "respose_ww_message::" + response.message());
+                    Loger.MSG("response", "respose_ww_headers::" + response.headers());
+                    Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
+//                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
+                }
+            } catch (Exception e) {
+                this.exception=e;
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            if (!isCancelled() && exception==null) {
+                        jsonresponse.OnSuccess(respose);
+
+            }else {
+                jsonresponse.OnError(exception.getMessage()+"");
+            }
+        }
+    }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+}
+
 
 }

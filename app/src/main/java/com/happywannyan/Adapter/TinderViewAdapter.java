@@ -5,6 +5,7 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.LayerDrawable;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,7 +76,7 @@ public class TinderViewAdapter extends BaseAdapter {
             Glide.with(context).load(object.getString("photo_url")).into((ImageView)v.findViewById(R.id.profileImageView));
             ((SFNFTextView) v.findViewById(R.id.tv_title)).setText(object.getString("nickname"));
             ((SFNFTextView) v.findViewById(R.id.tv_address)) .setText(object.getString("whole_address"));
-            ((SFNFBoldTextView) v.findViewById(R.id.tv_Price)) .setText(object.getString("currency")+" "+object.getString("price_one"));
+            ((SFNFBoldTextView) v.findViewById(R.id.tv_Price)) .setText(Html.fromHtml(object.getString("currency"))+" "+object.getString("price_one"));
             ((SFNFTextView) v.findViewById(R.id.Time)) .setText(object.getString("unit"));
             ((SFNFTextView) v.findViewById(R.id.tv_name)) .setText(object.getString("business_name"));
             ((SFNFTextView) v.findViewById(R.id.service_count)) .setText(object.getString("service_name_all"));

@@ -62,10 +62,11 @@ Events events;
         setContentView(R.layout.activity_base);
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(getClass().getName(), "Refreshed token: " + refreshedToken);
+        new AppContsnat(this);
 
         HashMap<String,String> Params=new HashMap<>();
         Params.put("user_id",AppContsnat.UserId);
-        Params.put("anorid_device_id",refreshedToken);
+        Params.put("anorid_device_id",refreshedToken+"");
 
         new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new JSONPerser.JSONRESPONSE() {
             @Override
