@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,13 +14,20 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
+import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
+import com.happywannyan.Utils.AppLoader;
+import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.Loger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class BookingFrgamnetThree extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
@@ -34,6 +42,8 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     JSONObject PageObject;
     LinearLayout LL_ForSingleDate,LL_DoubleDate;
     EditText EDX_coupon_code;
+    public ArrayList<APIPOSTDATA> postParamCoupon;
+    AppLoader Apploaders;
 
     private OnFragmentInteractionListener mListener;
 
@@ -79,6 +89,8 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
 
         LL_ForSingleDate=(LinearLayout)view.findViewById(R.id.LL_ForSingleDate);
         LL_DoubleDate=(LinearLayout)view.findViewById(R.id.LL_DoubleDate);
+
+        Apploaders = new AppLoader(getActivity());
 
         try {
             ((SFNFBoldTextView)view.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
@@ -147,7 +159,45 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
         view.findViewById(R.id.tv_coupon_code).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (EDX_coupon_code.getText().toString().trim().equals("")){
+//                    input_layout_coupon_code.setError("Field can't be empty");
+                }else {
+                    if (EDX_coupon_code.getText().toString().trim().length()<6){
+//                        input_layout_coupon_code.setError("Field must be greater then 5");
+                    }else {
+                        APIPOSTDATA apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("user_id");
+                        apipostdata.setValues("" + AppContsnat.UserId);
+                        postParamCoupon.add(apipostdata);
 
+                        apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("coupon_no");
+                        apipostdata.setValues(EDX_coupon_code.getText().toString().trim());
+                        postParamCoupon.add(apipostdata);
+
+                        Apploaders.Show();
+
+                        new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "Api_coupon_exits", postParamCoupon, new JSONPerser.JSONRESPONSE() {
+                            @Override
+                            public void OnSuccess(String Result) {
+                                Apploaders.Dismiss();
+                                Loger.MSG("Result",Result);
+
+                            }
+
+                            @Override
+                            public void OnError(String Error, String Response) {
+                                Apploaders.Dismiss();
+                            }
+
+                            @Override
+                            public void OnError(String Error) {
+                                Apploaders.Dismiss();
+                            }
+                        });
+
+                    }
+                }
             }
         });
 
