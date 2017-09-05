@@ -39,7 +39,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    SFNFTextView TXT_ServiceName, TXT_StartDate, TXT_EndDte, TXT_ExtarItem, TXT_SingleDate;
+    SFNFTextView TXT_ServiceName, TXT_StartDate, TXT_EndDte, TXT_ExtarItem, TXT_SingleDate,tv_times_visit;
     SFNFBoldTextView TXT_Price;
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -93,6 +93,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
         TXT_SingleDate = (SFNFTextView) view.findViewById(R.id.TXT_SingleDate);
         TXT_StartDate = (SFNFTextView) view.findViewById(R.id.TXT_StartDate);
         TXT_EndDte = (SFNFTextView) view.findViewById(R.id.TXT_EndDte);
+        tv_times_visit = (SFNFTextView) view.findViewById(R.id.tv_times_visit);
         TXT_ExtarItem = (SFNFTextView) view.findViewById(R.id.TXT_ExtarItem);
         TXT_Price = (SFNFBoldTextView) view.findViewById(R.id.TXT_Price);
         LL_S_F = (LinearLayout) view.findViewById(R.id.LL_S_F);
@@ -105,9 +106,11 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
         if (!mParam2.equals("NA")) {
             try {
                 JSONObject jsonObject = new JSONObject(mParam2);
+                Loger.MSG("jsonObject",""+jsonObject);
                 TXT_ServiceName.setText(jsonObject.getString("service_name"));
                 TXT_ServiceName.setTag(jsonObject);
                 RL_SingleDate.setVisibility(View.GONE);
+                RL_ExtraDropDown.setVisibility(View.GONE);
                 LL_S_F.setVisibility(View.GONE);
                 TXT_Price.setText(jsonObject.getString("service_price") + " / " + jsonObject.getString("unit_name"));
                 if (jsonObject.getString("date_field").equals("double")) {
@@ -116,11 +119,33 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                     ((BookingOne)getActivity()).DoubleDate=false;
                     RL_SingleDate.setVisibility(View.VISIBLE);
                 }
+
+                if (jsonObject.getString("no_of_times").equals("1") ||
+                        jsonObject.getString("no_of_visit").equals("1")) {
+                    if (jsonObject.getString("no_of_times").equals("1")) {
+                        RL_ExtraDropDown.setVisibility(View.VISIBLE);
+                        tv_times_visit.setText(getString(R.string.how_many_times));
+                        ExtraPopup = jsonObject.getJSONArray("no_of_times_dropdown");
+                        TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
+                        TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
+                    }
+
+                    if (jsonObject.getString("no_of_visit").equals("1")) {
+                        RL_ExtraDropDown.setVisibility(View.VISIBLE);
+                        tv_times_visit.setText(getString(R.string.how_many_visits));
+                        ExtraPopup = jsonObject.getJSONArray("no_of_visit_dropdown");
+                        TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
+                        TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
+                    }
+                } else {
+                    RL_ExtraDropDown.setVisibility(View.GONE);
+                    ExtraPopup = null;
+                }
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-
     }
 
     public void onButtonPressed(Uri uri) {
@@ -233,6 +258,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                         new MYAlert(getActivity()).AlertTextLsit("" + getString(R.string.ChooseService), new JSONArray(mParam1), "service_name", new MYAlert.OnSignleListTextSelected() {
                             @Override
                             public void OnSelectedTEXT(JSONObject jsonObject) {
+                                Loger.MSG("jsonObject",""+jsonObject);
                                 try {
                                     TXT_ServiceName.setText(jsonObject.getString("service_name"));
                                     TXT_ServiceName.setTag(jsonObject);
@@ -251,6 +277,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                                             jsonObject.getString("no_of_visit").equals("1")) {
                                         if (jsonObject.getString("no_of_times").equals("1")) {
                                             RL_ExtraDropDown.setVisibility(View.VISIBLE);
+                                            tv_times_visit.setText(getString(R.string.how_many_times));
                                             ExtraPopup = jsonObject.getJSONArray("no_of_times_dropdown");
                                             TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                                             TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
@@ -258,6 +285,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
 
                                         if (jsonObject.getString("no_of_visit").equals("1")) {
                                             RL_ExtraDropDown.setVisibility(View.VISIBLE);
+                                            tv_times_visit.setText(getString(R.string.how_many_visits));
                                             ExtraPopup = jsonObject.getJSONArray("no_of_visit_dropdown");
                                             TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                                             TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));

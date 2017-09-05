@@ -1282,7 +1282,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">7df0a3d2-e518-491f-ba6c-bc1bb3abca0d</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">a1ea56a7-3851-4163-aeb2-eb960f328f71</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1373,6 +1373,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="hint_search_addrres">Enter Postal Code or Address</string>
+    <string name="how_many_times">How many times?</string>
+    <string name="how_many_visits">How many visits?</string>
     <string name="i_am_looking">I am looking for....</string>
     <string name="ic_vector_favourite_delete">Delete</string>
     <string name="ihavenotdateyet">I don\'t have dates yet</string>

@@ -223,7 +223,7 @@
                 android:id="@+id/tv_times_visit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How many visits?" />
+                android:text="xxfvfdcgffd" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"

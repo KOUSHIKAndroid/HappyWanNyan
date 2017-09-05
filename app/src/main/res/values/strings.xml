@@ -200,4 +200,6 @@
     <string name="existingcard">Your Cards</string>
     <string name="addnewcard">Add New Card</string>
     <string name="add">Add</string>
+    <string name="how_many_times">How many times?</string>
+    <string name="how_many_visits">How many visits?</string>
 </resources>
