@@ -45,6 +45,8 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     public ArrayList<APIPOSTDATA> postParamCoupon;
     AppLoader Apploaders;
 
+    SFNFTextView Tv_coupon_code_valid_check;
+
     private OnFragmentInteractionListener mListener;
 
     public BookingFrgamnetThree() {
@@ -92,6 +94,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
 
         Apploaders = new AppLoader(getActivity());
         postParamCoupon=new ArrayList<>();
+        Tv_coupon_code_valid_check= (SFNFTextView) view.findViewById(R.id.Tv_coupon_code_valid_check);
 
         try {
             ((SFNFBoldTextView)view.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
@@ -184,11 +187,27 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                                 Apploaders.Dismiss();
                                 Loger.MSG("Result",Result);
 
+                                try {
+                                    JSONObject jsonObject=new JSONObject(Result);
+                                    Tv_coupon_code_valid_check.setVisibility(View.VISIBLE);
+                                    Tv_coupon_code_valid_check.setText(jsonObject.getString("message"));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+
                             }
 
                             @Override
                             public void OnError(String Error, String Response) {
                                 Apploaders.Dismiss();
+                                try {
+                                    JSONObject jsonObject=new JSONObject(Response);
+                                    Tv_coupon_code_valid_check.setVisibility(View.VISIBLE);
+                                    Tv_coupon_code_valid_check.setText(jsonObject.getString("message"));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
                             @Override
