@@ -205,4 +205,9 @@
     <string name="send_request">Send Request</string>
     <string name="this_is_just_a_reservation_request">This is just a Reservation Request.Your card is only charged after the Sitter accept this request.</string>
     <string name="reservation_request">Reservation Request</string>
+    <string name="coupon_code">Coupon Code</string>
+    <string name="apply">Apply</string>
+    <string name="subtotal_amount">Subtotal Amount</string>
+    <string name="discount_amount">Discount Amount</string>
+    <string name="coupon_code_applied">Coupon Code Applied!</string>
 </resources>

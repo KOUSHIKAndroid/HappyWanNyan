@@ -5,9 +5,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.happywannyan.Font.SFNFBoldTextView;
@@ -29,7 +32,8 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     private String mParam2;
 
     JSONObject PageObject;
-   LinearLayout LL_ForSingleDate,LL_DoubleDate;
+    LinearLayout LL_ForSingleDate,LL_DoubleDate;
+    EditText EDX_coupon_code;
 
     private OnFragmentInteractionListener mListener;
 
@@ -69,7 +73,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         view.findViewById(R.id.Card_next).setOnClickListener(this);
 
@@ -101,10 +105,51 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
 
             }
         } catch (JSONException e) {
-            e.printStackTrace()
-            ;
+            e.printStackTrace();
         }
 
+        view.findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
+        view.findViewById(R.id.img_clear).setVisibility(View.GONE);
+        EDX_coupon_code= (EditText) view.findViewById(R.id.EDX_coupon_code);
+
+        view.findViewById(R.id.img_clear).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EDX_coupon_code.setText("");
+            }
+        });
+
+        EDX_coupon_code.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if(!charSequence.toString().toString().equals("")){
+                    view.findViewById(R.id.tv_coupon_code).setVisibility(View.VISIBLE);
+                    view.findViewById(R.id.img_clear).setVisibility(View.VISIBLE);
+                }else {
+                    view.findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
+                    view.findViewById(R.id.img_clear).setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
+        view.findViewById(R.id.tv_coupon_code).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 

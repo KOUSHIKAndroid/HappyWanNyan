@@ -10,8 +10,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -224,6 +224,62 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_project" />
 
+            <LinearLayout
+                android:id="@+id/LL_subtotal_discount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/subtotal_amount"
+                        android:textColor="@color/btn_red" />
+
+                    <com.happywannyan.Font.SFNFBoldTextView
+                        android:id="@+id/TXT_SubTotalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="143343"
+                        android:textColor="@color/Black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/discount_amount"
+                        android:textColor="@color/btn_red" />
+
+                    <com.happywannyan.Font.SFNFBoldTextView
+                        android:id="@+id/TXT_DiscountPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="143343"
+                        android:textColor="@color/Black" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/gray_project" />
+
+            </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -270,8 +326,60 @@
                     android:padding="5dp"
                     android:textColor="@color/Black" />
 
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_coupon_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/EDX_coupon_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:maxLength="10"
+                        android:inputType="numberDecimal"
+                        android:hint="@string/coupon_code"
+                        android:paddingRight="150dp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_coupon_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="#25B7D3"
+                    android:padding="10dp"
+                    android:text="@string/apply"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorwhite"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/img_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@+id/tv_coupon_code"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_close_grey" />
 
             </RelativeLayout>
+
+            <com.happywannyan.Font.SFNFTextView
+                android:visibility="gone"
+                android:id="@+id/Tv_coupon_code_valid_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="@string/coupon_code_applied" />
         </LinearLayout>
     </ScrollView>
 
@@ -295,7 +403,6 @@
             android:padding="5dp">
 
             <com.happywannyan.Font.SFNFTextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"

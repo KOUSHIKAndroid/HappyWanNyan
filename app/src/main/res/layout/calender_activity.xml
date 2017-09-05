@@ -19,7 +19,7 @@
             android:id="@+id/IMG_Back"
             android:layout_width="56dp"
             android:padding="20dp"
-            android:src="@drawable/ic_cross_back"
+            android:src="@drawable/ic_close_white"
             android:layout_height="match_parent" />
 
         <com.happywannyan.Font.SFNFTextView

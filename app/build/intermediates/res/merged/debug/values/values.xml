@@ -1224,6 +1224,7 @@
     <string name="alternative_date">Alternate Date</string>
     <string name="app_name">Happy Wan Nyan</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="apply">Apply</string>
     <string name="booknow">BOOK NOW</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="breed">Breed</string>
@@ -1282,7 +1283,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">b8625dae-532b-45c6-8233-e47ecfcfa3b9</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">2cb3a348-4eff-49cd-80aa-24928b8cfe2a</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1326,6 +1327,8 @@
     <string name="confirm">Confirm</string>
     <string name="confirm_somple_msg">Are you sure that you want to accept this booking ?</string>
     <string name="contact">Contact</string>
+    <string name="coupon_code">Coupon Code</string>
+    <string name="coupon_code_applied">Coupon Code Applied!</string>
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
     <string name="current_booking">Current</string>
@@ -1342,6 +1345,7 @@
     <string name="delete_message">Delete this message?</string>
     <string name="describeyourcat">Describe your cat</string>
     <string name="description">Description</string>
+    <string name="discount_amount">Discount Amount</string>
     <string name="do_you_want_to_cancel_booking">Are you sure you want to cancel this booking?</string>
     <string name="do_you_want_to_delete">Do you want to delete ?</string>
     <string name="done">DONE</string>
@@ -1484,6 +1488,7 @@
     <string name="store_picture_title">Save image</string>
     <string name="submit">Submit</string>
     <string name="submit_review">Submit Review</string>
+    <string name="subtotal_amount">Subtotal Amount</string>
     <string name="sucess">Sucess</string>
     <string name="tagmanager_preview_dialog_button">Continue</string>
     <string name="tagmanager_preview_dialog_message">Preview mode updated.</string>
