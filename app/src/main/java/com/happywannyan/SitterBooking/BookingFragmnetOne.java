@@ -51,6 +51,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
     RelativeLayout RL_SingleDate, RL_ExtraDropDown;
     private OnFragmentInteractionListener mListener;
     private static final int CALL_CALENDER = 12;
+    String no_of_visit="0",no_of_times="0";
 
     public BookingFragmnetOne() {
     }
@@ -125,6 +126,8 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                     if (jsonObject.getString("no_of_times").equals("1")) {
                         RL_ExtraDropDown.setVisibility(View.VISIBLE);
                         tv_times_visit.setText(getString(R.string.how_many_times));
+                        no_of_times="1";
+                        no_of_visit="0";
                         ExtraPopup = jsonObject.getJSONArray("no_of_times_dropdown");
                         TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                         TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
@@ -133,6 +136,8 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                     if (jsonObject.getString("no_of_visit").equals("1")) {
                         RL_ExtraDropDown.setVisibility(View.VISIBLE);
                         tv_times_visit.setText(getString(R.string.how_many_visits));
+                        no_of_times="0";
+                        no_of_visit="1";
                         ExtraPopup = jsonObject.getJSONArray("no_of_visit_dropdown");
                         TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                         TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
@@ -223,8 +228,15 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                     ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
                 }
                 apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("no_of_visit");
-                apipostdata.setValues(TXT_ExtarItem.getTag() + "");
+                    if(no_of_visit.equals("1")){
+                        apipostdata.setPARAMS("no_of_visit");
+                        apipostdata.setValues(TXT_ExtarItem.getTag() + "");
+                    }
+                    else if(no_of_times.equals("1")) {
+                        apipostdata.setPARAMS("no_times");
+                        apipostdata.setValues(TXT_ExtarItem.getTag() + "");
+                    }
+
                 ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -258,7 +270,6 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                         new MYAlert(getActivity()).AlertTextLsit("" + getString(R.string.ChooseService), new JSONArray(mParam1), "service_name", new MYAlert.OnSignleListTextSelected() {
                             @Override
                             public void OnSelectedTEXT(JSONObject jsonObject) {
-                                Loger.MSG("jsonObject",""+jsonObject);
                                 try {
                                     TXT_ServiceName.setText(jsonObject.getString("service_name"));
                                     TXT_ServiceName.setTag(jsonObject);
@@ -278,6 +289,8 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                                         if (jsonObject.getString("no_of_times").equals("1")) {
                                             RL_ExtraDropDown.setVisibility(View.VISIBLE);
                                             tv_times_visit.setText(getString(R.string.how_many_times));
+                                            no_of_times="1";
+                                            no_of_visit="0";
                                             ExtraPopup = jsonObject.getJSONArray("no_of_times_dropdown");
                                             TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                                             TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
@@ -286,6 +299,8 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                                         if (jsonObject.getString("no_of_visit").equals("1")) {
                                             RL_ExtraDropDown.setVisibility(View.VISIBLE);
                                             tv_times_visit.setText(getString(R.string.how_many_visits));
+                                            no_of_times="0";
+                                            no_of_visit="1";
                                             ExtraPopup = jsonObject.getJSONArray("no_of_visit_dropdown");
                                             TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                                             TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
@@ -309,6 +324,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                 break;
 
             case R.id.RL_ExtraDropDown:
+                Loger.MSG("ExtraPopup",""+ExtraPopup);
                 new MYAlert(getActivity()).AlertTextLsit("", ExtraPopup, "name", new MYAlert.OnSignleListTextSelected() {
                     @Override
                     public void OnSelectedTEXT(JSONObject jsonObject) {
