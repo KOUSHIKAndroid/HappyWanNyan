@@ -80,7 +80,6 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
     public void onFragmentInteraction(String uri) {
         switch (uri) {
 
-
             case "Two":
                 Apploaders.Show();
 

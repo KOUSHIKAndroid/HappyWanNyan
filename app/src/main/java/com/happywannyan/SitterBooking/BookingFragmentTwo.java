@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
@@ -19,7 +20,6 @@ import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.App_data_holder;
-import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONArray;
@@ -29,7 +29,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class BookingFragmentTwo extends Fragment implements View.OnClickListener{
+public class BookingFragmentTwo extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -40,7 +40,9 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
     private String mParam2;
 
     LinearLayout LL_MYPETS;
-    SFNFTextView TXT_PickupTime,TXT_dropTime;
+    SFNFTextView TXT_PickupTime, TXT_dropTime;
+
+    EditText EDX_Fname, EDX_Lname;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +66,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
         new AppContsnat(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
-            Log.d("@@ PARA<MS",mParam1);
+            Log.d("@@ PARA<MS", mParam1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
@@ -72,45 +74,60 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        EDX_Fname = (EditText) view.findViewById(R.id.EDX_Fname);
+        EDX_Lname = (EditText) view.findViewById(R.id.EDX_Lname);
+
         view.findViewById(R.id.Card_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((BookingOne)getActivity()).MyPetList=new ArrayList<String>();
 
-                        for( int k=0;k<LL_MYPETS.getChildCount();k++)
-                        {
-                            if(LL_MYPETS.getChildAt(k) instanceof CheckBox && ((CheckBox)((CheckBox) LL_MYPETS.getChildAt(k))).isChecked()){
-                                ((BookingOne)getActivity()).MyPetList.add(((CheckBox)((CheckBox) LL_MYPETS.getChildAt(k))).getTag()+"");
-                            }
+                boolean atLeastOneCheck = false;
+                EDX_Fname.setError(null);
+                EDX_Lname.setError(null);
+                ((BookingOne) getActivity()).MyPetList = new ArrayList<String>();
 
+                for (int k = 0; k < LL_MYPETS.getChildCount(); k++) {
+                    if (LL_MYPETS.getChildAt(k) instanceof CheckBox && ((CheckBox) ((CheckBox) LL_MYPETS.getChildAt(k))).isChecked()) {
+                        ((BookingOne) getActivity()).MyPetList.add(((CheckBox) ((CheckBox) LL_MYPETS.getChildAt(k))).getTag() + "");
+                        atLeastOneCheck = true;
+                    }
+                }
+
+                if (EDX_Fname.getText().toString().trim().equals("")) {
+                    EDX_Fname.setError("Please enter first name");
+                } else {
+                    if (EDX_Lname.getText().toString().trim().equals("")) {
+                        EDX_Lname.setError("Please enter last name");
+                    } else {
+                        if (atLeastOneCheck) {
+                            APIPOSTDATA apipostdata = new APIPOSTDATA();
+                            apipostdata.setPARAMS("no_of_pet");
+                            apipostdata.setValues(((BookingOne) getActivity()).MyPetList.size() + "");
+                            ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                            mListener.onFragmentInteraction("Three");
+                        } else {
+                            Toast.makeText(getActivity(), "Check at least one pet", Toast.LENGTH_SHORT).show();
                         }
-
-
-                APIPOSTDATA apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("no_of_pet");
-                apipostdata.setValues(((BookingOne)getActivity()).MyPetList.size()+"");
-                ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
-
-
-                mListener.onFragmentInteraction("Three");
+                    }
+                }
             }
         });
 
         view.findViewById(R.id.RL_DropOffTime).setOnClickListener(this);
         view.findViewById(R.id.RL_PickupTime).setOnClickListener(this);
 
-        TXT_PickupTime=(SFNFTextView)view.findViewById(R.id.TXT_PickupTime);
-        TXT_dropTime=(SFNFTextView)view.findViewById(R.id.TXT_dropTime);
+        TXT_PickupTime = (SFNFTextView) view.findViewById(R.id.TXT_PickupTime);
+        TXT_dropTime = (SFNFTextView) view.findViewById(R.id.TXT_dropTime);
 
         new AppContsnat(getActivity()).GET_SHAREDATA(App_data_holder.UserData, new App_data_holder.App_sharePrefData() {
             @Override
             public void Avialable(boolean avilavle, JSONObject data) {
                 try {
-                    ((EditText)view.findViewById(R.id.EDX_Fname)).setText(data.getJSONObject("info_array").getString("firstname"));
-                    ((EditText)view.findViewById(R.id.EDX_Lname)).setText(data.getJSONObject("info_array").getString("lastname"));
+                    EDX_Fname.setText(data.getJSONObject("info_array").getString("firstname"));
+                    EDX_Lname.setText(data.getJSONObject("info_array").getString("lastname"));
 
                 } catch (JSONException e) {
-
+                    e.printStackTrace();
                 }
             }
 
@@ -118,25 +135,23 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
             public void NotAvilable(String Error) {
 
 
-
             }
         });
 
-        LL_MYPETS=(LinearLayout)view.findViewById(R.id.LL_MYPETS);
+        LL_MYPETS = (LinearLayout) view.findViewById(R.id.LL_MYPETS);
 
-        
+
         SetPetList();
 
     }
 
     private void SetPetList() {
         try {
-            JSONObject MainJ=new JSONObject(mParam1).getJSONObject("info_array");
-            JSONArray Array=MainJ.getJSONArray("pet_section");
-            for(int i=0;i<Array.length();i++)
-            {
-                CheckBox chk=new CheckBox(getActivity());
-               chk.setGravity(View.LAYOUT_DIRECTION_LTR);
+            JSONObject MainJ = new JSONObject(mParam1).getJSONObject("info_array");
+            JSONArray Array = MainJ.getJSONArray("pet_section");
+            for (int i = 0; i < Array.length(); i++) {
+                CheckBox chk = new CheckBox(getActivity());
+                chk.setGravity(View.LAYOUT_DIRECTION_LTR);
                 chk.setText(Array.getJSONObject(i).getString("name"));
                 chk.setTag(Array.getJSONObject(i).getString("id"));
                 LL_MYPETS.addView(chk);
@@ -181,16 +196,16 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.RL_PickupTime:
-                JSONObject MainJ= null;
+                JSONObject MainJ = null;
                 try {
                     MainJ = new JSONObject(mParam1).getJSONObject("info_array");
-                    JSONArray Array=MainJ.getJSONArray("perf_start_droptime");
+                    JSONArray Array = MainJ.getJSONArray("perf_start_droptime");
                     new MYAlert(getActivity()).AlertTextLsit(getString(R.string.pickuptime), Array, "name", new MYAlert.OnSignleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
-                            Log.d("@@@fhjhf","--"+jsonObject);
+                            Log.d("@@@fhjhf", "--" + jsonObject);
                             try {
                                 TXT_PickupTime.setText(jsonObject.getString("name"));
                                 TXT_PickupTime.setTag(jsonObject.getString("name"));
@@ -207,11 +222,11 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
             case R.id.RL_DropOffTime:
                 try {
                     MainJ = new JSONObject(mParam1).getJSONObject("info_array");
-                    JSONArray Array=MainJ.getJSONArray("perf_end_droptime");
+                    JSONArray Array = MainJ.getJSONArray("perf_end_droptime");
                     new MYAlert(getActivity()).AlertTextLsit(getString(R.string.dropofftime), Array, "name", new MYAlert.OnSignleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
-                            Log.d("@@@fhjhf","--"+jsonObject);
+                            Log.d("@@@fhjhf", "--" + jsonObject);
                             try {
                                 TXT_dropTime.setText(jsonObject.getString("name"));
                                 TXT_dropTime.setTag(jsonObject.getString("name"));

@@ -30,7 +30,6 @@
                     <EditText
                         android:id="@+id/EDX_Fname"
                         android:layout_width="match_parent"
-                        android:editable="false"
                         android:layout_height="wrap_content"
                         android:hint="@string/FirestName" />
                 </android.support.design.widget.TextInputLayout>
@@ -44,7 +43,6 @@
 
                     <EditText
                         android:id="@+id/EDX_Lname"
-                        android:editable="false"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/LastName" />
