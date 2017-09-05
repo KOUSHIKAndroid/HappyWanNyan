@@ -91,6 +91,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
         LL_DoubleDate=(LinearLayout)view.findViewById(R.id.LL_DoubleDate);
 
         Apploaders = new AppLoader(getActivity());
+        postParamCoupon=new ArrayList<>();
 
         try {
             ((SFNFBoldTextView)view.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
