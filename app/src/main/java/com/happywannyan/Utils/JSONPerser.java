@@ -165,10 +165,9 @@ public class JSONPerser {
                         }else {
                             jsonresponse.OnError(new JSONObject(respose).getString("message")+"",respose);
                         }
-                    }catch (Exception e){}
-
-
-
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                 }else {
                     jsonresponse.OnError(exception.getMessage()+"");
                 }
