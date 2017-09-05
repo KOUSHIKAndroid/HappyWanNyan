@@ -117,7 +117,7 @@
 
 
     <android.support.v7.widget.CardView
-        android:id="@+id/Card_next"
+        android:id="@+id/Card_request"
         app:cardBackgroundColor="@color/btn_red"
         app:cardCornerRadius="23dp"
         app:cardElevation="3dp"
@@ -134,12 +134,11 @@
             android:padding="5dp">
 
             <com.happywannyan.Font.SFNFTextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/next"
+                android:text="@string/send_request"
                 android:textAllCaps="true"
                 android:textColor="@color/colorwhite"
                 android:textSize="18sp" />

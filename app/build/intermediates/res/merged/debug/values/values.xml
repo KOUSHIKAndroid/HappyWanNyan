@@ -1282,7 +1282,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">3a6388e0-f7e5-440d-9abf-67ffe8e1cb73</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">b8625dae-532b-45c6-8233-e47ecfcfa3b9</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1458,6 +1458,7 @@
     <string name="pleaseselect">Please Slect</string>
     <string name="previous">PREVIOUS</string>
     <string name="reservation">Reservation</string>
+    <string name="reservation_request">Reservation Request</string>
     <string name="responseinoneday">Responds in 1 day</string>
     <string name="review">Reviews</string>
     <string name="save">Save</string>
@@ -1467,6 +1468,7 @@
     <string name="select">Please Seclect</string>
     <string name="select_cancel_reason">Select a cancellation reason </string>
     <string name="send">Send</string>
+    <string name="send_request">Send Request</string>
     <string name="service">Service</string>
     <string name="signup_password_checkingtext">Password should contain alphanumeric character and at least one special character and should be at least 6 characters</string>
     <string name="signuplebel">By clicking Create Account or Sign Up with Facebook, you confirm that you accept the Terms of Service</string>
@@ -1486,6 +1488,7 @@
     <string name="tagmanager_preview_dialog_button">Continue</string>
     <string name="tagmanager_preview_dialog_message">Preview mode updated.</string>
     <string name="tagmanager_preview_dialog_title">Preview</string>
+    <string name="this_is_just_a_reservation_request">This is just a Reservation Request.Your card is only charged after the Sitter accept this request.</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_search_result">Map</string>
     <string name="tota_amnt">Total Amount</string>

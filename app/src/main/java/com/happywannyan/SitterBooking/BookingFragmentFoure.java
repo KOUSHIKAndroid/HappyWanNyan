@@ -104,6 +104,28 @@ public class BookingFragmentFoure extends Fragment {
 
         REC_Card=(RecyclerView)view.findViewById(R.id.REC_Card);
         REC_Card.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        view.findViewById(R.id.Card_request).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MYAlert(getActivity()).AlertOkCancel(getActivity().getResources().getString(R.string.reservation_request),
+                        getActivity().getResources().getString(R.string.this_is_just_a_reservation_request), new MYAlert.OnOkCancel() {
+                            @Override
+                            public void OnOk() {
+
+                            }
+
+                            @Override
+                            public void OnCancel() {
+
+                            }
+
+
+                        });
+
+            }
+        });
+
         view.findViewById(R.id.NEWCARD).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
