@@ -278,6 +278,8 @@ public class Search_Basic extends Fragment implements AppLocationProvider.Addres
                     LL_PetServiceList.setVisibility(View.VISIBLE);
                     IMG_erase_location.setVisibility(View.VISIBLE);
 
+                    searchAndIntent();
+
                     break;
                 case 101:
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -291,49 +293,7 @@ public class Search_Basic extends Fragment implements AppLocationProvider.Addres
     }
 
     public void GotoAdvancedSearched(JSONObject jsondata) {
-
-        JSONObject latalng = new JSONObject();
-        try {
-            if (place != null) {
-                latalng.put("lat", place.getLatLng().latitude + "");
-                latalng.put("lng", place.getLatLng().longitude + "");
-
-                JSONObject ViewPort = new JSONObject();
-                ViewPort.put("southwest_LAT", place.getViewport().southwest.latitude + "");
-                ViewPort.put("southwest_LNG", place.getViewport().southwest.longitude + "");
-
-                ViewPort.put("northeast_LAT", place.getViewport().northeast.latitude + "");
-                ViewPort.put("northeast_LNG", place.getViewport().northeast.longitude + "");
-
-                jsondata.put("LocationName", place.getName());
-                jsondata.put("latlng", latalng);
-                jsondata.put("viewport", ViewPort);
-                jsondata.put("Address", place.getAddress());
-                jsondata.put("StartDate", StartDate);
-                jsondata.put("EndDate", EndDate);
-                jsondata.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
-            } else if (GPS) {
-
-                JSONObject ViewPort = new JSONObject();
-                ViewPort.put("southwest_LAT", Geo.getJSONObject("viewport").getJSONObject("southwest").getString("lat") + "");
-                ViewPort.put("southwest_LNG", Geo.getJSONObject("viewport").getJSONObject("southwest").getString("lng") + "");
-
-                ViewPort.put("northeast_LAT", Geo.getJSONObject("viewport").getJSONObject("northeast").getString("lat") + "");
-                ViewPort.put("northeast_LNG", Geo.getJSONObject("viewport").getJSONObject("northeast").getString("lat") + "");
-
-                jsondata.put("LocationName", TXT_Loction.getText());
-                jsondata.put("latlng", Geo.getJSONObject("location"));
-                jsondata.put("viewport", ViewPort);
-                jsondata.put("Address", TXT_Loction.getText());
-                jsondata.put("StartDate", StartDate);
-                jsondata.put("EndDate", EndDate);
-                jsondata.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
         SearchJSON = jsondata;
-        Loger.MSG("@@", "" + SearchJSON.toString());
         searchAndIntent();
     }
 
@@ -354,6 +314,51 @@ public class Search_Basic extends Fragment implements AppLocationProvider.Addres
         } else if (SearchJSON == null) {
             Toast.makeText(getActivity(), "Please Choose an type", Toast.LENGTH_SHORT).show();
         } else {
+
+            /////////
+            JSONObject latalng = new JSONObject();
+            try {
+                if (place != null) {
+                    latalng.put("lat", place.getLatLng().latitude + "");
+                    latalng.put("lng", place.getLatLng().longitude + "");
+
+                    JSONObject ViewPort = new JSONObject();
+                    ViewPort.put("southwest_LAT", place.getViewport().southwest.latitude + "");
+                    ViewPort.put("southwest_LNG", place.getViewport().southwest.longitude + "");
+
+                    ViewPort.put("northeast_LAT", place.getViewport().northeast.latitude + "");
+                    ViewPort.put("northeast_LNG", place.getViewport().northeast.longitude + "");
+
+                    SearchJSON.put("LocationName", place.getName());
+                    SearchJSON.put("latlng", latalng);
+                    SearchJSON.put("viewport", ViewPort);
+                    SearchJSON.put("Address", place.getAddress());
+                    SearchJSON.put("StartDate", StartDate);
+                    SearchJSON.put("EndDate", EndDate);
+                    SearchJSON.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
+                } else if (GPS) {
+
+                    JSONObject ViewPort = new JSONObject();
+                    ViewPort.put("southwest_LAT", Geo.getJSONObject("viewport").getJSONObject("southwest").getString("lat") + "");
+                    ViewPort.put("southwest_LNG", Geo.getJSONObject("viewport").getJSONObject("southwest").getString("lng") + "");
+
+                    ViewPort.put("northeast_LAT", Geo.getJSONObject("viewport").getJSONObject("northeast").getString("lat") + "");
+                    ViewPort.put("northeast_LNG", Geo.getJSONObject("viewport").getJSONObject("northeast").getString("lat") + "");
+
+                    SearchJSON.put("LocationName", TXT_Loction.getText());
+                    SearchJSON.put("latlng", Geo.getJSONObject("location"));
+                    SearchJSON.put("viewport", ViewPort);
+                    SearchJSON.put("Address", TXT_Loction.getText());
+                    SearchJSON.put("StartDate", StartDate);
+                    SearchJSON.put("EndDate", EndDate);
+                    SearchJSON.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Loger.MSG("@@", "" + SearchJSON.toString());
+            ////////
+
 
 
             Intent intent = new Intent(new Intent(getActivity(), SearchResult.class));

@@ -418,8 +418,7 @@ public class MyProfile extends Fragment {
         File pictureFile = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), "FREEWILDER");
         if (pictureFile == null) {
-            Loger.MSG("@@",
-                    "Error creating media file, check storage permissions: ");// e.getMessage());
+            Loger.MSG("@@", "Error creating media file, check storage permissions: ");// e.getMessage());
             return;
         }
         try {

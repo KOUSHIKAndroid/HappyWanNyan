@@ -1,11 +1,23 @@
 [
     {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_error_amex.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_error_amex.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_jcb.png",
         "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_jcb.png"
     },
     {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_amex.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_amex.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_discover.png",
         "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_discover.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_cvc.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_cvc.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_unknown.png",
@@ -16,12 +28,40 @@
         "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_cvc.png"
     },
     {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_cvc_amex.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_cvc_amex.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_unknown.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_unknown.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_visa.png",
         "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_visa.png"
     },
     {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_diners.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_diners.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_discover.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_discover.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_error.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_error.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_jcb.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_jcb.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_cvc_amex.png",
         "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_cvc_amex.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_mastercard.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_mastercard.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_error.png",
@@ -34,6 +74,10 @@
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_error_amex.png",
         "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-ldpi-v4/ic_error_amex.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_visa.png",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-ldpi-v4/ic_visa.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_diners.png",

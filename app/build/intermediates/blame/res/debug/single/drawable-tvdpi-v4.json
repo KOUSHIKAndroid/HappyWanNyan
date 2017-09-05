@@ -8,11 +8,27 @@
         "source": "/Users/apple/.android/build-cache/f615542a9b743b2b88ec164d33fc2bf119d6fac6/output/res/drawable-tvdpi-v4/ic_plusone_tall_off_client.png"
     },
     {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-tvdpi-v4/ic_plusone_medium_off_client.png",
+        "source": "/home/su/.android/build-cache/6c2fcb3b3411d845ce108b60c19d71a6da930879/output/res/drawable-tvdpi-v4/ic_plusone_medium_off_client.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-tvdpi-v4/ic_plusone_small_off_client.png",
         "source": "/Users/apple/.android/build-cache/f615542a9b743b2b88ec164d33fc2bf119d6fac6/output/res/drawable-tvdpi-v4/ic_plusone_small_off_client.png"
     },
     {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-tvdpi-v4/ic_plusone_tall_off_client.png",
+        "source": "/home/su/.android/build-cache/6c2fcb3b3411d845ce108b60c19d71a6da930879/output/res/drawable-tvdpi-v4/ic_plusone_tall_off_client.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-tvdpi-v4/ic_plusone_standard_off_client.png",
+        "source": "/home/su/.android/build-cache/6c2fcb3b3411d845ce108b60c19d71a6da930879/output/res/drawable-tvdpi-v4/ic_plusone_standard_off_client.png"
+    },
+    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-tvdpi-v4/ic_plusone_medium_off_client.png",
         "source": "/Users/apple/.android/build-cache/f615542a9b743b2b88ec164d33fc2bf119d6fac6/output/res/drawable-tvdpi-v4/ic_plusone_medium_off_client.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-tvdpi-v4/ic_plusone_small_off_client.png",
+        "source": "/home/su/.android/build-cache/6c2fcb3b3411d845ce108b60c19d71a6da930879/output/res/drawable-tvdpi-v4/ic_plusone_small_off_client.png"
     }
 ]

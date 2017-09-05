@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="CircularReveal-1.0.5">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/f274f41525452810fdc00528d05f1432cd686e81/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/f274f41525452810fdc00528d05f1432cd686e81/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/6ed4d98c8b11f0f7348e32b28ff70e5a03ac1988/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/6ed4d98c8b11f0f7348e32b28ff70e5a03ac1988/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

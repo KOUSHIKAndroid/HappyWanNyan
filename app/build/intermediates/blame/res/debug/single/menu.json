@@ -2,5 +2,9 @@
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/menu/base.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/menu/base.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/menu/base.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/menu/base.xml"
     }
 ]

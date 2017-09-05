@@ -125,7 +125,7 @@
     <string name="trust_safty"><![CDATA[Trust & Safety  Fee]]></string>
     <string name="tota_amnt">Total Amount</string>
     <string name="cancelpolicy">Cancelation Policy</string>
-    <string name="pay_now">Pay Now</string>
+    <string name="payment_details">Payment Details</string>
     <string name="add_another_pets">Add Another Pets</string>
     <string name="Chosepettype">Choose pet type</string>
     <string name="Name">Name</string>
