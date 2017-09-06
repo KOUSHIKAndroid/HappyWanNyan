@@ -390,7 +390,7 @@
             android:gravity="center_vertical"
             android:paddingLeft="30dp"
             android:paddingRight="0dp"
-            android:text="@string/reservation"
+            android:text="@string/request_reservation"
             android:textColor="@color/colorwhite"
             android:textSize="15sp" />
 
