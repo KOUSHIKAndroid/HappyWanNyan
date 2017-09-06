@@ -116,6 +116,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                 TXT_Price.setText(jsonObject.getString("service_price") + " / " + jsonObject.getString("unit_name"));
                 if (jsonObject.getString("date_field").equals("double")) {
                     LL_S_F.setVisibility(View.VISIBLE);
+                    ((BookingOne)getActivity()).DoubleDate=true;
                 } else {
                     ((BookingOne)getActivity()).DoubleDate=false;
                     RL_SingleDate.setVisibility(View.VISIBLE);
@@ -279,6 +280,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                                     TXT_Price.setText(jsonObject.getString("service_price") + " / " + jsonObject.getString("unit_name"));
                                     if (jsonObject.getString("date_field").equals("double")) {
                                         LL_S_F.setVisibility(View.VISIBLE);
+                                        ((BookingOne)getActivity()).DoubleDate=true;
                                     } else {
                                         ((BookingOne)getActivity()).DoubleDate=false;
                                         RL_SingleDate.setVisibility(View.VISIBLE);

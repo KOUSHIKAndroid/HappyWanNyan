@@ -88,12 +88,12 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/activity_addreview.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cancel_booking.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/cancel_booking.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/profile_about_items_petsize.xml",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/profile_about_items_petsize.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cancel_booking.xml",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/cancel_booking.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/cast_help_text.xml",
@@ -116,12 +116,12 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout/activity_login.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
-        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/layout/design_layout_tab_icon.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/mr_volume_control.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/layout/mr_volume_control.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
+        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/layout/design_layout_tab_icon.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/no_data_layout.xml",
@@ -144,12 +144,12 @@
         "source": "/Users/apple/.android/build-cache/57005ab84d06df69b42c70db403694162056dd39/output/res/layout/messenger_button_send_white_round.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/fragment_booking_fragmnet_one.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/fragment_booking_fragmnet_one.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/mr_controller_volume_item.xml",
         "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/layout/mr_controller_volume_item.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/fragment_booking_fragmnet_one.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/fragment_booking_fragmnet_one.xml"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/lyt_card_expiry.xml",
