@@ -1,10 +1,11 @@
 package com.happywannyan.SitterBooking;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
@@ -23,10 +23,8 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 public class BookingFrgamnetThree extends Fragment implements View.OnClickListener {
@@ -44,8 +42,9 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     EditText EDX_coupon_code;
     public ArrayList<APIPOSTDATA> postParamCoupon;
     AppLoader Apploaders;
-
+    LinearLayout LL_subtotal_discount;
     SFNFTextView Tv_coupon_code_valid_check;
+    SFNFBoldTextView TXT_TotalPrice,TXT_SubTotalPrice,TXT_DiscountPrice;
 
     private OnFragmentInteractionListener mListener;
 
@@ -94,13 +93,17 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
 
         Apploaders = new AppLoader(getActivity());
         postParamCoupon=new ArrayList<>();
+        LL_subtotal_discount= (LinearLayout) view.findViewById(R.id.LL_subtotal_discount);
         Tv_coupon_code_valid_check= (SFNFTextView) view.findViewById(R.id.Tv_coupon_code_valid_check);
+        TXT_SubTotalPrice= (SFNFBoldTextView) view.findViewById(R.id.TXT_SubTotalPrice);
+        TXT_DiscountPrice= (SFNFBoldTextView) view.findViewById(R.id.TXT_DiscountPrice);
+        TXT_TotalPrice= (SFNFBoldTextView) view.findViewById(R.id.TXT_TotalPrice);
 
         try {
             ((SFNFBoldTextView)view.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
             ((SFNFTextView)view.findViewById(R.id.TXT_Unit)).setText(PageObject.getJSONObject("info_array").getString("service_price"));
             ((SFNFTextView)view.findViewById(R.id.TXT_no_pets)).setText(PageObject.getJSONObject("info_array").getString("no_of_pet"));
-            ((SFNFBoldTextView)view.findViewById(R.id.TXT_TotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));
+            TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
             ((SFNFTextView)view.findViewById(R.id.TXT_saftyPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
             ((SFNFTextView)view.findViewById(R.id.TXT_CancelPolicy)).setText(PageObject.getJSONObject("info_array").getString("cancel_policy"));
 
@@ -191,6 +194,24 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                                     JSONObject jsonObject=new JSONObject(Result);
                                     Tv_coupon_code_valid_check.setVisibility(View.VISIBLE);
                                     Tv_coupon_code_valid_check.setText(jsonObject.getString("message"));
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                        Tv_coupon_code_valid_check.setTextColor(getResources().getColor(R.color.colorPrimaryDark, null));
+                                    }
+                                    else {
+                                        Tv_coupon_code_valid_check.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                                    }
+                                    LL_subtotal_discount.setVisibility(View.VISIBLE);
+                                    TXT_SubTotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
+                                    TXT_DiscountPrice.setText("-"+jsonObject.getJSONObject("info_array").getString("amount"));
+
+                                    if (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price"))
+                                            >Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount")))
+                                    {
+                                        TXT_TotalPrice.setText(""+(Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price"))-Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))));
+                                    }
+                                    else {
+                                        TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
+                                    }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -202,9 +223,13 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                             public void OnError(String Error, String Response) {
                                 Apploaders.Dismiss();
                                 try {
+                                    LL_subtotal_discount.setVisibility(View.GONE);
+                                    TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
                                     JSONObject jsonObject=new JSONObject(Response);
                                     Tv_coupon_code_valid_check.setVisibility(View.VISIBLE);
                                     Tv_coupon_code_valid_check.setText(jsonObject.getString("message"));
+                                    Tv_coupon_code_valid_check.setTextColor(Color.RED);
+
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
