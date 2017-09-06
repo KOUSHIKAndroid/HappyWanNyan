@@ -271,7 +271,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.Card_next:
-                mListener.onFragmentInteraction("foure");
+                mListener.onFragmentInteraction("four");
                 break;
         }
     }

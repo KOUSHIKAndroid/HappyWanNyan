@@ -144,7 +144,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
 
 
                 break;
-            case "foure":
+            case "four":
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.add(R.id.Body, BookingFragmentFoure.newInstance(null, null));
                 fragmentTransaction.addToBackStack(null).commit();
