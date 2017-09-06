@@ -112,15 +112,13 @@ public class BookingFragmentFoure extends Fragment {
                         getActivity().getResources().getString(R.string.this_is_just_a_reservation_request), new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
-
+                                ((BookingOne)getActivity()).submitConfirmReservationRequest();
                             }
 
                             @Override
                             public void OnCancel() {
 
                             }
-
-
                         });
 
             }

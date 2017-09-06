@@ -1,10 +1,11 @@
 package com.happywannyan.SitterBooking;
 
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
+
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -12,8 +13,10 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class BookingOne extends AppCompatActivity implements View.OnClickListener, OnFragmentInteractionListener {
@@ -23,13 +26,14 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
 
     AppLoader Apploaders;
     JSONObject ItemDetails;
-   public ArrayList<String>MyPetList;
-    public  boolean DropDown=true;
+    public ArrayList<String> MyPetList;
+    public boolean DropDown = true;
 
-    public boolean DoubleDate=true;
+    public boolean DoubleDate = true;
 
     public ArrayList<APIPOSTDATA> FirstPageData;
     FragmentTransaction fragmentTransaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,19 +41,19 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         findViewById(R.id.IMG_icon_back).setOnClickListener(this);
 
         Apploaders = new AppLoader(this);
-         fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
         try {
             ServiceList = getIntent().getStringExtra("LIST");
-            DropDown=getIntent().getBooleanExtra("Single",true);
-            Loger.MSG("@@ LIST"," DATA-"+ServiceList);
+            DropDown = getIntent().getBooleanExtra("Single", true);
+            Loger.MSG("@@ LIST", " DATA-" + ServiceList);
             PRESelectService = getIntent().getStringExtra("SELECT");
-            Loger.MSG("@@ SELECT"," DATA-"+PRESelectService);
+            Loger.MSG("@@ SELECT", " DATA-" + PRESelectService);
 
-                ItemDetails = new JSONObject(getIntent().getStringExtra("ItemDetails"));
-                Loger.MSG("@@ ITEM", " DATA-" + ItemDetails);
+            ItemDetails = new JSONObject(getIntent().getStringExtra("ItemDetails"));
+            Loger.MSG("@@ ITEM", " DATA-" + ItemDetails);
 
         } catch (JSONException e) {
-            Loger.Error("@@ Error",e.getMessage());
+            Loger.Error("@@ Error", e.getMessage());
         }
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -111,7 +115,6 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
                 });
 
 
-
                 break;
             case "Three":
                 Apploaders.Show();
@@ -146,5 +149,29 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
                 break;
 
         }
+    }
+
+    public void submitConfirmReservationRequest() {
+
+        for (int i = 0; i < FirstPageData.size(); i++) {
+            Loger.MSG(FirstPageData.get(i).getPARAMS(), "-->" + FirstPageData.get(i).getValues());
+        }
+//        Apploaders.Show();
+//        new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new JSONPerser.JSONRESPONSE() {
+//            @Override
+//            public void OnSuccess(String Result) {
+//
+//            }
+//
+//            @Override
+//            public void OnError(String Error, String Response) {
+//                Apploaders.Dismiss();
+//            }
+//
+//            @Override
+//            public void OnError(String Error) {
+//                Apploaders.Dismiss();
+//            }
+//        });
     }
 }
