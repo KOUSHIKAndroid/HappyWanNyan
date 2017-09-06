@@ -91,7 +91,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
 
                 for (int k = 0; k < LL_MYPETS.getChildCount(); k++) {
                     if (LL_MYPETS.getChildAt(k) instanceof CheckBox && ((CheckBox) ((CheckBox) LL_MYPETS.getChildAt(k))).isChecked()) {
-                        ((BookingOne) getActivity()).MyPetList.add(((CheckBox) ((CheckBox) LL_MYPETS.getChildAt(k))).getTag() + "");
+                        ((BookingOne) getActivity()).MyPetList.add(((CheckBox) LL_MYPETS.getChildAt(k)).getTag() + "");
                         atLeastOneCheck = true;
                     }
                 }
@@ -103,11 +103,15 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                         EDX_Lname.setError("Please enter last name");
                     } else {
                         if (atLeastOneCheck) {
+
                             APIPOSTDATA apipostdata = new APIPOSTDATA();
                             apipostdata.setPARAMS("no_of_pet");
                             apipostdata.setValues(((BookingOne) getActivity()).MyPetList.size() + "");
                             ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                            ((BookingOne)getActivity()).submitConfirmReservationRequest();
+
                             mListener.onFragmentInteraction("Three");
+
                         } else {
                             Toast.makeText(getActivity(), "Check at least one pet", Toast.LENGTH_SHORT).show();
                         }
