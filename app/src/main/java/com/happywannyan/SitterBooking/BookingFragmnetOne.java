@@ -235,7 +235,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                     }
                     else {
                         apipostdata.setPARAMS("no_of_visit");
-                        apipostdata.setValues("0");
+                        apipostdata.setValues("");
                     }
                     if(no_of_times.equals("1")) {
                         apipostdata.setPARAMS("no_times");
@@ -243,7 +243,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                     }
                     else {
                         apipostdata.setPARAMS("no_times");
-                        apipostdata.setValues("0");
+                        apipostdata.setValues("");
                     }
 
                 ((BookingOne) getActivity()).FirstPageData.add(apipostdata);

@@ -356,7 +356,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:background="@color/colorPrimary"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:text="@string/apply"
                     android:textAllCaps="true"
                     android:textColor="@color/colorwhite"
@@ -368,7 +368,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_toLeftOf="@+id/tv_coupon_code"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:src="@drawable/ic_close_grey" />
 
             </RelativeLayout>
