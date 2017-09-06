@@ -189,10 +189,10 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
                                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText(jsonObject.getString("message"));
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.colorPrimaryDark, null));
+                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.GreenColor, null));
                                     }
                                     else {
-                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.GreenColor));
                                     }
                                     ((LinearLayout) viewMain.findViewById(R.id.LL_subtotal_discount)).setVisibility(View.VISIBLE);
                                     ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_SubTotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));
