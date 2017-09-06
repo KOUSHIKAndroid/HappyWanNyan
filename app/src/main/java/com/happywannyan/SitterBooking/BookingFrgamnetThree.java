@@ -43,7 +43,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     EditText EDX_coupon_code;
     public ArrayList<APIPOSTDATA> postParamCoupon;
     AppLoader appLoader;
-    TextInputLayout input_layout_coupon_code;
+    //TextInputLayout input_layout_coupon_code;
     private OnFragmentInteractionListener mListener;
 
     public BookingFrgamnetThree() {
@@ -92,7 +92,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
         appLoader = new AppLoader(getActivity());
         postParamCoupon=new ArrayList<>();
 
-        input_layout_coupon_code= (TextInputLayout) viewMain.findViewById(R.id.input_layout_coupon_code);
+        //input_layout_coupon_code= (TextInputLayout) viewMain.findViewById(R.id.input_layout_coupon_code);
         viewMain.findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
         viewMain.findViewById(R.id.img_clear).setVisibility(View.GONE);
         EDX_coupon_code= (EditText) viewMain.findViewById(R.id.EDX_coupon_code);
@@ -160,15 +160,24 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
         viewMain.findViewById(R.id.tv_coupon_code).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                input_layout_coupon_code.setErrorEnabled(false);
-                input_layout_coupon_code.setError(null);
+                //input_layout_coupon_code.setErrorEnabled(false);
+                //input_layout_coupon_code.setError(null);
+
+                ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.GONE);
+
                 if (EDX_coupon_code.getText().toString().trim().equals("")){
-                    input_layout_coupon_code.setErrorEnabled(true);
-                    input_layout_coupon_code.setError("Field can't be empty");
+                    //input_layout_coupon_code.setErrorEnabled(true);
+                    //input_layout_coupon_code.setError("Field can't be empty");
+                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
+                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText("Field can't be empty");
+                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
                 }else {
                     if (EDX_coupon_code.getText().toString().trim().length()<6){
-                        input_layout_coupon_code.setErrorEnabled(true);
-                        input_layout_coupon_code.setError("Field must be greater then 5");
+                        //input_layout_coupon_code.setErrorEnabled(true);
+                        //input_layout_coupon_code.setError("Field must be greater then 5");
+                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
+                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText("Field must be greater then 5");
+                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
                     }else {
                         APIPOSTDATA apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("user_id");

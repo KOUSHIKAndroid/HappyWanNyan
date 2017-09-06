@@ -1284,7 +1284,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">d09674d4-17c0-40de-828c-53880bff882d</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">5216a47c-3b10-4bec-b8f3-d2fc2ab69891</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1462,7 +1462,7 @@
     <string name="pleasenteraddress">Please Enter Address</string>
     <string name="pleaseselect">Please Slect</string>
     <string name="previous">PREVIOUS</string>
-    <string name="reservation">Reservation</string>
+    <string name="reservation">Reservation Request</string>
     <string name="reservation_request">Reservation Request</string>
     <string name="responseinoneday">Responds in 1 day</string>
     <string name="review">Reviews</string>

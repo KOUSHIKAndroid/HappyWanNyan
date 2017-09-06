@@ -59,7 +59,7 @@
     <string name="title_activity_search_result">Map</string>
     <string name="unread">Unread</string>
     <string name="un_responded">Un Responded</string>
-    <string name="reservation">Reservation</string>
+    <string name="reservation">Request Reservation</string>
     <string name="all_messages">All Messages</string>
     <string name="ChooseService">Choose Service</string>
     <string name="Booking">Booking</string>

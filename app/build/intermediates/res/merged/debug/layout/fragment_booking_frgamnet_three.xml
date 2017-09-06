@@ -355,7 +355,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:background="#25B7D3"
+                    android:background="@color/colorPrimary"
                     android:padding="10dp"
                     android:text="@string/apply"
                     android:textAllCaps="true"
