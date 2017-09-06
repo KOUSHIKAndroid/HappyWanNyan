@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -41,11 +42,8 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     LinearLayout LL_ForSingleDate,LL_DoubleDate;
     EditText EDX_coupon_code;
     public ArrayList<APIPOSTDATA> postParamCoupon;
-    AppLoader Apploaders;
-    LinearLayout LL_subtotal_discount;
-    SFNFTextView Tv_coupon_code_valid_check;
-    SFNFBoldTextView TXT_TotalPrice,TXT_SubTotalPrice,TXT_DiscountPrice;
-
+    AppLoader appLoader;
+    TextInputLayout input_layout_coupon_code;
     private OnFragmentInteractionListener mListener;
 
     public BookingFrgamnetThree() {
@@ -84,54 +82,50 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     }
 
     @Override
-    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.Card_next).setOnClickListener(this);
+    public void onViewCreated(final View viewMain, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(viewMain, savedInstanceState);
+        viewMain.findViewById(R.id.Card_next).setOnClickListener(this);
 
-        LL_ForSingleDate=(LinearLayout)view.findViewById(R.id.LL_ForSingleDate);
-        LL_DoubleDate=(LinearLayout)view.findViewById(R.id.LL_DoubleDate);
+        LL_ForSingleDate=(LinearLayout)viewMain.findViewById(R.id.LL_ForSingleDate);
+        LL_DoubleDate=(LinearLayout)viewMain.findViewById(R.id.LL_DoubleDate);
 
-        Apploaders = new AppLoader(getActivity());
+        appLoader = new AppLoader(getActivity());
         postParamCoupon=new ArrayList<>();
-        LL_subtotal_discount= (LinearLayout) view.findViewById(R.id.LL_subtotal_discount);
-        Tv_coupon_code_valid_check= (SFNFTextView) view.findViewById(R.id.Tv_coupon_code_valid_check);
-        TXT_SubTotalPrice= (SFNFBoldTextView) view.findViewById(R.id.TXT_SubTotalPrice);
-        TXT_DiscountPrice= (SFNFBoldTextView) view.findViewById(R.id.TXT_DiscountPrice);
-        TXT_TotalPrice= (SFNFBoldTextView) view.findViewById(R.id.TXT_TotalPrice);
+
+        input_layout_coupon_code= (TextInputLayout) viewMain.findViewById(R.id.input_layout_coupon_code);
+        viewMain.findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
+        viewMain.findViewById(R.id.img_clear).setVisibility(View.GONE);
+        EDX_coupon_code= (EditText) viewMain.findViewById(R.id.EDX_coupon_code);
 
         try {
-            ((SFNFBoldTextView)view.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
-            ((SFNFTextView)view.findViewById(R.id.TXT_Unit)).setText(PageObject.getJSONObject("info_array").getString("service_price"));
-            ((SFNFTextView)view.findViewById(R.id.TXT_no_pets)).setText(PageObject.getJSONObject("info_array").getString("no_of_pet"));
-            TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
-            ((SFNFTextView)view.findViewById(R.id.TXT_saftyPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
-            ((SFNFTextView)view.findViewById(R.id.TXT_CancelPolicy)).setText(PageObject.getJSONObject("info_array").getString("cancel_policy"));
+            ((SFNFBoldTextView)viewMain.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
+            ((SFNFTextView)viewMain.findViewById(R.id.TXT_Unit)).setText(PageObject.getJSONObject("info_array").getString("service_price"));
+            ((SFNFTextView)viewMain.findViewById(R.id.TXT_no_pets)).setText(PageObject.getJSONObject("info_array").getString("no_of_pet"));
+            ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));
+            ((SFNFTextView)viewMain.findViewById(R.id.TXT_saftyPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
+            ((SFNFTextView)viewMain.findViewById(R.id.TXT_CancelPolicy)).setText(PageObject.getJSONObject("info_array").getString("cancel_policy"));
 
             if(((BookingOne)getActivity()).DoubleDate) {
                 LL_DoubleDate.setVisibility(View.VISIBLE);
                 LL_ForSingleDate.setVisibility(View.GONE);
-                ((SFNFTextView) view.findViewById(R.id.TXT_StartDate)).setText(PageObject.getJSONObject("info_array").getString("start_date"));
-                ((SFNFTextView) view.findViewById(R.id.TXT_EndDte)).setText(PageObject.getJSONObject("info_array").getString("end_date"));
-                ((SFNFTextView) view.findViewById(R.id.TXT_No_OfNight)).setText(PageObject.getJSONObject("info_array").getString("no_of_nights"));
+                ((SFNFTextView) viewMain.findViewById(R.id.TXT_StartDate)).setText(PageObject.getJSONObject("info_array").getString("start_date"));
+                ((SFNFTextView) viewMain.findViewById(R.id.TXT_EndDte)).setText(PageObject.getJSONObject("info_array").getString("end_date"));
+                ((SFNFTextView) viewMain.findViewById(R.id.TXT_No_OfNight)).setText(PageObject.getJSONObject("info_array").getString("no_of_nights"));
             }else {
                 LL_ForSingleDate.setVisibility(View.VISIBLE);
                 LL_DoubleDate.setVisibility(View.GONE);
-                ((SFNFTextView) view.findViewById(R.id.TXT_DAte)).setText(PageObject.getJSONObject("info_array").getString("date"));
+                ((SFNFTextView) viewMain.findViewById(R.id.TXT_DAte)).setText(PageObject.getJSONObject("info_array").getString("date"));
                 if(PageObject.getJSONObject("info_array").has("no_of_times"))
-                ((SFNFTextView) view.findViewById(R.id.TXT_ofTome)).setText(PageObject.getJSONObject("info_array").getString("no_of_times"));
+                ((SFNFTextView) viewMain.findViewById(R.id.TXT_ofTome)).setText(PageObject.getJSONObject("info_array").getString("no_of_times"));
                 else
-                    view.findViewById(R.id.RL_Times).setVisibility(View.GONE);
+                    viewMain.findViewById(R.id.RL_Times).setVisibility(View.GONE);
 
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        view.findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
-        view.findViewById(R.id.img_clear).setVisibility(View.GONE);
-        EDX_coupon_code= (EditText) view.findViewById(R.id.EDX_coupon_code);
-
-        view.findViewById(R.id.img_clear).setOnClickListener(new View.OnClickListener() {
+        viewMain.findViewById(R.id.img_clear).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EDX_coupon_code.setText("");
@@ -148,11 +142,11 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                 if(!charSequence.toString().toString().equals("")){
-                    view.findViewById(R.id.tv_coupon_code).setVisibility(View.VISIBLE);
-                    view.findViewById(R.id.img_clear).setVisibility(View.VISIBLE);
+                    viewMain.findViewById(R.id.tv_coupon_code).setVisibility(View.VISIBLE);
+                    viewMain.findViewById(R.id.img_clear).setVisibility(View.VISIBLE);
                 }else {
-                    view.findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
-                    view.findViewById(R.id.img_clear).setVisibility(View.GONE);
+                    viewMain.findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
+                    viewMain.findViewById(R.id.img_clear).setVisibility(View.GONE);
                 }
             }
 
@@ -163,14 +157,14 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
         });
 
 
-        view.findViewById(R.id.tv_coupon_code).setOnClickListener(new View.OnClickListener() {
+        viewMain.findViewById(R.id.tv_coupon_code).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (EDX_coupon_code.getText().toString().trim().equals("")){
-//                    input_layout_coupon_code.setError("Field can't be empty");
+                    input_layout_coupon_code.setError("Field can't be empty");
                 }else {
                     if (EDX_coupon_code.getText().toString().trim().length()<6){
-//                        input_layout_coupon_code.setError("Field must be greater then 5");
+                        input_layout_coupon_code.setError("Field must be greater then 5");
                     }else {
                         APIPOSTDATA apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("user_id");
@@ -182,35 +176,35 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                         apipostdata.setValues(EDX_coupon_code.getText().toString().trim());
                         postParamCoupon.add(apipostdata);
 
-                        Apploaders.Show();
+                        appLoader.Show();
 
                         new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "Api_coupon_exits", postParamCoupon, new JSONPerser.JSONRESPONSE() {
                             @Override
                             public void OnSuccess(String Result) {
-                                Apploaders.Dismiss();
+                                appLoader.Dismiss();
                                 Loger.MSG("Result",Result);
 
                                 try {
                                     JSONObject jsonObject=new JSONObject(Result);
-                                    Tv_coupon_code_valid_check.setVisibility(View.VISIBLE);
-                                    Tv_coupon_code_valid_check.setText(jsonObject.getString("message"));
+                                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
+                                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText(jsonObject.getString("message"));
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                        Tv_coupon_code_valid_check.setTextColor(getResources().getColor(R.color.colorPrimaryDark, null));
+                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.colorPrimaryDark, null));
                                     }
                                     else {
-                                        Tv_coupon_code_valid_check.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.colorPrimaryDark));
                                     }
-                                    LL_subtotal_discount.setVisibility(View.VISIBLE);
-                                    TXT_SubTotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
-                                    TXT_DiscountPrice.setText("-"+jsonObject.getJSONObject("info_array").getString("amount"));
+                                    ((LinearLayout) viewMain.findViewById(R.id.LL_subtotal_discount)).setVisibility(View.VISIBLE);
+                                    ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_SubTotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));
+                                    ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_DiscountPrice)).setText("-"+jsonObject.getJSONObject("info_array").getString("amount"));
 
                                     if (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price"))
                                             >Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount")))
                                     {
-                                        TXT_TotalPrice.setText(""+(Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price"))-Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))));
+                                        ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice)).setText(""+(Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price"))-Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))));
                                     }
                                     else {
-                                        TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
+                                        ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -221,14 +215,14 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
 
                             @Override
                             public void OnError(String Error, String Response) {
-                                Apploaders.Dismiss();
+                                appLoader.Dismiss();
                                 try {
-                                    LL_subtotal_discount.setVisibility(View.GONE);
-                                    TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
+                                    ((LinearLayout) viewMain.findViewById(R.id.LL_subtotal_discount)).setVisibility(View.GONE);
+                                    ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));
                                     JSONObject jsonObject=new JSONObject(Response);
-                                    Tv_coupon_code_valid_check.setVisibility(View.VISIBLE);
-                                    Tv_coupon_code_valid_check.setText(jsonObject.getString("message"));
-                                    Tv_coupon_code_valid_check.setTextColor(Color.RED);
+                                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
+                                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText(jsonObject.getString("message"));
+                                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -237,7 +231,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
 
                             @Override
                             public void OnError(String Error) {
-                                Apploaders.Dismiss();
+                                appLoader.Dismiss();
                             }
                         });
 
