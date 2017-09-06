@@ -21,6 +21,7 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.App_data_holder;
 import com.happywannyan.Utils.MYAlert;
+import com.happywannyan.Utils.MethodsUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,6 +77,8 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
         super.onViewCreated(view, savedInstanceState);
         EDX_Fname = (EditText) view.findViewById(R.id.EDX_Fname);
         EDX_Lname = (EditText) view.findViewById(R.id.EDX_Lname);
+
+        new MethodsUtils().setupParent(view.findViewById(R.id.RLParent),getActivity());
 
         view.findViewById(R.id.Card_next).setOnClickListener(new View.OnClickListener() {
             @Override

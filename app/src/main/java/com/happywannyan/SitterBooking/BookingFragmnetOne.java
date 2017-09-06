@@ -23,6 +23,7 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+import com.happywannyan.Utils.MethodsUtils;
 import com.happywannyan.Utils.helper.DatePickerFragment;
 
 import org.json.JSONArray;
@@ -101,6 +102,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
         RL_SingleDate.setVisibility(View.GONE);
         RL_ExtraDropDown.setVisibility(View.GONE);
         LL_S_F.setVisibility(View.GONE);
+
 
         if (!mParam2.equals("NA")) {
             try {

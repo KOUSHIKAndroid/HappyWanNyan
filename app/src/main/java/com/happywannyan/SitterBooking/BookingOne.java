@@ -1,11 +1,10 @@
 package com.happywannyan.SitterBooking;
 
-import android.net.Uri;
+
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -13,11 +12,8 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 public class BookingOne extends AppCompatActivity implements View.OnClickListener, OnFragmentInteractionListener {
@@ -59,7 +55,6 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.Body, BookingFragmnetOne.newInstance(ServiceList, PRESelectService));
         fragmentTransaction.disallowAddToBackStack().commit();
-
 
     }
 

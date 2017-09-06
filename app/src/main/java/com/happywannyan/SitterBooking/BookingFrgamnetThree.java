@@ -24,6 +24,8 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MethodsUtils;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
@@ -96,6 +98,8 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
         viewMain.findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
         viewMain.findViewById(R.id.img_clear).setVisibility(View.GONE);
         EDX_coupon_code= (EditText) viewMain.findViewById(R.id.EDX_coupon_code);
+
+        new MethodsUtils().setupParent(viewMain.findViewById(R.id.ScrollViewMain),getActivity());
 
         try {
             ((SFNFBoldTextView)viewMain.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
