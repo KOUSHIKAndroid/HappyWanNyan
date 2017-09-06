@@ -160,10 +160,14 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
         viewMain.findViewById(R.id.tv_coupon_code).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                input_layout_coupon_code.setErrorEnabled(false);
+                input_layout_coupon_code.setError(null);
                 if (EDX_coupon_code.getText().toString().trim().equals("")){
+                    input_layout_coupon_code.setErrorEnabled(true);
                     input_layout_coupon_code.setError("Field can't be empty");
                 }else {
                     if (EDX_coupon_code.getText().toString().trim().length()<6){
+                        input_layout_coupon_code.setErrorEnabled(true);
                         input_layout_coupon_code.setError("Field must be greater then 5");
                     }else {
                         APIPOSTDATA apipostdata = new APIPOSTDATA();
