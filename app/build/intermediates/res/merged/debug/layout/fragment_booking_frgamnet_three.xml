@@ -122,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                         android:text="@string/Date" />
 
                     <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/TXT_DAte"
+                        android:id="@+id/TXT_Date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -152,10 +152,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="@string/OfTime" />
+                        android:text="@string/OfDays" />
 
                     <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/TXT_ofTome"
+                        android:id="@+id/TXT_ofDays"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"

@@ -10,7 +10,6 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -116,9 +115,9 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
             }else {
                 LL_ForSingleDate.setVisibility(View.VISIBLE);
                 LL_DoubleDate.setVisibility(View.GONE);
-                ((SFNFTextView) viewMain.findViewById(R.id.TXT_DAte)).setText(PageObject.getJSONObject("info_array").getString("date"));
+                ((SFNFTextView) viewMain.findViewById(R.id.TXT_Date)).setText(PageObject.getJSONObject("info_array").getString("date"));
                 if(PageObject.getJSONObject("info_array").has("no_of_times"))
-                ((SFNFTextView) viewMain.findViewById(R.id.TXT_ofTome)).setText(PageObject.getJSONObject("info_array").getString("no_of_times"));
+                ((SFNFTextView) viewMain.findViewById(R.id.TXT_ofDays)).setText(PageObject.getJSONObject("info_array").getString("no_of_days"));
                 else
                     viewMain.findViewById(R.id.RL_Times).setVisibility(View.GONE);
             }

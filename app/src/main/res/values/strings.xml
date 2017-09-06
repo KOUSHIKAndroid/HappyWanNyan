@@ -171,7 +171,7 @@
     <string name="nevershowstng">Never show this message again</string>
     <string name="writeyourcomment">Write your comment</string>
     <string name="Date">Date</string>
-    <string name="OfTime"># of Times</string>
+    <string name="OfDays"># of Days</string>
     <string name="total_Payableamount">Total Payable Amount</string>
     <string name="Existing">Existing</string>
     <string name="NewCard">New Card</string>

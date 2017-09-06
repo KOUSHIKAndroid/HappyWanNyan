@@ -5702,7 +5702,7 @@ containing a value of this type.
         public static final int TXT_CardHolderName=0x7f0f01e8;
         public static final int TXT_Country_Code=0x7f0f027b;
         public static final int TXT_CradName=0x7f0f01e9;
-        public static final int TXT_DAte=0x7f0f025a;
+        public static final int TXT_Date=0x7f0f025a;
         public static final int TXT_DateRange=0x7f0f0231;
         public static final int TXT_DiscountPrice=0x7f0f0262;
         public static final int TXT_DropTime=0x7f0f012a;
@@ -5745,7 +5745,7 @@ containing a value of this type.
         public static final int TXT_item=0x7f0f030b;
         public static final int TXT_loginlabel=0x7f0f02d7;
         public static final int TXT_no_pets=0x7f0f025d;
-        public static final int TXT_ofTome=0x7f0f025c;
+        public static final int TXT_ofDays=0x7f0f025c;
         public static final int TXT_petType=0x7f0f0237;
         public static final int TXT_petbreed=0x7f0f00ea;
         public static final int TXT_petsize=0x7f0f00ee;
@@ -6519,7 +6519,7 @@ containing a value of this type.
         public static final int Month=0x7f0800b4;
         public static final int Name=0x7f0800b5;
         public static final int NewCard=0x7f0800b6;
-        public static final int OfTime=0x7f0800b7;
+        public static final int OfDays=0x7f0800b7;
         public static final int Password=0x7f080095;
         public static final int Please_enter_both=0x7f0800b8;
         public static final int Please_enter_valid_email=0x7f0800b9;
