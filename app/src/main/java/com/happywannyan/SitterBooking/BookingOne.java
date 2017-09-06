@@ -56,7 +56,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
             Loger.Error("@@ Error",e.getMessage());
         }
 
-         fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.Body, BookingFragmnetOne.newInstance(ServiceList, PRESelectService));
         fragmentTransaction.disallowAddToBackStack().commit();
 

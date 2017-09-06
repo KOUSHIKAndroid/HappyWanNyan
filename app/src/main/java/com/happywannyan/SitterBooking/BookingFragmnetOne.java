@@ -233,9 +233,17 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                         apipostdata.setPARAMS("no_of_visit");
                         apipostdata.setValues(TXT_ExtarItem.getTag() + "");
                     }
-                    else if(no_of_times.equals("1")) {
+                    else {
+                        apipostdata.setPARAMS("no_of_visit");
+                        apipostdata.setValues("0");
+                    }
+                    if(no_of_times.equals("1")) {
                         apipostdata.setPARAMS("no_times");
                         apipostdata.setValues(TXT_ExtarItem.getTag() + "");
+                    }
+                    else {
+                        apipostdata.setPARAMS("no_times");
+                        apipostdata.setValues("0");
                     }
 
                 ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
