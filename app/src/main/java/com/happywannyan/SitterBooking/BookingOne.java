@@ -55,14 +55,6 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         } catch (JSONException e) {
             Loger.Error("@@ Error", e.getMessage());
         }
-        java.util.TimeZone tz= java.util.TimeZone.getDefault();
-
-
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_timezone");
-        apipostdata.setValues(tz.getID());
-        FirstPageData.add(apipostdata);
-
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.Body, BookingFragmnetOne.newInstance(ServiceList, PRESelectService));

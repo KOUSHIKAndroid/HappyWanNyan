@@ -199,30 +199,44 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
             case R.id.Card_next:
                 try {
                     ((BookingOne) getActivity()).FirstPageData = new ArrayList<>();
+
                     APIPOSTDATA apipostdata = new APIPOSTDATA();
+                    apipostdata.setPARAMS("langid");
+                    apipostdata.setValues(AppContsnat.Language);
+                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+
+
+                    java.util.TimeZone tz= java.util.TimeZone.getDefault();
+                    apipostdata = new APIPOSTDATA();
+                    apipostdata.setPARAMS("user_timezone");
+                    apipostdata.setValues(tz.getID());
+                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+
+                    apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("user_id");
                     apipostdata.setValues(AppContsnat.UserId);
                     ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
 
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("langid");
-                    apipostdata.setValues(AppContsnat.Language);
-                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+
                     apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("service_id");
                     apipostdata.setValues(new JSONObject(TXT_ServiceName.getTag() + "").getString("service_id"));
-
                     ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+
                     if (TXT_SingleDate.getText().equals("")) {
+
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("start_date");
                         apipostdata.setValues(TXT_StartDate.getText().toString());
                         ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("end_date");
                         apipostdata.setValues(TXT_EndDte.getText().toString());
                         ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+
                     } else {
+
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("start_date");
                         apipostdata.setValues(TXT_SingleDate.getText().toString());
@@ -254,7 +268,6 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                         apipostdata.setValues("");
                     }
                     ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -371,8 +384,6 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                     }
                 });
                 datePickerFragment.show(getActivity().getFragmentManager(), "Date");
-
-
                 break;
 
         }
