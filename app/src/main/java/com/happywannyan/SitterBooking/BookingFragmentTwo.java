@@ -87,6 +87,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                 boolean atLeastOneCheck = false;
                 EDX_Fname.setError(null);
                 EDX_Lname.setError(null);
+
                 ((BookingOne) getActivity()).MyPetList = new ArrayList<String>();
 
                 for (int k = 0; k < LL_MYPETS.getChildCount(); k++) {
@@ -129,6 +130,28 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                                     ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
                                 }
                             }
+
+                            for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("pet_id")) {
+                                    String petIdString="";
+                                    for (int j=0;j<((BookingOne) getActivity()).MyPetList.size();j++){
+                                        petIdString=petIdString+((BookingOne) getActivity()).MyPetList.get(j)+",";
+                                    }
+                                    ((BookingOne) getActivity()).FirstPageData.get(i).setValues(petIdString.substring(0,petIdString.length()-1));
+                                    break;
+                                }
+                                else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
+                                    apipostdata.setPARAMS("pet_id");
+                                    String petIdString="";
+                                    for (int j=0;j<((BookingOne) getActivity()).MyPetList.size();j++){
+                                        petIdString=petIdString+((BookingOne) getActivity()).MyPetList.get(j)+",";
+                                    }
+                                    apipostdata.setValues(petIdString.substring(0,petIdString.length()-1));
+                                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                }
+                            }
+
 
                             for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
                                 if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("no_of_pet")) {
