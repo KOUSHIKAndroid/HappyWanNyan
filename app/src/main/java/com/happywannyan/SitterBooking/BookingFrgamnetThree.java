@@ -304,7 +304,6 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                         apipostdata.setPARAMS("coupon_id");
                         apipostdata.setValues(coupon_id);
                         ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
-                        ((BookingOne)getActivity()).submitConfirmReservationRequest();
                     }
                 }
 
@@ -318,7 +317,6 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                         apipostdata.setPARAMS("coupon_amount");
                         apipostdata.setValues(coupon_amount);
                         ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
-                        ((BookingOne)getActivity()).submitConfirmReservationRequest();
                     }
                 }
 
