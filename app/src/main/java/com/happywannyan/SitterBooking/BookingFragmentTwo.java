@@ -104,10 +104,45 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                     } else {
                         if (atLeastOneCheck) {
 
-                            APIPOSTDATA apipostdata = new APIPOSTDATA();
-                            apipostdata.setPARAMS("no_of_pet");
-                            apipostdata.setValues(((BookingOne) getActivity()).MyPetList.size() + "");
-                            ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                            for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("pick_up")) {
+                                    ((BookingOne) getActivity()).FirstPageData.get(i).setValues(TXT_PickupTime.getTag().toString());
+                                    break;
+                                }
+                                else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
+                                    apipostdata.setPARAMS("pick_up");
+                                    apipostdata.setValues(TXT_PickupTime.getTag().toString());
+                                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                }
+                            }
+
+                            for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("drop_off")) {
+                                    ((BookingOne) getActivity()).FirstPageData.get(i).setValues(TXT_dropTime.getTag().toString());
+                                    break;
+                                }
+                                else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
+                                    apipostdata.setPARAMS("drop_off");
+                                    apipostdata.setValues(TXT_dropTime.getTag().toString());
+                                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                }
+                            }
+
+                            for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("no_of_pet")) {
+                                    ((BookingOne) getActivity()).FirstPageData.get(i).setValues(((BookingOne) getActivity()).MyPetList.size() + "");
+                                    break;
+                                }
+                                else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
+                                    apipostdata.setPARAMS("no_of_pet");
+                                    apipostdata.setValues(((BookingOne) getActivity()).MyPetList.size() + "");
+                                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                }
+                            }
+
                             ((BookingOne)getActivity()).submitConfirmReservationRequest();
 
                             mListener.onFragmentInteraction("Three");
@@ -170,8 +205,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_booking_fragment_two, container, false);
     }
@@ -215,7 +249,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                             Log.d("@@@fhjhf", "--" + jsonObject);
                             try {
                                 TXT_PickupTime.setText(jsonObject.getString("name"));
-                                TXT_PickupTime.setTag(jsonObject.getString("name"));
+                                TXT_PickupTime.setTag(jsonObject.getString("value"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -236,7 +270,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                             Log.d("@@@fhjhf", "--" + jsonObject);
                             try {
                                 TXT_dropTime.setText(jsonObject.getString("name"));
-                                TXT_dropTime.setTag(jsonObject.getString("name"));
+                                TXT_dropTime.setTag(jsonObject.getString("value"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

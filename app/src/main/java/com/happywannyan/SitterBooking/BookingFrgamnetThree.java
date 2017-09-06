@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -35,6 +34,8 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    String coupon_id="",coupon_amount="";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -215,6 +216,10 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                                     ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_SubTotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));
                                     ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_DiscountPrice)).setText("-"+jsonObject.getJSONObject("info_array").getString("amount"));
 
+                                    coupon_id=jsonObject.getJSONObject("info_array").getString("id");
+                                    coupon_amount=jsonObject.getJSONObject("info_array").getString("amount");
+
+
                                     if (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price"))
                                             >Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount")))
                                     {
@@ -288,6 +293,37 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.Card_next:
+
+                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                    if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("coupon_id")) {
+                        ((BookingOne) getActivity()).FirstPageData.get(i).setValues(coupon_id);
+                        break;
+                    }
+                    else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                        APIPOSTDATA apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("coupon_id");
+                        apipostdata.setValues(coupon_id);
+                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOne)getActivity()).submitConfirmReservationRequest();
+                    }
+                }
+
+                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                    if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("coupon_amount")) {
+                        ((BookingOne) getActivity()).FirstPageData.get(i).setValues(coupon_amount);
+                        break;
+                    }
+                    else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                        APIPOSTDATA apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("coupon_amount");
+                        apipostdata.setValues(coupon_amount);
+                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOne)getActivity()).submitConfirmReservationRequest();
+                    }
+                }
+
+                ((BookingOne)getActivity()).submitConfirmReservationRequest();
+
                 mListener.onFragmentInteraction("four");
                 break;
         }
