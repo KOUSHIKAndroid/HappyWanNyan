@@ -320,6 +320,19 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                     }
                 }
 
+                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                    if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("add_message")) {
+                        ((BookingOne) getActivity()).FirstPageData.get(i).setValues("");
+                        break;
+                    }
+                    else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                        APIPOSTDATA apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("add_message");
+                        apipostdata.setValues("");
+                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                    }
+                }
+
                 ((BookingOne)getActivity()).submitConfirmReservationRequest();
 
                 mListener.onFragmentInteraction("four");
