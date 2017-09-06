@@ -142,7 +142,6 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                                     ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
                                 }
                             }
-
                             ((BookingOne)getActivity()).submitConfirmReservationRequest();
 
                             mListener.onFragmentInteraction("Three");
@@ -159,7 +158,10 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
         view.findViewById(R.id.RL_PickupTime).setOnClickListener(this);
 
         TXT_PickupTime = (SFNFTextView) view.findViewById(R.id.TXT_PickupTime);
+        TXT_PickupTime.setTag("");
+
         TXT_dropTime = (SFNFTextView) view.findViewById(R.id.TXT_dropTime);
+        TXT_dropTime.setTag("");
 
         new AppContsnat(getActivity()).GET_SHAREDATA(App_data_holder.UserData, new App_data_holder.App_sharePrefData() {
             @Override
