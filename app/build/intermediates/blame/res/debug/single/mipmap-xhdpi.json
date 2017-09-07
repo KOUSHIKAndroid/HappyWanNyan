@@ -16,24 +16,24 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/mipmap-xhdpi/ic_nav_msg.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_nav_past_fav.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xhdpi/ic_nav_past_fav.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_nav_help.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xhdpi/ic_nav_help.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_nav_past_fav.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xhdpi/ic_nav_past_fav.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_nav_pymnt.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xhdpi/ic_nav_pymnt.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round1.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xhdpi/ic_launcher_round1.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_nav_msg.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xhdpi/ic_nav_msg.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round1.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xhdpi/ic_launcher_round1.png"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_nav_past_fav.png",

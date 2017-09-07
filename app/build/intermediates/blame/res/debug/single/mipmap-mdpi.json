@@ -32,12 +32,12 @@
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_nav_past_fav.png"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round1.png",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_launcher_round1.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_menu_drwaer.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_menu_drwaer.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round1.png",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/mipmap-mdpi/ic_launcher_round1.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_nav_logout.png",

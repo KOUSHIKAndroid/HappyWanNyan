@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_nav_booking.png",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/mipmap-xxxhdpi/ic_nav_booking.png"
-    },
-    {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_nav_booking.png",
         "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xxxhdpi/ic_nav_booking.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_nav_booking.png",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/mipmap-xxxhdpi/ic_nav_booking.png"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_nav_pymnt.png",
@@ -28,12 +28,12 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round1.png"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher1.png",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xxxhdpi/ic_launcher1.png"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_nav_past_fav.png",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/mipmap-xxxhdpi/ic_nav_past_fav.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher1.png",
+        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/mipmap-xxxhdpi/ic_launcher1.png"
     },
     {
         "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_nav_msg.png",

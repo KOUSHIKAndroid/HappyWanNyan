@@ -142,6 +142,7 @@
     <orderEntry type="library" exported="" name="play-services-tagmanager-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="answers-1.3.13" level="project" />
     <orderEntry type="library" exported="" name="play-services-analytics-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="volley-1.0.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
     <orderEntry type="library" exported="" name="mediarouter-v7-24.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-cast-10.2.4" level="project" />
