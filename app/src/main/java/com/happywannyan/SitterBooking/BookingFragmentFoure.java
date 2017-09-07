@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,8 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.cooltechworks.creditcarddesign.CardEditActivity;
 import com.cooltechworks.creditcarddesign.CreditCardUtils;
@@ -21,8 +18,8 @@ import com.happywannyan.Adapter.Adapter_Card;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetCards;
 import com.happywannyan.R;
-import com.happywannyan.Utils.AddCreditCard;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
@@ -31,14 +28,12 @@ import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
-import com.stripe.android.view.CardInputWidget;
 
-import org.json.JSONException;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.logging.Logger;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -48,6 +43,10 @@ public class BookingFragmentFoure extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    ArrayList<SetGetCards> setGetCardsArrayList;
+
+    JSONObject cardFinalSelection;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -88,7 +87,7 @@ public class BookingFragmentFoure extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        Loader=new AppLoader(getActivity());
+        Loader = new AppLoader(getActivity());
     }
 
     @Override
@@ -102,8 +101,10 @@ public class BookingFragmentFoure extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        REC_Card=(RecyclerView)view.findViewById(R.id.REC_Card);
+        REC_Card = (RecyclerView) view.findViewById(R.id.REC_Card);
         REC_Card.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        setGetCardsArrayList = new ArrayList<>();
 
         view.findViewById(R.id.Card_request).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +113,7 @@ public class BookingFragmentFoure extends Fragment {
                         getActivity().getResources().getString(R.string.this_is_just_a_reservation_request), new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
-                                ((BookingOne)getActivity()).showConfirmReservationRequest();
+                                ((BookingOne) getActivity()).showConfirmReservationRequest();
                             }
 
                             @Override
@@ -131,7 +132,7 @@ public class BookingFragmentFoure extends Fragment {
                 final int GET_NEW_CARD = 2;
 
                 Intent intent = new Intent(getActivity(), CardEditActivity.class);
-                startActivityForResult(intent,GET_NEW_CARD);
+                startActivityForResult(intent, GET_NEW_CARD);
 //                new AddCreditCard(getActivity()).AddNewOnClick(new AddCreditCard.OnCradListener() {
 //                    @Override
 //                    public void OnAddComplete(String data) {
@@ -146,10 +147,7 @@ public class BookingFragmentFoure extends Fragment {
             }
         });
 
-
-
         SetCardDetails();
-
 
     }
 
@@ -157,26 +155,26 @@ public class BookingFragmentFoure extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == RESULT_OK && requestCode==2) {
+        if (resultCode == RESULT_OK && requestCode == 2) {
             new AppContsnat(getActivity());
 
             final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
             final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
             String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
             String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
-            Loger.MSG("@@ Exipry-",cardNumber);
+            Loger.MSG("@@ Exipry-", cardNumber);
 
-            final int year=Integer.parseInt("20"+expiry.split("/")[1]);
-            final int month=Integer.parseInt(expiry.split("/")[0]);
-            Loger.MSG("@@ Exipry-"," YESR-"+year);
-            Loger.MSG("@@ Exipry-"," MOnth-"+month);
+            final int year = Integer.parseInt("20" + expiry.split("/")[1]);
+            final int month = Integer.parseInt(expiry.split("/")[0]);
+            Loger.MSG("@@ Exipry-", " YESR-" + year);
+            Loger.MSG("@@ Exipry-", " MOnth-" + month);
 
 
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {
-                Loger.MSG("@@ Crad ID-",card.getId()+"");
-                Loger.MSG("@@ Crad ID-",card.getNumber()+"");
-                Loger.MSG("@@ Crad-",card.getNumber()+"");
+                Loger.MSG("@@ Crad ID-", card.getId() + "");
+                Loger.MSG("@@ Crad ID-", card.getNumber() + "");
+                Loger.MSG("@@ Crad-", card.getNumber() + "");
                 card.setName(cardHolderName);
 
 
@@ -192,9 +190,9 @@ public class BookingFragmentFoure extends Fragment {
                                 new JSONPerser().GET_STRIPE_CUSTIMERID(token.getId(), new JSONPerser.JSONRESPONSE() {
                                     @Override
                                     public void OnSuccess(String Result) {
-                                        Loger.MSG("@@ CUUU",Result);
+                                        Loger.MSG("@@ CUUU", Result);
 
-                                        String CustomerID="";
+                                        String CustomerID = "";
 //                                        try {
 //                                            CustomerID=new JSONObject(Result).getString("id");
 //                                        } catch (JSONException e) {
@@ -202,33 +200,38 @@ public class BookingFragmentFoure extends Fragment {
 //                                        }
 
 
-                                        Loger.MSG("@@ TOKEN finger-",token.getCard().getFingerprint()+"");
-                                        Loger.MSG("@@ TOKEN Brand-",token.getCard().getBrand()+"");
-                                        Loger.MSG("@@ TOKEN customerId-",token.getCard().getCustomerId()+"");
-                                        Loger.MSG("@@ TOKEN customerId-",token.getCard().getLast4()+"");
-                                        Loger.MSG("@@ TOKEN ID-",token.getCard().getId()+"");
-                                        HashMap<String,String> Params=new HashMap<String, String>();
-                                        Params.put("user_id",AppContsnat.UserId);
-                                        Params.put("stripe_id",CustomerID+"");
-                                        Params.put("card_id",token.getCard().getId()+"");
-                                        Params.put("name_on_card",cardHolderName);
-                                        Params.put("name_on_card",cardHolderName);
-                                        Params.put("exp_month",month+"");
-                                        Params.put("exp_year",year+"");
-                                        Params.put("card_last_digits",token.getCard().getLast4()+"");
-                                        Params.put("cvv_code",card.getCVC()+"");
-                                        Params.put("new_card","1");
-                                        Params.put("make_default","1");
+                                        Loger.MSG("@@ TOKEN finger-", token.getCard().getFingerprint() + "");
+                                        Loger.MSG("@@ TOKEN Brand-", token.getCard().getBrand() + "");
+                                        Loger.MSG("@@ TOKEN customerId-", token.getCard().getCustomerId() + "");
+                                        Loger.MSG("@@ TOKEN customerId-", token.getCard().getLast4() + "");
+                                        Loger.MSG("@@ TOKEN ID-", token.getCard().getId() + "");
+                                        HashMap<String, String> Params = new HashMap<String, String>();
+                                        Params.put("user_id", AppContsnat.UserId);
+                                        Params.put("stripe_id", CustomerID + "");
+                                        Params.put("card_id", token.getCard().getId() + "");
+                                        Params.put("name_on_card", cardHolderName);
+                                        Params.put("name_on_card", cardHolderName);
+                                        Params.put("exp_month", month + "");
+                                        Params.put("exp_year", year + "");
+                                        Params.put("card_last_digits", token.getCard().getLast4() + "");
+                                        Params.put("cvv_code", card.getCVC() + "");
+                                        Params.put("new_card", "1");
+                                        Params.put("make_default", "1");
                                         new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "add_save_card", Params, new JSONPerser.JSONRESPONSE() {
                                             @Override
                                             public void OnSuccess(String Result) {
-                                                Loger.MSG("@@ CRAD RESP-",Result);
+                                                Loger.MSG("@@ CRAD RESP-", Result);
                                                 new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
                                                         , new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 Loader.Dismiss();
-                                                                REC_Card.setAdapter(new Adapter_Card(getActivity(),Result));
+                                                                REC_Card.setAdapter(new Adapter_Card(getActivity(), Result, new onClickItem() {
+                                                                    @Override
+                                                                    public void onSelectItemClick(int position, JSONObject data) {
+                                                                        cardFinalSelection=data;
+                                                                    }
+                                                                }));
                                                             }
 
                                                             @Override
@@ -247,7 +250,7 @@ public class BookingFragmentFoure extends Fragment {
 
                                             @Override
                                             public void OnError(String Error, String Response) {
-                                                Loger.MSG("@@ CRAD Err'-",Response);
+                                                Loger.MSG("@@ CRAD Err'-", Response);
                                                 Loader.Dismiss();
 
                                             }
@@ -274,22 +277,22 @@ public class BookingFragmentFoure extends Fragment {
                                 });
 
 
-
                             }
+
                             public void onError(Exception error) {
                                 Loader.Dismiss();
-                               new MYAlert(getActivity()).AlertOnly("Add Card Error", error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
-                                   @Override
-                                   public void OnOk(boolean res) {
+                                new MYAlert(getActivity()).AlertOnly("Add Card Error", error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
 
-                                   }
-                               });
+                                    }
+                                });
 
                             }
                         }
                 );
 
-            }else {
+            } else {
                 new MYAlert(getActivity()).AlertOnly("Add Card Error", "Invalid card please add a correct card", new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
@@ -308,7 +311,29 @@ public class BookingFragmentFoure extends Fragment {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();
-                        REC_Card.setAdapter(new Adapter_Card(getActivity(),Result));
+                        try {
+                            JSONObject MainObject = new JSONObject(Result);
+                            JSONArray arrayJson = MainObject.getJSONArray("user_stripe_data");
+                            for (int i=0;i<arrayJson.length();i++){
+                                if (arrayJson.getJSONObject(i).getString("is_default").equalsIgnoreCase("1"))
+                                {
+                                    cardFinalSelection=arrayJson.getJSONObject(i);
+                                    break;
+                                }
+                            }
+
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+
+
+
+                        REC_Card.setAdapter(new Adapter_Card(getActivity(), Result, new onClickItem() {
+                            @Override
+                            public void onSelectItemClick(int position, JSONObject data) {
+
+                            }
+                        }));
                     }
 
                     @Override
@@ -350,8 +375,12 @@ public class BookingFragmentFoure extends Fragment {
         mListener = null;
     }
 
-    void test(){
+    void test() {
 
+    }
+
+    public interface onClickItem {
+        void onSelectItemClick(int position, JSONObject data);
     }
 
 }
