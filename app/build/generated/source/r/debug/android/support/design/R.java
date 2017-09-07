@@ -674,13 +674,13 @@ public final class R {
         public static final int abc_textfield_search_material = 0x7f020051;
         public static final int abc_vector_test = 0x7f020052;
         public static final int avd_hide_password = 0x7f020053;
-        public static final int avd_hide_password_1 = 0x7f020238;
-        public static final int avd_hide_password_2 = 0x7f020239;
-        public static final int avd_hide_password_3 = 0x7f02023a;
+        public static final int avd_hide_password_1 = 0x7f020239;
+        public static final int avd_hide_password_2 = 0x7f02023a;
+        public static final int avd_hide_password_3 = 0x7f02023b;
         public static final int avd_show_password = 0x7f020054;
-        public static final int avd_show_password_1 = 0x7f02023b;
-        public static final int avd_show_password_2 = 0x7f02023c;
-        public static final int avd_show_password_3 = 0x7f02023d;
+        public static final int avd_show_password_1 = 0x7f02023c;
+        public static final int avd_show_password_2 = 0x7f02023d;
+        public static final int avd_show_password_3 = 0x7f02023e;
         public static final int design_bottom_navigation_item_background = 0x7f0200c6;
         public static final int design_fab_background = 0x7f0200c7;
         public static final int design_ic_visibility = 0x7f0200c8;
@@ -696,8 +696,8 @@ public final class R {
         public static final int notification_bg_normal = 0x7f0201f2;
         public static final int notification_bg_normal_pressed = 0x7f0201f3;
         public static final int notification_icon_background = 0x7f0201f4;
-        public static final int notification_template_icon_bg = 0x7f020236;
-        public static final int notification_template_icon_low_bg = 0x7f020237;
+        public static final int notification_template_icon_bg = 0x7f020237;
+        public static final int notification_template_icon_low_bg = 0x7f020238;
         public static final int notification_tile_bg = 0x7f0201f5;
         public static final int notify_panel_notification_icon_bg = 0x7f0201f6;
     }

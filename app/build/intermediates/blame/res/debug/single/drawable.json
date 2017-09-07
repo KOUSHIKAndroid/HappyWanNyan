@@ -1698,5 +1698,9 @@
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/logo_hapyywan.png",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/logo_hapyywan.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/profile_ic_favorite_white.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/profile_ic_favorite_white.xml"
     }
 ]

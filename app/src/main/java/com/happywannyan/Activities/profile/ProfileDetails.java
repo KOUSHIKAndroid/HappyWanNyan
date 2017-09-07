@@ -147,13 +147,15 @@ public class ProfileDetails extends AppCompatActivity implements View.OnClickLis
                     if(BasicInfo.getInt("favourite_status")==0)
                     {
 //                        ((ImageView)findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.ic_favorite_border);
-                        ((ImageView)findViewById(R.id.IMG_FAV)).setTag("0");
+                        ((ImageView) findViewById(R.id.IMG_FAV)).setTag("0");
+                        ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_white);
+
+
                     }else {
 //                        ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
                         ((ImageView) findViewById(R.id.IMG_FAV)).setTag("1");
+                        ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
                     }
-
-
 
 
                     ((SFNFTextView) findViewById(R.id.ReviewNo)).setText(BasicInfo.getString("no_of_review") + " " + getResources().getString(R.string.review));
@@ -339,7 +341,7 @@ public class ProfileDetails extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.IMG_FAV:
                 String IDtemp="";
-                if( ((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1"))
+                if(((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1"))
                     IDtemp="0";
                 else
                     IDtemp="1";
@@ -352,6 +354,16 @@ public class ProfileDetails extends AppCompatActivity implements View.OnClickLis
                         try {
                             JSONObject jsonObject=new JSONObject(Result);
                             Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
+
+                            if(((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1")) {
+                                ((ImageView) findViewById(R.id.IMG_FAV)).setTag("0");
+                                ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_white);
+                            }
+                            else {
+                                ((ImageView) findViewById(R.id.IMG_FAV)).setTag("1");
+                                ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
+                            }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
