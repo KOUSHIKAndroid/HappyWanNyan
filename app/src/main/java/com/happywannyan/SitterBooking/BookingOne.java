@@ -82,7 +82,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
 
                 try {
                     APIPOSTDATA apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("sitter_user_id");
+                    apipostdata.setPARAMS("sitter_id");
                     apipostdata.setValues(ItemDetails.getString("sitter_user_id"));
                     FirstPageData.add(apipostdata);
 

@@ -154,13 +154,13 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
 
 
                             for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("no_of_pet")) {
+                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("total_pets")) {
                                     ((BookingOne) getActivity()).FirstPageData.get(i).setValues(((BookingOne) getActivity()).MyPetList.size() + "");
                                     break;
                                 }
                                 else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
                                     APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                    apipostdata.setPARAMS("no_of_pet");
+                                    apipostdata.setPARAMS("total_pets");
                                     apipostdata.setValues(((BookingOne) getActivity()).MyPetList.size() + "");
                                     ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
                                 }
