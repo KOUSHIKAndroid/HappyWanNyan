@@ -188,7 +188,8 @@ public class BookingFragmentFoure extends Fragment {
 
                                 }
                                 //((BookingOne) getActivity()).showConfirmReservationRequest();
-                                ((BookingOne) getActivity()).submitConfirmReservationRequest();
+                                //((BookingOne) getActivity()).submitConfirmReservationRequest();
+                                ((BookingOne) getActivity()).submitConfirmReservationRequestByVolley();
                             }
 
                             @Override

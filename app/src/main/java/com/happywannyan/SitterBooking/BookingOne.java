@@ -5,7 +5,14 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -13,11 +20,11 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Map;
 
 public class BookingOne extends AppCompatActivity implements View.OnClickListener, OnFragmentInteractionListener {
 
@@ -160,8 +167,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new JSONPerser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
-
-                Loger.MSG("Result-->",Result);
+                Loger.MSG("Result-->", Result);
             }
 
             @Override
@@ -175,4 +181,49 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
             }
         });
     }
+
+
+    public void submitConfirmReservationRequestByVolley() {
+        Apploaders.Show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppContsnat.BASEURL + "confirm_reservation_request",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String result) {
+                        Apploaders.Dismiss();
+                        Loger.MSG("Result-->", result);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        Apploaders.Dismiss();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                //Creating parameters
+                Map<String, String> params = new Hashtable<String, String>();
+
+                //Adding parameters
+                for (int i = 0; i < FirstPageData.size(); i++) {
+                    params.put(FirstPageData.get(i).getPARAMS(), FirstPageData.get(i).getValues());
+                }
+
+                //returning parameters
+                return params;
+            }
+        };
+
+        //Creating a Request Queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                6000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        //Adding request to the queue
+        requestQueue.add(stringRequest);
+    }
+
 }
