@@ -17,15 +17,12 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Activities.profile.ContactMsg;
-import com.happywannyan.Activities.profile.MeetupWannyan;
-import com.happywannyan.Activities.profile.ProfileDetails;
+import com.happywannyan.Activities.profile.ContactMsgActivity;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
+import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.Favourite;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
-import com.happywannyan.SitterBooking.BookingOne;
-import com.happywannyan.Utils.Loger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -81,7 +78,7 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
                 @Override
                 public void onClick(View view) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
-                    Intent intent = new Intent(context, ProfileDetails.class);
+                    Intent intent = new Intent(context, ProfileDetailsActivity.class);
                     intent.putExtra("data", "" + object);
                     context.startActivity(intent, options.toBundle());
                 }
@@ -91,7 +88,7 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
                 @Override
                 public void onClick(View view) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
-                    Intent intent = new Intent(context, ProfileDetails.class);
+                    Intent intent = new Intent(context, ProfileDetailsActivity.class);
                     intent.putExtra("data", "" + object);
                     context.startActivity(intent, options.toBundle());
                 }
@@ -100,7 +97,7 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
             holder.tv_meet_up.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent inten=new Intent(context,MeetupWannyan.class);
+                    Intent inten=new Intent(context,MeetUpWannyanActivity.class);
                     try {
                         inten.putExtra("DATA",object.getString("id"));
                         context.startActivity(inten);
@@ -114,7 +111,7 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
             holder.tv_contact.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent inten=new Intent(context,ContactMsg.class);
+                    Intent inten=new Intent(context,ContactMsgActivity.class);
                     try {
                         inten.putExtra("DATA",object.getString("id"));
                         context.startActivity(inten);

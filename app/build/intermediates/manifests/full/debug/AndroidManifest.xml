@@ -116,7 +116,7 @@
         <!-- </service> -->
 
         <activity
-            android:name="com.happywannyan.Activities.LoginChoser"
+            android:name="com.happywannyan.Activities.LoginChooserActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.LoginActivity"
@@ -129,7 +129,7 @@
             android:name="com.happywannyan.Activities.SignUpActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.happywannyan.Activities.profile.ProfileDetails"
+            android:name="com.happywannyan.Activities.profile.ProfileDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.BaseActivity"
@@ -142,26 +142,26 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.happywannyan.Activities.SearchResult"
+            android:name="com.happywannyan.Activities.SearchResultActivity"
             android:label="@string/title_activity_search_result"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.happywannyan.Activities.ForgotPassword" />
-        <activity android:name="com.happywannyan.Activities.ResetPassword" />
-        <activity android:name="com.happywannyan.Activities.Booking.BookingDetails" />
+        <activity android:name="com.happywannyan.Activities.ForgotPasswordActivity" />
+        <activity android:name="com.happywannyan.Activities.ResetPasswordActivity" />
+        <activity android:name="com.happywannyan.Activities.Booking.BookingDetailsActivity" />
         <activity
-            android:name="com.happywannyan.Activities.AddAnotherPets"
+            android:name="com.happywannyan.Activities.AddAnotherPetsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.happywannyan.Activities.EditAnotherPets"
+            android:name="com.happywannyan.Activities.EditAnotherPetsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.happywannyan.Activities.profile.MeetupWannyan" />
-        <activity android:name="com.happywannyan.Activities.profile.ContactMsg" />
-        <activity android:name="com.happywannyan.Activities.Help" />
+        <activity android:name="com.happywannyan.Activities.profile.MeetUpWannyanActivity" />
+        <activity android:name="com.happywannyan.Activities.profile.ContactMsgActivity" />
+        <activity android:name="com.happywannyan.Activities.HelpActivity" />
         <activity
             android:name="com.happywannyan.Activities.MessageDetailsPage"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name="com.happywannyan.Activities.Booking.CancelBookingWithReasons" />
+        <activity android:name="com.happywannyan.Activities.Booking.CancelBookingWithReasonsActivity" />
         <activity
             android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
             android:screenOrientation="portrait"
@@ -171,8 +171,8 @@
             android:name="io.fabric.ApiKey"
             android:value="f578e59c70f464e14e363fdf973f894b57235ce5" />
 
-        <activity android:name="com.happywannyan.Activities.Booking.ActivityAcceptBooking" />
-        <activity android:name="com.happywannyan.Activities.Booking.Addreview" />
+        <activity android:name="com.happywannyan.Activities.Booking.AcceptBookingActivity" />
+        <activity android:name="com.happywannyan.Activities.Booking.AddReviewActivity" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.happywannyan.Activities.profile.ContactMsg">
+    tools:context="com.happywannyan.Activities.profile.ContactMsgActivity">
     <RelativeLayout
         android:id="@+id/RL_HEADER"
         android:background="@color/colorPrimary"

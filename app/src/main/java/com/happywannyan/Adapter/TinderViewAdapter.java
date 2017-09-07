@@ -6,18 +6,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.LayerDrawable;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Activities.SearchResult;
-import com.happywannyan.Activities.profile.ProfileDetails;
+import com.happywannyan.Activities.SearchResultActivity;
+import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SearchData;
@@ -25,7 +23,6 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.provider.RatingColor;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
@@ -63,7 +60,7 @@ public class TinderViewAdapter extends BaseAdapter {
 
         View v = convertView;
         if(v == null){
-            LayoutInflater inflater =((SearchResult)context).getLayoutInflater();
+            LayoutInflater inflater =((SearchResultActivity)context).getLayoutInflater();
             // normally use a viewholder
             v = inflater.inflate(R.layout.tinder_card_view, parent, false);
         }
@@ -98,7 +95,7 @@ public class TinderViewAdapter extends BaseAdapter {
 //                Log.i("MainActivity", item);
                 JSONObject object=data.get(position).getSearcItem();
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, (ImageView)v.findViewById(R.id.profileImageView), "cardimage");
-                Intent intent = new Intent(context, ProfileDetails.class);
+                Intent intent = new Intent(context, ProfileDetailsActivity.class);
                     intent.putExtra("data",""+object);
                 context. startActivity(intent, options.toBundle());
             }

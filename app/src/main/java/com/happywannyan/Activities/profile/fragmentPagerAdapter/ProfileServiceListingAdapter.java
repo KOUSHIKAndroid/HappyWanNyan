@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Activities.profile.ProfileDetails;
+import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
@@ -89,7 +89,7 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
                 public void onClick(View view) {
                     Intent intent = new Intent(mContext, BookingOne.class);
                     intent.putExtra("LIST", "");
-                    intent.putExtra("ItemDetails",""+((ProfileDetails)mContext).PrevJSON);
+                    intent.putExtra("ItemDetails",""+((ProfileDetailsActivity)mContext).PrevJSON);
                     intent.putExtra("Single",true);
                     intent.putExtra("SELECT", "" + object);
                     mContext.startActivity(intent);

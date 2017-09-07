@@ -14,13 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Activities.SearchResult;
-import com.happywannyan.Adapter.Adapter_message;
 import com.happywannyan.Adapter.Booking_Adapter;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
-import com.happywannyan.POJO.SetGetUpComingBooking;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.JSONPerser;

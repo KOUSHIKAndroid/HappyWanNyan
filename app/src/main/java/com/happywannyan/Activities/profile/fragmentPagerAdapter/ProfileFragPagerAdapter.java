@@ -5,10 +5,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.View;
 
-import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragAbout;
-import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragImages;
-import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragReview;
-import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragService;
+import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragAboutFragment;
+import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragImagesFragment;
+import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragReviewFragment;
+import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragServiceFragment;
 
 
 /**
@@ -35,13 +35,13 @@ public class ProfileFragPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new ProfileFragAbout();
+                return new ProfileFragAboutFragment();
             case 1:
-                return new ProfileFragService();
+                return new ProfileFragServiceFragment();
             case 2:
-                return new ProfileFragReview();
+                return new ProfileFragReviewFragment();
             case 3:
-                return new ProfileFragImages();
+                return new ProfileFragImagesFragment();
             default:
                 return null;
         }

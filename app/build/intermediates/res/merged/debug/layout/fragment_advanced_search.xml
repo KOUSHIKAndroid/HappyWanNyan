@@ -6,7 +6,7 @@
     android:background="@color/colorwhite"
     android:clickable="false"
     android:orientation="vertical"
-    tools:context="com.happywannyan.Fragments.Advanced_search">
+    tools:context="com.happywannyan.Fragments.Advanced_Search_Fragment">
 
         <RelativeLayout
             android:layout_width="match_parent"

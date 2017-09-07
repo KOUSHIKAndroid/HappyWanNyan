@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.bumptech.glide.Glide;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.Advanced_search;
+import com.happywannyan.Fragments.Advanced_Search_Fragment;
 import com.happywannyan.POJO.PetService;
 import com.happywannyan.R;
 import java.util.ArrayList;
@@ -23,10 +23,10 @@ import java.util.ArrayList;
 public class Adapter_Petlist_Dialog extends RecyclerView.Adapter<Adapter_Petlist_Dialog.MyViewHolder> {
     ArrayList<PetService> serviceCatListArrayList;
     Context context;
-    Advanced_search advanced_search;
+    Advanced_Search_Fragment advanced_searchFragment;
 
-    public Adapter_Petlist_Dialog(Advanced_search advanced_search,Context context, ArrayList<PetService> serviceCatListArrayList){
-        this.advanced_search=advanced_search;
+    public Adapter_Petlist_Dialog(Advanced_Search_Fragment advanced_searchFragment, Context context, ArrayList<PetService> serviceCatListArrayList){
+        this.advanced_searchFragment = advanced_searchFragment;
         this.context=context;
         this.serviceCatListArrayList=serviceCatListArrayList;
     }

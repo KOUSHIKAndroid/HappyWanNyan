@@ -22,17 +22,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.happywannyan.Adapter.MessageADapter;
+import com.happywannyan.Adapter.MessageAdapter;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.Message_Fragment;
+import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
@@ -56,7 +55,7 @@ import java.util.TimeZone;
 public class MessageDetailsPage extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView LL_UserInfo;
-    MessageADapter messageADapter;
+    MessageAdapter messageAdapter;
     private LinearLayoutManager mLinearLayoutManager;
 
     RelativeLayout RL_ButtomSheet;
@@ -125,7 +124,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
         MessageId = getIntent().getStringExtra("message_id");
 
         FetCh();
-        TXT_MessageType.setText(Message_Fragment.TAGNAME);
+        TXT_MessageType.setText(MessageFragment.TAGNAME);
 
 
     }
@@ -156,11 +155,11 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
                     Glide.with(MessageDetailsPage.this).load(OBJ.getString("message_from_image")).into(IMGE_FROM);
                     Glide.with(MessageDetailsPage.this).load(OBJ.getString("message_from_image")).into(USER_IMAGE);
                      ARRAy = OBJ.getJSONArray("all_message_details");
-//                    if (messageADapter == null) {
-                        messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
-                        LL_UserInfo.setAdapter(messageADapter);
+//                    if (messageAdapter == null) {
+                        messageAdapter = new MessageAdapter(MessageDetailsPage.this, ARRAy);
+                        LL_UserInfo.setAdapter(messageAdapter);
 //                    } else
-//                        messageADapter.notifyDataSetChanged();
+//                        messageAdapter.notifyDataSetChanged();
                     Loader.Dismiss();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -219,7 +218,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
 
                     apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("message_type");
-                    apipostdata.setValues(Message_Fragment.MESSAGECODE + "");
+                    apipostdata.setValues(MessageFragment.MESSAGECODE + "");
                     Params.add(apipostdata);
 
                     apipostdata = new APIPOSTDATA();
@@ -247,8 +246,8 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
                         public void OnSuccess(String Result) {
 //                            try {
 //                                ARRAy.getJSONObject(ARRAy.length()-1).getJSONArray("info").put(new JSONObject(Result).getJSONObject("info"));
-//                                messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
-//                                LL_UserInfo.setAdapter(messageADapter);
+//                                messageAdapter = new MessageAdapter(MessageDetailsPage.this, ARRAy);
+//                                LL_UserInfo.setAdapter(messageAdapter);
 //                            } catch (JSONException e) {
 //                                e.printStackTrace();
 //                            }
@@ -418,7 +417,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
             Params.add(apipostdata);
             apipostdata = new APIPOSTDATA();
             apipostdata.setPARAMS("message_type");
-            apipostdata.setValues(Message_Fragment.MESSAGECODE + "");
+            apipostdata.setValues(MessageFragment.MESSAGECODE + "");
             Params.add(apipostdata);
 
             apipostdata = new APIPOSTDATA();
@@ -479,7 +478,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
 
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("message_type");
-        apipostdata.setValues(Message_Fragment.MESSAGECODE + "");
+        apipostdata.setValues(MessageFragment.MESSAGECODE + "");
         Params.add(apipostdata);
 
         apipostdata = new APIPOSTDATA();
@@ -606,8 +605,8 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
             try {
                 if(MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("parent_id"))) {
                     ARRAy.getJSONObject(ARRAy.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
-                    messageADapter = new MessageADapter(MessageDetailsPage.this, ARRAy);
-                    LL_UserInfo.setAdapter(messageADapter);
+                    messageAdapter = new MessageAdapter(MessageDetailsPage.this, ARRAy);
+                    LL_UserInfo.setAdapter(messageAdapter);
                     Log.d("receiver", "Got message:2 " + message);
                 }else {
                     /*

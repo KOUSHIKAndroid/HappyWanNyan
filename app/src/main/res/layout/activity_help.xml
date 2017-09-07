@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.happywannyan.Activities.Help">
+    tools:context="com.happywannyan.Activities.HelpActivity">
     <RelativeLayout
         android:id="@+id/RL_HEADER"
         android:background="@color/colorPrimary"

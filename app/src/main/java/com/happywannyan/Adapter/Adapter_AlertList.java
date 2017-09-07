@@ -6,20 +6,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.Message_Fragment;
 import com.happywannyan.R;
-import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 /**
  * Created by su on 5/22/17.

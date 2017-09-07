@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.R;
 import com.happywannyan.Utils.App_data_holder;
@@ -39,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
 
                     @Override
                     public void NotAvilable(String Error) {
-                        startActivity( new Intent(SplashActivity.this,LoginChoser.class));
+                        startActivity( new Intent(SplashActivity.this,LoginChooserActivity.class));
                         finish();
                     }
                 });

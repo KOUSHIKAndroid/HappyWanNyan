@@ -94,7 +94,7 @@
         <!-- </service> -->
 
         <activity
-            android:name=".Activities.LoginChoser"
+            android:name=".Activities.LoginChooserActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.LoginActivity"
@@ -107,7 +107,7 @@
             android:name=".Activities.SignUpActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.profile.ProfileDetails"
+            android:name=".Activities.profile.ProfileDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.BaseActivity"
@@ -120,26 +120,26 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Activities.SearchResult"
+            android:name=".Activities.SearchResultActivity"
             android:label="@string/title_activity_search_result"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activities.ForgotPassword" />
-        <activity android:name=".Activities.ResetPassword" />
-        <activity android:name=".Activities.Booking.BookingDetails" />
+        <activity android:name=".Activities.ForgotPasswordActivity" />
+        <activity android:name=".Activities.ResetPasswordActivity" />
+        <activity android:name=".Activities.Booking.BookingDetailsActivity" />
         <activity
-            android:name=".Activities.AddAnotherPets"
+            android:name=".Activities.AddAnotherPetsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.EditAnotherPets"
+            android:name=".Activities.EditAnotherPetsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activities.profile.MeetupWannyan" />
-        <activity android:name=".Activities.profile.ContactMsg" />
-        <activity android:name=".Activities.Help" />
+        <activity android:name=".Activities.profile.MeetUpWannyanActivity" />
+        <activity android:name=".Activities.profile.ContactMsgActivity" />
+        <activity android:name=".Activities.HelpActivity" />
         <activity
             android:name=".Activities.MessageDetailsPage"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".Activities.Booking.CancelBookingWithReasons" />
+        <activity android:name=".Activities.Booking.CancelBookingWithReasonsActivity" />
         <activity android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"
@@ -148,8 +148,8 @@
             android:name="io.fabric.ApiKey"
             android:value="f578e59c70f464e14e363fdf973f894b57235ce5" />
 
-        <activity android:name=".Activities.Booking.ActivityAcceptBooking" />
-        <activity android:name=".Activities.Booking.Addreview"></activity>
+        <activity android:name=".Activities.Booking.AcceptBookingActivity" />
+        <activity android:name=".Activities.Booking.AddReviewActivity"></activity>
     </application>
 
 </manifest>

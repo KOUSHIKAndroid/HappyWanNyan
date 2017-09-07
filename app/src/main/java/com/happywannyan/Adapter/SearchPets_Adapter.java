@@ -15,10 +15,9 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Activities.Booking.BookingDetails;
+import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Activities.profile.ProfileDetails;
 import com.happywannyan.POJO.SearchData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.provider.RatingColor;
@@ -74,10 +73,10 @@ public class SearchPets_Adapter extends RecyclerView.Adapter<SearchPets_Adapter.
                 @Override
                 public void onClick(View v) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
-                    Intent intent = new Intent(context, ProfileDetails.class);
+                    Intent intent = new Intent(context, ProfileDetailsActivity.class);
                     intent.putExtra("data", "" + searchData.getSearcItem());
                     context.startActivity(intent, options.toBundle());
-//                 context.startActivity(new Intent(context, ProfileDetails.class));
+//                 context.startActivity(new Intent(context, ProfileDetailsActivity.class));
                 }
             });
 

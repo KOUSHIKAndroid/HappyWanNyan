@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.happywannyan.Activities.Booking.BookingDetails">
+    tools:context="com.happywannyan.Activities.Booking.BookingDetailsActivity">
 
     <RelativeLayout
     android:id="@+id/RL_HEADER"

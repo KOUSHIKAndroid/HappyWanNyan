@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.Message_Fragment;
+import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.R;
 
 import org.json.JSONArray;
@@ -20,8 +20,8 @@ import org.json.JSONException;
 public class PlaceCustomListAdapterDialog extends RecyclerView.Adapter<PlaceCustomListAdapterDialog.MyViewHolder> {
     Context mContext;
     JSONArray predictionsJsonArray;
-    Message_Fragment.onOptionSelected callback;
-    public PlaceCustomListAdapterDialog(Context mContext,JSONArray predictionsJsonArray, Message_Fragment.onOptionSelected callback){
+    MessageFragment.onOptionSelected callback;
+    public PlaceCustomListAdapterDialog(Context mContext,JSONArray predictionsJsonArray, MessageFragment.onOptionSelected callback){
         this.mContext=mContext;
         this.predictionsJsonArray=predictionsJsonArray;
         this.callback=callback;

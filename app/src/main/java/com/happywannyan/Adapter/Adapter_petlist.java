@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.bumptech.glide.Glide;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.Search_Basic;
+import com.happywannyan.Fragments.SearchBasicFragment;
 import com.happywannyan.POJO.PetService;
 import com.happywannyan.R;
 import java.util.ArrayList;
@@ -23,11 +23,11 @@ import java.util.ArrayList;
 public class Adapter_petlist extends RecyclerView.Adapter<Adapter_petlist.MyViewHolder> {
     ArrayList<PetService> serviceCatListArrayList;
     Context context;
-    Search_Basic search_basic;
-    public Adapter_petlist(Search_Basic search_basic,Context context, ArrayList<PetService> serviceCatListArrayList){
+    SearchBasicFragment search_basicFragment;
+    public Adapter_petlist(SearchBasicFragment search_basicFragment, Context context, ArrayList<PetService> serviceCatListArrayList){
         this.context=context;
         this.serviceCatListArrayList=serviceCatListArrayList;
-        this.search_basic=search_basic;
+        this.search_basicFragment = search_basicFragment;
     }
 
     @Override
@@ -87,7 +87,7 @@ public class Adapter_petlist extends RecyclerView.Adapter<Adapter_petlist.MyView
                 }
                 notifyDataSetChanged();
 
-              search_basic.GotoAdvancedSearched(serviceCatListArrayList.get(position).getJsondata());
+              search_basicFragment.GotoAdvancedSearched(serviceCatListArrayList.get(position).getJsondata());
 
             }
         });

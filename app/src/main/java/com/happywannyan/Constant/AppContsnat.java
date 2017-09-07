@@ -1,17 +1,8 @@
 package com.happywannyan.Constant;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.view.View;
 
-import com.bumptech.glide.Glide;
-import com.happywannyan.Activities.AddAnotherPets;
-import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Activities.LoginActivity;
-import com.happywannyan.R;
 import com.happywannyan.Utils.App_data_holder;
-import com.happywannyan.Utils.CircleTransform;
-import com.happywannyan.Utils.Loger;
 
 import org.json.JSONException;
 import org.json.JSONObject;

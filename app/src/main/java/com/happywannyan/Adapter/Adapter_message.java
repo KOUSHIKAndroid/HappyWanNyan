@@ -10,7 +10,6 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -19,7 +18,7 @@ import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.MessageDetailsPage;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.Message_Fragment;
+import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.MessageDataType;
 import com.happywannyan.R;
 import com.happywannyan.Utils.helper.ObservableHorizontalScrollView;
@@ -40,9 +39,9 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
     int Screenwidth = 0;
     int PrevPoint = -1;
     public int nextData = 1;
-    Message_Fragment message_fragment;
+    MessageFragment message_fragment;
 
-    public Adapter_message(Context context, Message_Fragment message_fragment, ArrayList<MessageDataType> MessageList) {
+    public Adapter_message(Context context, MessageFragment message_fragment, ArrayList<MessageDataType> MessageList) {
         this.context = context;
         this.message_fragment = message_fragment;
         this.MessageList = MessageList;
@@ -127,8 +126,8 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
                 public void onClick(View v) {
 
                     try {
-                        Message_Fragment.MESSAGECODE = object.getString("message_type_code");
-                        Message_Fragment.TAGNAME = object.getString("message_type");
+                        MessageFragment.MESSAGECODE = object.getString("message_type_code");
+                        MessageFragment.TAGNAME = object.getString("message_type");
                         Intent intent = new Intent(context, MessageDetailsPage.class);
                         intent.putExtra("message_id", object.getString("parent_id"));
                         if (!AppContsnat.UserId.equals(object.getString("receiver_id")))

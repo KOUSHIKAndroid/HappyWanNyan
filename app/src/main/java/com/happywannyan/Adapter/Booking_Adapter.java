@@ -1,7 +1,5 @@
 package com.happywannyan.Adapter;
 
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.AppCompatImageView;
@@ -11,11 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Activities.Booking.BookingDetails;
+import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
-import com.happywannyan.POJO.SetGetUpComingBooking;
 import com.happywannyan.R;
 
 import org.json.JSONObject;
@@ -67,10 +64,10 @@ public class Booking_Adapter extends RecyclerView.Adapter<Booking_Adapter.MyView
                 public void onClick(View view) {
 
 //                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
-                    Intent intent = new Intent(context, BookingDetails.class);
+                    Intent intent = new Intent(context, BookingDetailsActivity.class);
                     intent.putExtra("data",""+object);
                     bookingFragment. startActivityForResult(intent,222);
-//                    context.startActivity(new Intent(context, BookingDetails.class));
+//                    context.startActivity(new Intent(context, BookingDetailsActivity.class));
                 }
             });
 

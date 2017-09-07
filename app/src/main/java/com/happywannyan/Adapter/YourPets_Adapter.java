@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
-import com.happywannyan.Activities.EditAnotherPets;
+import com.happywannyan.Activities.EditAnotherPetsActivity;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
@@ -109,7 +109,7 @@ public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyVi
         holder.img_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, EditAnotherPets.class);
+                Intent intent=new Intent(context, EditAnotherPetsActivity.class);
                 Loger.MSG("@@@",data.getOtherinfo().toString());
                 intent.putExtra("Data",data.getOtherinfo().toString());
                 context.startActivity(intent);
