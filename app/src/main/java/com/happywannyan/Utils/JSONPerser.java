@@ -238,7 +238,9 @@ public class JSONPerser {
                         }else {
                             jsonresponse.OnError(new JSONObject(respose).getString("message")+"",respose);
                         }
-                    }catch (Exception e){}
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
 
 
 
@@ -356,7 +358,8 @@ public class JSONPerser {
                 while(myVeryOwnIterator.hasNext()) {
                     String key=(String)myVeryOwnIterator.next();
                     File value=(File) Photos.get(key);
-                    {if(value!=null)
+                    {
+                        if(value!=null)
                         buildernew.addFormDataPart(""+key, value.getName() + "", RequestBody.create(MEDIA_TYPE_PNG, value.getName()));
 
                     }                }
