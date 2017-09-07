@@ -63,7 +63,7 @@ public class JSONPerser {
                 try {
                     if (!isCancelled()) {
 
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(5000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL+PARAMS).build();
                         Response response = client.newCall(request).execute();
 
@@ -133,7 +133,7 @@ public class JSONPerser {
                 try {
                     if (!isCancelled()) {
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL) .method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -437,7 +437,7 @@ public void GET_STRIPE_CUSTIMERID(final String StripeToken, final JSONRESPONSE j
                 if (!isCancelled()) {
 
 //                    MultipartBody requestBody = buildernew.build();
-                    OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                    OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MINUTES).build();
                     Request request = new Request.Builder().url("https://api.stripe.com/v1/customers")
 //                            .method("POST", RequestBody.create(null, new byte[0]))
                             .addHeader("authorization", "Bearer "+ AppContsnat.STRIPE_SECRATE_KEY)
