@@ -149,11 +149,11 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    public void showConfirmReservationRequest() {
-        for (int i = 0; i < FirstPageData.size(); i++) {
-            Loger.MSG(FirstPageData.get(i).getPARAMS(), "-->" + FirstPageData.get(i).getValues());
-        }
-    }
+//    public void showConfirmReservationRequest() {
+//        for (int i = 0; i < FirstPageData.size(); i++) {
+//            Loger.MSG(FirstPageData.get(i).getPARAMS(), "-->" + FirstPageData.get(i).getValues());
+//        }
+//    }
 
     public void submitConfirmReservationRequest() {
         Apploaders.Show();

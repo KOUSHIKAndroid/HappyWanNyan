@@ -333,7 +333,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                     }
                 }
 
-                ((BookingOne)getActivity()).showConfirmReservationRequest();
+                //((BookingOne)getActivity()).showConfirmReservationRequest();
 
                 mListener.onFragmentInteraction("four");
                 break;

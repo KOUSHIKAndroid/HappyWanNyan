@@ -187,7 +187,7 @@ public class BookingFragmentFoure extends Fragment {
                                     }
 
                                 }
-                                ((BookingOne) getActivity()).showConfirmReservationRequest();
+                                //((BookingOne) getActivity()).showConfirmReservationRequest();
                                 ((BookingOne) getActivity()).submitConfirmReservationRequest();
                             }
 
