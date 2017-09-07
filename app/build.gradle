@@ -31,7 +31,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    lintOptions{
+    lintOptions {
         checkReleaseBuilds false
         abortOnError false
     }
@@ -50,8 +50,8 @@ android {
 repositories {
     mavenCentral()
     maven { url 'https://maven.fabric.io/public' }
-        jcenter()
-        maven { url "https://jitpack.io" }
+    jcenter()
+    maven { url "https://jitpack.io" }
 
 }
 
@@ -66,6 +66,7 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
         transitive = true;
     }
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:support-v4:25.3.1'
@@ -84,7 +85,6 @@ dependencies {
     compile 'com.stripe:stripe-android:4.1.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.sharish:CreditCardView:v1.0.4'
-
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

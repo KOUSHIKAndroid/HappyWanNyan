@@ -211,4 +211,5 @@
     <string name="subtotal_amount">Subtotal Amount</string>
     <string name="discount_amount">Discount Amount</string>
     <string name="coupon_code_applied">Coupon Code Applied!</string>
+    <string name="are_you_want_to_delete">Are you want to delete?</string>
 </resources>

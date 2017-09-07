@@ -23,6 +23,7 @@ import com.happywannyan.Events;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.Fragments.FavouriteFragment;
+import com.happywannyan.Fragments.MyPaymentsFragment;
 import com.happywannyan.Fragments.MyPetsFragments;
 import com.happywannyan.Fragments.MyProfileFragment;
 import com.happywannyan.Fragments.PastSitterFragment;
@@ -246,7 +247,22 @@ Events events;
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
-        }); navigationView.findViewById(R.id.LL_Favorite).setOnClickListener(new View.OnClickListener() {
+        });
+
+        navigationView.findViewById(R.id.LL_Payment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        navigationView.findViewById(R.id.LL_Favorite).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
