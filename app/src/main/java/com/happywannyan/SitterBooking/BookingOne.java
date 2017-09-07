@@ -149,27 +149,29 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    public void submitConfirmReservationRequest() {
-
+    public void showConfirmReservationRequest() {
         for (int i = 0; i < FirstPageData.size(); i++) {
             Loger.MSG(FirstPageData.get(i).getPARAMS(), "-->" + FirstPageData.get(i).getValues());
         }
-//        Apploaders.Show();
-//        new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new JSONPerser.JSONRESPONSE() {
-//            @Override
-//            public void OnSuccess(String Result) {
-//
-//            }
-//
-//            @Override
-//            public void OnError(String Error, String Response) {
-//                Apploaders.Dismiss();
-//            }
-//
-//            @Override
-//            public void OnError(String Error) {
-//                Apploaders.Dismiss();
-//            }
-//        });
+    }
+
+    public void submitConfirmReservationRequest() {
+        Apploaders.Show();
+        new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new JSONPerser.JSONRESPONSE() {
+            @Override
+            public void OnSuccess(String Result) {
+
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                Apploaders.Dismiss();
+            }
+
+            @Override
+            public void OnError(String Error) {
+                Apploaders.Dismiss();
+            }
+        });
     }
 }

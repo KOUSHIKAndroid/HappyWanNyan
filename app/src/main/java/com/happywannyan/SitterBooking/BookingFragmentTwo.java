@@ -165,7 +165,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                                     ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
                                 }
                             }
-                            ((BookingOne)getActivity()).submitConfirmReservationRequest();
+                            ((BookingOne)getActivity()).showConfirmReservationRequest();
 
                             mListener.onFragmentInteraction("Three");
 
