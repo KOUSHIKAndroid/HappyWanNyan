@@ -133,7 +133,7 @@ public class JSONPerser {
                 try {
                     if (!isCancelled()) {
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(5000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL) .method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -285,7 +285,7 @@ public class JSONPerser {
                     if (!isCancelled()) {
 
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL) .method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -371,7 +371,7 @@ public class JSONPerser {
                     if (!isCancelled()) {
 
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL) .method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();

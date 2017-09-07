@@ -161,6 +161,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
             @Override
             public void OnSuccess(String Result) {
 
+                Loger.MSG("Result-->",Result);
             }
 
             @Override
