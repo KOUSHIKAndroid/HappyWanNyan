@@ -304,6 +304,7 @@ public class BookingFragmentFoure extends Fragment {
                                                                     @Override
                                                                     public void onSelectItemClick(int position, JSONObject data) {
                                                                         cardFinalSelection = data;
+                                                                        Loger.MSG("SelectedData",""+data);
                                                                     }
                                                                 }));
                                                             }
@@ -399,11 +400,11 @@ public class BookingFragmentFoure extends Fragment {
                             ex.printStackTrace();
                         }
 
-
                         REC_Card.setAdapter(new Adapter_Card(getActivity(), Result, new onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
-
+                                cardFinalSelection = data;
+                                Loger.MSG("SelectedData",""+data);
                             }
                         }));
                     }
