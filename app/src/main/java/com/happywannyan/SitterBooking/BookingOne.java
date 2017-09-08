@@ -167,6 +167,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
+                Apploaders.Dismiss();
                 Loger.MSG("Result-->", Result);
             }
 
@@ -218,7 +219,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(
-                6000,
+                60000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
@@ -228,23 +229,24 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
 
 
     public void submitConfirmReservationRequestUsingHTTP() {
+        Apploaders.Show();
         new CustomJSONParser().postDataUsingHttp(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
-
+                Apploaders.Dismiss();
+                Loger.MSG("Result-->", Result);
             }
 
             @Override
             public void OnError(String Error, String Response) {
-
+                Apploaders.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-
+                Apploaders.Dismiss();
             }
         });
     }
-
 
 }

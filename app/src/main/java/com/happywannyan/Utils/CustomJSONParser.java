@@ -503,7 +503,6 @@ public class CustomJSONParser {
         return result.toString();
     }
 
-
     public void postDataUsingHttp(final String URL, final ArrayList<APIPOSTDATA> apiPostData,final JSONRESPONSE jsonresponse){
 
        new AsyncTask<String, Void, String>() {
