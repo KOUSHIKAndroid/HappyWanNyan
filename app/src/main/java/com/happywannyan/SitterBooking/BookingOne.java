@@ -1,6 +1,7 @@
 package com.happywannyan.SitterBooking;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -243,6 +245,12 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
                     JSONObject jsonObject=new JSONObject(Result);
                     if(jsonObject.getBoolean("response")){
                         Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                        //finish();
+                        Intent intent = new Intent(BookingOne.this,BaseActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.putExtra("go_to", "pending_message");
+                        startActivity(intent);
                         finish();
                     }
                 } catch (JSONException e) {

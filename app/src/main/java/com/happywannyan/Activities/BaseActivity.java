@@ -86,14 +86,26 @@ Events events;
             }
         });
 
+        if( getIntent().getExtras() != null)
+        {
+            //do here
+            String s = getIntent().getStringExtra("go_to");
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        else {
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            SearchBasicFragment search_basicFragment = new SearchBasicFragment();
+            fragmentTransaction.add(R.id.Base_fargment_layout, search_basicFragment);
+            fragmentTransaction.commit();
+        }
 
 
 
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        SearchBasicFragment search_basicFragment = new SearchBasicFragment();
-        fragmentTransaction.add(R.id.Base_fargment_layout, search_basicFragment);
-        fragmentTransaction.commit();
 
 
         /*
