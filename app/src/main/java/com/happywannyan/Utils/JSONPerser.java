@@ -65,7 +65,7 @@ public class JSONPerser {
                 try {
                     if (!isCancelled()) {
 
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL + PARAMS).build();
                         Response response = client.newCall(request).execute();
 
@@ -134,7 +134,7 @@ public class JSONPerser {
                 try {
                     if (!isCancelled()) {
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -206,7 +206,7 @@ public class JSONPerser {
                 try {
                     if (!isCancelled()) {
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(6000, TimeUnit.MILLISECONDS).retryOnConnectionFailure(true).build();
+                        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(60000, TimeUnit.MILLISECONDS).retryOnConnectionFailure(true).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -280,7 +280,7 @@ public class JSONPerser {
                     if (!isCancelled()) {
 
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -366,7 +366,7 @@ public class JSONPerser {
                     if (!isCancelled()) {
 
                         MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -430,7 +430,7 @@ public class JSONPerser {
                     if (!isCancelled()) {
 
 //                    MultipartBody requestBody = buildernew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MINUTES).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MINUTES).build();
                         Request request = new Request.Builder().url("https://api.stripe.com/v1/customers")
 //                            .method("POST", RequestBody.create(null, new byte[0]))
                                 .addHeader("authorization", "Bearer " + AppContsnat.STRIPE_SECRATE_KEY)
