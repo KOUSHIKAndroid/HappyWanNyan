@@ -30,7 +30,7 @@
         -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/logo_hapyywan" />
+            android:resource="@drawable/logo_happywan" />
 
         <!-- <meta-data android:name="com.google.android.geo.API_KEY" -->
         <!-- android:value="@string/google_maps_key" /> -->
@@ -137,7 +137,7 @@
         <activity android:name=".Activities.profile.ContactMsgActivity" />
         <activity android:name=".Activities.HelpActivity" />
         <activity
-            android:name=".Activities.MessageDetailsPage"
+            android:name=".Activities.MessageDetailsPageActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".Activities.Booking.CancelBookingWithReasonsActivity" />

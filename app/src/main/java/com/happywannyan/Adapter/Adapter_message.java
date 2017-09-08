@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Activities.MessageDetailsPage;
+import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.MessageFragment;
@@ -128,7 +128,7 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
                     try {
                         MessageFragment.MESSAGECODE = object.getString("message_type_code");
                         MessageFragment.TAGNAME = object.getString("message_type");
-                        Intent intent = new Intent(context, MessageDetailsPage.class);
+                        Intent intent = new Intent(context, MessageDetailsPageActivity.class);
                         intent.putExtra("message_id", object.getString("parent_id"));
                         if (!AppContsnat.UserId.equals(object.getString("receiver_id")))
                             intent.putExtra("receiver_id", object.getString("receiver_id"));

@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Activities.MessageDetailsPage;
+import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
@@ -304,7 +304,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
     private void GotoMessage(String MsgId) {
 
-        Intent intent=new Intent(this, MessageDetailsPage.class);
+        Intent intent=new Intent(this, MessageDetailsPageActivity.class);
         intent.putExtra("receiver_id",AppContsnat.UserId);
         intent.putExtra("message_id",MsgId);
         startActivity(intent);

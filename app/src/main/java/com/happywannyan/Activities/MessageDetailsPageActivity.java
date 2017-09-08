@@ -52,7 +52,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class MessageDetailsPage extends AppCompatActivity implements View.OnClickListener {
+public class MessageDetailsPageActivity extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView LL_UserInfo;
     MessageAdapter messageAdapter;
@@ -152,11 +152,11 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
                     } else
                         LL_USER_TIME.setVisibility(View.GONE);
                     TXT_JoinTime.setText(getString(R.string.join) + OBJ.getString("message_joined"));
-                    Glide.with(MessageDetailsPage.this).load(OBJ.getString("message_from_image")).into(IMGE_FROM);
-                    Glide.with(MessageDetailsPage.this).load(OBJ.getString("message_from_image")).into(USER_IMAGE);
+                    Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_from_image")).into(IMGE_FROM);
+                    Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_from_image")).into(USER_IMAGE);
                      ARRAy = OBJ.getJSONArray("all_message_details");
 //                    if (messageAdapter == null) {
-                        messageAdapter = new MessageAdapter(MessageDetailsPage.this, ARRAy);
+                        messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
                         LL_UserInfo.setAdapter(messageAdapter);
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
@@ -246,7 +246,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
                         public void OnSuccess(String Result) {
 //                            try {
 //                                ARRAy.getJSONObject(ARRAy.length()-1).getJSONArray("info").put(new JSONObject(Result).getJSONObject("info"));
-//                                messageAdapter = new MessageAdapter(MessageDetailsPage.this, ARRAy);
+//                                messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
 //                                LL_UserInfo.setAdapter(messageAdapter);
 //                            } catch (JSONException e) {
 //                                e.printStackTrace();
@@ -376,7 +376,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
                 e.printStackTrace();
             }
         } else if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE && resultCode == RESULT_OK) {
-            Place place = PlacePicker.getPlace(MessageDetailsPage.this, data);
+            Place place = PlacePicker.getPlace(MessageDetailsPageActivity.this, data);
             Loger.MSG("@@ PLACE", "" + place.getLatLng());
             String MAPIMGAEURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&zoom=13&size=1000x1000&markers=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M";
             Loader.Show();
@@ -605,7 +605,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
             try {
                 if(MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("parent_id"))) {
                     ARRAy.getJSONObject(ARRAy.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
-                    messageAdapter = new MessageAdapter(MessageDetailsPage.this, ARRAy);
+                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
                     LL_UserInfo.setAdapter(messageAdapter);
                     Log.d("receiver", "Got message:2 " + message);
                 }else {

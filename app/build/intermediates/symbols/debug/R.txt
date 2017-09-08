@@ -1514,7 +1514,7 @@ int drawable img_slider1 0x7f0201ce
 int drawable login_facebook 0x7f0201cf
 int drawable login_signin 0x7f0201d0
 int drawable login_signup 0x7f0201d1
-int drawable logo_hapyywan 0x7f0201d2
+int drawable logo_hapyywan1 0x7f0201d2
 int drawable logo_searchpage 0x7f0201d3
 int drawable master_back 0x7f0201d4
 int drawable mastercard_back_bg 0x7f0201d5
