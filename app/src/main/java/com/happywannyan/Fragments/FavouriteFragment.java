@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.FavouriteRecyclerAdapter;
 import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
@@ -79,7 +80,6 @@ public class FavouriteFragment extends Fragment {
                 ((BaseActivity) getActivity()).Menu_Drawer();
             }
         });
-
         rcv_favourite = (RecyclerView) view.findViewById(R.id.recycler_view);
         rcv_favourite.setLayoutManager(new LinearLayoutManager(getActivity()));
 

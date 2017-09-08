@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.FavouriteRecyclerAdapter;
 import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
@@ -79,7 +80,7 @@ public class PastSitterFragment extends Fragment {
                 ((BaseActivity) getActivity()).Menu_Drawer();
             }
         });
-
+        ((SFNFTextView)view.findViewById(R.id.PAGE_Titile)).setText(getActivity().getResources().getString(R.string.past_sitters));
         rcv_favourite = (RecyclerView) view.findViewById(R.id.recycler_view);
         rcv_favourite.setLayoutManager(new LinearLayoutManager(getActivity()));
 
