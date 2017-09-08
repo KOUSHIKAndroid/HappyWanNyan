@@ -74,7 +74,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 //        // message, here is where that should be initiated. See sendNotification method below.
 
         Loger.MSG("@@@ PUSH",remoteMessage.getNotification().getBody());
-//        sendNotification(remoteMessage.getNotification().getBody());
         try {
             JSONObject Object=new JSONObject(remoteMessage.getNotification().getBody());
 
@@ -92,8 +91,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
     // [END receive_message]
 
