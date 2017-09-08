@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -25,6 +27,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class BookingOne extends AppCompatActivity implements View.OnClickListener, OnFragmentInteractionListener {
 
@@ -235,6 +239,16 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
             public void OnSuccess(String Result) {
                 Apploaders.Dismiss();
                 Loger.MSG("Result-->", Result);
+                try {
+                    JSONObject jsonObject=new JSONObject(Result);
+                    if(jsonObject.getBoolean("response")){
+                        Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
 
             @Override

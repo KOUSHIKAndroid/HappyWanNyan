@@ -574,8 +574,6 @@ public class CustomJSONParser {
 
             @Override
             protected void onPostExecute(String result) {
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-
                 if (!isCancelled() && exception == null && !result.equalsIgnoreCase("200")) {
 
                     try {
