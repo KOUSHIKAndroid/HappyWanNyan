@@ -1,28 +1,13 @@
 package com.happywannyan.Utils;
 
 import android.content.Context;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
-import android.util.Log;
-
-
-import com.google.android.gms.location.places.Place;
-import com.happywannyan.POJO.APIPOSTDATA;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
-
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
