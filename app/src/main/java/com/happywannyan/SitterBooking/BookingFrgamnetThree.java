@@ -110,8 +110,8 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
             ((SFNFTextView)viewMain.findViewById(R.id.TXT_saftyPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
             ((SFNFTextView)viewMain.findViewById(R.id.TXT_CancelPolicy)).setText(PageObject.getJSONObject("info_array").getString("cancel_policy"));
 
-            Loger.MSG("DoubleDate",""+((BookingOne)getActivity()).DoubleDate);
-            if(((BookingOne)getActivity()).DoubleDate) {
+            Loger.MSG("DoubleDate",""+((BookingOneActivity)getActivity()).DoubleDate);
+            if(((BookingOneActivity)getActivity()).DoubleDate) {
                 LL_DoubleDate.setVisibility(View.VISIBLE);
                 LL_ForSingleDate.setVisibility(View.GONE);
                 ((SFNFTextView) viewMain.findViewById(R.id.TXT_StartDate)).setText(PageObject.getJSONObject("info_array").getString("start_date"));
@@ -294,46 +294,46 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
         switch (view.getId()){
             case R.id.Card_next:
 
-                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                    if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("coupon_id")) {
-                        ((BookingOne) getActivity()).FirstPageData.get(i).setValues(coupon_id);
+                for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                    if (((BookingOneActivity) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("coupon_id")) {
+                        ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(coupon_id);
                         break;
                     }
-                    else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                    else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
                         APIPOSTDATA apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("coupon_id");
                         apipostdata.setValues(coupon_id);
-                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                     }
                 }
 
-                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                    if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("coupon_amount")) {
-                        ((BookingOne) getActivity()).FirstPageData.get(i).setValues(coupon_amount);
+                for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                    if (((BookingOneActivity) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("coupon_amount")) {
+                        ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(coupon_amount);
                         break;
                     }
-                    else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                    else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
                         APIPOSTDATA apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("coupon_amount");
                         apipostdata.setValues(coupon_amount);
-                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                     }
                 }
 
-                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                    if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("add_message")) {
-                        ((BookingOne) getActivity()).FirstPageData.get(i).setValues("");
+                for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                    if (((BookingOneActivity) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("add_message")) {
+                        ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues("");
                         break;
                     }
-                    else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                    else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
                         APIPOSTDATA apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("add_message");
                         apipostdata.setValues("");
-                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                     }
                 }
 
-                //((BookingOne)getActivity()).showConfirmReservationRequest();
+                //((BookingOneActivity)getActivity()).showConfirmReservationRequest();
 
                 mListener.onFragmentInteraction("four");
                 break;

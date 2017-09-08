@@ -88,11 +88,11 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                 EDX_Fname.setError(null);
                 EDX_Lname.setError(null);
 
-                ((BookingOne) getActivity()).MyPetList = new ArrayList<String>();
+                ((BookingOneActivity) getActivity()).MyPetList = new ArrayList<String>();
 
                 for (int k = 0; k < LL_MYPETS.getChildCount(); k++) {
                     if (LL_MYPETS.getChildAt(k) instanceof CheckBox && ((CheckBox) ((CheckBox) LL_MYPETS.getChildAt(k))).isChecked()) {
-                        ((BookingOne) getActivity()).MyPetList.add(((CheckBox) LL_MYPETS.getChildAt(k)).getTag() + "");
+                        ((BookingOneActivity) getActivity()).MyPetList.add(((CheckBox) LL_MYPETS.getChildAt(k)).getTag() + "");
                         atLeastOneCheck = true;
                     }
                 }
@@ -105,67 +105,67 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                     } else {
                         if (atLeastOneCheck) {
 
-                            for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("pick_up")) {
-                                    ((BookingOne) getActivity()).FirstPageData.get(i).setValues(TXT_PickupTime.getTag().toString());
+                            for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOneActivity) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("pick_up")) {
+                                    ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(TXT_PickupTime.getTag().toString());
                                     break;
                                 }
-                                else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                                else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
                                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                                     apipostdata.setPARAMS("pick_up");
                                     apipostdata.setValues(TXT_PickupTime.getTag().toString());
-                                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                 }
                             }
 
-                            for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("drop_off")) {
-                                    ((BookingOne) getActivity()).FirstPageData.get(i).setValues(TXT_dropTime.getTag().toString());
+                            for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOneActivity) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("drop_off")) {
+                                    ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(TXT_dropTime.getTag().toString());
                                     break;
                                 }
-                                else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                                else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
                                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                                     apipostdata.setPARAMS("drop_off");
                                     apipostdata.setValues(TXT_dropTime.getTag().toString());
-                                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                 }
                             }
 
-                            for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("pet_id")) {
+                            for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOneActivity) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("pet_id")) {
                                     String petIdString="";
-                                    for (int j=0;j<((BookingOne) getActivity()).MyPetList.size();j++){
-                                        petIdString=petIdString+((BookingOne) getActivity()).MyPetList.get(j)+",";
+                                    for (int j = 0; j<((BookingOneActivity) getActivity()).MyPetList.size(); j++){
+                                        petIdString=petIdString+((BookingOneActivity) getActivity()).MyPetList.get(j)+",";
                                     }
-                                    ((BookingOne) getActivity()).FirstPageData.get(i).setValues(petIdString.substring(0,petIdString.length()-1));
+                                    ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(petIdString.substring(0,petIdString.length()-1));
                                     break;
                                 }
-                                else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                                else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
                                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                                     apipostdata.setPARAMS("pet_id");
                                     String petIdString="";
-                                    for (int j=0;j<((BookingOne) getActivity()).MyPetList.size();j++){
-                                        petIdString=petIdString+((BookingOne) getActivity()).MyPetList.get(j)+",";
+                                    for (int j = 0; j<((BookingOneActivity) getActivity()).MyPetList.size(); j++){
+                                        petIdString=petIdString+((BookingOneActivity) getActivity()).MyPetList.get(j)+",";
                                     }
                                     apipostdata.setValues(petIdString.substring(0,petIdString.length()-1));
-                                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                 }
                             }
 
 
-                            for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                                if (((BookingOne) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("total_pets")) {
-                                    ((BookingOne) getActivity()).FirstPageData.get(i).setValues(((BookingOne) getActivity()).MyPetList.size() + "");
+                            for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOneActivity) getActivity()).FirstPageData.get(i) .getPARAMS().equalsIgnoreCase("total_pets")) {
+                                    ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(((BookingOneActivity) getActivity()).MyPetList.size() + "");
                                     break;
                                 }
-                                else if(i==((BookingOne) getActivity()).FirstPageData.size()-1){
+                                else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
                                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                                     apipostdata.setPARAMS("total_pets");
-                                    apipostdata.setValues(((BookingOne) getActivity()).MyPetList.size() + "");
-                                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                    apipostdata.setValues(((BookingOneActivity) getActivity()).MyPetList.size() + "");
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                 }
                             }
-                            //((BookingOne)getActivity()).showConfirmReservationRequest();
+                            //((BookingOneActivity)getActivity()).showConfirmReservationRequest();
 
                             mListener.onFragmentInteraction("Three");
 

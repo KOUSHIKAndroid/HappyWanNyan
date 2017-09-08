@@ -201,7 +201,7 @@ Events events;
             public void onClick(View v) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-//                startActivity(new Intent(BaseActivity.this,BookingOne.class));
+//                startActivity(new Intent(BaseActivity.this,BookingOneActivity.class));
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
@@ -214,7 +214,7 @@ Events events;
             public void onClick(View v) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-//                startActivity(new Intent(BaseActivity.this,BookingOne.class));
+//                startActivity(new Intent(BaseActivity.this,BookingOneActivity.class));
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.Base_fargment_layout, new PastSitterFragment());

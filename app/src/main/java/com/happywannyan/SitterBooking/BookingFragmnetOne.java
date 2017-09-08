@@ -23,7 +23,6 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
-import com.happywannyan.Utils.MethodsUtils;
 import com.happywannyan.Utils.helper.DatePickerFragment;
 
 import org.json.JSONArray;
@@ -116,9 +115,9 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                 TXT_Price.setText(jsonObject.getString("service_price") + " / " + jsonObject.getString("unit_name"));
                 if (jsonObject.getString("date_field").equals("double")) {
                     LL_S_F.setVisibility(View.VISIBLE);
-                    ((BookingOne) getActivity()).DoubleDate = true;
+                    ((BookingOneActivity) getActivity()).DoubleDate = true;
                 } else {
-                    ((BookingOne) getActivity()).DoubleDate = false;
+                    ((BookingOneActivity) getActivity()).DoubleDate = false;
                     RL_SingleDate.setVisibility(View.VISIBLE);
                 }
 
@@ -198,54 +197,54 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
         switch (view.getId()) {
             case R.id.Card_next:
                 try {
-                    ((BookingOne) getActivity()).FirstPageData = new ArrayList<>();
+                    ((BookingOneActivity) getActivity()).FirstPageData = new ArrayList<>();
 
                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("langid");
                     apipostdata.setValues(AppContsnat.Language);
-                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
 
                     java.util.TimeZone tz= java.util.TimeZone.getDefault();
                     apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("user_timezone");
                     apipostdata.setValues(tz.getID());
-                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
                     apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("user_id");
                     apipostdata.setValues(AppContsnat.UserId);
-                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
 
                     apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("service_id");
                     apipostdata.setValues(new JSONObject(TXT_ServiceName.getTag() + "").getString("service_id"));
-                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
                     if (TXT_SingleDate.getText().equals("")) {
 
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("start_date");
                         apipostdata.setValues(TXT_StartDate.getText().toString());
-                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("end_date");
                         apipostdata.setValues(TXT_EndDte.getText().toString());
-                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
                     } else {
 
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("start_date");
                         apipostdata.setValues(TXT_SingleDate.getText().toString());
-                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("end_date");
                         apipostdata.setValues("");
-                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                     }
 
                     apipostdata = new APIPOSTDATA();
@@ -256,7 +255,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                         apipostdata.setPARAMS("no_of_visit");
                         apipostdata.setValues("");
                     }
-                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
 
                     apipostdata = new APIPOSTDATA();
@@ -267,7 +266,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                         apipostdata.setPARAMS("no_times");
                         apipostdata.setValues("");
                     }
-                    ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -275,7 +274,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
 
                 if (TXT_ServiceName.getText().length() > 0) {
                     if (LL_S_F.getVisibility() == View.VISIBLE && TXT_StartDate.getText().length() > 0) {
-                        //((BookingOne)getActivity()).showConfirmReservationRequest();
+                        //((BookingOneActivity)getActivity()).showConfirmReservationRequest();
                         mListener.onFragmentInteraction("Two");
 
                     } else {
@@ -297,7 +296,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
 
                 break;
             case R.id.RL_ChoseCat:
-                if (!((BookingOne) getActivity()).DropDown)
+                if (!((BookingOneActivity) getActivity()).DropDown)
                     try {
                         new MYAlert(getActivity()).AlertTextLsit("" + getString(R.string.ChooseService), new JSONArray(mParam1), "service_name", new MYAlert.OnSignleListTextSelected() {
                             @Override
@@ -311,9 +310,9 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                                     TXT_Price.setText(jsonObject.getString("service_price") + " / " + jsonObject.getString("unit_name"));
                                     if (jsonObject.getString("date_field").equals("double")) {
                                         LL_S_F.setVisibility(View.VISIBLE);
-                                        ((BookingOne) getActivity()).DoubleDate = true;
+                                        ((BookingOneActivity) getActivity()).DoubleDate = true;
                                     } else {
-                                        ((BookingOne) getActivity()).DoubleDate = false;
+                                        ((BookingOneActivity) getActivity()).DoubleDate = false;
                                         RL_SingleDate.setVisibility(View.VISIBLE);
                                     }
 

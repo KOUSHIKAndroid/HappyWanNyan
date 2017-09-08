@@ -17,7 +17,7 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.SitterBooking.BookingOne;
+import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Activities.profile.fragmentPagerAdapter.ProfileFragPagerAdapter;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
@@ -273,7 +273,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ProfileDetailsActivity.this, BookingOne.class);
+                Intent intent=new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
                 try {
                     intent.putExtra("LIST",""+new JSONObject(JSONRESPONSE).getJSONObject("info_array").getJSONArray("servicelist"));
                     intent.putExtra("ItemDetails",""+PrevJSON);

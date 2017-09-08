@@ -14,7 +14,7 @@ import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
-import com.happywannyan.SitterBooking.BookingOne;
+import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
@@ -87,7 +87,7 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
             holder.RL_Book.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(mContext, BookingOne.class);
+                    Intent intent = new Intent(mContext, BookingOneActivity.class);
                     intent.putExtra("LIST", "");
                     intent.putExtra("ItemDetails",""+((ProfileDetailsActivity)mContext).PrevJSON);
                     intent.putExtra("Single",true);

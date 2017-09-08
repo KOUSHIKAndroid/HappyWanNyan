@@ -114,56 +114,56 @@ public class BookingFragmentFoure extends Fragment {
                             @Override
                             public void OnOk() {
 
-                                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                                for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
                                     try {
-                                        if (((BookingOne) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("user_card_id")) {
-                                            ((BookingOne) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("id"));
+                                        if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("user_card_id")) {
+                                            ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("id"));
                                             break;
-                                        } else if (i == ((BookingOne) getActivity()).FirstPageData.size() - 1) {
+                                        } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
                                             APIPOSTDATA apipostdata = new APIPOSTDATA();
                                             apipostdata.setPARAMS("user_card_id");
                                             apipostdata.setValues(cardFinalSelection.getString("id"));
-                                            ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                            ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                         }
                                     } catch (Exception ex) {
                                         ex.printStackTrace();
                                     }
                                 }
 
-                                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                                    if (((BookingOne) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("user_new_card")) {
-                                        ((BookingOne) getActivity()).FirstPageData.get(i).setValues("");
+                                for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                                    if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("user_new_card")) {
+                                        ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues("");
                                         break;
-                                    } else if (i == ((BookingOne) getActivity()).FirstPageData.size() - 1) {
+                                    } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
                                         APIPOSTDATA apipostdata = new APIPOSTDATA();
                                         apipostdata.setPARAMS("user_new_card");
                                         apipostdata.setValues("");
-                                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                     }
                                 }
 
-                                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
-                                    if (((BookingOne) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("stripeToken")) {
-                                        ((BookingOne) getActivity()).FirstPageData.get(i).setValues("");
+                                for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                                    if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("stripeToken")) {
+                                        ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues("");
                                         break;
-                                    } else if (i == ((BookingOne) getActivity()).FirstPageData.size() - 1) {
+                                    } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
                                         APIPOSTDATA apipostdata = new APIPOSTDATA();
                                         apipostdata.setPARAMS("stripeToken");
                                         apipostdata.setValues("");
-                                        ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                     }
                                 }
 
-                                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                                for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
                                     try {
-                                        if (((BookingOne) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("name_on_card")) {
-                                            ((BookingOne) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("name_on_card"));
+                                        if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("name_on_card")) {
+                                            ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("name_on_card"));
                                             break;
-                                        } else if (i == ((BookingOne) getActivity()).FirstPageData.size() - 1) {
+                                        } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
                                             APIPOSTDATA apipostdata = new APIPOSTDATA();
                                             apipostdata.setPARAMS("name_on_card");
                                             apipostdata.setValues(cardFinalSelection.getString("name_on_card"));
-                                            ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                            ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                         }
                                     } catch (Exception ex) {
                                         ex.printStackTrace();
@@ -171,26 +171,26 @@ public class BookingFragmentFoure extends Fragment {
 
                                 }
 
-                                for (int i = 0; i < ((BookingOne) getActivity()).FirstPageData.size(); i++) {
+                                for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
                                     try {
-                                        if (((BookingOne) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("security_code")) {
-                                            ((BookingOne) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("cvv_code"));
+                                        if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("security_code")) {
+                                            ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("cvv_code"));
                                             break;
-                                        } else if (i == ((BookingOne) getActivity()).FirstPageData.size() - 1) {
+                                        } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
                                             APIPOSTDATA apipostdata = new APIPOSTDATA();
                                             apipostdata.setPARAMS("security_code");
                                             apipostdata.setValues(cardFinalSelection.getString("cvv_code"));
-                                            ((BookingOne) getActivity()).FirstPageData.add(apipostdata);
+                                            ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
                                         }
                                     } catch (Exception ex) {
                                         ex.printStackTrace();
                                     }
 
                                 }
-                                //((BookingOne) getActivity()).showConfirmReservationRequest();
-                                //((BookingOne) getActivity()).submitConfirmReservationRequest();
-                                //((BookingOne) getActivity()).submitConfirmReservationRequestByVolley();
-                                ((BookingOne) getActivity()).submitConfirmReservationRequestUsingHTTP();
+                                //((BookingOneActivity) getActivity()).showConfirmReservationRequest();
+                                //((BookingOneActivity) getActivity()).submitConfirmReservationRequest();
+                                //((BookingOneActivity) getActivity()).submitConfirmReservationRequestByVolley();
+                                ((BookingOneActivity) getActivity()).submitConfirmReservationRequestUsingHTTP();
                             }
 
                             @Override
