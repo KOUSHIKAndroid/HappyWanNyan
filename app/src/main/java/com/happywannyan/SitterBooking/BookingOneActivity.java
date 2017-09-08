@@ -24,6 +24,8 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
@@ -50,6 +52,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_one);
         findViewById(R.id.IMG_icon_back).setOnClickListener(this);
+        findViewById(R.id.PAGE_Cancel).setOnClickListener(this);
 
         Apploaders = new AppLoader(this);
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -79,6 +82,21 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.IMG_icon_back:
                 onBackPressed();
+                break;
+            case R.id.PAGE_Cancel:
+                new MYAlert(BookingOneActivity.this).AlertOkCancel("",
+                        getResources().getString(R.string.do_you_want_to_cancel_booking), new MYAlert.OnOkCancel() {
+                            @Override
+                            public void OnOk() {
+                                //onBackPressed();
+                                finish();
+                            }
+
+                            @Override
+                            public void OnCancel() {
+
+                            }
+                        });
                 break;
         }
     }

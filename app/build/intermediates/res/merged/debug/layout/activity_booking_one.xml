@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.happywannyan.SitterBooking.BookingOne">
+    tools:context="com.happywannyan.SitterBooking.BookingOneActivity">
 
 
     <RelativeLayout
@@ -32,6 +32,18 @@
             android:text="@string/Booking"
             android:textColor="@color/colorwhite"
             android:textSize="@dimen/page_titiel" />
+
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/PAGE_Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/cancel"
+            android:textColor="@color/colorwhite"
+            android:textSize="@dimen/edit_text_size" />
     </RelativeLayout>
 
   <FrameLayout

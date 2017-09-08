@@ -88,7 +88,13 @@ public class MYAlert {
         SFNFTextView TXTMessage = (SFNFTextView) LayView.findViewById(R.id.Message);
         TXTMessage.setText(Message);
         SFNFTextView TXTTitle = (SFNFTextView) LayView.findViewById(R.id.Title);
-        TXTTitle.setText(Title);
+        if (Title.trim().equals("")) {
+            TXTTitle.setVisibility(View.GONE);
+        }else {
+            TXTTitle.setVisibility(View.VISIBLE);
+            TXTTitle.setText(Title);
+        }
+
         Button BTN_OK = (Button) LayView.findViewById(R.id.BTN_OK);
         Button BTN_CANCEL = (Button) LayView.findViewById(R.id.BTN_CANCEL);
 
