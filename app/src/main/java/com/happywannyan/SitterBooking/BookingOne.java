@@ -226,4 +226,25 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
         requestQueue.add(stringRequest);
     }
 
+
+    public void submitConfirmReservationRequestUsingHTTP() {
+        new CustomJSONParser().postDataUsingHttp(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
+            @Override
+            public void OnSuccess(String Result) {
+
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+
+            }
+
+            @Override
+            public void OnError(String Error) {
+
+            }
+        });
+    }
+
+
 }
