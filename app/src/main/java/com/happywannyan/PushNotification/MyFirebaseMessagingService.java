@@ -74,9 +74,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 //        // message, here is where that should be initiated. See sendNotification method below.
 
         Loger.MSG("@@@ PUSH",remoteMessage.getNotification().getBody());
-
+//        sendNotification(remoteMessage.getNotification().getBody());
         try {
             JSONObject Object=new JSONObject(remoteMessage.getNotification().getBody());
+
+            Log.d("PushResponse","=="+Object.toString());
             if(Object.getString("type_notification").equals("message"))
             {
                 Intent intent=new Intent("CONNECT_MESSAGE_LIVE");

@@ -168,12 +168,6 @@ ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:25:13-52
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:24:13-58
-meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:31:9-33:59
-	android:resource
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:33:13-56
-	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:32:13-83
 meta-data#com.google.android.gms.version
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:44:9-46:69
 MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/su/.android/build-cache/e4f3fe69a66795e4978deceb7888091e9208b443/output/AndroidManifest.xml:20:9-121
@@ -181,12 +175,6 @@ MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/su/.and
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:46:13-66
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:45:13-58
-meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:47:9-49:53
-	android:resource
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:49:13-50
-	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:48:13-84
 meta-data#com.google.android.geo.API_KEY
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:50:9-52:71
 	android:value
@@ -362,14 +350,14 @@ activity#com.happywannyan.Activities.HelpActivity
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:138:9-61
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:138:19-58
-activity#com.happywannyan.Activities.MessageDetailsPage
+activity#com.happywannyan.Activities.MessageDetailsPageActivity
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:139:9-142:55
 	android:screenOrientation
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:141:13-49
 	android:windowSoftInputMode
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:142:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:140:13-58
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:140:13-66
 activity#com.happywannyan.Activities.Booking.CancelBookingWithReasonsActivity
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:143:9-89
 	android:name

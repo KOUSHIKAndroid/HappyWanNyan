@@ -5375,7 +5375,7 @@ containing a value of this type.
         public static final int login_facebook=0x7f0201cf;
         public static final int login_signin=0x7f0201d0;
         public static final int login_signup=0x7f0201d1;
-        public static final int logo_happywan =0x7f0201d2;
+        public static final int logo_happywan=0x7f0201d2;
         public static final int logo_searchpage=0x7f0201d3;
         public static final int master_back=0x7f0201d4;
         public static final int mastercard_back_bg=0x7f0201d5;
