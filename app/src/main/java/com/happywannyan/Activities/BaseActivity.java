@@ -89,7 +89,7 @@ Events events;
         if( getIntent().getExtras() != null)
         {
             //do here
-            String s = getIntent().getStringExtra("go_to");
+            AppContsnat.go_to = getIntent().getStringExtra("go_to");
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());

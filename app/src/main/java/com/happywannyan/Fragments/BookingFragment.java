@@ -194,7 +194,14 @@ public class BookingFragment extends Fragment{
                 loadList("0");
             }
         });
-        tv_up_coming.performClick();
+
+        if(AppContsnat.go_to.trim().equals("")){
+            tv_up_coming.performClick();
+        }
+        else {
+            tv_pending.performClick();
+            AppContsnat.go_to="";
+        }
 
     }
 
@@ -264,7 +271,7 @@ public class BookingFragment extends Fragment{
 
                 }catch (Exception e)
                 {
-
+                    e.printStackTrace();
                 }
             }
 

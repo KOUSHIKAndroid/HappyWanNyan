@@ -18,6 +18,8 @@ public class AppContsnat extends App_data_holder{
     public static String STRIPE_PUBLISH_KEY="pk_test_xlxSWhvDxMIkyQYmgmHEWRoM";
     public static String STRIPE_SECRATE_KEY="sk_test_1HkmfB8tpsf5yd1f8DUmRLdS";
 
+    public static String go_to="";
+
 
     public AppContsnat(Activity activity) {
         super(activity);
