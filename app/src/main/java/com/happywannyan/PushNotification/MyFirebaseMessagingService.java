@@ -1,5 +1,6 @@
 package com.happywannyan.PushNotification;
 
+import android.app.ActivityManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -10,9 +11,6 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-//import com.firebase.jobdispatcher.FirebaseJobDispatcher;
-//import com.firebase.jobdispatcher.GooglePlayDriver;
-//import com.firebase.jobdispatcher.Job;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.happywannyan.Activities.BaseActivity;
@@ -21,6 +19,12 @@ import com.happywannyan.Utils.Loger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
+
+//import com.firebase.jobdispatcher.FirebaseJobDispatcher;
+//import com.firebase.jobdispatcher.GooglePlayDriver;
+//import com.firebase.jobdispatcher.Job;
 
 /**
  * Created by apple on 23/05/17.
@@ -73,24 +77,31 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 //        // Also if you intend on generating your own notifications as a result of a received FCM
 //        // message, here is where that should be initiated. See sendNotification method below.
 
-        Loger.MSG("@@@ PUSH",remoteMessage.getNotification().getBody());
+        Loger.MSG("@@@ PUSH", remoteMessage.getData().toString());
         try {
-            JSONObject Object=new JSONObject(remoteMessage.getNotification().getBody());
+            JSONObject Object = new JSONObject(remoteMessage.getData().get("body"));
 
-            Log.d("PushResponse","=="+Object.toString());
-            if(Object.getString("type_notification").equals("message"))
-            {
-                Intent intent=new Intent("CONNECT_MESSAGE_LIVE");
-                intent.putExtra("MSG_DATA",Object.toString());
+            Log.d("PushResponse", "==" + Object.toString());
+            if (Object.getString("type_notification").equals("message")) {
+                Intent intent = new Intent("CONNECT_MESSAGE_LIVE");
+                intent.putExtra("MSG_DATA", Object.toString());
                 LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
 
-            }else {
-                sendNotification(remoteMessage.getNotification().getBody());
+            } else {
+                sendNotification(Object.getJSONObject("message_info").getString("message_info"));
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        try {
+            JSONObject Object = new JSONObject(remoteMessage.getData().get("body"));
+            sendNotification(Object.getJSONObject("message_info").getString("message_info"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }
     // [END receive_message]
 
@@ -126,7 +137,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
-        Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.logo_happywan)
                 .setContentTitle("FCM Message")
@@ -139,5 +150,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    private boolean applicationInForeground() {
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> services = activityManager.getRunningAppProcesses();
+        boolean isActivityFound = false;
+
+        if (services.get(0).processName
+                .equalsIgnoreCase(getPackageName())) {
+            isActivityFound = true;
+        }
+
+        return isActivityFound;
     }
 }
