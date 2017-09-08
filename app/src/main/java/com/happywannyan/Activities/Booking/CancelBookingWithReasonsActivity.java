@@ -10,7 +10,7 @@ import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
@@ -103,7 +103,7 @@ JSONObject DATAObject;
             Params.put("message_cancel",(((EditText)findViewById(R.id.EDX_Cancel_Message)).getText().toString()));
             Params.put("booking_refund",1+"");
 
-            new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new JSONPerser.JSONRESPONSE() {
+            new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONRESPONSE() {
                 @Override
                 public void OnSuccess(String Result) {
                     appLoader.Dismiss();

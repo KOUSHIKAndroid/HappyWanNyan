@@ -34,7 +34,7 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.PetService;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLocationProvider;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.LocationListener.MyLocalLocationManager;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.constants.LogType;
@@ -109,7 +109,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
         IMG_erase_location = (ImageView) view.findViewById(R.id.IMG_erase_location);
         Rec_petlist.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {

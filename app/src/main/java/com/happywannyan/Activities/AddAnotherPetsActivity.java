@@ -28,8 +28,8 @@ import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.ImageFilePath;
-import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import org.json.JSONArray;
@@ -74,7 +74,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         Rad_catf = (RadioGroup) findViewById(R.id.Rad_catf);
          img_pet = (ImageView) findViewById(R.id.img_pet);
         new AppContsnat(this);
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -133,7 +133,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                     apipostdata.setValues(PetTypeId);
                                     params.add(apipostdata);
                                     appLoader.Show();
-                                    new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_users_petinfo?", params, new JSONPerser.JSONRESPONSE() {
+                                    new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONRESPONSE() {
                                         @Override
                                         public void OnSuccess(String Result) {
                                             findViewById(R.id.Body).setVisibility(View.VISIBLE);
@@ -594,7 +594,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
 
 
                                                     appLoader.Show();
-                                                    new JSONPerser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "app_users_addpetinfo?", Params,  PhotoFiles, new JSONPerser.JSONRESPONSE() {
+                                                    new CustomJSONParser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "app_users_addpetinfo?", Params,  PhotoFiles, new CustomJSONParser.JSONRESPONSE() {
                                                         @Override
                                                         public void OnSuccess(String Result) {
                                                             appLoader.Dismiss();

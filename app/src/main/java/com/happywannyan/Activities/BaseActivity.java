@@ -32,7 +32,7 @@ import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.R;
 import com.happywannyan.Utils.App_data_holder;
 import com.happywannyan.Utils.CircleTransform;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.LocationListener.LocationBaseActivity;
 import com.happywannyan.Utils.LocationListener.LocationConfiguration;
 import com.happywannyan.Utils.Loger;
@@ -69,7 +69,7 @@ Events events;
         Params.put("user_id",AppContsnat.UserId);
         Params.put("anorid_device_id",refreshedToken+"");
 
-        new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
 

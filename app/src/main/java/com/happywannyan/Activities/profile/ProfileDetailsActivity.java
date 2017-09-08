@@ -24,7 +24,7 @@ import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.provider.RatingColor;
 import com.happywannyan.Utils.provider.AppTimeZone;
@@ -125,7 +125,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         Paramas.add(apipostdata);
 
 
-        new JSONPerser().API_FOR_POST(AppContsnat.BASEURL+"app_users_sitterinfo", Paramas, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL+"app_users_sitterinfo", Paramas, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 JSONRESPONSE = Result;
@@ -343,8 +343,8 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     IDtemp="1";
 
 
-                new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_favourite_sitters?user_id=" + AppContsnat.UserId + "" +
-                        "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+                new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_favourite_sitters?user_id=" + AppContsnat.UserId + "" +
+                        "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         try {

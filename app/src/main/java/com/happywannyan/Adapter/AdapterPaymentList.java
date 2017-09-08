@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -17,7 +16,7 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
@@ -149,8 +148,8 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
 
     public void selectionCard(String default_card_id, final int position, final JSONObject OB) {
         Loader.Show();
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "make_card_default?user_id=" + AppContsnat.UserId + "&default_card_id=" + default_card_id
-                , new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "make_card_default?user_id=" + AppContsnat.UserId + "&default_card_id=" + default_card_id
+                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();
@@ -197,8 +196,8 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
 
     public void deleteCard(String default_card_id, final int position) {
         Loader.Show();
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_delete_card?user_id=" + AppContsnat.UserId + "&del_card_id=" + default_card_id
-                , new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_delete_card?user_id=" + AppContsnat.UserId + "&del_card_id=" + default_card_id
+                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();

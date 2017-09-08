@@ -37,7 +37,7 @@ import com.happywannyan.POJO.MessageDataType;
 import com.happywannyan.R;
 import com.happywannyan.SURAJ.PlaceCustomListAdapterDialog;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import org.json.JSONArray;
@@ -356,7 +356,7 @@ public class MessageFragment extends Fragment {
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL+type+"?", Params, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL+type+"?", Params, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -489,8 +489,8 @@ public class MessageFragment extends Fragment {
                 try {
                     String MessageID=AllMessage.get(position).getJsonObject().getString("message_id");
                     String ReciverId=AllMessage.get(position).getJsonObject().getString("receiver_id");
-                    new JSONPerser().API_FOR_GET(AppContsnat.BASEURL+"message_deleted_API?user_id="+AppContsnat.UserId+"&message_id="+MessageID+"&receiver_id="+ReciverId,
-                    new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+                    new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL+"message_deleted_API?user_id="+AppContsnat.UserId+"&message_id="+MessageID+"&receiver_id="+ReciverId,
+                    new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
                         @Override
                         public void OnSuccess(String Result) {
 
@@ -564,7 +564,7 @@ public class MessageFragment extends Fragment {
 
         appLoader.Show();
 
-        new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL+"user_memberlist"+"?", Params, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL+"user_memberlist"+"?", Params, new CustomJSONParser.JSONRESPONSE() {
             @Override
 
             public void OnSuccess(String Result) {

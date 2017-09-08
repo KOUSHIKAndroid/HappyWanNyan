@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.happywannyan.Constant.AppContsnat;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 
 import java.util.HashMap;
 
@@ -43,7 +43,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         Params.put("user_id", AppContsnat.UserId);
         Params.put("anorid_device_id",token);
 
-        new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
 

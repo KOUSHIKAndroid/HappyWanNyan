@@ -37,7 +37,7 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CircleTransform;
 import com.happywannyan.Utils.ImageFilePath;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 
 import org.json.JSONException;
@@ -197,7 +197,7 @@ public class MyProfileFragment extends Fragment {
             }
         });
         Loader.Show();
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_users_about?user_id=" + AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_about?user_id=" + AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -339,7 +339,7 @@ public class MyProfileFragment extends Fragment {
                 Params.add(Post);
                 ArrayList<File>Photos=new ArrayList<File>();
                 Photos.add(photofile);
-                new JSONPerser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "app_users_edit", Params, Photos, new JSONPerser.JSONRESPONSE() {
+                new CustomJSONParser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();

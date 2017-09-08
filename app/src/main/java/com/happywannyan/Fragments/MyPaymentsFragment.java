@@ -1,6 +1,5 @@
 package com.happywannyan.Fragments;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,8 +17,7 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
-import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.CustomJSONParser;
 
 import org.json.JSONObject;
 
@@ -124,8 +122,8 @@ public class MyPaymentsFragment extends Fragment {
 
     public void LoadPaymentDetails(){
         Loader.Show();
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
-                , new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         Log.i("Result",""+Result);

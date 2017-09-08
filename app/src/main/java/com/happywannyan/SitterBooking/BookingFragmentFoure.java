@@ -21,7 +21,7 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.SetGetCards;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.stripe.android.Stripe;
@@ -262,7 +262,7 @@ public class BookingFragmentFoure extends Fragment {
                             public void onSuccess(final Token token) {
 
 
-                                new JSONPerser().GET_STRIPE_CUSTIMERID(token.getId(), new JSONPerser.JSONRESPONSE() {
+                                new CustomJSONParser().GET_STRIPE_CUSTIMERID(token.getId(), new CustomJSONParser.JSONRESPONSE() {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ CUUU", Result);
@@ -292,12 +292,12 @@ public class BookingFragmentFoure extends Fragment {
                                         Params.put("cvv_code", card.getCVC() + "");
                                         Params.put("new_card", "1");
                                         Params.put("make_default", "1");
-                                        new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "add_save_card", Params, new JSONPerser.JSONRESPONSE() {
+                                        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONRESPONSE() {
                                             @Override
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CRAD RESP-", Result);
-                                                new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
-                                                        , new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+                                                new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+                                                        , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 Loader.Dismiss();
@@ -382,8 +382,8 @@ public class BookingFragmentFoure extends Fragment {
 
     private void SetCardDetails() {
         Loader.Show();
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
-                , new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();

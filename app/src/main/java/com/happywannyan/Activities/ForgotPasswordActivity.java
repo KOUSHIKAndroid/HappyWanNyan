@@ -10,7 +10,7 @@ import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.Validation;
@@ -64,7 +64,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
                         apipostdataArrayList.add(apipostdata);
 
                         appLoader.Show();
-                        new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "app_forget_password", apipostdataArrayList, new JSONPerser.JSONRESPONSE() {
+                        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "app_forget_password", apipostdataArrayList, new CustomJSONParser.JSONRESPONSE() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ LOGIN",Result);

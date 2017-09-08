@@ -16,7 +16,7 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -108,7 +108,7 @@ public class PastSitterFragment extends Fragment {
         apipostdata.setValues("10");
         Params.add(apipostdata);
         Loader.Show();
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + "users_setters_list?", Params, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "users_setters_list?", Params, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {

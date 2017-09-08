@@ -18,7 +18,7 @@ import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
@@ -332,7 +332,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         Params.put("langid",AppContsnat.Language);
                         Params.put("user_timezone",TimeZone.getDefault().getID());
 
-                        new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "normal_accept_booking", Params, new JSONPerser.JSONRESPONSE() {
+                        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONRESPONSE() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loader.Dismiss();
@@ -401,7 +401,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         Loader.Show();
 
         String URL= AppContsnat.BASEURL+"booking_deny_confirm?user_id="+AppContsnat.UserId+"&booking_id="+BookingID;
-        new JSONPerser().API_FOR_GET(URL, new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
 
@@ -452,7 +452,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 Params.put("lang_id",AppContsnat.Language);
                 Params.put("user_timezone",Tz.getID());
 
-                new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "start_message_api", Params, new JSONPerser.JSONRESPONSE() {
+                new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();
@@ -534,7 +534,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 Params.put("lang_id",AppContsnat.Language);
                 Params.put("user_timezone",Tz.getID());
 
-                new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new JSONPerser.JSONRESPONSE() {
+                new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();

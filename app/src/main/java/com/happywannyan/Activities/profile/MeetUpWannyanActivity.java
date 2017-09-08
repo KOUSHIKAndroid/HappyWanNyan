@@ -14,7 +14,7 @@ import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppCalender;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
@@ -134,7 +134,7 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
 
 
                     appLoader.Show();
-                    new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "meetandgreet_request", apipostdatas, new JSONPerser.JSONRESPONSE() {
+                    new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "meetandgreet_request", apipostdatas, new CustomJSONParser.JSONRESPONSE() {
                         @Override
                         public void OnSuccess(String Result) {
                             appLoader.Dismiss();

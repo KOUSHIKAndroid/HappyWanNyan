@@ -21,14 +21,12 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.happywannyan.Constant.AppContsnat;
-import com.happywannyan.CustomRangeBar.RangeBar;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.ImageFilePath;
-import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
 
 import java.io.File;
@@ -273,7 +271,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         HashMap<String,File> FileParams= new HashMap<String,File>();
         FileParams.put("msg_attachment",photofile);
 
-        new JSONPerser().API_FOR_With_Photo_POST_2(AppContsnat.BASEURL + "app_add_review", Params, FileParams, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_With_Photo_POST_2(AppContsnat.BASEURL + "app_add_review", Params, FileParams, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 Loader.Dismiss();

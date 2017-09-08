@@ -18,7 +18,7 @@ import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -98,7 +98,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
                 }
 
 
-                new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new JSONPerser.JSONRESPONSE() {
+                new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         Apploaders.Dismiss();
@@ -123,7 +123,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
                 break;
             case "Three":
                 Apploaders.Show();
-                new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new JSONPerser.JSONRESPONSE() {
+                new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
 
@@ -164,7 +164,7 @@ public class BookingOne extends AppCompatActivity implements View.OnClickListene
 
     public void submitConfirmReservationRequest() {
         Apploaders.Show();
-        new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 Loger.MSG("Result-->", Result);

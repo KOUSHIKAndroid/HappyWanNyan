@@ -14,7 +14,7 @@ import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppCalender;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.JSONPerser;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
@@ -124,7 +124,7 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
                     Params.put("drop_off", ((SFNFTextView) findViewById(R.id.TXT_DropTime)).getText().toString());
                     Params.put("pick_up", ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).getText().toString());
                     Params.put("dont_date", CHCH);
-                    new JSONPerser().API_FOR_POST_2(AppContsnat.BASEURL + "contact_sitter", Params, new JSONPerser.JSONRESPONSE() {
+                    new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONRESPONSE() {
                         @Override
                         public void OnSuccess(String Result) {
                             Loader.Dismiss();

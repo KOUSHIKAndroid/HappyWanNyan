@@ -35,8 +35,8 @@ import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
+import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.ImageFilePath;
-import com.happywannyan.Utils.JSONPerser;
 import com.happywannyan.Utils.Loger;
 
 import org.json.JSONArray;
@@ -136,7 +136,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
         String URL = "messagedetails?user_id=" + AppContsnat.UserId + "&message_id=" + getIntent().getStringExtra("message_id") + "&lang_id=" + AppContsnat.Language
                 + "&user_timezone=" + tz.getID();
 
-        new JSONPerser().API_FOR_GET(AppContsnat.BASEURL + URL, new ArrayList<APIPOSTDATA>(), new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -241,7 +241,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
                     apipostdata.setValues(AppContsnat.Language);
                     Params.add(apipostdata);
 
-                    new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "reply_message", Params, new JSONPerser.JSONRESPONSE() {
+                    new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "reply_message", Params, new CustomJSONParser.JSONRESPONSE() {
                         @Override
                         public void OnSuccess(String Result) {
 //                            try {
@@ -430,7 +430,7 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
             apipostdata.setValues(MAPIMGAEURL);
             Params.add(apipostdata);
 
-            new JSONPerser().API_FOR_POST(AppContsnat.BASEURL + "reply_message", Params, new JSONPerser.JSONRESPONSE() {
+            new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "reply_message", Params, new CustomJSONParser.JSONRESPONSE() {
                 @Override
                 public void OnSuccess(String Result) {
                     FetCh();
@@ -492,9 +492,9 @@ public class MessageDetailsPage extends AppCompatActivity implements View.OnClic
         Params.add(apipostdata);
         ArrayList<File> Files = new ArrayList<>();
         Files.add(photofile);
-        JSONPerser.ImageParamse = "msg_attachment";
+        CustomJSONParser.ImageParamse = "msg_attachment";
 
-        new JSONPerser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "reply_message", Params, Files, new JSONPerser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "reply_message", Params, Files, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 FetCh();
