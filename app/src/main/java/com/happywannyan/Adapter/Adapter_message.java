@@ -108,10 +108,10 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
 
                 GradientDrawable shape = new GradientDrawable();
 //                shape.setShape(GradientDrawable.OVAL);
-                shape.setCornerRadii(new float[] { 19, 19, 19, 19, 19, 19, 19, 19 });
+                shape.setCornerRadii(new float[] { 25, 25, 25, 25, 25, 25, 25, 25 });
                 shape.setColor(Color.parseColor(object.getString("color_code").trim()));
                 shape.setStroke(3, Color.parseColor(object.getString("color_code").trim()));
-                holder.TXT_MSG_STATUS.setBackgroundDrawable(shape);
+                holder.LL_STATUS.setBackground(shape);
 
             } else {
                 holder.TXT_MSG_STATUS.setVisibility(View.GONE);
@@ -199,10 +199,9 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView img_view, IMG_DELETE;
-
         SFNFTextView  tv_name, tv_details, left_red_view, TXT_MSG_STATUS;
         View Item;
-        LinearLayout MAINCONTENT;
+        LinearLayout MAINCONTENT,LL_STATUS;
         ObservableHorizontalScrollView H_SCROLL;
 
         public MyViewHolder(View itemView) {
@@ -215,6 +214,7 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
             TXT_MSG_STATUS = (SFNFTextView) itemView.findViewById(R.id.TXT_MSG_STATUS);
             img_view = (ImageView) itemView.findViewById(R.id.img_view);
             MAINCONTENT = (LinearLayout) itemView.findViewById(R.id.MAINCONTENT);
+            LL_STATUS = (LinearLayout) itemView.findViewById(R.id.LL_STATUS);
             Item = itemView;
 
         }
