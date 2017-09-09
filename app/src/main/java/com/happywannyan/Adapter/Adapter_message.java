@@ -1,8 +1,13 @@
 package com.happywannyan.Adapter;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RoundRectShape;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -69,7 +74,7 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
             final JSONObject object = MessageList.get(position).getJsonObject();
             holder.tv_name.setText(object.getString("usersname").trim());
             holder.tv_details.setText(object.getString("message_info").trim());
-            holder.left_red_view.setText(object.getString("time_difference").trim() + " ago");
+            holder.left_red_view.setText(object.getString("time_difference").trim());
             Glide.with(context).load(object.getString("usersimage").trim()).into(holder.img_view);
 
 //            if (object.has("booking_id") && object.getString("booking_id").length() > 0) {
@@ -80,12 +85,36 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
 //                holder.tv_booking_id.setVisibility(View.GONE);
 //            }
 
-            if (object.has("message_status") && !object.getString("message_status").trim().equals("") && object.getString("color_code").trim().equals("#ac2925")) {
-                holder.CARD_STATUS.setCardBackgroundColor(Color.parseColor(object.getString("color_code").trim()));
-                holder.TXT_MSG_STATUS.setText(object.getString("message_status").trim());
-                holder.CARD_STATUS.setVisibility(View.VISIBLE);
+            if (object.has("unread_msg_count") && object.getInt("unread_msg_count")>0 && object.getString("color_code").trim().equals("#ac2925")) {
+                //holder.TXT_MSG_STATUS.setBackgroundColor(Color.parseColor(object.getString("color_code").trim()));
+                holder.TXT_MSG_STATUS.setText(""+object.getInt("unread_msg_count"));
+                holder.TXT_MSG_STATUS.setVisibility(View.VISIBLE);
+
+//                ShapeDrawable footerBackground = new ShapeDrawable();
+//
+//// The corners are ordered top-left, top-right, bottom-right,
+//// bottom-left. For each corner, the array contains 2 values, [X_radius,
+//// Y_radius]
+//                float[] radii = new float[8];
+//                radii[0] = 8;
+//                radii[1] = 8;
+//
+//                radii[2] = 8;
+//                radii[3] = 8;
+//
+//                footerBackground.setShape(new RoundRectShape(radii, null, null));
+//                footerBackground.getPaint().setColor(Color.parseColor(object.getString("color_code").trim()));
+//                holder.TXT_MSG_STATUS.setBackgroundDrawable(footerBackground);
+
+                GradientDrawable shape = new GradientDrawable();
+//                shape.setShape(GradientDrawable.OVAL);
+                shape.setCornerRadii(new float[] { 19, 19, 19, 19, 19, 19, 19, 19 });
+                shape.setColor(Color.parseColor(object.getString("color_code").trim()));
+                shape.setStroke(3, Color.parseColor(object.getString("color_code").trim()));
+                holder.TXT_MSG_STATUS.setBackgroundDrawable(shape);
+
             } else {
-                holder.CARD_STATUS.setVisibility(View.GONE);
+                holder.TXT_MSG_STATUS.setVisibility(View.GONE);
             }
 
 
@@ -173,7 +202,6 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
 
         SFNFTextView  tv_name, tv_details, left_red_view, TXT_MSG_STATUS;
         View Item;
-        CardView CARD_STATUS;
         LinearLayout MAINCONTENT;
         ObservableHorizontalScrollView H_SCROLL;
 
@@ -186,7 +214,6 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
             left_red_view = (SFNFTextView) itemView.findViewById(R.id.tv_days);
             TXT_MSG_STATUS = (SFNFTextView) itemView.findViewById(R.id.TXT_MSG_STATUS);
             img_view = (ImageView) itemView.findViewById(R.id.img_view);
-            CARD_STATUS = (CardView) itemView.findViewById(R.id.CARD_STATUS);
             MAINCONTENT = (LinearLayout) itemView.findViewById(R.id.MAINCONTENT);
             Item = itemView;
 

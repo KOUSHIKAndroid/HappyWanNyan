@@ -5501,7 +5501,6 @@ containing a value of this type.
         public static final int C1=0x7f0f00f5;
         public static final int CARD_2=0x7f0f0122;
         public static final int CARD_Profile=0x7f0f0145;
-        public static final int CARD_STATUS=0x7f0f02a9;
         public static final int CHEK=0x7f0f012c;
         public static final int CLOSE=0x7f0f01ba;
         public static final int Card_AddRevw=0x7f0f022a;
@@ -5677,6 +5676,7 @@ containing a value of this type.
         public static final int RL_Times=0x7f0f025f;
         public static final int RL_Tutorial=0x7f0f01dc;
         public static final int RL_User_ClickBar=0x7f0f0148;
+        public static final int RL_date_difference=0x7f0f02a8;
         public static final int RL_petBreed=0x7f0f00e8;
         public static final int RL_petSize=0x7f0f00ec;
         public static final int RL_petType=0x7f0f0238;
@@ -6218,7 +6218,7 @@ containing a value of this type.
         public static final int tv_coupon_code=0x7f0f026c;
         public static final int tv_current=0x7f0f028e;
         public static final int tv_date_limit=0x7f0f01da;
-        public static final int tv_days=0x7f0f02a8;
+        public static final int tv_days=0x7f0f02a9;
         public static final int tv_describe_name=0x7f0f01cb;
         public static final int tv_describe_value=0x7f0f01cc;
         public static final int tv_details=0x7f0f018c;

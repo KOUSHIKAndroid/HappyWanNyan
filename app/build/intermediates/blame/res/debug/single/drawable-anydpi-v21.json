@@ -1,53 +1,5 @@
 [
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_cvc.xml",
-        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_cvc.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_unknown.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_unknown.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_visa.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_visa.xml"
-    },
-    {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_discover.xml",
-        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_discover.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_error_amex.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_error_amex.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_cvc.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_cvc.xml"
-    },
-    {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
-        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_jcb.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_jcb.xml"
-    },
-    {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_mastercard.xml",
-        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_mastercard.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_amex.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_amex.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
-        "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
-    },
-    {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_error_amex.xml",
-        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_error_amex.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_error.xml",
         "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_error.xml"
     },
@@ -56,16 +8,8 @@
         "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_cvc_amex.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_discover.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_discover.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_mastercard.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_mastercard.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_cvc_amex.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_cvc_amex.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_cvc.xml",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_cvc.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_visa.xml",
@@ -88,19 +32,23 @@
         "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_jcb.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_diners.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_diners.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_discover.xml",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_discover.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_amex.xml",
         "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_amex.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_error.xml",
-        "source": "/Users/apple/.android/build-cache/b7b81ce8719f3883251990acf31e243466977357/output/res/drawable-anydpi-v21/ic_error.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
-        "source": "/Users/apple/.android/build-cache/2574fe5ad927f3b48d65d1126b5ac4347b6bef74/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_mastercard.xml",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_mastercard.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_error_amex.xml",
+        "source": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/drawable-anydpi-v21/ic_error_amex.xml"
     }
 ]

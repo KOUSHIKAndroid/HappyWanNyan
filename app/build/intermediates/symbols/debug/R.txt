@@ -1638,7 +1638,6 @@ int id Bussinessname 0x7f0f0160
 int id C1 0x7f0f00f5
 int id CARD_2 0x7f0f0122
 int id CARD_Profile 0x7f0f0145
-int id CARD_STATUS 0x7f0f02a9
 int id CHEK 0x7f0f012c
 int id CLOSE 0x7f0f01ba
 int id Card_AddRevw 0x7f0f022a
@@ -1814,6 +1813,7 @@ int id RL_SingleDate 0x7f0f0253
 int id RL_Times 0x7f0f025f
 int id RL_Tutorial 0x7f0f01dc
 int id RL_User_ClickBar 0x7f0f0148
+int id RL_date_difference 0x7f0f02a8
 int id RL_petBreed 0x7f0f00e8
 int id RL_petSize 0x7f0f00ec
 int id RL_petType 0x7f0f0238
@@ -2355,7 +2355,7 @@ int id tv_contact 0x7f0f0187
 int id tv_coupon_code 0x7f0f026c
 int id tv_current 0x7f0f028e
 int id tv_date_limit 0x7f0f01da
-int id tv_days 0x7f0f02a8
+int id tv_days 0x7f0f02a9
 int id tv_describe_name 0x7f0f01cb
 int id tv_describe_value 0x7f0f01cc
 int id tv_details 0x7f0f018c

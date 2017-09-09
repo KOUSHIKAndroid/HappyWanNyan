@@ -6,13 +6,5 @@
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/interpolator/mr_linear_out_slow_in.xml",
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/interpolator/mr_linear_out_slow_in.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/interpolator/mr_linear_out_slow_in.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/interpolator/mr_linear_out_slow_in.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/interpolator/mr_fast_out_slow_in.xml",
-        "source": "/Users/apple/.android/build-cache/de8df5dfcbd2a6317756fc788f4449d6c7a52c3a/output/res/interpolator/mr_fast_out_slow_in.xml"
     }
 ]

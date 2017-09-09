@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.happywannyan.Utils.helper.ObservableHorizontalScrollView
-    android:layout_width="wrap_content"
+<com.happywannyan.Utils.helper.ObservableHorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/H_SCROLL"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:scrollbars="none"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    android:scrollbars="none">
+
     <LinearLayout
         android:layout_width="wrap_content"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="@color/colorwhite"
-            >
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
                 android:id="@+id/MAINCONTENT"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -31,7 +32,7 @@
                         android:id="@+id/left_red_view"
                         android:layout_width="8px"
                         android:layout_height="match_parent"
-                        android:background="@color/btn_red"/>
+                        android:background="@color/btn_red" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -40,82 +41,87 @@
 
                         <android.support.v7.widget.CardView
                             android:id="@+id/img_card_view"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="30dp"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="30dp"
                             card_view:cardCornerRadius="10dp">
+
                             <android.support.v7.widget.AppCompatImageView
                                 android:id="@+id/img_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:scaleType="fitXY"/>
+                                android:scaleType="fitXY" />
                         </android.support.v7.widget.CardView>
 
 
-                        <com.happywannyan.Font.SFNFTextView
-                            android:id="@+id/tv_days"
-                            android:layout_marginRight="20dp"
+                        <RelativeLayout
                             android:layout_marginTop="45dp"
-                            android:textSize="14sp"
                             android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/RL_date_difference"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="4 Day's ago"
-                            android:textColor="@color/btn_red"
-                            />
+                            android:layout_height="wrap_content">
+
+
+                            <com.happywannyan.Font.SFNFTextView
+                                android:id="@+id/tv_days"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4 Day's ago"
+                                android:textColor="@color/btn_red"
+                                android:textSize="14sp" />
+
+                            <com.happywannyan.Font.SFNFTextView
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/TXT_MSG_STATUS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_days"
+                                android:layout_marginTop="10dp"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp"
+                                android:text=""
+                                android:textColor="@color/colorwhite"
+                                android:textSize="10sp" />
+
+
+                        </RelativeLayout>
 
 
 
 
                         <com.happywannyan.Font.SFNFTextView
                             android:id="@+id/tv_name"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp"
-                            android:layout_marginTop="45dp"
-                            android:layout_toLeftOf="@id/tv_days"
-                            android:layout_toRightOf="@id/img_card_view"
-                            android:textSize="12sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="45dp"
+                            android:layout_toLeftOf="@id/RL_date_difference"
+                            android:layout_toRightOf="@id/img_card_view"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="Lee Shung Yang"
+                            android:textAllCaps="true"
                             android:textColor="@color/Black"
-                            android:textAllCaps="true"/>
+                            android:textSize="12sp" />
 
-                        <android.support.v7.widget.CardView
-                            android:id="@+id/CARD_STATUS"
-                            android:layout_marginTop="10dp"
-                            card_view:cardCornerRadius="5dp"
-                            android:layout_below="@+id/tv_days"
-                            android:layout_width="wrap_content"
-                            android:layout_marginRight="20dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_height="wrap_content">
-                            <com.happywannyan.Font.SFNFTextView
-                                android:id="@+id/TXT_MSG_STATUS"
-                                android:layout_width="wrap_content"
-                                android:text=""
-                                android:textColor="@color/colorwhite"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:layout_height="wrap_content" />
-                        </android.support.v7.widget.CardView>
+
 
                         <com.happywannyan.Font.SFNFTextView
-                            android:layout_toLeftOf="@id/tv_days"
-                            android:layout_toRightOf="@id/img_card_view"
                             android:id="@+id/tv_details"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="20dp"
-                            android:textSize="12sp"
-                            android:layout_below="@+id/tv_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/text_dark_gray"
+                            android:layout_below="@+id/tv_name"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toLeftOf="@id/RL_date_difference"
+                            android:layout_toRightOf="@id/img_card_view"
                             android:maxLines="1"
-                            android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit..."/>
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit..."
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="12sp" />
 
                     </RelativeLayout>
 
@@ -123,18 +129,20 @@
 
 
             </LinearLayout>
+
             <ImageView
                 android:id="@+id/IMG_DELETE"
                 android:layout_width="00dp"
+                android:layout_height="match_parent"
                 android:background="@color/btn_red"
                 android:padding="40dp"
-                android:src="@drawable/ic_vector_favourite_delete_white"
-                android:layout_height="match_parent" />
+                android:src="@drawable/ic_vector_favourite_delete_white" />
         </LinearLayout>
+
         <View
             android:id="@+id/bottom_view"
             android:layout_width="match_parent"
             android:layout_height="8px"
-            android:background="@color/gray_project"/>
+            android:background="@color/gray_project" />
     </LinearLayout>
 </com.happywannyan.Utils.helper.ObservableHorizontalScrollView>

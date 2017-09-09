@@ -8,19 +8,7 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout-sw320dp/activity_login.xml"
     },
     {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout-sw320dp-v13/activity_signup.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout-sw320dp/activity_signup.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout-sw320dp-v13/activity_signup.xml",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout-sw320dp/activity_signup.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout-sw320dp-v13/calender_activity.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout-sw320dp/calender_activity.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/HappyWanNyan/app/build/intermediates/res/merged/debug/layout-sw320dp-v13/activity_login.xml",
-        "source": "/Users/apple/Documents/HappyWanNyan/app/src/main/res/layout-sw320dp/activity_login.xml"
     }
 ]
