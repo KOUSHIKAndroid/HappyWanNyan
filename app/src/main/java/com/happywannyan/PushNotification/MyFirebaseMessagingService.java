@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -95,6 +96,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             e.printStackTrace();
         }
 
+        if(applicationInForeground()){
+            Loger.MSG("fore ground-->",""+applicationInForeground());
+        }else {
+            Loger.MSG("fore ground-->",""+applicationInForeground());
+        }
+
         try {
             JSONObject Object = new JSONObject(remoteMessage.getData().get("body"));
             sendNotification(Object.getJSONObject("message_info").getString("message_info"));
@@ -140,7 +147,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.logo_happywan)
-                .setContentTitle("FCM Message")
+                .setContentTitle("HAPPYWANNYAN")
                 .setContentText(messageBody)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
@@ -157,11 +164,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         List<ActivityManager.RunningAppProcessInfo> services = activityManager.getRunningAppProcesses();
         boolean isActivityFound = false;
 
-        if (services.get(0).processName
-                .equalsIgnoreCase(getPackageName())) {
+        if (services.get(0).processName.equalsIgnoreCase(getPackageName())) {
             isActivityFound = true;
         }
-
         return isActivityFound;
     }
 }
