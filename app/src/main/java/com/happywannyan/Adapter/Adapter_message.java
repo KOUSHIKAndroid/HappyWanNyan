@@ -67,23 +67,22 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
 
 
             final JSONObject object = MessageList.get(position).getJsonObject();
-            holder.Title.setText(object.getString("message_type"));
-            holder.tv_name.setText(object.getString("usersname"));
-            holder.tv_details.setText(object.getString("message_info"));
-            holder.left_red_view.setText(object.getString("time_difference") + " ago");
-            Glide.with(context).load(object.getString("usersimage")).into(holder.img_view);
+            holder.tv_name.setText(object.getString("usersname").trim());
+            holder.tv_details.setText(object.getString("message_info").trim());
+            holder.left_red_view.setText(object.getString("time_difference").trim() + " ago");
+            Glide.with(context).load(object.getString("usersimage").trim()).into(holder.img_view);
 
-            if (object.has("booking_id") && object.getString("booking_id").length() > 0) {
-                String BookingID = "<html><b>" + context.getString(R.string.BookingId) + "</b> " + object.getString("booking_id") + "</html>";
-                holder.tv_booking_id.setText(Html.fromHtml(BookingID));
-                holder.tv_booking_id.setVisibility(View.VISIBLE);
-            } else {
-                holder.tv_booking_id.setVisibility(View.GONE);
-            }
+//            if (object.has("booking_id") && object.getString("booking_id").length() > 0) {
+//                String BookingID = "<html><b>" + context.getString(R.string.BookingId) + "</b> " + object.getString("booking_id") + "</html>";
+//                holder.tv_booking_id.setText(Html.fromHtml(BookingID));
+//                holder.tv_booking_id.setVisibility(View.VISIBLE);
+//            } else {
+//                holder.tv_booking_id.setVisibility(View.GONE);
+//            }
 
-            if (object.has("message_status") && !object.getString("message_status").equals("") && object.getString("color_code").equals("#ac2925")) {
-                holder.CARD_STATUS.setCardBackgroundColor(Color.parseColor(object.getString("color_code")));
-                holder.TXT_MSG_STATUS.setText(object.getString("message_status"));
+            if (object.has("message_status") && !object.getString("message_status").trim().equals("") && object.getString("color_code").trim().equals("#ac2925")) {
+                holder.CARD_STATUS.setCardBackgroundColor(Color.parseColor(object.getString("color_code").trim()));
+                holder.TXT_MSG_STATUS.setText(object.getString("message_status").trim());
                 holder.CARD_STATUS.setVisibility(View.VISIBLE);
             } else {
                 holder.CARD_STATUS.setVisibility(View.GONE);
@@ -126,16 +125,16 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
                 public void onClick(View v) {
 
                     try {
-                        MessageFragment.MESSAGECODE = object.getString("message_type_code");
-                        MessageFragment.TAGNAME = object.getString("message_type");
+                        MessageFragment.MESSAGECODE = object.getString("message_type_code").trim();
+                        MessageFragment.TAGNAME = object.getString("message_type").trim();
                         Intent intent = new Intent(context, MessageDetailsPageActivity.class);
-                        intent.putExtra("message_id", object.getString("parent_id"));
-                        if (!AppContsnat.UserId.equals(object.getString("receiver_id")))
-                            intent.putExtra("receiver_id", object.getString("receiver_id"));
+                        intent.putExtra("message_id", object.getString("parent_id").trim());
+                        if (!AppContsnat.UserId.equals(object.getString("receiver_id").trim()))
+                            intent.putExtra("receiver_id", object.getString("receiver_id").trim());
                         else
-                            intent.putExtra("receiver_id", object.getString("sender_id"));
-                        intent.putExtra("usersname", object.getString("usersname"));
-                        intent.putExtra("usersimage", object.getString("usersimage"));
+                            intent.putExtra("receiver_id", object.getString("sender_id").trim());
+                        intent.putExtra("usersname", object.getString("usersname").trim());
+                        intent.putExtra("usersimage", object.getString("usersimage").trim());
                         if (context instanceof BaseActivity) {
                             (message_fragment).CallDetailsPage(intent);
                         }
@@ -172,7 +171,7 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView img_view, IMG_DELETE;
 
-        SFNFTextView Title, tv_name, tv_details, left_red_view, tv_booking_id, TXT_MSG_STATUS;
+        SFNFTextView  tv_name, tv_details, left_red_view, TXT_MSG_STATUS;
         View Item;
         CardView CARD_STATUS;
         LinearLayout MAINCONTENT;
@@ -181,9 +180,7 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
         public MyViewHolder(View itemView) {
             super(itemView);
             H_SCROLL = (ObservableHorizontalScrollView) itemView.findViewById(R.id.H_SCROLL);
-            Title = (SFNFTextView) itemView.findViewById(R.id.tv_title);
             IMG_DELETE = (ImageView) itemView.findViewById(R.id.IMG_DELETE);
-            tv_booking_id = (SFNFTextView) itemView.findViewById(R.id.tv_booking_id);
             tv_name = (SFNFTextView) itemView.findViewById(R.id.tv_name);
             tv_details = (SFNFTextView) itemView.findViewById(R.id.tv_details);
             left_red_view = (SFNFTextView) itemView.findViewById(R.id.tv_days);
