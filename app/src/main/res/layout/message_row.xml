@@ -74,28 +74,23 @@
                                 android:textColor="@color/btn_red"
                                 android:textSize="14sp" />
 
-                            <LinearLayout
-                                android:id="@+id/LL_STATUS"
+
+                            <com.happywannyan.Font.SFNFTextView
+                                android:id="@+id/TXT_MSG_STATUS"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/tv_days"
                                 android:layout_centerHorizontal="true"
-                                android:layout_marginTop="15dp"
-                                android:orientation="vertical"
-                                android:padding="5dp">
+                                android:layout_marginTop="10dp"
+                                android:background="@android:color/transparent"
+                                android:padding="5dp"
+                                android:text=""
+                                android:textColor="@color/colorwhite"
+                                android:textSize="10sp" />
 
-                                <com.happywannyan.Font.SFNFTextView
-                                    android:id="@+id/TXT_MSG_STATUS"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
-                                    android:text=""
-                                    android:textColor="@color/colorwhite"
-                                    android:textSize="10sp" />
-
-                            </LinearLayout>
 
                         </RelativeLayout>
+
 
                         <com.happywannyan.Font.SFNFTextView
                             android:id="@+id/tv_name"
@@ -110,13 +105,13 @@
                             android:textColor="@color/Black"
                             android:textSize="12sp" />
 
+
                         <com.happywannyan.Font.SFNFTextView
                             android:id="@+id/tv_details"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_name"
-                            android:layout_marginBottom="15dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="5dp"
                             android:layout_toLeftOf="@id/RL_date_difference"
                             android:layout_toRightOf="@id/img_card_view"
                             android:maxLines="1"
@@ -148,5 +143,4 @@
             android:background="@color/gray_project" />
 
     </LinearLayout>
-
 </com.happywannyan.Utils.helper.ObservableHorizontalScrollView>

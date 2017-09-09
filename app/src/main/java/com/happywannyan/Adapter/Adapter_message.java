@@ -1,16 +1,9 @@
 package com.happywannyan.Adapter;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RoundRectShape;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +19,7 @@ import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.MessageDataType;
 import com.happywannyan.R;
+import com.happywannyan.Utils.ColorCircleDrawable;
 import com.happywannyan.Utils.helper.ObservableHorizontalScrollView;
 
 import org.json.JSONException;
@@ -85,9 +79,9 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
 //                holder.tv_booking_id.setVisibility(View.GONE);
 //            }
 
-            if (object.has("unread_msg_count") && object.getInt("unread_msg_count")>0 && object.getString("color_code").trim().equals("#ac2925")) {
+            if (object.has("unread_msg_count") && object.getInt("unread_msg_count") > 0 && object.getString("color_code").trim().equals("#ac2925")) {
                 //holder.TXT_MSG_STATUS.setBackgroundColor(Color.parseColor(object.getString("color_code").trim()));
-                holder.TXT_MSG_STATUS.setText(""+object.getInt("unread_msg_count"));
+                holder.TXT_MSG_STATUS.setText("" + object.getInt("unread_msg_count"));
                 holder.TXT_MSG_STATUS.setVisibility(View.VISIBLE);
 
 //                ShapeDrawable footerBackground = new ShapeDrawable();
@@ -106,12 +100,16 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
 //                footerBackground.getPaint().setColor(Color.parseColor(object.getString("color_code").trim()));
 //                holder.TXT_MSG_STATUS.setBackgroundDrawable(footerBackground);
 
-                GradientDrawable shape = new GradientDrawable();
-//                shape.setShape(GradientDrawable.OVAL);
-                shape.setCornerRadii(new float[] { 25, 25, 25, 25, 25, 25, 25, 25 });
-                shape.setColor(Color.parseColor(object.getString("color_code").trim()));
-                shape.setStroke(3, Color.parseColor(object.getString("color_code").trim()));
-                holder.LL_STATUS.setBackground(shape);
+
+
+//                GradientDrawable shape = new GradientDrawable();
+////                shape.setShape(GradientDrawable.OVAL);
+//                shape.setCornerRadii(new float[] { 25, 25, 25, 25, 25, 25, 25, 25 });
+//                shape.setColor(Color.parseColor(object.getString("color_code").trim()));
+//                shape.setStroke(3, Color.parseColor(object.getString("color_code").trim()));
+//                holder.LL_STATUS.setBackground(shape);
+
+                holder.TXT_MSG_STATUS.setBackground(new ColorCircleDrawable(Color.parseColor(object.getString("color_code").trim())));
 
             } else {
                 holder.TXT_MSG_STATUS.setVisibility(View.GONE);
@@ -199,9 +197,9 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView img_view, IMG_DELETE;
-        SFNFTextView  tv_name, tv_details, left_red_view, TXT_MSG_STATUS;
+        SFNFTextView tv_name, tv_details, left_red_view, TXT_MSG_STATUS;
         View Item;
-        LinearLayout MAINCONTENT,LL_STATUS;
+        LinearLayout MAINCONTENT;
         ObservableHorizontalScrollView H_SCROLL;
 
         public MyViewHolder(View itemView) {
@@ -214,7 +212,6 @@ public class Adapter_message extends RecyclerView.Adapter<Adapter_message.MyView
             TXT_MSG_STATUS = (SFNFTextView) itemView.findViewById(R.id.TXT_MSG_STATUS);
             img_view = (ImageView) itemView.findViewById(R.id.img_view);
             MAINCONTENT = (LinearLayout) itemView.findViewById(R.id.MAINCONTENT);
-            LL_STATUS = (LinearLayout) itemView.findViewById(R.id.LL_STATUS);
             Item = itemView;
 
         }
