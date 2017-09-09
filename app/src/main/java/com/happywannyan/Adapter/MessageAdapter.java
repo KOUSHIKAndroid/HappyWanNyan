@@ -156,7 +156,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                     if(!SenderTime.equals(MsgItem.getString("postedon"))){
                         String[] words=MsgItem.getString("postedon").split("\\s");
-                        TXT_sender_name_time.setText(MsgItem.getString("usersname") + ", " + words[words.length-2]+" "+words[words.length-1]);
+                        TXT_sender_name_time.setText(words[words.length-2]+" "+words[words.length-1]);
                         SenderTime=MsgItem.getString("postedon");
                         Glide.with(mContext).load(MsgItem.getString("usersimage")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_SenderUser);
 

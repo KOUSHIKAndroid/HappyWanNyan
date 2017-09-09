@@ -290,7 +290,6 @@
         android:layout_above="@+id/LL_Buttom"
         android:layout_below="@+id/LL_UserInfo"
         android:layout_width="match_parent"
-
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
