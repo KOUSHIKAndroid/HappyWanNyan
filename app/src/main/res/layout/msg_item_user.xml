@@ -1,48 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="5dp"
-    android:gravity="right"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   >
 
-
-    <com.happywannyan.Font.SFNFTextView
-        android:id="@+id/TXT_User_Time"
+    <LinearLayout
+        android:layout_alignParentRight="true"
+        android:id="@+id/LL_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="14:29AM" />
-
-    <com.happywannyan.Font.SFNFTextView
-        android:id="@+id/TXT_User_Message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/ic_sender_background"
-        android:elevation="3dp"
-        android:layout_marginBottom="5dp"
-        android:text="sdjhbcshdjcb dhjsbcjhkbjhsdbchbssd kdscjkdk kjsdcjk sdkjsdckjds
+        android:orientation="vertical">
+        <com.happywannyan.Font.SFNFTextView
+            android:textSize="14sp"
+            android:maxEms="16"
+            android:id="@+id/TXT_User_Message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_sender_background"
+            android:elevation="3dp"
+            android:layout_marginBottom="5dp"
+            android:text="sdjhbcshdjcb dhjsbcjhkbjhsdbchbssd kdscjkdk kjsdcjk sdkjsdckjds
 sdjhbcdhsjbc hjsdc jksdckj dsjcb bds
 dschjbsdhb" />
-    <ImageView
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="00dp"
-        android:layout_marginTop="0dp"
-       android:padding="1px"
-        android:background="#A2DDFF"
-        android:id="@+id/IMG_User_Attach"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="00dp"
+            android:layout_marginTop="0dp"
+            android:padding="1px"
+            android:background="#A2DDFF"
+            android:id="@+id/IMG_User_Attach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <ImageView
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="00dp"
-        android:layout_marginTop="0dp"
-        android:padding="1px"
-        android:background="#A2DDFF"
-        android:id="@+id/IMG_User_MAP"
+        <ImageView
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="00dp"
+            android:layout_marginTop="0dp"
+            android:padding="1px"
+            android:background="#A2DDFF"
+            android:id="@+id/IMG_User_MAP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.happywannyan.Font.SFNFTextView
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/LL_msg"
+        android:id="@+id/TXT_User_Time"
+        android:layout_marginRight="5dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="14:29AM" />
+
+</RelativeLayout>

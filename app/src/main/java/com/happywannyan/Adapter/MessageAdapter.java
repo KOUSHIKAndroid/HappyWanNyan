@@ -121,7 +121,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                     ImageView IMG_Sender_Attach=(ImageView)SenderItem.findViewById(R.id.IMG_Sender_Attach);
                     ImageView IMG_SenderUser=(ImageView)SenderItem.findViewById(R.id.IMG_SenderUser);
                     ImageView IMG_Sender_Map=(ImageView)SenderItem.findViewById(R.id.IMG_Sender_Map);
-                    LinearLayout LL_Sender=(LinearLayout)SenderItem.findViewById(R.id.LL_Sender);
+                    RelativeLayout RL_Sender=(RelativeLayout)SenderItem.findViewById(R.id.RL_Sender);
 
                     Loger.MSG("@@ ITEM ",i+" - "+MsgItem);
 
@@ -143,9 +143,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-
-
-
                             }
                         });
 
@@ -161,7 +158,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                         Glide.with(mContext).load(MsgItem.getString("usersimage")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_SenderUser);
 
                     }else {
-                        LL_Sender.setVisibility(View.GONE);
+                        RL_Sender.setVisibility(View.GONE);
                         TXT_sender_name_time.setVisibility(View.GONE);
                     }
 
