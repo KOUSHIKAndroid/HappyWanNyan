@@ -60,65 +60,78 @@
             android:textColor="@color/text_dark_gray"
             android:textSize="20dp" />
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/edtxt_card_name"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_txt_card_name"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorwhite"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:maxLength="50"
-            android:maxLines="1"
-            android:minLines="1" />
+            android:layout_marginTop="10dp">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edtxt_card_name"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@color/colorwhite"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:minLines="1" />
+        </android.support.design.widget.TextInputLayout>
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/tv_cardnumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edtxt_card_name"
+            android:layout_below="@+id/input_txt_card_name"
             android:layout_marginTop="20dp"
             android:text="Card Number"
             android:textColor="@color/text_dark_gray"
             android:textSize="20dp" />
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/edtxt_card_number"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_txt_card_number"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/tv_cardnumber"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorwhite"
-            android:hint=" XXXX XXXX XXXX XXXX"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:maxLength="50"
-            android:maxLines="1"
-            android:minLines="1"
-            android:paddingLeft="5dp" />
+            android:layout_marginTop="10dp">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edtxt_card_number"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@color/colorwhite"
+                android:hint=" XXXX XXXX XXXX XXXX"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:minLines="1"
+                android:paddingLeft="5dp" />
+
+        </android.support.design.widget.TextInputLayout>
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/tv_expiremonth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edtxt_card_number"
+            android:layout_below="@+id/input_txt_card_number"
             android:layout_marginTop="10dp"
             android:text="Expire Month andYear"
             android:textColor="@color/text_dark_gray"
             android:textSize="18dp" />
 
         <LinearLayout
-            android:id="@+id/lef_year"
+            android:id="@+id/linear_month_year"
             android:layout_width="wrap_content"
             android:layout_height="54dp"
             android:layout_below="@+id/tv_expiremonth"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatEditText
+            <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_month"
-                android:layout_width="70dp"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="1dp"
                 android:background="@color/colorwhite"
@@ -138,9 +151,9 @@
                 android:paddingRight="5dp"
                 android:text="/" />
 
-            <android.support.v7.widget.AppCompatEditText
+            <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_year"
-                android:layout_width="70dp"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:background="@color/colorwhite"
                 android:gravity="center"
@@ -154,7 +167,7 @@
             android:id="@+id/tv_cvv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edtxt_card_number"
+            android:layout_below="@+id/input_txt_card_number"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/tv_expiremonth"
@@ -162,31 +175,37 @@
             android:textColor="@color/text_dark_gray"
             android:textSize="18dp" />
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/edtext_vvv"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_cvv"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/tv_cvv"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/tv_expiremonth"
-            android:background="@color/colorwhite"
-            android:inputType="number"
-            android:maxLength="3"
-            android:paddingLeft="10dp"
-            android:text="000" />
+            android:layout_toRightOf="@+id/tv_expiremonth">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edt_cvv"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@color/colorwhite"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="10dp"
+                android:text="000" />
+        </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatCheckBox
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_below="@id/lef_year"
+            android:layout_below="@id/linear_month_year"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="  Make Default" />
     </RelativeLayout>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/Card_request"
+        android:id="@+id/Card_save"
         android:layout_width="210dp"
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
