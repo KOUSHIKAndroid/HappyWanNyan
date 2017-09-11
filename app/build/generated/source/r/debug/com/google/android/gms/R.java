@@ -423,14 +423,14 @@ public final class R {
         public static final int normal = 0x7f0f0027;
         public static final int omnibox_title_section = 0x7f0f0072;
         public static final int omnibox_url_section = 0x7f0f0073;
-        public static final int place_autocomplete_clear_button = 0x7f0f030e;
-        public static final int place_autocomplete_powered_by_google = 0x7f0f0310;
-        public static final int place_autocomplete_prediction_primary_text = 0x7f0f0312;
-        public static final int place_autocomplete_prediction_secondary_text = 0x7f0f0313;
-        public static final int place_autocomplete_progress = 0x7f0f0311;
-        public static final int place_autocomplete_search_button = 0x7f0f030c;
-        public static final int place_autocomplete_search_input = 0x7f0f030d;
-        public static final int place_autocomplete_separator = 0x7f0f030f;
+        public static final int place_autocomplete_clear_button = 0x7f0f030f;
+        public static final int place_autocomplete_powered_by_google = 0x7f0f0311;
+        public static final int place_autocomplete_prediction_primary_text = 0x7f0f0313;
+        public static final int place_autocomplete_prediction_secondary_text = 0x7f0f0314;
+        public static final int place_autocomplete_progress = 0x7f0f0312;
+        public static final int place_autocomplete_search_button = 0x7f0f030d;
+        public static final int place_autocomplete_search_input = 0x7f0f030e;
+        public static final int place_autocomplete_separator = 0x7f0f0310;
         public static final int plain = 0x7f0f006b;
         public static final int production = 0x7f0f007b;
         public static final int progressBar = 0x7f0f0216;
@@ -474,10 +474,10 @@ public final class R {
         public static final int cast_mini_controller = 0x7f040048;
         public static final int cast_tracks_chooser_dialog_layout = 0x7f040049;
         public static final int cast_tracks_chooser_dialog_row_layout = 0x7f04004a;
-        public static final int place_autocomplete_fragment = 0x7f0400a2;
-        public static final int place_autocomplete_item_powered_by_google = 0x7f0400a3;
-        public static final int place_autocomplete_item_prediction = 0x7f0400a4;
-        public static final int place_autocomplete_progress = 0x7f0400a5;
+        public static final int place_autocomplete_fragment = 0x7f0400a3;
+        public static final int place_autocomplete_item_powered_by_google = 0x7f0400a4;
+        public static final int place_autocomplete_item_prediction = 0x7f0400a5;
+        public static final int place_autocomplete_progress = 0x7f0400a6;
     }
     public static final class string {
         public static final int accept = 0x7f080013;
