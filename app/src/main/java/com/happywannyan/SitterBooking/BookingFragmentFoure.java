@@ -46,6 +46,8 @@ public class BookingFragmentFoure extends Fragment {
 
     ArrayList<SetGetCards> setGetCardsArrayList;
 
+    final int GET_NEW_CARD = 2;
+
     JSONObject cardFinalSelection;
 
     // TODO: Rename and change types of parameters
@@ -206,8 +208,6 @@ public class BookingFragmentFoure extends Fragment {
         view.findViewById(R.id.NEWCARD).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                final int GET_NEW_CARD = 2;
 
                 Intent intent = new Intent(getActivity(), CardEditActivity.class);
                 startActivityForResult(intent, GET_NEW_CARD);
