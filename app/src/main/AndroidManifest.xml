@@ -150,7 +150,8 @@
             android:value="f578e59c70f464e14e363fdf973f894b57235ce5" />
 
         <activity android:name=".Activities.Booking.AcceptBookingActivity" />
-        <activity android:name=".Activities.Booking.AddReviewActivity"></activity>
+        <activity android:name=".Activities.Booking.AddReviewActivity"/>
+        <activity android:name=".SitterBooking.NewCardAddActivity"/>
     </application>
 
 </manifest>
