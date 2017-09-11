@@ -178,8 +178,10 @@ public class NewCardAddActivity extends AppCompatActivity {
         int year = calendar.get(Calendar.YEAR);
 
         monthArrayList.add(String.valueOf(year));
-        for (int i=0;i<20;i++){
-            monthArrayList.add(String.valueOf(year+1));
+        int yearValue=year;
+        for (int i=1;i<20;i++){
+            yearValue=yearValue+i;
+            monthArrayList.add(String.valueOf(yearValue));
         }
 
 
