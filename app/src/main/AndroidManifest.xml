@@ -68,7 +68,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.SplashActivity"
+            android:name=".SitterBooking.NewCardAddActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -156,7 +156,7 @@
         <activity android:name=".Activities.Booking.AddReviewActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".SitterBooking.NewCardAddActivity"
+        <activity android:name=".Activities.SplashActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
     </application>

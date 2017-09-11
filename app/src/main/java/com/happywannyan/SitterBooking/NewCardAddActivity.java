@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatCheckBox;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,13 +31,20 @@ public class NewCardAddActivity extends AppCompatActivity {
                 defaultValue=isChecked;
             }
         });
+        findViewById(R.id.Card_save).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkCardValidation();
+            }
+        });
+    }
 
+    public void checkCardValidation(){
 
         if (((EditText) findViewById(R.id.edtxt_card_name)).getText().toString().trim().equals("")) {
             ((TextInputLayout) findViewById(R.id.input_txt_card_name)).setErrorEnabled(true);
             ((TextInputLayout) findViewById(R.id.input_txt_card_name)).setError("Please Enter card holder name");
         } else {
-
             ((TextInputLayout) findViewById(R.id.input_txt_card_name)).setErrorEnabled(false);
             if (((EditText) findViewById(R.id.edtxt_card_number)).getText().toString().trim().equals("")) {
                 ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setErrorEnabled(true);

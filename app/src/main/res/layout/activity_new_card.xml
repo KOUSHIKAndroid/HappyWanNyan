@@ -42,14 +42,15 @@
         android:id="@+id/relativehader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/RL_HEADER"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/ovalpayment"
         android:elevation="4dp"
         android:gravity="center"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_below="@+id/RL_HEADER"
+        android:layout_alignParentStart="true">
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/tv_name"
@@ -61,25 +62,26 @@
             android:textSize="20dp" />
 
         <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/input_txt_card_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"
+            android:background="@color/colorwhite"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat">
             >
-
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/edtxt_card_name"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:background="@color/colorwhite"
+                android:layout_height="44dp"
+                android:hint="@string/Name"
+                android:textColor="@color/text_dark_gray"
                 android:imeOptions="actionNext"
                 android:inputType="text"
-                android:textColor="@color/text_dark_gray"
                 android:maxLength="50"
-                android:paddingLeft="5dp"
-                android:textSize="14sp"
                 android:maxLines="1"
-                android:minLines="1" />
+                android:minLines="1"
+                android:paddingLeft="5dp" />
         </android.support.design.widget.TextInputLayout>
 
         <com.happywannyan.Font.SFNFTextView
@@ -93,22 +95,23 @@
             android:textSize="20dp" />
 
         <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/input_txt_card_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_cardnumber"
+            android:background="@color/colorwhite"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat"
             >
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/edtxt_card_number"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:background="@color/colorwhite"
+                android:layout_height="44dp"
                 android:hint=" XXXX XXXX XXXX XXXX"
                 android:textColor="@color/text_dark_gray"
                 android:imeOptions="actionNext"
-                android:inputType="text"
-                android:textSize="14sp"
+                android:inputType="number"
                 android:maxLength="16"
                 android:maxLines="1"
                 android:minLines="1"
@@ -131,6 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="54dp"
             android:layout_below="@+id/tv_expiremonth"
+            android:background="@color/colorwhite"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
@@ -139,10 +143,8 @@
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="1dp"
-                android:background="@color/colorwhite"
                 android:gravity="center"
                 android:textColor="@color/text_dark_gray"
-                android:inputType="number"
                 android:textSize="14sp"
                 android:maxLength="2"
                 android:text="00" />
@@ -151,7 +153,6 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/colorwhite"
                 android:gravity="center_vertical"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
@@ -161,9 +162,7 @@
                 android:id="@+id/tv_year"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:background="@color/colorwhite"
                 android:gravity="center"
-                android:inputType="number"
                 android:textColor="@color/text_dark_gray"
                 android:maxLength="2"
                 android:textSize="14sp"
@@ -183,25 +182,26 @@
             android:textSize="18dp" />
 
         <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/input_cvv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_cvv"
             android:layout_marginLeft="30dp"
-
-            android:layout_toRightOf="@+id/tv_expiremonth">
+            app:hintTextAppearance="@style/TextAppearance.AppCompat"
+            android:layout_toRightOf="@+id/tv_expiremonth"
+            android:background="@color/colorwhite">
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/edt_cvv"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:background="@color/colorwhite"
+                android:layout_height="44dp"
                 android:inputType="number"
                 android:maxLength="3"
-                android:textSize="14sp"
+                android:hint="000"
                 android:paddingLeft="5dp"
                 android:textColor="@color/text_dark_gray"
-                android:text="000" />
+                />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatCheckBox
