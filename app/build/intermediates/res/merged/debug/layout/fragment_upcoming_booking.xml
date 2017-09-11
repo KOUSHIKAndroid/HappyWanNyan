@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-
+    android:orientation="vertical">
 
 
     <RelativeLayout
         android:id="@+id/RL_HEADER"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar">
+
         <ImageView
             android:id="@+id/IMG_icon_drwaer"
             android:layout_width="54dp"
@@ -34,19 +32,19 @@
             android:textColor="@color/colorwhite"
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
+
     <HorizontalScrollView
         android:id="@+id/H_SCROLL"
-        android:layout_below="@+id/RL_HEADER"
         android:layout_width="match_parent"
-        android:background="@color/colorwhite"
         android:layout_height="56dp"
+        android:layout_below="@+id/RL_HEADER"
+        android:background="@color/colorwhite"
         android:fillViewport="true">
 
         <LinearLayout
-            android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_up_coming"
@@ -62,11 +60,10 @@
 
             <View
                 android:id="@+id/view_between_upcoming_current_booking"
-                android:layout_gravity="center"
                 android:layout_width="1dip"
                 android:layout_height="15dp"
-                android:background="@color/gray_project"
-                />
+                android:layout_gravity="center"
+                android:background="@color/gray_project" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_current"
@@ -82,11 +79,10 @@
 
             <View
                 android:id="@+id/view_between_current_pending_booking"
-                android:layout_gravity="center"
                 android:layout_width="1dip"
                 android:layout_height="15dp"
-                android:background="@color/gray_project"
-                />
+                android:layout_gravity="center"
+                android:background="@color/gray_project" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_pending"
@@ -102,11 +98,10 @@
 
             <View
                 android:id="@+id/view_between_pending_past"
-                android:layout_gravity="center"
                 android:layout_width="1dip"
                 android:layout_height="15dp"
-                android:background="@color/gray_project"
-                />
+                android:layout_gravity="center"
+                android:background="@color/gray_project" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_past"
@@ -125,19 +120,23 @@
 
 
     <View
-        android:layout_above="@+id/rcv_upcoming_booking"
         android:layout_width="match_parent"
         android:layout_height="10px"
-        android:background="@color/gray_project"
-        />
+        android:layout_above="@+id/swipeContainer"
+        android:background="@color/gray_project" />
 
-    <android.support.v7.widget.RecyclerView
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_below="@+id/H_SCROLL"
-        android:id="@+id/rcv_upcoming_booking"
-        android:orientation="vertical"
-        android:background="@color/colorwhite"
+        android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcv_upcoming_booking"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorwhite"
+            android:orientation="vertical"></android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

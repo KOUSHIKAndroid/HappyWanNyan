@@ -1,10 +1,12 @@
 package com.happywannyan.Fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -64,7 +66,7 @@ public class BookingFragment extends Fragment{
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         new AppContsnat(getActivity());
         recyclerView= (RecyclerView) view.findViewById(R.id.rcv_upcoming_booking);
@@ -202,6 +204,24 @@ public class BookingFragment extends Fragment{
             tv_pending.performClick();
             AppContsnat.go_to="";
         }
+
+//        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeColors(
+//                Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
+
+        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
+                R.color.refresh_progress_1,
+                R.color.refresh_progress_2,
+                R.color.refresh_progress_3);
+
+
+        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                AllBooking = new ArrayList<>();
+                loadList("0");
+                ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setRefreshing(false);
+            }
+        });
 
     }
 

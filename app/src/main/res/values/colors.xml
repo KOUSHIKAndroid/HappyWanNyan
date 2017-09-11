@@ -12,4 +12,7 @@
     <color name="RatingColor">#FFCC00</color>
     <color name="BlueColor">#0B6C8C</color>
     <color name="GreenColor">#4A9459</color>
+    <color name="refresh_progress_1" >#558F9B</color>
+    <color name="refresh_progress_2">#558F9B</color>
+    <color name="refresh_progress_3">#558F9B</color>
 </resources>

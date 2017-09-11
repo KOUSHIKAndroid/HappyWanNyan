@@ -35,9 +35,9 @@
 
         <ImageView
             android:id="@+id/searchbar"
-            android:layout_alignParentRight="true"
             android:layout_width="54dp"
             android:layout_height="50dp"
+            android:layout_alignParentRight="true"
             android:padding="15dp"
             android:src="@drawable/ic_search_list" />
 
@@ -50,27 +50,28 @@
         android:layout_below="@+id/RL_HEADER"
         android:background="@color/gray_project"
         android:orientation="vertical">
+
         <RelativeLayout
+            android:id="@+id/editlayout"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="#c7c7c4"
-            android:id="@+id/editlayout"
             android:visibility="visible">
 
             <EditText
                 android:id="@+id/edt_search"
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:paddingLeft="54dp"
-                android:paddingRight="54dp"
                 android:layout_height="40dp"
-                android:maxLines="1"
-                android:inputType="text"
-                android:imeOptions="actionDone"
-                android:layout_marginRight="4dp"
+                android:layout_alignLeft="@+id/search"
                 android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/oval"
-                android:layout_alignLeft="@+id/search"/>
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="54dp"
+                android:paddingRight="54dp" />
 
             <ImageView
                 android:id="@+id/search"
@@ -90,86 +91,90 @@
             android:scrollbars="none">
 
 
-                <LinearLayout
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_all_message"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:text="@string/all_messages"
+                    android:textColor="@color/text_dark_gray" />
 
-                    <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/tv_all_message"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:paddingLeft="14dp"
-                        android:paddingRight="14dp"
-                        android:text="@string/all_messages"
-                        android:textColor="@color/text_dark_gray" />
+                <View
+                    android:id="@+id/view_between_all_unread_message"
+                    android:layout_width="1dip"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:background="@color/gray_project" />
 
-                    <View
-                        android:id="@+id/view_between_all_unread_message"
-                        android:layout_width="1dip"
-                        android:layout_height="15dp"
-                        android:layout_gravity="center"
-                        android:background="@color/gray_project" />
-
-                    <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/tv_reservation_message"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:paddingLeft="14dp"
-                        android:paddingRight="14dp"
-                        android:text="@string/reservation"
-                        android:textColor="@color/text_dark_gray" />
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_reservation_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:text="@string/reservation"
+                    android:textColor="@color/text_dark_gray" />
 
 
-                    <View
-                        android:id="@+id/view_unResponded_reservation_message"
-                        android:layout_width="1dip"
-                        android:layout_height="15dp"
-                        android:layout_gravity="center"
-                        android:background="@color/gray_project" />
-                    <!--<com.happywannyan.Font.SFNFTextView-->
-                    <!--android:id="@+id/tv_unResponded_message"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:gravity="center"-->
-                    <!--android:text="@string/meetgreet"-->
-                    <!--android:textColor="@color/text_dark_gray"-->
-                    <!--android:paddingLeft="14dp"-->
-                    <!--android:paddingRight="14dp"/>-->
+                <View
+                    android:id="@+id/view_unResponded_reservation_message"
+                    android:layout_width="1dip"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:background="@color/gray_project" />
+                <!--<com.happywannyan.Font.SFNFTextView-->
+                <!--android:id="@+id/tv_unResponded_message"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/meetgreet"-->
+                <!--android:textColor="@color/text_dark_gray"-->
+                <!--android:paddingLeft="14dp"-->
+                <!--android:paddingRight="14dp"/>-->
 
-                    <!--<View-->
-                    <!--android:id="@+id/view_between_unread_unResponded_message"-->
-                    <!--android:layout_gravity="center"-->
-                    <!--android:layout_width="1dip"-->
-                    <!--android:layout_height="15dp"-->
-                    <!--android:background="@color/gray_project"-->
-                    <!--/>-->
-                    <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/tv_unread_message"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:paddingLeft="14dp"
-                        android:paddingRight="14dp"
-                        android:text="@string/generalequerys"
-                        android:textColor="@color/text_dark_gray" />
-                </LinearLayout>
-
+                <!--<View-->
+                <!--android:id="@+id/view_between_unread_unResponded_message"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_width="1dip"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:background="@color/gray_project"-->
+                <!--/>-->
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_unread_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:text="@string/generalequerys"
+                    android:textColor="@color/text_dark_gray" />
+            </LinearLayout>
 
 
         </HorizontalScrollView>
 
 
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/Rec_MSG"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8px">
+            android:layout_height="match_parent">
 
-        </android.support.v7.widget.RecyclerView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/Rec_MSG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8px"/>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 

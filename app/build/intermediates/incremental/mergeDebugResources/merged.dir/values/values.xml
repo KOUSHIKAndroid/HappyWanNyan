@@ -270,6 +270,9 @@
     <color name="primary_text_disabled_material_light">#39000000</color>
     <color name="purple_color">#5515a9</color>
     <color name="purple_color_gradient">#651dc4</color>
+    <color name="refresh_progress_1">#558F9B</color>
+    <color name="refresh_progress_2">#558F9B</color>
+    <color name="refresh_progress_3">#558F9B</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
@@ -1285,7 +1288,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">46270692-b33f-4de5-97b1-e109875c7838</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">012f49fb-f12c-4749-b682-4dbade7f64a5</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -40,6 +41,8 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+import com.happywannyan.Utils.cardstack.SwipeLinearLayout;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -140,7 +143,7 @@ public class MessageFragment extends Fragment {
 
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         tv_all_message= (SFNFTextView) view.findViewById(R.id.tv_all_message);
@@ -336,6 +339,20 @@ public class MessageFragment extends Fragment {
                 searchFunction(s.toString().trim());
             }
         };
+
+        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
+                R.color.refresh_progress_1,
+                R.color.refresh_progress_2,
+                R.color.refresh_progress_3);
+
+        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                AllMessage = new ArrayList<>();
+                loadList("0");
+                ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setRefreshing(false);
+            }
+        });
 
     }
 
