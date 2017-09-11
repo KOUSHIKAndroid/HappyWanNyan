@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,8 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.happywannyan.Adapter.Calendar_Adapter;
+import com.happywannyan.Adapter.CalendarAdapter;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetCalender;
 import com.happywannyan.POJO.SuperCalender;
@@ -68,7 +66,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
     int EndSelcetdDayPosition = 0;
 
 
-    Calendar_Adapter mAdapter = null;
+    CalendarAdapter mAdapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -333,7 +331,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
             if (superCalender1.getMonth() == monthValue &&
                     superCalender1.getYear() == yearValue) {
 
-                mAdapter = new Calendar_Adapter(superCalender1.getMonthBoject(), this);
+                mAdapter = new CalendarAdapter(superCalender1.getMonthBoject(), this);
                 recyclerView.setAdapter(mAdapter);
                 Loger.MSG("@@ TTTT", "YESS");
                 break;
@@ -456,7 +454,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
 //                }
 //            }
 //        }
-//        mAdapter= new Calendar_Adapter(calenderArrayList,this);
+//        mAdapter= new CalendarAdapter(calenderArrayList,this);
 //        recyclerView.setAdapter(mAdapter);
 //        if(StartSelectedMonth<currentMonth){
 //            mAdapter.startPosition=0;

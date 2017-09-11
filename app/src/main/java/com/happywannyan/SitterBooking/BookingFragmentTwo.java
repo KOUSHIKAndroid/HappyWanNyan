@@ -19,7 +19,7 @@ import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
-import com.happywannyan.Utils.App_data_holder;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.MethodsUtils;
 
@@ -186,7 +186,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
         TXT_dropTime = (SFNFTextView) view.findViewById(R.id.TXT_dropTime);
         TXT_dropTime.setTag("");
 
-        new AppContsnat(getActivity()).GET_SHAREDATA(App_data_holder.UserData, new App_data_holder.App_sharePrefData() {
+        new AppContsnat(getActivity()).GET_SHAREDATA(AppDataHolder.UserData, new AppDataHolder.App_sharePrefData() {
             @Override
             public void Avialable(boolean avilavle, JSONObject data) {
                 try {

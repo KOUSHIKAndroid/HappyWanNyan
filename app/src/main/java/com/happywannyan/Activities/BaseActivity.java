@@ -30,7 +30,7 @@ import com.happywannyan.Fragments.PastSitterFragment;
 import com.happywannyan.Fragments.SearchBasicFragment;
 import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.R;
-import com.happywannyan.Utils.App_data_holder;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.CircleTransform;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.LocationListener.LocationBaseActivity;
@@ -134,7 +134,7 @@ Events events;
             }
         });
 
-        new AppContsnat(BaseActivity.this).GET_SHAREDATA(App_data_holder.UserData, new App_data_holder.App_sharePrefData() {
+        new AppContsnat(BaseActivity.this).GET_SHAREDATA(AppDataHolder.UserData, new AppDataHolder.App_sharePrefData() {
             @Override
             public void Avialable(boolean avilavle, JSONObject data) {
                 try {

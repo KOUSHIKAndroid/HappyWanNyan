@@ -26,7 +26,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.CalenderActivity;
 import com.happywannyan.Activities.SearchResultActivity;
-import com.happywannyan.Adapter.Adapter_petlist;
+import com.happywannyan.Adapter.AdapterPetList;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Events;
 import com.happywannyan.Font.SFNFTextView;
@@ -63,7 +63,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     RecyclerView Rec_petlist;
     ImageView IMG_erase_location, IMG_Location;
     ArrayList<PetService> ArrayPetService;
-    Adapter_petlist adapter_petlist;
+    AdapterPetList adapter_petList;
     Place place;
     boolean GPS = false;
     JSONObject JSONFULLDATA, Geo;
@@ -132,8 +132,8 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
 //                    ArrayPetService.get(0).setTick_value(true);
 
-                    adapter_petlist = new Adapter_petlist(SearchBasicFragment.this, getActivity(), ArrayPetService);
-                    Rec_petlist.setAdapter(adapter_petlist);
+                    adapter_petList = new AdapterPetList(SearchBasicFragment.this, getActivity(), ArrayPetService);
+                    Rec_petlist.setAdapter(adapter_petList);
                 } catch (JSONException e) {
 
                 }
@@ -168,7 +168,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 for (PetService petService : ArrayPetService)
                     petService.setTick_value(false);
                 ArrayPetService.get(0).setTick_value(true);
-                adapter_petlist.notifyDataSetChanged();
+                adapter_petList.notifyDataSetChanged();
             }
         });
 
@@ -204,7 +204,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     for (PetService petService : ArrayPetService)
                         petService.setTick_value(false);
                     ArrayPetService.get(0).setTick_value(true);
-                    adapter_petlist.notifyDataSetChanged();
+                    adapter_petList.notifyDataSetChanged();
 //                    ((ImageView) view.findViewById(R.id.ImgMyLocation)).setImageResource(R.drawable.ic_my_location_white);
                 } else {
                     GPS = true;
@@ -284,7 +284,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 case 101:
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.Base_fargment_layout, Advanced_Search_Fragment.newInstance(SearchJSON.toString(), null));
+                    fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(SearchJSON.toString(), null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     break;

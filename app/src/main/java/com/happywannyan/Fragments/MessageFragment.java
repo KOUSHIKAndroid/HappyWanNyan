@@ -30,7 +30,7 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-import com.happywannyan.Adapter.Adapter_message;
+import com.happywannyan.Adapter.AdapterMessage;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -41,7 +41,6 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
-import com.happywannyan.Utils.cardstack.SwipeLinearLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -89,7 +88,7 @@ public class MessageFragment extends Fragment {
 
     HorizontalScrollView scrollView_horizontal;
     ArrayList<APIPOSTDATA> Params ;
-    Adapter_message adapter_message;
+    AdapterMessage adapter_message;
 
     String type;
     private OnFragmentInteractionListener mListener;
@@ -391,7 +390,7 @@ public class MessageFragment extends Fragment {
                         AllMessage.add(messageDataType);
                     }
                     if(start_from.equals("0")) {
-                        adapter_message = new Adapter_message(getActivity(),MessageFragment.this, AllMessage);
+                        adapter_message = new AdapterMessage(getActivity(),MessageFragment.this, AllMessage);
                         recyclerView.setAdapter(adapter_message);
                     }
                     else

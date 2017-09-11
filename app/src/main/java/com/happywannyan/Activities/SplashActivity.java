@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.crashlytics.android.Crashlytics;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.R;
-import com.happywannyan.Utils.App_data_holder;
+import com.happywannyan.Utils.AppDataHolder;
 
 import io.fabric.sdk.android.Fabric;
 import org.json.JSONObject;
@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                new AppContsnat(SplashActivity.this).GET_SHAREDATA(App_data_holder.UserData, new App_data_holder.App_sharePrefData() {
+                new AppContsnat(SplashActivity.this).GET_SHAREDATA(AppDataHolder.UserData, new AppDataHolder.App_sharePrefData() {
                     @Override
                     public void Avialable(boolean avilavle, JSONObject data) {
                         startActivity( new Intent(SplashActivity.this,BaseActivity.class));

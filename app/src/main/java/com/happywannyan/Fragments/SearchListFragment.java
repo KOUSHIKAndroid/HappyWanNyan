@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.happywannyan.Activities.SearchResultActivity;
-import com.happywannyan.Adapter.SearchPets_Adapter;
+import com.happywannyan.Adapter.SearchPetsAdapter;
 import com.happywannyan.R;
 
 public class SearchListFragment extends Fragment {
@@ -58,7 +58,7 @@ public class SearchListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         recycler_view=(RecyclerView)view.findViewById(R.id.recycler_view);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recycler_view.setAdapter(new SearchPets_Adapter(getActivity(),((SearchResultActivity)getActivity()).ListARRY));
+        recycler_view.setAdapter(new SearchPetsAdapter(getActivity(),((SearchResultActivity)getActivity()).ListARRY));
         ((SearchResultActivity)getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
         ((SearchResultActivity)getActivity()). findViewById(R.id.fab).setVisibility(View.VISIBLE);
 //

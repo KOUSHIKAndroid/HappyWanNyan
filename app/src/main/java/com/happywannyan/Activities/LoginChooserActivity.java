@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.happywannyan.Adapter.Login_FragmentviewPager;
+import com.happywannyan.Adapter.LoginFragmentViewPager;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Login_Slider.slider1;
 import com.happywannyan.Login_Slider.slider2;
@@ -53,7 +53,7 @@ public class LoginChooserActivity extends AppCompatActivity  implements View.OnC
         fragmentList.add(new slider3());
         fragmentList.add(new slider4());
 
-        Login_FragmentviewPager adapter=new Login_FragmentviewPager(this,getSupportFragmentManager(),fragmentList);
+        LoginFragmentViewPager adapter=new LoginFragmentViewPager(this,getSupportFragmentManager(),fragmentList);
 
         //Adding adapter to pager
         viewPager.setAdapter(adapter);

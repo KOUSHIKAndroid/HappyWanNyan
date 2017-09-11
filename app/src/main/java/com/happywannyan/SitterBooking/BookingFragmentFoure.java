@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 import com.cooltechworks.creditcarddesign.CardEditActivity;
 import com.cooltechworks.creditcarddesign.CreditCardUtils;
-import com.happywannyan.Adapter.Adapter_Card;
+import com.happywannyan.Adapter.AdapterCard;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -303,7 +303,7 @@ public class BookingFragmentFoure extends Fragment {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 Loader.Dismiss();
-                                                                REC_Card.setAdapter(new Adapter_Card(getActivity(), Result, new onClickItem() {
+                                                                REC_Card.setAdapter(new AdapterCard(getActivity(), Result, new onClickItem() {
                                                                     @Override
                                                                     public void onSelectItemClick(int position, JSONObject data) {
                                                                         cardFinalSelection = data;
@@ -403,7 +403,7 @@ public class BookingFragmentFoure extends Fragment {
                             ex.printStackTrace();
                         }
 
-                        REC_Card.setAdapter(new Adapter_Card(getActivity(), Result, new onClickItem() {
+                        REC_Card.setAdapter(new AdapterCard(getActivity(), Result, new onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
                                 cardFinalSelection = data;

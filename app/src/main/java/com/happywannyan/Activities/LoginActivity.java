@@ -11,7 +11,7 @@ import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.App_data_holder;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ LOGIN",Result);
-                                new AppContsnat(LoginActivity.this).SET_SHAREDATA(App_data_holder.UserData,Result);
+                                new AppContsnat(LoginActivity.this).SET_SHAREDATA(AppDataHolder.UserData,Result);
                                 appLoader.Dismiss();
                                 startActivity(new Intent(LoginActivity.this,BaseActivity.class));
                                 finish();

@@ -49,9 +49,10 @@
      Set custom default icon. This is used when no icon is set for incoming notification messages.
      See README(https://goo.gl/l4GJaQ) for more.
         -->
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/logo_happywan" />
+        <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_icon" -->
+        <!-- android:resource="@drawable/logo_happywan" /> -->
+
 
         <!-- <meta-data android:name="com.google.android.geo.API_KEY" -->
         <!-- android:value="@string/google_maps_key" /> -->
@@ -65,9 +66,9 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/colorAccent" />
+        <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_color" -->
+        <!-- android:resource="@color/colorAccent" /> -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAXe7ErZNSbPnHhMBwdMHbP7hsU-yaV1PM" />

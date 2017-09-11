@@ -18,7 +18,7 @@ import com.facebook.login.LoginResult;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
-import com.happywannyan.Utils.App_data_holder;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
@@ -140,7 +140,7 @@ public class FacebookActivity extends AppCompatActivity {
             @Override
             public void OnSuccess(String Result) {
                 try {
-                    new AppContsnat(FacebookActivity.this).SET_SHAREDATA(App_data_holder.UserData,Result);
+                    new AppContsnat(FacebookActivity.this).SET_SHAREDATA(AppDataHolder.UserData,Result);
                     JSONObject jsonObject1=new JSONObject(Result);
                     switch (jsonObject1.getString("user_status")){
                         case "not_verified_user":

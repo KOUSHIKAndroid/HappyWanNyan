@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.happywannyan.SitterBooking.NewCardAddActivity">
+
+    <RelativeLayout
+        android:id="@+id/RL_HEADER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/IMG_icon_back"
+            android:layout_width="54dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/PAGE_Titile"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/IMG_icon_back"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="20dp"
+            android:text="@string/addnewcard"
+            android:textColor="@color/colorwhite"
+            android:textSize="@dimen/page_titiel" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativehader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RL_HEADER"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ovalpayment"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Name on card"
+            android:textColor="@color/text_dark_gray"
+            android:textSize="20dp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edtxt_card_name"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorwhite"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:minLines="1" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_cardnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtxt_card_name"
+            android:layout_marginTop="20dp"
+            android:text="Card Number"
+            android:textColor="@color/text_dark_gray"
+            android:textSize="20dp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edtxt_card_number"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_below="@+id/tv_cardnumber"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorwhite"
+            android:hint=" XXXX XXXX XXXX XXXX"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingLeft="5dp" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_expiremonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtxt_card_number"
+            android:layout_marginTop="10dp"
+            android:text="Expire Month andYear"
+            android:textColor="@color/text_dark_gray"
+            android:textSize="18dp" />
+
+        <LinearLayout
+            android:id="@+id/lef_year"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_below="@+id/tv_expiremonth"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/tv_month"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:background="@color/colorwhite"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="2"
+                android:paddingLeft="10dp"
+                android:text="00" />
+
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorwhite"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="/" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/tv_year"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorwhite"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="2"
+                android:paddingLeft="10dp"
+                android:text="00" />
+        </LinearLayout>
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_cvv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtxt_card_number"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tv_expiremonth"
+            android:text="CVV"
+            android:textColor="@color/text_dark_gray"
+            android:textSize="18dp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edtext_vvv"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_below="@+id/tv_cvv"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tv_expiremonth"
+            android:background="@color/colorwhite"
+            android:inputType="number"
+            android:maxLength="3"
+            android:paddingLeft="10dp"
+            android:text="000" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_below="@id/lef_year"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="  Make Default" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Card_request"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="40dp"
+        app:cardBackgroundColor="@color/btn_red"
+        app:cardCornerRadius="23dp"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <com.happywannyan.Font.SFNFTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/save"
+                android:textAllCaps="true"
+                android:textColor="@color/colorwhite"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="5dp"
+                android:src="@drawable/ic_right_arrow_white" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

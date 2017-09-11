@@ -1,7 +1,6 @@
 package com.happywannyan.Fragments;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Adapter.Booking_Adapter;
+import com.happywannyan.Adapter.BookingAdapter;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -46,7 +45,7 @@ public class BookingFragment extends Fragment{
     AppLoader appLoader;
     ArrayList<JSONObject> AllBooking;
 
-    Booking_Adapter bookingAdapter;
+    BookingAdapter bookingAdapter;
 
     String type;
 
@@ -257,7 +256,7 @@ public class BookingFragment extends Fragment{
                     Log.i("AllBookingSize",""+AllBooking.size());
 
                     if(start_from.equals("0")) {
-                        bookingAdapter = new Booking_Adapter(getActivity(),BookingFragment.this, AllBooking);
+                        bookingAdapter = new BookingAdapter(getActivity(),BookingFragment.this, AllBooking);
                         recyclerView.setAdapter(bookingAdapter);
                     }
                     else
