@@ -76,6 +76,7 @@ Events events;
         Params.put("user_id",AppContsnat.UserId);
         Params.put("anorid_device_id",refreshedToken+"");
 
+
         new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
