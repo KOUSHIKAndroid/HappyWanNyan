@@ -90,11 +90,20 @@ Events events;
         {
             //do here
             AppContsnat.go_to = getIntent().getStringExtra("go_to");
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+            if(AppContsnat.go_to.trim().equals("message_all")){
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                MessageFragment search_basic = new MessageFragment();
+                fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }else {
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
         }
         else {
             fragmentManager = getSupportFragmentManager();
