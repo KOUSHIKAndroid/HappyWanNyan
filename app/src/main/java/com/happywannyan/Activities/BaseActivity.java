@@ -29,18 +29,22 @@ import com.happywannyan.Fragments.MyProfileFragment;
 import com.happywannyan.Fragments.PastSitterFragment;
 import com.happywannyan.Fragments.SearchBasicFragment;
 import com.happywannyan.Fragments.MessageFragment;
+import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
+import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CircleTransform;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.LocationListener.LocationBaseActivity;
 import com.happywannyan.Utils.LocationListener.LocationConfiguration;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.constants.ProviderType;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -49,6 +53,7 @@ public class BaseActivity extends LocationBaseActivity
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    AppLoader appLoader;
 Events events;
     NavigationView navigationView;
     @Override
@@ -64,6 +69,8 @@ Events events;
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(getClass().getName(), "Refreshed token: " + refreshedToken);
         new AppContsnat(this);
+
+        appLoader=new AppLoader(BaseActivity.this);
 
         HashMap<String,String> Params=new HashMap<>();
         Params.put("user_id",AppContsnat.UserId);
@@ -182,12 +189,39 @@ Events events;
         navigationView.findViewById(R.id.LL_Logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AppContsnat(BaseActivity.this).LogOut_ClearAllData();
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                drawer.closeDrawer(GravityCompat.START);
-                startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
-                finish();
 
+                appLoader.Show();
+                String URL= AppContsnat.BASEURL+"app_logout?user_id="+AppContsnat.UserId+"&anorid_status=1";
+                new CustomJSONParser().API_FOR_GET(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+                    @Override
+                    public void OnSuccess(String Result) {
+                        appLoader.Dismiss();
+                        Loger.MSG("Result",Result);
+
+                        try {
+                            if(new JSONObject(Result).getBoolean("response")){
+                                new AppContsnat(BaseActivity.this).LogOut_ClearAllData();
+                                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                                drawer.closeDrawer(GravityCompat.START);
+                                startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
+                                finish();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void OnError(String Error, String Response) {
+                        appLoader.Dismiss();
+                    }
+
+                    @Override
+                    public void OnError(String Error) {
+                        appLoader.Dismiss();
+                    }
+                });
             }
         });
 
