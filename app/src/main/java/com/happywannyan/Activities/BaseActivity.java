@@ -395,7 +395,7 @@ Events events;
 
     @Override
     public void onProviderDisabled(String s) {
-        Loger.MSG("@@ Provider Desable",s);
+        Loger.MSG("@@ Provider Disable",s);
 
     }
 

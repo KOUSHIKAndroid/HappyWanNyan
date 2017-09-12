@@ -53,10 +53,12 @@
             android:paddingLeft="45dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
+
             <ImageView
                 android:src="@mipmap/ic_nav_msg"
                 android:layout_width="30dp"
                 android:layout_height="30dp" />
+
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"
                 android:text="@string/nav_messages"
@@ -64,6 +66,20 @@
                 android:paddingLeft="30dp"
                 android:textColor="@color/colorwhite"
                 android:layout_height="wrap_content" />
+
+            <com.happywannyan.Font.SFNFTextView
+                android:visibility="gone"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/TXT_MSG_STATUS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/colorwhite"
+                android:textSize="10sp" />
+
+
         </LinearLayout>
 
         <LinearLayout
