@@ -74,7 +74,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         Rad_catf = (RadioGroup) findViewById(R.id.Rad_catf);
          img_pet = (ImageView) findViewById(R.id.img_pet);
         new AppContsnat(this);
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service?langid=en&user_id="+AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {

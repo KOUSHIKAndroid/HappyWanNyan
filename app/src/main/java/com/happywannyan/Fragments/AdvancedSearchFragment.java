@@ -536,7 +536,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         Button BTN_CANCEL = (Button) LayView.findViewById(R.id.BTN_CANCEL);
 
 
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service?langid=en&user_id="+AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {

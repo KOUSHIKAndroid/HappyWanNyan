@@ -109,7 +109,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
         IMG_erase_location = (ImageView) view.findViewById(R.id.IMG_erase_location);
         Rec_petlist.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service?langid=en&user_id="+AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -135,7 +135,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     adapter_petList = new AdapterPetList(SearchBasicFragment.this, getActivity(), ArrayPetService);
                     Rec_petlist.setAdapter(adapter_petList);
                 } catch (JSONException e) {
-
+                        e.printStackTrace();
                 }
             }
 
