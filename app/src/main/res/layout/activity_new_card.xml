@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Name on card"
+            android:text="@string/name_on_card"
             android:textColor="@color/text_dark_gray"
             android:textSize="16dp" />
 
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/input_txt_card_name"
             android:layout_marginTop="20dp"
-            android:text="Card Number"
+            android:text="@string/card_number"
             android:textColor="@color/text_dark_gray"
             android:textSize="16dp" />
 
@@ -125,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/input_txt_card_number"
             android:layout_marginTop="10dp"
-            android:text="Expire Month andYear"
+            android:text="@string/expire_month_and_year"
             android:textColor="@color/text_dark_gray"
             android:textSize="16dp" />
 
@@ -177,7 +177,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/tv_expiremonth"
-            android:text="CVV"
+            android:text="@string/cvv"
             android:textColor="@color/text_dark_gray"
             android:textSize="16dp" />
 
@@ -211,7 +211,8 @@
             android:layout_below="@id/linear_month_year"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="  Make Default" />
+            android:paddingLeft="5dp"
+            android:text="@string/make_default" />
     </RelativeLayout>
 
     <android.support.v7.widget.CardView

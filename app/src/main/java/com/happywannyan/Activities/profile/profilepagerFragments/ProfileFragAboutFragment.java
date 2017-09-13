@@ -3,6 +3,7 @@ package com.happywannyan.Activities.profile.profilepagerFragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,7 +61,7 @@ public class ProfileFragAboutFragment extends Fragment {
                 View item=LayoutInflater.from(getActivity()).inflate(R.layout.profile_about_items,null);
                 SFNFTextView textView=(SFNFTextView)item.findViewById(R.id.Text);
                 textView.setText(Skills.getString(i));
-                textView.setTextColor(getResources().getColor(R.color.btn_red));
+                textView.setTextColor(ResourcesCompat.getColor(getActivity().getResources(), R.color.btn_red, null));
                 LLSkils.addView(item);
             }
 

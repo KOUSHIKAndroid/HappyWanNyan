@@ -29,7 +29,7 @@
                 <com.happywannyan.Font.SFNFTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name On Card"
+                    android:text="@string/name_on_card"
                     android:textColor="@color/text_dark_gray"
                     android:textSize="16sp" />
 
@@ -61,7 +61,7 @@
 
                 <com.happywannyan.Font.SFNFTextView
                     android:layout_marginLeft="5dp"
-                    android:text="Default"
+                    android:text="@string/default2"
                     android:textSize="14sp"
                     android:textColor="@color/text_dark_gray"
                     android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
                 <com.happywannyan.Font.SFNFTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Card Number"
+                    android:text="@string/card_number"
                     android:textColor="@color/text_dark_gray"
                     android:textSize="16sp" />
 
@@ -137,7 +137,7 @@
                 <com.happywannyan.Font.SFNFTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expiry Month &amp; Year"
+                    android:text="@string/expire_month_and_year"
                     android:textColor="@color/text_dark_gray"
                     android:textSize="16sp" />
 
@@ -154,7 +154,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Added On"
+                    android:text="@string/added_on"
                     android:textColor="@color/text_dark_gray"
                     android:textSize="16sp" />
 
