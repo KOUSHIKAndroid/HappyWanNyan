@@ -25,279 +25,274 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/img_card_view"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
                 card_view:cardCornerRadius="10dp">
+
                 <android.support.v7.widget.AppCompatImageView
                     android:id="@+id/img_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"/>
+                    android:scaleType="fitXY" />
             </android.support.v7.widget.CardView>
 
 
             <ImageView
                 android:id="@+id/img_delete"
-                android:padding="5dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="47dp"
-                android:layout_alignParentRight="true"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_rubbish_bin"
-                />
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="47dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_rubbish_bin" />
 
             <ImageView
                 android:id="@+id/img_edit"
-                android:padding="5dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="47dp"
                 android:layout_toLeftOf="@id/img_delete"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:padding="5dp"
                 android:src="@drawable/ic_pencil_edit_button" />
 
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_name"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="37dp"
-                android:textSize="16sp"
-                android:layout_toLeftOf="@id/img_edit"
-                android:layout_toRightOf="@id/img_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="37dp"
+                android:layout_toLeftOf="@id/img_edit"
+                android:layout_toRightOf="@id/img_card_view"
                 android:text="Name"
+                android:textAllCaps="true"
                 android:textColor="@color/Black"
-                android:textAllCaps="true"/>
+                android:textSize="16sp" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_toLeftOf="@id/img_edit"
                 android:layout_toRightOf="@id/img_card_view"
-                android:layout_below="@+id/tv_name"
-                android:textSize="16sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="Lee Shung Yang"
+                android:textAllCaps="true"
                 android:textColor="@color/Black"
-                android:textAllCaps="true"/>
+                android:textSize="16sp" />
 
             <View
                 android:id="@+id/horizontal_line_one"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_below="@id/img_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_project"/>
+                android:layout_below="@id/img_card_view"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_project" />
 
             <LinearLayout
                 android:id="@+id/LLYearMonthGenderSizeValue"
-                android:weightSum="6"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_below="@id/horizontal_line_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_below="@id/horizontal_line_one"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:weightSum="6">
 
                 <com.happywannyan.Font.SFNFBoldTextView
-                    android:layout_weight="1"
-                    android:gravity="center"
                     android:id="@+id/tv_year"
-                    android:text="1 Year"
-                    android:textSize="12sp"
-                    android:textColor="@color/Black"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
-
-
-                <com.happywannyan.Font.SFNFBoldTextView
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:id="@+id/tv_month"
-                    android:text="3 Month"
-                    android:textSize="12sp"
-                    android:textColor="@color/Black"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
-
-
-                <com.happywannyan.Font.SFNFBoldTextView
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:id="@+id/tv_gender"
-                    android:text="Male"
-                    android:textSize="12sp"
+                    android:text="1 Year"
                     android:textColor="@color/Black"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:textSize="12sp" />
+
 
                 <com.happywannyan.Font.SFNFBoldTextView
-                    android:gravity="center"
-                    android:layout_weight="2"
-                    android:id="@+id/tv_size"
-                    android:text="Small(10-20kg)"
-                    android:textSize="12sp"
-                    android:textColor="@color/Black"
+                    android:id="@+id/tv_month"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="3 Month"
+                    android:textColor="@color/Black"
+                    android:textSize="12sp" />
 
+
+                <com.happywannyan.Font.SFNFBoldTextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Male"
+                    android:textColor="@color/Black"
+                    android:textSize="12sp" />
+
+                <com.happywannyan.Font.SFNFBoldTextView
+                    android:id="@+id/tv_size"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="Small(10-20kg)"
+                    android:textColor="@color/Black"
+                    android:textSize="12sp" />
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/LLYearMonthGenderSizeName"
-                android:weightSum="6"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_below="@id/LLYearMonthGenderSizeValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_below="@id/LLYearMonthGenderSizeValue"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="6">
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_year_lbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/adapter_your_pets_year"
-                    android:textSize="12sp"
-                    android:id="@+id/tv_year_lbl"
                     android:textColor="@color/text_dark_gray"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:textSize="12sp" />
 
 
                 <com.happywannyan.Font.SFNFTextView
-                    android:layout_weight="2"
                     android:id="@+id/tv_month_lbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     android:gravity="center"
                     android:text="@string/adapter_your_pets_month"
-                    android:textSize="12sp"
                     android:textColor="@color/text_dark_gray"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:textSize="12sp" />
 
 
                 <com.happywannyan.Font.SFNFTextView
-                    android:layout_weight="1"
                     android:id="@+id/tv_gender_lbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/adapter_your_pets_gender"
-                    android:textSize="12sp"
                     android:textColor="@color/text_dark_gray"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:textSize="12sp" />
 
                 <com.happywannyan.Font.SFNFTextView
-                    android:gravity="center"
                     android:id="@+id/tv_size_lbl"
-                    android:layout_weight="2"
-                    android:text="@string/adapter_your_pets_size"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_dark_gray"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/adapter_your_pets_size"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="12sp" />
             </LinearLayout>
-
 
 
             <View
                 android:id="@+id/horizontal_line_two"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/LLYearMonthGenderSizeName"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/LLYearMonthGenderSizeName"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray_project"/>
+                android:background="@color/gray_project" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_breed_lbl"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_below="@id/horizontal_line_two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/horizontal_line_two"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Breed"
-                android:textSize="12sp"
-                android:textColor="@color/text_dark_gray"/>
+                android:textColor="@color/text_dark_gray"
+                android:textSize="12sp" />
 
             <com.happywannyan.Font.SFNFBoldTextView
                 android:id="@+id/tv_breed_value"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_below="@id/horizontal_line_two"
-                android:layout_toRightOf="@id/tv_breed_lbl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/horizontal_line_two"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/tv_breed_lbl"
                 android:text="Shetland Sheep Dog"
-                android:textSize="12sp"
-                android:textColor="@color/Black"/>
-
+                android:textColor="@color/Black"
+                android:textSize="12sp" />
 
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_spayed_or_neutered"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_below="@id/tv_breed_lbl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_breed_lbl"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Is your    neutered?"
-                android:textSize="12sp"
-                android:textColor="@color/text_dark_gray"/>
+                android:textColor="@color/text_dark_gray"
+                android:textSize="12sp" />
 
             <com.happywannyan.Font.SFNFBoldTextView
                 android:id="@+id/tv_spayed_or_neutered_value"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_below="@id/tv_breed_lbl"
-                android:layout_toRightOf="@id/tv_spayed_or_neutered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_breed_lbl"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/tv_spayed_or_neutered"
                 android:text="Yes"
-                android:textSize="12sp"
-                android:textColor="@color/Black"/>
-
-
+                android:textColor="@color/Black"
+                android:textSize="12sp" />
 
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_friendly"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="30dp"
-                android:layout_below="@id/tv_spayed_or_neutered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spayed_or_neutered"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
                 android:text="Is     other pets?"
-                android:textSize="12sp"
-                android:textColor="@color/text_dark_gray"/>
+                android:textColor="@color/text_dark_gray"
+                android:textSize="12sp" />
 
             <com.happywannyan.Font.SFNFBoldTextView
                 android:id="@+id/tv_friendly_value"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="30dp"
-                android:layout_below="@id/tv_spayed_or_neutered"
-                android:layout_toRightOf="@id/tv_friendly"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spayed_or_neutered"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/tv_friendly"
                 android:text="Yes"
-                android:textSize="12sp"
-                android:textColor="@color/Black"/>
+                android:textColor="@color/Black"
+                android:textSize="12sp" />
 
 
         </RelativeLayout>
-
 
 
     </LinearLayout>

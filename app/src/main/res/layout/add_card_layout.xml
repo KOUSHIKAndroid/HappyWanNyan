@@ -89,7 +89,7 @@
             android:layout_height="wrap_content">
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"
-                android:text="@string/exp_month"
+                android:text="@string/expire_month_and_year"
                 android:layout_height="wrap_content" />
 
             <LinearLayout

@@ -55,7 +55,7 @@
     <string name="pet_age">Pet age</string>
     <string name="whatisyourdailybudgetperpet">What is your daily budget per pet?</string>
     <string name="otherOption">Other Option</string>
-    <string name="facebook_app_id">1381434255240015</string>
+    <string name="facebook_app_id" translatable="false">1381434255240015</string>
     <string name="title_activity_search_result">Map</string>
     <string name="unread">Unread</string>
     <string name="un_responded">Un Responded</string>
@@ -121,8 +121,8 @@
     <string name="LastName">Last Name</string>
     <string name="LastName_photo">Last Name (Phonetic)</string>
     <string name="letthesitter">Let the sitter know your prefered time (Optional)</string>
-    <string name="noofnight"># of Nights</string>
-    <string name="noofpet"># of Pets</string>
+    <string name="noofnight">No of Nights</string>
+    <string name="noofpet">No of Pets</string>
     <string name="trust_safty"><![CDATA[Trust & Safety  Fee]]></string>
     <string name="tota_amnt">Total Amount</string>
     <string name="cancelpolicy">Cancelation Policy</string>
@@ -196,7 +196,6 @@
     <string name="description">Description</string>
     <string name="lbl_cardno">Credit card Number</string>
     <string name="lbl_crad_holdername">Name on card</string>
-    <string name="exp_month">Expiry Month and Year</string>
     <string name="lbl_secrect">Security code</string>
     <string name="existingcard">Your Cards</string>
     <string name="addnewcard">Add New Card</string>

@@ -80,7 +80,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="37dp"
                     android:layout_toRightOf="@id/img_card_view"
-                    android:text="Name"
+                    android:text="@string/Name"
                     android:textAllCaps="true"
                     android:textColor="@color/colorwhite"
                     android:textSize="16sp" />
@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text="Start date"
+                        android:text="@string/StartDate"
                         android:textColor="@color/gray_project"
                         android:textSize="12sp" />
 
@@ -126,7 +126,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="End date"
+                        android:text="@string/Enddate"
                         android:textColor="@color/gray_project"
                         android:textSize="12sp" />
 
@@ -137,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="Booking Id"
+                        android:text="@string/BookingId"
                         android:textColor="@color/gray_project"
                         android:textSize="12sp" />
 
@@ -193,7 +193,7 @@
                     android:layout_below="@id/LLStartEndDateBookingValue"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
-                    android:text="Service"
+                    android:text="@string/service"
                     android:textColor="@color/colorwhite"
                     android:textSize="12sp" />
 
@@ -241,7 +241,7 @@
                             android:id="@+id/tv_total_pets_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Total Pet's"
+                            android:text="@string/TotalPets"
                             android:textColor="@color/gray_project"
                             android:textSize="12sp" />
 
@@ -265,7 +265,7 @@
                         <com.happywannyan.Font.SFNFTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Total Amount"
+                            android:text="@string/tota_amnt"
                             android:textColor="@color/gray_project"
                             android:textSize="12sp" />
 

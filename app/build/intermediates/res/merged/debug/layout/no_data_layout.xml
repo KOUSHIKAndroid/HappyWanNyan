@@ -7,7 +7,7 @@
     <com.happywannyan.Font.SFNFTextView
         android:id="@+id/TXT_Nodata"
         android:layout_width="wrap_content"
-        android:text="no_pet"
+        android:text="@string/no_pet_data_found"
         android:padding="15dp"
         android:layout_height="wrap_content" />
 

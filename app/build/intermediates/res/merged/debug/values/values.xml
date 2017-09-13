@@ -1222,6 +1222,7 @@
     <string name="add_a_message">Add a Message</string>
     <string name="add_another_pets">Add Another Pets</string>
     <string name="add_image">Add Image</string>
+    <string name="added_on">Added On</string>
     <string name="addnewcard">Add New Card</string>
     <string name="all_messages">All Messages</string>
     <string name="alreadymember">Already a member</string>
@@ -1288,7 +1289,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">de37e918-c37a-4402-b340-b15e2f3b8eb2</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">42caa1e5-001e-482a-83cc-615bc635ef9f</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1339,12 +1340,14 @@
     <string name="current_booking">Current</string>
     <string name="cvc_amex_hint">CVV</string>
     <string name="cvc_number_hint">CVC</string>
+    <string name="cvv">CVV</string>
     <string name="day_name_format">EEE</string>
     <string name="debug_menu_ad_information">Ad Information</string>
     <string name="debug_menu_creative_preview">Creative Preview</string>
     <string name="debug_menu_title">Select a Debug Mode</string>
     <string name="debug_menu_troubleshooting">Troubleshooting</string>
     <string name="decline">Decline</string>
+    <string name="default2">default</string>
     <string name="default_web_client_id" translatable="false">279432934653-8a28nsfq9l66ds7knqk1c7o08a30peua.apps.googleusercontent.com</string>
     <string name="delete">Delete</string>
     <string name="delete_message">Delete this message?</string>
@@ -1359,12 +1362,12 @@
     <string name="error_card_expired">Card expired</string>
     <string name="error_invalid_month">Invalid month</string>
     <string name="existingcard">Your Cards</string>
-    <string name="exp_month">Expiry Month and Year</string>
+    <string name="expire_month_and_year">Expire Month and Year</string>
     <string name="expiry">EXPIRY</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="explain_why_cancel">Explain why you are cancelling this booking</string>
     <string name="facebook">Facebook</string>
-    <string name="facebook_app_id">1381434255240015</string>
+    <string name="facebook_app_id" translatable="false">1381434255240015</string>
     <string name="favorite_sitters_delete">Delete</string>
     <string name="fb_login_protocol_scheme">fb1381434255240015</string>
     <string name="firebase_database_url" translatable="false">https://happywannyan-168107.firebaseio.com</string>
@@ -1398,6 +1401,7 @@
     <string name="letthesitter">Let the sitter know your prefered time (Optional)</string>
     <string name="loading">Loading...</string>
     <string name="location">LOCATION</string>
+    <string name="make_default">Make Default</string>
     <string name="meetgreet">Meet Greet</string>
     <string name="meeting_date">Meeting Date</string>
     <string name="messenger_send_button_text">Send</string>
@@ -1440,8 +1444,8 @@
     <string name="no_data_found">No Data found</string>
     <string name="no_pet_data_found">No Pet information Found</string>
     <string name="no_reviewFound">No Review found</string>
-    <string name="noofnight"># of Nights</string>
-    <string name="noofpet"># of Pets</string>
+    <string name="noofnight">No of Nights</string>
+    <string name="noofpet">No of Pets</string>
     <string name="numberofpets">Number of pets</string>
     <string name="ok">OK</string>
     <string name="otherOption">Other Option</string>
@@ -1467,6 +1471,7 @@
     <string name="pleasenteraddress">Please Enter Address</string>
     <string name="pleaseselect">Please Slect</string>
     <string name="previous">PREVIOUS</string>
+    <string name="price">Price</string>
     <string name="request_reservation">Request Reservation</string>
     <string name="reservation">Reservation</string>
     <string name="reservation_request">Reservation Request</string>
