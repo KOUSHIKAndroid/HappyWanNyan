@@ -2,6 +2,7 @@ package com.happywannyan.Activities;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -362,8 +363,12 @@ Events events;
     }
 
     public void Menu_Drawer() {
-        Loger.MSG("menu_open_message_count-->",""+AppContsnat.message_count);
-        if(AppContsnat.message_count==0){
+
+        SharedPreferences pref = getSharedPreferences("unread_msg_count", MODE_PRIVATE); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
+        Loger.MSG("menu_open_message_count-->",""+ pref.getInt("count", 0));
+
+        if(pref.getInt("count", 0)==0){
             Loger.MSG("count","zero");
             ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setVisibility(View.GONE);
             ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(0));
@@ -371,12 +376,14 @@ Events events;
             Loger.MSG("count","more than zero");
             ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
             findViewById(R.id.TXT_MSG_STATUS).setVisibility(View.VISIBLE);
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(AppContsnat.message_count));
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(pref.getInt("count", 0)));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         drawer.openDrawer(navigationView);
+
+        editor.commit();
 
     }
 

@@ -20,8 +20,6 @@ public class AppContsnat extends AppDataHolder {
 
     public static String go_to="";
 
-    public static int message_count=0;
-
     public AppContsnat(Activity activity) {
         super(activity);
         GET_SHAREDATA(AppDataHolder.UserData, new AppDataHolder.App_sharePrefData() {
@@ -31,15 +29,11 @@ public class AppContsnat extends AppDataHolder {
                     UserId=data.getJSONObject("info_array").getString("id");
 
                 } catch (JSONException e) {
-
+                    e.printStackTrace();
                 }
             }
-
             @Override
             public void NotAvilable(String Error) {
-
-
-
             }
         });
     }

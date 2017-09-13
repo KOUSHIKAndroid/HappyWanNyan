@@ -2,6 +2,7 @@ package com.happywannyan.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
@@ -164,9 +165,15 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
                         intent.putExtra("usersname", object.getString("usersname").trim());
                         intent.putExtra("usersimage", object.getString("usersimage").trim());
                         if (context instanceof BaseActivity) {
-                            Loger.MSG("message_count",""+ AppContsnat.message_count);
-                            AppContsnat.message_count = AppContsnat.message_count - object.getInt("unread_msg_count");
-                            Loger.MSG("message_count_after",""+ AppContsnat.message_count);
+
+                            SharedPreferences pref = context.getSharedPreferences("unread_msg_count", 0); // 0 - for private mode
+                            SharedPreferences.Editor editor = pref.edit();
+                            Loger.MSG("message_count",""+ pref.getInt("count", 0));
+                            editor.putInt("count",(pref.getInt("count", 0))-(object.getInt("unread_msg_count")));
+                            editor.commit();
+
+                            Loger.MSG("message_count_after",""+ pref.getInt("count", 0));
+
                             (message_fragment).CallDetailsPage(intent);
                         }
                     } catch (JSONException e) {

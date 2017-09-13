@@ -1,6 +1,7 @@
 package com.happywannyan.Fragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -115,8 +117,15 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 try {
                     JSONObject object = new JSONObject(Result);
                     JSONFULLDATA = object;
-                    Loger.MSG("message_count",""+ AppContsnat.message_count);
-                    AppContsnat.message_count=object.getInt("total_message_count");
+
+                    SharedPreferences pref = getActivity().getSharedPreferences("unread_msg_count", 0); // 0 - for private mode
+                    SharedPreferences.Editor editor = pref.edit();
+                    Loger.MSG("total_message_count",""+object.getInt("total_message_count"));
+                    editor.putInt("count",object.getInt("total_message_count"));
+                    editor.commit();
+                    Loger.MSG("message_count",""+ pref.getInt("count", 0));
+
+
                     JSONArray PetService = object.getJSONArray("serviceCatList");
                     for (int i = 0; i < PetService.length(); i++) {
                         JSONObject OBJE = PetService.getJSONObject(i);

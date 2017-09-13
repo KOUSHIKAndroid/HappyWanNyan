@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
@@ -83,8 +84,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
             JSONObject Object = new JSONObject(remoteMessage.getData().get("body"));
 
-            AppContsnat.message_count=AppContsnat.message_count+1;
-            Loger.MSG("message_count",""+ AppContsnat.message_count);
+            SharedPreferences pref = getApplicationContext().getSharedPreferences("unread_msg_count", MODE_PRIVATE); // 0 - for private mode
+            SharedPreferences.Editor editor = pref.edit();
+
+            editor.putInt("count",pref.getInt("count", 0)+1);
+            editor.commit();
+
+            Loger.MSG("after_push_msg_count",""+pref.getInt("count", 0));
+
 
             Log.d("PushResponse", "==" + Object.toString());
             if (Object.getString("type_notification").equals("message")) {
