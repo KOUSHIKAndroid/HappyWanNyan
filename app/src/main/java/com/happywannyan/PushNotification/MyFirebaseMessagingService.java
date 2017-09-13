@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 
@@ -81,7 +82,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Loger.MSG("@@@ PUSH", remoteMessage.getData().toString());
         try {
             JSONObject Object = new JSONObject(remoteMessage.getData().get("body"));
-
+            AppContsnat.message_count=AppContsnat.message_count++;
             Log.d("PushResponse", "==" + Object.toString());
             if (Object.getString("type_notification").equals("message")) {
                 Intent intent = new Intent("CONNECT_MESSAGE_LIVE");
