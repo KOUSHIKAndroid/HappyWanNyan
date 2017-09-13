@@ -218,4 +218,5 @@
     <string name="price">Price</string>
     <string name="added_on">Added On</string>
     <string name="default2">default</string>
+    <string name="optional_promo_code">Optional promo code</string>
 </resources>

@@ -196,37 +196,8 @@ public class MyProfileFragment extends Fragment {
                 }
             }
         });
-        Loader.Show();
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_about?user_id=" + AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
-            @Override
-            public void OnSuccess(String Result) {
-                try {
-                    Loader.Dismiss();
-                    JSONObject Ob = new JSONObject(Result);
-                    UserInfo = Ob.getJSONObject("users_information");
-                    Glide.with(getActivity()).load(UserInfo.getString("photo")).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
-                    ((EditText) Mview.findViewById(R.id.EDX_FNAME)).setText(UserInfo.getString("firstname"));
-                    ((EditText) Mview.findViewById(R.id.EDX_Lname)).setText(UserInfo.getString("lastname"));
-                    ((EditText) Mview.findViewById(R.id.EDX_F_FName)).setText(UserInfo.getString("firstname_phonetic"));
-                    ((EditText) Mview.findViewById(R.id.EDX_F_LName)).setText(UserInfo.getString("lastname_phonetic"));
-                    ((EditText) Mview.findViewById(R.id.EDX_Phone)).setText(UserInfo.getString("mobilenum"));
-                    ((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).setText(UserInfo.getString("address"));
-                    ((SFNFTextView) Mview.findViewById(R.id.TXT_Country_Code)).setText(UserInfo.getString("phone_code"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
 
-            @Override
-            public void OnError(String Error, String Response) {
-                Loader.Dismiss();
-            }
-
-            @Override
-            public void OnError(String Error) {
-                Loader.Dismiss();
-            }
-        });
+        loadPage();
 
 
         Mview.findViewById(R.id.Card_submit).setOnClickListener(new View.OnClickListener() {
@@ -316,6 +287,9 @@ public class MyProfileFragment extends Fragment {
                             if (place !=null  &&!value.equals("" + place.getLatLng().longitude))
                                 UserInfo.put(key, "" + place.getLatLng().longitude);
                             break;
+                        case "optional_promo_code":
+                            UserInfo.put(key, "" + ((EditText) Mview.findViewById(R.id.EDX_optional_promo_code)).getText());
+                            break;
                         case "mobilenum":
                             UserInfo.put(key, "" + ((EditText) Mview.findViewById(R.id.EDX_Phone)).getText());
                             break;
@@ -343,6 +317,7 @@ public class MyProfileFragment extends Fragment {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();
+                        loadPage();
                     }
 
                     @Override
@@ -485,5 +460,49 @@ public class MyProfileFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void loadPage(){
+        Loader.Show();
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_about?user_id=" + AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+            @Override
+            public void OnSuccess(String Result) {
+                try {
+                    Loader.Dismiss();
+                    JSONObject Ob = new JSONObject(Result);
+                    UserInfo = Ob.getJSONObject("users_information");
+                    Glide.with(getActivity()).load(UserInfo.getString("photo")).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
+                    ((EditText) Mview.findViewById(R.id.EDX_FNAME)).setText(UserInfo.getString("firstname"));
+                    ((EditText) Mview.findViewById(R.id.EDX_Lname)).setText(UserInfo.getString("lastname"));
+                    ((EditText) Mview.findViewById(R.id.EDX_F_FName)).setText(UserInfo.getString("firstname_phonetic"));
+                    ((EditText) Mview.findViewById(R.id.EDX_F_LName)).setText(UserInfo.getString("lastname_phonetic"));
+                    ((EditText) Mview.findViewById(R.id.EDX_Phone)).setText(UserInfo.getString("mobilenum"));
+
+                    if(UserInfo.getString("optional_promo_code").trim().equals("")){
+                        Mview.findViewById(R.id.input_promo_code).setVisibility(View.VISIBLE);
+                        Mview.findViewById(R.id.view_promo_code).setVisibility(View.VISIBLE);
+                        ((EditText) Mview.findViewById(R.id.EDX_optional_promo_code)).setText(UserInfo.getString("optional_promo_code"));
+                    }else {
+                        Mview.findViewById(R.id.input_promo_code).setVisibility(View.GONE);
+                        Mview.findViewById(R.id.view_promo_code).setVisibility(View.GONE);
+                    }
+
+                    ((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).setText(UserInfo.getString("address"));
+                    ((SFNFTextView) Mview.findViewById(R.id.TXT_Country_Code)).setText(UserInfo.getString("phone_code"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                Loader.Dismiss();
+            }
+
+            @Override
+            public void OnError(String Error) {
+                Loader.Dismiss();
+            }
+        });
     }
 }
