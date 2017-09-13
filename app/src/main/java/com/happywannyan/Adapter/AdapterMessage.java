@@ -152,6 +152,11 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
                 public void onClick(View v) {
 
                     try {
+                        if (object.getInt("unread_msg_count")>0) {
+                            if (AppContsnat.message_count>object.getInt("unread_msg_count")) {
+                                AppContsnat.message_count = AppContsnat.message_count - object.getInt("unread_msg_count");
+                            }
+                        }
                         MessageFragment.MESSAGECODE = object.getString("message_type_code").trim();
                         MessageFragment.TAGNAME = object.getString("message_type").trim();
                         Intent intent = new Intent(context, MessageDetailsPageActivity.class);
