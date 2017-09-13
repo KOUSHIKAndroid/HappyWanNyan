@@ -563,6 +563,7 @@ public class MessageFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==111)
         {
+            AllMessage = new ArrayList<>();
             loadList("0");
         }
 

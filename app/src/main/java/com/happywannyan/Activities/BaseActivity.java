@@ -362,16 +362,16 @@ Events events;
     }
 
     public void Menu_Drawer() {
-        findViewById(R.id.TXT_MSG_STATUS).setVisibility(View.GONE);
-        ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
-
         Loger.MSG("menu_open_message_count-->",""+AppContsnat.message_count);
-        if(AppContsnat.message_count>0){
+        if(AppContsnat.message_count==0){
+            Loger.MSG("count","zero");
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setVisibility(View.GONE);
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(0));
+        }else {
+            Loger.MSG("count","more than zero");
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
             findViewById(R.id.TXT_MSG_STATUS).setVisibility(View.VISIBLE);
             ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(AppContsnat.message_count));
-        }else {
-            findViewById(R.id.TXT_MSG_STATUS).setVisibility(View.GONE);
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(0));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
