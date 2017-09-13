@@ -115,6 +115,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 try {
                     JSONObject object = new JSONObject(Result);
                     JSONFULLDATA = object;
+                    Loger.MSG("message_count",""+ AppContsnat.message_count);
                     AppContsnat.message_count=object.getInt("total_message_count");
                     JSONArray PetService = object.getJSONArray("serviceCatList");
                     for (int i = 0; i < PetService.length(); i++) {

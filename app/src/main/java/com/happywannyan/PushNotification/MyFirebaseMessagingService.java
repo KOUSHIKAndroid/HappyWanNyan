@@ -82,7 +82,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Loger.MSG("@@@ PUSH", remoteMessage.getData().toString());
         try {
             JSONObject Object = new JSONObject(remoteMessage.getData().get("body"));
-            AppContsnat.message_count=AppContsnat.message_count++;
+
+            AppContsnat.message_count=AppContsnat.message_count+1;
+            Loger.MSG("message_count",""+ AppContsnat.message_count);
+
             Log.d("PushResponse", "==" + Object.toString());
             if (Object.getString("type_notification").equals("message")) {
                 Intent intent = new Intent("CONNECT_MESSAGE_LIVE");

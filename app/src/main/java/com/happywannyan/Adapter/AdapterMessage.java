@@ -20,6 +20,7 @@ import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.MessageDataType;
 import com.happywannyan.R;
 import com.happywannyan.Utils.ColorCircleDrawable;
+import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.helper.ObservableHorizontalScrollView;
 
 import org.json.JSONException;
@@ -163,9 +164,9 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
                         intent.putExtra("usersname", object.getString("usersname").trim());
                         intent.putExtra("usersimage", object.getString("usersimage").trim());
                         if (context instanceof BaseActivity) {
-                            if (object.getInt("unread_msg_count")>0) {
-                                AppContsnat.message_count = AppContsnat.message_count - object.getInt("unread_msg_count");
-                            }
+                            Loger.MSG("message_count",""+ AppContsnat.message_count);
+                            AppContsnat.message_count = AppContsnat.message_count - object.getInt("unread_msg_count");
+                            Loger.MSG("message_count_after",""+ AppContsnat.message_count);
                             (message_fragment).CallDetailsPage(intent);
                         }
                     } catch (JSONException e) {

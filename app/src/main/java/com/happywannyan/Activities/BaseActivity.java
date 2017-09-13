@@ -364,7 +364,6 @@ Events events;
     public void Menu_Drawer() {
 
         if(AppContsnat.message_count>0){
-
             findViewById(R.id.TXT_MSG_STATUS).setVisibility(View.VISIBLE);
             ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
             ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(AppContsnat.message_count));
