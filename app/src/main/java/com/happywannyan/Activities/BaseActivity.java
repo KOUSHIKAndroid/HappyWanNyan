@@ -3,11 +3,14 @@ package com.happywannyan.Activities;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -34,6 +37,7 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CircleTransform;
+import com.happywannyan.Utils.ColorCircleDrawable;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.LocationListener.LocationBaseActivity;
 import com.happywannyan.Utils.LocationListener.LocationConfiguration;
@@ -358,8 +362,17 @@ Events events;
     }
 
     public void Menu_Drawer() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        if(AppContsnat.message_count>0){
+
+            findViewById(R.id.TXT_MSG_STATUS).setVisibility(View.VISIBLE);
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(AppContsnat.message_count));
+        }else {
+            findViewById(R.id.TXT_MSG_STATUS).setVisibility(View.GONE);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         drawer.openDrawer(navigationView);
 

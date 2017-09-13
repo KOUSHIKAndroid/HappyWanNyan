@@ -20,6 +20,7 @@ public class AppContsnat extends AppDataHolder {
 
     public static String go_to="";
 
+    public static int message_count=0;
 
     public AppContsnat(Activity activity) {
         super(activity);

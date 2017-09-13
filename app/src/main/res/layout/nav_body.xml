@@ -77,7 +77,7 @@
                 android:padding="5dp"
                 android:text=""
                 android:textColor="@color/colorwhite"
-                android:textSize="10sp" />
+                android:textSize="16sp" />
 
 
         </LinearLayout>
