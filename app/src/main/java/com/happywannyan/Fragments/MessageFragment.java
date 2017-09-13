@@ -457,8 +457,6 @@ public class MessageFragment extends Fragment {
 
                             DeleteMethodCall(position);
 
-
-
                         }
                     };
 
