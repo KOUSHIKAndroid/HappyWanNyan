@@ -370,13 +370,13 @@ Events events;
 
         if(pref.getInt("count", 0)==0){
             Loger.MSG("count","zero");
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setVisibility(View.GONE);
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(0));
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS_NAV)).setVisibility(View.GONE);
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS_NAV)).setText(String.valueOf(0));
         }else {
             Loger.MSG("count","more than zero");
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
-            findViewById(R.id.TXT_MSG_STATUS).setVisibility(View.VISIBLE);
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS)).setText(String.valueOf(pref.getInt("count", 0)));
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS_NAV)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
+            findViewById(R.id.TXT_MSG_STATUS_NAV).setVisibility(View.VISIBLE);
+            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS_NAV)).setText(String.valueOf(pref.getInt("count", 0)));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
