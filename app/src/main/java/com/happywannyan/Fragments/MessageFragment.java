@@ -41,7 +41,6 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -315,8 +314,6 @@ public class MessageFragment extends Fragment {
                    editlayout.setVisibility(View.VISIBLE);
                    edt_search.addTextChangedListener(myTextWatcher);
                }
-
-
            }
        });
 
