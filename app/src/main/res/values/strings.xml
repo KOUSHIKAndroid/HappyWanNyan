@@ -57,7 +57,6 @@
     <string name="otherOption">Other Option</string>
     <string name="facebook_app_id" translatable="false">1381434255240015</string>
     <string name="title_activity_search_result">Map</string>
-    <string name="unread">Unread</string>
     <string name="un_responded">Un Responded</string>
     <string name="reservation">Reservation</string>
     <string name="request_reservation">Request Reservation</string>
@@ -121,8 +120,8 @@
     <string name="LastName">Last Name</string>
     <string name="LastName_photo">Last Name (Phonetic)</string>
     <string name="letthesitter">Let the sitter know your prefered time (Optional)</string>
-    <string name="noofnight">No of Nights</string>
-    <string name="noofpet">No of Pets</string>
+    <string name="noofnight">No. of Nights</string>
+    <string name="noofpet">No. of Pets</string>
     <string name="trust_safty"><![CDATA[Trust & Safety  Fee]]></string>
     <string name="tota_amnt">Total Amount</string>
     <string name="cancelpolicy">Cancelation Policy</string>
@@ -145,7 +144,7 @@
     <string name="with_pet">With Pet</string>
     <string name="Enter_your_msg_bellow">Enter your message bellow</string>
     <string name="numberofpets">Number of pets</string>
-    <string name="sucess">Sucess</string>
+    <string name="sucess">Success</string>
     <string name="Title_send_a_msg">Send a Message</string>
     <string name="Caontact_lebel1">Add details about your schedule, ask questions, or just introduce yourself!</string>
     <string name="add_a_message">Add a Message</string>

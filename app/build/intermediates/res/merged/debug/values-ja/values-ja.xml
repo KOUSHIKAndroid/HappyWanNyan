@@ -2,23 +2,39 @@
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <string name="Booking">予約</string>
     <string name="BookingId">予約ID:</string>
+    <string name="Caontact_lebel1"/>
+    <string name="ChooseService">サービスを選択</string>
     <string name="Chosepettype">ペットの種類を選択</string>
     <string name="Code">コードを入力する</string>
+    <string name="Date">日付</string>
+    <string name="Daycare">保育</string>
+    <string name="Deny">否定する</string>
     <string name="Dismiss">次へ</string>
     <string name="Email">Eメール</string>
     <string name="Enddate">終了日</string>
+    <string name="Enter_your_msg_bellow"/>
+    <string name="Error">エラー</string>
+    <string name="Existing">既存</string>
     <string name="FirestName">名</string>
+    <string name="ForgotPassword">パスワードをお忘れですか</string>
     <string name="Gender">性別</string>
+    <string name="Instruction_for_Cancel_req"/>
     <string name="LastName">姓</string>
     <string name="Login">ログイン</string>
+    <string name="LoginAlertTitle">アラート</string>
     <string name="Loginnow">ここでログイン</string>
     <string name="Month">月</string>
     <string name="Name">名前</string>
+    <string name="NewCard">新しいカード</string>
     <string name="Password">パスワード</string>
+    <string name="Please_enter_both"/>
+    <string name="Please_enter_valid_email"/>
+    <string name="ResetPassword">有効なメールIDを入力してください</string>
     <string name="SignUp">サインアップ</string>
     <string name="StartDate">開始日</string>
     <string name="TermsCondition">利用規約</string>
     <string name="TotalPets">ペット数</string>
+    <string name="Walking">ウォーキング</string>
     <string name="Year">年齢</string>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"ホームへ移動"</string>
     <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s、%2$s"</string>
@@ -43,18 +59,23 @@
     <string name="acc_label_card_number">"カード番号"</string>
     <string name="acc_label_expiry_date">"有効期限"</string>
     <string msgid="5835639618285370804" name="accept">"同意する"</string>
-    <string name="action_settings"/>
+    <string name="action_settings">設定</string>
     <string name="adapter_your_pets_gender">性別</string>
     <string name="adapter_your_pets_month">月</string>
     <string name="adapter_your_pets_size">サイズ</string>
     <string name="adapter_your_pets_year">年齢</string>
+    <string name="add">追加</string>
+    <string name="add_a_message">メッセージを追加</string>
+    <string name="add_another_pets">別のペットを追加する</string>
+    <string name="add_image">画像を追加</string>
     <string name="added_on">登録日</string>
     <string name="addnewcard">カードを追加</string>
     <string name="all_messages">すべてのメッセージ</string>
     <string name="alreadymember">既にメンバー</string>
-    <string name="alternative_date"/>
+    <string name="alternative_date">代替日付</string>
     <string name="app_name">Happy Wan Nyan</string>
     <string name="apply">次へ</string>
+    <string name="are_you_want_to_delete">あなたは削除しますか？</string>
     <string name="booknow">予約する</string>
     <string name="breed">種類</string>
     <string name="calender">カレンダー</string>
@@ -100,6 +121,7 @@
     <string msgid="3804878371876790270" name="cast_tracks_chooser_dialog_ok">"OK"</string>
     <string msgid="2454147715032376208" name="cast_tracks_chooser_dialog_subtitles">"字幕"</string>
     <string msgid="2913461521603516868" name="cast_unmute">"ミュートを解除"</string>
+    <string name="choose_cause_type">私は私のペットを探しています..</string>
     <string name="chose_pettype">ペットの種類を選択</string>
     <string name="chosedate">予約日を選ぶ</string>
     <string gender="unknown" name="com_facebook_device_auth_instructions">&lt;b>facebook.com/device&lt;/b>にアクセスして、上のコードを入力してください。</string>
@@ -142,10 +164,11 @@
     <string msgid="5201977337835724196" name="common_open_on_phone">"スマートフォンで開く"</string>
     <string msgid="3441753203274453993" name="common_signin_button_text">"ログイン"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Googleにログイン"</string>
-    <string name="confirm"/>
+    <string name="confirm">確認</string>
     <string name="confirm_somple_msg"/>
     <string name="contact">連絡する</string>
     <string name="coupon_code">コーポンコード</string>
+    <string name="coupon_code_applied">クーポンコードが適用されました！</string>
     <string msgid="6155048007205742679" name="create_calendar_message">"広告がカレンダーの予定を作成することを許可しますか？"</string>
     <string msgid="7967007864778154790" name="create_calendar_title">"カレンダーの予定の作成"</string>
     <string name="current_booking">本日の予約</string>
@@ -157,14 +180,19 @@
     <string name="default2">デフォルト</string>
     <string name="delete">削除する</string>
     <string name="delete_message"/>
+    <string name="dropofftime">お迎え時間</string>
+    <string name="existingcard"/>
     <string name="expire_month_and_year">有効期限</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="favorite_sitters_delete">削除する</string>
+    <string name="ic_vector_favourite_delete">削除する</string>
+    <string name="images">写真</string>
     <string name="invalid_date"/>
     <string name="isyourcatfriendlywithotherpets"/>
     <string name="lbl_crad_holdername">カードの名義</string>
     <string name="lbl_secrect"/>
-    <string name="location">エリア</string>
+    <string name="loading"/>
+    <string name="location">その他のペット</string>
     <string name="make_default">デフォルトする</string>
     <string name="messenger_send_button_text">送信</string>
     <string msgid="3698378085901466129" name="mr_button_content_description">"キャストアイコン"</string>
@@ -193,12 +221,15 @@
     <string name="nav_payment">支払い</string>
     <string name="nav_profile">プロフィール</string>
     <string name="nav_yourpet">ペットについて</string>
+    <string name="nevershowstng">今後このメッセージを表示しない</string>
+    <string name="newPassword">新しいパスワード</string>
     <string name="next">次へ</string>
     <string name="noofnight">宿泊数</string>
     <string name="noofpet">ペット数</string>
     <string name="numberofpets">宿泊数\"</string>
     <string name="ok">次へ</string>
-    <string name="otherOption">その他の詳細</string>
+    <string name="optional_promo_code"/>
+    <string name="otherOption">その他のオプション</string>
     <string name="past_booking">予約履歴</string>
     <string name="past_sitters">シッター履歴</string>
     <string name="payment_details">支払い詳細</string>
@@ -207,22 +238,35 @@
     <string name="pet_homestay"/>
     <string name="pet_size">ペットのサイズ</string>
     <string name="petrequirement">対応可能なペットのサイズ</string>
+    <string name="petsitting">ペットの座り</string>
     <string name="pickuptime">お預け時間</string>
     <string msgid="1303870564366209730" name="place_autocomplete_clear_button">"検索をクリア"</string>
     <string msgid="2809095107724486040" name="place_autocomplete_search_hint">"検索"</string>
+    <string name="price">価格</string>
+    <string name="request_reservation">予約リクエスト</string>
+    <string name="reservation">ご予約に関するメッセージ</string>
+    <string name="reservation_request">予約リクエスト</string>
     <string name="review">レビュー</string>
     <string name="save">セーブ</string>
     <string name="search">検索</string>
     <string msgid="146198913615257606" name="search_menu_title">"検索"</string>
+    <string name="select">選んでください</string>
+    <string name="send">送信</string>
     <string name="send_request">予約リクエストを送る</string>
+    <string name="service">サービス</string>
     <string name="signuplebel">アカウントの作成またはFacebookでの登録をクリックすると、利用規約に同意することが確認されます</string>
     <string name="signupnow">今すぐ申し込む</string>
     <string name="skip">スキップ</string>
+    <string name="slectDate">日付を選択</string>
+    <string name="specialaccomod">特別対応できるサービス</string>
+    <string name="specialskill">資格</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
     <string msgid="8020323581538738027" name="store_picture_message">"広告が画像ギャラリーに画像を保存することを許可しますか？"</string>
     <string msgid="4180630057627064606" name="store_picture_title">"画像の保存"</string>
     <string name="submit">送信</string>
-    <string name="submit_review"/>
+    <string name="submit_review">レビューを提出する</string>
+    <string name="subtotal_amount">小計</string>
+    <string name="sucess">成功</string>
     <string name="tota_amnt">合計金額</string>
     <string name="trust_safty">手数料</string>
     <string name="up_coming_booking">今後の予約</string>
@@ -232,7 +276,11 @@
     <string name="up_coming_booking_start_date">開始日</string>
     <string name="up_coming_booking_total_amount">合計金額</string>
     <string name="up_coming_booking_total_pets">ペット数</string>
+    <string name="viewmore">もっと見る</string>
     <string msgid="363496807345461806" name="wallet_buy_button_place_holder">"Googleで購入"</string>
+    <string name="with_pet">ペットの場合</string>
+    <string name="would_you_mind_to_turn_gps_on"/>
+    <string name="writeyourcomment">メッセージ</string>
     <string name="youcanloginwith">あなたはでログインすることができます</string>
     <string name="youcansignupwith">一緒にサインアップすることができます</string>
 </resources>

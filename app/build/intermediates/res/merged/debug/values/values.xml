@@ -1289,7 +1289,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">6f9b72df-88c7-4e21-859a-72a15bf68e05</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">c884c2f7-1fbc-4840-b2c1-dc9d5c1d0bcf</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1502,7 +1502,7 @@
     <string name="submit">Submit</string>
     <string name="submit_review">Submit Review</string>
     <string name="subtotal_amount">Subtotal Amount</string>
-    <string name="sucess">Sucess</string>
+    <string name="sucess">Success</string>
     <string name="tagmanager_preview_dialog_button">Continue</string>
     <string name="tagmanager_preview_dialog_message">Preview mode updated.</string>
     <string name="tagmanager_preview_dialog_title">Preview</string>
@@ -1513,7 +1513,6 @@
     <string name="total_Payableamount">Total Payable Amount</string>
     <string name="trust_safty">Trust &amp; Safety  Fee</string>
     <string name="un_responded">Un Responded</string>
-    <string name="unread">Unread</string>
     <string name="up_coming_booking">Up Coming</string>
     <string name="up_coming_booking_end_date">End date</string>
     <string name="up_coming_booking_id">Booking ID</string>
