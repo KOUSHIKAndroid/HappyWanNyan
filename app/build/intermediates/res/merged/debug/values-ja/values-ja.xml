@@ -189,8 +189,10 @@
     <string name="images">写真</string>
     <string name="invalid_date"/>
     <string name="isyourcatfriendlywithotherpets"/>
+    <string name="join">参加した:</string>
     <string name="lbl_crad_holdername">カードの名義</string>
-    <string name="lbl_secrect"/>
+    <string name="lbl_secrect">セキュリティコード</string>
+    <string name="letthesitter"/>
     <string name="loading"/>
     <string name="location">その他のペット</string>
     <string name="make_default">デフォルトする</string>
@@ -235,13 +237,17 @@
     <string name="payment_details">支払い詳細</string>
     <string name="pending_booking">保留中の予約</string>
     <string name="pet_age">ペットの年齢</string>
-    <string name="pet_homestay"/>
+    <string name="pet_homestay">ペットホームステイ</string>
     <string name="pet_size">ペットのサイズ</string>
     <string name="petrequirement">対応可能なペットのサイズ</string>
     <string name="petsitting">ペットの座り</string>
     <string name="pickuptime">お預け時間</string>
     <string msgid="1303870564366209730" name="place_autocomplete_clear_button">"検索をクリア"</string>
     <string msgid="2809095107724486040" name="place_autocomplete_search_hint">"検索"</string>
+    <string name="please_enter_code">有効なコードを入力してください</string>
+    <string name="please_enter_message">ここにメッセージを入力してください</string>
+    <string name="pleasenteraddress">アドレスを入力してください</string>
+    <string name="pleaseselect">選んでください</string>
     <string name="price">価格</string>
     <string name="request_reservation">予約リクエスト</string>
     <string name="reservation">ご予約に関するメッセージ</string>

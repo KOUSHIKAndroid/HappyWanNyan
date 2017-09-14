@@ -295,7 +295,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     startActivity(intent);
                 }
                 else {
-                    new MYAlert(ProfileDetailsActivity.this).AlertOnly("",getResources().getString(R.string.unable_to_make_reservation_request), new MYAlert.OnlyMessage() {
+                    new MYAlert(ProfileDetailsActivity.this).AlertOnly(getResources().getString(R.string.request_reservation),getResources().getString(R.string.unable_to_make_reservation_request), new MYAlert.OnlyMessage() {
                         @Override
                         public void OnOk(boolean res) {
 

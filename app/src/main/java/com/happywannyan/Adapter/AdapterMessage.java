@@ -71,7 +71,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
             holder.tv_name.setText(object.getString("usersname").trim());
             holder.tv_details.setText(object.getString("message_info").trim());
             holder.left_red_view.setText(object.getString("time_difference").trim());
-            Glide.with(context).load(object.getString("usersimage").trim()).placeholder(R.drawable.msg_placeholder).into(holder.img_view);
+            Glide.with(context).load(object.getString("usersimage").trim()).placeholder(R.drawable.ic_msg_placeholder).into(holder.img_view);
 
 //            if (object.has("booking_id") && object.getString("booking_id").length() > 0) {
 //                String BookingID = "<html><b>" + context.getString(R.string.BookingId) + "</b> " + object.getString("booking_id") + "</html>";

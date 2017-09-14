@@ -285,10 +285,10 @@ public final class R {
         public static final int common_google_signin_btn_text_light_normal_background = 0x7f0200c5;
         public static final int googleg_disabled_color_18 = 0x7f0200d4;
         public static final int googleg_standard_color_18 = 0x7f0200d5;
-        public static final int ic_plusone_medium_off_client = 0x7f0201ad;
-        public static final int ic_plusone_small_off_client = 0x7f0201ae;
-        public static final int ic_plusone_standard_off_client = 0x7f0201af;
-        public static final int ic_plusone_tall_off_client = 0x7f0201b0;
+        public static final int ic_plusone_medium_off_client = 0x7f0201ae;
+        public static final int ic_plusone_small_off_client = 0x7f0201af;
+        public static final int ic_plusone_standard_off_client = 0x7f0201b0;
+        public static final int ic_plusone_tall_off_client = 0x7f0201b1;
         public static final int places_ic_clear = 0x7f0201ff;
         public static final int places_ic_search = 0x7f020200;
         public static final int powered_by_google_dark = 0x7f020201;
@@ -496,8 +496,8 @@ public final class R {
         public static final int cast_forward_10 = 0x7f080020;
         public static final int cast_forward_30 = 0x7f080021;
         public static final int cast_intro_overlay_button_text = 0x7f080022;
-        public static final int cast_invalid_stream_duration_text = 0x7f08013c;
-        public static final int cast_invalid_stream_position_text = 0x7f08013d;
+        public static final int cast_invalid_stream_duration_text = 0x7f080142;
+        public static final int cast_invalid_stream_position_text = 0x7f080143;
         public static final int cast_mute = 0x7f080023;
         public static final int cast_notification_connected_message = 0x7f080024;
         public static final int cast_notification_connecting_message = 0x7f080025;
