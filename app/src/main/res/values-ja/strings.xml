@@ -60,7 +60,6 @@
     <string name="past_sitters">シッター履歴</string>
     <string name="pending_booking">保留中の予約</string>
     <string name="payment_details">支払い詳細</string>
-    <string name="pet_homestay"></string>
     <string name="past_booking">予約履歴</string>
     <string name="petrequirement">対応可能なペットのサイズ</string>
     <string name="pickuptime">お預け時間</string>
@@ -92,7 +91,6 @@
     <string name="default2">デフォルト</string>
     <string name="submit">送信</string>
     <string name="lbl_crad_holdername">カードの名義</string>
-    <string name="lbl_secrect"></string>
     <string name="invalid_date"></string>
     <string name="isyourcatfriendlywithotherpets"></string>
     <string name="Caontact_lebel1"></string>
@@ -151,4 +149,12 @@
     <string name="submit_review">レビューを提出する</string>
     <string name="sucess">成功</string>
     <string name="upload_attachment">添付ファイルをアップロード</string>
+    <string name="join">参加した:</string>
+    <string name="lbl_secrect">セキュリティコード</string>
+    <string name="letthesitter"></string>
+    <string name="pet_homestay">ペットホームステイ</string>
+    <string name="pleaseselect">選んでください</string>
+    <string name="pleasenteraddress">アドレスを入力してください</string>
+    <string name="please_enter_code">有効なコードを入力してください</string>
+    <string name="please_enter_message">ここにメッセージを入力してください</string>
 </resources>

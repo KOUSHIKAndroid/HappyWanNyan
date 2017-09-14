@@ -62,10 +62,19 @@ public class MYAlert {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
                 (Context.LAYOUT_INFLATER_SERVICE);
         View LayView = inflater.inflate(R.layout.alert_dialog_msg, null);
+
         SFNFTextView TXTMessage = (SFNFTextView) LayView.findViewById(R.id.Message);
         TXTMessage.setText(Message);
+
         SFNFTextView TXTTitle = (SFNFTextView) LayView.findViewById(R.id.Title);
-        TXTTitle.setText(Title);
+
+        if (Title.trim().equals("")) {
+            TXTTitle.setVisibility(View.GONE);
+        }else {
+            TXTTitle.setVisibility(View.VISIBLE);
+            TXTTitle.setText(Title);
+        }
+
         Button BTN_OK = (Button) LayView.findViewById(R.id.BTN_OK);
         BTN_OK.setOnClickListener(new View.OnClickListener() {
             @Override

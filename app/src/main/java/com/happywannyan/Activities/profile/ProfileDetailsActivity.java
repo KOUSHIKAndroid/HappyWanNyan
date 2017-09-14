@@ -17,6 +17,7 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.ForgotPasswordActivity;
 import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Activities.profile.fragmentPagerAdapter.ProfileFragPagerAdapter;
 import com.happywannyan.Constant.AppContsnat;
@@ -26,6 +27,7 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.provider.RatingColor;
 import com.happywannyan.Utils.provider.AppTimeZone;
 
@@ -45,12 +47,13 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
     private ViewPager viewpager;
     private ProfileFragPagerAdapter pagerAdapter = null;
     private LinearLayout reservation = null;
-   public JSONObject PrevJSON;
+    public JSONObject PrevJSON;
     RatingBar Rating;
     String SitterId;
     String UserData;
     AppLoader appLoader;
     public String JSONRESPONSE;
+    int block_user_status=0;
 
     PopupWindow popupWindow;
     @Override
@@ -85,8 +88,6 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             findViewById(R.id.map_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-
                     try {
                         String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=%d&q=%f,%f", Double.parseDouble(PrevJSON.getString("lat")), Double.parseDouble(PrevJSON.getString("long")), 17, Double.parseDouble(PrevJSON.getString("lat")), Double.parseDouble(PrevJSON.getString("long")));
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
@@ -96,7 +97,6 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
                 }
             });
         } catch (JSONException e) {
@@ -132,6 +132,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                 Loger.MSG("@@ SITTER","- "+Result);
                 try {
                     final JSONObject BasicInfo=new JSONObject(Result).getJSONObject("info_array").getJSONObject("basic_info");
+                    block_user_status=BasicInfo.getInt("block_user_status");
                     Glide.with(ProfileDetailsActivity.this).load(BasicInfo.getString("sittersimage")).into((ImageView) findViewById(R.id.IMG_Profile));
                     Rating.setRating(Float.parseFloat(BasicInfo.getString("ave_rating")));
                     Rating.setIsIndicator(true);
@@ -273,26 +274,34 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
-                try {
-                    intent.putExtra("LIST",""+new JSONObject(JSONRESPONSE).getJSONObject("info_array").getJSONArray("servicelist"));
-                    intent.putExtra("ItemDetails",""+PrevJSON);
-                    intent.putExtra("Single",false);
-                    JSONArray ARRYA=new JSONObject(JSONRESPONSE).getJSONObject("info_array").getJSONArray("servicelist");
-                    for(int j=0;j<ARRYA.length();j++)
-                    {
-                        JSONObject OBJECT=ARRYA.getJSONObject(j);
-                        if(OBJECT.getString("service_id").equals(PrevJSON.getString("manage_service_id")))
-                        {
-                            intent.putExtra("SELECT",""+OBJECT);
-                            break;
-                        }
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
 
-                startActivity(intent);
+                if (block_user_status==0) {
+                    Intent intent = new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
+                    try {
+                        intent.putExtra("LIST", "" + new JSONObject(JSONRESPONSE).getJSONObject("info_array").getJSONArray("servicelist"));
+                        intent.putExtra("ItemDetails", "" + PrevJSON);
+                        intent.putExtra("Single", false);
+                        JSONArray ARRYA = new JSONObject(JSONRESPONSE).getJSONObject("info_array").getJSONArray("servicelist");
+                        for (int j = 0; j < ARRYA.length(); j++) {
+                            JSONObject OBJECT = ARRYA.getJSONObject(j);
+                            if (OBJECT.getString("service_id").equals(PrevJSON.getString("manage_service_id"))) {
+                                intent.putExtra("SELECT", "" + OBJECT);
+                                break;
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    startActivity(intent);
+                }
+                else {
+                    new MYAlert(ProfileDetailsActivity.this).AlertOnly("",getResources().getString(R.string.unable_to_make_reservation_request), new MYAlert.OnlyMessage() {
+                        @Override
+                        public void OnOk(boolean res) {
+
+                        }
+                    });
+                }
             }
         });
 
