@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
+import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
@@ -36,7 +37,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
     JSONArray PetInfo;
     LinearLayout LLPetInfo, LL_FOOTER1, LL_FOOTER2;
     AppLoader Loader;
-
+    int block_user_status=0;
     AlertDialog Dialog;
     TimeZone Tz;
 
@@ -67,8 +68,11 @@ public class BookingDetailsActivity extends AppCompatActivity {
             LLPetInfo = (LinearLayout) findViewById(R.id.LLPetInfo);
             LL_FOOTER1 = (LinearLayout) findViewById(R.id.LL_FOOTER1);
             LL_FOOTER2 = (LinearLayout) findViewById(R.id.LL_FOOTER2);
+
+            block_user_status=jsonObject.getJSONObject("booking_info").getInt("block_user_status");
+
             Glide.with(this).load(jsonObject.getJSONObject("users_profile").getString("booked_user_image")).into(profimage);
-            ((SFNFTextView) findViewById(R.id.tv_name)).setText(jsonObject.getJSONObject("users_profile").getString("custom_quotes"));
+            ((SFNFTextView) findViewById(R.id.tv_name)).setText(jsonObject.getJSONObject("users_profile").getString("who_booked"));
             ((SFNFTextView) findViewById(R.id.tv_type)).setText(jsonObject.getJSONObject("users_profile").getString("booked_user_name"));
 
             ((SFNFTextView) findViewById(R.id.TXT_total_no_pet)).setText(jsonObject.getJSONObject("booking_info").getString("booked_total_pet"));
@@ -122,7 +126,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
             if (jsonObject.getJSONObject("booking_info").has("send_msg_status") && !jsonObject.getJSONObject("booking_info").getString("send_msg_status").trim().equals("")) {
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
                 ((CardView)ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
-
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("send_msg_status"));
                 if (LL_FOOTER1.getChildCount() < 2)
                     LL_FOOTER1.addView(ButtomView);
@@ -133,11 +136,23 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try {
-                            if(jsonObject.getJSONObject("booking_info").has("send_msg_show") && jsonObject.getJSONObject("booking_info").getInt("send_msg_show")==0)
-                                Send_Message(jsonObject.getJSONObject("booking_info").getString("send_msg_status"),getString(R.string.please_enter_message),getString(R.string.submit)
-                                ,jsonObject.getJSONObject("booking_info").getString("id"),jsonObject.getJSONObject("booking_info").getString("booking_type"));
-                            else
+                            if(jsonObject.getJSONObject("booking_info").has("send_msg_show") && jsonObject.getJSONObject("booking_info").getInt("send_msg_show")==0) {
+                                if (block_user_status == 0) {
+                                    Send_Message(jsonObject.getJSONObject("booking_info").getString("send_msg_status"), getString(R.string.please_enter_message), getString(R.string.submit)
+                                            , jsonObject.getJSONObject("booking_info").getString("id"), jsonObject.getJSONObject("booking_info").getString("booking_type"));
+                                }
+                                else {
+                                    MYALERT.AlertOnly(getResources().getString(R.string.message),getResources().getString(R.string.unable_to_send_message), new MYAlert.OnlyMessage() {
+                                        @Override
+                                        public void OnOk(boolean res) {
+
+                                        }
+                                    });
+                                }
+                            }
+                            else {
                                 GotoMessage(jsonObject.getJSONObject("booking_info").getString("message_id"));
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -159,8 +174,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         Delete_Button();
                     }
                 });
-                
-
             }
 
 

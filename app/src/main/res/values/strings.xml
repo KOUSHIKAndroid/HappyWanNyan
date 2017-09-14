@@ -219,4 +219,6 @@
     <string name="default2">default</string>
     <string name="optional_promo_code">Optional promo code</string>
     <string name="unable_to_make_reservation_request">Unable to make Reservation Request.Please contact to HappyWanNyan</string>
+    <string name="message">Message</string>
+    <string name="unable_to_send_message">Unable to Send Message. Please contact HappyWanNyan</string>
 </resources>

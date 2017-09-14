@@ -49,7 +49,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             Glide.with(context).load(object.getJSONObject("users_profile").getString("booked_user_image")).into(holder.img_view);
 
-            holder.tv_title.setText(object.getJSONObject("users_profile").getString("custom_quotes"));
+            holder.tv_title.setText(object.getJSONObject("users_profile").getString("who_booked"));
             holder.tv_name.setText(object.getJSONObject("users_profile").getString("booked_user_name"));
 
             holder.tv_start_date.setText(object.getJSONObject("booking_info").getString("booking_start_date"));

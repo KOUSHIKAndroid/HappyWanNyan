@@ -1289,7 +1289,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">70579fdf-1fa4-433a-a52f-b046703919a6</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">3978fd18-a81d-4c4a-b69b-95e9262f96af</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1404,6 +1404,7 @@
     <string name="make_default">Make Default</string>
     <string name="meetgreet">Meet Greet</string>
     <string name="meeting_date">Meeting Date</string>
+    <string name="message">Message</string>
     <string name="messenger_send_button_text">Send</string>
     <string name="mm_yy">MM/YY</string>
     <string name="month_name_format">MMMM yyyy</string>
@@ -1514,6 +1515,7 @@
     <string name="trust_safty">Trust &amp; Safety  Fee</string>
     <string name="un_responded">Un Responded</string>
     <string name="unable_to_make_reservation_request">Unable to make Reservation Request.Please contact to HappyWanNyan</string>
+    <string name="unable_to_send_message">Unable to Send Message. Please contact HappyWanNyan</string>
     <string name="up_coming_booking">Up Coming</string>
     <string name="up_coming_booking_end_date">End date</string>
     <string name="up_coming_booking_id">Booking ID</string>

@@ -52,12 +52,12 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="37dp"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:layout_toRightOf="@id/img_card_view"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="JOHN DOE"
-                    android:textColor="@color/Black"
+                    android:textColor="@color/text_dark_gray"
                     android:textAllCaps="true"/>
 
                 <com.happywannyan.Font.SFNFTextView
@@ -68,10 +68,10 @@
                     android:layout_toRightOf="@id/img_card_view"
                     android:layout_below="@+id/tv_title"
                     android:textSize="16sp"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Lee Shung Yang"
-                    android:textColor="@color/text_dark_gray"
+                    android:textColor="@color/Black"
                     />
 
 
