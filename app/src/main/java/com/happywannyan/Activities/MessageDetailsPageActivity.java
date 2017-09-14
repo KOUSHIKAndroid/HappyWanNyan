@@ -159,8 +159,8 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                         findViewById(R.id.LL_Buttom).setVisibility(View.VISIBLE);
                     }
 
-                    Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_from_image")).into(IMGE_FROM);
-                    Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_from_image")).into(USER_IMAGE);
+                    Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).into(IMGE_FROM);
+                    Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).into(USER_IMAGE);
                      ARRAy = OBJ.getJSONArray("all_message_details");
 //                    if (messageAdapter == null) {
                         messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
