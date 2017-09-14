@@ -143,6 +143,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     ((SFNFTextView) findViewById(R.id.Location)).setText(BasicInfo.getString("place_sitter"));
                     if(BasicInfo.getInt("favourite_status")==0)
                     {
+
 //                        ((ImageView)findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.ic_favorite_border);
                         ((ImageView) findViewById(R.id.IMG_FAV)).setTag("0");
                         ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_white);
