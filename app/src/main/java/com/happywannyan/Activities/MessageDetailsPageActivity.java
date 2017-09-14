@@ -160,6 +160,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     }
 
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).into(IMGE_FROM);
+
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).into(USER_IMAGE);
                      ARRAy = OBJ.getJSONArray("all_message_details");
 //                    if (messageAdapter == null) {
