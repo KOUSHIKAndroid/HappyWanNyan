@@ -40,7 +40,7 @@ public class MethodsUtils {
         }
     }
 
-    private void hideSoftKeyboard(Activity activity) {
+    public static void hideSoftKeyboard(Activity activity) {
         InputMethodManager inputMethodManager = (InputMethodManager)activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         if (activity.getCurrentFocus()!=null)
         {

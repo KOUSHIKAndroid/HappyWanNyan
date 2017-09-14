@@ -41,6 +41,8 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+import com.happywannyan.Utils.MethodsUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -300,11 +302,13 @@ public class MessageFragment extends Fragment {
                        apipostdata.setValues("");
                        Params.add(apipostdata);
 
+                       edt_search.removeTextChangedListener(myTextWatcher);
+
                        AllMessage = new ArrayList<>();
                        loadList("0");
-                       edt_search.removeTextChangedListener(myTextWatcher);
                        edt_search.setText("");
                        isMemberExecute=false;
+                       MethodsUtils.hideSoftKeyboard(getActivity());
                    }
                }
                else
@@ -663,6 +667,7 @@ public class MessageFragment extends Fragment {
                         Params.add(apipostdata);
 
                         isMemberExecute=true;
+                        placeCustomListAdapterDialog=null;
 
                         AllMessage = new ArrayList<>();
                         loadList("0");
