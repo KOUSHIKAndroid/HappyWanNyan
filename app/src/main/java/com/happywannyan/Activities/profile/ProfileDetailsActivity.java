@@ -67,7 +67,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         reservation = (LinearLayout) findViewById(R.id.reservation);
 
         try {
-           new AppContsnat(this);
+            new AppContsnat(this);
             UserData=AppContsnat.UserId;
             this.PrevJSON = new JSONObject(getIntent().getStringExtra("data"));
             Loger.MSG("@@@ PROFILE DATA ",""+PrevJSON);

@@ -3,6 +3,7 @@ package com.happywannyan.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.AppCompatImageView;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,6 +72,13 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
                 }
             });
 
+            holder.img_card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -99,6 +107,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
     public class MyViewHolder extends RecyclerView.ViewHolder {
         AppCompatImageView img_view;
         SFNFTextView tv_title,tv_name;
+        CardView img_card_view;
         SFNFBoldTextView tv_start_date,tv_end_date,tv_booking_id,tv_service_value,tv_total_pets_value,tv_total_amount_value;
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -113,6 +122,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
             tv_service_value= (SFNFBoldTextView) itemView.findViewById(R.id.tv_service_value);
             tv_total_pets_value= (SFNFBoldTextView) itemView.findViewById(R.id.tv_total_pets_value);
             tv_total_amount_value= (SFNFBoldTextView) itemView.findViewById(R.id.tv_total_amount_value);
+            img_card_view= (CardView) itemView.findViewById(R.id.img_card_view);
         }
     }
 }
