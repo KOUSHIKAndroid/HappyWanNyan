@@ -152,6 +152,13 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     } else
                         LL_USER_TIME.setVisibility(View.GONE);
                     TXT_JoinTime.setText(getString(R.string.join) + OBJ.getString("message_joined"));
+
+                    if(OBJ.getInt("block_user_status")==1){
+                        findViewById(R.id.LL_Buttom).setVisibility(View.GONE);
+                    }else {
+                        findViewById(R.id.LL_Buttom).setVisibility(View.VISIBLE);
+                    }
+
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_from_image")).into(IMGE_FROM);
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_from_image")).into(USER_IMAGE);
                      ARRAy = OBJ.getJSONArray("all_message_details");

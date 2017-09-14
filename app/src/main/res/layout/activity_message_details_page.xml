@@ -295,9 +295,11 @@
     </android.support.v7.widget.RecyclerView>
 
 
-    
+
+
     <RelativeLayout
         android:id="@+id/LL_Buttom"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:background="@color/colorwhite"

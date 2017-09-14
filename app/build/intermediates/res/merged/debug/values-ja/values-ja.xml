@@ -276,6 +276,7 @@
     <string name="up_coming_booking_start_date">開始日</string>
     <string name="up_coming_booking_total_amount">合計金額</string>
     <string name="up_coming_booking_total_pets">ペット数</string>
+    <string name="upload_attachment">添付ファイルをアップロード</string>
     <string name="viewmore">もっと見る</string>
     <string msgid="363496807345461806" name="wallet_buy_button_place_holder">"Googleで購入"</string>
     <string name="with_pet">ペットの場合</string>
