@@ -100,7 +100,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
 
             } else {
-                sendNotification(Object.getJSONObject("message_info").getString("message_info"));
+                sendNotification(Object.getJSONObject("message_info"));
             }
 
         } catch (JSONException e) {
@@ -115,7 +115,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         try {
             JSONObject Object = new JSONObject(remoteMessage.getData().get("body"));
-            sendNotification(Object.getJSONObject("message_info").getString("message_info"));
+            sendNotification(Object.getJSONObject("message_info"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -149,27 +149,35 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      *
      * @param messageBody FCM message body received.
      */
-    private void sendNotification(String messageBody) {
-        Intent intent = new Intent(this, BaseActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        intent.putExtra("go_to", "message_all");
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT
+    private void sendNotification(JSONObject messageBody) {
+
+        try {
+            Intent intent = new Intent(this, BaseActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            intent.putExtra("go_to", "message_all");
+            Loger.MSG("object",""+messageBody.toString());
+            intent.putExtra("object", messageBody.toString());
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
+                    PendingIntent.FLAG_ONE_SHOT
 //                0
-        );
+            );
 
-        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.logo_happywan)
-                .setContentTitle("HAPPYWANNYAN")
-                .setContentText(messageBody)
-                .setAutoCancel(true)
-                .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent);
+            Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                    .setSmallIcon(R.drawable.logo_happywan)
+                    .setContentTitle("HAPPYWANNYAN")
+                    .setContentText(messageBody.getString("message_info"))
+                    .setAutoCancel(true)
+                    .setSound(defaultSoundUri)
+                    .setContentIntent(pendingIntent);
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+            notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private boolean applicationInForeground() {

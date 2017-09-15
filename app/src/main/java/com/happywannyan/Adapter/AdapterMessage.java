@@ -152,18 +152,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
             holder.MAINCONTENT.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     try {
-                        MessageFragment.MESSAGECODE = object.getString("message_type_code").trim();
-                        MessageFragment.TAGNAME = object.getString("message_type").trim();
-                        Intent intent = new Intent(context, MessageDetailsPageActivity.class);
-                        intent.putExtra("message_id", object.getString("message_id").trim());
-                        if (!AppContsnat.UserId.equals(object.getString("receiver_id").trim()))
-                            intent.putExtra("receiver_id", object.getString("receiver_id").trim());
-                        else
-                            intent.putExtra("receiver_id", object.getString("sender_id").trim());
-                        intent.putExtra("usersname", object.getString("usersname").trim());
-                        intent.putExtra("usersimage", object.getString("usersimage").trim());
                         if (context instanceof BaseActivity) {
 
                             SharedPreferences pref = context.getSharedPreferences("unread_msg_count", 0); // 0 - for private mode
@@ -174,13 +163,11 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
 
                             Loger.MSG("message_count_after",""+ pref.getInt("count", 0));
 
-                            (message_fragment).CallDetailsPage(intent);
+                            (message_fragment).CallDetailsPage(object);
                         }
-                    } catch (JSONException e) {
+                    }catch (Exception e){
                         e.printStackTrace();
                     }
-
-
                 }
             });
 

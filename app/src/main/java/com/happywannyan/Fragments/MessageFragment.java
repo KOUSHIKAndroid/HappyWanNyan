@@ -23,13 +23,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Adapter.AdapterMessage;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
@@ -42,7 +44,6 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.MethodsUtils;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -70,24 +71,24 @@ public class MessageFragment extends Fragment {
 
     TextWatcher myTextWatcher;
 
-    public static String TAGNAME="";
-    public static String MESSAGECODE="";
+    public static String TAGNAME = "";
+    public static String MESSAGECODE = "";
     RecyclerView recyclerView;
     AppLoader appLoader;
-    boolean isMemberExecute=false;
+    boolean isMemberExecute = false;
     ArrayList<MessageDataType> AllMessage;
     PopupWindow popupWindow;
-    PlaceCustomListAdapterDialog placeCustomListAdapterDialog=null;
+    PlaceCustomListAdapterDialog placeCustomListAdapterDialog = null;
 
-    SFNFTextView tv_all_message,tv_unread_message,tv_reservation_message;
-    View view_between_all_unread_message,view_unResponded_reservation_message;
+    SFNFTextView tv_all_message, tv_unread_message, tv_reservation_message;
+    View view_between_all_unread_message, view_unResponded_reservation_message;
     EditText edt_search;
-    ImageView searchbar,search;
-    boolean ISPLAY=false;
+    ImageView searchbar, search;
+    boolean ISPLAY = false;
     RelativeLayout editlayout;
 
     HorizontalScrollView scrollView_horizontal;
-    ArrayList<APIPOSTDATA> Params ;
+    ArrayList<APIPOSTDATA> Params;
     AdapterMessage adapter_message;
 
     String type;
@@ -126,7 +127,7 @@ public class MessageFragment extends Fragment {
         }
         new AppContsnat(getActivity());
         Params = new ArrayList<>();
-        appLoader=new AppLoader(getActivity());
+        appLoader = new AppLoader(getActivity());
     }
 
     @Override
@@ -134,10 +135,7 @@ public class MessageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         AllMessage = new ArrayList<>();
-
         return inflater.inflate(R.layout.fragment_message_, container, false);
-
-
     }
 
 
@@ -145,17 +143,24 @@ public class MessageFragment extends Fragment {
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        tv_all_message= (SFNFTextView) view.findViewById(R.id.tv_all_message);
-        tv_unread_message= (SFNFTextView) view.findViewById(R.id.tv_unread_message);
+        tv_all_message = (SFNFTextView) view.findViewById(R.id.tv_all_message);
+        tv_unread_message = (SFNFTextView) view.findViewById(R.id.tv_unread_message);
 //        tv_unResponded_message= (SFNFTextView) view.findViewById(R.id.tv_unResponded_message);
-        tv_reservation_message= (SFNFTextView) view.findViewById(R.id.tv_reservation_message);
-        scrollView_horizontal=(HorizontalScrollView)view.findViewById(R.id.scrollView_horizontal);
-        view_between_all_unread_message=view.findViewById(R.id.view_between_all_unread_message);
-        view_unResponded_reservation_message=view.findViewById(R.id.view_unResponded_reservation_message);
-        edt_search=(EditText) view.findViewById(R.id.edt_search);
-        searchbar=(ImageView)view.findViewById(R.id.searchbar);
-        search=(ImageView)view.findViewById(R.id.search);
-        editlayout=(RelativeLayout)view.findViewById(R.id.editlayout);
+        tv_reservation_message = (SFNFTextView) view.findViewById(R.id.tv_reservation_message);
+        scrollView_horizontal = (HorizontalScrollView) view.findViewById(R.id.scrollView_horizontal);
+        view_between_all_unread_message = view.findViewById(R.id.view_between_all_unread_message);
+        view_unResponded_reservation_message = view.findViewById(R.id.view_unResponded_reservation_message);
+        edt_search = (EditText) view.findViewById(R.id.edt_search);
+        searchbar = (ImageView) view.findViewById(R.id.searchbar);
+        search = (ImageView) view.findViewById(R.id.search);
+        editlayout = (RelativeLayout) view.findViewById(R.id.editlayout);
+
+        view.findViewById(R.id.IMG_icon_drwaer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((BaseActivity) getActivity()).Menu_Drawer();
+            }
+        });
 
 
         editlayout.setVisibility(View.GONE);
@@ -189,15 +194,14 @@ public class MessageFragment extends Fragment {
         tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
         view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
 
-        type="all_message_list";
-        loadList("0");
-        TAGNAME=tv_all_message.getText().toString();
+        type = "all_message_list";
+        TAGNAME = tv_all_message.getText().toString();
 
         tv_all_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AllMessage = new ArrayList<>();
-                TAGNAME=tv_all_message.getText().toString();
+                TAGNAME = tv_all_message.getText().toString();
                 tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
                 tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
 //                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
@@ -206,7 +210,7 @@ public class MessageFragment extends Fragment {
                 view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
                 view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
 
-                type="all_message_list";
+                type = "all_message_list";
                 loadList("0");
             }
         });
@@ -214,7 +218,7 @@ public class MessageFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                TAGNAME=tv_unread_message.getText().toString();
+                TAGNAME = tv_unread_message.getText().toString();
 
                 tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
@@ -224,7 +228,7 @@ public class MessageFragment extends Fragment {
                 view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 AllMessage = new ArrayList<>();
-                type="generalinquiry_message_list";
+                type = "generalinquiry_message_list";
                 loadList("0");
             }
         });
@@ -250,7 +254,7 @@ public class MessageFragment extends Fragment {
         tv_reservation_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TAGNAME=tv_reservation_message.getText().toString();
+                TAGNAME = tv_reservation_message.getText().toString();
                 tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
 //                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
@@ -260,67 +264,65 @@ public class MessageFragment extends Fragment {
                 view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
 
                 AllMessage = new ArrayList<>();
-                type="reservation_message_list";
+                type = "reservation_message_list";
                 loadList("0");
             }
         });
 
 
+        searchbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-       searchbar.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
+                if (ISPLAY) {
+                    ISPLAY = false;
+                    searchbar.setImageResource(R.drawable.ic_search_list);
+                    editlayout.setVisibility(View.GONE);
+                    scrollView_horizontal.setVisibility(View.VISIBLE);
+                    if (isMemberExecute) {
 
-               if (ISPLAY )
-               {   ISPLAY=false;
-                   searchbar.setImageResource(R.drawable.ic_search_list);
-                   editlayout.setVisibility(View.GONE);
-                   scrollView_horizontal.setVisibility(View.VISIBLE);
-                   if (isMemberExecute){
+                        Params.clear();
 
-                       Params.clear();
+                        APIPOSTDATA apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("start_form");
+                        apipostdata.setValues("0");
+                        Params.add(apipostdata);
+                        apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("user_id");
+                        apipostdata.setValues(AppContsnat.UserId);
+                        Params.add(apipostdata);
+                        apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("lang_id");
+                        apipostdata.setValues(AppContsnat.Language);
+                        Params.add(apipostdata);
+                        apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("per_page");
+                        apipostdata.setValues("10");
+                        Params.add(apipostdata);
+                        apipostdata = new APIPOSTDATA();
+                        apipostdata.setPARAMS("user_timezone");
+                        apipostdata.setValues("");
+                        Params.add(apipostdata);
 
-                       APIPOSTDATA apipostdata = new APIPOSTDATA();
-                       apipostdata.setPARAMS("start_form");
-                       apipostdata.setValues("0");
-                       Params.add(apipostdata);
-                       apipostdata = new APIPOSTDATA();
-                       apipostdata.setPARAMS("user_id");
-                       apipostdata.setValues(AppContsnat.UserId);
-                       Params.add(apipostdata);
-                       apipostdata = new APIPOSTDATA();
-                       apipostdata.setPARAMS("lang_id");
-                       apipostdata.setValues(AppContsnat.Language);
-                       Params.add(apipostdata);
-                       apipostdata = new APIPOSTDATA();
-                       apipostdata.setPARAMS("per_page");
-                       apipostdata.setValues("10");
-                       Params.add(apipostdata);
-                       apipostdata = new APIPOSTDATA();
-                       apipostdata.setPARAMS("user_timezone");
-                       apipostdata.setValues("");
-                       Params.add(apipostdata);
+                        edt_search.removeTextChangedListener(myTextWatcher);
 
-                       edt_search.removeTextChangedListener(myTextWatcher);
+                        AllMessage = new ArrayList<>();
+                        loadList("0");
+                        edt_search.setText("");
+                        isMemberExecute = false;
+                        MethodsUtils.hideSoftKeyboard(getActivity());
+                    }
+                } else {
+                    ISPLAY = true;
+                    searchbar.setImageResource(R.drawable.ic_close_list);
+                    scrollView_horizontal.setVisibility(View.GONE);
+                    editlayout.setVisibility(View.VISIBLE);
+                    edt_search.addTextChangedListener(myTextWatcher);
+                }
+            }
+        });
 
-                       AllMessage = new ArrayList<>();
-                       loadList("0");
-                       edt_search.setText("");
-                       isMemberExecute=false;
-                       MethodsUtils.hideSoftKeyboard(getActivity());
-                   }
-               }
-               else
-               {   ISPLAY=true;
-                   searchbar.setImageResource(R.drawable.ic_close_list);
-                   scrollView_horizontal.setVisibility(View.GONE);
-                   editlayout.setVisibility(View.VISIBLE);
-                   edt_search.addTextChangedListener(myTextWatcher);
-               }
-           }
-       });
-
-        myTextWatcher= new TextWatcher() {
+        myTextWatcher = new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -339,24 +341,63 @@ public class MessageFragment extends Fragment {
             }
         };
 
-        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
+        ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
                 R.color.refresh_progress_1,
                 R.color.refresh_progress_2,
                 R.color.refresh_progress_3);
 
-        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 AllMessage = new ArrayList<>();
                 loadList("0");
-                ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setRefreshing(false);
+                ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setRefreshing(false);
             }
         });
 
+        if (AppContsnat.go_to.trim().equals("message_all")) {
+            try {
+                JSONObject jsonObject=new JSONObject(AppContsnat.message_object_string);
+                try {
+                    Intent intent = new Intent(getActivity(), MessageDetailsPageActivity.class);
+                    intent.putExtra("message_id", jsonObject.getString("message_id").trim());
+                    if (!AppContsnat.UserId.equals(jsonObject.getString("receiver_id").trim()))
+                        intent.putExtra("receiver_id", jsonObject.getString("receiver_id").trim());
+                    else
+                        intent.putExtra("receiver_id", jsonObject.getString("sender_id").trim());
+                    intent.putExtra("usersname", jsonObject.getString("usersname").trim());
+                    intent.putExtra("usersimage", jsonObject.getString("usersimage").trim());
+                    startActivityForResult(intent, 111);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                AppContsnat.go_to="";
+                AppContsnat.message_object_string="";
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            loadList("0");
+        }
     }
 
-    public void CallDetailsPage(Intent intent) {
-        startActivityForResult(intent,111);
+    public void CallDetailsPage(JSONObject jsonObject) {
+        try {
+            MESSAGECODE = jsonObject.getString("message_type_code").trim();
+            MessageFragment.TAGNAME = jsonObject.getString("message_type").trim();
+            Intent intent = new Intent(getActivity(), MessageDetailsPageActivity.class);
+            intent.putExtra("message_id", jsonObject.getString("message_id").trim());
+            if (!AppContsnat.UserId.equals(jsonObject.getString("receiver_id").trim()))
+                intent.putExtra("receiver_id", jsonObject.getString("receiver_id").trim());
+            else
+                intent.putExtra("receiver_id", jsonObject.getString("sender_id").trim());
+            intent.putExtra("usersname", jsonObject.getString("usersname").trim());
+            intent.putExtra("usersimage", jsonObject.getString("usersimage").trim());
+            startActivityForResult(intent, 111);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public interface OnFragmentInteractionListener {
@@ -364,51 +405,49 @@ public class MessageFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    public void loadList(final String start_from){
+    public void loadList(final String start_from) {
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL+type+"?", Params, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + type + "?", Params, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 try {
-                    JSONObject jsonObject=new JSONObject(Result);
-                    final JSONArray all_message=jsonObject.getJSONArray("all_message");
+                    JSONObject jsonObject = new JSONObject(Result);
+                    final JSONArray all_message = jsonObject.getJSONArray("all_message");
 
-                    int next_data=jsonObject.getInt("next_data");
-                    Loger.MSG("next_data",""+next_data);
+                    int next_data = jsonObject.getInt("next_data");
+                    Loger.MSG("next_data", "" + next_data);
 
-                    for(int i=0;i<all_message.length();i++)
-                    {
-                        MessageDataType messageDataType=new MessageDataType();
+                    for (int i = 0; i < all_message.length(); i++) {
+                        MessageDataType messageDataType = new MessageDataType();
                         messageDataType.setJsonObject(all_message.getJSONObject(i));
                         messageDataType.setScrooll(false);
                         AllMessage.add(messageDataType);
                     }
-                    if(start_from.equals("0")) {
-                        adapter_message = new AdapterMessage(getActivity(),MessageFragment.this, AllMessage);
+                    if (start_from.equals("0")) {
+                        adapter_message = new AdapterMessage(getActivity(), MessageFragment.this, AllMessage);
                         recyclerView.setAdapter(adapter_message);
-                    }
-                    else
-                    {
-                        adapter_message.nextData=next_data;
+                    } else {
+                        adapter_message.nextData = next_data;
                         adapter_message.notifyDataSetChanged();
                     }
 
-                    ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT ) {
+                    ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
                         @Override
                         public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
                             return false;
                         }
+
                         @Override
                         public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
                             Bitmap icon;
-                            if(actionState == ItemTouchHelper.ACTION_STATE_SWIPE){
+                            if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
 
 
-                                Loger.MSG("@# Swipe X- ",dX+"");
-                                Loger.MSG("@# Swipe Y- ",dY+"");
+                                Loger.MSG("@# Swipe X- ", dX + "");
+                                Loger.MSG("@# Swipe Y- ", dY + "");
 
 //                                if(dX<-325)
 //                                {
@@ -421,20 +460,20 @@ public class MessageFragment extends Fragment {
                                 float height = (float) itemView.getBottom() - (float) itemView.getTop();
                                 float width = height / 3;
 
-                                if(dX > 0){
+                                if (dX > 0) {
                                     p.setColor(Color.parseColor("#388E3C"));
-                                    RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop(), dX,(float) itemView.getBottom());
-                                    c.drawRect(background,p);
+                                    RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop(), dX, (float) itemView.getBottom());
+                                    c.drawRect(background, p);
                                     icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_vector_favourite_delete_white);
-                                    RectF icon_dest = new RectF((float) itemView.getLeft() + width ,(float) itemView.getTop() + width,(float) itemView.getLeft()+ 2*width,(float)itemView.getBottom() - width);
-                                    c.drawBitmap(icon,null,icon_dest,p);
+                                    RectF icon_dest = new RectF((float) itemView.getLeft() + width, (float) itemView.getTop() + width, (float) itemView.getLeft() + 2 * width, (float) itemView.getBottom() - width);
+                                    c.drawBitmap(icon, null, icon_dest, p);
                                 } else {
                                     p.setColor(Color.parseColor("#D32F2F"));
-                                    RectF background = new RectF((float) itemView.getRight() + dX, (float) itemView.getTop(),(float) itemView.getRight(), (float) itemView.getBottom());
-                                    c.drawRect(background,p);
+                                    RectF background = new RectF((float) itemView.getRight() + dX, (float) itemView.getTop(), (float) itemView.getRight(), (float) itemView.getBottom());
+                                    c.drawRect(background, p);
                                     icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_delete);
-                                    RectF icon_dest = new RectF((float) itemView.getRight() - 2*width ,(float) itemView.getTop() + width,(float) itemView.getRight() - width,(float)itemView.getBottom() - width);
-                                    c.drawBitmap(icon,null,icon_dest,p);
+                                    RectF icon_dest = new RectF((float) itemView.getRight() - 2 * width, (float) itemView.getTop() + width, (float) itemView.getRight() - width, (float) itemView.getBottom() - width);
+                                    c.drawBitmap(icon, null, icon_dest, p);
                                 }
                             }
 
@@ -456,8 +495,7 @@ public class MessageFragment extends Fragment {
                     itemTouchHelper.attachToRecyclerView(recyclerView);
                     appLoader.Dismiss();
 
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                     appLoader.Dismiss();
                 }
@@ -466,8 +504,7 @@ public class MessageFragment extends Fragment {
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
-                if(start_from.equals("0"))
-                {
+                if (start_from.equals("0")) {
                     recyclerView.setAdapter(null);
                     new MYAlert(getActivity()).AlertOnly("" + TAGNAME, "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
                         @Override
@@ -494,50 +531,50 @@ public class MessageFragment extends Fragment {
                 appLoader.Show();
 
                 try {
-                    String MessageID=AllMessage.get(position).getJsonObject().getString("message_id");
-                    String ReciverId=AllMessage.get(position).getJsonObject().getString("receiver_id");
-                    new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL+"message_deleted_API?user_id="+AppContsnat.UserId+"&message_id="+MessageID+"&receiver_id="+ReciverId,
-                    new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
-                        @Override
-                        public void OnSuccess(String Result) {
+                    String MessageID = AllMessage.get(position).getJsonObject().getString("message_id");
+                    String ReciverId = AllMessage.get(position).getJsonObject().getString("receiver_id");
+                    new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "message_deleted_API?user_id=" + AppContsnat.UserId + "&message_id=" + MessageID + "&receiver_id=" + ReciverId,
+                            new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+                                @Override
+                                public void OnSuccess(String Result) {
 
-                            AllMessage.remove(position);
-                            adapter_message.notifyDataSetChanged();
-                            appLoader.Dismiss();
+                                    AllMessage.remove(position);
+                                    adapter_message.notifyDataSetChanged();
+                                    appLoader.Dismiss();
 
-                        }
+                                }
 
-                        @Override
-                        public void OnError(String Error, String Response) {
-                            try {
-                                appLoader.Dismiss();
-                                new MYAlert(getActivity()).AlertForAPIRESPONSE(getString(R.string.delete), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
-                                    @Override
-                                    public void OnOk(boolean res) {
+                                @Override
+                                public void OnError(String Error, String Response) {
+                                    try {
+                                        appLoader.Dismiss();
+                                        new MYAlert(getActivity()).AlertForAPIRESPONSE(getString(R.string.delete), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                            @Override
+                                            public void OnOk(boolean res) {
 
+                                            }
+                                        });
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
                                     }
-                                });
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
 
-                        }
+                                }
 
-                        @Override
-                        public void OnError(String Error) {
-                            try {
-                                appLoader.Dismiss();
-                                new MYAlert(getActivity()).AlertForAPIRESPONSE(getString(R.string.delete), Error, new MYAlert.OnlyMessage() {
-                                    @Override
-                                    public void OnOk(boolean res) {
+                                @Override
+                                public void OnError(String Error) {
+                                    try {
+                                        appLoader.Dismiss();
+                                        new MYAlert(getActivity()).AlertForAPIRESPONSE(getString(R.string.delete), Error, new MYAlert.OnlyMessage() {
+                                            @Override
+                                            public void OnOk(boolean res) {
 
+                                            }
+                                        });
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
                                     }
-                                });
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
+                                }
+                            });
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -554,8 +591,7 @@ public class MessageFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==111)
-        {
+        if (requestCode == 111) {
             AllMessage = new ArrayList<>();
             loadList("0");
         }
@@ -563,27 +599,26 @@ public class MessageFragment extends Fragment {
     }
 
     public void searchFunction(String s) {
-        HashMap<String,String> Params=new HashMap<String, String>();
-        Params.put("user_id",AppContsnat.UserId);
-        Params.put("search_name",s);
-        Params.put("lang_id",AppContsnat.Language);
+        HashMap<String, String> Params = new HashMap<String, String>();
+        Params.put("user_id", AppContsnat.UserId);
+        Params.put("search_name", s);
+        Params.put("lang_id", AppContsnat.Language);
 
         appLoader.Show();
 
-        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL+"user_memberlist"+"?", Params, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "user_memberlist" + "?", Params, new CustomJSONParser.JSONRESPONSE() {
             @Override
 
             public void OnSuccess(String Result) {
                 try {
-                    JSONObject jsonObject=new JSONObject(Result);
-                    final JSONArray all_member=jsonObject.getJSONArray("all_member");
+                    JSONObject jsonObject = new JSONObject(Result);
+                    final JSONArray all_member = jsonObject.getJSONArray("all_member");
 
-                    Loger.MSG("memberListSize",""+ all_member);
+                    Loger.MSG("memberListSize", "" + all_member);
                     appLoader.Dismiss();
-                    showDialog(editlayout,all_member);
+                    showDialog(editlayout, all_member);
 
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                     appLoader.Dismiss();
                 }
@@ -622,7 +657,7 @@ public class MessageFragment extends Fragment {
                 @Override
                 public void onItemPassed(int position, JSONObject value) {
                     popupWindow.dismiss();
-                    Loger.MSG("value",""+value);
+                    Loger.MSG("value", "" + value);
                     try {
                         Params.clear();
 
@@ -652,8 +687,8 @@ public class MessageFragment extends Fragment {
                         apipostdata.setValues(value.getString("member_id"));
                         Params.add(apipostdata);
 
-                        isMemberExecute=true;
-                        placeCustomListAdapterDialog=null;
+                        isMemberExecute = true;
+                        placeCustomListAdapterDialog = null;
 
                         AllMessage = new ArrayList<>();
                         loadList("0");

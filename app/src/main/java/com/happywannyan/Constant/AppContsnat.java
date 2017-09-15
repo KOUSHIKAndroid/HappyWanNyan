@@ -19,6 +19,7 @@ public class AppContsnat extends AppDataHolder {
     public static String STRIPE_SECRATE_KEY="sk_test_1HkmfB8tpsf5yd1f8DUmRLdS";
 
     public static String go_to="";
+    public static String message_object_string="";
 
     public AppContsnat(Activity activity) {
         super(activity);

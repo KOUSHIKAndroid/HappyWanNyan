@@ -97,35 +97,6 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
 
-        if (getIntent().getExtras() != null) {
-            //do here
-            AppContsnat.go_to = getIntent().getStringExtra("go_to");
-            if (AppContsnat.go_to.trim().equals("message_all")) {
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                MessageFragment search_basic = new MessageFragment();
-                fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            } else {
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        } else {
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            SearchBasicFragment search_basicFragment = new SearchBasicFragment();
-            fragmentTransaction.add(R.id.Base_fargment_layout, search_basicFragment);
-            fragmentTransaction.commit();
-        }
-
-
-
-
-
         /*
         @Koushik
         Navigation Control respect of UserCredintial
@@ -332,6 +303,32 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
 
+
+        if (getIntent().getExtras() != null) {
+            //do here
+            AppContsnat.go_to = getIntent().getStringExtra("go_to");
+            AppContsnat.message_object_string=getIntent().getStringExtra("object");
+            if (AppContsnat.go_to.trim().equals("message_all")) {
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                MessageFragment search_basic = new MessageFragment();
+                fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            } else {
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        } else {
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            SearchBasicFragment search_basicFragment = new SearchBasicFragment();
+            fragmentTransaction.add(R.id.Base_fargment_layout, search_basicFragment);
+            fragmentTransaction.commit();
+        }
 
     }
 
