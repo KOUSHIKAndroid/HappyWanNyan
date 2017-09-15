@@ -98,6 +98,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
         LL_S_F = (LinearLayout) view.findViewById(R.id.LL_S_F);
         RL_SingleDate = (RelativeLayout) view.findViewById(R.id.RL_SingleDate);
         RL_ExtraDropDown = (RelativeLayout) view.findViewById(R.id.RL_ExtraDropDown);
+
         RL_SingleDate.setVisibility(View.GONE);
         RL_ExtraDropDown.setVisibility(View.GONE);
         LL_S_F.setVisibility(View.GONE);
