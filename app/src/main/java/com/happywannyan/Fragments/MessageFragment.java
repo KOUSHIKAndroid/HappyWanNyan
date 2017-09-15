@@ -364,10 +364,6 @@ public class MessageFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-
-
-
-
     public void loadList(final String start_from){
         appLoader.Show();
         Params.get(0).setValues(start_from);
@@ -403,12 +399,8 @@ public class MessageFragment extends Fragment {
 
                         @Override
                         public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-
                             return false;
                         }
-
-
-
                         @Override
                         public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
                             Bitmap icon;
@@ -463,6 +455,7 @@ public class MessageFragment extends Fragment {
                     ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
                     itemTouchHelper.attachToRecyclerView(recyclerView);
                     appLoader.Dismiss();
+
                 }catch (Exception e)
                 {
                     e.printStackTrace();
@@ -569,9 +562,7 @@ public class MessageFragment extends Fragment {
 
     }
 
-
-    public void searchFunction(String s)
-    {
+    public void searchFunction(String s) {
         HashMap<String,String> Params=new HashMap<String, String>();
         Params.put("user_id",AppContsnat.UserId);
         Params.put("search_name",s);
@@ -611,10 +602,6 @@ public class MessageFragment extends Fragment {
             }
         });
     }
-
-
-
-
 
     private void showDialog(View v, JSONArray PredictionsJsonArray) {
 
