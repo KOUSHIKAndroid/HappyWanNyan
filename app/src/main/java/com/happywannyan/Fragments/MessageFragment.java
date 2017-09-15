@@ -68,7 +68,6 @@ public class MessageFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    ArrayAdapter<String> adapter;
     TextWatcher myTextWatcher;
 
     public static String TAGNAME="";

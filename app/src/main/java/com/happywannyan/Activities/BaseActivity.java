@@ -4,20 +4,18 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
-import android.util.Log;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -27,12 +25,12 @@ import com.happywannyan.Events;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.Fragments.FavouriteFragment;
+import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.Fragments.MyPaymentsFragment;
 import com.happywannyan.Fragments.MyPetsFragments;
 import com.happywannyan.Fragments.MyProfileFragment;
 import com.happywannyan.Fragments.PastSitterFragment;
 import com.happywannyan.Fragments.SearchBasicFragment;
-import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
@@ -43,7 +41,6 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.LocationListener.LocationBaseActivity;
 import com.happywannyan.Utils.LocationListener.LocationConfiguration;
 import com.happywannyan.Utils.Loger;
-import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.constants.ProviderType;
 
 import org.json.JSONException;
@@ -54,13 +51,14 @@ import java.util.HashMap;
 
 
 public class BaseActivity extends LocationBaseActivity
-        implements  NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener {
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     AppLoader appLoader;
-Events events;
+    Events events;
     NavigationView navigationView;
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -75,11 +73,11 @@ Events events;
         Log.d(getClass().getName(), "Refreshed token: " + refreshedToken);
         new AppContsnat(this);
 
-        appLoader=new AppLoader(BaseActivity.this);
+        appLoader = new AppLoader(BaseActivity.this);
 
-        HashMap<String,String> Params=new HashMap<>();
-        Params.put("user_id",AppContsnat.UserId);
-        Params.put("anorid_device_id",refreshedToken+"");
+        HashMap<String, String> Params = new HashMap<>();
+        Params.put("user_id", AppContsnat.UserId);
+        Params.put("anorid_device_id", refreshedToken + "");
 
 
         new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONRESPONSE() {
@@ -99,26 +97,24 @@ Events events;
             }
         });
 
-        if( getIntent().getExtras() != null)
-        {
+        if (getIntent().getExtras() != null) {
             //do here
             AppContsnat.go_to = getIntent().getStringExtra("go_to");
-            if(AppContsnat.go_to.trim().equals("message_all")){
+            if (AppContsnat.go_to.trim().equals("message_all")) {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 MessageFragment search_basic = new MessageFragment();
                 fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-            }else {
+            } else {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
-        }
-        else {
+        } else {
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             SearchBasicFragment search_basicFragment = new SearchBasicFragment();
@@ -197,15 +193,15 @@ Events events;
             public void onClick(View v) {
 
                 appLoader.Show();
-                String URL= AppContsnat.BASEURL+"app_logout?user_id="+AppContsnat.UserId+"&anorid_status=1";
+                String URL = AppContsnat.BASEURL + "app_logout?user_id=" + AppContsnat.UserId + "&anorid_status=1";
                 new CustomJSONParser().API_FOR_GET(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
-                        Loger.MSG("Result",Result);
+                        Loger.MSG("Result", Result);
 
                         try {
-                            if(new JSONObject(Result).getBoolean("response")){
+                            if (new JSONObject(Result).getBoolean("response")) {
                                 new AppContsnat(BaseActivity.this).LogOut_ClearAllData();
                                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                                 drawer.closeDrawer(GravityCompat.START);
@@ -278,7 +274,7 @@ Events events;
             public void onClick(View view) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-                startActivity(new Intent(BaseActivity.this,HelpActivity.class));
+                startActivity(new Intent(BaseActivity.this, HelpActivity.class));
             }
         });
 
@@ -340,7 +336,6 @@ Events events;
     }
 
 
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -366,17 +361,17 @@ Events events;
 
         SharedPreferences pref = getSharedPreferences("unread_msg_count", MODE_PRIVATE); // 0 - for private mode
         SharedPreferences.Editor editor = pref.edit();
-        Loger.MSG("menu_open_message_count-->",""+ pref.getInt("count", 0));
+        Loger.MSG("menu_open_message_count-->", "" + pref.getInt("count", 0));
 
-        if(pref.getInt("count", 0)==0){
-            Loger.MSG("count","zero");
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS_NAV)).setVisibility(View.GONE);
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS_NAV)).setText(String.valueOf(0));
-        }else {
-            Loger.MSG("count","more than zero");
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS_NAV)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
+        if (pref.getInt("count", 0) == 0) {
+            Loger.MSG("count", "zero");
+            ((SFNFTextView) findViewById(R.id.TXT_MSG_STATUS_NAV)).setVisibility(View.GONE);
+            ((SFNFTextView) findViewById(R.id.TXT_MSG_STATUS_NAV)).setText(String.valueOf(0));
+        } else {
+            Loger.MSG("count", "more than zero");
+            ((SFNFTextView) findViewById(R.id.TXT_MSG_STATUS_NAV)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
             findViewById(R.id.TXT_MSG_STATUS_NAV).setVisibility(View.VISIBLE);
-            ((SFNFTextView)findViewById(R.id.TXT_MSG_STATUS_NAV)).setText(String.valueOf(pref.getInt("count", 0)));
+            ((SFNFTextView) findViewById(R.id.TXT_MSG_STATUS_NAV)).setText(String.valueOf(pref.getInt("count", 0)));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -446,16 +441,15 @@ Events events;
 
     @Override
     public void onProviderEnabled(String s) {
-        Loger.MSG("@@ Provider enable",s);
+        Loger.MSG("@@ Provider enable", s);
 
     }
 
     @Override
     public void onProviderDisabled(String s) {
-        Loger.MSG("@@ Provider Disable",s);
+        Loger.MSG("@@ Provider Disable", s);
 
     }
-
 
 
     @Override
