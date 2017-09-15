@@ -76,15 +76,6 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             else
                 SitterId = PrevJSON.getString("id");
 
-            Glide.with(this).load(PrevJSON.getString("photo_url")).into((ImageView) findViewById(R.id.IMG_Profile));
-            Rating.setRating(Float.parseFloat(PrevJSON.getString("ave_rating")));
-            Rating.setIsIndicator(true);
-            LayerDrawable stars = (LayerDrawable) Rating.getProgressDrawable();
-            RatingColor.SETRatingColor(stars);
-            ((SFNFTextView) findViewById(R.id.UserName)).setText(PrevJSON.getString("nickname"));
-            ((SFNFTextView) findViewById(R.id.Bussinessname)).setText(PrevJSON.getString("business_name"));
-            ((SFNFTextView) findViewById(R.id.Location)).setText(PrevJSON.getString("whole_address"));
-            ((SFNFTextView) findViewById(R.id.ReviewNo)).setText(PrevJSON.getString("num_rvw") + " " + getResources().getString(R.string.review));
             findViewById(R.id.map_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -53,8 +53,6 @@ public class CustomJSONParser {
 
     public void API_FOR_GET(final String URL, final ArrayList<APIPOSTDATA> apipostdata, final JSONRESPONSE jsonresponse) {
 
-        Loger.MSG("URLGet", URL);
-
         new AsyncTask<Void, Void, Void>() {
 
             private String respose = null;
@@ -69,7 +67,6 @@ public class CustomJSONParser {
                     for (APIPOSTDATA data : apipostdata) {
                         PARAMS = PARAMS + data.getPARAMS() + "=" + data.getValues() + "&";
                     }
-
                     Loger.MSG("url", "" + URL + PARAMS);
                 }
             }
@@ -86,10 +83,10 @@ public class CustomJSONParser {
                         respose = response.body().string();
                         new JSONObject(respose);
 
-                        Loger.MSG("response", "respose_::" + respose);
-                        Loger.MSG("response", "respose_ww_message::" + response.message());
-                        Loger.MSG("response", "respose_ww_headers::" + response.headers());
-                        Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
+                       // Loger.MSG("response", "respose_::" + respose);
+                       // Loger.MSG("response", "respose_ww_message::" + response.message());
+                       // Loger.MSG("response", "respose_ww_headers::" + response.headers());
+                       // Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
 //                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
                     }
                 } catch (Exception e) {
@@ -112,9 +109,8 @@ public class CustomJSONParser {
                             jsonresponse.OnError(new JSONObject(respose).getString("message") + "", respose);
                         }
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
-
-
                 } else {
                     jsonresponse.OnSuccess(exception.getMessage() + "");
                 }
