@@ -30,16 +30,18 @@ import org.json.JSONObject;
 public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileServiceListingAdapter.ViewHolder> {
 
     private Context mContext = null;
-    JSONArray ServiceArry;
+    JSONArray ServiceArray;
+    int block_user_status;
 
-    public ProfileServiceListingAdapter(Context mContext, JSONArray serviceArry) {
+    public ProfileServiceListingAdapter(Context mContext, JSONArray serviceArray,int block_user_status) {
         this.mContext = mContext;
-        this.ServiceArry = serviceArry;
+        this.ServiceArray = serviceArray;
+        this.block_user_status=block_user_status;
     }
 
     @Override
     public int getItemCount() {
-        return ServiceArry.length();
+        return ServiceArray.length();
     }
 
     @Override
@@ -50,7 +52,7 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         try {
-            final JSONObject object = ServiceArry.getJSONObject(position);
+            final JSONObject object = ServiceArray.getJSONObject(position);
             holder.Title.setText(object.getString("service_name"));
             holder.Description.setText(object.getString("description"));
             holder.PricePer.setText(object.getString("service_price") + "/" + object.getString("unit_name"));
@@ -87,12 +89,22 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
             holder.RL_Book.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(mContext, BookingOneActivity.class);
-                    intent.putExtra("LIST", "");
-                    intent.putExtra("ItemDetails",""+((ProfileDetailsActivity)mContext).PrevJSON);
-                    intent.putExtra("Single",true);
-                    intent.putExtra("SELECT", "" + object);
-                    mContext.startActivity(intent);
+                    if (block_user_status==1){
+                        new MYAlert(mContext).AlertOnly(mContext.getResources().getString(R.string.booknow), mContext.getResources().getString(R.string.unable_to_make_book), new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+                    }
+                    else {
+                        Intent intent = new Intent(mContext, BookingOneActivity.class);
+                        intent.putExtra("LIST", "");
+                        intent.putExtra("ItemDetails", "" + ((ProfileDetailsActivity) mContext).PrevJSON);
+                        intent.putExtra("Single", true);
+                        intent.putExtra("SELECT", "" + object);
+                        mContext.startActivity(intent);
+                    }
                 }
             });
 

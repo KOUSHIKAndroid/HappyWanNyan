@@ -6915,8 +6915,9 @@ containing a value of this type.
         public static final int total_Payableamount=0x7f080184;
         public static final int trust_safty=0x7f08011f;
         public static final int un_responded=0x7f080185;
-        public static final int unable_to_make_reservation_request=0x7f080186;
-        public static final int unable_to_send_message=0x7f080187;
+        public static final int unable_to_make_book=0x7f080186;
+        public static final int unable_to_make_reservation_request=0x7f080187;
+        public static final int unable_to_send_message=0x7f080188;
         public static final int up_coming_booking=0x7f080120;
         public static final int up_coming_booking_end_date=0x7f080121;
         public static final int up_coming_booking_id=0x7f080122;
@@ -6927,8 +6928,8 @@ containing a value of this type.
         public static final int upload_attachment=0x7f080127;
         public static final int viewmore=0x7f080128;
         public static final int wallet_buy_button_place_holder=0x7f080081;
-        public static final int wanyanmeetup=0x7f080188;
-        public static final int whatisyourdailybudgetperpet=0x7f080189;
+        public static final int wanyanmeetup=0x7f080189;
+        public static final int whatisyourdailybudgetperpet=0x7f08018a;
         public static final int with_pet=0x7f080129;
         public static final int would_you_mind_to_turn_gps_on=0x7f08012a;
         public static final int writeyourcomment=0x7f08012b;

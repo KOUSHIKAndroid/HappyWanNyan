@@ -38,7 +38,7 @@ public class ProfileFragReviewFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         try {
-            Reviews= new JSONObject(((ProfileDetailsActivity)getActivity()).JSONRESPONSE).getJSONObject("info_array").getJSONArray("review_list");
+            Reviews= new JSONObject(((ProfileDetailsActivity)getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("review_list");
             if(Reviews.length()>0)
             {
                 view.findViewById(R.id.No_Review).setVisibility(View.GONE);

@@ -3040,8 +3040,9 @@ int string tota_amnt 0x7f08011e
 int string total_Payableamount 0x7f080184
 int string trust_safty 0x7f08011f
 int string un_responded 0x7f080185
-int string unable_to_make_reservation_request 0x7f080186
-int string unable_to_send_message 0x7f080187
+int string unable_to_make_book 0x7f080186
+int string unable_to_make_reservation_request 0x7f080187
+int string unable_to_send_message 0x7f080188
 int string up_coming_booking 0x7f080120
 int string up_coming_booking_end_date 0x7f080121
 int string up_coming_booking_id 0x7f080122
@@ -3052,8 +3053,8 @@ int string up_coming_booking_total_pets 0x7f080126
 int string upload_attachment 0x7f080127
 int string viewmore 0x7f080128
 int string wallet_buy_button_place_holder 0x7f080081
-int string wanyanmeetup 0x7f080188
-int string whatisyourdailybudgetperpet 0x7f080189
+int string wanyanmeetup 0x7f080189
+int string whatisyourdailybudgetperpet 0x7f08018a
 int string with_pet 0x7f080129
 int string would_you_mind_to_turn_gps_on 0x7f08012a
 int string writeyourcomment 0x7f08012b

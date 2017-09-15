@@ -32,7 +32,7 @@ public class ProfileFragAboutFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            jsonObject=new JSONObject(((ProfileDetailsActivity)getActivity()).JSONRESPONSE);
+            jsonObject=new JSONObject(((ProfileDetailsActivity)getActivity()).JSONRESPONSESTRING);
         } catch (JSONException e) {
             e.printStackTrace();
         }
