@@ -80,7 +80,6 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
                 public void onClick(View view) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                     Intent intent = new Intent(context, ProfileDetailsActivity.class);
-                    Loger.MSG("data",""+object);
                     intent.putExtra("data", "" + object);
                     context.startActivity(intent, options.toBundle());
                 }

@@ -1,5 +1,7 @@
 package com.happywannyan.Adapter;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.AppCompatImageView;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.Booking.BookingDetailsActivity;
+import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
@@ -77,7 +80,15 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
             holder.img_card_view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    try {
+                        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
+                        Intent intent = new Intent(context, ProfileDetailsActivity.class);
+                        intent.putExtra("data", "" + object.getJSONObject("booking_info"));
+                        context.startActivity(intent, options.toBundle());
+                    }
+                    catch (Exception ex){
+                        ex.printStackTrace();
+                    }
                 }
             });
 

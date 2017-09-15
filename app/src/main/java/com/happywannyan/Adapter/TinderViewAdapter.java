@@ -96,7 +96,6 @@ public class TinderViewAdapter extends BaseAdapter {
                 JSONObject object = data.get(position).getSearcItem();
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, (ImageView) v.findViewById(R.id.profileImageView), "cardimage");
                 Intent intent = new Intent(context, ProfileDetailsActivity.class);
-                Loger.MSG("data", "" + object);
                 intent.putExtra("data", "" + object);
                 context.startActivity(intent, options.toBundle());
             }

@@ -70,10 +70,15 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             UserData = AppContsnat.UserId;
             this.PrevJSON = new JSONObject(getIntent().getStringExtra("data"));
             Loger.MSG("@@@ PROFILE DATA ", "" + PrevJSON);
-            if (PrevJSON.has("sitter_user_id"))
+            if (PrevJSON.has("sitter_user_id")) {
                 SitterId = PrevJSON.getString("sitter_user_id");
-            else
+            }
+            else if(PrevJSON.has("sitter_users_id")){
+                SitterId = PrevJSON.getString("sitter_users_id");
+            }
+            else {
                 SitterId = PrevJSON.getString("id");
+            }
 
             findViewById(R.id.map_button).setOnClickListener(new View.OnClickListener() {
                 @Override
