@@ -8,10 +8,11 @@
     <RelativeLayout
         android:id="@+id/RL_HEADER"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar">
+
         <ImageView
             android:id="@+id/IMG_icon_drwaer"
             android:layout_width="54dp"
@@ -30,20 +31,22 @@
             android:textColor="@color/colorwhite"
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_view"
-    android:layout_below="@+id/RL_HEADER"
-    android:background="@color/gray_project"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</android.support.v7.widget.RecyclerView>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/RL_HEADER"
+        android:background="@color/gray_project">
+
+    </android.support.v7.widget.RecyclerView>
+
     <ImageView
         android:id="@+id/fab_plus"
         android:layout_width="80dp"
-        android:layout_alignParentRight="true"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:visibility="visible"
+        android:layout_alignParentRight="true"
         android:src="@drawable/ic_fab_plus"
-        android:layout_height="80dp" />
+        android:visibility="visible" />
 </RelativeLayout>
