@@ -1,703 +1,703 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-164:12
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:2:1-164:12
 	package
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:3:5-31
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:3:5-31
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:5:5-67
-MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /home/su/.android/build-cache/94288e218b1896aaaaea2d81bcfde6577caa7fb0/output/AndroidManifest.xml:9:5-67
-MERGED from [com.crashlytics.sdk.android:beta:1.2.5] /home/su/.android/build-cache/586fa9cfbf140c7fc877e08259d19f5e68fc3de6/output/AndroidManifest.xml:9:5-67
-MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] /home/su/.android/build-cache/53910d88f357352617ab15c767f1aeb80856f06e/output/AndroidManifest.xml:52:5-67
-MERGED from [com.crashlytics.sdk.android:answers:1.3.13] /home/su/.android/build-cache/e1455e6b7d88c984af0c3cbc9ed47fa095865c4c/output/AndroidManifest.xml:9:5-67
-MERGED from [io.fabric.sdk.android:fabric:1.3.17] /home/su/.android/build-cache/79ce0cad28677cc6c138658b12561226807c53c8/output/AndroidManifest.xml:29:5-67
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:19:5-66
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.android/build-cache/6e2ae442dfc286341bf0b77eab8eaabbc8a1ed12/output/AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:18:5-66
-MERGED from [com.google.firebase:firebase-crash:10.2.4] /home/su/.android/build-cache/0c805ee3fc2b4b74a34214d7d199482e85b95227/output/AndroidManifest.xml:18:5-66
-MERGED from [com.google.android.gms:play-services-gcm:10.2.4] /home/su/.android/build-cache/f668cb0b0633d6ba1add0a3a23e631089b5d3c14/output/AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-iid:10.2.4] /home/su/.android/build-cache/b3baa60ea906a5770b1eedfdcd795b2877a2434a/output/AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.android/build-cache/b350f7ec8ba03944d98b9d158c7854801d774ee7/output/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.android/build-cache/d2c163427746cb58b603d40b7c76df89b4ad6427/output/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.android/build-cache/586caccc6c0e5b40cda619d8732943f6a57b26a9/output/AndroidManifest.xml:20:5-66
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] C:\Users\suraj\.android\build-cache\da2dbb83e11ae65f9155c0bc153e4eeec1030dd6\output\AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:beta:1.2.5] C:\Users\suraj\.android\build-cache\3b0cf6ade4dd830a4ac5e9cbc90c56e651f95a15\output\AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] C:\Users\suraj\.android\build-cache\d783f794b55bfca1b48042344feb63c8cb68d7ab\output\AndroidManifest.xml:52:5-67
+MERGED from [com.crashlytics.sdk.android:answers:1.3.13] C:\Users\suraj\.android\build-cache\6bff8421ce744da20974b6d39076a1bca8bfae57\output\AndroidManifest.xml:9:5-67
+MERGED from [io.fabric.sdk.android:fabric:1.3.17] C:\Users\suraj\.android\build-cache\717b71f7e8d9d82b00dfddc063a05ca75d4eaa20\output\AndroidManifest.xml:29:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:19:5-66
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] C:\Users\suraj\.android\build-cache\c57220e213dcd6aa5557df199a6ddcc8d93e7088\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:18:5-66
+MERGED from [com.google.firebase:firebase-crash:10.2.4] C:\Users\suraj\.android\build-cache\ec356a49053c55ae34813ba4eb1ae03dc9f0bc19\output\AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-gcm:10.2.4] C:\Users\suraj\.android\build-cache\238a636c0370a6c84a3d2d3d94d0facf79b32f60\output\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-iid:10.2.4] C:\Users\suraj\.android\build-cache\3c4a17d736a4372bd3181bfead97d655eeafde7a\output\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\6f6ffd1c141c61d511a97ce1ebe2fb707beef440\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\0cbda9fb995fe5fcfe125131204860765d8ec352\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.android/build-cache/6e2ae442dfc286341bf0b77eab8eaabbc8a1ed12/output/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.android/build-cache/f2ee28cd252963d0be5d902c55b2946d251d8fee/output/AndroidManifest.xml:4:5-78
-MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.android/build-cache/b350f7ec8ba03944d98b9d158c7854801d774ee7/output/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.android/build-cache/d2c163427746cb58b603d40b7c76df89b4ad6427/output/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:19:5-78
-MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.android/build-cache/586caccc6c0e5b40cda619d8732943f6a57b26a9/output/AndroidManifest.xml:19:5-78
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] C:\Users\suraj\.android\build-cache\c57220e213dcd6aa5557df199a6ddcc8d93e7088\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-nearby:10.2.4] C:\Users\suraj\.android\build-cache\809ecfa68a39baeae155a7a0da7cdbfc4e8259c6\output\AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\6f6ffd1c141c61d511a97ce1ebe2fb707beef440\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\0cbda9fb995fe5fcfe125131204860765d8ec352\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:7:5-79
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:7:22-76
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:5-81
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:22-78
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:8:22-78
 uses-permission#com.sonyericsson.home.permission.BROADCAST_BADGE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:9:5-88
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:9:5-88
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:9:22-85
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:9:22-85
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:10:5-68
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.android/build-cache/6e2ae442dfc286341bf0b77eab8eaabbc8a1ed12/output/AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.android/build-cache/b350f7ec8ba03944d98b9d158c7854801d774ee7/output/AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.android/build-cache/d2c163427746cb58b603d40b7c76df89b4ad6427/output/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:21:5-67
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:10:5-68
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] C:\Users\suraj\.android\build-cache\c57220e213dcd6aa5557df199a6ddcc8d93e7088\output\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\6f6ffd1c141c61d511a97ce1ebe2fb707beef440\output\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\0cbda9fb995fe5fcfe125131204860765d8ec352\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:10:22-65
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:10:22-65
 uses-permission#android.permission.CAMERA
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:11:5-65
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:11:5-65
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:11:22-62
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:11:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:12:5-80
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:12:5-80
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:12:22-77
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:12:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:13:5-81
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:13:22-78
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:13:22-78
 application
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:15:5-162:19
-MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /home/su/.android/build-cache/94288e218b1896aaaaea2d81bcfde6577caa7fb0/output/AndroidManifest.xml:11:5-20
-MERGED from [com.crashlytics.sdk.android:beta:1.2.5] /home/su/.android/build-cache/586fa9cfbf140c7fc877e08259d19f5e68fc3de6/output/AndroidManifest.xml:11:5-20
-MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] /home/su/.android/build-cache/53910d88f357352617ab15c767f1aeb80856f06e/output/AndroidManifest.xml:54:5-20
-MERGED from [com.crashlytics.sdk.android:answers:1.3.13] /home/su/.android/build-cache/e1455e6b7d88c984af0c3cbc9ed47fa095865c4c/output/AndroidManifest.xml:11:5-20
-MERGED from [io.fabric.sdk.android:fabric:1.3.17] /home/su/.android/build-cache/79ce0cad28677cc6c138658b12561226807c53c8/output/AndroidManifest.xml:31:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/su/.android/build-cache/db796e326d6c37e1b6b43c9a6c94df1ad7e5bc23/output/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:25.3.1] /home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:transition:25.3.1] /home/su/.android/build-cache/5c3b5054c04778f25938041bce948f10a10c6692/output/AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services:10.2.4] /home/su/.android/build-cache/5feb7972f894a7cee8678bc483fa359c87a5a304/output/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:23:5-27:19
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.android/build-cache/6e2ae442dfc286341bf0b77eab8eaabbc8a1ed12/output/AndroidManifest.xml:26:5-19
-MERGED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:19:5-26:19
-MERGED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:19:5-25:19
-MERGED from [com.google.android.gms:play-services-cast-framework:10.2.4] /home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/AndroidManifest.xml:4:5-8:19
-MERGED from [com.google.android.gms:play-services-cast:10.2.4] /home/su/.android/build-cache/5c4ef7a5a341a443158652c1cf1ce3b025131f6d/output/AndroidManifest.xml:18:5-19
-MERGED from [com.android.support:mediarouter-v7:24.0.0] /home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:palette-v7:24.0.0] /home/su/.android/build-cache/e9bea06931b50785b01d5207f7607136d54b6a76/output/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-clearcut:10.2.4] /home/su/.android/build-cache/c219803e7a538d51c26a24192a23e613923a3a0e/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.firebase:firebase-config:10.2.4] /home/su/.android/build-cache/4fb1243a564b9996b1a6af319b3f0ead5fee3091/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-awareness:10.2.4] /home/su/.android/build-cache/7ada81e7f12ec93c7211588bc22477df1f85e95a/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.firebase:firebase-crash:10.2.4] /home/su/.android/build-cache/0c805ee3fc2b4b74a34214d7d199482e85b95227/output/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.firebase:firebase-auth:10.2.4] /home/su/.android/build-cache/ae9b5c9dc7aaa96b4362bc085b0c255783cd037d/output/AndroidManifest.xml:19:5-20:19
-MERGED from [com.google.android.gms:play-services-fitness:10.2.4] /home/su/.android/build-cache/d1639d579c51af3be7e826d157777fea2eaf0b14/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-games:10.2.4] /home/su/.android/build-cache/1681ead7b758374750aa12385af9297a4f720996/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-drive:10.2.4] /home/su/.android/build-cache/c1da162eb9f330bf1d6add2a4a0800b9bd094956/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-gass:10.2.4] /home/su/.android/build-cache/356e71de69cbc90817f3266952292140a280dd67/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-gcm:10.2.4] /home/su/.android/build-cache/f668cb0b0633d6ba1add0a3a23e631089b5d3c14/output/AndroidManifest.xml:23:5-19
-MERGED from [com.google.firebase:firebase-appindexing:10.2.4] /home/su/.android/build-cache/2e5196654aff3ba8b3bfbf9a0294d332978ae74a/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-iid:10.2.4] /home/su/.android/build-cache/b3baa60ea906a5770b1eedfdcd795b2877a2434a/output/AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.android/build-cache/f2ee28cd252963d0be5d902c55b2946d251d8fee/output/AndroidManifest.xml:5:5-19
-MERGED from [com.google.android.gms:play-services-panorama:10.2.4] /home/su/.android/build-cache/d5c4fab99a31eae63be6a188596b7d46ecb850ec/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-places:10.2.4] /home/su/.android/build-cache/430766f9032cff3c42e82927b7f78c7a18733e92/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-plus:10.2.4] /home/su/.android/build-cache/6c2fcb3b3411d845ce108b60c19d71a6da930879/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-safetynet:10.2.4] /home/su/.android/build-cache/ba113f84cf1e8520ade9132792e8b4ea5b753161/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:23:5-33:19
-MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.2.4] /home/su/.android/build-cache/7fc3e9404d0f7f17e6c5638608c049c51e7dcdae/output/AndroidManifest.xml:19:5-19
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.android/build-cache/b350f7ec8ba03944d98b9d158c7854801d774ee7/output/AndroidManifest.xml:26:5-19
-MERGED from [com.google.android.gms:play-services-vision:10.2.4] /home/su/.android/build-cache/7b4fc7e9c506503cd928399ae64c971129e207d8/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-identity:10.2.4] /home/su/.android/build-cache/d27cdb9d3f530fd39f759e3fc42c739cec6214cb/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-wearable:10.2.4] /home/su/.android/build-cache/f98978332047f41baa4cbeeb6348098bbc683915/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.firebase:firebase-messaging:10.2.4] /home/su/.android/build-cache/f24dac043ad874344ff3e48baf80838975ce1fd2/output/AndroidManifest.xml:19:5-29:19
-MERGED from [com.google.firebase:firebase-core:10.2.4] /home/su/.android/build-cache/045e811bdb42b07a0bc31fe5e99006f537da8df5/output/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:24:5-33:19
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.android/build-cache/d2c163427746cb58b603d40b7c76df89b4ad6427/output/AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:28:5-49:19
-MERGED from [com.google.firebase:firebase-common:10.2.4] /home/su/.android/build-cache/27da081efcc1f918275ef1a65f094aac85a6a891/output/AndroidManifest.xml:4:5-7:19
-MERGED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:28:5-48:19
-MERGED from [com.android.support:customtabs:25.3.1] /home/su/.android/build-cache/e4f4c7e01daa0a18ee58fbc51ef56ec7e0d15e12/output/AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.android/build-cache/586caccc6c0e5b40cda619d8732943f6a57b26a9/output/AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-location:10.2.4] /home/su/.android/build-cache/99b7a667f871ad0990b6aeb0264863143b855360/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-base:10.2.4] /home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:10.2.4] /home/su/.android/build-cache/ad64125e162a7f7a392c37757099b23ed7dce8cd/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/su/.android/build-cache/e4f3fe69a66795e4978deceb7888091e9208b443/output/AndroidManifest.xml:19:5-21:19
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/su/.android/build-cache/da9f3c11048c0a0fdd797eb59f0f139008ae21f6/output/AndroidManifest.xml:11:5-15:19
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.1] /home/su/.android/build-cache/f553d2884f70e949a0b705288734fd238572e30a/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] /home/su/.android/build-cache/1d165c93439735381fabeccdc5c0f6bc5dc1bcca/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/su/.android/build-cache/98d63d9875eff9563ab702853d5d1cb47b4b9590/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/su/.android/build-cache/1da62d3730aa99bdd01d8c2ee5951ceef959224d/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/su/.android/build-cache/7b4acec3dfa7e5d35b25b9c05826fc6ca068c15e/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:25.3.1] /home/su/.android/build-cache/d9fd1756abc16a7b4bee4aee3f5caa39bcdea0f7/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/su/.android/build-cache/f42fcfbbfe69e8d8f2d68e831ca098827415c746/output/AndroidManifest.xml:26:5-20
-MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/su/.android/build-cache/6ed4d98c8b11f0f7348e32b28ff70e5a03ac1988/output/AndroidManifest.xml:10:5-20
-MERGED from [com.android.volley:volley:1.0.0] /home/su/.android/build-cache/1e869a9853a03d49a3a72ebb6c117cbdd96ce2bf/output/AndroidManifest.xml:9:5-20
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:15:5-162:19
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] C:\Users\suraj\.android\build-cache\da2dbb83e11ae65f9155c0bc153e4eeec1030dd6\output\AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:beta:1.2.5] C:\Users\suraj\.android\build-cache\3b0cf6ade4dd830a4ac5e9cbc90c56e651f95a15\output\AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] C:\Users\suraj\.android\build-cache\d783f794b55bfca1b48042344feb63c8cb68d7ab\output\AndroidManifest.xml:54:5-20
+MERGED from [com.crashlytics.sdk.android:answers:1.3.13] C:\Users\suraj\.android\build-cache\6bff8421ce744da20974b6d39076a1bca8bfae57\output\AndroidManifest.xml:11:5-20
+MERGED from [io.fabric.sdk.android:fabric:1.3.17] C:\Users\suraj\.android\build-cache\717b71f7e8d9d82b00dfddc063a05ca75d4eaa20\output\AndroidManifest.xml:31:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\suraj\.android\build-cache\bca40e21f22aa95a61d17df2a284d9ad46a08479\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\suraj\.android\build-cache\b4a378a24c1818d5d049da01b73e693114b3f770\output\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services:10.2.4] C:\Users\suraj\.android\build-cache\a9409ebafd0a4d01b38ce2c558bdfa9e8415fed9\output\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] C:\Users\suraj\.android\build-cache\c57220e213dcd6aa5557df199a6ddcc8d93e7088\output\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:19:5-26:19
+MERGED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-cast-framework:10.2.4] C:\Users\suraj\.android\build-cache\1c41aa67ac2f73f125dbb67c304a3533e357226e\output\AndroidManifest.xml:4:5-8:19
+MERGED from [com.google.android.gms:play-services-cast:10.2.4] C:\Users\suraj\.android\build-cache\f65efb458c39498e81281c80c47e7bd9ebd833b7\output\AndroidManifest.xml:18:5-19
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\suraj\.android\build-cache\791b0b3613e8c168e566d0070bd9f35e0dfd2628\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\suraj\.android\build-cache\dc33fec5b5f7c1c0a406fbe2503ab1ef42e69e37\output\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.4] C:\Users\suraj\.android\build-cache\6104e50b5042271aca5f0d0e149768313ca4ba99\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-config:10.2.4] C:\Users\suraj\.android\build-cache\1187a2b833d5451baf18cddcc9b1a0b2c145d5cd\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-awareness:10.2.4] C:\Users\suraj\.android\build-cache\d1f3fb655bcca558047bf81296355739670d110e\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-crash:10.2.4] C:\Users\suraj\.android\build-cache\ec356a49053c55ae34813ba4eb1ae03dc9f0bc19\output\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-auth:10.2.4] C:\Users\suraj\.android\build-cache\cf6e05e6a78e2594932322b91c1e0ef6d6beb896\output\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.android.gms:play-services-fitness:10.2.4] C:\Users\suraj\.android\build-cache\0d4404610260482cf035070ebb7c235dfda9f452\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-games:10.2.4] C:\Users\suraj\.android\build-cache\81d289bb416d02d22a9920e00f172dd136eb371f\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-drive:10.2.4] C:\Users\suraj\.android\build-cache\089d6b6c09eef6838568c2c5209e2c718ee16358\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-gass:10.2.4] C:\Users\suraj\.android\build-cache\5c748b4476737e90da7b8921e909a6aeca26dbf5\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-gcm:10.2.4] C:\Users\suraj\.android\build-cache\238a636c0370a6c84a3d2d3d94d0facf79b32f60\output\AndroidManifest.xml:23:5-19
+MERGED from [com.google.firebase:firebase-appindexing:10.2.4] C:\Users\suraj\.android\build-cache\44ffd1120e4d00d6170e31a82b76e2c9843cfade\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-iid:10.2.4] C:\Users\suraj\.android\build-cache\3c4a17d736a4372bd3181bfead97d655eeafde7a\output\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-nearby:10.2.4] C:\Users\suraj\.android\build-cache\809ecfa68a39baeae155a7a0da7cdbfc4e8259c6\output\AndroidManifest.xml:5:5-19
+MERGED from [com.google.android.gms:play-services-panorama:10.2.4] C:\Users\suraj\.android\build-cache\48c40e4be1a3a26ec345f050e22f212cd00fd87b\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-places:10.2.4] C:\Users\suraj\.android\build-cache\8885402cd214e72556f59dad9df146de38fbb91b\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-plus:10.2.4] C:\Users\suraj\.android\build-cache\91af9e1d8192e7a930ff8896f858c5f5d045729e\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-safetynet:10.2.4] C:\Users\suraj\.android\build-cache\60dc6af5e8872f4e60c6ae6c076038b314bd5b69\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.2.4] C:\Users\suraj\.android\build-cache\d9966366dd237e5ca15fad9c76359e6b81861aa6\output\AndroidManifest.xml:19:5-19
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\6f6ffd1c141c61d511a97ce1ebe2fb707beef440\output\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-vision:10.2.4] C:\Users\suraj\.android\build-cache\9c528881bbbda4726b3adc992a8f332baeb3c710\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-identity:10.2.4] C:\Users\suraj\.android\build-cache\67015fa3fbedaa1e160ac5d01b32ef8d1be43a92\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-wearable:10.2.4] C:\Users\suraj\.android\build-cache\4599c88f372ed18e9f72338990497971c9a35ac1\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-messaging:10.2.4] C:\Users\suraj\.android\build-cache\4e26a3ac07932904639be24f240d20293bef727c\output\AndroidManifest.xml:19:5-29:19
+MERGED from [com.google.firebase:firebase-core:10.2.4] C:\Users\suraj\.android\build-cache\4811d0f5e7b250c1e4bf7ad34653c51b3c22e695\output\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\0cbda9fb995fe5fcfe125131204860765d8ec352\output\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:4:5-7:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:28:5-48:19
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\suraj\.android\build-cache\f8aa35e232602622c664de1e6e66b2e96f5e09ce\output\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-location:10.2.4] C:\Users\suraj\.android\build-cache\20f001d7e45a1b2f7187abb2ae3cb609c6ddb1b0\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.4] C:\Users\suraj\.android\build-cache\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.4] C:\Users\suraj\.android\build-cache\4a066cdd5bcab522e32b413f1683c8045100cc80\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.4] C:\Users\suraj\.android\build-cache\4f212b6ba2297e9155d0a1faa98ce844b57af75c\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] C:\Users\suraj\.android\build-cache\f6119351d2679839853b83617020c97639f2de8a\output\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\suraj\.android\build-cache\6b1a5be63642a00b7901749f9343886b26877891\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\suraj\.android\build-cache\8932ef2279de29e9917683de874e6c351bc0c772\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\suraj\.android\build-cache\74b3c955e30b40771380a2544a9b2cc09722bc36\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\suraj\.android\build-cache\fa15b55e2af437429b55b51fa0f5041684d98e17\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\suraj\.android\build-cache\aa0f379a0c22559b0905369fc2a2037e6d30832b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\suraj\.android\build-cache\718c286881704e352d86c20f2ca39bfb62231057\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\017fb6732fa7e3dab7e4cf1154f5ebade2b97284\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\e48c2b885e154f7e961af0ab9cf32ba17b4a24ac\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\suraj\.android\build-cache\1e0f6acc5d8831c43861dd6407fa95e7b1487687\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:26:5-20
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] C:\Users\suraj\.android\build-cache\e66d820b58deb1c5ebf38e508bbd3b6efbac130e\output\AndroidManifest.xml:10:5-20
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\suraj\.android\build-cache\e625eda693ceb29564fe1b28057884f0beb33c42\output\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:19:9-41
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:19:9-41
 	android:supportsRtl
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:21:9-35
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:21:9-35
 	android:roundIcon
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:20:9-55
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:20:9-55
 	android:allowBackup
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:17:9-35
 	android:icon
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:18:9-44
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:18:9-44
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:22:9-40
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:22:9-40
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:16:9-50
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:16:9-50
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:23:9-25:55
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:23:9-25:55
 	android:value
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:25:13-52
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:25:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:24:13-58
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:24:13-58
 meta-data#com.google.android.gms.version
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:44:9-46:69
-MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/su/.android/build-cache/e4f3fe69a66795e4978deceb7888091e9208b443/output/AndroidManifest.xml:20:9-121
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:44:9-46:69
+MERGED from [com.google.android.gms:play-services-basement:10.2.4] C:\Users\suraj\.android\build-cache\4f212b6ba2297e9155d0a1faa98ce844b57af75c\output\AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:46:13-66
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:46:13-66
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:45:13-58
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:45:13-58
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:50:9-52:71
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:50:9-52:71
 	android:value
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:52:13-68
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:52:13-68
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:51:13-58
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:51:13-58
 activity#com.facebook.FacebookActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:54:9-57:48
-MERGED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:29:9-32:66
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:54:9-57:48
+MERGED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:29:9-32:66
 	android:label
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:57:13-45
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:57:13-45
 	android:configChanges
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:56:13-96
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:56:13-96
 	android:theme
-		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:32:13-63
+		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:55:13-57
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:55:13-57
 activity#com.facebook.CustomTabActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:58:9-69:20
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:58:9-69:20
 	android:exported
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:60:13-36
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:60:13-36
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:59:13-58
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:59:13-58
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:61:13-68:29
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:61:13-68:29
 action#android.intent.action.VIEW
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:62:17-69
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:62:17-69
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:62:25-66
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:62:25-66
 category#android.intent.category.DEFAULT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:64:17-76
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:64:17-76
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:64:27-73
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:64:27-73
 category#android.intent.category.BROWSABLE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:65:17-78
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:65:17-78
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:65:27-75
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:65:27-75
 data
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:67:17-75
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:67:17-75
 	android:scheme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:67:23-72
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:67:23-72
 activity#com.happywannyan.Activities.SplashActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:70:9-78:20
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:70:9-78:20
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:72:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:72:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:71:13-54
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:71:13-54
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:73:13-77:29
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:73:13-77:29
 action#android.intent.action.MAIN
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:74:17-69
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:74:17-69
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:74:25-66
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:74:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:76:17-77
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:76:17-77
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:76:27-74
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:76:27-74
 service#com.happywannyan.PushNotification.MyFirebaseMessagingService
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:80:9-84:19
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:80:9-84:19
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:80:18-77
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:80:18-77
 intent-filter#com.google.firebase.MESSAGING_EVENT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:81:13-83:29
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:81:13-83:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:82:17-78
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:82:17-78
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:82:25-75
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:82:25-75
 service#com.happywannyan.PushNotification.MyFirebaseInstanceIDService
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:85:9-89:19
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:85:9-89:19
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:85:18-78
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:85:18-78
 intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:86:13-88:29
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:86:13-88:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:87:17-80
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:87:17-80
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:87:25-77
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:87:25-77
 activity#com.happywannyan.Activities.LoginChooserActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:97:9-99:52
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:97:9-99:52
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:99:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:99:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:98:13-60
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:98:13-60
 activity#com.happywannyan.Activities.LoginActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:100:9-102:52
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:100:9-102:52
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:102:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:102:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:101:13-53
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:101:13-53
 activity#com.happywannyan.Activities.CalenderActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:103:9-106:47
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:103:9-106:47
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:105:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:105:13-49
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:106:13-44
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:106:13-44
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:104:13-56
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:104:13-56
 activity#com.happywannyan.Activities.SignUpActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:107:9-109:52
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:107:9-109:52
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:109:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:109:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:108:13-54
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:108:13-54
 activity#com.happywannyan.Activities.profile.ProfileDetailsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:110:9-112:52
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:110:9-112:52
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:112:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:112:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:111:13-70
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:111:13-70
 activity#com.happywannyan.Activities.BaseActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:113:9-117:47
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:113:9-117:47
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:116:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:116:13-49
 	android:label
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:115:13-56
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:115:13-56
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:117:13-44
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:117:13-44
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:114:13-52
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:114:13-52
 activity#com.happywannyan.Activities.FacebookActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:118:9-65
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:118:9-65
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:118:19-62
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:118:19-62
 activity#com.happywannyan.SitterBooking.BookingOneActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:119:9-122:58
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:119:9-122:58
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:121:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:121:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:122:13-55
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:122:13-55
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:120:13-61
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:120:13-61
 activity#com.happywannyan.Activities.SearchResultActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:123:9-126:47
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:123:9-126:47
 	android:label
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:125:13-65
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:125:13-65
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:126:13-44
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:126:13-44
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:124:13-60
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:124:13-60
 activity#com.happywannyan.Activities.ForgotPasswordActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:127:9-71
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:127:9-71
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:127:19-68
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:127:19-68
 activity#com.happywannyan.Activities.ResetPasswordActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:128:9-70
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:128:9-70
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:128:19-67
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:128:19-67
 activity#com.happywannyan.Activities.Booking.BookingDetailsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:129:9-79
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:129:9-79
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:129:19-76
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:129:19-76
 activity#com.happywannyan.Activities.AddAnotherPetsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:130:9-132:52
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:130:9-132:52
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:132:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:132:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:131:13-62
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:131:13-62
 activity#com.happywannyan.Activities.EditAnotherPetsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:133:9-135:52
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:133:9-135:52
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:135:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:135:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:134:13-63
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:134:13-63
 activity#com.happywannyan.Activities.profile.MeetUpWannyanActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:136:9-78
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:136:9-78
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:136:19-75
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:136:19-75
 activity#com.happywannyan.Activities.profile.ContactMsgActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:137:9-75
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:137:9-75
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:137:19-72
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:137:19-72
 activity#com.happywannyan.Activities.HelpActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:138:9-61
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:138:9-61
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:138:19-58
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:138:19-58
 activity#com.happywannyan.Activities.MessageDetailsPageActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:139:9-142:55
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:139:9-142:55
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:141:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:141:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:142:13-52
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:142:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:140:13-66
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:140:13-66
 activity#com.happywannyan.Activities.Booking.CancelBookingWithReasonsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:143:9-88
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:143:9-88
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:143:19-86
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:143:19-86
 activity#com.cooltechworks.creditcarddesign.CardEditActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:144:9-148:15
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:144:9-148:15
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:146:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:146:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:147:13-52
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:147:13-52
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:145:13-44
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:145:13-44
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:144:19-85
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:144:19-85
 meta-data#io.fabric.ApiKey
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:149:9-151:72
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:149:9-151:72
 	android:value
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:151:13-69
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:151:13-69
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:150:13-44
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:150:13-44
 activity#com.happywannyan.Activities.Booking.AcceptBookingActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:153:9-155:54
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:153:9-155:54
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:154:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:154:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:155:13-52
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:155:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:153:19-75
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:153:19-75
 activity#com.happywannyan.Activities.Booking.AddReviewActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:156:9-158:54
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:156:9-158:54
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:157:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:157:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:158:13-52
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:158:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:156:19-71
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:156:19-71
 activity#com.happywannyan.SitterBooking.NewCardAddActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:159:9-161:54
+ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:159:9-161:54
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:160:13-49
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:160:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:161:13-52
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:161:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:159:19-67
+		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:159:19-67
 uses-sdk
-INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /home/su/.android/build-cache/94288e218b1896aaaaea2d81bcfde6577caa7fb0/output/AndroidManifest.xml:7:5-43
-MERGED from [com.crashlytics.sdk.android:beta:1.2.5] /home/su/.android/build-cache/586fa9cfbf140c7fc877e08259d19f5e68fc3de6/output/AndroidManifest.xml:7:5-43
-MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] /home/su/.android/build-cache/53910d88f357352617ab15c767f1aeb80856f06e/output/AndroidManifest.xml:50:5-43
-MERGED from [com.crashlytics.sdk.android:answers:1.3.13] /home/su/.android/build-cache/e1455e6b7d88c984af0c3cbc9ed47fa095865c4c/output/AndroidManifest.xml:7:5-43
-MERGED from [io.fabric.sdk.android:fabric:1.3.17] /home/su/.android/build-cache/79ce0cad28677cc6c138658b12561226807c53c8/output/AndroidManifest.xml:27:5-43
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/su/.android/build-cache/db796e326d6c37e1b6b43c9a6c94df1ad7e5bc23/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:25.3.1] /home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:transition:25.3.1] /home/su/.android/build-cache/5c3b5054c04778f25938041bce948f10a10c6692/output/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services:10.2.4] /home/su/.android/build-cache/5feb7972f894a7cee8678bc483fa359c87a5a304/output/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-ads:10.2.4] /home/su/.android/build-cache/fd328938c5fefcd339fa46da722d3d4001c62835/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:22:5-43
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.android/build-cache/6e2ae442dfc286341bf0b77eab8eaabbc8a1ed12/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-auth-base:10.2.4] /home/su/.android/build-cache/db493ca536c96fdb46565024b802d0039e550d9c/output/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-cast-framework:10.2.4] /home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-cast:10.2.4] /home/su/.android/build-cache/5c4ef7a5a341a443158652c1cf1ce3b025131f6d/output/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:mediarouter-v7:24.0.0] /home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:palette-v7:24.0.0] /home/su/.android/build-cache/e9bea06931b50785b01d5207f7607136d54b6a76/output/AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-clearcut:10.2.4] /home/su/.android/build-cache/c219803e7a538d51c26a24192a23e613923a3a0e/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-config:10.2.4] /home/su/.android/build-cache/4fb1243a564b9996b1a6af319b3f0ead5fee3091/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-awareness:10.2.4] /home/su/.android/build-cache/7ada81e7f12ec93c7211588bc22477df1f85e95a/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-crash:10.2.4] /home/su/.android/build-cache/0c805ee3fc2b4b74a34214d7d199482e85b95227/output/AndroidManifest.xml:20:5-43
-MERGED from [com.google.firebase:firebase-auth:10.2.4] /home/su/.android/build-cache/ae9b5c9dc7aaa96b4362bc085b0c255783cd037d/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-database:10.2.4] /home/su/.android/build-cache/4ec17d3f90538dd6e515417e121f44ec1a608677/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-database-connection:10.2.4] /home/su/.android/build-cache/24dc419368fbb40add419046dd448a197efe8900/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-storage:10.2.4] /home/su/.android/build-cache/373e784f94bc794671c238a60977f1f081eec549/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-storage-common:10.2.4] /home/su/.android/build-cache/d5b5e32bea9574ea75a886cc4aa5a59967d4c7de/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-fitness:10.2.4] /home/su/.android/build-cache/d1639d579c51af3be7e826d157777fea2eaf0b14/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-games:10.2.4] /home/su/.android/build-cache/1681ead7b758374750aa12385af9297a4f720996/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-drive:10.2.4] /home/su/.android/build-cache/c1da162eb9f330bf1d6add2a4a0800b9bd094956/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-gass:10.2.4] /home/su/.android/build-cache/356e71de69cbc90817f3266952292140a280dd67/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-gcm:10.2.4] /home/su/.android/build-cache/f668cb0b0633d6ba1add0a3a23e631089b5d3c14/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-appindexing:10.2.4] /home/su/.android/build-cache/2e5196654aff3ba8b3bfbf9a0294d332978ae74a/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-iid:10.2.4] /home/su/.android/build-cache/b3baa60ea906a5770b1eedfdcd795b2877a2434a/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-instantapps:10.2.4] /home/su/.android/build-cache/c89172cafb5aaaf234538c6d107e92f283943be1/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.android/build-cache/f2ee28cd252963d0be5d902c55b2946d251d8fee/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-panorama:10.2.4] /home/su/.android/build-cache/d5c4fab99a31eae63be6a188596b7d46ecb850ec/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-places:10.2.4] /home/su/.android/build-cache/430766f9032cff3c42e82927b7f78c7a18733e92/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-plus:10.2.4] /home/su/.android/build-cache/6c2fcb3b3411d845ce108b60c19d71a6da930879/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-safetynet:10.2.4] /home/su/.android/build-cache/ba113f84cf1e8520ade9132792e8b4ea5b753161/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tagmanager:10.2.4] /home/su/.android/build-cache/76cb858999e57c87dd8f445c008978e5fd7f7999/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.2.4] /home/su/.android/build-cache/7fc3e9404d0f7f17e6c5638608c049c51e7dcdae/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.android/build-cache/b350f7ec8ba03944d98b9d158c7854801d774ee7/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-vision:10.2.4] /home/su/.android/build-cache/7b4fc7e9c506503cd928399ae64c971129e207d8/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-wallet:10.2.4] /home/su/.android/build-cache/c71401d365f800dbd2892f462454dd281479d51d/output/AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-identity:10.2.4] /home/su/.android/build-cache/d27cdb9d3f530fd39f759e3fc42c739cec6214cb/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-wearable:10.2.4] /home/su/.android/build-cache/f98978332047f41baa4cbeeb6348098bbc683915/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-messaging:10.2.4] /home/su/.android/build-cache/f24dac043ad874344ff3e48baf80838975ce1fd2/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-core:10.2.4] /home/su/.android/build-cache/045e811bdb42b07a0bc31fe5e99006f537da8df5/output/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.android/build-cache/d2c163427746cb58b603d40b7c76df89b4ad6427/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-common:10.2.4] /home/su/.android/build-cache/27da081efcc1f918275ef1a65f094aac85a6a891/output/AndroidManifest.xml:3:5-43
-MERGED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:customtabs:25.3.1] /home/su/.android/build-cache/e4f4c7e01daa0a18ee58fbc51ef56ec7e0d15e12/output/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.android/build-cache/586caccc6c0e5b40cda619d8732943f6a57b26a9/output/AndroidManifest.xml:23:5-43
-MERGED from [com.google.android.gms:play-services-location:10.2.4] /home/su/.android/build-cache/99b7a667f871ad0990b6aeb0264863143b855360/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-base:10.2.4] /home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:10.2.4] /home/su/.android/build-cache/ad64125e162a7f7a392c37757099b23ed7dce8cd/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/su/.android/build-cache/e4f3fe69a66795e4978deceb7888091e9208b443/output/AndroidManifest.xml:17:5-43
-MERGED from [com.mindorks:placeholderview:0.2.7] /home/su/.android/build-cache/147586f054653f143b75cb511cf7e68ca96101f2/output/AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/su/.android/build-cache/324a952cda67fa2df195cce88bd576c64dd8513b/output/AndroidManifest.xml:20:5-43
-MERGED from [com.stripe:stripe-android:4.1.1] /home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/su/.android/build-cache/da9f3c11048c0a0fdd797eb59f0f139008ae21f6/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.3.1] /home/su/.android/build-cache/f553d2884f70e949a0b705288734fd238572e30a/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] /home/su/.android/build-cache/1d165c93439735381fabeccdc5c0f6bc5dc1bcca/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/su/.android/build-cache/98d63d9875eff9563ab702853d5d1cb47b4b9590/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/su/.android/build-cache/1da62d3730aa99bdd01d8c2ee5951ceef959224d/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/su/.android/build-cache/7b4acec3dfa7e5d35b25b9c05826fc6ca068c15e/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.3.1] /home/su/.android/build-cache/d9fd1756abc16a7b4bee4aee3f5caa39bcdea0f7/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/su/.android/build-cache/f42fcfbbfe69e8d8f2d68e831ca098827415c746/output/AndroidManifest.xml:20:5-43
-MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/su/.android/build-cache/6ed4d98c8b11f0f7348e32b28ff70e5a03ac1988/output/AndroidManifest.xml:6:5-8:41
-MERGED from [com.android.volley:volley:1.0.0] /home/su/.android/build-cache/1e869a9853a03d49a3a72ebb6c117cbdd96ce2bf/output/AndroidManifest.xml:7:5-43
+INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] C:\Users\suraj\.android\build-cache\da2dbb83e11ae65f9155c0bc153e4eeec1030dd6\output\AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:beta:1.2.5] C:\Users\suraj\.android\build-cache\3b0cf6ade4dd830a4ac5e9cbc90c56e651f95a15\output\AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] C:\Users\suraj\.android\build-cache\d783f794b55bfca1b48042344feb63c8cb68d7ab\output\AndroidManifest.xml:50:5-43
+MERGED from [com.crashlytics.sdk.android:answers:1.3.13] C:\Users\suraj\.android\build-cache\6bff8421ce744da20974b6d39076a1bca8bfae57\output\AndroidManifest.xml:7:5-43
+MERGED from [io.fabric.sdk.android:fabric:1.3.17] C:\Users\suraj\.android\build-cache\717b71f7e8d9d82b00dfddc063a05ca75d4eaa20\output\AndroidManifest.xml:27:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\suraj\.android\build-cache\bca40e21f22aa95a61d17df2a284d9ad46a08479\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:transition:25.3.1] C:\Users\suraj\.android\build-cache\b4a378a24c1818d5d049da01b73e693114b3f770\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services:10.2.4] C:\Users\suraj\.android\build-cache\a9409ebafd0a4d01b38ce2c558bdfa9e8415fed9\output\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-ads:10.2.4] C:\Users\suraj\.android\build-cache\06d5d1da5a562ded0c13326a9f03c2c51ff72d43\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:22:5-43
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] C:\Users\suraj\.android\build-cache\c57220e213dcd6aa5557df199a6ddcc8d93e7088\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:10.2.4] C:\Users\suraj\.android\build-cache\52efb5559a5b417d7cabaa678afd0539f478baab\output\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-cast-framework:10.2.4] C:\Users\suraj\.android\build-cache\1c41aa67ac2f73f125dbb67c304a3533e357226e\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-cast:10.2.4] C:\Users\suraj\.android\build-cache\f65efb458c39498e81281c80c47e7bd9ebd833b7\output\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\suraj\.android\build-cache\791b0b3613e8c168e566d0070bd9f35e0dfd2628\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\suraj\.android\build-cache\dc33fec5b5f7c1c0a406fbe2503ab1ef42e69e37\output\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.4] C:\Users\suraj\.android\build-cache\6104e50b5042271aca5f0d0e149768313ca4ba99\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-config:10.2.4] C:\Users\suraj\.android\build-cache\1187a2b833d5451baf18cddcc9b1a0b2c145d5cd\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-awareness:10.2.4] C:\Users\suraj\.android\build-cache\d1f3fb655bcca558047bf81296355739670d110e\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-crash:10.2.4] C:\Users\suraj\.android\build-cache\ec356a49053c55ae34813ba4eb1ae03dc9f0bc19\output\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-auth:10.2.4] C:\Users\suraj\.android\build-cache\cf6e05e6a78e2594932322b91c1e0ef6d6beb896\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-database:10.2.4] C:\Users\suraj\.android\build-cache\61ef942ba9664b8c81a2785d9a01e2450ce842f7\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database-connection:10.2.4] C:\Users\suraj\.android\build-cache\21d0109caee4bf619e3adf40202127e470be2759\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage:10.2.4] C:\Users\suraj\.android\build-cache\be0d2d7d586f7f1ec4306004b22bbb81418e715d\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage-common:10.2.4] C:\Users\suraj\.android\build-cache\74ac4cee07a380c491026210df9f5def89fdba8d\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-fitness:10.2.4] C:\Users\suraj\.android\build-cache\0d4404610260482cf035070ebb7c235dfda9f452\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-games:10.2.4] C:\Users\suraj\.android\build-cache\81d289bb416d02d22a9920e00f172dd136eb371f\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-drive:10.2.4] C:\Users\suraj\.android\build-cache\089d6b6c09eef6838568c2c5209e2c718ee16358\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-gass:10.2.4] C:\Users\suraj\.android\build-cache\5c748b4476737e90da7b8921e909a6aeca26dbf5\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-gcm:10.2.4] C:\Users\suraj\.android\build-cache\238a636c0370a6c84a3d2d3d94d0facf79b32f60\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-appindexing:10.2.4] C:\Users\suraj\.android\build-cache\44ffd1120e4d00d6170e31a82b76e2c9843cfade\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-iid:10.2.4] C:\Users\suraj\.android\build-cache\3c4a17d736a4372bd3181bfead97d655eeafde7a\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-instantapps:10.2.4] C:\Users\suraj\.android\build-cache\23176079a9762ebd3371e78be8058c9c0eee57a2\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-nearby:10.2.4] C:\Users\suraj\.android\build-cache\809ecfa68a39baeae155a7a0da7cdbfc4e8259c6\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-panorama:10.2.4] C:\Users\suraj\.android\build-cache\48c40e4be1a3a26ec345f050e22f212cd00fd87b\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-places:10.2.4] C:\Users\suraj\.android\build-cache\8885402cd214e72556f59dad9df146de38fbb91b\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-plus:10.2.4] C:\Users\suraj\.android\build-cache\91af9e1d8192e7a930ff8896f858c5f5d045729e\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-safetynet:10.2.4] C:\Users\suraj\.android\build-cache\60dc6af5e8872f4e60c6ae6c076038b314bd5b69\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager:10.2.4] C:\Users\suraj\.android\build-cache\aed1d5eac1e144bbbf5ea19772823b1c2456ac54\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.2.4] C:\Users\suraj\.android\build-cache\d9966366dd237e5ca15fad9c76359e6b81861aa6\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\6f6ffd1c141c61d511a97ce1ebe2fb707beef440\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-vision:10.2.4] C:\Users\suraj\.android\build-cache\9c528881bbbda4726b3adc992a8f332baeb3c710\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-wallet:10.2.4] C:\Users\suraj\.android\build-cache\f7ce901376eed59d1bf665f27eea833c80bee372\output\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-identity:10.2.4] C:\Users\suraj\.android\build-cache\67015fa3fbedaa1e160ac5d01b32ef8d1be43a92\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-wearable:10.2.4] C:\Users\suraj\.android\build-cache\4599c88f372ed18e9f72338990497971c9a35ac1\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-messaging:10.2.4] C:\Users\suraj\.android\build-cache\4e26a3ac07932904639be24f240d20293bef727c\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-core:10.2.4] C:\Users\suraj\.android\build-cache\4811d0f5e7b250c1e4bf7ad34653c51b3c22e695\output\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\0cbda9fb995fe5fcfe125131204860765d8ec352\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:3:5-43
+MERGED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\suraj\.android\build-cache\f8aa35e232602622c664de1e6e66b2e96f5e09ce\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-location:10.2.4] C:\Users\suraj\.android\build-cache\20f001d7e45a1b2f7187abb2ae3cb609c6ddb1b0\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.4] C:\Users\suraj\.android\build-cache\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.4] C:\Users\suraj\.android\build-cache\4a066cdd5bcab522e32b413f1683c8045100cc80\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.4] C:\Users\suraj\.android\build-cache\4f212b6ba2297e9155d0a1faa98ce844b57af75c\output\AndroidManifest.xml:17:5-43
+MERGED from [com.mindorks:placeholderview:0.2.7] C:\Users\suraj\.android\build-cache\276bcd9664709fa948e66971ae681809e13456cb\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\suraj\.android\build-cache\9aa13394343d004892ef7ff41d34cdab1577de9e\output\AndroidManifest.xml:20:5-43
+MERGED from [com.stripe:stripe-android:4.1.1] C:\Users\suraj\.android\build-cache\286a82cff53dbb607e28a98a4d490fa85ad49921\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] C:\Users\suraj\.android\build-cache\f6119351d2679839853b83617020c97639f2de8a\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\suraj\.android\build-cache\6b1a5be63642a00b7901749f9343886b26877891\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\suraj\.android\build-cache\8932ef2279de29e9917683de874e6c351bc0c772\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\suraj\.android\build-cache\74b3c955e30b40771380a2544a9b2cc09722bc36\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\suraj\.android\build-cache\fa15b55e2af437429b55b51fa0f5041684d98e17\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\suraj\.android\build-cache\aa0f379a0c22559b0905369fc2a2037e6d30832b\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\suraj\.android\build-cache\718c286881704e352d86c20f2ca39bfb62231057\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\017fb6732fa7e3dab7e4cf1154f5ebade2b97284\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\e48c2b885e154f7e961af0ab9cf32ba17b4a24ac\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\suraj\.android\build-cache\1e0f6acc5d8831c43861dd6407fa95e7b1487687\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:20:5-43
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] C:\Users\suraj\.android\build-cache\e66d820b58deb1c5ebf38e508bbd3b6efbac130e\output\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\suraj\.android\build-cache\e625eda693ceb29564fe1b28057884f0beb33c42\output\AndroidManifest.xml:7:5-43
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.1] /home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.1] /home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:transition:25.3.1] /home/su/.android/build-cache/5c3b5054c04778f25938041bce948f10a10c6692/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:customtabs:25.3.1] /home/su/.android/build-cache/e4f4c7e01daa0a18ee58fbc51ef56ec7e0d15e12/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/su/.android/build-cache/324a952cda67fa2df195cce88bd576c64dd8513b/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v4:25.3.1] /home/su/.android/build-cache/f553d2884f70e949a0b705288734fd238572e30a/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] /home/su/.android/build-cache/1d165c93439735381fabeccdc5c0f6bc5dc1bcca/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/su/.android/build-cache/98d63d9875eff9563ab702853d5d1cb47b4b9590/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/su/.android/build-cache/1da62d3730aa99bdd01d8c2ee5951ceef959224d/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/su/.android/build-cache/7b4acec3dfa7e5d35b25b9c05826fc6ca068c15e/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-compat:25.3.1] /home/su/.android/build-cache/d9fd1756abc16a7b4bee4aee3f5caa39bcdea0f7/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/su/.android/build-cache/f42fcfbbfe69e8d8f2d68e831ca098827415c746/output/AndroidManifest.xml:22:5-24:34
+ADDED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\suraj\.android\build-cache\b4a378a24c1818d5d049da01b73e693114b3f770\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\suraj\.android\build-cache\f8aa35e232602622c664de1e6e66b2e96f5e09ce\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\suraj\.android\build-cache\9aa13394343d004892ef7ff41d34cdab1577de9e\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\suraj\.android\build-cache\6b1a5be63642a00b7901749f9343886b26877891\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\suraj\.android\build-cache\8932ef2279de29e9917683de874e6c351bc0c772\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\suraj\.android\build-cache\74b3c955e30b40771380a2544a9b2cc09722bc36\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\suraj\.android\build-cache\fa15b55e2af437429b55b51fa0f5041684d98e17\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\suraj\.android\build-cache\aa0f379a0c22559b0905369fc2a2037e6d30832b\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\suraj\.android\build-cache\718c286881704e352d86c20f2ca39bfb62231057\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\017fb6732fa7e3dab7e4cf1154f5ebade2b97284\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\e48c2b885e154f7e961af0ab9cf32ba17b4a24ac\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\suraj\.android\build-cache\1e0f6acc5d8831c43861dd6407fa95e7b1487687\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:22:5-24:34
 	android:value
-		ADDED from [com.android.support:design:25.3.1] /home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.1] /home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:26:9-47
 activity#com.google.android.gms.ads.AdActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:25:9-232
+ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:25:9-232
 	android:configChanges
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:25:72-181
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:25:72-181
 	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:25:182-230
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:25:182-230
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:25:19-71
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:25:19-71
 activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:26:9-131
+ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:26:9-131
 	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:26:92-129
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:26:92-129
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.android/build-cache/d697b5b66f22c5558640262d671b7b46a7b36dfe/output/AndroidManifest.xml:26:19-91
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.4] C:\Users\suraj\.android\build-cache\43e9750814605c9e0c6f38c2a53ca3181c48db9d\output\AndroidManifest.xml:26:19-91
 activity#com.google.android.gms.appinvite.PreviewActivity
-ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:20:9-25:20
+ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:20:9-25:20
 	android:exported
-		ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:20:51-74
+		ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:20:51-74
 	android:theme
-		ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:20:75-121
+		ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:20:75-121
 	android:name
-		ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:20:19-50
+		ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:20:19-50
 intent-filter#android.intent.category.DEFAULT+com.google.android.gms.appinvite.ACTION_PREVIEW
-ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:21:13-24:29
+ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:21:13-24:29
 action#com.google.android.gms.appinvite.ACTION_PREVIEW
-ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:22:17-89
+ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:22:17-89
 	android:name
-		ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] /home/su/.android/build-cache/1b29a6fc7d6eeecb80d1de4203256d9b4b82e3e3/output/AndroidManifest.xml:22:25-87
+		ADDED from [com.google.android.gms:play-services-appinvite:10.2.4] C:\Users\suraj\.android\build-cache\d4c602753720e9654f50b7d9d88c7acc33ddd12d\output\AndroidManifest.xml:22:25-87
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:20:9-189
+ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:20:9-189
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:20:129-162
+		ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:20:129-162
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:20:163-187
+		ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:20:163-187
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:20:69-128
+		ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:20:69-128
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:20:19-68
+		ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:20:19-68
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:24:9-184
+ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:24:9-184
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:24:64-87
+		ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:24:64-87
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:24:88-182
+		ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:24:88-182
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:10.2.4] /home/su/.android/build-cache/92cd5113fdb19d3e142c4634a7967e91b3df2d50/output/AndroidManifest.xml:24:18-63
+		ADDED from [com.google.android.gms:play-services-auth:10.2.4] C:\Users\suraj\.android\build-cache\71b3d99a6db514c2d0afaeb0cd83d89b5f8db329\output\AndroidManifest.xml:24:18-63
 receiver#com.google.android.gms.cast.framework.media.MediaIntentReceiver
-ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] /home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/AndroidManifest.xml:5:9-99
+ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] C:\Users\suraj\.android\build-cache\1c41aa67ac2f73f125dbb67c304a3533e357226e\output\AndroidManifest.xml:5:9-99
 	android:name
-		ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] /home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/AndroidManifest.xml:5:19-97
+		ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] C:\Users\suraj\.android\build-cache\1c41aa67ac2f73f125dbb67c304a3533e357226e\output\AndroidManifest.xml:5:19-97
 service#com.google.android.gms.cast.framework.media.MediaNotificationService
-ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] /home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/AndroidManifest.xml:6:9-103
+ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] C:\Users\suraj\.android\build-cache\1c41aa67ac2f73f125dbb67c304a3533e357226e\output\AndroidManifest.xml:6:9-103
 	android:name
-		ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] /home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/AndroidManifest.xml:6:18-101
+		ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] C:\Users\suraj\.android\build-cache\1c41aa67ac2f73f125dbb67c304a3533e357226e\output\AndroidManifest.xml:6:18-101
 service#com.google.android.gms.cast.framework.ReconnectionService
-ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] /home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/AndroidManifest.xml:7:9-92
+ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] C:\Users\suraj\.android\build-cache\1c41aa67ac2f73f125dbb67c304a3533e357226e\output\AndroidManifest.xml:7:9-92
 	android:name
-		ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] /home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/AndroidManifest.xml:7:18-90
+		ADDED from [com.google.android.gms:play-services-cast-framework:10.2.4] C:\Users\suraj\.android\build-cache\1c41aa67ac2f73f125dbb67c304a3533e357226e\output\AndroidManifest.xml:7:18-90
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.android.gms:play-services-gcm:10.2.4] /home/su/.android/build-cache/f668cb0b0633d6ba1add0a3a23e631089b5d3c14/output/AndroidManifest.xml:20:5-81
-MERGED from [com.google.android.gms:play-services-iid:10.2.4] /home/su/.android/build-cache/b3baa60ea906a5770b1eedfdcd795b2877a2434a/output/AndroidManifest.xml:20:5-81
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:22:5-81
+ADDED from [com.google.android.gms:play-services-gcm:10.2.4] C:\Users\suraj\.android\build-cache\238a636c0370a6c84a3d2d3d94d0facf79b32f60\output\AndroidManifest.xml:20:5-81
+MERGED from [com.google.android.gms:play-services-iid:10.2.4] C:\Users\suraj\.android\build-cache\3c4a17d736a4372bd3181bfead97d655eeafde7a\output\AndroidManifest.xml:20:5-81
+MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:22:5-81
 	android:name
-		ADDED from [com.google.android.gms:play-services-gcm:10.2.4] /home/su/.android/build-cache/f668cb0b0633d6ba1add0a3a23e631089b5d3c14/output/AndroidManifest.xml:20:22-79
+		ADDED from [com.google.android.gms:play-services-gcm:10.2.4] C:\Users\suraj\.android\build-cache\238a636c0370a6c84a3d2d3d94d0facf79b32f60\output\AndroidManifest.xml:20:22-79
 service#com.google.android.gms.tagmanager.TagManagerService
-ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:24:9-134
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:24:9-134
 	android:enabled
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:24:110-132
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:24:110-132
 	android:exported
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:24:85-109
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:24:85-109
 	android:name
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:24:18-84
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:24:18-84
 activity#com.google.android.gms.tagmanager.TagManagerPreviewActivity
-ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:25:9-32:20
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:25:9-32:20
 	android:noHistory
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:25:94-118
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:25:94-118
 	android:name
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.android/build-cache/96caa21102fdfcc0026e99d714730063319cc384/output/AndroidManifest.xml:25:19-93
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] C:\Users\suraj\.android\build-cache\aa387bd760e89c8827328df7a246d256954e15db\output\AndroidManifest.xml:25:19-93
 service#com.google.firebase.messaging.FirebaseMessagingService
-ADDED from [com.google.firebase:firebase-messaging:10.2.4] /home/su/.android/build-cache/f24dac043ad874344ff3e48baf80838975ce1fd2/output/AndroidManifest.xml:23:9-27:19
+ADDED from [com.google.firebase:firebase-messaging:10.2.4] C:\Users\suraj\.android\build-cache\4e26a3ac07932904639be24f240d20293bef727c\output\AndroidManifest.xml:23:9-27:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-messaging:10.2.4] /home/su/.android/build-cache/f24dac043ad874344ff3e48baf80838975ce1fd2/output/AndroidManifest.xml:23:88-111
+		ADDED from [com.google.firebase:firebase-messaging:10.2.4] C:\Users\suraj\.android\build-cache\4e26a3ac07932904639be24f240d20293bef727c\output\AndroidManifest.xml:23:88-111
 	android:name
-		ADDED from [com.google.firebase:firebase-messaging:10.2.4] /home/su/.android/build-cache/f24dac043ad874344ff3e48baf80838975ce1fd2/output/AndroidManifest.xml:23:18-87
+		ADDED from [com.google.firebase:firebase-messaging:10.2.4] C:\Users\suraj\.android\build-cache\4e26a3ac07932904639be24f240d20293bef727c\output\AndroidManifest.xml:23:18-87
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:25:7-26:18
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.android/build-cache/d2c163427746cb58b603d40b7c76df89b4ad6427/output/AndroidManifest.xml:25:7-26:18
+ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\0cbda9fb995fe5fcfe125131204860765d8ec352\output\AndroidManifest.xml:25:7-26:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:25:90-112
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:25:90-112
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:25:113-137
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:25:113-137
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:25:17-89
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:25:17-89
 receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:27:7-31:18
+ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:27:7-31:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:27:162-184
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:27:162-184
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:27:105-161
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:27:105-161
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:27:17-104
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:27:17-104
 intent-filter#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:28:11-30:27
+ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:28:11-30:27
 action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:29:15-76
+ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:29:15-76
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:29:23-74
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:29:23-74
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:32:7-137
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.android/build-cache/d2c163427746cb58b603d40b7c76df89b4ad6427/output/AndroidManifest.xml:27:7-137
+ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\.android\build-cache\0cbda9fb995fe5fcfe125131204860765d8ec352\output\AndroidManifest.xml:27:7-137
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:32:88-110
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:32:88-110
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:32:111-135
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:32:111-135
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.android/build-cache/5d2539781942c401892878bcf5842efa32e1f676/output/AndroidManifest.xml:32:16-87
+		ADDED from [com.google.firebase:firebase-analytics:10.2.4] C:\Users\suraj\.android\build-cache\13a7997c54b558faca948834dfc15acd32508246\output\AndroidManifest.xml:32:16-87
 permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:24:5-109
+ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:24:5-109
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:24:72-107
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:24:72-107
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:24:17-71
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:24:17-71
 uses-permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:26:5-78
+ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:26:5-78
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:26:22-76
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:26:22-76
 receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:30:9-35:20
+ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:30:9-35:20
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:30:85-108
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:30:85-108
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:30:109-169
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:30:109-169
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:30:19-84
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:30:19-84
 intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:31:13-34:29
+ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:31:13-34:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:32:17-80
+ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:32:17-80
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:32:25-78
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:32:25-78
 category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:33:17-60
+ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:33:17-60
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:33:27-58
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:33:27-58
 receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
-ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:39:9-119
+ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:39:9-119
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:39:93-117
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:39:93-117
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:39:19-92
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:39:19-92
 service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:43:9-47:19
+ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:43:9-47:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:43:83-106
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:43:83-106
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.android/build-cache/2f35e278057c86aca84ce1d55b2461d241470571/output/AndroidManifest.xml:43:18-82
+		ADDED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:43:18-82
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:10.2.4] /home/su/.android/build-cache/27da081efcc1f918275ef1a65f094aac85a6a891/output/AndroidManifest.xml:6:9-194
+ADDED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:6:9-194
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:10.2.4] /home/su/.android/build-cache/27da081efcc1f918275ef1a65f094aac85a6a891/output/AndroidManifest.xml:6:19-78
+		ADDED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:6:19-78
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:10.2.4] /home/su/.android/build-cache/27da081efcc1f918275ef1a65f094aac85a6a891/output/AndroidManifest.xml:6:144-168
+		ADDED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:6:144-168
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:10.2.4] /home/su/.android/build-cache/27da081efcc1f918275ef1a65f094aac85a6a891/output/AndroidManifest.xml:6:169-192
+		ADDED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:6:169-192
 	android:name
-		ADDED from [com.google.firebase:firebase-common:10.2.4] /home/su/.android/build-cache/27da081efcc1f918275ef1a65f094aac85a6a891/output/AndroidManifest.xml:6:79-143
+		ADDED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:6:79-143
 activity#com.facebook.CustomTabMainActivity
-ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:33:9-71
+ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:33:9-71
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:33:19-68
+		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:33:19-68
 provider#com.facebook.internal.FacebookInitProvider
-ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:44:9-47:40
+ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:44:9-47:40
 	android:authorities
-		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:46:13-72
+		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:46:13-72
 	android:exported
-		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:47:13-37
+		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:47:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] /home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/AndroidManifest.xml:45:13-70
+		ADDED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:45:13-70
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.android/build-cache/586caccc6c0e5b40cda619d8732943f6a57b26a9/output/AndroidManifest.xml:21:5-77
+ADDED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:21:5-77
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.android/build-cache/586caccc6c0e5b40cda619d8732943f6a57b26a9/output/AndroidManifest.xml:21:19-51
+		ADDED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:21:19-51
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.android/build-cache/586caccc6c0e5b40cda619d8732943f6a57b26a9/output/AndroidManifest.xml:21:52-75
+		ADDED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:10.2.4] /home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:10.2.4] C:\Users\suraj\.android\build-cache\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\output\AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:10.2.4] /home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:10.2.4] C:\Users\suraj\.android\build-cache\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\output\AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:10.2.4] /home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:10.2.4] C:\Users\suraj\.android\build-cache\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\output\AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:10.2.4] /home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:10.2.4] C:\Users\suraj\.android\build-cache\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\output\AndroidManifest.xml:19:19-85

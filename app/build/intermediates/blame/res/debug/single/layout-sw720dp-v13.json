@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout-sw720dp-v13/activity_signup.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout-sw720dp/activity_signup.xml"
+        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\activity_signup.xml",
+        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw720dp\\activity_signup.xml"
+    },
+    {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\activity_signup.xml",
+        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw720dp\\activity_signup.xml"
     }
 ]

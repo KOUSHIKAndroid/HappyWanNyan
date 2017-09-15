@@ -31,6 +31,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import static android.app.Activity.RESULT_OK;
+
 public class BookingFragmnetOne extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -166,12 +168,13 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case CALL_CALENDER:
-                String StartDate = data.getStringExtra("startdate");
-                String EndDate = data.getStringExtra("enddate");
-                TXT_StartDate.setText(StartDate);
-                TXT_EndDte.setText(EndDate);
-                TXT_SingleDate.setText("");
-
+                if(resultCode==RESULT_OK) {
+                    String StartDate = data.getStringExtra("startdate");
+                    String EndDate = data.getStringExtra("enddate");
+                    TXT_StartDate.setText(StartDate);
+                    TXT_EndDte.setText(EndDate);
+                    TXT_SingleDate.setText("");
+            }
                 break;
         }
     }

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="stripe-android-4.1.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/286a82cff53dbb607e28a98a4d490fa85ad49921/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/286a82cff53dbb607e28a98a4d490fa85ad49921/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
