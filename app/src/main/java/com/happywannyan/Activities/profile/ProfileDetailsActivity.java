@@ -15,22 +15,26 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RatingBar;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.ForgotPasswordActivity;
+import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Activities.profile.fragmentPagerAdapter.ProfileFragPagerAdapter;
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
-import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
-import com.happywannyan.Utils.provider.AppTimeZone;
 import com.happywannyan.Utils.provider.RatingColor;
+import com.happywannyan.Utils.provider.AppTimeZone;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -39,7 +43,7 @@ import java.util.Locale;
  * Created by bodhidipta on 22/05/17.
  */
 
-public class ProfileDetailsActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProfileDetailsActivity extends AppCompatActivity implements View.OnClickListener{
     private ViewPager viewpager;
     private ProfileFragPagerAdapter pagerAdapter = null;
     private LinearLayout reservation = null;
@@ -49,10 +53,8 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
     String UserData;
     AppLoader appLoader;
     public String JSONRESPONSESTRING;
-    int block_user_status = 0;
-
+    int block_user_status=0;
     PopupWindow popupWindow;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,19 +67,21 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
 
         try {
             new AppContsnat(this);
-            UserData = AppContsnat.UserId;
+            UserData=AppContsnat.UserId;
             this.PrevJSON = new JSONObject(getIntent().getStringExtra("data"));
-            Loger.MSG("@@@ PROFILE DATA ", "" + PrevJSON);
-            if (PrevJSON.has("sitter_user_id")) {
+            Loger.MSG("@@@ PROFILE DATA ",""+PrevJSON);
+            if(PrevJSON.has("sitter_user_id")) {
                 SitterId = PrevJSON.getString("sitter_user_id");
             }
-            else if(PrevJSON.has("sitter_users_id")){
+            else if (PrevJSON.has("sitter_users_id")){
                 SitterId = PrevJSON.getString("sitter_users_id");
             }
             else {
                 SitterId = PrevJSON.getString("id");
             }
 
+
+            ((SFNFTextView) findViewById(R.id.ReviewNo)).setText(PrevJSON.getString("num_rvw") + " " + getResources().getString(R.string.review));
             findViewById(R.id.map_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -118,14 +122,14 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         Paramas.add(apipostdata);
 
 
-        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL+"app_users_sitterinfo", Paramas, new CustomJSONParser.JSONRESPONSE() {
             @Override
             public void OnSuccess(String Result) {
                 JSONRESPONSESTRING = Result;
-                Loger.MSG("@@ SITTER", "- " + Result);
+                Loger.MSG("@@ SITTER","- "+Result);
                 try {
-                    final JSONObject BasicInfo = new JSONObject(Result).getJSONObject("info_array").getJSONObject("basic_info");
-                    block_user_status = BasicInfo.getInt("block_user_status");
+                    final JSONObject BasicInfo=new JSONObject(Result).getJSONObject("info_array").getJSONObject("basic_info");
+                    block_user_status=BasicInfo.getInt("block_user_status");
                     Glide.with(ProfileDetailsActivity.this).load(BasicInfo.getString("sittersimage")).into((ImageView) findViewById(R.id.IMG_Profile));
                     Rating.setRating(Float.parseFloat(BasicInfo.getString("ave_rating")));
                     Rating.setIsIndicator(true);
@@ -134,14 +138,15 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     ((SFNFTextView) findViewById(R.id.UserName)).setText(BasicInfo.getString("nickname"));
                     ((SFNFTextView) findViewById(R.id.Bussinessname)).setText(BasicInfo.getString("businessname"));
                     ((SFNFTextView) findViewById(R.id.Location)).setText(BasicInfo.getString("place_sitter"));
-                    if (BasicInfo.getInt("favourite_status") == 0) {
+                    if(BasicInfo.getInt("favourite_status")==0)
+                    {
 
 //                        ((ImageView)findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.ic_favorite_border);
                         ((ImageView) findViewById(R.id.IMG_FAV)).setTag("0");
                         ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_white);
 
 
-                    } else {
+                    }else {
 //                        ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
                         ((ImageView) findViewById(R.id.IMG_FAV)).setTag("1");
                         ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
@@ -194,7 +199,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
 
                 LayoutInflater layoutInflater = getLayoutInflater();
                 View popupView = layoutInflater.inflate(R.layout.profile_menu, null);
-                popupWindow = new PopupWindow(popupView, ViewPager.LayoutParams.WRAP_CONTENT, ViewPager.LayoutParams.WRAP_CONTENT);
+                  popupWindow = new PopupWindow(popupView, ViewPager.LayoutParams.WRAP_CONTENT, ViewPager.LayoutParams.WRAP_CONTENT);
 
                 popupWindow.setFocusable(true);
                 popupWindow.setOutsideTouchable(true);
@@ -220,36 +225,40 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             @Override
             public void onPageSelected(int position) {
 
-                ((View) findViewById(R.id.div1)).setBackgroundColor(Color.TRANSPARENT);
-                ((View) findViewById(R.id.div2)).setBackgroundColor(Color.TRANSPARENT);
-                ((View) findViewById(R.id.div3)).setBackgroundColor(Color.TRANSPARENT);
-                ((View) findViewById(R.id.div4)).setBackgroundColor(Color.TRANSPARENT);
+                ((View)findViewById(R.id.div1)).setBackgroundColor(Color.TRANSPARENT);
+                ((View)findViewById(R.id.div2)).setBackgroundColor(Color.TRANSPARENT);
+                ((View)findViewById(R.id.div3)).setBackgroundColor(Color.TRANSPARENT);
+                ((View)findViewById(R.id.div4)).setBackgroundColor(Color.TRANSPARENT);
                 reservation.setVisibility(View.VISIBLE);
-                ((SFNFTextView) findViewById(R.id.TXTab1)).setTextColor(Color.parseColor("#666565"));
-                ((SFNFTextView) findViewById(R.id.TXTab2)).setTextColor(Color.parseColor("#666565"));
-                ((SFNFTextView) findViewById(R.id.TXTab3)).setTextColor(Color.parseColor("#666565"));
-                ((SFNFTextView) findViewById(R.id.TXTab4)).setTextColor(Color.parseColor("#666565"));
+                ((SFNFTextView)findViewById(R.id.TXTab1)).setTextColor(Color.parseColor("#666565"));
+                ((SFNFTextView)findViewById(R.id.TXTab2)).setTextColor(Color.parseColor("#666565"));
+                ((SFNFTextView)findViewById(R.id.TXTab3)).setTextColor(Color.parseColor("#666565"));
+                ((SFNFTextView)findViewById(R.id.TXTab4)).setTextColor(Color.parseColor("#666565"));
 
-                switch (position) {
-                    case 0:
-                        ((View) findViewById(R.id.div1)).setBackgroundColor(Color.parseColor("#bf3e49"));
-                        ((SFNFTextView) findViewById(R.id.TXTab1)).setTextColor(Color.BLACK);
+              switch (position){
+                  case 0:
+                      ((View)findViewById(R.id.div1)).setBackgroundColor(Color.parseColor("#bf3e49"));
+                      ((SFNFTextView)findViewById(R.id.TXTab1)).setTextColor(Color.BLACK);
 
-                        break;
-                    case 1:
-                        ((View) findViewById(R.id.div2)).setBackgroundColor(Color.parseColor("#bf3e49"));
-                        ((SFNFTextView) findViewById(R.id.TXTab2)).setTextColor(Color.BLACK);
-                        reservation.setVisibility(View.GONE);
-                        break;
-                    case 2:
-                        ((View) findViewById(R.id.div3)).setBackgroundColor(Color.parseColor("#bf3e49"));
-                        ((SFNFTextView) findViewById(R.id.TXTab3)).setTextColor(Color.BLACK);
-                        break;
-                    case 3:
-                        ((View) findViewById(R.id.div4)).setBackgroundColor(Color.parseColor("#bf3e49"));
-                        ((SFNFTextView) findViewById(R.id.TXTab4)).setTextColor(Color.BLACK);
-                        break;
-                }
+                      break;
+                  case 1:
+                      ((View)findViewById(R.id.div2)).setBackgroundColor(Color.parseColor("#bf3e49"));
+                      ((SFNFTextView)findViewById(R.id.TXTab2)).setTextColor(Color.BLACK);
+                      reservation.setVisibility(View.GONE);
+                      break;
+                  case 2:
+                      ((View)findViewById(R.id.div3)).setBackgroundColor(Color.parseColor("#bf3e49"));
+                      ((SFNFTextView)findViewById(R.id.TXTab3)).setTextColor(Color.BLACK);
+                      break;
+                  case 3:
+                      ((View)findViewById(R.id.div4)).setBackgroundColor(Color.parseColor("#bf3e49"));
+                      ((SFNFTextView)findViewById(R.id.TXTab4)).setTextColor(Color.BLACK);
+                      break;
+              }
+
+
+
+
             }
 
             @Override
@@ -259,11 +268,12 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         });
 
 
+
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (block_user_status == 0) {
+                if (block_user_status==0) {
                     Intent intent = new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
                     try {
                         intent.putExtra("LIST", "" + new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist"));
@@ -281,8 +291,9 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                         e.printStackTrace();
                     }
                     startActivity(intent);
-                } else {
-                    new MYAlert(ProfileDetailsActivity.this).AlertOnly(getResources().getString(R.string.request_reservation), getResources().getString(R.string.unable_to_make_reservation_request), new MYAlert.OnlyMessage() {
+                }
+                else {
+                    new MYAlert(ProfileDetailsActivity.this).AlertOnly(getResources().getString(R.string.request_reservation),getResources().getString(R.string.unable_to_make_reservation_request), new MYAlert.OnlyMessage() {
                         @Override
                         public void OnOk(boolean res) {
 
@@ -292,25 +303,22 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             }
         });
 
-        ((SFNFTextView) findViewById(R.id.TXTab1)).setOnClickListener(new View.OnClickListener() {
+        ((SFNFTextView)findViewById(R.id.TXTab1)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewpager.setCurrentItem(0);
             }
-        });
-        ((SFNFTextView) findViewById(R.id.TXTab2)).setOnClickListener(new View.OnClickListener() {
+        }); ((SFNFTextView)findViewById(R.id.TXTab2)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewpager.setCurrentItem(1);
             }
-        });
-        ((SFNFTextView) findViewById(R.id.TXTab3)).setOnClickListener(new View.OnClickListener() {
+        }); ((SFNFTextView)findViewById(R.id.TXTab3)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewpager.setCurrentItem(2);
             }
-        });
-        ((SFNFTextView) findViewById(R.id.TXTab4)).setOnClickListener(new View.OnClickListener() {
+        }); ((SFNFTextView)findViewById(R.id.TXTab4)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewpager.setCurrentItem(3);
@@ -321,25 +329,25 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
+        switch (view.getId()){
             case R.id.ID_MitUp:
                 popupWindow.dismiss();
-                Intent inten = new Intent(this, MeetUpWannyanActivity.class);
-                inten.putExtra("DATA", SitterId);
+                Intent inten=new Intent(this,MeetUpWannyanActivity.class);
+                    inten.putExtra("DATA",SitterId);
                 startActivity(inten);
                 break;
             case R.id.Contact:
                 popupWindow.dismiss();
-                inten = new Intent(this, ContactMsgActivity.class);
-                inten.putExtra("DATA", SitterId);
+                 inten=new Intent(this,ContactMsgActivity.class);
+                    inten.putExtra("DATA",SitterId);
                 startActivity(inten);
                 break;
             case R.id.IMG_FAV:
-                String IDtemp = "";
-                if (((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1"))
-                    IDtemp = "0";
+                String IDtemp="";
+                if(((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1"))
+                    IDtemp="0";
                 else
-                    IDtemp = "1";
+                    IDtemp="1";
 
 
                 new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_favourite_sitters?user_id=" + AppContsnat.UserId + "" +
@@ -347,13 +355,14 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     @Override
                     public void OnSuccess(String Result) {
                         try {
-                            JSONObject jsonObject = new JSONObject(Result);
-                            Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                            JSONObject jsonObject=new JSONObject(Result);
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
 
-                            if (((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1")) {
+                            if(((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1")) {
                                 ((ImageView) findViewById(R.id.IMG_FAV)).setTag("0");
                                 ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_white);
-                            } else {
+                            }
+                            else {
                                 ((ImageView) findViewById(R.id.IMG_FAV)).setTag("1");
                                 ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
                             }
@@ -368,8 +377,8 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     @Override
                     public void OnError(String Error, String Response) {
                         try {
-                            JSONObject jsonObject = new JSONObject(Response);
-                            Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                            JSONObject jsonObject=new JSONObject(Response);
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -380,6 +389,9 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
 
                     }
                 });
+
+
+
 
 
         }
