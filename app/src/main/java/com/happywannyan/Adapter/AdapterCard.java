@@ -6,19 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetCards;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.CustomJSONParser;
-import com.happywannyan.Utils.Loger;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,24 +25,15 @@ import java.util.ArrayList;
 
 public class AdapterCard extends RecyclerView.Adapter<AdapterCard.CardViewHolder> {
     Context mContext;
-    JSONObject MainObject;
-    JSONArray ARRY;
     AppLoader Loader;
     BookingFragmentFoure.onClickItem onClickItem;
-    JSONArray Crad;
+    ArrayList<SetGetCards> setGetCardsArrayList;
 
-    public AdapterCard(Context context, String Response, BookingFragmentFoure.onClickItem onClickItem) {
+    public AdapterCard(Context context, ArrayList<SetGetCards> setGetCardsArrayList, BookingFragmentFoure.onClickItem onClickItem) {
         this.mContext = context;
         Loader = new AppLoader(mContext);
-        try {
-            MainObject = new JSONObject(Response);
-            ARRY = MainObject.getJSONArray("user_stripe_data");
-            Crad = MainObject.getJSONArray("card_details");
-            this.onClickItem = onClickItem;
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
+        this.setGetCardsArrayList = setGetCardsArrayList;
+        this.onClickItem = onClickItem;
     }
 
     @Override
@@ -60,11 +46,10 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.CardViewHolder
     public void onBindViewHolder(CardViewHolder holder, final int position) {
 //        for(int i=0;i<ARRY.length();i++){
         try {
-            final JSONObject OB = ARRY.getJSONObject(position);
+            final JSONObject OB = setGetCardsArrayList.get(0).getStripDataArrayList().get(position).getJsonObjectUserStripeData();
 
-
-            for (int j = 0; j < Crad.length(); j++) {
-                JSONObject jj = Crad.getJSONObject(j);
+            for (int j = 0; j < setGetCardsArrayList.get(0).getJsonArrayCardDetails().length(); j++) {
+                JSONObject jj = setGetCardsArrayList.get(0).getJsonArrayCardDetails().getJSONObject(j);
                 if (jj.getString("card_name").equals(OB.getString("card_brand"))) {
                     Glide.with(mContext).load(jj.getString("card_image")).into(holder.IMG_VISA);
                     break;
@@ -73,20 +58,25 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.CardViewHolder
             holder.TXT_CardHolderName.setText(OB.getString("name_on_card"));
             holder.TXT_CradName.setText("**** **** **** " + OB.getString("card_last_digits"));
             if (OB.getString("is_default").equalsIgnoreCase("1")) {
-                holder.img_selection.setImageResource(R.drawable.ic_circle_field);
+                holder.tv_default_status.setVisibility(View.VISIBLE);
             } else {
-                holder.img_selection.setImageResource(R.drawable.ic_circle);
+                holder.tv_default_status.setVisibility(View.GONE);
+            }
+            if (setGetCardsArrayList.get(0).getStripDataArrayList().get(position).isCheck()) {
+                holder.img_selection.setImageResource(R.drawable.ic_check_checked);
+            } else {
+                holder.img_selection.setImageResource(R.drawable.ic_check_box_unchecked);
             }
 
             holder.totalView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    try {
-                        selectionCard(OB.getString("id"), position, OB);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                    for (int p = 0; p < setGetCardsArrayList.get(0).getStripDataArrayList().size(); p++) {
+                        setGetCardsArrayList.get(0).getStripDataArrayList().get(p).setCheck(false);
                     }
+                    onClickItem.onSelectItemClick(position, setGetCardsArrayList.get(0).getStripDataArrayList().get(position).getJsonObjectUserStripeData());
+                    setGetCardsArrayList.get(0).getStripDataArrayList().get(position).setCheck(true);
+                    notifyDataSetChanged();
                 }
             });
 
@@ -99,12 +89,12 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.CardViewHolder
 
     @Override
     public int getItemCount() {
-        return ARRY.length();
+        return setGetCardsArrayList.get(0).getStripDataArrayList().size();
     }
 
     class CardViewHolder extends RecyclerView.ViewHolder {
         ImageView IMG_VISA, img_selection;
-        SFNFTextView TXT_CardHolderName, TXT_CradName;
+        SFNFTextView TXT_CardHolderName, TXT_CradName, tv_default_status;
 
         View totalView;
 
@@ -114,55 +104,8 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.CardViewHolder
             img_selection = (ImageView) itemView.findViewById(R.id.img_selection);
             TXT_CardHolderName = (SFNFTextView) itemView.findViewById(R.id.TXT_CardHolderName);
             TXT_CradName = (SFNFTextView) itemView.findViewById(R.id.TXT_CradName);
+            tv_default_status = (SFNFTextView) itemView.findViewById(R.id.tv_default_status);
             totalView = itemView;
         }
-    }
-
-    public void selectionCard(String default_card_id, final int position, final JSONObject OB) {
-        Loader.Show();
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "make_card_default?user_id=" + AppContsnat.UserId + "&default_card_id=" + default_card_id
-                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
-                    @Override
-                    public void OnSuccess(String Result) {
-                        Loader.Dismiss();
-                        Loger.MSG("Result-->", Result);
-                        try {
-                            JSONObject jsonObject = new JSONObject(Result);
-
-                            Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-
-                            for (int c = 0; c < ARRY.length(); c++) {
-                                JSONObject person = ARRY.getJSONObject(c);
-                                person.put("is_default", "0");
-                            }
-                            JSONObject person = ARRY.getJSONObject(position);
-                            person.put("is_default", "1");
-
-                            notifyDataSetChanged();
-
-                            onClickItem.onSelectItemClick(position, OB);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void OnError(String Error, String Response) {
-                        Loader.Dismiss();
-                        try {
-                            JSONObject jsonObject = new JSONObject(Response);
-                            Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void OnError(String Error) {
-                        Loader.Dismiss();
-
-                    }
-                });
     }
 }

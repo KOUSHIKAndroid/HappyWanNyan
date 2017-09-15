@@ -19,6 +19,7 @@ import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.SetGetCards;
+import com.happywannyan.POJO.SetGetStripData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -30,6 +31,7 @@ import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -303,11 +305,44 @@ public class BookingFragmentFoure extends Fragment {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 Loader.Dismiss();
-                                                                REC_Card.setAdapter(new AdapterCard(getActivity(), Result, new onClickItem() {
+
+
+                                                                try {
+                                                                    JSONObject jsonObject = new JSONObject(Result);
+                                                                    JSONArray jsonArrayUserStripeData = jsonObject.getJSONArray("user_stripe_data");
+
+                                                                    ArrayList<SetGetStripData> stripDataArrayList = new ArrayList<SetGetStripData>();
+
+                                                                    for (int i = 0; i < jsonArrayUserStripeData.length(); i++) {
+                                                                        SetGetStripData setGetStripData = new SetGetStripData();
+                                                                        if (jsonArrayUserStripeData.getJSONObject(i).getString("is_default").equals("0")) {
+                                                                            setGetStripData.setCheck(false);
+                                                                        } else {
+                                                                            setGetStripData.setCheck(true);
+                                                                        }
+
+                                                                        setGetStripData.setJsonObjectUserStripeData(jsonArrayUserStripeData.getJSONObject(i));
+                                                                        stripDataArrayList.add(setGetStripData);
+                                                                    }
+
+                                                                    SetGetCards setGetCards = new SetGetCards();
+                                                                    setGetCards.setCommunication_messege_email(jsonObject.getString("communication_messege_email"));
+                                                                    setGetCards.setUser_email("user_email");
+                                                                    setGetCards.setJsonArrayCardDetails(jsonObject.getJSONArray("card_details"));
+                                                                    setGetCards.setStripDataArrayList(stripDataArrayList);
+                                                                    setGetCardsArrayList.add(setGetCards);
+
+
+                                                                } catch (JSONException e) {
+                                                                    e.printStackTrace();
+                                                                }
+
+
+                                                                REC_Card.setAdapter(new AdapterCard(getActivity(), setGetCardsArrayList, new onClickItem() {
                                                                     @Override
                                                                     public void onSelectItemClick(int position, JSONObject data) {
                                                                         cardFinalSelection = data;
-                                                                        Loger.MSG("SelectedData",""+data);
+                                                                        Loger.MSG("SelectedData", "" + data);
                                                                     }
                                                                 }));
                                                             }
@@ -403,11 +438,42 @@ public class BookingFragmentFoure extends Fragment {
                             ex.printStackTrace();
                         }
 
-                        REC_Card.setAdapter(new AdapterCard(getActivity(), Result, new onClickItem() {
+                        try {
+                            JSONObject jsonObject = new JSONObject(Result);
+                            JSONArray jsonArrayUserStripeData = jsonObject.getJSONArray("user_stripe_data");
+
+                            ArrayList<SetGetStripData> stripDataArrayList = new ArrayList<SetGetStripData>();
+
+                            for (int i = 0; i < jsonArrayUserStripeData.length(); i++) {
+                                SetGetStripData setGetStripData = new SetGetStripData();
+                                if (jsonArrayUserStripeData.getJSONObject(i).getString("is_default").equals("0")) {
+                                    setGetStripData.setCheck(false);
+                                } else {
+                                    setGetStripData.setCheck(true);
+                                }
+
+                                setGetStripData.setJsonObjectUserStripeData(jsonArrayUserStripeData.getJSONObject(i));
+                                stripDataArrayList.add(setGetStripData);
+                            }
+
+                            SetGetCards setGetCards = new SetGetCards();
+                            setGetCards.setCommunication_messege_email(jsonObject.getString("communication_messege_email"));
+                            setGetCards.setUser_email("user_email");
+                            setGetCards.setJsonArrayCardDetails(jsonObject.getJSONArray("card_details"));
+                            setGetCards.setStripDataArrayList(stripDataArrayList);
+
+                            setGetCardsArrayList.add(setGetCards);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        REC_Card.setAdapter(new AdapterCard(getActivity(), setGetCardsArrayList, new onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
                                 cardFinalSelection = data;
-                                Loger.MSG("SelectedData",""+data);
+                                Loger.MSG("SelectedData", "" + data);
                             }
                         }));
                     }

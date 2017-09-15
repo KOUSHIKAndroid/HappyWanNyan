@@ -4,10 +4,6 @@
         "source": "/home/su/.android/build-cache/da9f3c11048c0a0fdd797eb59f0f139008ae21f6/output/res/drawable/sign_strip_mod.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_check_box_empty.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_check_box_empty.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/card_color_round_rect_pink.xml",
         "source": "/home/su/.android/build-cache/da9f3c11048c0a0fdd797eb59f0f139008ae21f6/output/res/drawable/card_color_round_rect_pink.xml"
     },
@@ -20,12 +16,12 @@
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/mr_ic_media_route_mono_dark.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
-        "source": "/home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/res/drawable/common_google_signin_btn_icon_light_normal.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
         "source": "/home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "/home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/res/drawable/common_google_signin_btn_icon_light_normal.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
@@ -100,16 +96,16 @@
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/mr_ic_media_route_connecting_dark.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_more_white.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_more_white.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_blue_bg_selector.xml",
+        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/drawable/messenger_button_blue_bg_selector.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_play_light.xml",
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/mr_ic_play_light.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_blue_bg_selector.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/drawable/messenger_button_blue_bg_selector.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_more_white.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_more_white.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
@@ -118,6 +114,10 @@
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_normal.xml",
         "source": "/home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_check_box_unchecked.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_check_box_unchecked.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_dark.xml",
@@ -140,12 +140,12 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/logo_searchpage.png"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_pause.xml",
-        "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable/cast_ic_notification_pause.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward30.xml",
         "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable/cast_ic_notification_forward30.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_pause.xml",
+        "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable/cast_ic_notification_pause.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/com_facebook_button_icon.xml",
@@ -172,32 +172,32 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_favorite_blue.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_check_red.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_check_red.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_billing_mastercard_logo.png",
         "source": "/home/su/.android/build-cache/da9f3c11048c0a0fdd797eb59f0f139008ae21f6/output/res/drawable/ic_billing_mastercard_logo.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_check_red.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_check_red.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_msg_placeholder.png",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_msg_placeholder.png"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
-        "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_spinner_textfield_background_material.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_icon_discover.xml",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_icon_discover.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/rotate.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/rotate.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_forward30.xml",
         "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable/cast_ic_mini_controller_forward30.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/rotate.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/rotate.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
@@ -292,24 +292,28 @@
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_btn_radio_material.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_white_bg_selector.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/drawable/messenger_button_white_bg_selector.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_white_bg_selector.xml",
+        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/drawable/messenger_button_white_bg_selector.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_disconnect.xml",
         "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable/cast_ic_notification_disconnect.xml"
     },
     {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_icon_mastercard.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_icon_mastercard.xml"
+    },
+    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_info.xml",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_info.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_icon_mastercard.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_icon_mastercard.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_check_checked.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_check_checked.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_dot.xml",
@@ -318,10 +322,6 @@
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/card_color_round_rect_brown.xml",
         "source": "/home/su/.android/build-cache/da9f3c11048c0a0fdd797eb59f0f139008ae21f6/output/res/drawable/card_color_round_rect_brown.xml"
-    },
-    {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_check_sign_in_a_rounded_black_square.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_check_sign_in_a_rounded_black_square.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_send_appblue_24dp.xml",
@@ -516,12 +516,12 @@
         "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable/cast_ic_notification_play.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_mute.xml",
-        "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable/cast_ic_expanded_controller_mute.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/img_slider1.png",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/img_slider1.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_mute.xml",
+        "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable/cast_ic_expanded_controller_mute.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",

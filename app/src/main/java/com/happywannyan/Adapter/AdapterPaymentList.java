@@ -74,9 +74,9 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
             holder.tv_name_on_card.setText(OB.getString("name_on_card"));
             holder.tv_card_number.setText("**** **** **** " + OB.getString("card_last_digits"));
             if (OB.getString("is_default").equalsIgnoreCase("1")) {
-                holder.img_default.setImageResource(R.drawable.ic_check_sign_in_a_rounded_black_square);
+                holder.img_default.setImageResource(R.drawable.ic_check_checked);
             } else {
-                holder.img_default.setImageResource(R.drawable.ic_check_box_empty);
+                holder.img_default.setImageResource(R.drawable.ic_check_box_unchecked);
             }
 
             holder.LLDefault.setOnClickListener(new View.OnClickListener() {
