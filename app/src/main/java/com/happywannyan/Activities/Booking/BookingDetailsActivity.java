@@ -38,9 +38,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
     LinearLayout LLPetInfo, LL_FOOTER1, LL_FOOTER2;
     AppLoader Loader;
     int block_user_status=0;
-    AlertDialog Dialog;
     TimeZone Tz;
-
     MYAlert MYALERT;
 
 
@@ -96,9 +94,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         AcceptButton();
                     }
                 });
-                
-
-                
             }
 
             if (jsonObject.getJSONObject("booking_info").has("deny_button") && !jsonObject.getJSONObject("booking_info").getString("deny_button").trim().equals("")) {

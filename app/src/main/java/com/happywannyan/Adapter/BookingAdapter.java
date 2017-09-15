@@ -15,6 +15,7 @@ import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.R;
+import com.happywannyan.Utils.Loger;
 
 import org.json.JSONObject;
 
@@ -66,6 +67,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
 //                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                     Intent intent = new Intent(context, BookingDetailsActivity.class);
+                    Loger.MSG("date",""+object);
                     intent.putExtra("data",""+object);
                     bookingFragment. startActivityForResult(intent,222);
 //                    context.startActivity(new Intent(context, BookingDetailsActivity.class));
