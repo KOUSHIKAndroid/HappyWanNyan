@@ -81,6 +81,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
                 @Override
                 public void onClick(View view) {
                     try {
+
                         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                         Intent intent = new Intent(context, ProfileDetailsActivity.class);
                         intent.putExtra("data", "" + object.getJSONObject("booking_info"));
