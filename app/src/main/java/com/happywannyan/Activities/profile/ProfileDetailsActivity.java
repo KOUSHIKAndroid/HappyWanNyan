@@ -255,12 +255,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                       ((SFNFTextView)findViewById(R.id.TXTab4)).setTextColor(Color.BLACK);
                       break;
               }
-
-
-
-
             }
-
             @Override
             public void onPageScrollStateChanged(int state) {
 
