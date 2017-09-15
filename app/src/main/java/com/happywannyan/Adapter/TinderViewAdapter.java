@@ -59,26 +59,26 @@ public class TinderViewAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
 
         View v = convertView;
-        if(v == null){
-            LayoutInflater inflater =((SearchResultActivity)context).getLayoutInflater();
+        if (v == null) {
+            LayoutInflater inflater = ((SearchResultActivity) context).getLayoutInflater();
             // normally use a viewholder
             v = inflater.inflate(R.layout.tinder_card_view, parent, false);
         }
 
 //        ((SFNFTextView) v.findViewById(R.id.tv_address)) .setText(data.get(position));
         try {
-            JSONObject object=data.get(position).getSearcItem();
-            Loger.MSG("@@Tinder-",object+"");
+            JSONObject object = data.get(position).getSearcItem();
+            Loger.MSG("@@Tinder-", object + "");
 //            JSONObject object=new JSONObject(data.get(position));
-            Glide.with(context).load(object.getString("photo_url")).into((ImageView)v.findViewById(R.id.profileImageView));
+            Glide.with(context).load(object.getString("photo_url")).into((ImageView) v.findViewById(R.id.profileImageView));
             ((SFNFTextView) v.findViewById(R.id.tv_title)).setText(object.getString("nickname"));
-            ((SFNFTextView) v.findViewById(R.id.tv_address)) .setText(object.getString("whole_address"));
-            ((SFNFBoldTextView) v.findViewById(R.id.tv_Price)) .setText(Html.fromHtml(object.getString("currency"))+" "+object.getString("price_one"));
-            ((SFNFTextView) v.findViewById(R.id.Time)) .setText(object.getString("unit"));
-            ((SFNFTextView) v.findViewById(R.id.tv_name)) .setText(object.getString("business_name"));
-            ((SFNFTextView) v.findViewById(R.id.service_count)) .setText(object.getString("service_name_all"));
-            ((SFNFTextView) v.findViewById(R.id.tv_review)) .setText(object.getString("num_rvw") + " " + context.getResources().getString(R.string.review));
-            ((RatingBar) v.findViewById(R.id.rating_bar)) .setNumStars(Integer.parseInt(object.getString("ave_rating")));
+            ((SFNFTextView) v.findViewById(R.id.tv_address)).setText(object.getString("whole_address"));
+            ((SFNFBoldTextView) v.findViewById(R.id.tv_Price)).setText(Html.fromHtml(object.getString("currency")) + " " + object.getString("price_one"));
+            ((SFNFTextView) v.findViewById(R.id.Time)).setText(object.getString("unit"));
+            ((SFNFTextView) v.findViewById(R.id.tv_name)).setText(object.getString("business_name"));
+            ((SFNFTextView) v.findViewById(R.id.service_count)).setText(object.getString("service_name_all"));
+            ((SFNFTextView) v.findViewById(R.id.tv_review)).setText(object.getString("num_rvw") + " " + context.getResources().getString(R.string.review));
+            ((RatingBar) v.findViewById(R.id.rating_bar)).setNumStars(Integer.parseInt(object.getString("ave_rating")));
             ((RatingBar) v.findViewById(R.id.rating_bar)).setIsIndicator(true);
             LayerDrawable stars = (LayerDrawable) ((RatingBar) v.findViewById(R.id.rating_bar)).getProgressDrawable();
             RatingColor.SETRatingColor(stars);
@@ -93,11 +93,12 @@ public class TinderViewAdapter extends BaseAdapter {
             public void onClick(View v) {
 //                String item = (String)getItem(position);
 //                Log.i("MainActivity", item);
-                JSONObject object=data.get(position).getSearcItem();
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, (ImageView)v.findViewById(R.id.profileImageView), "cardimage");
+                JSONObject object = data.get(position).getSearcItem();
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, (ImageView) v.findViewById(R.id.profileImageView), "cardimage");
                 Intent intent = new Intent(context, ProfileDetailsActivity.class);
-                    intent.putExtra("data",""+object);
-                context. startActivity(intent, options.toBundle());
+                Loger.MSG("data", "" + object);
+                intent.putExtra("data", "" + object);
+                context.startActivity(intent, options.toBundle());
             }
         });
 

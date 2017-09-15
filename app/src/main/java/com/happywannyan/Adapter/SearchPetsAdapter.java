@@ -20,6 +20,7 @@ import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SearchData;
 import com.happywannyan.R;
+import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.provider.RatingColor;
 
 import org.json.JSONException;
@@ -74,6 +75,7 @@ public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.My
                 public void onClick(View v) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                     Intent intent = new Intent(context, ProfileDetailsActivity.class);
+                    Loger.MSG("data",""+searchData.getSearcItem());
                     intent.putExtra("data", "" + searchData.getSearcItem());
                     context.startActivity(intent, options.toBundle());
 //                 context.startActivity(new Intent(context, ProfileDetailsActivity.class));

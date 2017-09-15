@@ -23,6 +23,7 @@ import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
+import com.happywannyan.Utils.Loger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -79,6 +80,7 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
                 public void onClick(View view) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                     Intent intent = new Intent(context, ProfileDetailsActivity.class);
+                    Loger.MSG("data",""+object);
                     intent.putExtra("data", "" + object);
                     context.startActivity(intent, options.toBundle());
                 }
