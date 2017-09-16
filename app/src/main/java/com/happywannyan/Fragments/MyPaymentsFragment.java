@@ -42,7 +42,7 @@ public class MyPaymentsFragment extends Fragment {
     private String mParam2;
 
     RecyclerView recycler_view;
-    AppLoader Loader;
+    AppLoader appLoader;
     AdapterPaymentList adapterPaymentList;
 
     private OnFragmentInteractionListener mListener;
@@ -90,7 +90,7 @@ public class MyPaymentsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         recycler_view= (RecyclerView) view.findViewById(R.id.recycler_view);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
-        Loader = new AppLoader(getActivity());
+        appLoader = new AppLoader(getActivity());
 
         view.findViewById(R.id.IMG_icon_drwaer).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,13 +121,13 @@ public class MyPaymentsFragment extends Fragment {
     }
 
     public void LoadPaymentDetails(){
-        Loader.Show();
+        appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
                 , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         Log.i("Result",""+Result);
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         adapterPaymentList=new AdapterPaymentList(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
@@ -139,14 +139,13 @@ public class MyPaymentsFragment extends Fragment {
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
 
                     }
 
                     @Override
                     public void OnError(String Error) {
-                        Loader.Dismiss();
-
+                        appLoader.Dismiss();
                     }
                 });
     }

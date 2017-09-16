@@ -57,7 +57,7 @@ public class BookingFragmentFoure extends Fragment {
     private String mParam2;
 
     RecyclerView REC_Card;
-    AppLoader Loader;
+    AppLoader appLoader;
     Card card;
 
     private OnFragmentInteractionListener mListener;
@@ -91,7 +91,7 @@ public class BookingFragmentFoure extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        Loader = new AppLoader(getActivity());
+        appLoader = new AppLoader(getActivity());
     }
 
     @Override
@@ -258,7 +258,7 @@ public class BookingFragmentFoure extends Fragment {
 
 
                 Stripe stripe = new Stripe(getActivity(), AppContsnat.STRIPE_PUBLISH_KEY);
-                Loader.Show();
+                appLoader.Show();
 
                 stripe.createToken(
                         card,
@@ -304,7 +304,7 @@ public class BookingFragmentFoure extends Fragment {
                                                         , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
-                                                                Loader.Dismiss();
+                                                                appLoader.Dismiss();
 
 
                                                                 try {
@@ -349,13 +349,13 @@ public class BookingFragmentFoure extends Fragment {
 
                                                             @Override
                                                             public void OnError(String Error, String Response) {
-                                                                Loader.Dismiss();
+                                                                appLoader.Dismiss();
 
                                                             }
 
                                                             @Override
                                                             public void OnError(String Error) {
-                                                                Loader.Dismiss();
+                                                                appLoader.Dismiss();
 
                                                             }
                                                         });
@@ -364,13 +364,13 @@ public class BookingFragmentFoure extends Fragment {
                                             @Override
                                             public void OnError(String Error, String Response) {
                                                 Loger.MSG("@@ CRAD Err'-", Response);
-                                                Loader.Dismiss();
+                                                appLoader.Dismiss();
 
                                             }
 
                                             @Override
                                             public void OnError(String Error) {
-                                                Loader.Dismiss();
+                                                appLoader.Dismiss();
 
                                             }
                                         });
@@ -393,7 +393,7 @@ public class BookingFragmentFoure extends Fragment {
                             }
 
                             public void onError(Exception error) {
-                                Loader.Dismiss();
+                                appLoader.Dismiss();
                                 new MYAlert(getActivity()).AlertOnly("Add Card Error", error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
@@ -418,12 +418,12 @@ public class BookingFragmentFoure extends Fragment {
     }
 
     private void SetCardDetails() {
-        Loader.Show();
+        appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
                 , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         try {
                             JSONObject MainObject = new JSONObject(Result);
                             JSONArray arrayJson = MainObject.getJSONArray("user_stripe_data");
@@ -480,13 +480,13 @@ public class BookingFragmentFoure extends Fragment {
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
 
                     }
 
                     @Override
                     public void OnError(String Error) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
 
                     }
                 });

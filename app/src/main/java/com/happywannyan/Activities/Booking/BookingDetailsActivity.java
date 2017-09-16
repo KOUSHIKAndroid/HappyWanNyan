@@ -3,7 +3,6 @@ package com.happywannyan.Activities.Booking;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -34,7 +33,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
    public  static  JSONObject jsonObject;
     JSONArray PetInfo;
     LinearLayout LLPetInfo, LL_FOOTER1, LL_FOOTER2;
-    AppLoader Loader;
+    AppLoader appLoader;
     int block_user_status=0;
     TimeZone Tz;
     MYAlert MYALERT;
@@ -55,7 +54,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
         Loger.MSG("## KOUSHIK","dfghjkl---------");
         try {
-            Loader=new AppLoader(this);
+            appLoader =new AppLoader(this);
             jsonObject = new JSONObject(getIntent().getStringExtra("data"));
             PetInfo = jsonObject.getJSONArray("pet_details");
             ImageView profimage = (ImageView) findViewById(R.id.img_view);
@@ -345,7 +344,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 MYALERT.AlertAccept_Cancel(getString(R.string.accept), getString(R.string.confirm_somple_msg), new MYAlert.OnOkCancel() {
                     @Override
                     public void OnOk() {
-                        Loader.Show();
+                        appLoader.Show();
                         HashMap<String,String>Params=new HashMap<String, String>();
                         Params.put("user_id",AppContsnat.UserId);
                         try {
@@ -359,7 +358,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
-                                Loader.Dismiss();
+                                appLoader.Dismiss();
                                 try {
                                     MYALERT.AlertForAPIRESPONSE(getString(R.string.accept), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
                                         @Override
@@ -375,7 +374,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                             @Override
                             public void OnError(String Error, String Response) {
-                                Loader.Dismiss();
+                                appLoader.Dismiss();
                                 try {
                                     MYALERT.AlertForAPIRESPONSE(getString(R.string.accept), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
                                         @Override
@@ -390,7 +389,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                             @Override
                             public void OnError(String Error) {
-                                Loader.Dismiss();
+                                appLoader.Dismiss();
                                 MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
@@ -422,7 +421,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
     }
 
     private void Deny_Button(String BookingID) {
-        Loader.Show();
+        appLoader.Show();
 
         String URL= AppContsnat.BASEURL+"booking_deny_confirm?user_id="+AppContsnat.UserId+"&booking_id="+BookingID;
         new CustomJSONParser().APIForGetMethod(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
@@ -446,12 +445,12 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             @Override
             public void OnError(String Error, String Response) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
         });
 
@@ -463,7 +462,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
             @Override
             public void OnEditSubmit(String Messge) {
 
-                Loader.Show();
+                appLoader.Show();
                 HashMap<String,String> Params=new HashMap<String, String>();
 //                try {
 //                    Params.put("booking_id",jsonObject.getJSONObject("booking_info").getString("id"));
@@ -479,7 +478,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         String Message="";
                         try {
                             Message=new JSONObject(Result).getString("message");
@@ -497,7 +496,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Response, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
@@ -509,7 +508,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                     @Override
                     public void OnError(String Error) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
@@ -550,7 +549,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         new MYAlert(BookingDetailsActivity.this).AlertOkCancel(getString(R.string.cancel), getString(R.string.do_you_want_to_cancel_booking), new MYAlert.OnOkCancel() {
             @Override
             public void OnOk() {
-                Loader.Show();
+                appLoader.Show();
                 HashMap<String,String> Params=new HashMap<String, String>();
                 Params.put("booking_id",BookingID);
                 Params.put("booking_type",BookingType);
@@ -561,7 +560,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         String Message="";
                         try {
                             Message=new JSONObject(Result).getString("message");
@@ -579,7 +578,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Response, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
@@ -591,7 +590,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                     @Override
                     public void OnError(String Error) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {

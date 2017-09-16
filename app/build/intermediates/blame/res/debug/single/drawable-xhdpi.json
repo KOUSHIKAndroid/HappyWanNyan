@@ -1,23 +1,19 @@
 [
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_fab_minus.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_fab_minus.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_action_delete.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_delete.png"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_swipe_left.png",
+        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_swipe_left.png"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_fab_like.png",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_fab_like.png"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_calender_white.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_calender_white.png"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\float_map.png",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\float_map.png"
+    },
+    {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_tindermode.png",
+        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_tindermode.png"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_calender_white.png",
@@ -28,40 +24,8 @@
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_walkingpets.png"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_tindermode.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_tindermode.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_fab_like.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_fab_like.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_walkingpets.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_walkingpets.png"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_swipe_left.png",
-        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_swipe_left.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\logo_searchpage.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\logo_searchpage.png"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_tindermode.png",
-        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_tindermode.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_fab_plus.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_fab_plus.png"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_swipe_right.png",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_swipe_right.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_swipe_left.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_swipe_left.png"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_action_delete.png",
@@ -76,23 +40,11 @@
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_fab_plus.png"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_swipe_right.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_swipe_right.png"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\logo_searchpage.png",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\logo_searchpage.png"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\float_map.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\float_map.png"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_fab_minus.png",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_fab_minus.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_calender_balack.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable-xhdpi\\ic_calender_balack.png"
     }
 ]

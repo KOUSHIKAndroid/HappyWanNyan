@@ -65,7 +65,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
     SFNFTextView TXT_DropTime, TXT_PickTime, TXT_MessageType;
     ImageView IMGE_FROM, USER_IMAGE;
     EditText EDX_Text;
-    AppLoader Loader;
+    AppLoader appLoader;
     LinearLayout LL_USER_TIME;
     File photofile;
     JSONArray ARRAy;
@@ -90,7 +90,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         IMGE_FROM = (ImageView) findViewById(R.id.IMGE_FROM);
         USER_IMAGE = (ImageView) findViewById(R.id.USER_IMAGE);
         RL_ButtomSheet = (RelativeLayout) findViewById(R.id.RL_ButtomSheet);
-        Loader = new AppLoader(this);
+        appLoader = new AppLoader(this);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mLinearLayoutManager.setStackFromEnd(true);
         LL_UserInfo.setLayoutManager(mLinearLayoutManager);
@@ -131,7 +131,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
     private void FetCh() {
 
-        Loader.Show();
+        appLoader.Show();
         TimeZone tz = TimeZone.getDefault();
         String URL = "messagedetails?user_id=" + AppContsnat.UserId + "&message_id=" + getIntent().getStringExtra("message_id") + "&lang_id=" + AppContsnat.Language
                 + "&user_timezone=" + tz.getID();
@@ -168,7 +168,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                         LL_UserInfo.setAdapter(messageAdapter);
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
-                    Loader.Dismiss();
+                    appLoader.Dismiss();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -177,12 +177,12 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
             @Override
             public void OnError(String Error, String Response) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
         });
 
@@ -212,7 +212,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                 if (EDX_Text.getText().toString().trim().equals("")) {
 
                 } else {
-                    Loader.Show();
+                    appLoader.Show();
                     ArrayList<APIPOSTDATA> Params = new ArrayList<>();
                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("message");
@@ -263,17 +263,17 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
                             FetCh();
                             EDX_Text.setText("");
-                            Loader.Dismiss();
+                            appLoader.Dismiss();
                         }
 
                         @Override
                         public void OnError(String Error, String Response) {
-                            Loader.Dismiss();
+                            appLoader.Dismiss();
                         }
 
                         @Override
                         public void OnError(String Error) {
-                            Loader.Dismiss();
+                            appLoader.Dismiss();
                         }
                     });
 
@@ -387,7 +387,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             Place place = PlacePicker.getPlace(MessageDetailsPageActivity.this, data);
             Loger.MSG("@@ PLACE", "" + place.getLatLng());
             String MAPIMGAEURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&zoom=13&size=1000x1000&markers=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M";
-            Loader.Show();
+            appLoader.Show();
             ArrayList<APIPOSTDATA> Params = new ArrayList<>();
             APIPOSTDATA apipostdata = new APIPOSTDATA();
             apipostdata.setPARAMS("message");
@@ -443,17 +443,17 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                 public void OnSuccess(String Result) {
                     FetCh();
                     EDX_Text.setText("");
-                    Loader.Dismiss();
+                    appLoader.Dismiss();
                 }
 
                 @Override
                 public void OnError(String Error, String Response) {
-                    Loader.Dismiss();
+                    appLoader.Dismiss();
                 }
 
                 @Override
                 public void OnError(String Error) {
-                    Loader.Dismiss();
+                    appLoader.Dismiss();
                 }
             });
         } else {
@@ -462,7 +462,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
     }
 
     private void FileUpload() {
-        Loader.Show();
+        appLoader.Show();
         ArrayList<APIPOSTDATA> Params = new ArrayList<>();
         APIPOSTDATA apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("message");
@@ -507,17 +507,17 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             public void OnSuccess(String Result) {
                 FetCh();
                 EDX_Text.setText("");
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error, String Response) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
         });
 

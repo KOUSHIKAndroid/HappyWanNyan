@@ -56,7 +56,6 @@ public class BaseActivity extends LocationBaseActivity
     FragmentTransaction fragmentTransaction;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     AppLoader appLoader;
-    Events events;
     NavigationView navigationView;
 
     @Override

@@ -37,7 +37,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
     public String ServiceList;
     public String PRESelectService;
 
-    AppLoader Apploaders;
+    AppLoader appLoader;
     JSONObject ItemDetails;
     public ArrayList<String> MyPetList;
     public boolean DropDown = true;
@@ -54,7 +54,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.IMG_icon_back).setOnClickListener(this);
         findViewById(R.id.PAGE_Cancel).setOnClickListener(this);
 
-        Apploaders = new AppLoader(this);
+        appLoader = new AppLoader(this);
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         try {
             ServiceList = getIntent().getStringExtra("LIST");
@@ -107,7 +107,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
         switch (uri) {
 
             case "Two":
-                Apploaders.Show();
+                appLoader.Show();
 
                 try {
                     APIPOSTDATA apipostdata = new APIPOSTDATA();
@@ -123,47 +123,44 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-                        Apploaders.Dismiss();
+                        appLoader.Dismiss();
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.add(R.id.Body, BookingFragmentTwo.newInstance(Result, null));
                         fragmentTransaction.addToBackStack(null).commit();
-
                     }
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Apploaders.Dismiss();
+                        appLoader.Dismiss();
                     }
 
                     @Override
                     public void OnError(String Error) {
-                        Apploaders.Dismiss();
+                        appLoader.Dismiss();
                     }
                 });
 
 
                 break;
             case "Three":
-                Apploaders.Show();
+                appLoader.Show();
                 new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-
-                        Apploaders.Dismiss();
+                        appLoader.Dismiss();
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.add(R.id.Body, BookingFrgamnetThree.newInstance(Result, null));
                         fragmentTransaction.addToBackStack(null).commit();
-
                     }
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Apploaders.Dismiss();
+                        appLoader.Dismiss();
                     }
 
                     @Override
                     public void OnError(String Error) {
-                        Apploaders.Dismiss();
+                        appLoader.Dismiss();
                     }
                 });
 
@@ -185,41 +182,41 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 //    }
 
     public void submitConfirmReservationRequest() {
-        Apploaders.Show();
+        appLoader.Show();
         new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
-                Apploaders.Dismiss();
+                appLoader.Dismiss();
                 Loger.MSG("Result-->", Result);
             }
 
             @Override
             public void OnError(String Error, String Response) {
-                Apploaders.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Apploaders.Dismiss();
+                appLoader.Dismiss();
             }
         });
     }
 
 
     public void submitConfirmReservationRequestByVolley() {
-        Apploaders.Show();
+        appLoader.Show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, AppContsnat.BASEURL + "confirm_reservation_request",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String result) {
-                        Apploaders.Dismiss();
+                        appLoader.Dismiss();
                         Loger.MSG("Result-->", result);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        Apploaders.Dismiss();
+                        appLoader.Dismiss();
                     }
                 }) {
             @Override
@@ -251,11 +248,11 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
 
     public void submitConfirmReservationRequestUsingHTTP() {
-        Apploaders.Show();
+        appLoader.Show();
         new CustomJSONParser().postDataUsingHttp(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
-                Apploaders.Dismiss();
+                appLoader.Dismiss();
                 Loger.MSG("Result-->", Result);
                 try {
                     JSONObject jsonObject = new JSONObject(Result);
@@ -272,19 +269,17 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
 
             @Override
             public void OnError(String Error, String Response) {
-                Apploaders.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Apploaders.Dismiss();
+                appLoader.Dismiss();
             }
         });
     }
-
 }

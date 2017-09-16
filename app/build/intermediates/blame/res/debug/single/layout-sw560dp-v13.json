@@ -1,19 +1,7 @@
 [
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw560dp-v13\\adapter_favourite.xml",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw560dp\\adapter_favourite.xml"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw560dp-v13\\activity_forgot_password.xml",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw560dp\\activity_forgot_password.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw560dp-v13\\activity_login.xml",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw560dp\\activity_login.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw560dp-v13\\activity_signup.xml",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw560dp\\activity_signup.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw560dp-v13\\activity_login.xml",
@@ -22,10 +10,6 @@
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw560dp-v13\\activity_signup.xml",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw560dp\\activity_signup.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw560dp-v13\\activity_forgot_password.xml",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw560dp\\activity_forgot_password.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw560dp-v13\\adapter_favourite.xml",

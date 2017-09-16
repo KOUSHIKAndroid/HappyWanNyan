@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.FavouriteRecyclerAdapter;
 import com.happywannyan.Constant.AppContsnat;
-import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
@@ -34,7 +33,7 @@ public class FavouriteFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    AppLoader Loader;
+    AppLoader appLoader;
 
     RecyclerView rcv_favourite;
     ArrayList<SetGetFavourite> favouriteArrayList;
@@ -61,7 +60,7 @@ public class FavouriteFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         new AppContsnat(getActivity());
-        Loader = new AppLoader(getActivity());
+        appLoader = new AppLoader(getActivity());
     }
 
     @Override
@@ -107,7 +106,7 @@ public class FavouriteFragment extends Fragment {
         apipostdata.setPARAMS("per_page");
         apipostdata.setValues("10");
         Params.add(apipostdata);
-        Loader.Show();
+        appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "users_favsetters_list?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
@@ -131,17 +130,17 @@ public class FavouriteFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error, String Response) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
         });
     }

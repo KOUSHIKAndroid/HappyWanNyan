@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_range_thumb.png",
+        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_range_thumb.png"
+    },
+    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_help.png",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_help.png"
     },
@@ -16,56 +20,12 @@
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_yourpet.png"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_booking.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_booking.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_yourpet.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_yourpet.png"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_msg.png",
+        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_msg.png"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher1.png",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher1.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher1.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher1.png"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_range_thumb.png",
-        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_range_thumb.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_help.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_help.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_range_thumb.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_range_thumb.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_pymnt.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_pymnt.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_msg.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_msg.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_profile.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_profile.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_menu_drwaer.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_menu_drwaer.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_logout.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_logout.png"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_msg.png",
-        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_msg.png"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_menu_drwaer.png",
@@ -78,14 +38,6 @@
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_logout.png",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_logout.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round1.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round1.png"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_past_fav.png",
-        "source": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nav_past_fav.png"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_nav_past_fav.png",

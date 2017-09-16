@@ -17,11 +17,9 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.TimeZone;
@@ -29,12 +27,10 @@ import java.util.TimeZone;
 public class ContactMsgActivity extends AppCompatActivity implements View.OnClickListener, AppCalender.OnDateSelect {
 
 
-JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{\"name\":\"12:00 AM\",\"value\":\"12:00 AM\"},{\"name\":\"12:30 AM\",\"value\":\"12:30 AM\"},{\"name\":\"01:00 AM\",\"value\":\"01:00 AM\"},{\"name\":\"01:30 AM\",\"value\":\"01:30 AM\"},{\"name\":\"02:00 AM\",\"value\":\"02:00 AM\"},{\"name\":\"02:30 AM\",\"value\":\"02:30 AM\"},{\"name\":\"03:00 AM\",\"value\":\"03:00 AM\"},{\"name\":\"03:30 AM\",\"value\":\"03:30 AM\"},{\"name\":\"04:00 AM\",\"value\":\"04:00 AM\"},{\"name\":\"04:30 AM\",\"value\":\"04:30 AM\"},{\"name\":\"05:00 AM\",\"value\":\"05:00 AM\"},{\"name\":\"05:30 AM\",\"value\":\"05:30 AM\"},{\"name\":\"06:00 AM\",\"value\":\"06:00 AM\"},{\"name\":\"06:30 AM\",\"value\":\"06:30 AM\"},{\"name\":\"07:00 AM\",\"value\":\"07:00 AM\"},{\"name\":\"07:30 AM\",\"value\":\"07:30 AM\"},{\"name\":\"08:00 AM\",\"value\":\"08:00 AM\"},{\"name\":\"08:30 AM\",\"value\":\"08:30 AM\"},{\"name\":\"09:00 AM\",\"value\":\"09:00 AM\"},{\"name\":\"09:30 AM\",\"value\":\"09:30 AM\"},{\"name\":\"10:00 AM\",\"value\":\"10:00 AM\"},{\"name\":\"10:30 AM\",\"value\":\"10:30 AM\"},{\"name\":\"11:00 AM\",\"value\":\"11:00 AM\"},{\"name\":\"11:30 AM\",\"value\":\"11:30 AM\"},{\"name\":\"12:00 PM\",\"value\":\"12:00 PM\"},{\"name\":\"12:30 PM\",\"value\":\"12:30 PM\"},{\"name\":\"01:00 PM\",\"value\":\"01:00 PM\"},{\"name\":\"01:30 PM\",\"value\":\"01:30 PM\"},{\"name\":\"02:00 PM\",\"value\":\"02:00 PM\"},{\"name\":\"02:30 PM\",\"value\":\"02:30 PM\"},{\"name\":\"03:00 PM\",\"value\":\"03:00 PM\"},{\"name\":\"03:30 PM\",\"value\":\"03:30 PM\"},{\"name\":\"04:00 PM\",\"value\":\"04:00 PM\"},{\"name\":\"04:30 PM\",\"value\":\"04:30 PM\"},{\"name\":\"05:00 PM\",\"value\":\"05:00 PM\"},{\"name\":\"05:30 PM\",\"value\":\"05:30 PM\"},{\"name\":\"06:00 PM\",\"value\":\"06:00 PM\"},{\"name\":\"06:30 PM\",\"value\":\"06:30 PM\"},{\"name\":\"07:00 PM\",\"value\":\"07:00 PM\"},{\"name\":\"07:30 PM\",\"value\":\"07:30 PM\"},{\"name\":\"08:00 PM\",\"value\":\"08:00 PM\"},{\"name\":\"08:30 PM\",\"value\":\"08:30 PM\"},{\"name\":\"09:00 PM\",\"value\":\"09:00 PM\"},{\"name\":\"09:30 PM\",\"value\":\"09:30 PM\"},{\"name\":\"10:00 PM\",\"value\":\"10:00 PM\"},{\"name\":\"10:30 PM\",\"value\":\"10:30 PM\"},{\"name\":\"11:00 PM\",\"value\":\"11:00 PM\"},{\"name\":\"11:30 PM\",\"value\":\"11:30 PM\"}]");
-
+    JSONArray JSONARRAY = new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{\"name\":\"12:00 AM\",\"value\":\"12:00 AM\"},{\"name\":\"12:30 AM\",\"value\":\"12:30 AM\"},{\"name\":\"01:00 AM\",\"value\":\"01:00 AM\"},{\"name\":\"01:30 AM\",\"value\":\"01:30 AM\"},{\"name\":\"02:00 AM\",\"value\":\"02:00 AM\"},{\"name\":\"02:30 AM\",\"value\":\"02:30 AM\"},{\"name\":\"03:00 AM\",\"value\":\"03:00 AM\"},{\"name\":\"03:30 AM\",\"value\":\"03:30 AM\"},{\"name\":\"04:00 AM\",\"value\":\"04:00 AM\"},{\"name\":\"04:30 AM\",\"value\":\"04:30 AM\"},{\"name\":\"05:00 AM\",\"value\":\"05:00 AM\"},{\"name\":\"05:30 AM\",\"value\":\"05:30 AM\"},{\"name\":\"06:00 AM\",\"value\":\"06:00 AM\"},{\"name\":\"06:30 AM\",\"value\":\"06:30 AM\"},{\"name\":\"07:00 AM\",\"value\":\"07:00 AM\"},{\"name\":\"07:30 AM\",\"value\":\"07:30 AM\"},{\"name\":\"08:00 AM\",\"value\":\"08:00 AM\"},{\"name\":\"08:30 AM\",\"value\":\"08:30 AM\"},{\"name\":\"09:00 AM\",\"value\":\"09:00 AM\"},{\"name\":\"09:30 AM\",\"value\":\"09:30 AM\"},{\"name\":\"10:00 AM\",\"value\":\"10:00 AM\"},{\"name\":\"10:30 AM\",\"value\":\"10:30 AM\"},{\"name\":\"11:00 AM\",\"value\":\"11:00 AM\"},{\"name\":\"11:30 AM\",\"value\":\"11:30 AM\"},{\"name\":\"12:00 PM\",\"value\":\"12:00 PM\"},{\"name\":\"12:30 PM\",\"value\":\"12:30 PM\"},{\"name\":\"01:00 PM\",\"value\":\"01:00 PM\"},{\"name\":\"01:30 PM\",\"value\":\"01:30 PM\"},{\"name\":\"02:00 PM\",\"value\":\"02:00 PM\"},{\"name\":\"02:30 PM\",\"value\":\"02:30 PM\"},{\"name\":\"03:00 PM\",\"value\":\"03:00 PM\"},{\"name\":\"03:30 PM\",\"value\":\"03:30 PM\"},{\"name\":\"04:00 PM\",\"value\":\"04:00 PM\"},{\"name\":\"04:30 PM\",\"value\":\"04:30 PM\"},{\"name\":\"05:00 PM\",\"value\":\"05:00 PM\"},{\"name\":\"05:30 PM\",\"value\":\"05:30 PM\"},{\"name\":\"06:00 PM\",\"value\":\"06:00 PM\"},{\"name\":\"06:30 PM\",\"value\":\"06:30 PM\"},{\"name\":\"07:00 PM\",\"value\":\"07:00 PM\"},{\"name\":\"07:30 PM\",\"value\":\"07:30 PM\"},{\"name\":\"08:00 PM\",\"value\":\"08:00 PM\"},{\"name\":\"08:30 PM\",\"value\":\"08:30 PM\"},{\"name\":\"09:00 PM\",\"value\":\"09:00 PM\"},{\"name\":\"09:30 PM\",\"value\":\"09:30 PM\"},{\"name\":\"10:00 PM\",\"value\":\"10:00 PM\"},{\"name\":\"10:30 PM\",\"value\":\"10:30 PM\"},{\"name\":\"11:00 PM\",\"value\":\"11:00 PM\"},{\"name\":\"11:30 PM\",\"value\":\"11:30 PM\"}]");
     EditText EDX_msg;
-    String ID="";
-
-    AppLoader Loader;
+    String ID = "";
+    AppLoader appLoader;
     CheckBox CHEK;
 
     public ContactMsgActivity() throws JSONException {
@@ -44,15 +40,15 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_msg);
-        EDX_msg=(EditText)findViewById(R.id.EDX_msg);
-        CHEK=(CheckBox)findViewById(R.id.CHEK);
-        ID=getIntent().getStringExtra("DATA");
-        Loader=new AppLoader(this);
+        EDX_msg = (EditText) findViewById(R.id.EDX_msg);
+        CHEK = (CheckBox) findViewById(R.id.CHEK);
+        ID = getIntent().getStringExtra("DATA");
+        appLoader = new AppLoader(this);
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.IMG_icon_drwaer:
                 onBackPressed();
                 break;
@@ -61,19 +57,19 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
                 newFragment.show(getFragmentManager(), "datePicker");
                 break;
             case R.id.AlterDate:
-                 newFragment = AppCalender.newInstance(R.id.AlterDate);
+                newFragment = AppCalender.newInstance(R.id.AlterDate);
                 newFragment.show(getFragmentManager(), "datePicker");
                 break;
 
             case R.id.RL_PickupTime:
                 try {
-                    new MYAlert(this).AlertTextLsit(getString(R.string.pickuptime), JSONARRY, "name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(this).AlertTextLsit(getString(R.string.pickuptime), JSONARRAY, "name", new MYAlert.OnSignleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
-                            Log.d("@@@fhjhf","--"+jsonObject);
+                            Log.d("@@@fhjhf", "--" + jsonObject);
                             try {
-                                ((SFNFTextView)findViewById(R.id.TXT_PickupTime)).setText(jsonObject.getString("name"));
-                                ((SFNFTextView)findViewById(R.id.TXT_PickupTime)).setTag(jsonObject.getString("name"));
+                                ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).setText(jsonObject.getString("name"));
+                                ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).setTag(jsonObject.getString("name"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -86,13 +82,13 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
 
             case R.id.RL_DropOffTime:
                 try {
-                    new MYAlert(this).AlertTextLsit(getString(R.string.dropofftime), JSONARRY, "name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(this).AlertTextLsit(getString(R.string.dropofftime), JSONARRAY, "name", new MYAlert.OnSignleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
-                            Log.d("@@@fhjhf","--"+jsonObject);
+                            Log.d("@@@fhjhf", "--" + jsonObject);
                             try {
-                                ((SFNFTextView)findViewById(R.id.TXT_DropTime)).setText(jsonObject.getString("name"));
-                                ((SFNFTextView)findViewById(R.id.TXT_DropTime)).setTag(jsonObject.getString("name"));
+                                ((SFNFTextView) findViewById(R.id.TXT_DropTime)).setText(jsonObject.getString("name"));
+                                ((SFNFTextView) findViewById(R.id.TXT_DropTime)).setTag(jsonObject.getString("name"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -105,11 +101,11 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
 
             case R.id.Card_next:
 
-                if(EDX_msg.getText().toString().trim().length()>0) {
-                    Loader.Show();
-                    String CHCH="0";
-                    if(CHEK.isChecked())
-                        CHCH="1";
+                if (EDX_msg.getText().toString().trim().length() > 0) {
+                    appLoader.Show();
+                    String CHCH = "0";
+                    if (CHEK.isChecked())
+                        CHCH = "1";
 
 
                     HashMap<String, String> Params = new HashMap<>();
@@ -127,7 +123,7 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
                     new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
-                            Loader.Dismiss();
+                            appLoader.Dismiss();
                             try {
                                 new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
                                     @Override
@@ -143,7 +139,7 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
 
                         @Override
                         public void OnError(String Error, String Response) {
-                            Loader.Dismiss();
+                            appLoader.Dismiss();
                             try {
                                 new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
                                     @Override
@@ -158,10 +154,10 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
 
                         @Override
                         public void OnError(String Error) {
-                            Loader.Dismiss();
+                            appLoader.Dismiss();
                         }
                     });
-                }else {
+                } else {
                     EDX_msg.setHintTextColor(Color.RED);
                     EDX_msg.setHint(getString(R.string.please_enter_message));
                     EDX_msg.requestFocus();

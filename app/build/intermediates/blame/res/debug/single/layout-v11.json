@@ -12,20 +12,8 @@
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\layout-v11\\notification_media_action.xml"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
@@ -34,17 +22,5 @@
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\layout-v11\\notification_media_action.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\layout-v11\\notification_template_big_media.xml"
     }
 ]

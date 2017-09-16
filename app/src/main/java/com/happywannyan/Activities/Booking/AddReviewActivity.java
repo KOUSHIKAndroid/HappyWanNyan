@@ -28,7 +28,6 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.ImageFilePath;
 import com.happywannyan.Utils.Loger;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -38,22 +37,23 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.TimeZone;
 
-public class AddReviewActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddReviewActivity extends AppCompatActivity implements View.OnClickListener {
     private static final int REQUEST_WRITE_PERMISSION1 = 3000;
     private static final int REQUEST_WRITE_PERMISSION2 = 4000;
     final String BITMAP_STORAGE_URL = "IMAGE_URL";
     private int PICK_IMAGE_REQUEST = 100;
     private int CAMERA_CAPTURE = 200;
     File photofile = null;
-  AlertDialog Dialog;
-    String BookingId="";
-    AppLoader Loader;
+    AlertDialog Dialog;
+    String BookingId = "";
+    AppLoader appLoader;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addreview);
-        BookingId=getIntent().getStringExtra("B_ID");
-        Loader=new AppLoader(this);
+        BookingId = getIntent().getStringExtra("B_ID");
+        appLoader = new AppLoader(this);
     }
 
 
@@ -62,7 +62,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         super.onSaveInstanceState(outState);
 
 
-        Loger.MSG("@@ CAM SERVICEID-",getIntent().getStringExtra("SERVICEID")+"\n USERID-"+getIntent().getStringExtra("USERID"));
+        Loger.MSG("@@ CAM SERVICEID-", getIntent().getStringExtra("SERVICEID") + "\n USERID-" + getIntent().getStringExtra("USERID"));
         if (photofile != null) {
             outState.putString(BITMAP_STORAGE_URL, photofile.getAbsolutePath().toString());
             Log.i("@@", "onSaveInstanceState : " + photofile.getAbsolutePath().toString());
@@ -76,17 +76,15 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         try {
 
 
-
             if (photofile == null) {
 
                 photofile = new File(savedInstanceState.getString(BITMAP_STORAGE_URL));
             }
             Log.i("@@", "onRestoreInstanceState : " + photofile.getAbsolutePath().toString());
-        }catch (NullPointerException e)
-        {}
+        } catch (NullPointerException e) {
+        }
 
     }
-
 
 
     @Override
@@ -95,21 +93,21 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         super.onActivityResult(requestCode, resultCode, data);
 
 
-        if (requestCode == CAMERA_CAPTURE && resultCode == RESULT_OK && data != null ) {
+        if (requestCode == CAMERA_CAPTURE && resultCode == RESULT_OK && data != null) {
 
-            if(Build.VERSION.SDK_INT<Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
                 Uri selectedImageURI = data.getData();
                 try {
                     photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }else {
+            } else {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
                 storeImage(photo);
             }
 
-        } else if (requestCode ==PICK_IMAGE_REQUEST  && resultCode == RESULT_OK && photofile != null) {
+        } else if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && photofile != null) {
             Uri selectedImageURI = data.getData();
             try {
                 photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
@@ -120,8 +118,9 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             Toast.makeText(this, "Image Error", Toast.LENGTH_SHORT).show();
         }
     }
+
     private void storeImage(Bitmap image) {
-        File pictureFile =  new File(Environment.getExternalStoragePublicDirectory(
+        File pictureFile = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), "FREEWILDER");
         if (pictureFile == null) {
             Loger.MSG("@@",
@@ -129,9 +128,9 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             return;
         }
         try {
-            Loger.MSG("@@","PIPATH"+pictureFile.getAbsolutePath());
-            String uriSting = (pictureFile.getAbsolutePath()  + System.currentTimeMillis() + ".jpg");
-            photofile=new File(uriSting);
+            Loger.MSG("@@", "PIPATH" + pictureFile.getAbsolutePath());
+            String uriSting = (pictureFile.getAbsolutePath() + System.currentTimeMillis() + ".jpg");
+            photofile = new File(uriSting);
             FileOutputStream fos = new FileOutputStream(uriSting);
             image.compress(Bitmap.CompressFormat.PNG, 90, fos);
             fos.close();
@@ -141,6 +140,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             Loger.MSG("@@", "Error accessing file: " + e.getMessage());
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == REQUEST_WRITE_PERMISSION1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -196,7 +196,6 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
     }
 
 
-
     private void openImageGallery() {
         try {
             photofile = createImageFile();
@@ -208,7 +207,6 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
-
 
 
         Dialog.dismiss();
@@ -238,60 +236,51 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.LL_Attach:
                 showPhotoDialog();
                 break;
             case R.id.BTN_Confirm:
-                if(((EditText)findViewById(R.id.EDX_message)).getText().toString().trim().equals(""))
-                {
-                    ((EditText)findViewById(R.id.EDX_message)).setHint(R.string.please_enter_message);
-                    ((EditText)findViewById(R.id.EDX_message)).setHintTextColor(Color.RED);
-                    ((EditText)findViewById(R.id.EDX_message)).requestFocus();
-                }else {
+                if (((EditText) findViewById(R.id.EDX_message)).getText().toString().trim().equals("")) {
+                    ((EditText) findViewById(R.id.EDX_message)).setHint(R.string.please_enter_message);
+                    ((EditText) findViewById(R.id.EDX_message)).setHintTextColor(Color.RED);
+                    ((EditText) findViewById(R.id.EDX_message)).requestFocus();
+                } else {
                     SUBMIT_Review();
                 }
-
-
-
-
         }
     }
 
     private void SUBMIT_Review() {
-        Loader.Show();
+        appLoader.Show();
         new AppContsnat(this);
-       HashMap<String,String> Params= new HashMap<String,String>();
-        Params.put("booking_id",BookingId);
+        HashMap<String, String> Params = new HashMap<String, String>();
+        Params.put("booking_id", BookingId);
         Params.put("langid", AppContsnat.Language);
-        Params.put("user_id",AppContsnat.UserId);
-        Params.put("rating_input",((RatingBar)findViewById(R.id.RATINGID)).getRating()+"");
-        Params.put("exp_message",((EditText)findViewById(R.id.EDX_message)).getText()+"");
-        Params.put("user_timezone",TimeZone.getDefault().getID());
-        HashMap<String,File> FileParams= new HashMap<String,File>();
-        FileParams.put("msg_attachment",photofile);
+        Params.put("user_id", AppContsnat.UserId);
+        Params.put("rating_input", ((RatingBar) findViewById(R.id.RATINGID)).getRating() + "");
+        Params.put("exp_message", ((EditText) findViewById(R.id.EDX_message)).getText() + "");
+        Params.put("user_timezone", TimeZone.getDefault().getID());
+        HashMap<String, File> FileParams = new HashMap<String, File>();
+        FileParams.put("msg_attachment", photofile);
 
         new CustomJSONParser().APIForWithPhotoPostMethod2(AppContsnat.BASEURL + "app_add_review", Params, FileParams, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
                 finish();
 
             }
 
             @Override
             public void OnError(String Error, String Response) {
-                Loader.Dismiss();
-
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Loader.Dismiss();
-
+                appLoader.Dismiss();
             }
         });
-
-
     }
 }

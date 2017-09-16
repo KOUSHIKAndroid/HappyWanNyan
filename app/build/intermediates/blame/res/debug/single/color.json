@@ -1,111 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\6def7622c3971d03ddc574397c5334b1fbebcd92\\output\\res\\color\\common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\wallet_primary_text_holo_light.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\f7ce901376eed59d1bf665f27eea833c80bee372\\output\\res\\color\\wallet_primary_text_holo_light.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\wallet_secondary_text_holo_dark.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\c71401d365f800dbd2892f462454dd281479d51d\\output\\res\\color\\wallet_secondary_text_holo_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\color\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_hint_foreground_material_light.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\0665c1bb5043dee0ca7c8bd951eb8acf620fa49e\\output\\res\\color\\design_error.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\907d73ee044718a4f3f1a3134997f1d0514c1617\\output\\res\\color\\com_facebook_button_text_color.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\0665c1bb5043dee0ca7c8bd951eb8acf620fa49e\\output\\res\\color\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\\output\\res\\color\\common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\907d73ee044718a4f3f1a3134997f1d0514c1617\\output\\res\\color\\com_facebook_send_button_text_color.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\\output\\res\\color\\com_facebook_button_text_color.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_tint_btn_checkable.xml"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
@@ -116,44 +16,44 @@
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_tint_default.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\wallet_primary_text_holo_light.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\f7ce901376eed59d1bf665f27eea833c80bee372\\output\\res\\color\\wallet_primary_text_holo_light.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\color\\design_tint_password_toggle.xml"
+    },
+    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_tint_seek_thumb.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_btn_colored_text_material.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\color\\design_error.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_search_url_text.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\switch_thumb_material_dark.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_tint.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\6def7622c3971d03ddc574397c5334b1fbebcd92\\output\\res\\color\\common_google_signin_btn_tint.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\6def7622c3971d03ddc574397c5334b1fbebcd92\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_default.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
@@ -164,24 +64,16 @@
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\switch_thumb_material_light.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_secondary_text_material_light.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\\output\\res\\color\\common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_primary_text_material_dark.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
@@ -192,32 +84,24 @@
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\wallet_primary_text_holo_light.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\c71401d365f800dbd2892f462454dd281479d51d\\output\\res\\color\\wallet_primary_text_holo_light.xml"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_tint.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\\output\\res\\color\\common_google_signin_btn_tint.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\wallet_secondary_text_holo_dark.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\f7ce901376eed59d1bf665f27eea833c80bee372\\output\\res\\color\\wallet_secondary_text_holo_dark.xml"
     },
     {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_spinner.xml"
+    },
+    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_secondary_text_material_dark.xml"
-    },
-    {
-        "merged": "C:\\home\\su\\Documents\\Suraj WorkSpace\\LiveProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
-        "source": "C:\\home\\su\\.android\\build-cache\\96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00\\output\\res\\color\\abc_btn_colored_text_material.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\\output\\res\\color\\com_facebook_button_text_color.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",

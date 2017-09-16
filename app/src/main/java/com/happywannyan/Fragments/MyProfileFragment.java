@@ -78,7 +78,7 @@ public class MyProfileFragment extends Fragment {
     JSONObject UserInfo;
     Place place;
     CheckBox Check;
-    AppLoader Loader;
+    AppLoader appLoader;
 
     View Mview;
 
@@ -142,7 +142,7 @@ public class MyProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new AppContsnat(getActivity());
-        Loader=new AppLoader(getActivity());
+        appLoader =new AppLoader(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -257,7 +257,7 @@ public class MyProfileFragment extends Fragment {
 
     private void SUBMITDETAILS() {
         if (Check.isChecked()) {
-            Loader.Show();
+            appLoader.Show();
             try {
                 Iterator it = UserInfo.keys(); //gets all the keys
                 while (it.hasNext()) {
@@ -316,18 +316,18 @@ public class MyProfileFragment extends Fragment {
                 new CustomJSONParser().APIForWithPhotoPostMethod(AppContsnat.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         loadPage();
                     }
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                     }
 
                     @Override
                     public void OnError(String Error) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                     }
                 });
 
@@ -463,12 +463,12 @@ public class MyProfileFragment extends Fragment {
     }
 
     public void loadPage(){
-        Loader.Show();
+        appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_about?user_id=" + AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
-                    Loader.Dismiss();
+                    appLoader.Dismiss();
                     JSONObject Ob = new JSONObject(Result);
                     UserInfo = Ob.getJSONObject("users_information");
                     Glide.with(getActivity()).load(UserInfo.getString("photo")).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
@@ -496,12 +496,12 @@ public class MyProfileFragment extends Fragment {
 
             @Override
             public void OnError(String Error, String Response) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
         });
     }

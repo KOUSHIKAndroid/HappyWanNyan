@@ -25,13 +25,13 @@ import java.util.ArrayList;
 
 public class AdapterCard extends RecyclerView.Adapter<AdapterCard.CardViewHolder> {
     Context mContext;
-    AppLoader Loader;
+    AppLoader appLoader;
     BookingFragmentFoure.onClickItem onClickItem;
     ArrayList<SetGetCards> setGetCardsArrayList;
 
     public AdapterCard(Context context, ArrayList<SetGetCards> setGetCardsArrayList, BookingFragmentFoure.onClickItem onClickItem) {
         this.mContext = context;
-        Loader = new AppLoader(mContext);
+        appLoader = new AppLoader(mContext);
         this.setGetCardsArrayList = setGetCardsArrayList;
         this.onClickItem = onClickItem;
     }

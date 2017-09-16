@@ -34,7 +34,7 @@ public class PastSitterFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    AppLoader Loader;
+    AppLoader appLoader;
 
     RecyclerView rcv_favourite;
     ArrayList<SetGetFavourite> favouriteArrayList;
@@ -61,7 +61,7 @@ public class PastSitterFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         new AppContsnat(getActivity());
-        Loader = new AppLoader(getActivity());
+        appLoader = new AppLoader(getActivity());
     }
 
     @Override
@@ -108,7 +108,7 @@ public class PastSitterFragment extends Fragment {
         apipostdata.setPARAMS("per_page");
         apipostdata.setValues("10");
         Params.add(apipostdata);
-        Loader.Show();
+        appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "users_setters_list?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
@@ -132,17 +132,17 @@ public class PastSitterFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error, String Response) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
 
             @Override
             public void OnError(String Error) {
-                Loader.Dismiss();
+                appLoader.Dismiss();
             }
         });
     }

@@ -34,13 +34,13 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
     Context mContext;
     JSONObject MainObject;
     JSONArray ARRY;
-    AppLoader Loader;
+    AppLoader appLoader;
     BookingFragmentFoure.onClickItem onClickItem;
     JSONArray Crad;
 
     public AdapterPaymentList(Context context, String Response, BookingFragmentFoure.onClickItem onClickItem) {
         this.mContext = context;
-        Loader = new AppLoader(mContext);
+        appLoader = new AppLoader(mContext);
         try {
             MainObject = new JSONObject(Response);
             ARRY = MainObject.getJSONArray("user_stripe_data");
@@ -126,7 +126,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView img_delete, IMG_VISA,img_default;
+        ImageView img_delete, IMG_VISA, img_default;
         LinearLayout LLDefault;
         SFNFTextView tv_name_on_card, tv_card_number, tv_card_month_date, tv_added_on;
 
@@ -147,12 +147,12 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
     }
 
     public void selectionCard(String default_card_id, final int position, final JSONObject OB) {
-        Loader.Show();
+        appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "make_card_default?user_id=" + AppContsnat.UserId + "&default_card_id=" + default_card_id
                 , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         Loger.MSG("Result-->", Result);
                         try {
                             JSONObject jsonObject = new JSONObject(Result);
@@ -177,7 +177,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(Response);
                             Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
@@ -188,19 +188,18 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
 
                     @Override
                     public void OnError(String Error) {
-                        Loader.Dismiss();
-
+                        appLoader.Dismiss();
                     }
                 });
     }
 
     public void deleteCard(String default_card_id, final int position) {
-        Loader.Show();
+        appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_delete_card?user_id=" + AppContsnat.UserId + "&del_card_id=" + default_card_id
                 , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         Loger.MSG("Result-->", Result);
                         try {
                             JSONObject jsonObject = new JSONObject(Result);
@@ -215,7 +214,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
 
                     @Override
                     public void OnError(String Error, String Response) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(Response);
                             Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
@@ -226,7 +225,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
 
                     @Override
                     public void OnError(String Error) {
-                        Loader.Dismiss();
+                        appLoader.Dismiss();
                     }
                 });
     }

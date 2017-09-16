@@ -34,8 +34,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         Card_Login.setOnClickListener(this);
         EDX_email = (EditText) findViewById(R.id.EDX_email);
         EDX_Password = (EditText) findViewById(R.id.EDX_Password);
-        appLoader=new AppLoader(this);
-
+        appLoader = new AppLoader(this);
     }
 
 
@@ -97,11 +96,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                                 Loger.MSG("@@ REG", Result);
                                 try {
                                     appLoader.Dismiss();
-                                    JSONObject object=new JSONObject(Result);
+                                    JSONObject object = new JSONObject(Result);
                                     new MYAlert(SignUpActivity.this).AlertOnly(getResources().getString(R.string.SignUp), object.getString("message"), new MYAlert.OnlyMessage() {
                                         @Override
                                         public void OnOk(boolean res) {
-                                            startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+                                            startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                                             finish();
                                         }
                                     });
@@ -174,9 +173,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==FacebookActivity.FacebookResponse && resultCode==RESULT_OK)
-        {
-            startActivity(new Intent(SignUpActivity.this,BaseActivity.class));
+        if (requestCode == FacebookActivity.FacebookResponse && resultCode == RESULT_OK) {
+            startActivity(new Intent(SignUpActivity.this, BaseActivity.class));
             finish();
         }
 

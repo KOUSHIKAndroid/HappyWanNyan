@@ -1,10 +1,12 @@
 package com.happywannyan.Activities;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+
 import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.SearchListFragment;
@@ -17,9 +19,11 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class SearchResultActivity extends AppCompatActivity {
@@ -31,7 +35,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
     public ArrayList<SearchData> ListARRY;
     JSONObject SearchKeys;
-public double ne_lng,ne_lat,sw_lng,sw_lat;
+    public double ne_lng, ne_lat, sw_lng, sw_lat;
     AppLoader appLoader;
 
     @Override
@@ -57,8 +61,8 @@ public double ne_lng,ne_lat,sw_lng,sw_lat;
         findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent();
-                setResult(RESULT_FIRST_USER,intent);
+                Intent intent = new Intent();
+                setResult(RESULT_FIRST_USER, intent);
                 finish();
             }
         });
@@ -95,17 +99,16 @@ public double ne_lng,ne_lat,sw_lng,sw_lat;
                 apipostdata.setPARAMS(object.getString("name"));
                 apipostdata.setValues(object.getString("value"));
                 PostData.add(apipostdata);
-                if(object.getString("name").equals("ne_lng"))
-                    ne_lng=Double.parseDouble(object.getString("value"));
-                if(object.getString("name").equals("ne_lat"))
-                    ne_lat=Double.parseDouble(object.getString("value"));
-                if(object.getString("name").equals("sw_lng"))
-                    sw_lng=Double.parseDouble(object.getString("value"));
-                if(object.getString("name").equals("sw_lat"))
-                    sw_lat=Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("ne_lng"))
+                    ne_lng = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("ne_lat"))
+                    ne_lat = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("sw_lng"))
+                    sw_lng = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("sw_lat"))
+                    sw_lat = Double.parseDouble(object.getString("value"));
 
             }
-
 
 
         } catch (JSONException e) {
@@ -130,7 +133,6 @@ public double ne_lng,ne_lat,sw_lng,sw_lat;
                         ListARRY.add(searchData);
 
                     }
-
 
 
                     fragmentTransaction.replace(R.id.Container_result, new SearchListFragment());
@@ -220,8 +222,8 @@ public double ne_lng,ne_lat,sw_lng,sw_lat;
         findViewById(R.id.IMG_Filter).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent();
-                setResult(RESULT_OK,intent);
+                Intent intent = new Intent();
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });
