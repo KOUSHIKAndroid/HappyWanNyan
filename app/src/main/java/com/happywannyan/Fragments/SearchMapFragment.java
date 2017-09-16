@@ -198,9 +198,9 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
             public void onInfoWindowClick(Marker marker) {
                 marker.hideInfoWindow();
 
-//                            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity)getActivity(), holder.img_view, "cardimage");
+//              ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity)getActivity(), holder.img_view, "cardimage");
                 Intent intent = new Intent(getActivity(), ProfileDetailsActivity.class);
-                            intent.putExtra("data", "" + ((SearchResultActivity)getActivity()).ListARRY.get((Integer) marker.getTag()).getSearcItem());
+                intent.putExtra("data", "" + ((SearchResultActivity)getActivity()).ListARRY.get((Integer) marker.getTag()).getSearcItem());
                 startActivity(intent);
             }
         });

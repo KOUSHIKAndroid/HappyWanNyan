@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -28,6 +27,7 @@ import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
@@ -258,11 +258,11 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 Apploaders.Dismiss();
                 Loger.MSG("Result-->", Result);
                 try {
-                    JSONObject jsonObject=new JSONObject(Result);
-                    if(jsonObject.getBoolean("response")){
+                    JSONObject jsonObject = new JSONObject(Result);
+                    if (jsonObject.getBoolean("response")) {
                         Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
                         //finish();
-                        Intent intent = new Intent(BookingOneActivity.this,BaseActivity.class);
+                        Intent intent = new Intent(BookingOneActivity.this, BaseActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         intent.putExtra("go_to", "pending_message");
