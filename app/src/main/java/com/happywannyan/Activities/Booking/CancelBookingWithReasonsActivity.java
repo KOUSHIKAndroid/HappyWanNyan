@@ -103,7 +103,7 @@ JSONObject DATAObject;
             Params.put("message_cancel",(((EditText)findViewById(R.id.EDX_Cancel_Message)).getText().toString()));
             Params.put("booking_refund",1+"");
 
-            new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONRESPONSE() {
+            new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                 @Override
                 public void OnSuccess(String Result) {
                     appLoader.Dismiss();

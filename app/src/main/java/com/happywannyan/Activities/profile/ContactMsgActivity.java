@@ -124,7 +124,7 @@ JSONArray JSONARRY=new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{
                     Params.put("drop_off", ((SFNFTextView) findViewById(R.id.TXT_DropTime)).getText().toString());
                     Params.put("pick_up", ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).getText().toString());
                     Params.put("dont_date", CHCH);
-                    new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONRESPONSE() {
+                    new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
                             Loader.Dismiss();

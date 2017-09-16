@@ -356,7 +356,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         Params.put("langid",AppContsnat.Language);
                         Params.put("user_timezone",TimeZone.getDefault().getID());
 
-                        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONRESPONSE() {
+                        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loader.Dismiss();
@@ -425,7 +425,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         Loader.Show();
 
         String URL= AppContsnat.BASEURL+"booking_deny_confirm?user_id="+AppContsnat.UserId+"&booking_id="+BookingID;
-        new CustomJSONParser().API_FOR_GET(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForGetMethod(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
 
@@ -476,7 +476,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 Params.put("lang_id",AppContsnat.Language);
                 Params.put("user_timezone",Tz.getID());
 
-                new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONRESPONSE() {
+                new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();
@@ -558,7 +558,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 Params.put("lang_id",AppContsnat.Language);
                 Params.put("user_timezone",Tz.getID());
 
-                new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONRESPONSE() {
+                new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();

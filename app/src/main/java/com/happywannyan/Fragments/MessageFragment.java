@@ -409,7 +409,7 @@ public class MessageFragment extends Fragment {
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + type + "?", Params, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + type + "?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -533,8 +533,8 @@ public class MessageFragment extends Fragment {
                 try {
                     String MessageID = AllMessage.get(position).getJsonObject().getString("message_id");
                     String ReciverId = AllMessage.get(position).getJsonObject().getString("receiver_id");
-                    new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "message_deleted_API?user_id=" + AppContsnat.UserId + "&message_id=" + MessageID + "&receiver_id=" + ReciverId,
-                            new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+                    new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "message_deleted_API?user_id=" + AppContsnat.UserId + "&message_id=" + MessageID + "&receiver_id=" + ReciverId,
+                            new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                                 @Override
                                 public void OnSuccess(String Result) {
 
@@ -606,7 +606,7 @@ public class MessageFragment extends Fragment {
 
         appLoader.Show();
 
-        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "user_memberlist" + "?", Params, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "user_memberlist" + "?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
 
             public void OnSuccess(String Result) {

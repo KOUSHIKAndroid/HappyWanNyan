@@ -679,7 +679,7 @@ String TAG="@@@Edit";
 
 
                                                     appLoader.Show();
-                                                    new CustomJSONParser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "app_users_addpetinfo?", Params,  PhotoFiles, new CustomJSONParser.JSONRESPONSE() {
+                                                    new CustomJSONParser().APIForWithPhotoPostMethod(AppContsnat.BASEURL + "app_users_addpetinfo?", Params,  PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
                                                         @Override
                                                         public void OnSuccess(String Result) {
                                                             appLoader.Dismiss();

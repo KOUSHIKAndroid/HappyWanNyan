@@ -120,7 +120,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 }
 
 
-                new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
+                new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         Apploaders.Dismiss();
@@ -145,7 +145,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 break;
             case "Three":
                 Apploaders.Show();
-                new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
+                new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
 
@@ -186,7 +186,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
     public void submitConfirmReservationRequest() {
         Apploaders.Show();
-        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 Apploaders.Dismiss();
@@ -252,7 +252,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
     public void submitConfirmReservationRequestUsingHTTP() {
         Apploaders.Show();
-        new CustomJSONParser().postDataUsingHttp(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().postDataUsingHttp(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 Apploaders.Dismiss();

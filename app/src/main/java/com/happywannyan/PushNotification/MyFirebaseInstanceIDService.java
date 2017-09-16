@@ -43,7 +43,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         Params.put("user_id", AppContsnat.UserId);
         Params.put("anorid_device_id",token);
 
-        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
 

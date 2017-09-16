@@ -126,7 +126,7 @@ public class MyPetsFragments extends Fragment {
         apipostdata.setPARAMS("per_page");
         apipostdata.setValues("10");
         params.add(apipostdata);
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

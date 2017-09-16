@@ -234,26 +234,26 @@ public class BookingFragmentFoure extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == 2) {
+        if (resultCode == RESULT_OK && requestCode == GET_NEW_CARD) {
             new AppContsnat(getActivity());
 
             final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
             final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
             String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
             String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
-            Loger.MSG("@@ Exipry-", cardNumber);
+            Loger.MSG("@@ Expiry-", cardNumber);
 
             final int year = Integer.parseInt("20" + expiry.split("/")[1]);
             final int month = Integer.parseInt(expiry.split("/")[0]);
-            Loger.MSG("@@ Exipry-", " YESR-" + year);
-            Loger.MSG("@@ Exipry-", " MOnth-" + month);
+            Loger.MSG("@@ Expiry-", " YEAR-" + year);
+            Loger.MSG("@@ Expiry-", " MONTH-" + month);
 
 
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {
-                Loger.MSG("@@ Crad ID-", card.getId() + "");
-                Loger.MSG("@@ Crad ID-", card.getNumber() + "");
-                Loger.MSG("@@ Crad-", card.getNumber() + "");
+                Loger.MSG("@@ Card ID-", card.getId() + "");
+                Loger.MSG("@@ Card ID-", card.getNumber() + "");
+                Loger.MSG("@@ Card-", card.getNumber() + "");
                 card.setName(cardHolderName);
 
 
@@ -266,7 +266,7 @@ public class BookingFragmentFoure extends Fragment {
                             public void onSuccess(final Token token) {
 
 
-                                new CustomJSONParser().GET_STRIPE_CUSTIMERID(token.getId(), new CustomJSONParser.JSONRESPONSE() {
+                                new CustomJSONParser().GetStripeCustomerID(token.getId(), new CustomJSONParser.JSONResponseInterface() {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ CUUU", Result);
@@ -296,12 +296,12 @@ public class BookingFragmentFoure extends Fragment {
                                         Params.put("cvv_code", card.getCVC() + "");
                                         Params.put("new_card", "1");
                                         Params.put("make_default", "1");
-                                        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONRESPONSE() {
+                                        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CRAD RESP-", Result);
-                                                new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
-                                                        , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+                                                new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+                                                        , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 Loader.Dismiss();
@@ -419,8 +419,8 @@ public class BookingFragmentFoure extends Fragment {
 
     private void SetCardDetails() {
         Loader.Show();
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
-                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();

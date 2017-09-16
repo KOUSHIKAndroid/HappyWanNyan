@@ -115,7 +115,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         Paramas.add(apipostdata);
 
 
-        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 JSONRESPONSESTRING = Result;
@@ -335,8 +335,8 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     IDtemp = "1";
 
 
-                new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_favourite_sitters?user_id=" + AppContsnat.UserId + "" +
-                        "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+                new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_favourite_sitters?user_id=" + AppContsnat.UserId + "" +
+                        "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         try {

@@ -40,9 +40,9 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class CustomJSONParser {
 
-    public static String ImageParamse = "petimg";
+    public static String ImageParam = "petimg";
 
-    public interface JSONRESPONSE {
+    public interface JSONResponseInterface {
         void OnSuccess(String Result);
 
         void OnError(String Error, String Response);
@@ -51,20 +51,20 @@ public class CustomJSONParser {
     }
 
 
-    public void API_FOR_GET(final String URL, final ArrayList<APIPOSTDATA> apipostdata, final JSONRESPONSE jsonresponse) {
+    public void APIForGetMethod(final String URL, final ArrayList<APIPOSTDATA> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
 
         new AsyncTask<Void, Void, Void>() {
 
-            private String respose = null;
+            private String responseString = null;
             private Exception exception = null;
             String PARAMS = "";
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                if (apipostdata != null && apipostdata.size() > 0) {
+                if (apiPostDataArrayList != null && apiPostDataArrayList.size() > 0) {
                     PARAMS = "&";
-                    for (APIPOSTDATA data : apipostdata) {
+                    for (APIPOSTDATA data : apiPostDataArrayList) {
                         PARAMS = PARAMS + data.getPARAMS() + "=" + data.getValues() + "&";
                     }
                     Loger.MSG("url", "" + URL + PARAMS);
@@ -80,14 +80,14 @@ public class CustomJSONParser {
                         Request request = new Request.Builder().url(URL + PARAMS).build();
                         Response response = client.newCall(request).execute();
 
-                        respose = response.body().string();
-                        new JSONObject(respose);
+                        responseString = response.body().string();
+                        new JSONObject(responseString);
 
-                       // Loger.MSG("response", "respose_::" + respose);
-                       // Loger.MSG("response", "respose_ww_message::" + response.message());
-                       // Loger.MSG("response", "respose_ww_headers::" + response.headers());
-                       // Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
-//                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
+                       // Loger.MSG("response", "response_::" + responseString);
+                       // Loger.MSG("response", "response_ww_message::" + response.message());
+                       // Loger.MSG("response", "response_ww_headers::" + response.headers());
+                       // Loger.MSG("response", "response_ww_isRedirect::" + response.isRedirect());
+//                       Loger.MSG("response", "response_ww_body::" + response.body().string());
                     }
                 } catch (Exception e) {
                     this.exception = e;
@@ -100,61 +100,58 @@ public class CustomJSONParser {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 if (!isCancelled() && exception == null) {
-
-
                     try {
-                        if (new JSONObject(respose).getBoolean("response")) {
-                            jsonresponse.OnSuccess(respose);
+                        if (new JSONObject(responseString).getBoolean("response")) {
+                            jsonResponseInterface.OnSuccess(responseString);
                         } else {
-                            jsonresponse.OnError(new JSONObject(respose).getString("message") + "", respose);
+                            jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
-                    jsonresponse.OnSuccess(exception.getMessage() + "");
+                    jsonResponseInterface.OnSuccess(exception.getMessage() + "");
                 }
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    public void API_FOR_POST(final String URL, final ArrayList<APIPOSTDATA> apipostdata, final JSONRESPONSE jsonresponse) {
+    public void APIForPostMethod(final String URL, final ArrayList<APIPOSTDATA> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
 
         new AsyncTask<Void, Void, Void>() {
 
-            private String respose = null;
+            private String responseString = null;
             private Exception exception = null;
-            MultipartBody.Builder buildernew;
+            MultipartBody.Builder builderNew;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
+                builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
                 Loger.MSG("@@ POST URL- ", URL);
-                for (APIPOSTDATA data : apipostdata) {
+                for (APIPOSTDATA data : apiPostDataArrayList) {
                     Loger.MSG("@@ POST PARAMS- ", "" + data.getPARAMS() + " - " + data.getValues());
-                    buildernew.addFormDataPart("" + data.getPARAMS(), data.getValues());
+                    builderNew.addFormDataPart("" + data.getPARAMS(), data.getValues());
                 }
-
             }
 
             @Override
             protected Void doInBackground(Void... voids) {
                 try {
                     if (!isCancelled()) {
-                        MultipartBody requestBody = buildernew.build();
+                        MultipartBody requestBody = builderNew.build();
                         OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
 
-                        respose = response.body().string();
+                        responseString = response.body().string();
 
-                        Loger.MSG("response", "respose_::" + respose);
-                        Loger.MSG("response", "respose_ww_message::" + response.message());
-                        Loger.MSG("response", "respose_ww_headers::" + response.headers());
-                        Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
-//                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
+                        Loger.MSG("response", "response_::" + responseString);
+                        Loger.MSG("response", "response_ww_message::" + response.message());
+                        Loger.MSG("response", "response_ww_headers::" + response.headers());
+                        Loger.MSG("response", "response_ww_isRedirect::" + response.isRedirect());
+//                       Loger.MSG("response", "response_ww_body::" + response.body().string());
                     }
                 } catch (Exception e) {
                     this.exception = e;
@@ -169,63 +166,60 @@ public class CustomJSONParser {
                 if (!isCancelled() && exception == null) {
 
                     try {
-                        if (new JSONObject(respose).getBoolean("response")) {
-                            jsonresponse.OnSuccess(respose);
+                        if (new JSONObject(responseString).getBoolean("response")) {
+                            jsonResponseInterface.OnSuccess(responseString);
                         } else {
-                            jsonresponse.OnError(new JSONObject(respose).getString("message") + "", respose);
+                            jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
-                    jsonresponse.OnError(exception.getMessage() + "");
+                    jsonResponseInterface.OnError(exception.getMessage() + "");
                 }
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    public void API_FOR_POST_2(final String URL, final HashMap<String, String> apipostdata, final JSONRESPONSE jsonresponse) {
-
+    public void APIForPostMethod2(final String URL, final HashMap<String, String> apiPostDataHashMap, final JSONResponseInterface jsonResponseInterface) {
 
         new AsyncTask<Void, Void, Void>() {
-            private String respose = null;
+            private String responseString = null;
             private Exception exception = null;
-            MultipartBody.Builder buildernew;
+            MultipartBody.Builder builderNew;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
+                builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
                 Loger.MSG("@@ POST URL- ", URL);
 
-                Iterator myVeryOwnIterator = apipostdata.keySet().iterator();
+                Iterator myVeryOwnIterator = apiPostDataHashMap.keySet().iterator();
                 while (myVeryOwnIterator.hasNext()) {
                     String key = (String) myVeryOwnIterator.next();
-                    String value = (String) apipostdata.get(key);
+                    String value = (String) apiPostDataHashMap.get(key);
                     Loger.MSG(key, value);
-                    buildernew.addFormDataPart(key, value);
+                    builderNew.addFormDataPart(key, value);
                 }
-
-
             }
 
             @Override
             protected Void doInBackground(Void... voids) {
                 try {
                     if (!isCancelled()) {
-                        MultipartBody requestBody = buildernew.build();
+                        MultipartBody requestBody = builderNew.build();
                         OkHttpClient client = new OkHttpClient.Builder().connectTimeout(60000, TimeUnit.MILLISECONDS).retryOnConnectionFailure(true).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
 
-                        respose = response.body().string();
+                        responseString = response.body().string();
 
-                        Loger.MSG("response", "respose_::" + respose);
-                        Loger.MSG("response", "respose_ww_message::" + response.message());
-                        Loger.MSG("response", "respose_ww_headers::" + response.headers());
-                        Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
-//                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
+                        Loger.MSG("response", "response_::" + responseString);
+                        Loger.MSG("response", "response_ww_message::" + response.message());
+                        Loger.MSG("response", "response_ww_headers::" + response.headers());
+                        Loger.MSG("response", "response_ww_isRedirect::" + response.isRedirect());
+//                       Loger.MSG("response", "response_ww_body::" + response.body().string());
                     }
                 } catch (Exception e) {
                     this.exception = e;
@@ -240,45 +234,43 @@ public class CustomJSONParser {
                 if (!isCancelled() && exception == null) {
 
                     try {
-                        if (new JSONObject(respose).getBoolean("response")) {
-                            jsonresponse.OnSuccess(respose);
+                        if (new JSONObject(responseString).getBoolean("response")) {
+                            jsonResponseInterface.OnSuccess(responseString);
                         } else {
-                            jsonresponse.OnError(new JSONObject(respose).getString("message") + "", respose);
+                            jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
-
                 } else {
-                    jsonresponse.OnError(exception.getMessage() + "");
+                    jsonResponseInterface.OnError(exception.getMessage() + "");
                 }
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    public void API_FOR_With_Photo_POST(final String URL, final ArrayList<APIPOSTDATA> apipostdata, final ArrayList<File> Photos, final JSONRESPONSE jsonresponse) {
+    public void APIForWithPhotoPostMethod(final String URL, final ArrayList<APIPOSTDATA> apiPostDataArrayList, final ArrayList<File> Photos, final JSONResponseInterface jsonResponseInterface) {
 
         final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
 
         new AsyncTask<Void, Void, Void>() {
 
-            private String respose = null;
+            private String responseString = null;
             private Exception exception = null;
-            MultipartBody.Builder buildernew;
+            MultipartBody.Builder builderNew;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
-                for (APIPOSTDATA data : apipostdata) {
-                    buildernew.addFormDataPart("" + data.getPARAMS(), data.getValues());
+                builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
+                for (APIPOSTDATA data : apiPostDataArrayList) {
+                    builderNew.addFormDataPart("" + data.getPARAMS(), data.getValues());
                 }
 
                 for (File file : Photos) {
                     if (file != null)
-                        buildernew.addFormDataPart("" + ImageParamse, file.getName() + "", RequestBody.create(MEDIA_TYPE_PNG, file));
+                        builderNew.addFormDataPart("" + ImageParam, file.getName() + "", RequestBody.create(MEDIA_TYPE_PNG, file));
                 }
             }
 
@@ -287,20 +279,20 @@ public class CustomJSONParser {
                 try {
                     if (!isCancelled()) {
 
-                        MultipartBody requestBody = buildernew.build();
+                        MultipartBody requestBody = builderNew.build();
                         OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
 
 
-                        respose = response.body().string();
+                        responseString = response.body().string();
 
-                        Loger.MSG("response", "respose_::" + respose);
-                        Loger.MSG("response", "respose_ww_message::" + response.message());
-                        Loger.MSG("response", "respose_ww_headers::" + response.headers());
-                        Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
-//                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
+                        Loger.MSG("response", "response_::" + responseString);
+                        Loger.MSG("response", "response_ww_message::" + response.message());
+                        Loger.MSG("response", "response_ww_headers::" + response.headers());
+                        Loger.MSG("response", "response_ww_isRedirect::" + response.isRedirect());
+//                       Loger.MSG("response", "response_ww_body::" + response.body().string());
                     }
                 } catch (Exception e) {
                     this.exception = e;
@@ -315,43 +307,43 @@ public class CustomJSONParser {
                 if (!isCancelled() && exception == null) {
 
                     try {
-                        if (new JSONObject(respose).getBoolean("response")) {
-                            jsonresponse.OnSuccess(respose);
+                        if (new JSONObject(responseString).getBoolean("response")) {
+                            jsonResponseInterface.OnSuccess(responseString);
                         } else {
-                            jsonresponse.OnError(new JSONObject(respose).getString("message") + "", respose);
+                            jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);
                         }
                     } catch (Exception e) {
                     }
 
 
                 } else {
-                    jsonresponse.OnError(exception.getMessage() + "");
+                    jsonResponseInterface.OnError(exception.getMessage() + "");
                 }
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    public void API_FOR_With_Photo_POST_2(final String URL, final HashMap<String, String> apipostdata, final HashMap<String, File> Photos, final JSONRESPONSE jsonresponse) {
+    public void APIForWithPhotoPostMethod2(final String URL, final HashMap<String, String> apiPostDataHashMap, final HashMap<String, File> Photos, final JSONResponseInterface jsonResponseInterface) {
 
         final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
 
         new AsyncTask<Void, Void, Void>() {
 
-            private String respose = null;
+            private String responseString = null;
             private Exception exception = null;
-            MultipartBody.Builder buildernew;
+            MultipartBody.Builder builderNew;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
-                Iterator myVeryOwnIterator = apipostdata.keySet().iterator();
+                builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
+                Iterator myVeryOwnIterator = apiPostDataHashMap.keySet().iterator();
                 while (myVeryOwnIterator.hasNext()) {
                     String key = (String) myVeryOwnIterator.next();
-                    String value = (String) apipostdata.get(key);
+                    String value = (String) apiPostDataHashMap.get(key);
                     Loger.MSG(key, value);
-                    buildernew.addFormDataPart(key, value);
+                    builderNew.addFormDataPart(key, value);
                 }
 
                 myVeryOwnIterator = Photos.keySet().iterator();
@@ -360,8 +352,7 @@ public class CustomJSONParser {
                     File value = (File) Photos.get(key);
                     {
                         if (value != null)
-                            buildernew.addFormDataPart("" + key, value.getName() + "", RequestBody.create(MEDIA_TYPE_PNG, value.getName()));
-
+                            builderNew.addFormDataPart("" + key, value.getName() + "", RequestBody.create(MEDIA_TYPE_PNG, value.getName()));
                     }
                 }
 
@@ -373,20 +364,20 @@ public class CustomJSONParser {
                 try {
                     if (!isCancelled()) {
 
-                        MultipartBody requestBody = buildernew.build();
+                        MultipartBody requestBody = builderNew.build();
                         OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
 
 
-                        respose = response.body().string();
+                        responseString = response.body().string();
 
-                        Loger.MSG("response", "respose_::" + respose);
-                        Loger.MSG("response", "respose_ww_message::" + response.message());
-                        Loger.MSG("response", "respose_ww_headers::" + response.headers());
-                        Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
-//                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
+                        Loger.MSG("response", "response_::" + responseString);
+                        Loger.MSG("response", "response_ww_message::" + response.message());
+                        Loger.MSG("response", "response_ww_headers::" + response.headers());
+                        Loger.MSG("response", "response_ww_isRedirect::" + response.isRedirect());
+//                       Loger.MSG("response", "response_ww_body::" + response.body().string());
                     }
                 } catch (Exception e) {
                     this.exception = e;
@@ -401,27 +392,25 @@ public class CustomJSONParser {
                 if (!isCancelled() && exception == null) {
 
                     try {
-                        if (new JSONObject(respose).getBoolean("response")) {
-                            jsonresponse.OnSuccess(respose);
+                        if (new JSONObject(responseString).getBoolean("response")) {
+                            jsonResponseInterface.OnSuccess(responseString);
                         } else {
-                            jsonresponse.OnError(new JSONObject(respose).getString("message") + "", respose);
+                            jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
                 } else {
-                    jsonresponse.OnError(exception.getMessage() + "");
+                    jsonResponseInterface.OnError(exception.getMessage() + "");
                 }
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    public void GET_STRIPE_CUSTIMERID(final String StripeToken, final JSONRESPONSE jsonresponse) {
+    public void GetStripeCustomerID(final String StripeToken, final JSONResponseInterface jsonResponseInterface) {
 
         new AsyncTask<Void, Void, Void>() {
-
-            private String respose = null;
+            private String responseString = null;
             private Exception exception = null;
 
             @Override
@@ -445,13 +434,13 @@ public class CustomJSONParser {
                         Response response = client.newCall(request).execute();
 
 
-                        respose = response.body().string();
+                        responseString = response.body().string();
 
-                        Loger.MSG("response", "respose_::" + respose);
-                        Loger.MSG("response", "respose_ww_message::" + response.message());
-                        Loger.MSG("response", "respose_ww_headers::" + response.headers());
-                        Loger.MSG("response", "respose_ww_isRedirect::" + response.isRedirect());
-//                       Loger.MSG("response", "respose_ww_body::" + response.body().string());
+                        Loger.MSG("response", "response_::" + responseString);
+                        Loger.MSG("response", "response_ww_message::" + response.message());
+                        Loger.MSG("response", "response_ww_headers::" + response.headers());
+                        Loger.MSG("response", "response_ww_isRedirect::" + response.isRedirect());
+//                       Loger.MSG("response", "response_ww_body::" + response.body().string());
                     }
                 } catch (Exception e) {
                     this.exception = e;
@@ -464,10 +453,9 @@ public class CustomJSONParser {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 if (!isCancelled() && exception == null) {
-                    jsonresponse.OnSuccess(respose);
-
+                    jsonResponseInterface.OnSuccess(responseString);
                 } else {
-                    jsonresponse.OnError(exception.getMessage() + "");
+                    jsonResponseInterface.OnError(exception.getMessage() + "");
                 }
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -499,11 +487,11 @@ public class CustomJSONParser {
         return result.toString();
     }
 
-    public void postDataUsingHttp(final String URL, final ArrayList<APIPOSTDATA> apiPostData,final JSONRESPONSE jsonresponse){
+    public void postDataUsingHttp(final String URL, final ArrayList<APIPOSTDATA> apiPostData,final JSONResponseInterface jsonResponseInterface){
 
        new AsyncTask<String, Void, String>() {
 
-           private String respose = null;
+           private String responseString = null;
            private Exception exception = null;
 
             protected void onPreExecute(){
@@ -553,7 +541,7 @@ public class CustomJSONParser {
                         }
 
                         in.close();
-                        respose=sb.toString();
+                        responseString=sb.toString();
                         return sb.toString();
 
                     }
@@ -573,21 +561,18 @@ public class CustomJSONParser {
                 if (!isCancelled() && exception == null && !result.equalsIgnoreCase("200")) {
 
                     try {
-                        if (new JSONObject(respose).getBoolean("response")) {
-                            jsonresponse.OnSuccess(respose);
+                        if (new JSONObject(responseString).getBoolean("response")) {
+                            jsonResponseInterface.OnSuccess(responseString);
                         } else {
-                            jsonresponse.OnError(new JSONObject(respose).getString("message") + "", respose);
+                            jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);
                         }
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
-
-
                 } else {
-                    jsonresponse.OnError(exception.getMessage() + "");
+                    jsonResponseInterface.OnError(exception.getMessage() + "");
                 }
-
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-
     }
 }

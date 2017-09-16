@@ -136,7 +136,7 @@ public class FacebookActivity extends AppCompatActivity {
 
         }catch (JSONException e){}
 
-        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "facebook_login", PostData, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "facebook_login", PostData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

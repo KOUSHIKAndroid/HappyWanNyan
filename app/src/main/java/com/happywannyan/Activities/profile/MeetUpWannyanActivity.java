@@ -134,7 +134,7 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
 
 
                     appLoader.Show();
-                    new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "meetandgreet_request", apipostdatas, new CustomJSONParser.JSONRESPONSE() {
+                    new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "meetandgreet_request", apipostdatas, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
                             appLoader.Dismiss();

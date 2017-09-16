@@ -113,7 +113,7 @@ public double ne_lng,ne_lat,sw_lng,sw_lat;
         }
 
 
-        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

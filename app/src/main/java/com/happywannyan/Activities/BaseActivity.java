@@ -80,7 +80,7 @@ public class BaseActivity extends LocationBaseActivity
         Params.put("anorid_device_id", refreshedToken + "");
 
 
-        new CustomJSONParser().API_FOR_POST_2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
 
@@ -165,7 +165,7 @@ public class BaseActivity extends LocationBaseActivity
 
                 appLoader.Show();
                 String URL = AppContsnat.BASEURL + "app_logout?user_id=" + AppContsnat.UserId + "&anorid_status=1";
-                new CustomJSONParser().API_FOR_GET(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+                new CustomJSONParser().APIForGetMethod(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();

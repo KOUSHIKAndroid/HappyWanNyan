@@ -271,7 +271,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         HashMap<String,File> FileParams= new HashMap<String,File>();
         FileParams.put("msg_attachment",photofile);
 
-        new CustomJSONParser().API_FOR_With_Photo_POST_2(AppContsnat.BASEURL + "app_add_review", Params, FileParams, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForWithPhotoPostMethod2(AppContsnat.BASEURL + "app_add_review", Params, FileParams, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 Loader.Dismiss();

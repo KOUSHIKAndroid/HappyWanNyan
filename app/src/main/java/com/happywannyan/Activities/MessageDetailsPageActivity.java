@@ -136,7 +136,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         String URL = "messagedetails?user_id=" + AppContsnat.UserId + "&message_id=" + getIntent().getStringExtra("message_id") + "&lang_id=" + AppContsnat.Language
                 + "&user_timezone=" + tz.getID();
 
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -249,7 +249,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     apipostdata.setValues(AppContsnat.Language);
                     Params.add(apipostdata);
 
-                    new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "reply_message", Params, new CustomJSONParser.JSONRESPONSE() {
+                    new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
 //                            try {
@@ -438,7 +438,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             apipostdata.setValues(MAPIMGAEURL);
             Params.add(apipostdata);
 
-            new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "reply_message", Params, new CustomJSONParser.JSONRESPONSE() {
+            new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
                 @Override
                 public void OnSuccess(String Result) {
                     FetCh();
@@ -500,9 +500,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         Params.add(apipostdata);
         ArrayList<File> Files = new ArrayList<>();
         Files.add(photofile);
-        CustomJSONParser.ImageParamse = "msg_attachment";
+        CustomJSONParser.ImageParam = "msg_attachment";
 
-        new CustomJSONParser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "reply_message", Params, Files, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForWithPhotoPostMethod(AppContsnat.BASEURL + "reply_message", Params, Files, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 FetCh();

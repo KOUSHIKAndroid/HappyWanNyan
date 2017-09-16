@@ -206,7 +206,7 @@ public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyVi
 
         /////////delete here and api fire////////////////
 
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_deletePetprofile?", params, new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_deletePetprofile?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

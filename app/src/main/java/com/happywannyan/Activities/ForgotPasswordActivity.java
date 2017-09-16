@@ -64,7 +64,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
                         apipostdataArrayList.add(apipostdata);
 
                         appLoader.Show();
-                        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "app_forget_password", apipostdataArrayList, new CustomJSONParser.JSONRESPONSE() {
+                        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "app_forget_password", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ LOGIN",Result);

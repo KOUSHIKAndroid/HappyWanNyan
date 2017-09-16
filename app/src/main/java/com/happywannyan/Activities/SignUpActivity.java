@@ -91,7 +91,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         apipostdata.setValues(AppContsnat.Language);
                         Loger.MSG("@@ LANG-", " " + AppContsnat.Language);
                         apipostdataArrayList.add(apipostdata);
-                        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "app_regirsation\n", apipostdataArrayList, new CustomJSONParser.JSONRESPONSE() {
+                        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "app_regirsation\n", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ REG", Result);

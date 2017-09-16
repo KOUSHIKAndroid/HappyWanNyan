@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         apipostdata.setValues(EDX_Password.getText().toString());
                         apipostdataArrayList.add(apipostdata);
                         appLoader.Show();
-                        new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "app_login", apipostdataArrayList, new CustomJSONParser.JSONRESPONSE() {
+                        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "app_login", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ LOGIN",Result);

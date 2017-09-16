@@ -313,7 +313,7 @@ public class MyProfileFragment extends Fragment {
                 Params.add(Post);
                 ArrayList<File>Photos=new ArrayList<File>();
                 Photos.add(photofile);
-                new CustomJSONParser().API_FOR_With_Photo_POST(AppContsnat.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONRESPONSE() {
+                new CustomJSONParser().APIForWithPhotoPostMethod(AppContsnat.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         Loader.Dismiss();
@@ -464,7 +464,7 @@ public class MyProfileFragment extends Fragment {
 
     public void loadPage(){
         Loader.Show();
-        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_about?user_id=" + AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_about?user_id=" + AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

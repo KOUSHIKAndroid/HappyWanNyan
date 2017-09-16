@@ -64,7 +64,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                     data.setValues(Password.getText().toString());
                     valuse.add(data);
 
-                    new CustomJSONParser().API_FOR_POST(AppContsnat.BASEURL + "resetpassword", valuse, new CustomJSONParser.JSONRESPONSE() {
+                    new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "resetpassword", valuse, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
 
