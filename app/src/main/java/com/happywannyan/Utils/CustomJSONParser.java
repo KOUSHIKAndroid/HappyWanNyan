@@ -43,6 +43,7 @@ public class CustomJSONParser {
     public static String ImageParam = "petimg";
 
     public interface JSONResponseInterface {
+
         void OnSuccess(String Result);
 
         void OnError(String Error, String Response);
