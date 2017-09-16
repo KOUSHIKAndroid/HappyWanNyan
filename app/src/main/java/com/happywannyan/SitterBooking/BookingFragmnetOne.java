@@ -113,6 +113,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
                 TXT_ServiceName.setText(jsonObject.getString("service_name"));
                 TXT_ServiceName.setTag(jsonObject);
                 RL_SingleDate.setVisibility(View.GONE);
+
                 RL_ExtraDropDown.setVisibility(View.GONE);
                 LL_S_F.setVisibility(View.GONE);
                 TXT_Price.setText(jsonObject.getString("service_price") + " / " + jsonObject.getString("unit_name"));
