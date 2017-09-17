@@ -308,7 +308,6 @@ public class MyPaymentsFragment extends Fragment {
                 new MYAlert(getActivity()).AlertOnly("Add Card Error", "Invalid card please add a correct card", new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
-
                     }
                 });
             }
