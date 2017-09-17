@@ -200,7 +200,6 @@ public class BookingFragmentFoure extends Fragment {
 
                             }
                         });
-
             }
         });
 
@@ -223,7 +222,6 @@ public class BookingFragmentFoure extends Fragment {
 //                });
             }
         });
-
         SetCardDetails();
     }
 
@@ -262,11 +260,10 @@ public class BookingFragmentFoure extends Fragment {
 
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {
-                Loger.MSG("@@ Card ID-", card.getId() + "");
-                Loger.MSG("@@ Card ID-", card.getNumber() + "");
-                Loger.MSG("@@ Card-", card.getNumber() + "");
-                card.setName(cardHolderName);
+                Loger.MSG("@@ Card ID->", card.getId() + "");
+                Loger.MSG("@@ Card Number->", card.getNumber() + "");
 
+                card.setName(cardHolderName);
 
                 Stripe stripe = new Stripe(getActivity(), AppConstant.STRIPE_PUBLISH_KEY);
                 appLoader.Show();
@@ -275,21 +272,16 @@ public class BookingFragmentFoure extends Fragment {
                         card,
                         new TokenCallback() {
                             public void onSuccess(final Token token) {
-
-
                                 new CustomJSONParser().GetStripeCustomerID(token.getId(), new CustomJSONParser.JSONResponseInterface() {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ TokenSuccess", Result);
-
                                         String CustomerID = "";
 //                                        try {
 //                                            CustomerID=new JSONObject(Result).getString("id");
 //                                        } catch (JSONException e) {
 //                                            e.printStackTrace();
 //                                        }
-
-
                                         Loger.MSG("@@ TOKEN finger-", token.getCard().getFingerprint() + "");
                                         Loger.MSG("@@ TOKEN Brand-", token.getCard().getBrand() + "");
                                         Loger.MSG("@@ TOKEN customerId-", token.getCard().getCustomerId() + "");
@@ -329,7 +321,6 @@ public class BookingFragmentFoure extends Fragment {
                                                                         } else {
                                                                             setGetStripData.setCheck(true);
                                                                         }
-
                                                                         setGetStripData.setJsonObjectUserStripeData(jsonArrayUserStripeData.getJSONObject(i));
                                                                         stripDataArrayList.add(setGetStripData);
                                                                     }
@@ -341,11 +332,9 @@ public class BookingFragmentFoure extends Fragment {
                                                                     setGetCards.setStripDataArrayList(stripDataArrayList);
                                                                     setGetCardsArrayList.add(setGetCards);
 
-
                                                                 } catch (JSONException e) {
                                                                     e.printStackTrace();
                                                                 }
-
 
                                                                 REC_Card.setAdapter(new AdapterCard(getActivity(), setGetCardsArrayList, new onClickItem() {
                                                                     @Override
@@ -520,10 +509,6 @@ public class BookingFragmentFoure extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-    void test() {
-
     }
 
     public interface onClickItem {

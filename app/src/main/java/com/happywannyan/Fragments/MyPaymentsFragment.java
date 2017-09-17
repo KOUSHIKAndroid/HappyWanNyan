@@ -193,11 +193,9 @@ public class MyPaymentsFragment extends Fragment {
 
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {
-                Loger.MSG("@@ Card ID-", card.getId() + "");
-                Loger.MSG("@@ Card ID-", card.getNumber() + "");
-                Loger.MSG("@@ Card-", card.getNumber() + "");
+                Loger.MSG("@@ Card ID->", card.getId() + "");
+                Loger.MSG("@@ Card Number->", card.getNumber() + "");
                 card.setName(cardHolderName);
-
 
                 Stripe stripe = new Stripe(getActivity(), AppConstant.STRIPE_PUBLISH_KEY);
                 appLoader.Show();
@@ -239,7 +237,7 @@ public class MyPaymentsFragment extends Fragment {
                                         new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {
-                                                Loger.MSG("@@ CRAD RESP-", Result);
+                                                Loger.MSG("@@ CARD RESP-", Result);
                                                 new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                                                         , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
