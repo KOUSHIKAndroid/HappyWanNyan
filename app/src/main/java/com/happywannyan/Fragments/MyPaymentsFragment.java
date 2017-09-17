@@ -155,12 +155,10 @@ public class MyPaymentsFragment extends Fragment {
                         });
                         recycler_view.setAdapter(adapterPaymentList);
                     }
-
                     @Override
                     public void OnError(String Error, String Response) {
                         appLoader.Dismiss();
                     }
-
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
@@ -168,9 +166,9 @@ public class MyPaymentsFragment extends Fragment {
                 });
     }
 
-    public interface onClickItem {
-        void onSelectItemClick(int position, JSONObject data);
-    }
+//    public interface onClickItem {
+//        void onSelectItemClick(int position, JSONObject data);
+//    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
