@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.EditAnotherPetsActivity;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -190,12 +190,12 @@ public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyVi
 
         APIPOSTDATA apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppContsnat.UserId);
+        apipostdata.setValues(AppConstant.UserId);
         params.add(apipostdata);
 
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppContsnat.Language);
+        apipostdata.setValues(AppConstant.Language);
         params.add(apipostdata);
 
 
@@ -206,7 +206,7 @@ public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyVi
 
         /////////delete here and api fire////////////////
 
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_deletePetprofile?", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_deletePetprofile?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
@@ -91,14 +91,14 @@ public class CancelBookingWithReasonsActivity extends AppCompatActivity implemen
         try {
             Params.put("booking_id", DATAObject.getJSONObject("booking_info").getString("id"));
             Params.put("booking_type", DATAObject.getJSONObject("booking_info").getString("booking_type"));
-            Params.put("user_id", AppContsnat.UserId);
+            Params.put("user_id", AppConstant.UserId);
             Params.put("user_timezone", TimeZone.getDefault().getID());
-            Params.put("lang_id", AppContsnat.Language);
+            Params.put("lang_id", AppConstant.Language);
             Params.put("cancel_option", CancelID);
             Params.put("message_cancel", (((EditText) findViewById(R.id.EDX_Cancel_Message)).getText().toString()));
             Params.put("booking_refund", 1 + "");
 
-            new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
+            new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                 @Override
                 public void OnSuccess(String Result) {
                     appLoader.Dismiss();

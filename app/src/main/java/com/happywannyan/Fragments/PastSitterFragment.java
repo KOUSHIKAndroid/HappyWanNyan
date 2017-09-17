@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.FavouriteRecyclerAdapter;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.SetGetFavourite;
@@ -60,7 +60,7 @@ public class PastSitterFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        new AppContsnat(getActivity());
+        new AppConstant(getActivity());
         appLoader = new AppLoader(getActivity());
     }
 
@@ -96,7 +96,7 @@ public class PastSitterFragment extends Fragment {
         ArrayList<APIPOSTDATA> Params = new ArrayList<>();
         APIPOSTDATA apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppContsnat.UserId);
+        apipostdata.setValues(AppConstant.UserId);
         Params.add(apipostdata);
 
         apipostdata = new APIPOSTDATA();
@@ -109,7 +109,7 @@ public class PastSitterFragment extends Fragment {
         apipostdata.setValues("10");
         Params.add(apipostdata);
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "users_setters_list?", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "users_setters_list?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

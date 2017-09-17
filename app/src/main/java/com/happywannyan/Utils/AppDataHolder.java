@@ -1,10 +1,8 @@
 package com.happywannyan.Utils;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,26 +11,24 @@ import org.json.JSONObject;
  */
 
 public abstract class AppDataHolder {
-//    ******* Golbal Identifire ***************
+//    ******* Global Identifires ***************
     public static final int UserData=1;
 
 
-public abstract Void UserDetaisl(String UserId);
-
+public abstract Void userDetailsAbstract(String UserId);
 
     SharedPreferences AppUserData;
     Activity activity;
 
-    public void LogOut_ClearAllData() {
+    public void logOutClearAllData() {
         SharedPreferences.Editor editor = AppUserData.edit();
         editor.clear();
         editor.commit();
-
     }
 
-    public interface App_sharePrefData{
-        void Avialable(boolean avilavle, JSONObject data);
-        void NotAvilable(String Error);
+    public interface AppSharePreferenceDataInterface{
+        void available(boolean available, JSONObject data);
+        void notAvailable(String Error);
     }
 
 
@@ -41,7 +37,7 @@ public abstract Void UserDetaisl(String UserId);
         AppUserData = PreferenceManager.getDefaultSharedPreferences(activity);
     }
 
-    public void SET_SHAREDATA(int DataName, String Data){
+    public void setShareDATA(int DataName, String Data){
         SharedPreferences.Editor editor = AppUserData.edit();
         switch (DataName)
         {
@@ -50,37 +46,28 @@ public abstract Void UserDetaisl(String UserId);
                 editor.commit();
                 break;
         }
-
-
     }
 
 
 
-    public void GET_SHAREDATA(int DataName, App_sharePrefData app_sharePrefData){
-
+    public void getShareData(int DataName, AppSharePreferenceDataInterface appSharePreferenceDataInterface){
         switch (DataName){
             case UserData:
-              String USERCREDINTIAL= AppUserData.getString("UserData","NO");
+              String userCredentialString= AppUserData.getString("UserData","NO");
 
-                Loger.MSG("@@ "," DADAD 2 "+USERCREDINTIAL);
-                if(USERCREDINTIAL.equalsIgnoreCase("NO")){
-                    app_sharePrefData.NotAvilable("NODATAFOUND");
-                }else  if(USERCREDINTIAL.trim().length()>0){
+                Loger.MSG("@@ "," DADAD 2 "+userCredentialString);
+                if(userCredentialString.equalsIgnoreCase("NO")){
+                    appSharePreferenceDataInterface.notAvailable("NODATAFOUND");
+                }else  if(userCredentialString.trim().length()>0){
                     try {
-                        app_sharePrefData.Avialable(true,new JSONObject(USERCREDINTIAL));
-                        UserDetaisl(USERCREDINTIAL);
+                        appSharePreferenceDataInterface.available(true,new JSONObject(userCredentialString));
+                        userDetailsAbstract(userCredentialString);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }else {
-                    app_sharePrefData.NotAvilable("NODATAFOUND");
+                    appSharePreferenceDataInterface.notAvailable("NODATAFOUND");
                 }
-
         }
-
-
     }
-
-
-
 }

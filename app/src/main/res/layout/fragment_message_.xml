@@ -30,7 +30,7 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/all_messages"
-            android:textColor="@color/colorwhite"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/page_titiel" />
 
         <ImageView
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/RL_HEADER"
-        android:background="@color/gray_project"
+        android:background="@color/colorGrayProject"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -87,7 +87,7 @@
             android:id="@+id/scrollView_horizontal"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@color/colorwhite"
+            android:background="@color/colorWhite"
             android:scrollbars="none">
 
 
@@ -104,14 +104,14 @@
                     android:paddingLeft="14dp"
                     android:paddingRight="14dp"
                     android:text="@string/all_messages"
-                    android:textColor="@color/text_dark_gray" />
+                    android:textColor="@color/colorTextDarkGray" />
 
                 <View
                     android:id="@+id/view_between_all_unread_message"
                     android:layout_width="1dip"
                     android:layout_height="15dp"
                     android:layout_gravity="center"
-                    android:background="@color/gray_project" />
+                    android:background="@color/colorGrayProject" />
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/tv_reservation_message"
@@ -121,7 +121,7 @@
                     android:paddingLeft="14dp"
                     android:paddingRight="14dp"
                     android:text="@string/reservation"
-                    android:textColor="@color/text_dark_gray" />
+                    android:textColor="@color/colorTextDarkGray" />
 
 
                 <View
@@ -129,7 +129,7 @@
                     android:layout_width="1dip"
                     android:layout_height="15dp"
                     android:layout_gravity="center"
-                    android:background="@color/gray_project" />
+                    android:background="@color/colorGrayProject" />
                 <!--<com.happywannyan.Font.SFNFTextView-->
                 <!--android:id="@+id/tv_unResponded_message"-->
                 <!--android:layout_width="wrap_content"-->
@@ -155,7 +155,7 @@
                     android:paddingLeft="14dp"
                     android:paddingRight="14dp"
                     android:text="@string/generalequerys"
-                    android:textColor="@color/text_dark_gray" />
+                    android:textColor="@color/colorTextDarkGray" />
             </LinearLayout>
 
 
@@ -172,7 +172,7 @@
                 android:id="@+id/Rec_MSG"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8px"/>
+                android:layout_marginTop="8px" />
 
         </android.support.v4.widget.SwipeRefreshLayout>
 

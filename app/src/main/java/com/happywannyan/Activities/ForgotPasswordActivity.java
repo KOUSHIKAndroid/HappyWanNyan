@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
@@ -64,7 +64,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
                         apipostdataArrayList.add(apipostdata);
 
                         appLoader.Show();
-                        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "app_forget_password", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_forget_password", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ LOGIN",Result);

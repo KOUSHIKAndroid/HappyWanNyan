@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
@@ -148,7 +148,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
 
     public void selectionCard(String default_card_id, final int position, final JSONObject OB) {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "make_card_default?user_id=" + AppContsnat.UserId + "&default_card_id=" + default_card_id
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "make_card_default?user_id=" + AppConstant.UserId + "&default_card_id=" + default_card_id
                 , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
@@ -195,7 +195,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
 
     public void deleteCard(String default_card_id, final int position) {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_delete_card?user_id=" + AppContsnat.UserId + "&del_card_id=" + default_card_id
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_delete_card?user_id=" + AppConstant.UserId + "&del_card_id=" + default_card_id
                 , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {

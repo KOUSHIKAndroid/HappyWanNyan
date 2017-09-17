@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorwhite"
+            android:background="@color/colorWhite"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -33,7 +33,7 @@
                         android:id="@+id/left_red_view"
                         android:layout_width="8px"
                         android:layout_height="match_parent"
-                        android:background="@color/btn_red" />
+                        android:background="@color/colorBtnRed" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="4 Day's ago"
-                                android:textColor="@color/btn_red"
+                                android:textColor="@color/colorBtnRed"
                                 android:textSize="14sp" />
 
 
@@ -85,7 +85,7 @@
                                 android:background="@android:color/transparent"
                                 android:padding="5dp"
                                 android:text=""
-                                android:textColor="@color/colorwhite"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="10sp" />
 
 
@@ -97,12 +97,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
-                            android:layout_toLeftOf="@id/RL_date_difference"
-                            android:layout_toRightOf="@id/img_card_view"
+                            android:layout_toLeftOf="@+id/RL_date_difference"
+                            android:layout_toRightOf="@+id/img_card_view"
                             android:padding="5dp"
                             android:text="Lee Shung Yang"
                             android:textAllCaps="true"
-                            android:textColor="@color/Black"
+                            android:textColor="@color/colorBlack"
                             android:textSize="12sp" />
 
 
@@ -112,12 +112,12 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_name"
                             android:layout_marginTop="5dp"
-                            android:layout_toLeftOf="@id/RL_date_difference"
-                            android:layout_toRightOf="@id/img_card_view"
+                            android:layout_toLeftOf="@+id/RL_date_difference"
+                            android:layout_toRightOf="@+id/img_card_view"
                             android:maxLines="1"
                             android:padding="5dp"
                             android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit..."
-                            android:textColor="@color/text_dark_gray"
+                            android:textColor="@color/colorTextDarkGray"
                             android:textSize="12sp" />
 
                     </RelativeLayout>
@@ -131,7 +131,7 @@
                 android:id="@+id/IMG_DELETE"
                 android:layout_width="00dp"
                 android:layout_height="match_parent"
-                android:background="@color/btn_red"
+                android:background="@color/colorBtnRed"
                 android:padding="40dp"
                 android:src="@drawable/ic_vector_favourite_delete_white" />
         </LinearLayout>
@@ -140,7 +140,7 @@
             android:id="@+id/bottom_view"
             android:layout_width="match_parent"
             android:layout_height="8px"
-            android:background="@color/gray_project" />
+            android:background="@color/colorGrayProject" />
 
     </LinearLayout>
 </com.happywannyan.Utils.helper.ObservableHorizontalScrollView>

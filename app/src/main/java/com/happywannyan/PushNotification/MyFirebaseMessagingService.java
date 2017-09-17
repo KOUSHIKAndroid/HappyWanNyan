@@ -11,12 +11,10 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 

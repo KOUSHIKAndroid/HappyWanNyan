@@ -7,7 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.EditText;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
@@ -87,10 +87,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         apipostdataArrayList.add(apipostdata);
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("langid");
-                        apipostdata.setValues(AppContsnat.Language);
-                        Loger.MSG("@@ LANG-", " " + AppContsnat.Language);
+                        apipostdata.setValues(AppConstant.Language);
+                        Loger.MSG("@@ LANG-", " " + AppConstant.Language);
                         apipostdataArrayList.add(apipostdata);
-                        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "app_regirsation\n", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_regirsation\n", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ REG", Result);

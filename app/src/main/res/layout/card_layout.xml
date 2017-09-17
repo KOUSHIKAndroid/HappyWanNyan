@@ -1,68 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    app:cardMaxElevation="2dp"
-    android:layout_height="wrap_content">
+    app:cardCornerRadius="8dp"
+    app:cardMaxElevation="2dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_height="wrap_content">
+        android:padding="10dp">
+
         <ImageView
-            android:layout_centerVertical="true"
             android:id="@+id/img_selection"
             android:layout_width="wrap_content"
-            android:src="@drawable/ic_circle"
-            android:padding="5dp"
-            android:layout_height="wrap_content" />
-        <ImageView
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/img_selection"
+            android:padding="5dp"
+            android:src="@drawable/ic_circle" />
+
+        <ImageView
             android:id="@+id/IMG_VISA"
             android:layout_width="70dp"
-            android:padding="5dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img_selection"
+            android:padding="5dp" />
 
         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/IMG_VISA"
-            android:layout_width="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="5dp"
-            android:layout_height="wrap_content">
+            android:paddingLeft="5dp">
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/TXT_CardHolderName"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Jhon Deo"
                 android:textAllCaps="true"
-                android:textSize="20sp"
-                android:layout_height="wrap_content" />
+                android:textSize="20sp" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/TXT_CradName"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:text="**** **** **** 2134"
                 android:textAllCaps="true"
-                android:textSize="16sp"
-                android:gravity="center_vertical"
-                android:layout_height="wrap_content" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/tv_default_status"
-            android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:text="Default"
-            android:textSize="16sp"
-            android:textColor="@color/btn_red"
-            android:layout_height="wrap_content" />
-
+            android:textColor="@color/colorBtnRed"
+            android:textSize="16sp" />
 
 
     </RelativeLayout>

@@ -2,19 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorwhite"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/service_recycler">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/service_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
+
     <com.happywannyan.Font.SFNFTextView
         android:id="@+id/No_Review"
         android:layout_width="match_parent"
-        android:text="@string/no_reviewFound"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_height="match_parent" />
+        android:text="@string/no_reviewFound" />
 
 </RelativeLayout>

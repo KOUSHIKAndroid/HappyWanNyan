@@ -61,7 +61,7 @@ public class ProfileFragAboutFragment extends Fragment {
                 View item=LayoutInflater.from(getActivity()).inflate(R.layout.profile_about_items,null);
                 SFNFTextView textView=(SFNFTextView)item.findViewById(R.id.Text);
                 textView.setText(Skills.getString(i));
-                textView.setTextColor(ResourcesCompat.getColor(getActivity().getResources(), R.color.btn_red, null));
+                textView.setTextColor(ResourcesCompat.getColor(getActivity().getResources(), R.color.colorBtnRed, null));
                 LLSkils.addView(item);
             }
 

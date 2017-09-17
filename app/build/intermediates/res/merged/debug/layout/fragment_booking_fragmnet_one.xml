@@ -1,63 +1,65 @@
-<RelativeLayout android:background="@color/colorwhite"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/colorWhite">
 
     <RelativeLayout
         android:id="@+id/RL_ChoseCat"
-        android:layout_marginTop="40dp"
-        android:onClick="onClick"
         android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_height="70dp">
+        android:layout_marginTop="40dp"
+        android:onClick="onClick">
+
         <com.happywannyan.Font.SFNFTextView
 
             android:layout_width="wrap_content"
-            android:text="@string/ChooseService"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/ChooseService" />
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/TXT_ServiceName"
             android:layout_width="wrap_content"
-            android:text=""
-            android:hint="@string/select"
+            android:layout_height="wrap_content"
             android:layout_above="@+id/H1"
+            android:hint="@string/select"
             android:paddingBottom="15dp"
-            android:textColor="@color/Black"
-            android:layout_height="wrap_content" />
+            android:text=""
+            android:textColor="@color/colorBlack" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:src="@drawable/ic_arrow_black"
+            android:layout_height="wrap_content"
             android:layout_above="@+id/H1"
-            android:paddingBottom="15dp"
             android:layout_alignParentRight="true"
-            android:layout_height="wrap_content" />
+            android:paddingBottom="15dp"
+            android:src="@drawable/ic_arrow_black" />
 
         <View
             android:id="@+id/H1"
             android:layout_width="match_parent"
             android:layout_height="2px"
             android:layout_alignParentBottom="true"
-            android:background="@color/gray_project"/>
+            android:background="@color/colorGrayProject" />
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/RL_DATECHOSER"
-        android:orientation="vertical"
-        android:layout_below="@+id/RL_ChoseCat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RL_ChoseCat"
+        android:orientation="vertical">
+
         <LinearLayout
             android:id="@+id/LL_S_F"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:layout_marginTop="20dp"
             android:weightSum="2">
 
             <RelativeLayout
@@ -74,28 +76,28 @@
 
                 <ImageView
                     android:layout_width="22dp"
-                    android:layout_marginRight="2dp"
-                    android:src="@drawable/ic_calender_balack"
+                    android:layout_height="22dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginRight="2dp"
                     android:scaleType="fitXY"
-                    android:layout_height="22dp" />
+                    android:src="@drawable/ic_calender_balack" />
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/TXT_StartDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_above="@+id/T2"
-                    android:paddingBottom="15dp"
                     android:hint="@string/slectDate"
-                    android:textColor="@color/Black"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/h1_label" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_above="@+id/T2"
                     android:layout_alignParentRight="true"
                     android:paddingBottom="15dp"
-                    android:layout_above="@+id/T2"
                     android:src="@drawable/ic_arrow_black" />
 
                 <View
@@ -103,7 +105,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="2px"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/gray_project" />
+                    android:background="@color/colorGrayProject" />
 
             </RelativeLayout>
 
@@ -118,13 +120,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Enddate" />
+
                 <ImageView
                     android:layout_width="22dp"
-                    android:src="@drawable/ic_calender_balack"
+                    android:layout_height="22dp"
                     android:layout_alignParentRight="true"
-                    android:scaleType="fitXY"
                     android:layout_marginRight="2dp"
-                    android:layout_height="22dp" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_calender_balack" />
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/TXT_EndDte"
@@ -132,16 +135,16 @@
                     android:layout_height="wrap_content"
                     android:layout_above="@+id/T3"
                     android:layout_centerVertical="true"
-                    android:paddingBottom="15dp"
                     android:hint="@string/slectDate"
-                    android:textColor="@color/Black"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/h1_label" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
                     android:layout_above="@+id/T3"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:paddingBottom="15dp"
                     android:src="@drawable/ic_arrow_black" />
@@ -151,7 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="2px"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/gray_project" />
+                    android:background="@color/colorGrayProject" />
 
             </RelativeLayout>
 
@@ -160,13 +163,13 @@
 
         <RelativeLayout
             android:id="@+id/RL_SingleDate"
-            android:layout_below="@+id/LL_S_F"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:paddingLeft="30dp"
-            android:visibility="visible"
+            android:layout_below="@+id/LL_S_F"
             android:layout_marginTop="20dp"
-            android:paddingRight="30dp">
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:visibility="visible">
 
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"
@@ -175,28 +178,28 @@
 
             <ImageView
                 android:layout_width="22dp"
-                android:layout_marginRight="2dp"
-                android:src="@drawable/ic_calender_balack"
+                android:layout_height="22dp"
                 android:layout_alignParentRight="true"
+                android:layout_marginRight="2dp"
                 android:scaleType="fitXY"
-                android:layout_height="22dp" />
+                android:src="@drawable/ic_calender_balack" />
 
             <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/TXT_SingleDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/T4"
-                android:id="@+id/TXT_SingleDate"
-                android:paddingBottom="15dp"
                 android:hint="@string/slectDate"
-                android:textColor="@color/Black"
+                android:paddingBottom="15dp"
+                android:textColor="@color/colorBlack"
                 android:textSize="@dimen/h1_label" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_above="@+id/T4"
                 android:layout_alignParentRight="true"
                 android:paddingBottom="15dp"
-                android:layout_above="@+id/T4"
                 android:src="@drawable/ic_arrow_black" />
 
             <View
@@ -204,19 +207,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:layout_alignParentBottom="true"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/RL_ExtraDropDown"
-            android:layout_below="@+id/LL_S_F"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:paddingLeft="30dp"
-            android:visibility="visible"
+            android:layout_below="@+id/LL_S_F"
             android:layout_marginTop="20dp"
-            android:paddingRight="30dp">
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:visibility="visible">
 
 
             <com.happywannyan.Font.SFNFTextView
@@ -226,21 +229,21 @@
                 android:text="xxfvfdcgffd" />
 
             <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/TXT_ExtarItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/T5"
-                android:id="@+id/TXT_ExtarItem"
-                android:paddingBottom="15dp"
                 android:hint="@string/slectDate"
-                android:textColor="@color/Black"
+                android:paddingBottom="15dp"
+                android:textColor="@color/colorBlack"
                 android:textSize="@dimen/h1_label" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_above="@+id/T5"
                 android:layout_alignParentRight="true"
                 android:paddingBottom="15dp"
-                android:layout_above="@+id/T5"
                 android:src="@drawable/ic_arrow_black" />
 
             <View
@@ -248,7 +251,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:layout_alignParentBottom="true"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
         </RelativeLayout>
     </LinearLayout>
@@ -256,46 +259,49 @@
     <com.happywannyan.Font.SFNFBoldTextView
         android:id="@+id/TXT_Price"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/RL_DATECHOSER"
         android:layout_centerHorizontal="true"
         android:paddingTop="100dp"
-        android:textSize="24sp"
-        android:textColor="@color/btn_red"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/colorBtnRed"
+        android:textSize="24sp" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/Card_next"
-        android:layout_marginTop="40dp"
         android:layout_width="210dp"
-        app:cardElevation="3dp"
-        android:onClick="onClick"
-        app:cardCornerRadius="23dp"
-        android:layout_marginBottom="25dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        app:cardBackgroundColor="@color/btn_red"
-        android:layout_height="45dp">
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="40dp"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/colorBtnRed"
+        app:cardCornerRadius="23dp"
+        app:cardElevation="3dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:padding="5dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
             <com.happywannyan.Font.SFNFTextView
 
                 android:layout_width="wrap_content"
-                android:text="@string/next"
-                android:textSize="18sp"
-                android:textAllCaps="true"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textColor="@color/colorwhite"
                 android:layout_gravity="center_horizontal"
-                android:layout_height="wrap_content" />
+                android:text="@string/next"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp" />
+
             <ImageView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:paddingRight="5dp"
-                android:src="@drawable/ic_right_arrow_white"
-                android:layout_height="wrap_content" />
+                android:src="@drawable/ic_right_arrow_white" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>

@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
@@ -186,7 +186,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                     }else {
                         APIPOSTDATA apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("user_id");
-                        apipostdata.setValues("" + AppContsnat.UserId);
+                        apipostdata.setValues("" + AppConstant.UserId);
                         postParamCoupon.add(apipostdata);
 
                         apipostdata = new APIPOSTDATA();
@@ -196,7 +196,7 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
 
                         appLoader.Show();
 
-                        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "Api_coupon_exits", postParamCoupon, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "Api_coupon_exits", postParamCoupon, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 appLoader.Dismiss();
@@ -207,10 +207,10 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
                                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
                                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText(jsonObject.getString("message"));
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.GreenColor, null));
+                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.colorGreen, null));
                                     }
                                     else {
-                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.GreenColor));
+                                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.colorGreen));
                                     }
                                     ((LinearLayout) viewMain.findViewById(R.id.LL_subtotal_discount)).setVisibility(View.VISIBLE);
                                     ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_SubTotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));

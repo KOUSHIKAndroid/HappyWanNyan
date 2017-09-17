@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -328,7 +328,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void GotoMessage(String MsgId) {
 
         Intent intent=new Intent(this, MessageDetailsPageActivity.class);
-        intent.putExtra("receiver_id",AppContsnat.UserId);
+        intent.putExtra("receiver_id", AppConstant.UserId);
         intent.putExtra("message_id",MsgId);
         startActivity(intent);
 
@@ -346,16 +346,16 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     public void OnOk() {
                         appLoader.Show();
                         HashMap<String,String>Params=new HashMap<String, String>();
-                        Params.put("user_id",AppContsnat.UserId);
+                        Params.put("user_id", AppConstant.UserId);
                         try {
                             Params.put("booking_id",jsonObject.getJSONObject("booking_info").getString("id"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        Params.put("langid",AppContsnat.Language);
+                        Params.put("langid", AppConstant.Language);
                         Params.put("user_timezone",TimeZone.getDefault().getID());
 
-                        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 appLoader.Dismiss();
@@ -423,7 +423,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void Deny_Button(String BookingID) {
         appLoader.Show();
 
-        String URL= AppContsnat.BASEURL+"booking_deny_confirm?user_id="+AppContsnat.UserId+"&booking_id="+BookingID;
+        String URL= AppConstant.BASEURL+"booking_deny_confirm?user_id="+ AppConstant.UserId+"&booking_id="+BookingID;
         new CustomJSONParser().APIForGetMethod(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
@@ -471,11 +471,11 @@ public class BookingDetailsActivity extends AppCompatActivity {
 //                }
                 Params.put("booking_id",BookingID);
                 Params.put("message",Messge);
-                Params.put("user_id",AppContsnat.UserId);
-                Params.put("lang_id",AppContsnat.Language);
+                Params.put("user_id", AppConstant.UserId);
+                Params.put("lang_id", AppConstant.Language);
                 Params.put("user_timezone",Tz.getID());
 
-                new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -553,11 +553,11 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 HashMap<String,String> Params=new HashMap<String, String>();
                 Params.put("booking_id",BookingID);
                 Params.put("booking_type",BookingType);
-                Params.put("user_id",AppContsnat.UserId);
-                Params.put("lang_id",AppContsnat.Language);
+                Params.put("user_id", AppConstant.UserId);
+                Params.put("lang_id", AppConstant.Language);
                 Params.put("user_timezone",Tz.getID());
 
-                new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();

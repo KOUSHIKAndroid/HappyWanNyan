@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppCalender;
@@ -109,8 +109,8 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
 
                     HashMap<String, String> Params = new HashMap<>();
-                    Params.put("user_id", AppContsnat.UserId);
-                    Params.put("lang_id", AppContsnat.Language);
+                    Params.put("user_id", AppConstant.UserId);
+                    Params.put("lang_id", AppConstant.Language);
                     Params.put("sitter_id", ID);
                     TimeZone tz = TimeZone.getDefault();
                     Params.put("user_timezone", tz.getID());
@@ -120,7 +120,7 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                     Params.put("drop_off", ((SFNFTextView) findViewById(R.id.TXT_DropTime)).getText().toString());
                     Params.put("pick_up", ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).getText().toString());
                     Params.put("dont_date", CHCH);
-                    new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
+                    new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
                             appLoader.Dismiss();

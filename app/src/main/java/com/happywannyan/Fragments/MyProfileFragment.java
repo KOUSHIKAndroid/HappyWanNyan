@@ -30,7 +30,7 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
@@ -141,7 +141,7 @@ public class MyProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new AppContsnat(getActivity());
+        new AppConstant(getActivity());
         appLoader =new AppLoader(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -301,11 +301,11 @@ public class MyProfileFragment extends Fragment {
                 ArrayList<APIPOSTDATA> Params = new ArrayList<APIPOSTDATA>();
                 APIPOSTDATA Post = new APIPOSTDATA();
                 Post.setPARAMS("user_id");
-                Post.setValues(AppContsnat.UserId);
+                Post.setValues(AppConstant.UserId);
                 Params.add(Post);
                 Post = new APIPOSTDATA();
                 Post.setPARAMS("lang_id");
-                Post.setValues(AppContsnat.Language);
+                Post.setValues(AppConstant.Language);
                 Params.add(Post);
                 Post = new APIPOSTDATA();
                 Post.setPARAMS("user_info");
@@ -313,7 +313,7 @@ public class MyProfileFragment extends Fragment {
                 Params.add(Post);
                 ArrayList<File>Photos=new ArrayList<File>();
                 Photos.add(photofile);
-                new CustomJSONParser().APIForWithPhotoPostMethod(AppContsnat.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -464,7 +464,7 @@ public class MyProfileFragment extends Fragment {
 
     public void loadPage(){
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_about?user_id=" + AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_about?user_id=" + AppConstant.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

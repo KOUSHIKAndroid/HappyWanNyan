@@ -34,7 +34,7 @@
             android:padding="5dp"
             android:paddingLeft="20dp"
             android:text="@string/addnewcard"
-            android:textColor="@color/colorwhite"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
 
@@ -42,15 +42,15 @@
         android:id="@+id/relativehader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/RL_HEADER"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/ovalpayment"
         android:elevation="4dp"
         android:gravity="center"
-        android:padding="10dp"
-        android:layout_below="@+id/RL_HEADER"
-        android:layout_alignParentStart="true">
+        android:padding="10dp">
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/tv_name"
@@ -58,30 +58,31 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/name_on_card"
-            android:textColor="@color/text_dark_gray"
+            android:textColor="@color/colorTextDarkGray"
             android:textSize="16dp" />
 
         <android.support.design.widget.TextInputLayout
-            android:layout_marginTop="10dp"
             android:id="@+id/input_txt_card_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"
-            android:background="@color/colorwhite"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorWhite"
             app:hintTextAppearance="@style/TextAppearance.AppCompat">
             >
+
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/edtxt_card_name"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:hint="@string/Name"
-                android:textColor="@color/text_dark_gray"
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:maxLength="50"
                 android:maxLines="1"
                 android:minLines="1"
-                android:paddingLeft="5dp" />
+                android:paddingLeft="5dp"
+                android:textColor="@color/colorTextDarkGray" />
         </android.support.design.widget.TextInputLayout>
 
         <com.happywannyan.Font.SFNFTextView
@@ -91,31 +92,30 @@
             android:layout_below="@+id/input_txt_card_name"
             android:layout_marginTop="20dp"
             android:text="@string/card_number"
-            android:textColor="@color/text_dark_gray"
+            android:textColor="@color/colorTextDarkGray"
             android:textSize="16dp" />
 
         <android.support.design.widget.TextInputLayout
-            android:layout_marginTop="10dp"
             android:id="@+id/input_txt_card_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_cardnumber"
-            android:background="@color/colorwhite"
-            app:hintTextAppearance="@style/TextAppearance.AppCompat"
-            >
+            android:layout_marginTop="10dp"
+            android:background="@color/colorWhite"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat">
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/edtxt_card_number"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:hint=" XXXX XXXX XXXX XXXX"
-                android:textColor="@color/text_dark_gray"
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:maxLength="16"
                 android:maxLines="1"
                 android:minLines="1"
-                android:paddingLeft="5dp" />
+                android:paddingLeft="5dp"
+                android:textColor="@color/colorTextDarkGray" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -126,7 +126,7 @@
             android:layout_below="@+id/input_txt_card_number"
             android:layout_marginTop="10dp"
             android:text="@string/expire_month_and_year"
-            android:textColor="@color/text_dark_gray"
+            android:textColor="@color/colorTextDarkGray"
             android:textSize="16dp" />
 
         <LinearLayout
@@ -134,8 +134,8 @@
             android:layout_width="wrap_content"
             android:layout_height="54dp"
             android:layout_below="@+id/tv_expiremonth"
-            android:background="@color/colorwhite"
             android:layout_marginTop="10dp"
+            android:background="@color/colorWhite"
             android:orientation="horizontal">
 
             <com.happywannyan.Font.SFNFTextView
@@ -144,10 +144,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="1dp"
                 android:gravity="center"
-                android:textColor="@color/text_dark_gray"
-                android:textSize="14sp"
                 android:maxLength="2"
-                android:text="00" />
+                android:text="00"
+                android:textColor="@color/colorTextDarkGray"
+                android:textSize="14sp" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/textView"
@@ -163,10 +163,10 @@
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:textColor="@color/text_dark_gray"
                 android:maxLength="2"
-                android:textSize="14sp"
-                android:text="00" />
+                android:text="00"
+                android:textColor="@color/colorTextDarkGray"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <com.happywannyan.Font.SFNFTextView
@@ -178,30 +178,29 @@
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/tv_expiremonth"
             android:text="@string/cvv"
-            android:textColor="@color/text_dark_gray"
+            android:textColor="@color/colorTextDarkGray"
             android:textSize="16dp" />
 
         <android.support.design.widget.TextInputLayout
-            android:layout_marginTop="10dp"
             android:id="@+id/input_cvv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_cvv"
             android:layout_marginLeft="30dp"
-            app:hintTextAppearance="@style/TextAppearance.AppCompat"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/tv_expiremonth"
-            android:background="@color/colorwhite">
+            android:background="@color/colorWhite"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat">
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/edt_cvv"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
+                android:hint="000"
                 android:inputType="number"
                 android:maxLength="3"
-                android:hint="000"
                 android:paddingLeft="5dp"
-                android:textColor="@color/text_dark_gray"
-                />
+                android:textColor="@color/colorTextDarkGray" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatCheckBox
@@ -223,7 +222,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:layout_marginTop="40dp"
-        app:cardBackgroundColor="@color/btn_red"
+        app:cardBackgroundColor="@color/colorBtnRed"
         app:cardCornerRadius="23dp"
         app:cardElevation="3dp">
 
@@ -239,7 +238,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="@string/save"
                 android:textAllCaps="true"
-                android:textColor="@color/colorwhite"
+                android:textColor="@color/colorWhite"
                 android:textSize="18sp" />
 
             <ImageView

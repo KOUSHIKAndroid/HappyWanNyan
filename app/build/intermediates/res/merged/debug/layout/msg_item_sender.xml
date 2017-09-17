@@ -23,63 +23,62 @@
     </android.support.v7.widget.CardView>
 
     <LinearLayout
-            android:layout_centerVertical="true"
-            android:id="@+id/LL_msg"
+        android:id="@+id/LL_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/card_view_img"
+        android:orientation="vertical">
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/TXT_Sender_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/card_view_img"
-            >
-
-            <com.happywannyan.Font.SFNFTextView
-                android:maxEms="16"
-                android:id="@+id/TXT_Sender_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/ic_receverbackground"
-                android:elevation="3dp"
-                android:text="sdjhbcshdjcb dhjsbcjhjkjkjljkljklklklkljkljkljkjkjkljklkjljkljkljkljkljkljklhkbjhsdbchbssd kdscjkdk kjsdcjk sdkjsdckjds
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_receverbackground"
+            android:elevation="3dp"
+            android:maxEms="16"
+            android:text="sdjhbcshdjcb dhjsbcjhjkjkjljkljklklklkljkljkljkjkjkljklkjljkljkljkljkljkljklhkbjhsdbchbssd kdscjkdk kjsdcjk sdkjsdckjds
 sd      jhbcdhsjbc hjsdc jksdckj dsjcb bds
 dschjbsdhb"
-                android:textSize="14sp" />
+            android:textSize="14sp" />
 
-            <ImageView
-                android:layout_below="@+id/TXT_Sender_message"
-                android:id="@+id/IMG_Sender_Attach"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="0dp"
-                android:background="#FFB6C9"
-                android:padding="1px" />
-
-            <ImageView
-                android:layout_below="@+id/IMG_Sender_Attach"
-                android:id="@+id/IMG_Sender_Map"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="0dp"
-                android:background="#FFB6C9"
-                android:padding="1px" />
-
-        </LinearLayout>
-
-    <com.happywannyan.Font.SFNFTextView
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/LL_msg"
-            android:id="@+id/TXT_sender_name_time"
+        <ImageView
+            android:id="@+id/IMG_Sender_Attach"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:text="name,date"
-            android:textSize="12sp" />
+            android:layout_below="@+id/TXT_Sender_message"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="0dp"
+            android:background="#FFB6C9"
+            android:padding="1px" />
+
+        <ImageView
+            android:id="@+id/IMG_Sender_Map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/IMG_Sender_Attach"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="0dp"
+            android:background="#FFB6C9"
+            android:padding="1px" />
+
+    </LinearLayout>
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/TXT_sender_name_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/LL_msg"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="name,date"
+        android:textSize="12sp" />
 
 
 </RelativeLayout>

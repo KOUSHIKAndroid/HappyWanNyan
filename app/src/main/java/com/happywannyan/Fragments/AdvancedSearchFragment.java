@@ -31,7 +31,7 @@ import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.CalenderActivity;
 import com.happywannyan.Activities.SearchResultActivity;
 import com.happywannyan.Adapter.AdapterPetListDialog;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.CustomRangeBar.RangeSeekBar;
 import com.happywannyan.Events;
 import com.happywannyan.Font.SFNFTextView;
@@ -160,7 +160,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
             Loger.MSG("mParam_allPetDetails", "" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
 
-            new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "pet_type_info?pet_type_id=" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id") + "&langid=" + AppContsnat.Language,
+            new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?pet_type_id=" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id") + "&langid=" + AppConstant.Language,
                     new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
@@ -327,7 +327,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
 
                                     try {
-                                        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "pet_type_info?&pet_type_id=" + jsonObject.getString("id") + "&langid=" + AppContsnat.Language,
+                                        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?&pet_type_id=" + jsonObject.getString("id") + "&langid=" + AppConstant.Language,
                                                 new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                                                     @Override
                                                     public void OnSuccess(String Result) {
@@ -536,7 +536,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         Button BTN_CANCEL = (Button) LayView.findViewById(R.id.BTN_CANCEL);
 
 
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "parent_service?langid=en&user_id="+AppContsnat.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -642,7 +642,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         (TXT_SERVICENAME).setTag(id);
 
         try {
-            new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "pet_type_info?pet_type_id=" + 1 + "&langid=" + AppContsnat.Language,
+            new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?pet_type_id=" + 1 + "&langid=" + AppConstant.Language,
                     new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {

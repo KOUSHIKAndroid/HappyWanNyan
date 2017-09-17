@@ -16,7 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
@@ -120,7 +120,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 }
 
 
-                new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -144,7 +144,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 break;
             case "Three":
                 appLoader.Show();
-                new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -183,7 +183,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
     public void submitConfirmReservationRequest() {
         appLoader.Show();
-        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
@@ -205,7 +205,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
     public void submitConfirmReservationRequestByVolley() {
         appLoader.Show();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppContsnat.BASEURL + "confirm_reservation_request",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppConstant.BASEURL + "confirm_reservation_request",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String result) {
@@ -249,7 +249,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
     public void submitConfirmReservationRequestUsingHTTP() {
         appLoader.Show();
-        new CustomJSONParser().postDataUsingHttp(AppContsnat.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().postDataUsingHttp(AppConstant.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

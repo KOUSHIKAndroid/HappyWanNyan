@@ -33,7 +33,7 @@ import android.widget.Toast;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Adapter.AdapterMessage;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.MessageDataType;
@@ -125,7 +125,7 @@ public class MessageFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        new AppContsnat(getActivity());
+        new AppConstant(getActivity());
         Params = new ArrayList<>();
         appLoader = new AppLoader(getActivity());
     }
@@ -175,11 +175,11 @@ public class MessageFragment extends Fragment {
         Params.add(apipostdata);
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppContsnat.UserId);
+        apipostdata.setValues(AppConstant.UserId);
         Params.add(apipostdata);
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppContsnat.Language);
+        apipostdata.setValues(AppConstant.Language);
         Params.add(apipostdata);
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("per_page");
@@ -191,8 +191,8 @@ public class MessageFragment extends Fragment {
         Params.add(apipostdata);
 
 
-        tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
-        view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
+        tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+        view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
         type = "all_message_list";
         TAGNAME = tv_all_message.getText().toString();
@@ -202,13 +202,13 @@ public class MessageFragment extends Fragment {
             public void onClick(View v) {
                 AllMessage = new ArrayList<>();
                 TAGNAME = tv_all_message.getText().toString();
-                tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 //                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
-                view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
                 type = "all_message_list";
                 loadList("0");
@@ -220,13 +220,13 @@ public class MessageFragment extends Fragment {
 
                 TAGNAME = tv_unread_message.getText().toString();
 
-                tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
+                tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 //                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
                 scrollView_horizontal.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
-                view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
                 AllMessage = new ArrayList<>();
                 type = "generalinquiry_message_list";
                 loadList("0");
@@ -255,13 +255,13 @@ public class MessageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 TAGNAME = tv_reservation_message.getText().toString();
-                tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 //                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
+                tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
                 scrollView_horizontal.fullScroll(HorizontalScrollView.FOCUS_LEFT);
-                view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
+                view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
                 AllMessage = new ArrayList<>();
                 type = "reservation_message_list";
@@ -289,11 +289,11 @@ public class MessageFragment extends Fragment {
                         Params.add(apipostdata);
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("user_id");
-                        apipostdata.setValues(AppContsnat.UserId);
+                        apipostdata.setValues(AppConstant.UserId);
                         Params.add(apipostdata);
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("lang_id");
-                        apipostdata.setValues(AppContsnat.Language);
+                        apipostdata.setValues(AppConstant.Language);
                         Params.add(apipostdata);
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("per_page");
@@ -342,9 +342,9 @@ public class MessageFragment extends Fragment {
         };
 
         ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
-                R.color.refresh_progress_1,
-                R.color.refresh_progress_2,
-                R.color.refresh_progress_3);
+                R.color.colorRefreshProgress_1,
+                R.color.colorRefreshProgress_2,
+                R.color.colorRefreshProgress_3);
 
         ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -355,13 +355,13 @@ public class MessageFragment extends Fragment {
             }
         });
 
-        if (AppContsnat.go_to.trim().equals("message_all")) {
+        if (AppConstant.go_to.trim().equals("message_all")) {
             try {
-                JSONObject jsonObject=new JSONObject(AppContsnat.message_object_string);
+                JSONObject jsonObject=new JSONObject(AppConstant.message_object_string);
                 try {
                     Intent intent = new Intent(getActivity(), MessageDetailsPageActivity.class);
                     intent.putExtra("message_id", jsonObject.getString("message_id").trim());
-                    if (!AppContsnat.UserId.equals(jsonObject.getString("receiver_id").trim()))
+                    if (!AppConstant.UserId.equals(jsonObject.getString("receiver_id").trim()))
                         intent.putExtra("receiver_id", jsonObject.getString("receiver_id").trim());
                     else
                         intent.putExtra("receiver_id", jsonObject.getString("sender_id").trim());
@@ -371,8 +371,8 @@ public class MessageFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                AppContsnat.go_to="";
-                AppContsnat.message_object_string="";
+                AppConstant.go_to="";
+                AppConstant.message_object_string="";
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -388,7 +388,7 @@ public class MessageFragment extends Fragment {
             MessageFragment.TAGNAME = jsonObject.getString("message_type").trim();
             Intent intent = new Intent(getActivity(), MessageDetailsPageActivity.class);
             intent.putExtra("message_id", jsonObject.getString("message_id").trim());
-            if (!AppContsnat.UserId.equals(jsonObject.getString("receiver_id").trim()))
+            if (!AppConstant.UserId.equals(jsonObject.getString("receiver_id").trim()))
                 intent.putExtra("receiver_id", jsonObject.getString("receiver_id").trim());
             else
                 intent.putExtra("receiver_id", jsonObject.getString("sender_id").trim());
@@ -409,7 +409,7 @@ public class MessageFragment extends Fragment {
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + type + "?", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + type + "?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -533,7 +533,7 @@ public class MessageFragment extends Fragment {
                 try {
                     String MessageID = AllMessage.get(position).getJsonObject().getString("message_id");
                     String ReciverId = AllMessage.get(position).getJsonObject().getString("receiver_id");
-                    new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "message_deleted_API?user_id=" + AppContsnat.UserId + "&message_id=" + MessageID + "&receiver_id=" + ReciverId,
+                    new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "message_deleted_API?user_id=" + AppConstant.UserId + "&message_id=" + MessageID + "&receiver_id=" + ReciverId,
                             new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                                 @Override
                                 public void OnSuccess(String Result) {
@@ -600,13 +600,13 @@ public class MessageFragment extends Fragment {
 
     public void searchFunction(String s) {
         HashMap<String, String> Params = new HashMap<String, String>();
-        Params.put("user_id", AppContsnat.UserId);
+        Params.put("user_id", AppConstant.UserId);
         Params.put("search_name", s);
-        Params.put("lang_id", AppContsnat.Language);
+        Params.put("lang_id", AppConstant.Language);
 
         appLoader.Show();
 
-        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "user_memberlist" + "?", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "user_memberlist" + "?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
 
             public void OnSuccess(String Result) {
@@ -667,11 +667,11 @@ public class MessageFragment extends Fragment {
                         Params.add(apipostdata);
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("user_id");
-                        apipostdata.setValues(AppContsnat.UserId);
+                        apipostdata.setValues(AppConstant.UserId);
                         Params.add(apipostdata);
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("lang_id");
-                        apipostdata.setValues(AppContsnat.Language);
+                        apipostdata.setValues(AppConstant.Language);
                         Params.add(apipostdata);
                         apipostdata = new APIPOSTDATA();
                         apipostdata.setPARAMS("per_page");

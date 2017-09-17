@@ -24,7 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
@@ -77,7 +77,7 @@ String TAG="@@@Edit";
         Rad_catf = (RadioGroup) findViewById(R.id.Rad_catf);
          img_pet = (ImageView) findViewById(R.id.img_pet);
         findViewById(R.id.IMG_ARROW).setVisibility(View.INVISIBLE);
-        new AppContsnat(this);
+        new AppConstant(this);
 
         try {
             MainObject=new JSONObject(getIntent().getStringExtra("Data"));
@@ -92,7 +92,7 @@ String TAG="@@@Edit";
         }
 
 
-//        new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+//        new CustomJSONParser().API_FOR_GET(AppConstant.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
 //            @Override
 //            public void OnSuccess(String Result) {
 //                try {
@@ -121,7 +121,7 @@ String TAG="@@@Edit";
     @Override
     protected void onResume() {
         super.onResume();
-        new AppContsnat(this);
+        new AppConstant(this);
     }
 
     @Override
@@ -140,18 +140,18 @@ String TAG="@@@Edit";
 //                                    ArrayList<APIPOSTDATA> params = new ArrayList<>();
 //                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
 //                                    apipostdata.setPARAMS("user_id");
-//                                    apipostdata.setValues(AppContsnat.UserId);
+//                                    apipostdata.setValues(AppConstant.UserId);
 //                                    params.add(apipostdata);
 //                                    apipostdata = new APIPOSTDATA();
 //                                    apipostdata.setPARAMS("lang_id");
-//                                    apipostdata.setValues(AppContsnat.Language);
+//                                    apipostdata.setValues(AppConstant.Language);
 //                                    params.add(apipostdata);
 //                                    apipostdata = new APIPOSTDATA();
 //                                    apipostdata.setPARAMS("pet_type_id");
 //                                    apipostdata.setValues(PetTypeId);
 //                                    params.add(apipostdata);
 //                                    appLoader.Show();
-//                                    new CustomJSONParser().API_FOR_GET(AppContsnat.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONRESPONSE() {
+//                                    new CustomJSONParser().API_FOR_GET(AppConstant.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONRESPONSE() {
 //                                        @Override
 //                                        public void OnSuccess(String Result) {
 //                                            findViewById(R.id.Body).setVisibility(View.VISIBLE);
@@ -494,62 +494,62 @@ String TAG="@@@Edit";
 
     private void checkValidationAndNext() {
 
-        ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
-        ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
-        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
-        ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
-        ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
-        ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
-        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
-        ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+        ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+        ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+        ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+        ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+        ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+        ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
 
 
         if (((SFNFTextView) findViewById(R.id.Txt_type)).getText().toString().trim().equals("")) {
-            ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.btn_red));
+            ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
             Log.i("Txt_type", "Txt_type");
         } else {
 
 
                 Log.i("TXTName", "TXTName");
-                ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+                ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                 if (((EditText) findViewById(R.id.TXTName)).getText().toString().trim().equals("")) {
 
-                    ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.btn_red));
+                    ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                     ((EditText) findViewById(R.id.TXTName)).requestFocus();
                 } else {
                     Log.i("TXT_Year", "TXT_Year");
-                    ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+                    ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
 
                     if (((SFNFTextView) findViewById(R.id.TXT_Year)).getText().toString().trim().equals("")) {
-                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.btn_red));
+                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                     } else {
                         Log.i("TXT_Month", "TXT_Month");
-                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                         if (((SFNFTextView) findViewById(R.id.TXT_Month)).getText().toString().trim().equals("")) {
-                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.btn_red));
+                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                         } else {
                             Log.i("TXT_gender", "TXT_gender");
-                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                             if (((SFNFTextView) findViewById(R.id.TXT_gender)).getText().toString().trim().equals("")) {
-                                ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.btn_red));
+                                ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                             } else {
                                 Log.i("TXT_breed", "TXT_breed");
-                                ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+                                ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                                 if (((SFNFTextView) findViewById(R.id.TXT_petbreed)).getText().toString().trim().equals("")) {
-                                    ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.btn_red));
+                                    ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                                 } else {
                                     Log.i("TXT_petsize", "TXT_petsize");
-                                    ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+                                    ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                                     if (((SFNFTextView) findViewById(R.id.TXT_petsize)).getText().toString().trim().equals("")
                                             && findViewById(R.id.RL_petSize).getVisibility() == View.VISIBLE) {
-                                        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.btn_red));
+                                        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                                     } else {
-                                        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+                                        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                                         if (((EditText) findViewById(R.id.EditDescribe)).getText().toString().trim().equals("")) {
-                                            ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.btn_red));
+                                            ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                                             ((EditText) findViewById(R.id.EditDescribe)).requestFocus();
                                         } else {
-                                            ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.text_dark_gray));
+                                            ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                                             InputArea = new JSONArray();
                                             RadioArray = new JSONArray();
                                             Text = new JSONArray();
@@ -630,18 +630,18 @@ String TAG="@@@Edit";
                                                     ArrayList<APIPOSTDATA> Params = new ArrayList<>();
                                                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                                                     apipostdata.setPARAMS("user_id");
-                                                    Loger.MSG("user_id", "" + AppContsnat.UserId);
-                                                    apipostdata.setValues(AppContsnat.UserId);
+                                                    Loger.MSG("user_id", "" + AppConstant.UserId);
+                                                    apipostdata.setValues(AppConstant.UserId);
                                                     Params.add(apipostdata);
 
                                                     apipostdata = new APIPOSTDATA();
                                                     apipostdata.setPARAMS("langid");
-                                                    apipostdata.setValues(AppContsnat.Language);
+                                                    apipostdata.setValues(AppConstant.Language);
                                                     Params.add(apipostdata);
 
                                                     apipostdata = new APIPOSTDATA();
                                                     apipostdata.setPARAMS("pettypeid");
-                                                    apipostdata.setValues(AppContsnat.Language);
+                                                    apipostdata.setValues(AppConstant.Language);
                                                     Params.add(apipostdata);
 
                                                     apipostdata = new APIPOSTDATA();
@@ -679,7 +679,7 @@ String TAG="@@@Edit";
 
 
                                                     appLoader.Show();
-                                                    new CustomJSONParser().APIForWithPhotoPostMethod(AppContsnat.BASEURL + "app_users_addpetinfo?", Params,  PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
+                                                    new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_addpetinfo?", Params,  PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
                                                         @Override
                                                         public void OnSuccess(String Result) {
                                                             appLoader.Dismiss();

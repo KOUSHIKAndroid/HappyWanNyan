@@ -15,7 +15,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
@@ -32,9 +32,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class FacebookActivity extends AppCompatActivity {
-    public static final int FacebookResponse=11;
+    public static final int FacebookResponse = 11;
 
     CallbackManager callbackManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,15 +56,14 @@ public class FacebookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_facebook);
 
 
-
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile","email","user_friends"));
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email", "user_friends"));
 
         callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
 
-                Loger.MSG("@@ FB TOLEN",""+loginResult.getAccessToken());
+                Loger.MSG("@@ FB TOLEN", "" + loginResult.getAccessToken());
 
                 GraphRequest request = GraphRequest.newMeRequest(
                         loginResult.getAccessToken(),
@@ -77,7 +77,7 @@ public class FacebookActivity extends AppCompatActivity {
 
 
 //                                Loger.MSG("@@ FB DETAILS",""+object.toString());
-                                Loger.MSG("@@ FB DETAILS"," GARPH ---"+response.getJSONObject());
+                                Loger.MSG("@@ FB DETAILS", " GARPH ---" + response.getJSONObject());
 
 
                                 LoginWithWanNyaan(response.getJSONObject());
@@ -99,50 +99,51 @@ public class FacebookActivity extends AppCompatActivity {
 
             @Override
             public void onError(FacebookException error) {
-                Loger.MSG("@@ FB ERROR",""+error.toString());
+                Loger.MSG("@@ FB ERROR", "" + error.toString());
             }
         });
     }
 
     private void LoginWithWanNyaan(JSONObject jsonObject) {
 
-        ArrayList<APIPOSTDATA> PostData=new ArrayList<>();
+        ArrayList<APIPOSTDATA> PostData = new ArrayList<>();
         try {
 
 
-        APIPOSTDATA FACE=new APIPOSTDATA();
-        FACE.setPARAMS("lang_id");
-        FACE.setValues(AppContsnat.Language);
-        PostData.add(FACE);
+            APIPOSTDATA FACE = new APIPOSTDATA();
+            FACE.setPARAMS("lang_id");
+            FACE.setValues(AppConstant.Language);
+            PostData.add(FACE);
 
-         FACE=new APIPOSTDATA();
-        FACE.setPARAMS("f_name");
-        FACE.setValues(jsonObject.getString("first_name"));
-        PostData.add(FACE);
+            FACE = new APIPOSTDATA();
+            FACE.setPARAMS("f_name");
+            FACE.setValues(jsonObject.getString("first_name"));
+            PostData.add(FACE);
 
-            FACE=new APIPOSTDATA();
+            FACE = new APIPOSTDATA();
             FACE.setPARAMS("l_name");
             FACE.setValues(jsonObject.getString("last_name"));
             PostData.add(FACE);
 
-            FACE=new APIPOSTDATA();
+            FACE = new APIPOSTDATA();
             FACE.setPARAMS("email");
             FACE.setValues(jsonObject.getString("email"));
             PostData.add(FACE);
-            FACE=new APIPOSTDATA();
+            FACE = new APIPOSTDATA();
             FACE.setPARAMS("fb_id");
             FACE.setValues(jsonObject.getString("id"));
             PostData.add(FACE);
 
-        }catch (JSONException e){}
+        } catch (JSONException e) {
+        }
 
-        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "facebook_login", PostData, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "facebook_login", PostData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
-                    new AppContsnat(FacebookActivity.this).SET_SHAREDATA(AppDataHolder.UserData,Result);
-                    JSONObject jsonObject1=new JSONObject(Result);
-                    switch (jsonObject1.getString("user_status")){
+                    new AppConstant(FacebookActivity.this).setShareDATA(AppDataHolder.UserData, Result);
+                    JSONObject jsonObject1 = new JSONObject(Result);
+                    switch (jsonObject1.getString("user_status")) {
                         case "not_verified_user":
 
                             break;
@@ -151,15 +152,14 @@ public class FacebookActivity extends AppCompatActivity {
                             break;
                     }
 
-                    Intent intent=new Intent();
-                   setResult(RESULT_OK,intent);
+                    Intent intent = new Intent();
+                    setResult(RESULT_OK, intent);
 
 //                    startActivity(new Intent(FacebookActivity.this,BaseActivity.class));
                     finish();
 
-                }catch (Exception e)
-                {
-
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
 
             }
@@ -169,8 +169,8 @@ public class FacebookActivity extends AppCompatActivity {
                 new MYAlert(FacebookActivity.this).AlertOnly(getResources().getString(R.string.facebook), Error, new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
-                        Intent intent=new Intent();
-                        setResult(RESULT_CANCELED,intent);
+                        Intent intent = new Intent();
+                        setResult(RESULT_CANCELED, intent);
                         finish();
                     }
                 });
@@ -181,8 +181,8 @@ public class FacebookActivity extends AppCompatActivity {
                 new MYAlert(FacebookActivity.this).AlertOnly(getResources().getString(R.string.facebook), Error, new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
-                        Intent intent=new Intent();
-                        setResult(RESULT_CANCELED,intent);
+                        Intent intent = new Intent();
+                        setResult(RESULT_CANCELED, intent);
                         finish();
                     }
                 });
@@ -198,6 +198,4 @@ public class FacebookActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
-
-
 }

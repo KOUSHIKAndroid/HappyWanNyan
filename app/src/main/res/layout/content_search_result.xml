@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorwhite"
+    android:background="@color/colorWhite"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.happywannyan.Activities.SearchResultActivity"
     tools:showIn="@layout/activity_search_result">
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_view"
-    android:background="@color/gray_project"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-</android.support.v7.widget.RecyclerView>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrayProject"/>
+
 </android.support.constraint.ConstraintLayout>

@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -64,7 +64,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new AppContsnat(getActivity());
+        new AppConstant(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             Log.d("@@ PARA<MS", mParam1);
@@ -186,22 +186,19 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
         TXT_dropTime = (SFNFTextView) view.findViewById(R.id.TXT_dropTime);
         TXT_dropTime.setTag("");
 
-        new AppContsnat(getActivity()).GET_SHAREDATA(AppDataHolder.UserData, new AppDataHolder.App_sharePrefData() {
+        new AppConstant(getActivity()).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
             @Override
-            public void Avialable(boolean avilavle, JSONObject data) {
+            public void available(boolean available, JSONObject data) {
                 try {
                     EDX_Fname.setText(data.getJSONObject("info_array").getString("firstname"));
                     EDX_Lname.setText(data.getJSONObject("info_array").getString("lastname"));
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
 
             @Override
-            public void NotAvilable(String Error) {
-
-
+            public void notAvailable(String Error) {
             }
         });
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RL_HEADER"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:id="@+id/RL_HEADER"
     android:background="@color/colorPrimary"
     android:gravity="center_vertical"
     android:orientation="horizontal"
@@ -23,24 +23,25 @@
 
     <com.happywannyan.Font.SFNFTextView
         android:id="@+id/TXT_UserName"
-        android:layout_toRightOf="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
         android:layout_centerVertical="true"
         android:layout_marginTop="@dimen/nav_header_vertical_spacing"
-        android:textSize="@dimen/h1_label"
+        android:layout_toRightOf="@+id/imageView"
+        android:paddingLeft="10dp"
         android:text="Android Studio"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="@dimen/h1_label" />
+
     <com.happywannyan.Font.SFNFTextView
         android:id="@+id/TXT_loginlabel"
-    android:layout_width="wrap_content"
-    android:layout_below="@+id/TXT_UserName"
-    android:layout_toRightOf="@+id/imageView"
-    android:text="@string/Login"
-    android:textSize="12sp"
-    android:paddingLeft="10dp"
-    android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TXT_UserName"
+        android:layout_toRightOf="@+id/imageView"
+        android:paddingLeft="10dp"
+        android:text="@string/Login"
+        android:textSize="12sp" />
 
 
 </RelativeLayout>

@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
@@ -53,7 +53,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             JSONArray DATAARY = ItemObject.getJSONArray("info");
             for (int i = 0; i < DATAARY.length(); i++) {
                 final JSONObject MsgItem = DATAARY.getJSONObject(i);
-                if (MsgItem.has("sender_id") && MsgItem.getString("sender_id").equals(AppContsnat.UserId)) {
+                if (MsgItem.has("sender_id") && MsgItem.getString("sender_id").equals(AppConstant.UserId)) {
 
                     View UserItem = LayoutInflater.from(mContext).inflate(R.layout.msg_item_user, null);
 

@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import com.cooltechworks.creditcarddesign.CardEditActivity;
 import com.cooltechworks.creditcarddesign.CreditCardUtils;
 import com.happywannyan.Adapter.AdapterCard;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.SetGetCards;
@@ -235,7 +235,7 @@ public class BookingFragmentFoure extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == GET_NEW_CARD) {
-            new AppContsnat(getActivity());
+            new AppConstant(getActivity());
 
             final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
             final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
@@ -257,7 +257,7 @@ public class BookingFragmentFoure extends Fragment {
                 card.setName(cardHolderName);
 
 
-                Stripe stripe = new Stripe(getActivity(), AppContsnat.STRIPE_PUBLISH_KEY);
+                Stripe stripe = new Stripe(getActivity(), AppConstant.STRIPE_PUBLISH_KEY);
                 appLoader.Show();
 
                 stripe.createToken(
@@ -285,7 +285,7 @@ public class BookingFragmentFoure extends Fragment {
                                         Loger.MSG("@@ TOKEN customerId-", token.getCard().getLast4() + "");
                                         Loger.MSG("@@ TOKEN ID-", token.getCard().getId() + "");
                                         HashMap<String, String> Params = new HashMap<String, String>();
-                                        Params.put("user_id", AppContsnat.UserId);
+                                        Params.put("user_id", AppConstant.UserId);
                                         Params.put("stripe_id", CustomerID + "");
                                         Params.put("card_id", token.getCard().getId() + "");
                                         Params.put("name_on_card", cardHolderName);
@@ -296,17 +296,15 @@ public class BookingFragmentFoure extends Fragment {
                                         Params.put("cvv_code", card.getCVC() + "");
                                         Params.put("new_card", "1");
                                         Params.put("make_default", "1");
-                                        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
+                                        new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CRAD RESP-", Result);
-                                                new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+                                                new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                                                         , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 appLoader.Dismiss();
-
-
                                                                 try {
                                                                     JSONObject jsonObject = new JSONObject(Result);
                                                                     JSONArray jsonArrayUserStripeData = jsonObject.getJSONArray("user_stripe_data");
@@ -356,14 +354,13 @@ public class BookingFragmentFoure extends Fragment {
                                                             @Override
                                                             public void OnError(String Error) {
                                                                 appLoader.Dismiss();
-
                                                             }
                                                         });
                                             }
 
                                             @Override
                                             public void OnError(String Error, String Response) {
-                                                Loger.MSG("@@ CRAD Err'-", Response);
+                                                Loger.MSG("@@ CARD Error ->", Response);
                                                 appLoader.Dismiss();
 
                                             }
@@ -414,12 +411,11 @@ public class BookingFragmentFoure extends Fragment {
                 });
             }
         }
-
     }
 
     private void SetCardDetails() {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                 , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {

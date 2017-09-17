@@ -20,8 +20,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.happywannyan.Constant.AppContsnat;
-import com.happywannyan.Events;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.Fragments.FavouriteFragment;
@@ -70,16 +69,16 @@ public class BaseActivity extends LocationBaseActivity
         setContentView(R.layout.activity_base);
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(getClass().getName(), "Refreshed token: " + refreshedToken);
-        new AppContsnat(this);
+        new AppConstant(this);
 
         appLoader = new AppLoader(BaseActivity.this);
 
         HashMap<String, String> Params = new HashMap<>();
-        Params.put("user_id", AppContsnat.UserId);
+        Params.put("user_id", AppConstant.UserId);
         Params.put("anorid_device_id", refreshedToken + "");
 
 
-        new CustomJSONParser().APIForPostMethod2(AppContsnat.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
 
@@ -122,22 +121,21 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
 
-        new AppContsnat(BaseActivity.this).GET_SHAREDATA(AppDataHolder.UserData, new AppDataHolder.App_sharePrefData() {
+        new AppConstant(BaseActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
             @Override
-            public void Avialable(boolean avilavle, JSONObject data) {
+            public void available(boolean available, JSONObject data) {
                 try {
-
                     Loger.MSG("@@ DADAD", "" + data);
                     Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("image_path")).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
                     UserName.setText(data.getJSONObject("info_array").getString("firstname"));
                     txt_login_label.setVisibility(View.GONE);
                 } catch (JSONException e) {
-
+                    e.printStackTrace();
                 }
             }
 
             @Override
-            public void NotAvilable(String Error) {
+            public void notAvailable(String Error) {
                 navigationView.findViewById(R.id.LL_message).setVisibility(View.GONE);
                 navigationView.findViewById(R.id.LL_Booking).setVisibility(View.GONE);
                 navigationView.findViewById(R.id.LL_yourPets).setVisibility(View.GONE);
@@ -163,7 +161,7 @@ public class BaseActivity extends LocationBaseActivity
             public void onClick(View v) {
 
                 appLoader.Show();
-                String URL = AppContsnat.BASEURL + "app_logout?user_id=" + AppContsnat.UserId + "&anorid_status=1";
+                String URL = AppConstant.BASEURL + "app_logout?user_id=" + AppConstant.UserId + "&anorid_status=1";
                 new CustomJSONParser().APIForGetMethod(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
@@ -172,7 +170,7 @@ public class BaseActivity extends LocationBaseActivity
 
                         try {
                             if (new JSONObject(Result).getBoolean("response")) {
-                                new AppContsnat(BaseActivity.this).LogOut_ClearAllData();
+                                new AppConstant(BaseActivity.this).logOutClearAllData();
                                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                                 drawer.closeDrawer(GravityCompat.START);
                                 startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
@@ -305,9 +303,9 @@ public class BaseActivity extends LocationBaseActivity
 
         if (getIntent().getExtras() != null) {
             //do here
-            AppContsnat.go_to = getIntent().getStringExtra("go_to");
-            AppContsnat.message_object_string=getIntent().getStringExtra("object");
-            if (AppContsnat.go_to.trim().equals("message_all")) {
+            AppConstant.go_to = getIntent().getStringExtra("go_to");
+            AppConstant.message_object_string = getIntent().getStringExtra("object");
+            if (AppConstant.go_to.trim().equals("message_all")) {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 MessageFragment search_basic = new MessageFragment();
@@ -365,7 +363,7 @@ public class BaseActivity extends LocationBaseActivity
             ((SFNFTextView) findViewById(R.id.TXT_MSG_STATUS_NAV)).setText(String.valueOf(0));
         } else {
             Loger.MSG("count", "more than zero");
-            ((SFNFTextView) findViewById(R.id.TXT_MSG_STATUS_NAV)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.btn_red, null)));
+            ((SFNFTextView) findViewById(R.id.TXT_MSG_STATUS_NAV)).setBackground(new ColorCircleDrawable(ResourcesCompat.getColor(getResources(), R.color.colorBtnRed, null)));
             findViewById(R.id.TXT_MSG_STATUS_NAV).setVisibility(View.VISIBLE);
             ((SFNFTextView) findViewById(R.id.TXT_MSG_STATUS_NAV)).setText(String.valueOf(pref.getInt("count", 0)));
         }

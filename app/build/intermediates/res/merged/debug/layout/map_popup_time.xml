@@ -13,32 +13,29 @@
         android:textAllCaps="true"
         android:textColor="#000000"
         android:textSize="14sp" />
+
     <com.happywannyan.Font.SFNFTextView
         android:id="@+id/TXT_sitter"
-        android:layout_below="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:textSize="12sp"
-        android:layout_height="wrap_content" />
-
-
-
-    <com.happywannyan.Font.SFNFTextView
-        android:layout_below="@+id/TXT_sitter"
-        android:id="@+id/tv_place"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/Rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
+        android:textSize="12sp" />
+
+    <com.happywannyan.Font.SFNFTextView
+        android:id="@+id/tv_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TXT_sitter"
         android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/Rating"
         android:text="Tokyo,Japan"
         android:textColor="#000000"
-        android:textSize="12sp"
-       />
-
+        android:textSize="12sp" />
 
 
     <com.happywannyan.Font.SFNFTextView
@@ -52,15 +49,14 @@
         android:textSize="12sp" />
 
     <RatingBar
+        android:id="@+id/Rating"
+        style="@style/Base.Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_below="@+id/TXT_sitter"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        android:id="@+id/Rating"
-        android:layout_below="@+id/TXT_sitter"
-        android:layout_width="wrap_content"
-        android:rating="4.5"
-        style="@style/Base.Widget.AppCompat.RatingBar.Small"
-        android:layout_height="wrap_content"
-       />
+        android:rating="4.5" />
 
 </RelativeLayout>

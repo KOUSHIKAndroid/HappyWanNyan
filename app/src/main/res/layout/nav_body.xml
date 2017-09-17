@@ -1,251 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout android:layout_width="match_parent"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:orientation="vertical">
 
-    xmlns:android="http://schemas.android.com/apk/res/android">
     <View
         android:layout_width="match_parent"
         android:layout_height="2px"
-        android:layout_marginLeft="35dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/dividerline"/>
+        android:layout_marginLeft="35dp"
+        android:background="@color/colorDividerLine" />
 
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
         <LinearLayout
-            android:id="@+id/LL_Search"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@drawable/ic_search_white"
-                android:layout_width="30dp"
-                android:padding="2dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/search"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/LL_Search"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_search_white" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/search"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LL_message"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_nav_msg" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_messages"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/TXT_MSG_STATUS_NAV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LL_Booking"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_nav_booking" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_booking"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/LL_yourPets"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_nav_yourpet" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_yourpet"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/LL_Payment"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_nav_pymnt" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_payment"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/LL_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_nav_profile" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_profile"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LL_Favorite"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_nav_favorite_white" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_favoritesitter"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LL_Past_Favorite"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="2dp"
+                    android:src="@mipmap/ic_nav_past_fav" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_pastsitter"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LL_Help"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_nav_help" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_help"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/LL_Logout"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="45dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_nav_logout" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="@string/nav_logout"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/LL_message"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
 
-            <ImageView
-                android:src="@mipmap/ic_nav_msg"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_messages"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-
-            <com.happywannyan.Font.SFNFTextView
-                android:visibility="gone"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/TXT_MSG_STATUS_NAV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:padding="5dp"
-                android:text=""
-                android:textColor="@color/colorwhite"
-                android:textSize="16sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/LL_Booking"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@mipmap/ic_nav_booking"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_booking"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/LL_yourPets"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@mipmap/ic_nav_yourpet"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_yourpet"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/LL_Payment"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@mipmap/ic_nav_pymnt"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_payment"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/LL_Profile"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@mipmap/ic_nav_profile"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_profile"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/LL_Favorite"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@drawable/ic_nav_favorite_white"
-                android:layout_width="30dp"
-                android:padding="2dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_favoritesitter"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/LL_Past_Favorite"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@mipmap/ic_nav_past_fav"
-                android:layout_width="30dp"
-                android:padding="2dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_pastsitter"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/LL_Help"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@mipmap/ic_nav_help"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_help"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/LL_Logout"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:paddingLeft="45dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@mipmap/ic_nav_logout"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <com.happywannyan.Font.SFNFTextView
-                android:layout_width="wrap_content"
-                android:text="@string/nav_logout"
-                android:textSize="16sp"
-                android:paddingLeft="30dp"
-                android:textColor="@color/colorwhite"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </LinearLayout>
-
-
-</android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

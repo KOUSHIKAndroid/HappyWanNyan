@@ -50,7 +50,7 @@ public class AdapterPetList extends RecyclerView.Adapter<AdapterPetList.MyViewHo
             holder.img_tick.setImageResource(R.drawable.ic_checked_brown);
             holder.img_tick.setVisibility(View.VISIBLE);
             //holder.tv_walking.setTextColor(Color.parseColor("#F78181"));
-            holder.tv_walking.setTextColor(ResourcesCompat.getColor(context.getResources(), R.color.btn_red, null));
+            holder.tv_walking.setTextColor(ResourcesCompat.getColor(context.getResources(), R.color.colorBtnRed, null));
 
             Glide.with(context)
                     .load(serviceCatListArrayList.get(position).getSelected_image())

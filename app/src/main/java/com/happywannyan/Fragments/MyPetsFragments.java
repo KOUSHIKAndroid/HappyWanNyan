@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import com.happywannyan.Activities.AddAnotherPetsActivity;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.YourPets_Adapter;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.POJO.YourPets;
 import com.happywannyan.R;
@@ -65,7 +65,7 @@ public class MyPetsFragments extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        new AppContsnat(getActivity());
+        new AppConstant(getActivity());
     }
 
     @Override
@@ -112,11 +112,11 @@ public class MyPetsFragments extends Fragment {
         ArrayList<APIPOSTDATA> params = new ArrayList<>();
         APIPOSTDATA apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppContsnat.UserId);
+        apipostdata.setValues(AppConstant.UserId);
         params.add(apipostdata);
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppContsnat.Language);
+        apipostdata.setValues(AppConstant.Language);
         params.add(apipostdata);
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("start_form");
@@ -126,7 +126,7 @@ public class MyPetsFragments extends Fragment {
         apipostdata.setPARAMS("per_page");
         apipostdata.setValues("10");
         params.add(apipostdata);
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

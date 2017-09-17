@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_project"
-    >
-
+    android:background="@color/colorGrayProject">
 
     <RelativeLayout
         android:id="@+id/RL_HEADER"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar">
+
         <ImageView
             android:id="@+id/IMG_icon_drwaer"
             android:layout_width="54dp"
@@ -29,32 +27,33 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/nav_profile"
-            android:textColor="@color/colorwhite"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/page_titiel" />
+
         <ImageView
             android:id="@+id/ancher"
             android:layout_width="54dp"
-            android:layout_centerVertical="true"
+            android:layout_height="42dp"
             android:layout_alignParentRight="true"
-            android:layout_height="42dp" />
+            android:layout_centerVertical="true" />
+
         <ImageView
             android:id="@+id/Menu"
             android:layout_width="54dp"
             android:layout_height="50dp"
-            android:padding="10dp"
             android:layout_alignParentRight="true"
+            android:padding="10dp"
             android:src="@drawable/ic_more_white" />
 
 
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_below="@+id/RL_HEADER"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorwhite"
-        android:orientation="vertical"
-       >
+        android:layout_below="@+id/RL_HEADER"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,10 +78,10 @@
                     <ImageView
                         android:id="@+id/IMG_Profile"
                         android:layout_width="80dp"
-                        android:scaleType="fitXY"
-                        android:transitionName="cardimage"
                         android:layout_height="80dp"
-                        android:background="#cccccc" />
+                        android:background="#cccccc"
+                        android:scaleType="fitXY"
+                        android:transitionName="cardimage" />
                 </RelativeLayout>
 
                 <LinearLayout
@@ -110,7 +109,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
                                 android:text="USERNAME"
-                                android:textColor="@color/Black"
+                                android:textColor="@color/colorBlack"
                                 android:textSize="16sp" />
 
                             <com.happywannyan.Font.SFNFTextView
@@ -119,7 +118,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
                                 android:text="something"
-                                android:textColor="@color/Black"
+                                android:textColor="@color/colorBlack"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -130,11 +129,11 @@
 
                             <ImageView
                                 android:id="@+id/IMG_FAV"
-                                android:onClick="onClick"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_alignParentRight="true"
                                 android:layout_centerVertical="true"
+                                android:onClick="onClick"
                                 android:src="@drawable/profile_ic_favorite_blue" />
                         </RelativeLayout>
 
@@ -149,20 +148,19 @@
 
                         <RatingBar
                             android:id="@+id/Rating"
+                            style="?android:attr/ratingBarStyleSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="20dp"
-                            android:numStars="5"
-                            android:paddingLeft="5dp"
                             android:isIndicator="false"
-                            style="?android:attr/ratingBarStyleSmall"
-                            />
+                            android:numStars="5"
+                            android:paddingLeft="5dp" />
 
                         <com.happywannyan.Font.SFNFTextView
                             android:id="@+id/ReviewNo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="right"
                             android:layout_alignParentRight="true"
+                            android:gravity="right"
                             android:text="reviews here"
                             android:textColor="#666565"
                             android:textSize="14sp" />
@@ -177,26 +175,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:layout_margin="10dp"
-                android:background="@color/dividerline" />
+                android:background="@color/colorDividerLine" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_marginBottom="5dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:paddingLeft="10dp">
-
 
 
                 <ImageView
                     android:id="@+id/map_button"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:padding="13dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp"
                     android:background="@drawable/profile_circle_background_red"
                     android:elevation="10dp"
-                    android:layout_alignParentRight="true"
+                    android:padding="13dp"
                     android:src="@drawable/profile_ic_map_white" />
 
 
@@ -235,7 +232,7 @@
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="some location here"
-                        android:textColor="@color/Black"
+                        android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
                 </LinearLayout>
             </RelativeLayout>
@@ -250,7 +247,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
-                android:background="@color/gray_project"
+                android:background="@color/colorGrayProject"
                 android:weightSum="4">
 
                 <com.happywannyan.Font.SFNFTextView
@@ -260,7 +257,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/about"
-                    android:textColor="@color/Black"
+                    android:textColor="@color/colorBlack"
                     android:textSize="16sp" />
 
                 <View
@@ -269,7 +266,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
-                    android:background="@color/Black" />
+                    android:background="@color/colorBlack" />
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/TXTab2"
@@ -278,7 +275,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/service"
-                    android:textColor="@color/text_dark_gray"
+                    android:textColor="@color/colorTextDarkGray"
                     android:textSize="16sp" />
 
                 <View
@@ -287,7 +284,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
-                    android:background="@color/text_dark_gray" />
+                    android:background="@color/colorTextDarkGray" />
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/TXTab3"
@@ -296,7 +293,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/review"
-                    android:textColor="@color/text_dark_gray"
+                    android:textColor="@color/colorTextDarkGray"
                     android:textSize="16sp" />
 
                 <View
@@ -305,7 +302,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
-                    android:background="@color/text_dark_gray" />
+                    android:background="@color/colorTextDarkGray" />
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/TXTab4"
@@ -314,7 +311,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/images"
-                    android:textColor="@color/text_dark_gray"
+                    android:textColor="@color/colorTextDarkGray"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -322,7 +319,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="3px"
-                android:background="@color/dividerline"
+                android:background="@color/colorDividerLine"
                 android:weightSum="4">
 
                 <View
@@ -332,7 +329,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:background="@color/btn_red" />
+                    android:background="@color/colorBtnRed" />
 
                 <View
                     android:id="@+id/div2"
@@ -341,7 +338,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:background="@color/dividerline" />
+                    android:background="@color/colorDividerLine" />
 
                 <View
                     android:id="@+id/div3"
@@ -350,7 +347,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:background="@color/dividerline" />
+                    android:background="@color/colorDividerLine" />
 
                 <View
                     android:id="@+id/div4"
@@ -359,7 +356,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:background="@color/dividerline" />
+                    android:background="@color/colorDividerLine" />
 
 
             </LinearLayout>
@@ -374,12 +371,12 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/reservation"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
-        android:id="@+id/reservation"
         android:background="@drawable/profile_button_background_oval_red"
         android:elevation="10dp"
         android:gravity="center_vertical">
@@ -391,15 +388,15 @@
             android:paddingLeft="30dp"
             android:paddingRight="0dp"
             android:text="@string/request_reservation"
-            android:textColor="@color/colorwhite"
+            android:textColor="@color/colorWhite"
             android:textSize="15sp" />
 
         <ImageView
             android:layout_width="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_height="20dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:src="@drawable/profile_ic_chevron_right_white" />
     </LinearLayout>
 

@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <ImageView
         android:id="@+id/Upp"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="-10dp"
         android:layout_marginRight="16dp"
-        android:src="@drawable/ic_arrow_drop_up_red"
-        android:layout_height="wrap_content" />
-<LinearLayout
-    android:layout_below="@+id/Upp"
-    android:layout_width="wrap_content"
-    android:orientation="vertical"
-    android:layout_alignParentRight="true"
-    android:elevation="2dp"
-    android:background="@color/btn_red"
-    android:layout_height="wrap_content">
-    <com.happywannyan.Font.SFNFTextView
-        android:id="@+id/ID_MitUp"
+        android:src="@drawable/ic_arrow_drop_up_red" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:text="@string/wanyanmeetup"
-        android:padding="10dp"
-        android:visibility="gone"
-        android:onClick="onClick"
-        android:textColor="@color/colorwhite"
-        android:layout_height="wrap_content" />
-    <com.happywannyan.Font.SFNFTextView
-        android:id="@+id/Contact"
-        android:layout_width="wrap_content"
-        android:text="@string/contact"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:onClick="onClick"
-        android:textColor="@color/colorwhite"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Upp"
+        android:background="@color/colorBtnRed"
+        android:elevation="2dp"
+        android:orientation="vertical">
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/ID_MitUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:padding="10dp"
+            android:text="@string/wanyanmeetup"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/Contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="15dp"
+            android:text="@string/contact"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
 </RelativeLayout>

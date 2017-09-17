@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
 
     <RelativeLayout
         android:id="@+id/RL_HEADER"
@@ -29,7 +27,7 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/Booking"
-            android:textColor="@color/colorwhite"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
 
@@ -38,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_below="@+id/RL_HEADER"
-        android:background="@color/colorwhite"
+        android:background="@color/colorWhite"
         android:fillViewport="true">
 
         <LinearLayout
@@ -54,7 +52,7 @@
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
                 android:text="@string/up_coming_booking"
-                android:textColor="@color/text_dark_gray"
+                android:textColor="@color/colorTextDarkGray"
                 android:textSize="14sp"
                 android:typeface="sans" />
 
@@ -63,7 +61,7 @@
                 android:layout_width="1dip"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_current"
@@ -73,7 +71,7 @@
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
                 android:text="@string/current_booking"
-                android:textColor="@color/text_dark_gray"
+                android:textColor="@color/colorTextDarkGray"
                 android:textSize="14sp"
                 android:typeface="sans" />
 
@@ -82,7 +80,7 @@
                 android:layout_width="1dip"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_pending"
@@ -92,7 +90,7 @@
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
                 android:text="@string/pending_booking"
-                android:textColor="@color/text_dark_gray"
+                android:textColor="@color/colorTextDarkGray"
                 android:textSize="14sp"
                 android:typeface="sans" />
 
@@ -101,7 +99,7 @@
                 android:layout_width="1dip"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
             <com.happywannyan.Font.SFNFTextView
                 android:id="@+id/tv_past"
@@ -111,7 +109,7 @@
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
                 android:text="@string/past_booking"
-                android:textColor="@color/text_dark_gray"
+                android:textColor="@color/colorTextDarkGray"
                 android:textSize="14sp"
                 android:typeface="sans" />
         </LinearLayout>
@@ -123,19 +121,19 @@
         android:layout_width="match_parent"
         android:layout_height="10px"
         android:layout_above="@+id/swipeContainer"
-        android:background="@color/gray_project" />
+        android:background="@color/colorGrayProject" />
 
     <android.support.v4.widget.SwipeRefreshLayout
-        android:layout_below="@+id/H_SCROLL"
         android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/H_SCROLL">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rcv_upcoming_booking"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorwhite"
+            android:background="@color/colorWhite"
             android:orientation="vertical"></android.support.v7.widget.RecyclerView>
     </android.support.v4.widget.SwipeRefreshLayout>
 

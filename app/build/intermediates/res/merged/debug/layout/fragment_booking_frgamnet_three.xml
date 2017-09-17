@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorwhite"
+    android:background="@color/colorWhite"
     android:clickable="true"
     android:padding="10dp"
     tools:context="com.happywannyan.SitterBooking.BookingFrgamnetThree">
@@ -52,7 +52,7 @@
                 android:layout_height="1px"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
             <LinearLayout
                 android:id="@+id/LL_DoubleDate"
@@ -76,7 +76,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="1"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/colorBlack" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -95,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="1"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/colorBlack" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -114,7 +114,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="1"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/colorBlack" />
                 </RelativeLayout>
             </LinearLayout>
 
@@ -141,7 +141,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="1"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/colorBlack" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -161,7 +161,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="1"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/colorBlack" />
                 </RelativeLayout>
             </LinearLayout>
 
@@ -181,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="1"
-                    android:textColor="@color/Black" />
+                    android:textColor="@color/colorBlack" />
             </RelativeLayout>
 
             <View
@@ -189,7 +189,7 @@
                 android:layout_height="1px"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -215,7 +215,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="1"
-                    android:textColor="@color/Black" />
+                    android:textColor="@color/colorBlack" />
             </RelativeLayout>
 
             <View
@@ -223,7 +223,7 @@
                 android:layout_height="1px"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
             <LinearLayout
                 android:id="@+id/LL_subtotal_discount"
@@ -242,7 +242,7 @@
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="@string/subtotal_amount"
-                        android:textColor="@color/btn_red" />
+                        android:textColor="@color/colorBtnRed" />
 
                     <com.happywannyan.Font.SFNFBoldTextView
                         android:id="@+id/TXT_SubTotalPrice"
@@ -250,7 +250,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="143343"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/colorBlack" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -262,7 +262,7 @@
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="@string/discount_amount"
-                        android:textColor="@color/btn_red" />
+                        android:textColor="@color/colorBtnRed" />
 
                     <com.happywannyan.Font.SFNFBoldTextView
                         android:id="@+id/TXT_DiscountPrice"
@@ -270,7 +270,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="143343"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/colorBlack" />
                 </RelativeLayout>
 
                 <View
@@ -278,7 +278,7 @@
                     android:layout_height="1px"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/gray_project" />
+                    android:background="@color/colorGrayProject" />
 
             </LinearLayout>
 
@@ -291,7 +291,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:text="@string/tota_amnt"
-                    android:textColor="@color/btn_red" />
+                    android:textColor="@color/colorBtnRed" />
 
                 <com.happywannyan.Font.SFNFBoldTextView
                     android:id="@+id/TXT_TotalPrice"
@@ -299,7 +299,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="143343"
-                    android:textColor="@color/Black" />
+                    android:textColor="@color/colorBlack" />
             </RelativeLayout>
 
             <View
@@ -307,7 +307,7 @@
                 android:layout_height="1px"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/gray_project" />
+                android:background="@color/colorGrayProject" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -326,7 +326,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/TT"
                     android:padding="5dp"
-                    android:textColor="@color/Black" />
+                    android:textColor="@color/colorBlack" />
 
             </RelativeLayout>
 
@@ -343,11 +343,11 @@
                         android:id="@+id/EDX_coupon_code"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:maxLength="10"
-                        android:inputType="numberDecimal"
                         android:hint="@string/coupon_code"
-                        android:paddingRight="150dp" />
+                        android:inputType="numberDecimal"
+                        android:maxLength="10"
+                        android:paddingRight="150dp"
+                        android:singleLine="true" />
                 </android.support.design.widget.TextInputLayout>
 
                 <com.happywannyan.Font.SFNFTextView
@@ -360,7 +360,7 @@
                     android:padding="8dp"
                     android:text="@string/apply"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorwhite"
+                    android:textColor="@color/colorWhite"
                     android:textSize="18sp" />
 
                 <ImageView
@@ -375,13 +375,13 @@
             </RelativeLayout>
 
             <com.happywannyan.Font.SFNFTextView
-                android:visibility="gone"
                 android:id="@+id/Tv_coupon_code_valid_check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="5dp"
-                android:text="@string/coupon_code_applied" />
+                android:text="@string/coupon_code_applied"
+                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
 
@@ -395,7 +395,7 @@
         android:layout_marginBottom="25dp"
         android:layout_marginTop="40dp"
         android:onClick="onClick"
-        app:cardBackgroundColor="@color/btn_red"
+        app:cardBackgroundColor="@color/colorBtnRed"
         app:cardCornerRadius="23dp"
         app:cardElevation="3dp">
 
@@ -411,7 +411,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="@string/payment_details"
                 android:textAllCaps="true"
-                android:textColor="@color/colorwhite"
+                android:textColor="@color/colorWhite"
                 android:textSize="18sp" />
 
             <ImageView

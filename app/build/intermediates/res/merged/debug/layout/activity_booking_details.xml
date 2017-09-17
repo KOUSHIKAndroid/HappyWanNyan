@@ -6,34 +6,34 @@
     tools:context="com.happywannyan.Activities.Booking.BookingDetailsActivity">
 
     <RelativeLayout
-    android:id="@+id/RL_HEADER"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
-    android:orientation="horizontal"
-    android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
-    tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="0dp">
+        android:id="@+id/RL_HEADER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <ImageView
-        android:id="@+id/IMG_icon_back"
-        android:layout_width="54dp"
-        android:layout_height="50dp"
-        android:padding="15dp"
-        android:src="@drawable/ic_arrow_back_white" />
+        <ImageView
+            android:id="@+id/IMG_icon_back"
+            android:layout_width="54dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:src="@drawable/ic_arrow_back_white" />
 
-    <com.happywannyan.Font.SFNFTextView
-        android:id="@+id/PAGE_Titile"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@+id/IMG_icon_back"
-        android:gravity="center"
-        android:padding="5dp"
-        android:paddingLeft="20dp"
-        android:text="@string/Booking"
-        android:textColor="@color/colorwhite"
-        android:textSize="@dimen/page_titiel" />
-</RelativeLayout>
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/PAGE_Titile"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/IMG_icon_back"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="20dp"
+            android:text="@string/Booking"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/page_titiel" />
+    </RelativeLayout>
 
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/RL_HEADER"
-        android:background="@color/colorwhite"
+        android:background="@color/colorWhite"
         android:fillViewport="true">
 
 
@@ -53,7 +53,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/btn_red">
+                android:background="@color/colorBtnRed">
 
 
                 <android.support.v7.widget.CardView
@@ -82,7 +82,7 @@
                     android:layout_toRightOf="@id/img_card_view"
                     android:text="@string/Name"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorwhite"
+                    android:textColor="@color/colorWhite"
                     android:textSize="16sp" />
 
                 <com.happywannyan.Font.SFNFTextView
@@ -95,7 +95,7 @@
                     android:layout_toRightOf="@id/img_card_view"
                     android:text="Lee Shung Yang"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorwhite"
+                    android:textColor="@color/colorWhite"
                     android:textSize="16sp" />
 
 
@@ -117,7 +117,7 @@
                         android:layout_weight="1"
                         android:gravity="center_vertical"
                         android:text="@string/StartDate"
-                        android:textColor="@color/gray_project"
+                        android:textColor="@color/colorGrayProject"
                         android:textSize="12sp" />
 
 
@@ -127,7 +127,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/Enddate"
-                        android:textColor="@color/gray_project"
+                        android:textColor="@color/colorGrayProject"
                         android:textSize="12sp" />
 
 
@@ -138,7 +138,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:text="@string/BookingId"
-                        android:textColor="@color/gray_project"
+                        android:textColor="@color/colorGrayProject"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -147,7 +147,7 @@
                     android:id="@+id/LLStartEndDateBookingValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/LLStartEndDateBookingName"
+                    android:layout_below="@+id/LLStartEndDateBookingName"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
@@ -161,7 +161,7 @@
                         android:layout_weight="1"
                         android:gravity="center_vertical"
                         android:text="SEP 20,2017"
-                        android:textColor="@color/colorwhite"
+                        android:textColor="@color/colorWhite"
                         android:textSize="12sp" />
 
 
@@ -171,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="SEP 27,2017"
-                        android:textColor="@color/colorwhite"
+                        android:textColor="@color/colorWhite"
                         android:textSize="12sp" />
 
                     <com.happywannyan.Font.SFNFBoldTextView
@@ -181,7 +181,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:text="201705045916"
-                        android:textColor="@color/colorwhite"
+                        android:textColor="@color/colorWhite"
                         android:textSize="12sp" />
                 </LinearLayout>
 
@@ -190,11 +190,11 @@
                     android:id="@+id/tv_service_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/LLStartEndDateBookingValue"
+                    android:layout_below="@+id/LLStartEndDateBookingValue"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:text="@string/service"
-                    android:textColor="@color/colorwhite"
+                    android:textColor="@color/colorWhite"
                     android:textSize="12sp" />
 
 
@@ -202,12 +202,12 @@
                     android:id="@+id/tv_service_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_service_name"
+                    android:layout_below="@+id/tv_service_name"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:text="Day Care for Cats"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorwhite"
+                    android:textColor="@color/colorWhite"
                     android:textSize="12sp" />
 
 
@@ -215,7 +215,7 @@
                     android:id="@+id/horizontal_line_one"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@id/tv_service_value"
+                    android:layout_below="@+id/tv_service_value"
                     android:layout_marginTop="20dp"
                     android:background="#9F2C3A" />
 
@@ -223,7 +223,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/horizontal_line_one"
+                    android:layout_below="@+id/horizontal_line_one"
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
@@ -242,7 +242,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/TotalPets"
-                            android:textColor="@color/gray_project"
+                            android:textColor="@color/colorGrayProject"
                             android:textSize="12sp" />
 
                         <com.happywannyan.Font.SFNFTextView
@@ -251,7 +251,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:text="1"
-                            android:textColor="@color/colorwhite"
+                            android:textColor="@color/colorWhite"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -266,7 +266,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/tota_amnt"
-                            android:textColor="@color/gray_project"
+                            android:textColor="@color/colorGrayProject"
                             android:textSize="12sp" />
 
                         <com.happywannyan.Font.SFNFTextView
@@ -274,7 +274,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:text="2100"
-                            android:textColor="@color/colorwhite"
+                            android:textColor="@color/colorWhite"
                             android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -296,7 +296,7 @@
                     android:layout_marginTop="40dp"
                     android:text="Available Pet(s) Details"
                     android:textAllCaps="true"
-                    android:textColor="@color/Black"
+                    android:textColor="@color/colorBlack"
                     android:textSize="16sp" />
             </LinearLayout>
 

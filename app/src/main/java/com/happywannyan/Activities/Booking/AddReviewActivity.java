@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
@@ -253,18 +253,18 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
 
     private void SUBMIT_Review() {
         appLoader.Show();
-        new AppContsnat(this);
+        new AppConstant(this);
         HashMap<String, String> Params = new HashMap<String, String>();
         Params.put("booking_id", BookingId);
-        Params.put("langid", AppContsnat.Language);
-        Params.put("user_id", AppContsnat.UserId);
+        Params.put("langid", AppConstant.Language);
+        Params.put("user_id", AppConstant.UserId);
         Params.put("rating_input", ((RatingBar) findViewById(R.id.RATINGID)).getRating() + "");
         Params.put("exp_message", ((EditText) findViewById(R.id.EDX_message)).getText() + "");
         Params.put("user_timezone", TimeZone.getDefault().getID());
         HashMap<String, File> FileParams = new HashMap<String, File>();
         FileParams.put("msg_attachment", photofile);
 
-        new CustomJSONParser().APIForWithPhotoPostMethod2(AppContsnat.BASEURL + "app_add_review", Params, FileParams, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForWithPhotoPostMethod2(AppConstant.BASEURL + "app_add_review", Params, FileParams, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

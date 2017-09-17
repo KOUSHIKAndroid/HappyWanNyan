@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.happywannyan.Activities.Booking.CancelBookingWithReasonsActivity">
+
     <RelativeLayout
         android:id="@+id/RL_HEADER"
         android:layout_width="match_parent"
@@ -19,8 +20,8 @@
             android:id="@+id/IMG_icon_back"
             android:layout_width="54dp"
             android:layout_height="50dp"
-            android:padding="15dp"
             android:onClick="onClick"
+            android:padding="15dp"
             android:src="@drawable/ic_arrow_back_white" />
 
         <com.happywannyan.Font.SFNFTextView
@@ -32,33 +33,35 @@
             android:padding="5dp"
             android:paddingLeft="20dp"
             android:text="@string/cancel"
-            android:textColor="@color/colorwhite"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
+
     <ScrollView
-        android:paddingBottom="100dp"
-        android:layout_below="@+id/RL_HEADER"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RL_HEADER"
+        android:paddingBottom="100dp">
+
         <LinearLayout
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/Instruction_for_Cancel_req"
-                android:layout_height="wrap_content" />
+                android:text="@string/Instruction_for_Cancel_req" />
 
             <RelativeLayout
-                android:layout_marginTop="20dp"
                 android:id="@+id/RL_Cancel_couse"
                 android:layout_width="match_parent"
-                android:onClick="onClick"
-                android:layout_marginRight="0dp"
                 android:layout_height="wrap_content"
-                >
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="20dp"
+                android:onClick="onClick">
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/T5"
@@ -71,10 +74,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/T5"
+                    android:hint="@string/select"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
-                    android:hint="@string/select"
-                    android:textColor="@color/Black" />
+                    android:textColor="@color/colorBlack" />
 
                 <ImageView
                     android:id="@+id/I3"
@@ -92,44 +95,46 @@
                     android:layout_below="@+id/I3"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:background="@color/gray_project" />
+                    android:background="@color/colorGrayProject" />
             </RelativeLayout>
 
 
             <com.happywannyan.Font.SFNFTextView
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
-                android:text="@string/explain_why_cancel"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/explain_why_cancel" />
 
             <EditText
                 android:id="@+id/EDX_Cancel_Message"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:minLines="4"
-                android:gravity="top"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/ic_edit_background"
-                android:layout_height="wrap_content" />
+                android:gravity="top"
+                android:minLines="4" />
 
         </LinearLayout>
     </ScrollView>
+
     <android.support.v7.widget.CardView
+        android:id="@+id/BTN_Confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:layout_width="wrap_content"
-        app:cardBackgroundColor="@color/btn_red"
-        app:cardCornerRadius="20dp"
-        android:id="@+id/BTN_Confirm"
         android:onClick="onClick"
-        android:layout_height="wrap_content">
+        app:cardBackgroundColor="@color/colorBtnRed"
+        app:cardCornerRadius="20dp">
+
         <com.happywannyan.Font.SFNFTextView
             android:layout_width="150dp"
-            android:text="@string/confirm"
-            android:padding="12dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/colorwhite"
-            android:layout_height="wrap_content" />
+            android:padding="12dp"
+            android:text="@string/confirm"
+            android:textColor="@color/colorWhite" />
     </android.support.v7.widget.CardView>
 
 </RelativeLayout>

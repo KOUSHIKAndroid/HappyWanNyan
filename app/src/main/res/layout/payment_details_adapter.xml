@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorwhite"
     android:layout_margin="5dp"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/name_on_card"
-                    android:textColor="@color/text_dark_gray"
+                    android:textColor="@color/colorTextDarkGray"
                     android:textSize="16sp" />
 
                 <com.happywannyan.Font.SFNFTextView
@@ -40,7 +39,7 @@
                     android:layout_marginTop="5dp"
                     android:singleLine="true"
                     android:text="Mrinmoy"
-                    android:textColor="@color/Black"
+                    android:textColor="@color/colorBlack"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -50,25 +49,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal"
-               >
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_gravity="center"
                     android:id="@+id/img_default"
                     android:layout_width="24dp"
-                    android:layout_height="24dp" />
+                    android:layout_height="24dp"
+                    android:layout_gravity="center" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="@string/default2"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_dark_gray"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@color/colorTextDarkGray"
+                    android:textSize="14sp" />
 
             </LinearLayout>
-
 
 
         </LinearLayout>
@@ -90,7 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/card_number"
-                    android:textColor="@color/text_dark_gray"
+                    android:textColor="@color/colorTextDarkGray"
                     android:textSize="16sp" />
 
                 <com.happywannyan.Font.SFNFTextView
@@ -100,7 +97,7 @@
                     android:layout_marginTop="5dp"
                     android:singleLine="true"
                     android:text="XXXX XXXX XXXX 42421"
-                    android:textColor="@color/Black"
+                    android:textColor="@color/colorBlack"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -115,8 +112,7 @@
                     android:id="@+id/IMG_VISA"
                     android:layout_width="34dp"
                     android:layout_height="34dp"
-                    android:layout_gravity="bottom"
-                    />
+                    android:layout_gravity="bottom" />
             </LinearLayout>
 
         </LinearLayout>
@@ -138,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/expire_month_and_year"
-                    android:textColor="@color/text_dark_gray"
+                    android:textColor="@color/colorTextDarkGray"
                     android:textSize="16sp" />
 
                 <com.happywannyan.Font.SFNFTextView
@@ -147,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="08 / 2019"
-                    android:textColor="@color/Black"
+                    android:textColor="@color/colorBlack"
                     android:textSize="16sp" />
 
                 <com.happywannyan.Font.SFNFTextView
@@ -155,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/added_on"
-                    android:textColor="@color/text_dark_gray"
+                    android:textColor="@color/colorTextDarkGray"
                     android:textSize="16sp" />
 
                 <com.happywannyan.Font.SFNFTextView
@@ -164,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="2017-09-05"
-                    android:textColor="@color/Black"
+                    android:textColor="@color/colorBlack"
                     android:textSize="16sp" />
 
             </LinearLayout>

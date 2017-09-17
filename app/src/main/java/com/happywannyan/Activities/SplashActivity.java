@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.crashlytics.android.Crashlytics;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
 
@@ -22,27 +22,25 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);
-       AppContsnat.Language= Locale.getDefault().getLanguage();
+       AppConstant.Language= Locale.getDefault().getLanguage();
 
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                new AppContsnat(SplashActivity.this).GET_SHAREDATA(AppDataHolder.UserData, new AppDataHolder.App_sharePrefData() {
+                new AppConstant(SplashActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
                     @Override
-                    public void Avialable(boolean avilavle, JSONObject data) {
+                    public void available(boolean available, JSONObject data) {
                         startActivity( new Intent(SplashActivity.this,BaseActivity.class));
                         finish();
                     }
 
                     @Override
-                    public void NotAvilable(String Error) {
+                    public void notAvailable(String Error) {
                         startActivity( new Intent(SplashActivity.this,LoginChooserActivity.class));
                         finish();
                     }
                 });
-
-
             }
         },800);
     }

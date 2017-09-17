@@ -1,7 +1,6 @@
 package com.happywannyan.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +13,6 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Activities.MessageDetailsPageActivity;
-import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.MessageDataType;

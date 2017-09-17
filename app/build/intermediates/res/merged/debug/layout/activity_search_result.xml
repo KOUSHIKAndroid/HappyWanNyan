@@ -9,10 +9,11 @@
     <RelativeLayout
         android:id="@+id/RL_HEADER"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar">
+
         <ImageView
             android:id="@+id/IMG_icon_back"
             android:layout_width="54dp"
@@ -22,85 +23,79 @@
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/PAGE_Titile"
-            android:layout_toRightOf="@+id/IMG_icon_back"
-            android:layout_toLeftOf="@+id/IMG_Filter"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:paddingLeft="20dp"
+            android:layout_toLeftOf="@+id/IMG_Filter"
+            android:layout_toRightOf="@+id/IMG_icon_back"
+            android:gravity="center_vertical|left"
             android:maxLines="1"
             android:minLines="1"
-            android:gravity="center_vertical|left"
             android:padding="5dp"
-            android:textColor="@color/colorwhite"
+            android:paddingLeft="20dp"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/page_titiel" />
 
         <ImageView
             android:id="@+id/IMG_Filter"
             android:layout_width="54dp"
             android:layout_height="50dp"
-            android:padding="15dp"
             android:layout_alignParentRight="true"
+            android:padding="15dp"
             android:src="@drawable/ic_filter" />
     </RelativeLayout>
 
     <FrameLayout
         android:id="@+id/Container_result"
-        android:background="@color/colorwhite"
-        android:layout_below="@+id/RL_HEADER"
-        android:orientation="horizontal"
-        android:animateLayoutChanges="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/RL_HEADER"
+        android:animateLayoutChanges="true"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
 
     </FrameLayout>
 
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:orientation="vertical"
-        android:animateLayoutChanges="true"
-        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_height="wrap_content">
+        android:layout_marginRight="20dp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
         <ImageView
             android:id="@+id/IMG_Tinderr"
             android:layout_width="80dp"
-            android:visibility="gone"
             android:layout_height="80dp"
+            android:visibility="gone"
             app:srcCompat="@drawable/ic_tindermode" />
 
         <ImageView
             android:id="@+id/fab"
             android:layout_width="80dp"
-            android:visibility="gone"
             android:layout_height="80dp"
+            android:visibility="gone"
             app:srcCompat="@drawable/float_map" />
 
         <ImageView
             android:id="@+id/list"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:visibility="gone"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:visibility="gone"
             app:srcCompat="@drawable/float_list" />
+
         <ImageView
             android:id="@+id/fab_plus"
             android:layout_width="80dp"
-            android:tag="1"
-            android:visibility="gone"
+            android:layout_height="80dp"
             android:src="@drawable/ic_fab_plus"
-            android:layout_height="80dp" />
+            android:tag="1"
+            android:visibility="gone" />
     </LinearLayout>
-
-
-
-
-
-
-
-
 
 
 </RelativeLayout>

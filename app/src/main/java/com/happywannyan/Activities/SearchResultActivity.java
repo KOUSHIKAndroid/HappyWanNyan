@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.SearchListFragment;
 import com.happywannyan.Fragments.SearchMapFragment;
@@ -73,12 +73,12 @@ public class SearchResultActivity extends AppCompatActivity {
         ArrayList<APIPOSTDATA> PostData = new ArrayList<>();
         APIPOSTDATA apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppContsnat.UserId);
+        apipostdata.setValues(AppConstant.UserId);
         PostData.add(apipostdata);
 
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("langid");
-        apipostdata.setValues(AppContsnat.Language);
+        apipostdata.setValues(AppConstant.Language);
         PostData.add(apipostdata);
 
         apipostdata = new APIPOSTDATA();
@@ -116,7 +116,7 @@ public class SearchResultActivity extends AppCompatActivity {
         }
 
 
-        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorwhite"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
 
     <HorizontalScrollView
@@ -28,7 +28,7 @@
                     android:id="@+id/left_red_view"
                     android:layout_width="10px"
                     android:layout_height="match_parent"
-                    android:background="@color/btn_red" />
+                    android:background="@color/colorBtnRed" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -58,9 +58,9 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="37dp"
-                        android:text="Reservation"
                         android:paddingBottom="15dp"
-                        android:textColor="@color/btn_red"
+                        android:text="Reservation"
+                        android:textColor="@color/colorBtnRed"
                         android:textSize="16sp" />
 
                     <com.happywannyan.Font.SFNFTextView
@@ -73,7 +73,7 @@
                         android:layout_toRightOf="@id/img_card_view"
                         android:text="JOHN DOE"
                         android:textAllCaps="true"
-                        android:textColor="@color/Black"
+                        android:textColor="@color/colorBlack"
                         android:textSize="16sp" />
 
 
@@ -87,7 +87,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@id/img_card_view"
                         android:text="Lee Shung Yang"
-                        android:textColor="@color/Black"
+                        android:textColor="@color/colorBlack"
                         android:textSize="16sp" />
 
 
@@ -99,7 +99,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="20dp"
-                        android:background="@color/gray_project" />
+                        android:background="@color/colorGrayProject" />
 
 
                     <LinearLayout
@@ -121,20 +121,20 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:visibility="gone"
                             android:paddingBottom="10dp"
                             android:paddingTop="10dp"
                             android:text="Wan-Nyan meet up"
-                            android:textColor="@color/BlueColor"
-                            android:textSize="14sp" />
+                            android:textColor="@color/colorBlue"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
 
                         <View
                             android:layout_width="1px"
                             android:layout_height="10dp"
+                            android:background="@color/colorBlue"
                             android:paddingBottom="10dp"
                             android:paddingTop="10dp"
-                            android:visibility="gone"
-                            android:background="@color/BlueColor" />
+                            android:visibility="gone" />
 
 
                         <com.happywannyan.Font.SFNFTextView
@@ -146,7 +146,7 @@
                             android:paddingBottom="10dp"
                             android:paddingTop="10dp"
                             android:text="@string/contact"
-                            android:textColor="@color/BlueColor"
+                            android:textColor="@color/colorBlue"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -158,25 +158,25 @@
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:id="@+id/LLDelete"
                 android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorGrayProject"
                 android:gravity="center"
-                android:background="@color/gray_project"
-                android:layout_height="match_parent">
+                android:orientation="vertical">
 
                 <ImageView
-                    android:src="@drawable/ic_vector_favourite_delete"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_vector_favourite_delete" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/ic_vector_favourite_delete"
-                    android:layout_width="wrap_content"
-                    android:textColor="@color/Black"
-                    android:textSize="16sp"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -188,6 +188,6 @@
         android:id="@+id/bottom_view"
         android:layout_width="match_parent"
         android:layout_height="5px"
-        android:background="@color/gray_project" />
+        android:background="@color/colorGrayProject" />
 
 </LinearLayout>

@@ -5,19 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.happywannyan.Activities.profile.ContactMsgActivity">
+
     <RelativeLayout
         android:id="@+id/RL_HEADER"
-        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
-        android:layout_height="wrap_content">
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar">
+
         <ImageView
             android:id="@+id/IMG_icon_drwaer"
             android:layout_width="54dp"
             android:layout_height="50dp"
-            android:padding="15dp"
             android:onClick="onClick"
+            android:padding="15dp"
             android:src="@drawable/ic_arrow_back_white" />
 
         <com.happywannyan.Font.SFNFTextView
@@ -28,49 +30,55 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/Title_send_a_msg"
-            android:textColor="@color/colorwhite"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
 
     <ScrollView
-        android:layout_below="@+id/RL_HEADER"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/RL_HEADER">
+
         <RelativeLayout
-            android:paddingBottom="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
             <android.support.v7.widget.CardView
                 android:id="@+id/Crad1"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/colorwhite"
-                android:layout_height="wrap_content">
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardElevation="5dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="10dp"
-                    android:layout_height="wrap_content">
+                    android:padding="10dp">
+
                     <com.happywannyan.Font.SFNFBoldTextView
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="@string/add_a_message"
-                        android:layout_height="wrap_content" />
+                        android:text="@string/add_a_message" />
+
                     <com.happywannyan.Font.SFNFTextView
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="@string/Caontact_lebel1"
-                        android:layout_height="wrap_content" />
+                        android:text="@string/Caontact_lebel1" />
+
                     <EditText
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:minLines="5"
-                        android:padding="10dp"
                         android:id="@+id/EDX_msg"
-                        android:gravity="bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/ic_edit_background"
-                        android:layout_height="wrap_content" />
+                        android:gravity="bottom"
+                        android:minLines="5"
+                        android:padding="10dp" />
 
                 </LinearLayout>
 
@@ -79,81 +87,89 @@
             <android.support.v7.widget.CardView
                 android:id="@+id/CARD_2"
                 android:layout_width="match_parent"
-                android:layout_margin="5dp"
-                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/Crad1"
-                app:cardBackgroundColor="@color/colorwhite"
-                android:layout_height="wrap_content">
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardElevation="5dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <com.happywannyan.Font.SFNFTextView
-                            android:layout_width="wrap_content"
-                            android:text="@string/StartDate"
                             android:id="@+id/H1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_height="wrap_content" />
+                            android:text="@string/StartDate" />
 
                         <com.happywannyan.Font.SFNFTextView
                             android:id="@+id/startdate"
-                            android:onClick="onClick"
-                            android:layout_marginLeft="20dp"
-                            android:layout_width="200dp"
                             style="@style/Widget.AppCompat.EditText"
-                            android:backgroundTint="@color/gray_project"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
                             android:layout_alignParentRight="true"
-                            android:layout_height="50dp" />
+                            android:layout_marginLeft="20dp"
+                            android:backgroundTint="@color/colorGrayProject"
+                            android:onClick="onClick" />
+
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:src="@drawable/ic_calender_balack"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:layout_height="wrap_content" />
+                            android:src="@drawable/ic_calender_balack" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <com.happywannyan.Font.SFNFTextView
-                            android:layout_width="wrap_content"
-                            android:text="@string/Enddate"
-                            android:layout_centerVertical="true"
-                            android:layout_height="wrap_content" />
 
                         <com.happywannyan.Font.SFNFTextView
-                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/Enddate" />
+
+                        <com.happywannyan.Font.SFNFTextView
                             android:id="@+id/AlterDate"
-                            android:onClick="onClick"
-                            android:layout_width="200dp"
                             style="@style/Widget.AppCompat.EditText"
-                            android:backgroundTint="@color/gray_project"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
                             android:layout_alignParentRight="true"
-                            android:layout_height="50dp" />
+                            android:layout_marginLeft="20dp"
+                            android:backgroundTint="@color/colorGrayProject"
+                            android:onClick="onClick" />
+
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:src="@drawable/ic_calender_balack"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:layout_height="wrap_content" />
+                            android:src="@drawable/ic_calender_balack" />
                     </RelativeLayout>
+
                     <LinearLayout
-                        android:layout_below="@+id/RL_ChoseCat"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        android:orientation="horizontal"
+                        android:layout_below="@+id/RL_ChoseCat"
                         android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
                         android:weightSum="2">
 
                         <RelativeLayout
                             android:id="@+id/RL_PickupTime"
-                            android:onClick="onClick"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:onClick="onClick"
                             android:paddingRight="7dp">
 
                             <com.happywannyan.Font.SFNFTextView
@@ -164,11 +180,11 @@
 
                             <ImageView
                                 android:layout_width="22dp"
-                                android:layout_marginRight="2dp"
-                                android:src="@drawable/ic_watch"
+                                android:layout_height="22dp"
                                 android:layout_alignParentRight="true"
+                                android:layout_marginRight="2dp"
                                 android:scaleType="fitXY"
-                                android:layout_height="22dp" />
+                                android:src="@drawable/ic_watch" />
 
                             <com.happywannyan.Font.SFNFTextView
                                 android:id="@+id/TXT_PickupTime"
@@ -177,15 +193,15 @@
                                 android:layout_above="@+id/T2"
                                 android:paddingBottom="15dp"
                                 android:text="@string/select"
-                                android:textColor="@color/Black"
+                                android:textColor="@color/colorBlack"
                                 android:textSize="@dimen/h1_label" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_above="@+id/T2"
                                 android:layout_alignParentRight="true"
                                 android:paddingBottom="15dp"
-                                android:layout_above="@+id/T2"
                                 android:src="@drawable/ic_arrow_black" />
 
                             <View
@@ -193,16 +209,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="2px"
                                 android:layout_alignParentBottom="true"
-                                android:background="@color/gray_project" />
+                                android:background="@color/colorGrayProject" />
 
                         </RelativeLayout>
 
                         <RelativeLayout
                             android:id="@+id/RL_DropOffTime"
-                            android:onClick="onClick"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:onClick="onClick"
                             android:paddingLeft="7dp">
 
                             <com.happywannyan.Font.SFNFTextView
@@ -210,30 +226,31 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/dropofftime" />
+
                             <ImageView
                                 android:layout_width="22dp"
-                                android:src="@drawable/ic_watch"
+                                android:layout_height="22dp"
                                 android:layout_alignParentRight="true"
-                                android:scaleType="fitXY"
                                 android:layout_marginRight="2dp"
-                                android:layout_height="22dp" />
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_watch" />
 
                             <com.happywannyan.Font.SFNFTextView
+                                android:id="@+id/TXT_DropTime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_above="@+id/T3"
-                                android:id="@+id/TXT_DropTime"
                                 android:layout_centerVertical="true"
                                 android:paddingBottom="15dp"
                                 android:text="@string/select"
-                                android:textColor="@color/Black"
+                                android:textColor="@color/colorBlack"
                                 android:textSize="@dimen/h1_label" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
                                 android:layout_above="@+id/T3"
+                                android:layout_alignParentRight="true"
                                 android:layout_centerVertical="true"
                                 android:paddingBottom="15dp"
                                 android:src="@drawable/ic_arrow_black" />
@@ -243,18 +260,19 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="2px"
                                 android:layout_alignParentBottom="true"
-                                android:background="@color/gray_project" />
+                                android:background="@color/colorGrayProject" />
 
                         </RelativeLayout>
 
 
                     </LinearLayout>
+
                     <CheckBox
                         android:id="@+id/CHEK"
-                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
-                        android:text="@string/ihavenotdateyet"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/ihavenotdateyet" />
                 </LinearLayout>
 
 
@@ -262,43 +280,45 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/Card_next"
-                android:layout_below="@+id/CARD_2"
                 android:layout_width="210dp"
-                android:layout_marginTop="30dp"
-                app:cardElevation="3dp"
-                android:layout_marginBottom="20dp"
-                android:onClick="onClick"
-                app:cardCornerRadius="23dp"
+                android:layout_height="45dp"
                 android:layout_alignParentBottom="true"
+                android:layout_below="@+id/CARD_2"
                 android:layout_centerHorizontal="true"
-                app:cardBackgroundColor="@color/btn_red"
-                android:layout_height="45dp">
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:onClick="onClick"
+                app:cardBackgroundColor="@color/colorBtnRed"
+                app:cardCornerRadius="23dp"
+                app:cardElevation="3dp">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:padding="5dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
                     <com.happywannyan.Font.SFNFTextView
 
                         android:layout_width="wrap_content"
-                        android:text="@string/send"
-                        android:textSize="18sp"
-                        android:textAllCaps="true"
+                        android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/colorwhite"
                         android:layout_gravity="center_horizontal"
-                        android:layout_height="wrap_content" />
+                        android:text="@string/send"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+
                     <ImageView
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_right_arrow_white"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/ic_right_arrow_white" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
         </RelativeLayout>
     </ScrollView>
-
 
 
 </RelativeLayout>

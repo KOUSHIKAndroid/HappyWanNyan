@@ -29,7 +29,7 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Adapter.MessageAdapter;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.APIPOSTDATA;
@@ -84,7 +84,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new AppContsnat(this);
+        new AppConstant(this);
         setContentView(R.layout.activity_message_details_page);
         LL_UserInfo = (RecyclerView) findViewById(R.id.List_Recy);
         IMGE_FROM = (ImageView) findViewById(R.id.IMGE_FROM);
@@ -133,10 +133,10 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
         appLoader.Show();
         TimeZone tz = TimeZone.getDefault();
-        String URL = "messagedetails?user_id=" + AppContsnat.UserId + "&message_id=" + getIntent().getStringExtra("message_id") + "&lang_id=" + AppContsnat.Language
+        String URL = "messagedetails?user_id=" + AppConstant.UserId + "&message_id=" + getIntent().getStringExtra("message_id") + "&lang_id=" + AppConstant.Language
                 + "&user_timezone=" + tz.getID();
 
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -231,7 +231,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
                     apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("user_id");
-                    apipostdata.setValues("" + AppContsnat.UserId);
+                    apipostdata.setValues("" + AppConstant.UserId);
                     Params.add(apipostdata);
 
                     apipostdata = new APIPOSTDATA();
@@ -246,10 +246,10 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
                     apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("lang_id");
-                    apipostdata.setValues(AppContsnat.Language);
+                    apipostdata.setValues(AppConstant.Language);
                     Params.add(apipostdata);
 
-                    new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
+                    new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
 //                            try {
@@ -401,7 +401,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
             apipostdata = new APIPOSTDATA();
             apipostdata.setPARAMS("user_id");
-            apipostdata.setValues("" + AppContsnat.UserId);
+            apipostdata.setValues("" + AppConstant.UserId);
             Params.add(apipostdata);
 
             apipostdata = new APIPOSTDATA();
@@ -416,7 +416,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
             apipostdata = new APIPOSTDATA();
             apipostdata.setPARAMS("lang_id");
-            apipostdata.setValues(AppContsnat.Language);
+            apipostdata.setValues(AppConstant.Language);
             Params.add(apipostdata);
 
             apipostdata = new APIPOSTDATA();
@@ -438,7 +438,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             apipostdata.setValues(MAPIMGAEURL);
             Params.add(apipostdata);
 
-            new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
+            new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
                 @Override
                 public void OnSuccess(String Result) {
                     FetCh();
@@ -476,7 +476,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("user_id");
-        apipostdata.setValues("" + AppContsnat.UserId);
+        apipostdata.setValues("" + AppConstant.UserId);
         Params.add(apipostdata);
 
         apipostdata = new APIPOSTDATA();
@@ -496,13 +496,13 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppContsnat.Language);
+        apipostdata.setValues(AppConstant.Language);
         Params.add(apipostdata);
         ArrayList<File> Files = new ArrayList<>();
         Files.add(photofile);
         CustomJSONParser.ImageParam = "msg_attachment";
 
-        new CustomJSONParser().APIForWithPhotoPostMethod(AppContsnat.BASEURL + "reply_message", Params, Files, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "reply_message", Params, Files, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 FetCh();

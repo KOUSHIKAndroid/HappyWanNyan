@@ -7,7 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.EditText;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
@@ -95,11 +95,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         apipostdata.setValues(EDX_Password.getText().toString());
                         apipostdataArrayList.add(apipostdata);
                         appLoader.Show();
-                        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "app_login", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_login", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ LOGIN",Result);
-                                new AppContsnat(LoginActivity.this).SET_SHAREDATA(AppDataHolder.UserData,Result);
+                                new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData,Result);
                                 appLoader.Dismiss();
                                 startActivity(new Intent(LoginActivity.this,BaseActivity.class));
                                 finish();

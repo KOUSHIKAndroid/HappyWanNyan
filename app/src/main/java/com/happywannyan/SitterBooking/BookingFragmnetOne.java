@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.happywannyan.Activities.CalenderActivity;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
@@ -206,7 +206,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
 
                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("langid");
-                    apipostdata.setValues(AppContsnat.Language);
+                    apipostdata.setValues(AppConstant.Language);
                     ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
 
@@ -218,7 +218,7 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
 
                     apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("user_id");
-                    apipostdata.setValues(AppContsnat.UserId);
+                    apipostdata.setValues(AppConstant.UserId);
                     ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
 
 

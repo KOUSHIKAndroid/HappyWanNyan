@@ -1,5 +1,6 @@
 package com.happywannyan.Fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,18 +11,29 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.cooltechworks.creditcarddesign.CreditCardUtils;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.AdapterPaymentList;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
+import com.happywannyan.SitterBooking.NewCardAddActivity;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
+import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
+import com.stripe.android.Stripe;
+import com.stripe.android.TokenCallback;
+import com.stripe.android.model.Card;
+import com.stripe.android.model.Token;
 
 import org.json.JSONObject;
-
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,6 +56,8 @@ public class MyPaymentsFragment extends Fragment {
     RecyclerView recycler_view;
     AppLoader appLoader;
     AdapterPaymentList adapterPaymentList;
+    final int GET_NEW_CARD = 2;
+    Card card;
 
     private OnFragmentInteractionListener mListener;
 
@@ -98,6 +112,13 @@ public class MyPaymentsFragment extends Fragment {
                 ((BaseActivity) getActivity()).Menu_Drawer();
             }
         });
+        view.findViewById(R.id.NEWCARD).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NewCardAddActivity.class);
+                startActivityForResult(intent, GET_NEW_CARD);
+            }
+        });
 
         LoadPaymentDetails();
     }
@@ -122,7 +143,7 @@ public class MyPaymentsFragment extends Fragment {
 
     public void LoadPaymentDetails(){
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_users_accountinfo?lang_id=" + AppContsnat.Language + "&user_id=" + AppContsnat.UserId
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                 , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
@@ -153,5 +174,145 @@ public class MyPaymentsFragment extends Fragment {
     public interface onClickItem {
         void onSelectItemClick(int position, JSONObject data);
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == GET_NEW_CARD) {
+            new AppConstant(getActivity());
 
+            final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
+            final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
+            String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
+            String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
+            Loger.MSG("@@ Expiry-", cardNumber);
+
+            final int year = Integer.parseInt("20" + expiry.split("/")[1]);
+            final int month = Integer.parseInt(expiry.split("/")[0]);
+            Loger.MSG("@@ Expiry-", " YEAR-" + year);
+            Loger.MSG("@@ Expiry-", " MONTH-" + month);
+
+
+            card = new Card(cardNumber, month, year, cvv);
+            if (card.validateCard()) {
+                Loger.MSG("@@ Card ID-", card.getId() + "");
+                Loger.MSG("@@ Card ID-", card.getNumber() + "");
+                Loger.MSG("@@ Card-", card.getNumber() + "");
+                card.setName(cardHolderName);
+
+
+                Stripe stripe = new Stripe(getActivity(), AppConstant.STRIPE_PUBLISH_KEY);
+                appLoader.Show();
+
+                stripe.createToken(
+                        card,
+                        new TokenCallback() {
+                            public void onSuccess(final Token token) {
+                                new CustomJSONParser().GetStripeCustomerID(token.getId(), new CustomJSONParser.JSONResponseInterface() {
+                                    @Override
+                                    public void OnSuccess(String Result) {
+                                        Loger.MSG("@@ CUUU", Result);
+
+                                        String CustomerID = "";
+//                                        try {
+//                                            CustomerID=new JSONObject(Result).getString("id");
+//                                        } catch (JSONException e) {
+//                                            e.printStackTrace();
+//                                        }
+
+
+                                        Loger.MSG("@@ TOKEN finger-", token.getCard().getFingerprint() + "");
+                                        Loger.MSG("@@ TOKEN Brand-", token.getCard().getBrand() + "");
+                                        Loger.MSG("@@ TOKEN customerId-", token.getCard().getCustomerId() + "");
+                                        Loger.MSG("@@ TOKEN customerId-", token.getCard().getLast4() + "");
+                                        Loger.MSG("@@ TOKEN ID-", token.getCard().getId() + "");
+                                        HashMap<String, String> Params = new HashMap<String, String>();
+                                        Params.put("user_id", AppConstant.UserId);
+                                        Params.put("stripe_id", CustomerID + "");
+                                        Params.put("card_id", token.getCard().getId() + "");
+                                        Params.put("name_on_card", cardHolderName);
+                                        Params.put("name_on_card", cardHolderName);
+                                        Params.put("exp_month", month + "");
+                                        Params.put("exp_year", year + "");
+                                        Params.put("card_last_digits", token.getCard().getLast4() + "");
+                                        Params.put("cvv_code", card.getCVC() + "");
+                                        Params.put("new_card", "1");
+                                        Params.put("make_default", "1");
+                                        new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
+                                            @Override
+                                            public void OnSuccess(String Result) {
+                                                Loger.MSG("@@ CRAD RESP-", Result);
+                                                new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
+                                                        , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                                                            @Override
+                                                            public void OnSuccess(String Result) {
+                                                                appLoader.Dismiss();
+
+                                                                adapterPaymentList=new AdapterPaymentList(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
+                                                                    @Override
+                                                                    public void onSelectItemClick(int position, JSONObject data) {
+
+                                                                    }
+                                                                });
+                                                                recycler_view.setAdapter(adapterPaymentList);
+                                                            }
+
+                                                            @Override
+                                                            public void OnError(String Error, String Response) {
+                                                                appLoader.Dismiss();
+                                                            }
+
+                                                            @Override
+                                                            public void OnError(String Error) {
+                                                                appLoader.Dismiss();
+                                                            }
+                                                        });
+                                            }
+
+                                            @Override
+                                            public void OnError(String Error, String Response) {
+                                                Loger.MSG("@@ CRAD Err'-", Response);
+                                                appLoader.Dismiss();
+                                            }
+                                            @Override
+                                            public void OnError(String Error) {
+                                                appLoader.Dismiss();
+                                            }
+                                        });
+                                    }
+
+                                    @Override
+                                    public void OnError(String Error, String Response) {
+
+                                    }
+
+                                    @Override
+                                    public void OnError(String Error) {
+
+                                    }
+                                });
+                            }
+
+                            public void onError(Exception error) {
+                                appLoader.Dismiss();
+                                new MYAlert(getActivity()).AlertOnly("Add Card Error", error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                    }
+                                });
+
+                            }
+                        }
+                );
+
+            } else {
+                new MYAlert(getActivity()).AlertOnly("Add Card Error", "Invalid card please add a correct card", new MYAlert.OnlyMessage() {
+                    @Override
+                    public void OnOk(boolean res) {
+
+                    }
+                });
+            }
+        }
+    }
 }

@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <com.happywannyan.Font.SFNFTextView
         android:id="@+id/Title"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        android:textSize="@dimen/h1_label"
-        android:textColor="@color/colorwhite"
-        android:text=""/>
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/h1_label" />
+
     <ImageView
         android:id="@+id/IMG_Back"
         android:layout_width="wrap_content"
+        android:layout_height="?actionBarSize"
         android:padding="18dp"
-        android:src="@drawable/ic_close_white"
-        android:layout_height="?actionBarSize" />
+        android:src="@drawable/ic_close_white" />
 
     <EditText
         android:id="@+id/EDX_message"
-        android:layout_below="@+id/Title"
         android:layout_width="match_parent"
-        android:minLines="3"
-        android:gravity="top"
-        android:padding="5dp"
-        android:background="@drawable/ic_edit_background"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
         android:layout_margin="10dp"
-        android:layout_height="wrap_content" />
+        android:background="@drawable/ic_edit_background"
+        android:gravity="top"
+        android:minLines="3"
+        android:padding="5dp" />
 
     <Button
-        android:layout_below="@+id/EDX_message"
         android:id="@+id/BTN_OK"
-        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/EDX_message"
+        android:backgroundTint="@color/colorBtnRed"
         android:text="@string/ok"
-        android:backgroundTint="@color/btn_red"
-        android:textColor="@color/colorwhite"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/colorWhite" />
 </RelativeLayout>

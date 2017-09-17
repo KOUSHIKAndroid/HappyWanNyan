@@ -16,9 +16,9 @@ import android.widget.PopupWindow;
 import android.widget.RatingBar;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Activities.profile.fragmentPagerAdapter.ProfileFragPagerAdapter;
-import com.happywannyan.Constant.AppContsnat;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
@@ -63,8 +63,8 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         reservation = (LinearLayout) findViewById(R.id.reservation);
 
         try {
-            new AppContsnat(this);
-            UserData = AppContsnat.UserId;
+            new AppConstant(this);
+            UserData = AppConstant.UserId;
             this.PrevJSON = new JSONObject(getIntent().getStringExtra("data"));
             Loger.MSG("@@@ PROFILE DATA ", "" + PrevJSON);
             if (PrevJSON.has("sitter_user_id")) {
@@ -107,7 +107,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         Paramas.add(apipostdata);
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("langid");
-        apipostdata.setValues(AppContsnat.Language);
+        apipostdata.setValues(AppConstant.Language);
         Paramas.add(apipostdata);
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("user_timezone");
@@ -115,7 +115,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         Paramas.add(apipostdata);
 
 
-        new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 JSONRESPONSESTRING = Result;
@@ -335,7 +335,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     IDtemp = "1";
 
 
-                new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL + "app_favourite_sitters?user_id=" + AppContsnat.UserId + "" +
+                new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_favourite_sitters?user_id=" + AppConstant.UserId + "" +
                         "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {

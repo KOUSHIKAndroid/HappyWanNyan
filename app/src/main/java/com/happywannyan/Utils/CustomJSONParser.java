@@ -2,9 +2,8 @@ package com.happywannyan.Utils;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.APIPOSTDATA;
 
 import org.json.JSONObject;
@@ -31,8 +30,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-
-import static com.facebook.FacebookSdk.getApplicationContext;
 
 /**
  * Created by apple on 19/05/17.
@@ -426,7 +423,7 @@ public class CustomJSONParser {
 
                         OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MINUTES).build();
                         Request request = new Request.Builder().url("https://api.stripe.com/v1/customers")
-                                .addHeader("authorization", "Bearer " + AppContsnat.STRIPE_SECRATE_KEY)
+                                .addHeader("authorization", "Bearer " + AppConstant.STRIPE_SECRATE_KEY)
                                 .addHeader("source", "" + StripeToken)
                                 .addHeader("content-type", "application/x-www-form-urlencoded")
                                 .addHeader("cache-control", "no-cache")

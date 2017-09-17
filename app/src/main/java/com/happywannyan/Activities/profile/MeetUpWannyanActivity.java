@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
@@ -78,7 +78,7 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
                 ArrayList<APIPOSTDATA> apipostdatas = new ArrayList<>();
                 APIPOSTDATA apipostdata = new APIPOSTDATA();
                 apipostdata.setPARAMS("user_id");
-                apipostdata.setValues(AppContsnat.UserId);
+                apipostdata.setValues(AppConstant.UserId);
                 apipostdatas.add(apipostdata);
                 apipostdata = new APIPOSTDATA();
                 apipostdata.setPARAMS("sitter_id");
@@ -87,7 +87,7 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
 
                 apipostdata = new APIPOSTDATA();
                 apipostdata.setPARAMS("lang_id");
-                apipostdata.setValues(AppContsnat.Language);
+                apipostdata.setValues(AppConstant.Language);
                 apipostdatas.add(apipostdata);
                 apipostdata = new APIPOSTDATA();
                 apipostdata.setPARAMS("user_timezone");
@@ -134,7 +134,7 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
 
 
                     appLoader.Show();
-                    new CustomJSONParser().APIForPostMethod(AppContsnat.BASEURL + "meetandgreet_request", apipostdatas, new CustomJSONParser.JSONResponseInterface() {
+                    new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "meetandgreet_request", apipostdatas, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
                             appLoader.Dismiss();

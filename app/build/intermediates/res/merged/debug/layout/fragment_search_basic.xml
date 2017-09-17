@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     android:orientation="vertical"
-    android:background="@color/colorwhite"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.happywannyan.Activities.BaseActivity">
 
@@ -30,7 +30,7 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/search"
-            android:textColor="@color/colorwhite"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/page_titiel" />
 
         <RelativeLayout
@@ -55,8 +55,8 @@
                 android:paddingLeft="40dp"
                 android:paddingRight="40dp"
                 android:singleLine="true"
-                android:textColor="@color/colorwhite"
-                android:textColorHint="@color/colorwhite" />
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
                 android:layout_height="2px"
                 android:layout_alignParentBottom="true"
                 android:layout_marginRight="20dp"
-                android:background="@color/colorwhite" />
+                android:background="@color/colorWhite" />
 
 
         </RelativeLayout>
@@ -128,8 +128,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/chosedate"
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorwhite"
-                android:textColorHint="@color/colorwhite" />
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite" />
         </LinearLayout>
 
 
@@ -150,11 +150,11 @@
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
-                android:background="@color/gray_project"
+                android:background="@color/colorGrayProject"
                 android:gravity="center_vertical"
                 android:paddingLeft="30dp"
                 android:text="@string/i_am_looking"
-                android:textColor="@color/Black" />
+                android:textColor="@color/colorBlack" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/Rec_petlist"
@@ -164,23 +164,23 @@
         </LinearLayout>
 
         <!--<RelativeLayout-->
-            <!--android:id="@+id/RL_Serach1"-->
-            <!--android:layout_width="170dp"-->
-            <!--android:layout_height="80dp"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_gravity="center_horizontal"-->
-            <!--android:layout_marginTop="30dp"-->
-            <!--android:background="@drawable/ic_btn_red"-->
-            <!--android:onClick="onClick">-->
+        <!--android:id="@+id/RL_Serach1"-->
+        <!--android:layout_width="170dp"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:background="@drawable/ic_btn_red"-->
+        <!--android:onClick="onClick">-->
 
-            <!--<com.happywannyan.Font.SFNFTextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_centerHorizontal="true"-->
-                <!--android:paddingTop="12dp"-->
-                <!--android:text="@string/search"-->
-                <!--android:textColor="@color/colorwhite" />-->
+        <!--<com.happywannyan.Font.SFNFTextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:paddingTop="12dp"-->
+        <!--android:text="@string/search"-->
+        <!--android:textColor="@color/colorwhite" />-->
 
         <!--</RelativeLayout>-->
     </RelativeLayout>

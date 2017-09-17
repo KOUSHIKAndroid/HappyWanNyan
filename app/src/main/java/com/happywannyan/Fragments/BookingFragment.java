@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.BookingAdapter;
-import com.happywannyan.Constant.AppContsnat;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
@@ -67,7 +67,7 @@ public class BookingFragment extends Fragment{
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        new AppContsnat(getActivity());
+        new AppConstant(getActivity());
         recyclerView= (RecyclerView) view.findViewById(R.id.rcv_upcoming_booking);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -96,12 +96,12 @@ public class BookingFragment extends Fragment{
 
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppContsnat.UserId);
+        apipostdata.setValues(AppConstant.UserId);
         Params.add(apipostdata);
 
         apipostdata = new APIPOSTDATA();
         apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppContsnat.Language);
+        apipostdata.setValues(AppConstant.Language);
         Params.add(apipostdata);
 
         apipostdata = new APIPOSTDATA();
@@ -127,14 +127,14 @@ public class BookingFragment extends Fragment{
         tv_up_coming.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_past.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_past.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
-                view_between_upcoming_current_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                view_between_upcoming_current_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
                 AllBooking = new ArrayList<>();
                 type="upcoming_booking_list";
@@ -145,14 +145,14 @@ public class BookingFragment extends Fragment{
             @Override
             public void onClick(View v) {
 
-                tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_past.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_past.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
-                view_between_upcoming_current_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                view_between_upcoming_current_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
                 AllBooking = new ArrayList<>();
                 type="current_booking_list";
@@ -163,14 +163,14 @@ public class BookingFragment extends Fragment{
         tv_pending.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                tv_past.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
+                tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                tv_past.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
-                view_between_upcoming_current_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
-                view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
+                view_between_upcoming_current_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
+                view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
                 AllBooking = new ArrayList<>();
                 type="pending_booking_list";
@@ -181,14 +181,14 @@ public class BookingFragment extends Fragment{
             @Override
             public void onClick(View v) {
 
-                tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                tv_past.setTextColor(ContextCompat.getColor(getActivity(), R.color.Black));
+                tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                tv_past.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
-                view_between_upcoming_current_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
-                view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.Black));
+                view_between_upcoming_current_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
+                view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
                 AllBooking = new ArrayList<>();
                 type="past_booking_list";
@@ -196,21 +196,21 @@ public class BookingFragment extends Fragment{
             }
         });
 
-        if(AppContsnat.go_to.trim().equals("")){
+        if(AppConstant.go_to.trim().equals("")){
             tv_up_coming.performClick();
         }
         else {
             tv_pending.performClick();
-            AppContsnat.go_to="";
+            AppConstant.go_to="";
         }
 
 //        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeColors(
 //                Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
 
         ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
-                R.color.refresh_progress_1,
-                R.color.refresh_progress_2,
-                R.color.refresh_progress_3);
+                R.color.colorRefreshProgress_1,
+                R.color.colorRefreshProgress_2,
+                R.color.colorRefreshProgress_3);
 
 
         ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -239,7 +239,7 @@ public class BookingFragment extends Fragment{
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
-        new CustomJSONParser().APIForGetMethod(AppContsnat.BASEURL+type+"?", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL+type+"?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
