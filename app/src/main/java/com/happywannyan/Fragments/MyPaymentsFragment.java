@@ -189,6 +189,7 @@ public class MyPaymentsFragment extends Fragment {
             Loger.MSG("@@ Expiry-", "CardNumber-"+cardNumber);
             Loger.MSG("@@ Expiry-", "Year-" + year);
             Loger.MSG("@@ Expiry-", "Month-" + month);
+            Loger.MSG("@@ Expiry-", "cvv-" + cvv);
 
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {
@@ -208,7 +209,7 @@ public class MyPaymentsFragment extends Fragment {
                                 new CustomJSONParser().GetStripeCustomerID(token.getId(), new CustomJSONParser.JSONResponseInterface() {
                                     @Override
                                     public void OnSuccess(String Result) {
-                                        Loger.MSG("@@ CUUU", Result);
+                                        Loger.MSG("@@ TokenSuccess", Result);
 
                                         String CustomerID = "";
 //                                        try {
@@ -268,7 +269,7 @@ public class MyPaymentsFragment extends Fragment {
 
                                             @Override
                                             public void OnError(String Error, String Response) {
-                                                Loger.MSG("@@ CRAD Err'-", Response);
+                                                Loger.MSG("@@ CARD Error ->", Response);
                                                 appLoader.Dismiss();
                                             }
                                             @Override
@@ -277,15 +278,17 @@ public class MyPaymentsFragment extends Fragment {
                                             }
                                         });
                                     }
-
                                     @Override
                                     public void OnError(String Error, String Response) {
-
+                                        Loger.MSG("@@ CARD Error ->", Error);
+                                        Loger.MSG("@@ CARD ErrorResponse ->", Response);
+                                        appLoader.Dismiss();
                                     }
 
                                     @Override
                                     public void OnError(String Error) {
-
+                                        Loger.MSG("@@ CARD Error ->", Error);
+                                        appLoader.Dismiss();
                                     }
                                 });
                             }
