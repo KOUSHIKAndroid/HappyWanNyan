@@ -243,10 +243,10 @@ public class BookingFragmentFoure extends Fragment {
             final int year = Integer.parseInt("20" + expiry.split("/")[1]);
             final int month = Integer.parseInt(expiry.split("/")[0]);
 
-            Loger.MSG("@@ Expiry-", cardHolderName);
-            Loger.MSG("@@ Expiry-", cardNumber);
-            Loger.MSG("@@ Expiry-", " YEAR-" + year);
-            Loger.MSG("@@ Expiry-", " MONTH-" + month);
+            Loger.MSG("@@ Expiry-", "CardHolderName-"+cardHolderName);
+            Loger.MSG("@@ Expiry-", "CardNumber-"+cardNumber);
+            Loger.MSG("@@ Expiry-", "Year-" + year);
+            Loger.MSG("@@ Expiry-", "Month-" + month);
 
 //            final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
 //            final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);

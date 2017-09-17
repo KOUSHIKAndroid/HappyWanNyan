@@ -61,6 +61,12 @@ public class NewCardAddActivity extends AppCompatActivity {
                 showDialogMonth(view);
             }
         });
+        findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         findViewById(R.id.tv_year).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

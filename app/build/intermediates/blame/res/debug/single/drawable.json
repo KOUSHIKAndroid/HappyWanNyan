@@ -156,16 +156,16 @@
         "source": "C:\\Users\\suraj\\.android\\build-cache\\791b0b3613e8c168e566d0070bd9f35e0dfd2628\\output\\res\\drawable\\mr_dialog_material_background_dark.xml"
     },
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_sender_background.xml",
-        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_sender_background.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\card_color_round_rect_brown.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\f6119351d2679839853b83617020c97639f2de8a\\output\\res\\drawable\\card_color_round_rect_brown.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\\output\\res\\drawable\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\card_color_round_rect_brown.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\f6119351d2679839853b83617020c97639f2de8a\\output\\res\\drawable\\card_color_round_rect_brown.xml"
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_sender_background.xml",
+        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_sender_background.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_icon_americalexpress.xml",
@@ -236,12 +236,12 @@
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_chevron_right_white.xml"
     },
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mr_ic_pause_light.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\791b0b3613e8c168e566d0070bd9f35e0dfd2628\\output\\res\\drawable\\mr_ic_pause_light.xml"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_close_grey.xml",
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_close_grey.xml"
+    },
+    {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mr_ic_pause_light.xml",
+        "source": "C:\\Users\\suraj\\.android\\build-cache\\791b0b3613e8c168e566d0070bd9f35e0dfd2628\\output\\res\\drawable\\mr_ic_pause_light.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_disabled.xml",
@@ -304,12 +304,12 @@
         "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_close_list.xml"
     },
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_edit_background.xml",
-        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_edit_background.xml"
-    },
-    {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
         "source": "C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_edit_background.xml",
+        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_edit_background.xml"
     },
     {
         "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_login_logo.xml",

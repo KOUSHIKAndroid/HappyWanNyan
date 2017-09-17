@@ -185,10 +185,10 @@ public class MyPaymentsFragment extends Fragment {
             final int year = Integer.parseInt("20" + expiry.split("/")[1]);
             final int month = Integer.parseInt(expiry.split("/")[0]);
 
-            Loger.MSG("@@ Expiry-", cardHolderName);
-            Loger.MSG("@@ Expiry-", cardNumber);
-            Loger.MSG("@@ Expiry-", " YEAR-" + year);
-            Loger.MSG("@@ Expiry-", " MONTH-" + month);
+            Loger.MSG("@@ Expiry-", "CardHolderName-"+cardHolderName);
+            Loger.MSG("@@ Expiry-", "CardNumber-"+cardNumber);
+            Loger.MSG("@@ Expiry-", "Year-" + year);
+            Loger.MSG("@@ Expiry-", "Month-" + month);
 
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {
