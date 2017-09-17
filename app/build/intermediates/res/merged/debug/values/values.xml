@@ -139,16 +139,12 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <color name="blue_color">#5D8BF2</color>
-    <color name="blue_color_gradient">#3545AE</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
-    <color name="brown_color">#800000</color>
-    <color name="brown_color_gradient">#A52A2A</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="cardview_dark_background">#FF424242</color>
@@ -166,10 +162,6 @@
     <color name="cast_libraries_material_featurehighlight_outer_highlight_default_color">#2196F3</color>
     <color name="cast_libraries_material_featurehighlight_text_body_color">#FFFFFFFF</color>
     <color name="cast_libraries_material_featurehighlight_text_header_color">#FFFFFFFF</color>
-    <color name="chip_color">#d4edfa</color>
-    <color name="chip_inner_color">#e0e4e4</color>
-    <color name="chip_yellow_color">#fbe191</color>
-    <color name="chip_yellow_inner_color">#eed280</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBlack">#000000</color>
     <color name="colorBlue">#0B6C8C</color>
@@ -213,8 +205,6 @@
     <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_light_focused">#90000000</color>
     <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
-    <color name="default_color">#363434</color>
-    <color name="default_color_gradient">#434141</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
     <color name="design_fab_shadow_mid_color">#14000000</color>
@@ -234,13 +224,8 @@
     <color name="error_text_light_theme">#ffeb1c26</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <color name="green_color">#108b4c</color>
-    <color name="green_color_gradient">#1caf57</color>
-    <color name="green_continue">#1fc055</color>
-    <color name="grey_font">#ff9e9e9e</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
-    <color name="light_font">#FBFBFB</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -256,8 +241,6 @@
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="notification_material_background_media_default_color">#ff424242</color>
-    <color name="pink_color">#d04c84</color>
-    <color name="pink_color_gradient">#d04882</color>
     <color name="place_autocomplete_prediction_primary_text">#212121</color>
     <color name="place_autocomplete_prediction_primary_text_highlight">#757575</color>
     <color name="place_autocomplete_prediction_secondary_text">#757575</color>
@@ -272,21 +255,16 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <color name="purple_color">#5515a9</color>
-    <color name="purple_color_gradient">#651dc4</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <color name="semi_white">#88FFFFFF</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <color name="text_shadow">#7F000000</color>
-    <color name="text_shadow_white">#FFFFFF</color>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="wallet_bright_foreground_holo_dark">#fff3f3f3</color>
     <color name="wallet_bright_foreground_holo_light">#ff000000</color>
@@ -841,10 +819,6 @@
             <enum name="normal" value="-3"/>
             <enum name="large" value="-4"/>
         </attr><attr format="boolean" name="com_facebook_is_cropped"/></declare-styleable>
-    <declare-styleable name="creditcard"><attr format="integer" name="cvv"/><attr format="string" name="card_holder_name"/><attr format="string" name="card_expiration"/><attr format="string" name="card_number"/><attr format="enum" name="card_side">
-            <enum name="front" value="1"/>
-            <enum name="back" value="0"/>
-        </attr></declare-styleable>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -926,13 +900,10 @@
     <dimen name="android_pay_confirmation_margin">8dp</dimen>
     <dimen name="card_cvc_initial_margin">1000dp</dimen>
     <dimen name="card_expiry_initial_margin">200dp</dimen>
-    <dimen name="card_height_normal">180dp</dimen>
     <dimen name="card_icon_padding">12dp</dimen>
-    <dimen name="card_radius">2dp</dimen>
     <dimen name="card_widget_min_width">320dp</dimen>
-    <dimen name="card_width_normal">300dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
-    <dimen name="cardview_default_elevation">1dp</dimen>
+    <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
     <dimen name="cast_expanded_controller_ad_background_layout_height">350dp</dimen>
     <dimen name="cast_expanded_controller_ad_background_layout_width">-1px</dimen>
@@ -963,10 +934,6 @@
     <dimen name="cast_notification_image_size">64dp</dimen>
     <dimen name="cast_tracks_chooser_dialog_no_message_text_size">18sp</dimen>
     <dimen name="cast_tracks_chooser_dialog_row_text_size">18sp</dimen>
-    <dimen name="center_image_height">75dp</dimen>
-    <dimen name="center_image_width">75dp</dimen>
-    <dimen name="chip_height_normal">36dp</dimen>
-    <dimen name="chip_width_normal">54dp</dimen>
     <dimen name="com_facebook_auth_dialog_corner_radius">2dp</dimen>
     <dimen name="com_facebook_auth_dialog_corner_radius_oversized">4dp</dimen>
     <dimen name="com_facebook_button_corner_radius">2dp</dimen>
@@ -1040,16 +1007,9 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
-    <dimen name="inner_chip_height_normal">16dp</dimen>
-    <dimen name="inner_chip_width_normal">28dp</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
-    <dimen name="logo_height_normal">48dp</dimen>
-    <dimen name="logo_width_normal">48dp</dimen>
-    <dimen name="margin_large">16dp</dimen>
-    <dimen name="margin_small">8dp</dimen>
-    <dimen name="margin_xlarge">20dp</dimen>
     <dimen name="mr_controller_volume_group_list_item_height">68dp</dimen>
     <dimen name="mr_controller_volume_group_list_item_icon_size">24dp</dimen>
     <dimen name="mr_controller_volume_group_list_max_height">288dp</dimen>
@@ -1073,10 +1033,6 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
-    <dimen name="padding_large">16dp</dimen>
-    <dimen name="padding_normal">12dp</dimen>
-    <dimen name="padding_small">2dp</dimen>
-    <dimen name="padding_xlarge">18dp</dimen>
     <dimen name="page_titiel">18sp</dimen>
     <dimen name="place_autocomplete_button_padding">16dp</dimen>
     <dimen name="place_autocomplete_powered_by_google_height">40dp</dimen>
@@ -1088,10 +1044,6 @@
     <dimen name="place_autocomplete_progress_horizontal_margin">16dp</dimen>
     <dimen name="place_autocomplete_progress_size">24dp</dimen>
     <dimen name="place_autocomplete_separator_start">72dp</dimen>
-    <dimen name="text_size_normal">19sp</dimen>
-    <dimen name="text_size_normal_plus">20sp</dimen>
-    <dimen name="text_size_normal_small">13sp</dimen>
-    <dimen name="text_size_small">16sp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -1238,11 +1190,7 @@
     <string name="calender_tips">Select the start date and then the end date on the same page</string>
     <string name="cancel">Cancel</string>
     <string name="cancelpolicy">Cancelation Policy</string>
-    <string name="card_expiry">CARD EXPIRY</string>
-    <string name="card_holder">CARD HOLDER</string>
-    <string name="card_holder_name_sample">JOHN MATTHEW</string>
-    <string name="card_mm_yy">MM/YY</string>
-    <string name="card_number">CARD NUMBER</string>
+    <string name="card_number">Card Number</string>
     <string name="card_number_hint">4242 4242 4242 4242</string>
     <string name="cast_ad_label">Ad</string>
     <string name="cast_casting_to_device">Casting to %1$s</string>
@@ -1289,7 +1237,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">a4b77cbe-52ba-455a-8eb9-5c58230803ce</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">d449e991-c202-4706-9968-f0474936dba2</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1356,14 +1304,10 @@
     <string name="discount_amount">Discount Amount</string>
     <string name="do_you_want_to_cancel_booking">Are you sure you want to cancel this booking?</string>
     <string name="do_you_want_to_delete">Do you want to delete ?</string>
-    <string name="done">DONE</string>
     <string name="donthaveanacc">Don\'t have an account?</string>
     <string name="dropofftime">Drop-Off Time</string>
-    <string name="error_card_expired">Card expired</string>
-    <string name="error_invalid_month">Invalid month</string>
     <string name="existingcard">Your Cards</string>
     <string name="expire_month_and_year">Expire Month and Year</string>
-    <string name="expiry">EXPIRY</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="explain_why_cancel">Explain why you are cancelling this booking</string>
     <string name="facebook">Facebook</string>
@@ -1383,7 +1327,6 @@
     </string>
     <string name="google_storage_bucket" translatable="false">happywannyan-168107.appspot.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hello_world">Hello world!</string>
     <string name="hint_search_addrres">Enter Postal Code or Address</string>
     <string name="how_many_times">How many times?</string>
     <string name="how_many_visits">How many visits?</string>
@@ -1406,7 +1349,6 @@
     <string name="meeting_date">Meeting Date</string>
     <string name="message">Message</string>
     <string name="messenger_send_button_text">Send</string>
-    <string name="mm_yy">MM/YY</string>
     <string name="month_name_format">MMMM yyyy</string>
     <string name="mr_button_content_description">Cast button</string>
     <string name="mr_chooser_searching">Finding devices</string>
@@ -1425,7 +1367,7 @@
     <string name="mr_system_route_name">System</string>
     <string name="mr_user_route_category_name">Devices</string>
     <string name="mypets">My Pets</string>
-    <string name="name_on_card">NAME ON CARD</string>
+    <string name="name_on_card">Name On Card</string>
     <string name="nav_booking">Bookings</string>
     <string name="nav_favoritesitter">Favorite Sitters</string>
     <string name="nav_help">Help</string>
@@ -1472,7 +1414,6 @@
     <string name="please_enter_message">Please type message here</string>
     <string name="pleasenteraddress">Please Enter Address</string>
     <string name="pleaseselect">Please Slect</string>
-    <string name="previous">PREVIOUS</string>
     <string name="price">Price</string>
     <string name="request_reservation">Request Reservation</string>
     <string name="reservation">Reservation</string>
@@ -1543,14 +1484,14 @@
         <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textSize">@dimen/edit_text_size</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="popupMenuStyle">@style/PopupMenu</item>
-        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>

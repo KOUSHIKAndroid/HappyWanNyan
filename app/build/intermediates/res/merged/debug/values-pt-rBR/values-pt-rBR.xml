@@ -20,11 +20,6 @@
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Compartilhar com %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Recolher"</string>
     <string msgid="5835639618285370804" name="accept">"Aceitar"</string>
-    <string name="card_expiry">VENCIMENTO</string>
-    <string name="card_holder">TITULAR</string>
-    <string name="card_holder_name_sample">JOÃO SILVA</string>
-    <string name="card_mm_yy">MM/AA</string>
-    <string name="card_number">NÚMERO DO CARTÃO</string>
     <string msgid="4778414446709286370" name="cast_ad_label">"Anúncio"</string>
     <string msgid="366047012176970604" name="cast_casting_to_device">"Transmitindo para %1$s"</string>
     <string msgid="2888745622334830481" name="cast_closed_captions">"Closed captions"</string>
@@ -88,11 +83,6 @@
     <string msgid="2039274714455389140" name="debug_menu_title">"Selecione um modo de depuração"</string>
     <string msgid="1173358804935285568" name="debug_menu_troubleshooting">"Solução de problemas"</string>
     <string msgid="6099173376375995052" name="decline">"Recusar"</string>
-    <string name="done">PRONTO</string>
-    <string name="error_card_expired">Cartão vencido</string>
-    <string name="error_invalid_month">Mês inválido</string>
-    <string name="expiry">VENCIMENTO</string>
-    <string name="mm_yy">MM/AA</string>
     <string msgid="3698378085901466129" name="mr_button_content_description">"Botão Transmitir"</string>
     <string msgid="6349900579507521956" name="mr_chooser_searching">"Localizando dispositivos"</string>
     <string msgid="414301941546135990" name="mr_chooser_title">"Transmitir para"</string>
@@ -109,11 +99,8 @@
     <string msgid="4570331844078181931" name="mr_controller_stop">"Interromper transmissão"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"Sistema"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Dispositivos"</string>
-    <string name="name_on_card">NOME NO CARTÃO</string>
-    <string name="next">PRÓXIMO</string>
     <string msgid="1303870564366209730" name="place_autocomplete_clear_button">"Limpar pesquisa"</string>
     <string msgid="2809095107724486040" name="place_autocomplete_search_hint">"Pesquisar"</string>
-    <string name="previous">ANTERIOR</string>
     <string msgid="146198913615257606" name="search_menu_title">"Pesquisar"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
     <string msgid="8020323581538738027" name="store_picture_message">"Permitir que os anúncios armazenem imagens na galeria de imagens?"</string>

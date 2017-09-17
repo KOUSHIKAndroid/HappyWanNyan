@@ -114,7 +114,6 @@
     <orderEntry type="library" exported="" name="play-services-maps-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="firebase-core-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="play-services-tagmanager-api-10.2.4" level="project" />
-    <orderEntry type="library" exported="" name="CreditCardView-v1.0.4" level="project" />
     <orderEntry type="library" exported="" name="play-services-analytics-impl-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="firebase-storage-10.2.4" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="exposed-instrumentation-api-publish-0.5" level="project" />
@@ -169,9 +168,7 @@
     <orderEntry type="library" exported="" name="play-services-location-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="firebase-crash-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.4.0" level="project" />
-    <orderEntry type="library" exported="" name="CircularReveal-1.0.5" level="project" />
     <orderEntry type="library" exported="" name="play-services-appinvite-10.2.4" level="project" />
-    <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="play-services-plus-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="play-services-games-10.2.4" level="project" />

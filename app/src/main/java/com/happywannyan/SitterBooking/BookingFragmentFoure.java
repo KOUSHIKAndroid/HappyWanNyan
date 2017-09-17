@@ -11,9 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.cooltechworks.creditcarddesign.CardEditActivity;
-import com.cooltechworks.creditcarddesign.CreditCardUtils;
 import com.happywannyan.Adapter.AdapterCard;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.OnFragmentInteractionListener;
@@ -211,7 +208,7 @@ public class BookingFragmentFoure extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), CardEditActivity.class);
+                Intent intent = new Intent(getActivity(), NewCardAddActivity.class);
                 startActivityForResult(intent, GET_NEW_CARD);
 //                new AddCreditCard(getActivity()).AddNewOnClick(new AddCreditCard.OnCradListener() {
 //                    @Override
@@ -237,17 +234,30 @@ public class BookingFragmentFoure extends Fragment {
         if (resultCode == RESULT_OK && requestCode == GET_NEW_CARD) {
             new AppConstant(getActivity());
 
-            final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
-            final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
-            String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
-            String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
-            Loger.MSG("@@ Expiry-", cardNumber);
+            final String cardHolderName = data.getStringExtra("cardHolderName");
+            final String cardNumber = data.getStringExtra("cardNumber");
+            String expiry = data.getStringExtra("expiry");
+            String cvv = data.getStringExtra("cvv");
+
 
             final int year = Integer.parseInt("20" + expiry.split("/")[1]);
             final int month = Integer.parseInt(expiry.split("/")[0]);
+
+            Loger.MSG("@@ Expiry-", cardHolderName);
+            Loger.MSG("@@ Expiry-", cardNumber);
             Loger.MSG("@@ Expiry-", " YEAR-" + year);
             Loger.MSG("@@ Expiry-", " MONTH-" + month);
 
+//            final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
+//            final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
+//            String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
+//            String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
+//            Loger.MSG("@@ Expiry-", cardNumber);
+//
+//            final int year = Integer.parseInt("20" + expiry.split("/")[1]);
+//            final int month = Integer.parseInt(expiry.split("/")[0]);
+//            Loger.MSG("@@ Expiry-", " YEAR-" + year);
+//            Loger.MSG("@@ Expiry-", " MONTH-" + month);
 
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {

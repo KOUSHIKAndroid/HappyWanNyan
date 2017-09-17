@@ -129,13 +129,13 @@ MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\
 MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:28:5-49:19
 MERGED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:4:5-7:19
 MERGED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:28:5-48:19
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:customtabs:25.3.1] C:\Users\suraj\.android\build-cache\f8aa35e232602622c664de1e6e66b2e96f5e09ce\output\AndroidManifest.xml:26:5-20
 MERGED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-location:10.2.4] C:\Users\suraj\.android\build-cache\20f001d7e45a1b2f7187abb2ae3cb609c6ddb1b0\output\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-base:10.2.4] C:\Users\suraj\.android\build-cache\7047e1379d77c0d6b3d69b103e780ffadee5e4a0\output\AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.android.gms:play-services-tasks:10.2.4] C:\Users\suraj\.android\build-cache\4a066cdd5bcab522e32b413f1683c8045100cc80\output\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:10.2.4] C:\Users\suraj\.android\build-cache\4f212b6ba2297e9155d0a1faa98ce844b57af75c\output\AndroidManifest.xml:19:5-21:19
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] C:\Users\suraj\.android\build-cache\f6119351d2679839853b83617020c97639f2de8a\output\AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\suraj\.android\build-cache\6b1a5be63642a00b7901749f9343886b26877891\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\suraj\.android\build-cache\8932ef2279de29e9917683de874e6c351bc0c772\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\suraj\.android\build-cache\74b3c955e30b40771380a2544a9b2cc09722bc36\output\AndroidManifest.xml:29:5-20
@@ -145,8 +145,6 @@ MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\suraj\.andr
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\017fb6732fa7e3dab7e4cf1154f5ebade2b97284\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\e48c2b885e154f7e961af0ab9cf32ba17b4a24ac\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\suraj\.android\build-cache\1e0f6acc5d8831c43861dd6407fa95e7b1487687\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:26:5-20
-MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] C:\Users\suraj\.android\build-cache\e66d820b58deb1c5ebf38e508bbd3b6efbac130e\output\AndroidManifest.xml:10:5-20
 MERGED from [com.android.volley:volley:1.0.0] C:\Users\suraj\.android\build-cache\e625eda693ceb29564fe1b28057884f0beb33c42\output\AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from C:\Users\suraj\AndroidStudioProjects\HappyWanNyan\app\src\main\AndroidManifest.xml:19:9-41
@@ -460,6 +458,7 @@ MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] C:\Users\suraj\
 MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\suraj\.android\build-cache\9fc0bee8b7f402ab025b66b9e91cd10345e0589e\output\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-common:10.2.4] C:\Users\suraj\.android\build-cache\5fea50ae883f05f06afbdcf3bb749b27aa61c21d\output\AndroidManifest.xml:3:5-43
 MERGED from [com.facebook.android:facebook-android-sdk:4.26.0] C:\Users\suraj\.android\build-cache\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\output\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:customtabs:25.3.1] C:\Users\suraj\.android\build-cache\f8aa35e232602622c664de1e6e66b2e96f5e09ce\output\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:10.2.4] C:\Users\suraj\.android\build-cache\b2a2961bc43230f9d80e839d108c064281ff0643\output\AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-location:10.2.4] C:\Users\suraj\.android\build-cache\20f001d7e45a1b2f7187abb2ae3cb609c6ddb1b0\output\AndroidManifest.xml:3:5-43
@@ -469,7 +468,6 @@ MERGED from [com.google.android.gms:play-services-basement:10.2.4] C:\Users\sura
 MERGED from [com.mindorks:placeholderview:0.2.7] C:\Users\suraj\.android\build-cache\276bcd9664709fa948e66971ae681809e13456cb\output\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\suraj\.android\build-cache\9aa13394343d004892ef7ff41d34cdab1577de9e\output\AndroidManifest.xml:20:5-43
 MERGED from [com.stripe:stripe-android:4.1.1] C:\Users\suraj\.android\build-cache\286a82cff53dbb607e28a98a4d490fa85ad49921\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] C:\Users\suraj\.android\build-cache\f6119351d2679839853b83617020c97639f2de8a\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\suraj\.android\build-cache\6b1a5be63642a00b7901749f9343886b26877891\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\suraj\.android\build-cache\8932ef2279de29e9917683de874e6c351bc0c772\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\suraj\.android\build-cache\74b3c955e30b40771380a2544a9b2cc09722bc36\output\AndroidManifest.xml:21:5-23:60
@@ -479,8 +477,6 @@ MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\suraj\.andr
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\017fb6732fa7e3dab7e4cf1154f5ebade2b97284\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\e48c2b885e154f7e961af0ab9cf32ba17b4a24ac\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\suraj\.android\build-cache\1e0f6acc5d8831c43861dd6407fa95e7b1487687\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:20:5-43
-MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] C:\Users\suraj\.android\build-cache\e66d820b58deb1c5ebf38e508bbd3b6efbac130e\output\AndroidManifest.xml:6:5-8:41
 MERGED from [com.android.volley:volley:1.0.0] C:\Users\suraj\.android\build-cache\e625eda693ceb29564fe1b28057884f0beb33c42\output\AndroidManifest.xml:7:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:23:9-59
@@ -493,6 +489,7 @@ MERGED from [com.android.volley:volley:1.0.0] C:\Users\suraj\.android\build-cach
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:transition:25.3.1] C:\Users\suraj\.android\build-cache\b4a378a24c1818d5d049da01b73e693114b3f770\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:customtabs:25.3.1] C:\Users\suraj\.android\build-cache\f8aa35e232602622c664de1e6e66b2e96f5e09ce\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\suraj\.android\build-cache\9aa13394343d004892ef7ff41d34cdab1577de9e\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\suraj\.android\build-cache\6b1a5be63642a00b7901749f9343886b26877891\output\AndroidManifest.xml:25:5-27:34
@@ -504,7 +501,6 @@ MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\suraj\.andr
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\017fb6732fa7e3dab7e4cf1154f5ebade2b97284\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\suraj\.android\build-cache\e48c2b885e154f7e961af0ab9cf32ba17b4a24ac\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\suraj\.android\build-cache\1e0f6acc5d8831c43861dd6407fa95e7b1487687\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\suraj\.android\build-cache\5e901e496d73f4af7280bbcafaeb00518d012b9c\output\AndroidManifest.xml:22:5-24:34
 	android:value
 		ADDED from [com.android.support:design:25.3.1] C:\Users\suraj\.android\build-cache\114eb0c6d5fd07b6acfd54fd175c2d516227b787\output\AndroidManifest.xml:27:9-31
 	android:name

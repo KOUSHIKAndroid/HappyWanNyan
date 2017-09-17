@@ -1,5 +1,7 @@
 package com.happywannyan.SitterBooking;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -110,6 +112,13 @@ public class NewCardAddActivity extends AppCompatActivity {
 
                                 Loger.MSG("finish", "Yes");
 
+                                Intent returnIntent = new Intent();
+                                returnIntent.putExtra("cardHolderName",((EditText) findViewById(R.id.edtxt_card_name)).getText().toString().trim());
+                                returnIntent.putExtra("cardNumber",((EditText) findViewById(R.id.edtxt_card_number)).getText().toString().trim());
+                                returnIntent.putExtra("expiry",((SFNFTextView) findViewById(R.id.tv_month)).getText().toString().trim()+"/"+((SFNFTextView) findViewById(R.id.tv_year)).getText().toString().trim());
+                                returnIntent.putExtra("cvv",((EditText) findViewById(R.id.edt_cvv)).getText().toString().trim());
+                                setResult(Activity.RESULT_OK,returnIntent);
+                                finish();
                             }
                         }
                     }
@@ -180,7 +189,7 @@ public class NewCardAddActivity extends AppCompatActivity {
         monthArrayList.add(String.valueOf(year));
         int yearValue=year;
         for (int i=1;i<20;i++){
-            yearValue=yearValue+i;
+            yearValue=yearValue+1;
             monthArrayList.add(String.valueOf(yearValue));
         }
 
