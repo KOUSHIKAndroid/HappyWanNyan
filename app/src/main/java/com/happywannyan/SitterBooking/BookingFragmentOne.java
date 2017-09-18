@@ -367,7 +367,6 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                     @Override
                     public void OnSelectedTEXT(JSONObject jsonObject) {
                         try {
-
                             TXT_ExtarItem.setText(jsonObject.getString("name"));
                             TXT_ExtarItem.setTag(jsonObject.getString("value"));
                         } catch (JSONException e) {

@@ -24,10 +24,8 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
@@ -38,10 +36,9 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
     public String PRESelectService;
 
     AppLoader appLoader;
-    JSONObject ItemDetails;
+    String SitterId;
     public ArrayList<String> MyPetList;
     public boolean DropDown = true;
-
     public boolean DoubleDate = true;
 
     public ArrayList<APIPOSTDATA> FirstPageData;
@@ -56,19 +53,16 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
         appLoader = new AppLoader(this);
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        try {
-            ServiceList = getIntent().getStringExtra("LIST");
-            DropDown = getIntent().getBooleanExtra("Single", true);
-            Loger.MSG("@@ LIST", " DATA-" + ServiceList);
-            PRESelectService = getIntent().getStringExtra("SELECT");
-            Loger.MSG("@@ SELECT", " DATA-" + PRESelectService);
 
-            ItemDetails = new JSONObject(getIntent().getStringExtra("ItemDetails"));
-            Loger.MSG("@@ ITEM", " DATA-" + ItemDetails);
+        ServiceList = getIntent().getStringExtra("LIST");
+        DropDown = getIntent().getBooleanExtra("Single", true);
+        Loger.MSG("@@ LIST", " DATA-" + ServiceList);
+        PRESelectService = getIntent().getStringExtra("SELECT");
+        Loger.MSG("@@ SELECT", " DATA-" + PRESelectService);
 
-        } catch (JSONException e) {
-            Loger.Error("@@ Error", e.getMessage());
-        }
+        SitterId = getIntent().getStringExtra("SitterId");
+        Loger.MSG("@@ ITEM", " SitterId-" + SitterId);
+
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.Body, BookingFragmentOne.newInstance(ServiceList, PRESelectService));
@@ -109,16 +103,10 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             case "Two":
                 appLoader.Show();
 
-                try {
                     APIPOSTDATA apipostdata = new APIPOSTDATA();
                     apipostdata.setPARAMS("sitter_user_id");
-                    apipostdata.setValues(ItemDetails.getString("sitter_user_id"));
+                    apipostdata.setValues(SitterId);
                     FirstPageData.add(apipostdata);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
 
                 new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
@@ -202,7 +190,6 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
         });
     }
 
-
     public void submitConfirmReservationRequestByVolley() {
         appLoader.Show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, AppConstant.BASEURL + "confirm_reservation_request",
@@ -245,7 +232,6 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
         //Adding request to the queue
         requestQueue.add(stringRequest);
     }
-
 
     public void submitConfirmReservationRequestUsingHTTP() {
         appLoader.Show();

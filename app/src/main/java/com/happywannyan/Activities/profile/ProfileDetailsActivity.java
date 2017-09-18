@@ -114,7 +114,6 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         apipostdata.setValues(AppTimeZone.GetTimeZone());
         Paramas.add(apipostdata);
 
-
         new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
@@ -262,7 +261,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     Intent intent = new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
                     try {
                         intent.putExtra("LIST", "" + new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist"));
-                        intent.putExtra("ItemDetails", "" + PrevJSONObject);
+                        intent.putExtra("SitterId", "" + SitterId);
                         intent.putExtra("Single", false);
                         JSONArray ARRYA = new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
                         for (int j = 0; j < ARRYA.length(); j++) {
