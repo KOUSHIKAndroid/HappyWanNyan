@@ -26,11 +26,9 @@ import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
-
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import static android.app.Activity.RESULT_OK;
 
 /**
@@ -56,6 +54,7 @@ public class MyPaymentsFragment extends Fragment {
     AdapterPaymentList adapterPaymentList;
     final int GET_NEW_CARD = 2;
     Card card;
+    String make_defaultValue="0";
 
     private OnFragmentInteractionListener mListener;
 
@@ -179,8 +178,11 @@ public class MyPaymentsFragment extends Fragment {
             final String cardNumber = data.getStringExtra("cardNumber");
             String expiry = data.getStringExtra("expiry");
             String cvv = data.getStringExtra("cvv");
+            make_defaultValue=data.getStringExtra("make_default");
 
-            final int year = Integer.parseInt("20" + expiry.split("/")[1]);
+            final int year = Integer.parseInt(
+//                    "20" +
+                            expiry.split("/")[1]);
             final int month = Integer.parseInt(expiry.split("/")[0]);
 
             Loger.MSG("@@ Expiry-", "CardHolderName-"+cardHolderName);
@@ -188,6 +190,7 @@ public class MyPaymentsFragment extends Fragment {
             Loger.MSG("@@ Expiry-", "Year-" + year);
             Loger.MSG("@@ Expiry-", "Month-" + month);
             Loger.MSG("@@ Expiry-", "cvv-" + cvv);
+            Loger.MSG("@@ Expiry-", "make_defaultValue-" + make_defaultValue);
 
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {
@@ -231,7 +234,8 @@ public class MyPaymentsFragment extends Fragment {
                                         Params.put("card_last_digits", token.getCard().getLast4() + "");
                                         Params.put("cvv_code", card.getCVC() + "");
                                         Params.put("new_card", "1");
-                                        Params.put("make_default", "1");
+                                        Params.put("make_default", make_defaultValue);
+
                                         new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {

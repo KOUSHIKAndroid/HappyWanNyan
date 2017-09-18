@@ -421,7 +421,7 @@ public class CustomJSONParser {
                 try {
                     if (!isCancelled()) {
 
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MINUTES).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MINUTES).build();
                         Request request = new Request.Builder().url("https://api.stripe.com/v1/customers")
                                 .addHeader("authorization", "Bearer " + AppConstant.STRIPE_SECRATE_KEY)
                                 .addHeader("source", "" + StripeToken)

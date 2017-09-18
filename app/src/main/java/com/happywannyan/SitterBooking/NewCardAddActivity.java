@@ -43,6 +43,7 @@ public class NewCardAddActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 defaultValue = isChecked;
+                Loger.MSG("isCheck",""+isChecked);
             }
         });
         findViewById(R.id.Card_save).setOnClickListener(new View.OnClickListener() {
@@ -123,6 +124,11 @@ public class NewCardAddActivity extends AppCompatActivity {
                                 returnIntent.putExtra("cardNumber",((EditText) findViewById(R.id.edtxt_card_number)).getText().toString().trim());
                                 returnIntent.putExtra("expiry",((SFNFTextView) findViewById(R.id.tv_month)).getText().toString().trim()+"/"+((SFNFTextView) findViewById(R.id.tv_year)).getText().toString().trim());
                                 returnIntent.putExtra("cvv",((EditText) findViewById(R.id.edt_cvv)).getText().toString().trim());
+                                if (defaultValue){
+                                    returnIntent.putExtra("make_default","1");
+                                }else {
+                                    returnIntent.putExtra("make_default","0");
+                                }
                                 setResult(Activity.RESULT_OK,returnIntent);
                                 finish();
                             }
@@ -220,7 +226,7 @@ public class NewCardAddActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // ListView Clicked item value
                 String  itemValueYear    = (String) listView.getItemAtPosition(position);
-                tv_year.setText(itemValueYear.substring(0,itemValueYear.length()));
+                tv_year.setText(itemValueYear);
                 Loger.MSG("itemValueYear",""+itemValueYear);
                 popupWindow.dismiss();
             }

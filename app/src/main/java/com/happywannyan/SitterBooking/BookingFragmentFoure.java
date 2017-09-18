@@ -46,6 +46,7 @@ public class BookingFragmentFoure extends Fragment {
     ArrayList<SetGetCards> setGetCardsArrayList;
 
     final int GET_NEW_CARD = 2;
+    String make_defaultValue="0";
 
     JSONObject cardFinalSelection;
 
@@ -236,6 +237,8 @@ public class BookingFragmentFoure extends Fragment {
             final String cardNumber = data.getStringExtra("cardNumber");
             String expiry = data.getStringExtra("expiry");
             String cvv = data.getStringExtra("cvv");
+            make_defaultValue=data.getStringExtra("make_default");
+
 
 
             final int year = Integer.parseInt(
@@ -248,6 +251,7 @@ public class BookingFragmentFoure extends Fragment {
             Loger.MSG("@@ Expiry-", "Year-" + year);
             Loger.MSG("@@ Expiry-", "Month-" + month);
             Loger.MSG("@@ Expiry-", "cvv-" + cvv);
+            Loger.MSG("@@ Expiry-", "make_defaultValue-" + make_defaultValue);
 
 //            final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
 //            final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
@@ -300,7 +304,8 @@ public class BookingFragmentFoure extends Fragment {
                                         Params.put("card_last_digits", token.getCard().getLast4() + "");
                                         Params.put("cvv_code", card.getCVC() + "");
                                         Params.put("new_card", "1");
-                                        Params.put("make_default", "1");
+                                        Params.put("make_default", make_defaultValue);
+
                                         new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {

@@ -163,8 +163,7 @@
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:maxLength="2"
-                android:text="00"
+                android:text="2000"
                 android:textColor="@color/colorTextDarkGray"
                 android:textSize="14sp" />
         </LinearLayout>
