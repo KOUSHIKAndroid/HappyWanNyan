@@ -17,7 +17,7 @@ import com.happywannyan.R;
 
 public class AppLoader {
     Context mContext;
-    AlertDialog Dailog;
+    AlertDialog Dialog;
 
     public AppLoader(Context mContext) {
         this.mContext = mContext;
@@ -28,17 +28,17 @@ public class AppLoader {
         ImageView Loader = (ImageView) view.findViewById(R.id.IMGLoader);
         Glide.with(mContext).load(R.drawable.cat_loader).into(Loader);
         builder.setView(view);
-        Dailog = builder.create();
-        Dailog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        Dailog.setCanceledOnTouchOutside(false);
+        Dialog = builder.create();
+        Dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Dialog.setCanceledOnTouchOutside(false);
     }
 
 
     public void Show() {
-        Dailog.show();
+        Dialog.show();
     }
 
     public void Dismiss() {
-        Dailog.dismiss();
+        Dialog.dismiss();
     }
 }
