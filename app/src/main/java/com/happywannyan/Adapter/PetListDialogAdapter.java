@@ -1,6 +1,6 @@
 package com.happywannyan.Adapter;
+
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,30 +11,30 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.bumptech.glide.Glide;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.SearchBasicFragment;
-import com.happywannyan.POJO.PetService;
+import com.happywannyan.Fragments.AdvancedSearchFragment;
+import com.happywannyan.POJO.SetGetPetService;
 import com.happywannyan.R;
 import java.util.ArrayList;
 
 /**
- * Created by su on 5/22/17.
+ * Created by su on 7/6/17.
  */
 
-public class AdapterPetList extends RecyclerView.Adapter<AdapterPetList.MyViewHolder> {
-    ArrayList<PetService> serviceCatListArrayList;
+public class PetListDialogAdapter extends RecyclerView.Adapter<PetListDialogAdapter.MyViewHolder> {
+    ArrayList<SetGetPetService> serviceCatListArrayList;
     Context context;
-    SearchBasicFragment search_basicFragment;
-    public AdapterPetList(SearchBasicFragment search_basicFragment, Context context, ArrayList<PetService> serviceCatListArrayList){
+    AdvancedSearchFragment advanced_searchFragment;
+
+    public PetListDialogAdapter(AdvancedSearchFragment advanced_searchFragment, Context context, ArrayList<SetGetPetService> serviceCatListArrayList){
+        this.advanced_searchFragment = advanced_searchFragment;
         this.context=context;
         this.serviceCatListArrayList=serviceCatListArrayList;
-        this.search_basicFragment = search_basicFragment;
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PetListDialogAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.pet_details_list_row, parent, false);
-
-        return new MyViewHolder(itemView);
+        return new PetListDialogAdapter.MyViewHolder(itemView);
     }
 
     @Override
@@ -61,7 +61,8 @@ public class AdapterPetList extends RecyclerView.Adapter<AdapterPetList.MyViewHo
         else {
             holder.img_tick.setVisibility(View.INVISIBLE);
 
-            holder.tv_walking.setTextColor(Color.parseColor("#000000"));
+//            holder.tv_walking.setTextColor(Color.parseColor("#000000"));
+            holder.tv_walking.setTextColor(ResourcesCompat.getColor(context.getResources(), R.color.colorBlack, null));
 
             Glide.with(context)
                     .load(serviceCatListArrayList.get(position).getDefault_image())
@@ -86,9 +87,6 @@ public class AdapterPetList extends RecyclerView.Adapter<AdapterPetList.MyViewHo
                     Log.i("value["+print+"]",""+serviceCatListArrayList.get(print).isTick_value());
                 }
                 notifyDataSetChanged();
-
-              search_basicFragment.GotoAdvancedSearched(serviceCatListArrayList.get(position).getJsondata());
-
             }
         });
     }

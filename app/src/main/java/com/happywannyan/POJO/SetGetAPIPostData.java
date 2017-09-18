@@ -4,7 +4,7 @@ package com.happywannyan.POJO;
  * Created by apple on 19/05/17.
  */
 
-public class APIPOSTDATA {
+public class SetGetAPIPostData {
     String PARAMS;
     String Values;
 

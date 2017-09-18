@@ -30,7 +30,7 @@ import com.happywannyan.Fragments.MyPetsFragments;
 import com.happywannyan.Fragments.MyProfileFragment;
 import com.happywannyan.Fragments.PastSitterFragment;
 import com.happywannyan.Fragments.SearchBasicFragment;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.AppLoader;
@@ -162,7 +162,7 @@ public class BaseActivity extends LocationBaseActivity
 
                 appLoader.Show();
                 String URL = AppConstant.BASEURL + "app_logout?user_id=" + AppConstant.UserId + "&anorid_status=1";
-                new CustomJSONParser().APIForGetMethod(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();

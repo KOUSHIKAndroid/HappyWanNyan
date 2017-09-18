@@ -18,7 +18,7 @@ import com.android.volley.toolbox.Volley;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.OnFragmentInteractionListener;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -41,7 +41,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
     public boolean DropDown = true;
     public boolean DoubleDate = true;
 
-    public ArrayList<APIPOSTDATA> FirstPageData;
+    public ArrayList<SetGetAPIPostData> FirstPageData;
     FragmentTransaction fragmentTransaction;
 
     @Override
@@ -103,10 +103,10 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             case "Two":
                 appLoader.Show();
 
-                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("sitter_user_id");
-                    apipostdata.setValues(SitterId);
-                    FirstPageData.add(apipostdata);
+                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("sitter_user_id");
+                    setGetAPIPostData.setValues(SitterId);
+                    FirstPageData.add(setGetAPIPostData);
 
                 new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override

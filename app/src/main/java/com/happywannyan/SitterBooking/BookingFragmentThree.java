@@ -18,7 +18,7 @@ import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -44,7 +44,7 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
     JSONObject PageObject;
     LinearLayout LL_ForSingleDate,LL_DoubleDate;
     EditText EDX_coupon_code;
-    public ArrayList<APIPOSTDATA> postParamCoupon;
+    public ArrayList<SetGetAPIPostData> postParamCoupon;
     AppLoader appLoader;
     //TextInputLayout input_layout_coupon_code;
     private OnFragmentInteractionListener mListener;
@@ -184,15 +184,15 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
                         ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText("Field must be greater then 5");
                         ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
                     }else {
-                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("user_id");
-                        apipostdata.setValues("" + AppConstant.UserId);
-                        postParamCoupon.add(apipostdata);
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_id");
+                        setGetAPIPostData.setValues("" + AppConstant.UserId);
+                        postParamCoupon.add(setGetAPIPostData);
 
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("coupon_no");
-                        apipostdata.setValues(EDX_coupon_code.getText().toString().trim());
-                        postParamCoupon.add(apipostdata);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("coupon_no");
+                        setGetAPIPostData.setValues(EDX_coupon_code.getText().toString().trim());
+                        postParamCoupon.add(setGetAPIPostData);
 
                         appLoader.Show();
 
@@ -300,10 +300,10 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
                         break;
                     }
                     else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
-                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("coupon_id");
-                        apipostdata.setValues(coupon_id);
-                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("coupon_id");
+                        setGetAPIPostData.setValues(coupon_id);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                     }
                 }
 
@@ -313,10 +313,10 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
                         break;
                     }
                     else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
-                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("coupon_amount");
-                        apipostdata.setValues(coupon_amount);
-                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("coupon_amount");
+                        setGetAPIPostData.setValues(coupon_amount);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                     }
                 }
 
@@ -326,10 +326,10 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
                         break;
                     }
                     else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
-                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("add_message");
-                        apipostdata.setValues("");
-                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("add_message");
+                        setGetAPIPostData.setValues("");
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                     }
                 }
 

@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.happywannyan.Adapter.AdapterAlertList;
+import com.happywannyan.Adapter.AlertListAdapter;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 
@@ -172,7 +172,7 @@ public class MYAlert {
         TXTTitle.setText(Title);
         RecyclerView ListLay = (RecyclerView) LayView.findViewById(R.id.recycler_view);
         ListLay.setLayoutManager(new LinearLayoutManager(mContext));
-        ListLay.setAdapter(new AdapterAlertList(this, mContext, onSignleListTextSelected, Dialog, ListArray, GetPramsName));
+        ListLay.setAdapter(new AlertListAdapter(this, mContext, onSignleListTextSelected, Dialog, ListArray, GetPramsName));
 
         LayView.findViewById(R.id.IMG_Back).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -16,7 +16,7 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -106,30 +106,30 @@ public class FacebookActivity extends AppCompatActivity {
 
     private void LoginWithWanNyaan(JSONObject jsonObject) {
 
-        ArrayList<APIPOSTDATA> PostData = new ArrayList<>();
+        ArrayList<SetGetAPIPostData> PostData = new ArrayList<>();
         try {
 
 
-            APIPOSTDATA FACE = new APIPOSTDATA();
+            SetGetAPIPostData FACE = new SetGetAPIPostData();
             FACE.setPARAMS("lang_id");
             FACE.setValues(AppConstant.Language);
             PostData.add(FACE);
 
-            FACE = new APIPOSTDATA();
+            FACE = new SetGetAPIPostData();
             FACE.setPARAMS("f_name");
             FACE.setValues(jsonObject.getString("first_name"));
             PostData.add(FACE);
 
-            FACE = new APIPOSTDATA();
+            FACE = new SetGetAPIPostData();
             FACE.setPARAMS("l_name");
             FACE.setValues(jsonObject.getString("last_name"));
             PostData.add(FACE);
 
-            FACE = new APIPOSTDATA();
+            FACE = new SetGetAPIPostData();
             FACE.setPARAMS("email");
             FACE.setValues(jsonObject.getString("email"));
             PostData.add(FACE);
-            FACE = new APIPOSTDATA();
+            FACE = new SetGetAPIPostData();
             FACE.setPARAMS("fb_id");
             FACE.setValues(jsonObject.getString("id"));
             PostData.add(FACE);

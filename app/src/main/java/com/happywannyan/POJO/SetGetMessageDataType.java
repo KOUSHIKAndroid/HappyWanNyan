@@ -6,7 +6,7 @@ import org.json.JSONObject;
  * Created by apple on 04/08/17.
  */
 
-public class MessageDataType {
+public class SetGetMessageDataType {
     JSONObject jsonObject;
     boolean scrooll=false;
 

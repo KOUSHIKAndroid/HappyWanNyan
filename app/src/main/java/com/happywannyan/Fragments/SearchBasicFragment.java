@@ -27,12 +27,12 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.CalenderActivity;
 import com.happywannyan.Activities.SearchResultActivity;
-import com.happywannyan.Adapter.AdapterPetList;
+import com.happywannyan.Adapter.PetListAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Events;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
-import com.happywannyan.POJO.PetService;
+import com.happywannyan.POJO.SetGetAPIPostData;
+import com.happywannyan.POJO.SetGetPetService;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLocationProvider;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -63,8 +63,8 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     LinearLayout LL_PetServiceList;
     RecyclerView Rec_petlist;
     ImageView IMG_erase_location, IMG_Location;
-    ArrayList<PetService> ArrayPetService;
-    AdapterPetList adapter_petList;
+    ArrayList<SetGetPetService> arraySetGetPetService;
+    PetListAdapter adapter_petList;
     Place place;
     boolean GPS = false;
     JSONObject JSONFULLDATA, Geo;
@@ -92,7 +92,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ArrayPetService = new ArrayList<>();
+        arraySetGetPetService = new ArrayList<>();
 
         TXT_Loction = (SFNFTextView) view.findViewById(R.id.TXT_Loction);
         TXT_DateRange = (SFNFTextView) view.findViewById(R.id.TXT_DateRange);
@@ -110,7 +110,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
         IMG_erase_location = (ImageView) view.findViewById(R.id.IMG_erase_location);
         Rec_petlist.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -128,21 +128,21 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     JSONArray PetService = object.getJSONArray("serviceCatList");
                     for (int i = 0; i < PetService.length(); i++) {
                         JSONObject OBJE = PetService.getJSONObject(i);
-                        PetService petService = new PetService();
-                        petService.setId(OBJE.getString("id"));
-                        petService.setName(OBJE.getString("name"));
-                        petService.setDefault_image(OBJE.getString("default_image"));
-                        petService.setSelected_image(OBJE.getString("selected_image"));
-                        petService.setTooltip_name(OBJE.getString("tooltip_name"));
-                        petService.setJsondata(OBJE);
-                        petService.setTick_value(false);
+                        SetGetPetService setGetPetService = new SetGetPetService();
+                        setGetPetService.setId(OBJE.getString("id"));
+                        setGetPetService.setName(OBJE.getString("name"));
+                        setGetPetService.setDefault_image(OBJE.getString("default_image"));
+                        setGetPetService.setSelected_image(OBJE.getString("selected_image"));
+                        setGetPetService.setTooltip_name(OBJE.getString("tooltip_name"));
+                        setGetPetService.setJsondata(OBJE);
+                        setGetPetService.setTick_value(false);
 
-                        ArrayPetService.add(petService);
+                        arraySetGetPetService.add(setGetPetService);
                     }
 
-//                    ArrayPetService.get(0).setTick_value(true);
+//                    arraySetGetPetService.get(0).setTick_value(true);
 
-                    adapter_petList = new AdapterPetList(SearchBasicFragment.this, getActivity(), ArrayPetService);
+                    adapter_petList = new PetListAdapter(SearchBasicFragment.this, getActivity(), arraySetGetPetService);
                     Rec_petlist.setAdapter(adapter_petList);
                 } catch (JSONException e) {
                         e.printStackTrace();
@@ -175,9 +175,9 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 GPS = false;
                 IMG_erase_location.setVisibility(View.GONE);
 //                IMG_erase_location.setImageResource(R.drawable.ic_my_location_white);
-                for (PetService petService : ArrayPetService)
-                    petService.setTick_value(false);
-                ArrayPetService.get(0).setTick_value(true);
+                for (SetGetPetService setGetPetService : arraySetGetPetService)
+                    setGetPetService.setTick_value(false);
+                arraySetGetPetService.get(0).setTick_value(true);
                 adapter_petList.notifyDataSetChanged();
             }
         });
@@ -211,9 +211,9 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     TXT_Loction.setText("");
                     GPS = false;
                     IMG_erase_location.setVisibility(View.GONE);
-                    for (PetService petService : ArrayPetService)
-                        petService.setTick_value(false);
-                    ArrayPetService.get(0).setTick_value(true);
+                    for (SetGetPetService setGetPetService : arraySetGetPetService)
+                        setGetPetService.setTick_value(false);
+                    arraySetGetPetService.get(0).setTick_value(true);
                     adapter_petList.notifyDataSetChanged();
 //                    ((ImageView) view.findViewById(R.id.ImgMyLocation)).setImageResource(R.drawable.ic_my_location_white);
                 } else {

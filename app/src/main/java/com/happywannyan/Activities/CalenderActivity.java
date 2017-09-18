@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import com.happywannyan.Adapter.CalendarAdapter;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetCalender;
-import com.happywannyan.POJO.SuperCalender;
+import com.happywannyan.POJO.SetGetSuperCalender;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 
@@ -47,7 +47,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
     int day = 1;
     RecyclerView recyclerView;
     String[] positionPre = {}, positionNext = {};
-    public ArrayList<SuperCalender> ArrayCalender;
+    public ArrayList<SetGetSuperCalender> ArrayCalender;
     int StartSelectedMonth = 0;
     int StartSelcteedYear = 0;
     public boolean samepage = true;
@@ -126,11 +126,11 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
 
 
         //create date and set in adapter////////////////////
-        SuperCalender superCalender = new SuperCalender();
-        superCalender.setMonth(monthValue);
-        superCalender.setYear(yearValue);
-        superCalender.setMonthBoject(dateCreation(fisrtdayofmonth));
-        ArrayCalender.add(superCalender);
+        SetGetSuperCalender setGetSuperCalender = new SetGetSuperCalender();
+        setGetSuperCalender.setMonth(monthValue);
+        setGetSuperCalender.setYear(yearValue);
+        setGetSuperCalender.setMonthBoject(dateCreation(fisrtdayofmonth));
+        ArrayCalender.add(setGetSuperCalender);
 
         CallView();
         findViewById(R.id.img_previous_date).setVisibility(View.GONE);
@@ -143,7 +143,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 String StartDate = "";
                 String EndDate = "";
-                for (SuperCalender calender : ArrayCalender) {
+                for (SetGetSuperCalender calender : ArrayCalender) {
                     for (SetGetCalender data : calender.getMonthBoject()) {
                         if (data.isStartdate()) {
                             StartDate = data.getDay() + "-" + (calender.getMonth() + 1) + "-" + calender.getYear();
@@ -210,7 +210,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
 
 
                 if (firstclick && !secondclick) {
-                    for (SuperCalender sp : ArrayCalender) {
+                    for (SetGetSuperCalender sp : ArrayCalender) {
                         for (SetGetCalender data : sp.getMonthBoject()) {
                             if (data.isStartdate()) {
                                 data.setStartdate(false);
@@ -291,11 +291,11 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
                 //Toast.makeText(context, "Swiped Left", Toast.LENGTH_SHORT).show();
                 dateCreation(fisrtdayofmonth);
 
-                SuperCalender superCalender = new SuperCalender();
-                superCalender.setMonth(monthValue);
-                superCalender.setYear(yearValue);
-                superCalender.setMonthBoject(dateCreation(fisrtdayofmonth));
-                AddDataToMainArray(superCalender);
+                SetGetSuperCalender setGetSuperCalender = new SetGetSuperCalender();
+                setGetSuperCalender.setMonth(monthValue);
+                setGetSuperCalender.setYear(yearValue);
+                setGetSuperCalender.setMonthBoject(dateCreation(fisrtdayofmonth));
+                AddDataToMainArray(setGetSuperCalender);
                 if (firstclick)
                     samepage = false;
 
@@ -307,9 +307,9 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    private void AddDataToMainArray(SuperCalender superCalender) {
+    private void AddDataToMainArray(SetGetSuperCalender setGetSuperCalender) {
         boolean yes = true;
-        for (SuperCalender data : ArrayCalender) {
+        for (SetGetSuperCalender data : ArrayCalender) {
             if (data.getYear() == yearValue &&
                     data.getMonth() == monthValue) {
                 yes = false;
@@ -319,7 +319,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
 
 
         if (yes) {
-            ArrayCalender.add(superCalender);
+            ArrayCalender.add(setGetSuperCalender);
         }
 
         CallView();
@@ -327,11 +327,11 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void CallView() {
-        for (SuperCalender superCalender1 : ArrayCalender) {
-            if (superCalender1.getMonth() == monthValue &&
-                    superCalender1.getYear() == yearValue) {
+        for (SetGetSuperCalender setGetSuperCalender1 : ArrayCalender) {
+            if (setGetSuperCalender1.getMonth() == monthValue &&
+                    setGetSuperCalender1.getYear() == yearValue) {
 
-                mAdapter = new CalendarAdapter(superCalender1.getMonthBoject(), this);
+                mAdapter = new CalendarAdapter(setGetSuperCalender1.getMonthBoject(), this);
                 recyclerView.setAdapter(mAdapter);
                 Loger.MSG("@@ TTTT", "YESS");
                 break;
@@ -496,7 +496,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
     public void ViewLabel() {
         String StartDate = "";
         String EndDate = "";
-        for (SuperCalender calender : ArrayCalender) {
+        for (SetGetSuperCalender calender : ArrayCalender) {
             for (SetGetCalender data : calender.getMonthBoject()) {
                 if (data.isStartdate()) {
                     StartDate = data.getDay() + "-" + (calender.getMonth() + 1) + "-" + calender.getYear();

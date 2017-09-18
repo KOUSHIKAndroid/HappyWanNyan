@@ -19,7 +19,7 @@ import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.profile.fragmentPagerAdapter.ProfileFragPagerAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Utils.AppLoader;
@@ -92,24 +92,24 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         String Data = getIntent().getStringExtra("data");
         Loger.MSG("@@ Profile", " Intent Data- " + Data);
 
-        ArrayList<APIPOSTDATA> Paramas = new ArrayList<>();
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("sitter_user_id");
-        apipostdata.setValues(SitterId);
-//        apipostdata.setValues(""+3);
-        Paramas.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(UserData);
-        Paramas.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("langid");
-        apipostdata.setValues(AppConstant.Language);
-        Paramas.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_timezone");
-        apipostdata.setValues(AppTimeZone.GetTimeZone());
-        Paramas.add(apipostdata);
+        ArrayList<SetGetAPIPostData> Paramas = new ArrayList<>();
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("sitter_user_id");
+        setGetAPIPostData.setValues(SitterId);
+//        setGetAPIPostData.setValues(""+3);
+        Paramas.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(UserData);
+        Paramas.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("langid");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        Paramas.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_timezone");
+        setGetAPIPostData.setValues(AppTimeZone.GetTimeZone());
+        Paramas.add(setGetAPIPostData);
 
         new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
             @Override
@@ -334,7 +334,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
 
 
                 new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_favourite_sitters?user_id=" + AppConstant.UserId + "" +
-                        "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                        "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         try {

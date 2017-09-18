@@ -14,7 +14,7 @@ import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -424,7 +424,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         appLoader.Show();
 
         String URL= AppConstant.BASEURL+"booking_deny_confirm?user_id="+ AppConstant.UserId+"&booking_id="+BookingID;
-        new CustomJSONParser().APIForGetMethod(URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
 

@@ -6,7 +6,7 @@ import org.json.JSONObject;
  * Created by su on 5/22/17.
  */
 
-public class PetService {
+public class SetGetPetService {
 
     String id;
 

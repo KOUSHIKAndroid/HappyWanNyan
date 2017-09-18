@@ -35,8 +35,8 @@ import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Adapter.AdapterMessage;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
-import com.happywannyan.POJO.MessageDataType;
+import com.happywannyan.POJO.SetGetAPIPostData;
+import com.happywannyan.POJO.SetGetMessageDataType;
 import com.happywannyan.R;
 import com.happywannyan.SURAJ.PlaceCustomListAdapterDialog;
 import com.happywannyan.Utils.AppLoader;
@@ -76,7 +76,7 @@ public class MessageFragment extends Fragment {
     RecyclerView recyclerView;
     AppLoader appLoader;
     boolean isMemberExecute = false;
-    ArrayList<MessageDataType> AllMessage;
+    ArrayList<SetGetMessageDataType> AllMessage;
     PopupWindow popupWindow;
     PlaceCustomListAdapterDialog placeCustomListAdapterDialog = null;
 
@@ -88,7 +88,7 @@ public class MessageFragment extends Fragment {
     RelativeLayout editlayout;
 
     HorizontalScrollView scrollView_horizontal;
-    ArrayList<APIPOSTDATA> Params;
+    ArrayList<SetGetAPIPostData> Params;
     AdapterMessage adapter_message;
 
     String type;
@@ -169,26 +169,26 @@ public class MessageFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("start_form");
-        apipostdata.setValues("0");
-        Params.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppConstant.UserId);
-        Params.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppConstant.Language);
-        Params.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("per_page");
-        apipostdata.setValues("10");
-        Params.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_timezone");
-        apipostdata.setValues("");
-        Params.add(apipostdata);
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("start_form");
+        setGetAPIPostData.setValues("0");
+        Params.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        Params.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("lang_id");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        Params.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("per_page");
+        setGetAPIPostData.setValues("10");
+        Params.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_timezone");
+        setGetAPIPostData.setValues("");
+        Params.add(setGetAPIPostData);
 
 
         tv_all_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
@@ -283,26 +283,26 @@ public class MessageFragment extends Fragment {
 
                         Params.clear();
 
-                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("start_form");
-                        apipostdata.setValues("0");
-                        Params.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("user_id");
-                        apipostdata.setValues(AppConstant.UserId);
-                        Params.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("lang_id");
-                        apipostdata.setValues(AppConstant.Language);
-                        Params.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("per_page");
-                        apipostdata.setValues("10");
-                        Params.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("user_timezone");
-                        apipostdata.setValues("");
-                        Params.add(apipostdata);
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("start_form");
+                        setGetAPIPostData.setValues("0");
+                        Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_id");
+                        setGetAPIPostData.setValues(AppConstant.UserId);
+                        Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("lang_id");
+                        setGetAPIPostData.setValues(AppConstant.Language);
+                        Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("per_page");
+                        setGetAPIPostData.setValues("10");
+                        Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_timezone");
+                        setGetAPIPostData.setValues("");
+                        Params.add(setGetAPIPostData);
 
                         edt_search.removeTextChangedListener(myTextWatcher);
 
@@ -420,10 +420,10 @@ public class MessageFragment extends Fragment {
                     Loger.MSG("next_data", "" + next_data);
 
                     for (int i = 0; i < all_message.length(); i++) {
-                        MessageDataType messageDataType = new MessageDataType();
-                        messageDataType.setJsonObject(all_message.getJSONObject(i));
-                        messageDataType.setScrooll(false);
-                        AllMessage.add(messageDataType);
+                        SetGetMessageDataType setGetMessageDataType = new SetGetMessageDataType();
+                        setGetMessageDataType.setJsonObject(all_message.getJSONObject(i));
+                        setGetMessageDataType.setScrooll(false);
+                        AllMessage.add(setGetMessageDataType);
                     }
                     if (start_from.equals("0")) {
                         adapter_message = new AdapterMessage(getActivity(), MessageFragment.this, AllMessage);
@@ -534,7 +534,7 @@ public class MessageFragment extends Fragment {
                     String MessageID = AllMessage.get(position).getJsonObject().getString("message_id");
                     String ReciverId = AllMessage.get(position).getJsonObject().getString("receiver_id");
                     new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "message_deleted_API?user_id=" + AppConstant.UserId + "&message_id=" + MessageID + "&receiver_id=" + ReciverId,
-                            new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                            new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                 @Override
                                 public void OnSuccess(String Result) {
 
@@ -661,31 +661,31 @@ public class MessageFragment extends Fragment {
                     try {
                         Params.clear();
 
-                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("start_form");
-                        apipostdata.setValues("0");
-                        Params.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("user_id");
-                        apipostdata.setValues(AppConstant.UserId);
-                        Params.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("lang_id");
-                        apipostdata.setValues(AppConstant.Language);
-                        Params.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("per_page");
-                        apipostdata.setValues("10");
-                        Params.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("user_timezone");
-                        apipostdata.setValues("");
-                        Params.add(apipostdata);
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("start_form");
+                        setGetAPIPostData.setValues("0");
+                        Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_id");
+                        setGetAPIPostData.setValues(AppConstant.UserId);
+                        Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("lang_id");
+                        setGetAPIPostData.setValues(AppConstant.Language);
+                        Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("per_page");
+                        setGetAPIPostData.setValues("10");
+                        Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_timezone");
+                        setGetAPIPostData.setValues("");
+                        Params.add(setGetAPIPostData);
 
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("member_id");
-                        apipostdata.setValues(value.getString("member_id"));
-                        Params.add(apipostdata);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("member_id");
+                        setGetAPIPostData.setValues(value.getString("member_id"));
+                        Params.add(setGetAPIPostData);
 
                         isMemberExecute = true;
                         placeCustomListAdapterDialog = null;

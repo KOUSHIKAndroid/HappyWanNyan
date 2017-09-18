@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.MYAlert;
@@ -111,10 +111,10 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                                     break;
                                 }
                                 else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
-                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                    apipostdata.setPARAMS("pick_up");
-                                    apipostdata.setValues(TXT_PickupTime.getTag().toString());
-                                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("pick_up");
+                                    setGetAPIPostData.setValues(TXT_PickupTime.getTag().toString());
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                 }
                             }
 
@@ -124,10 +124,10 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                                     break;
                                 }
                                 else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
-                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                    apipostdata.setPARAMS("drop_off");
-                                    apipostdata.setValues(TXT_dropTime.getTag().toString());
-                                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("drop_off");
+                                    setGetAPIPostData.setValues(TXT_dropTime.getTag().toString());
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                 }
                             }
 
@@ -141,14 +141,14 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                                     break;
                                 }
                                 else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
-                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                    apipostdata.setPARAMS("pet_id");
+                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("pet_id");
                                     String petIdString="";
                                     for (int j = 0; j<((BookingOneActivity) getActivity()).MyPetList.size(); j++){
                                         petIdString=petIdString+((BookingOneActivity) getActivity()).MyPetList.get(j)+",";
                                     }
-                                    apipostdata.setValues(petIdString.substring(0,petIdString.length()-1));
-                                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                    setGetAPIPostData.setValues(petIdString.substring(0,petIdString.length()-1));
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                 }
                             }
 
@@ -159,10 +159,10 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                                     break;
                                 }
                                 else if(i==((BookingOneActivity) getActivity()).FirstPageData.size()-1){
-                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                    apipostdata.setPARAMS("total_pets");
-                                    apipostdata.setValues(((BookingOneActivity) getActivity()).MyPetList.size() + "");
-                                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("total_pets");
+                                    setGetAPIPostData.setValues(((BookingOneActivity) getActivity()).MyPetList.size() + "");
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                 }
                             }
                             //((BookingOneActivity)getActivity()).showConfirmReservationRequest();

@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 
 import org.json.JSONObject;
 
@@ -49,7 +49,7 @@ public class CustomJSONParser {
     }
 
 
-    public void APIForGetMethod(final String URL, final ArrayList<APIPOSTDATA> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
+    public void APIForGetMethod(final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
 
         new AsyncTask<Void, Void, Void>() {
 
@@ -62,7 +62,7 @@ public class CustomJSONParser {
                 super.onPreExecute();
                 if (apiPostDataArrayList != null && apiPostDataArrayList.size() > 0) {
                     PARAMS = "&";
-                    for (APIPOSTDATA data : apiPostDataArrayList) {
+                    for (SetGetAPIPostData data : apiPostDataArrayList) {
                         PARAMS = PARAMS + data.getPARAMS() + "=" + data.getValues() + "&";
                     }
                     Loger.MSG("url", "" + URL + PARAMS);
@@ -114,7 +114,7 @@ public class CustomJSONParser {
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    public void APIForPostMethod(final String URL, final ArrayList<APIPOSTDATA> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
+    public void APIForPostMethod(final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
 
         new AsyncTask<Void, Void, Void>() {
 
@@ -127,7 +127,7 @@ public class CustomJSONParser {
                 super.onPreExecute();
                 builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
                 Loger.MSG("@@ POST URL- ", URL);
-                for (APIPOSTDATA data : apiPostDataArrayList) {
+                for (SetGetAPIPostData data : apiPostDataArrayList) {
                     Loger.MSG("@@ POST PARAMS- ", "" + data.getPARAMS() + " - " + data.getValues());
                     builderNew.addFormDataPart("" + data.getPARAMS(), data.getValues());
                 }
@@ -247,7 +247,7 @@ public class CustomJSONParser {
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    public void APIForWithPhotoPostMethod(final String URL, final ArrayList<APIPOSTDATA> apiPostDataArrayList, final ArrayList<File> Photos, final JSONResponseInterface jsonResponseInterface) {
+    public void APIForWithPhotoPostMethod(final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final ArrayList<File> Photos, final JSONResponseInterface jsonResponseInterface) {
 
         final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
 
@@ -262,7 +262,7 @@ public class CustomJSONParser {
                 super.onPreExecute();
 
                 builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
-                for (APIPOSTDATA data : apiPostDataArrayList) {
+                for (SetGetAPIPostData data : apiPostDataArrayList) {
                     builderNew.addFormDataPart("" + data.getPARAMS(), data.getValues());
                 }
 
@@ -485,7 +485,7 @@ public class CustomJSONParser {
         return result.toString();
     }
 
-    public void postDataUsingHttp(final String URL, final ArrayList<APIPOSTDATA> apiPostData,final JSONResponseInterface jsonResponseInterface){
+    public void postDataUsingHttp(final String URL, final ArrayList<SetGetAPIPostData> apiPostData, final JSONResponseInterface jsonResponseInterface){
 
        new AsyncTask<String, Void, String>() {
 

@@ -18,7 +18,7 @@ import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.BookingAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -41,7 +41,7 @@ public class BookingFragment extends Fragment{
     SFNFTextView tv_up_coming,tv_current,tv_pending,tv_past;
     View view_between_upcoming_current_booking,view_between_current_pending_booking,view_between_pending_past;
 
-    ArrayList<APIPOSTDATA> Params ;
+    ArrayList<SetGetAPIPostData> Params ;
     AppLoader appLoader;
     ArrayList<JSONObject> AllBooking;
 
@@ -89,35 +89,35 @@ public class BookingFragment extends Fragment{
             }
         });
 
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("start_form");
-        apipostdata.setValues("0");
-        Params.add(apipostdata);
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("start_form");
+        setGetAPIPostData.setValues("0");
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppConstant.UserId);
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppConstant.Language);
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("lang_id");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("per_page");
-        apipostdata.setValues("10");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("per_page");
+        setGetAPIPostData.setValues("10");
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_timezone");
-        apipostdata.setValues("");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_timezone");
+        setGetAPIPostData.setValues("");
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("search_param");
-        apipostdata.setValues("");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("search_param");
+        setGetAPIPostData.setValues("");
+        Params.add(setGetAPIPostData);
 
         type="past_booking_list";
 

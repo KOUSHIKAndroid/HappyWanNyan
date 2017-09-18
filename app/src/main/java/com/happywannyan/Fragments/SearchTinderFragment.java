@@ -166,7 +166,7 @@ public class SearchTinderFragment extends Fragment {
 //                        .setSwipeOutMsgLayoutId(R.layout.tinder_swipe_out_msg_view));
 //
 //
-//        for(SearchData profile : ((SearchResultActivity)getActivity()).ListARRY){
+//        for(SetGetSearchData profile : ((SearchResultActivity)getActivity()).ListARRY){
 //            mSwipeView.addView(new TinderCard(getActivity(), profile, mSwipeView));
 //        }
 

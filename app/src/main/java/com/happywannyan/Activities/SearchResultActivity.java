@@ -12,8 +12,8 @@ import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.SearchListFragment;
 import com.happywannyan.Fragments.SearchMapFragment;
 import com.happywannyan.Fragments.SearchTinderFragment;
-import com.happywannyan.POJO.APIPOSTDATA;
-import com.happywannyan.POJO.SearchData;
+import com.happywannyan.POJO.SetGetAPIPostData;
+import com.happywannyan.POJO.SetGetSearchData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -33,7 +33,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
     FragmentTransaction fragmentTransaction;
 
-    public ArrayList<SearchData> ListARRY;
+    public ArrayList<SetGetSearchData> ListARRY;
     JSONObject SearchKeys;
     public double ne_lng, ne_lat, sw_lng, sw_lat;
     AppLoader appLoader;
@@ -70,35 +70,35 @@ public class SearchResultActivity extends AppCompatActivity {
 
         appLoader.Show();
 
-        ArrayList<APIPOSTDATA> PostData = new ArrayList<>();
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppConstant.UserId);
-        PostData.add(apipostdata);
+        ArrayList<SetGetAPIPostData> PostData = new ArrayList<>();
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        PostData.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("langid");
-        apipostdata.setValues(AppConstant.Language);
-        PostData.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("langid");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        PostData.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("per_page");
-        apipostdata.setValues("10");
-        PostData.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("per_page");
+        setGetAPIPostData.setValues("10");
+        PostData.add(setGetAPIPostData);
 
 
         try {
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("search_location");
-            apipostdata.setValues(SearchKeys.getString("LocationName"));
-            PostData.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("search_location");
+            setGetAPIPostData.setValues(SearchKeys.getString("LocationName"));
+            PostData.add(setGetAPIPostData);
 
             for (int i = 0; i < SearchKeys.getJSONArray("keyinfo").length(); i++) {
                 JSONObject object = SearchKeys.getJSONArray("keyinfo").getJSONObject(i);
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS(object.getString("name"));
-                apipostdata.setValues(object.getString("value"));
-                PostData.add(apipostdata);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS(object.getString("name"));
+                setGetAPIPostData.setValues(object.getString("value"));
+                PostData.add(setGetAPIPostData);
                 if (object.getString("name").equals("ne_lng"))
                     ne_lng = Double.parseDouble(object.getString("value"));
                 if (object.getString("name").equals("ne_lat"))
@@ -127,10 +127,10 @@ public class SearchResultActivity extends AppCompatActivity {
 
                     for (int i = 0; i < ARRA.length(); i++) {
                         JSONObject jjj = ARRA.getJSONObject(i);
-                        SearchData searchData = new SearchData();
-                        searchData.setSearcItem(jjj);
+                        SetGetSearchData setGetSearchData = new SetGetSearchData();
+                        setGetSearchData.setSearcItem(jjj);
 
-                        ListARRY.add(searchData);
+                        ListARRY.add(setGetSearchData);
 
                     }
 

@@ -19,7 +19,7 @@ import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
@@ -205,74 +205,74 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                 try {
                     ((BookingOneActivity) getActivity()).FirstPageData = new ArrayList<>();
 
-                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("langid");
-                    apipostdata.setValues(AppConstant.Language);
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("langid");
+                    setGetAPIPostData.setValues(AppConstant.Language);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
 
                     java.util.TimeZone tz= java.util.TimeZone.getDefault();
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("user_timezone");
-                    apipostdata.setValues(tz.getID());
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("user_timezone");
+                    setGetAPIPostData.setValues(tz.getID());
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("user_id");
-                    apipostdata.setValues(AppConstant.UserId);
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("user_id");
+                    setGetAPIPostData.setValues(AppConstant.UserId);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
 
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("service_id");
-                    apipostdata.setValues(new JSONObject(TXT_ServiceName.getTag() + "").getString("service_id"));
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("service_id");
+                    setGetAPIPostData.setValues(new JSONObject(TXT_ServiceName.getTag() + "").getString("service_id"));
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
                     if (TXT_SingleDate.getText().equals("")) {
 
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("start_date");
-                        apipostdata.setValues(TXT_StartDate.getText().toString());
-                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("start_date");
+                        setGetAPIPostData.setValues(TXT_StartDate.getText().toString());
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("end_date");
-                        apipostdata.setValues(TXT_EndDte.getText().toString());
-                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("end_date");
+                        setGetAPIPostData.setValues(TXT_EndDte.getText().toString());
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
                     } else {
 
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("start_date");
-                        apipostdata.setValues(TXT_SingleDate.getText().toString());
-                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("start_date");
+                        setGetAPIPostData.setValues(TXT_SingleDate.getText().toString());
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("end_date");
-                        apipostdata.setValues("");
-                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("end_date");
+                        setGetAPIPostData.setValues("");
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                     }
 
-                    apipostdata = new APIPOSTDATA();
+                    setGetAPIPostData = new SetGetAPIPostData();
                     if (no_of_visit.equals("1")) {
-                        apipostdata.setPARAMS("no_of_visit");
-                        apipostdata.setValues(TXT_ExtarItem.getTag() + "");
+                        setGetAPIPostData.setPARAMS("no_of_visit");
+                        setGetAPIPostData.setValues(TXT_ExtarItem.getTag() + "");
                     } else {
-                        apipostdata.setPARAMS("no_of_visit");
-                        apipostdata.setValues("");
+                        setGetAPIPostData.setPARAMS("no_of_visit");
+                        setGetAPIPostData.setValues("");
                     }
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
 
-                    apipostdata = new APIPOSTDATA();
+                    setGetAPIPostData = new SetGetAPIPostData();
                     if (no_of_times.equals("1")) {
-                        apipostdata.setPARAMS("no_times");
-                        apipostdata.setValues(TXT_ExtarItem.getTag() + "");
+                        setGetAPIPostData.setPARAMS("no_times");
+                        setGetAPIPostData.setValues(TXT_ExtarItem.getTag() + "");
                     } else {
-                        apipostdata.setPARAMS("no_times");
-                        apipostdata.setValues("");
+                        setGetAPIPostData.setPARAMS("no_times");
+                        setGetAPIPostData.setValues("");
                     }
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

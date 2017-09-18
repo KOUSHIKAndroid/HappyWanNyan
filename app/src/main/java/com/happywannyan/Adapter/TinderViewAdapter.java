@@ -18,7 +18,7 @@ import com.happywannyan.Activities.SearchResultActivity;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.SearchData;
+import com.happywannyan.POJO.SetGetSearchData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.provider.RatingColor;
@@ -32,10 +32,10 @@ import java.util.List;
  */
 public class TinderViewAdapter extends BaseAdapter {
 
-    private List<SearchData> data;
+    private List<SetGetSearchData> data;
     private Context context;
 
-    public TinderViewAdapter(List<SearchData> data, Context context) {
+    public TinderViewAdapter(List<SetGetSearchData> data, Context context) {
         this.data = data;
         this.context = context;
     }

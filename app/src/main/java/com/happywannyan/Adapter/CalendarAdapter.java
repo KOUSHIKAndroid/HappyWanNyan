@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.happywannyan.Activities.CalenderActivity;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetCalender;
-import com.happywannyan.POJO.SuperCalender;
+import com.happywannyan.POJO.SetGetSuperCalender;
 import com.happywannyan.R;
 
 import java.util.ArrayList;
@@ -174,7 +174,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
             boolean startcolor=false;
 
-            for(SuperCalender scal:((CalenderActivity)context).ArrayCalender)
+            for(SetGetSuperCalender scal:((CalenderActivity)context).ArrayCalender)
             {
 
                 for(SetGetCalender dd: scal.getMonthBoject())
@@ -222,7 +222,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
         else if(((CalenderActivity)context).firstclick && ((CalenderActivity)context).secondclick){
             ((CalenderActivity)context).firstclick=false;
             ((CalenderActivity)context).secondclick=false;
-            for(SuperCalender scal:((CalenderActivity)context).ArrayCalender)
+            for(SetGetSuperCalender scal:((CalenderActivity)context).ArrayCalender)
             {
 
                 for(SetGetCalender dd: scal.getMonthBoject())

@@ -4,13 +4,10 @@ package com.happywannyan.POJO;
  * Created by apple on 25/05/17.
  */
 
-public class Messagedata {
+public class SetGetMessageData {
     String Id;
     String Image;
     String Title;
-
-
-
 
     public String getId() {
         return Id;

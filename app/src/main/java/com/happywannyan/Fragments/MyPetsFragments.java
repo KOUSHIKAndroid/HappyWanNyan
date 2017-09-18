@@ -12,10 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.happywannyan.Activities.AddAnotherPetsActivity;
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Adapter.YourPets_Adapter;
+import com.happywannyan.Adapter.YourPetsAdapter;
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.POJO.APIPOSTDATA;
-import com.happywannyan.POJO.YourPets;
+import com.happywannyan.POJO.SetGetAPIPostData;
+import com.happywannyan.POJO.SetGetYourPets;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -39,8 +39,8 @@ public class MyPetsFragments extends Fragment {
     AppLoader appLoader;
     RecyclerView recyclerView;
 
-    YourPets_Adapter yourPets_adapter;
-    ArrayList<YourPets> ListPets;
+    YourPetsAdapter yourPets_adapter;
+    ArrayList<SetGetYourPets> ListPets;
 
     private OnFragmentInteractionListener mListener;
 
@@ -86,7 +86,7 @@ public class MyPetsFragments extends Fragment {
 
         //GET_PETDATA(0);
 
-        //yourPets_adapter = new YourPets_Adapter(getActivity(), ListPets);
+        //yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets);
         //recyclerView.setAdapter(yourPets_adapter);
 
 
@@ -109,23 +109,23 @@ public class MyPetsFragments extends Fragment {
 
     private void GET_PETDATA(final int i) {
         appLoader.Show();
-        ArrayList<APIPOSTDATA> params = new ArrayList<>();
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppConstant.UserId);
-        params.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppConstant.Language);
-        params.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("start_form");
-        apipostdata.setValues("" + i);
-        params.add(apipostdata);
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("per_page");
-        apipostdata.setValues("10");
-        params.add(apipostdata);
+        ArrayList<SetGetAPIPostData> params = new ArrayList<>();
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        params.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("lang_id");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        params.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("start_form");
+        setGetAPIPostData.setValues("" + i);
+        params.add(setGetAPIPostData);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("per_page");
+        setGetAPIPostData.setValues("10");
+        params.add(setGetAPIPostData);
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
@@ -138,16 +138,16 @@ public class MyPetsFragments extends Fragment {
                     JSONArray infoarry = jObject.getJSONArray("info_array");
                     for (int i = 0; i < infoarry.length(); i++) {
                         JSONObject jsonObject = infoarry.getJSONObject(i);
-                        YourPets yourPets = new YourPets();
-                        yourPets.setEdit_id(jsonObject.getString("edit_id"));
-                        yourPets.setPet_type_id(jsonObject.getString("pet_type_id"));
-                        yourPets.setPet_image(jsonObject.getString("pet_image"));
-                        yourPets.setPet_name(jsonObject.getString("pet_name"));
-                        yourPets.setOtherinfo(jsonObject);
-                        ListPets.add(yourPets);
+                        SetGetYourPets setGetYourPets = new SetGetYourPets();
+                        setGetYourPets.setEdit_id(jsonObject.getString("edit_id"));
+                        setGetYourPets.setPet_type_id(jsonObject.getString("pet_type_id"));
+                        setGetYourPets.setPet_image(jsonObject.getString("pet_image"));
+                        setGetYourPets.setPet_name(jsonObject.getString("pet_name"));
+                        setGetYourPets.setOtherinfo(jsonObject);
+                        ListPets.add(setGetYourPets);
                     }
                     if(i==0) {
-                        yourPets_adapter = new YourPets_Adapter(getActivity(), ListPets);
+                        yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets);
                         recyclerView.setAdapter(yourPets_adapter);
                     }else {
                         yourPets_adapter.notifyDataSetChanged();
@@ -189,7 +189,7 @@ public class MyPetsFragments extends Fragment {
         Loger.MSG("DEBUG", "onResume of HomeFragment");
         ListPets = new ArrayList<>();
         GET_PETDATA(0);
-        yourPets_adapter = new YourPets_Adapter(getActivity(), ListPets);
+        yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets);
         recyclerView.setAdapter(yourPets_adapter);
     }
 }

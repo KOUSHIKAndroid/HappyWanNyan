@@ -32,7 +32,7 @@ import com.happywannyan.Adapter.MessageAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.MessageFragment;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -136,7 +136,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         String URL = "messagedetails?user_id=" + AppConstant.UserId + "&message_id=" + getIntent().getStringExtra("message_id") + "&lang_id=" + AppConstant.Language
                 + "&user_timezone=" + tz.getID();
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + URL, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -213,41 +213,41 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
                 } else {
                     appLoader.Show();
-                    ArrayList<APIPOSTDATA> Params = new ArrayList<>();
-                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("message");
-                    apipostdata.setValues(EDX_Text.getText() + "");
-                    Params.add(apipostdata);
+                    ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("message");
+                    setGetAPIPostData.setValues(EDX_Text.getText() + "");
+                    Params.add(setGetAPIPostData);
                     TimeZone tz = TimeZone.getDefault();
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("user_timezone");
-                    apipostdata.setValues(tz.getID() + "");
-                    Params.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("user_timezone");
+                    setGetAPIPostData.setValues(tz.getID() + "");
+                    Params.add(setGetAPIPostData);
 
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("message_type");
-                    apipostdata.setValues(MessageFragment.MESSAGECODE + "");
-                    Params.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("message_type");
+                    setGetAPIPostData.setValues(MessageFragment.MESSAGECODE + "");
+                    Params.add(setGetAPIPostData);
 
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("user_id");
-                    apipostdata.setValues("" + AppConstant.UserId);
-                    Params.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("user_id");
+                    setGetAPIPostData.setValues("" + AppConstant.UserId);
+                    Params.add(setGetAPIPostData);
 
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("message_id");
-                    apipostdata.setValues(MessageId + "");
-                    Params.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("message_id");
+                    setGetAPIPostData.setValues(MessageId + "");
+                    Params.add(setGetAPIPostData);
 
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("receiver_id");
-                    apipostdata.setValues(ReceverId + "");
-                    Params.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("receiver_id");
+                    setGetAPIPostData.setValues(ReceverId + "");
+                    Params.add(setGetAPIPostData);
 
-                    apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("lang_id");
-                    apipostdata.setValues(AppConstant.Language);
-                    Params.add(apipostdata);
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS("lang_id");
+                    setGetAPIPostData.setValues(AppConstant.Language);
+                    Params.add(setGetAPIPostData);
 
                     new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
                         @Override
@@ -388,55 +388,55 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             Loger.MSG("@@ PLACE", "" + place.getLatLng());
             String MAPIMGAEURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&zoom=13&size=1000x1000&markers=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M";
             appLoader.Show();
-            ArrayList<APIPOSTDATA> Params = new ArrayList<>();
-            APIPOSTDATA apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("message");
-            apipostdata.setValues(EDX_Text.getText() + "");
-            Params.add(apipostdata);
+            ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+            SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("message");
+            setGetAPIPostData.setValues(EDX_Text.getText() + "");
+            Params.add(setGetAPIPostData);
             TimeZone tz = TimeZone.getDefault();
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("user_timezone");
-            apipostdata.setValues(tz.getID() + "");
-            Params.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("user_timezone");
+            setGetAPIPostData.setValues(tz.getID() + "");
+            Params.add(setGetAPIPostData);
 
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("user_id");
-            apipostdata.setValues("" + AppConstant.UserId);
-            Params.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("user_id");
+            setGetAPIPostData.setValues("" + AppConstant.UserId);
+            Params.add(setGetAPIPostData);
 
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("message_id");
-            apipostdata.setValues(MessageId + "");
-            Params.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("message_id");
+            setGetAPIPostData.setValues(MessageId + "");
+            Params.add(setGetAPIPostData);
 
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("receiver_id");
-            apipostdata.setValues(ReceverId + "");
-            Params.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("receiver_id");
+            setGetAPIPostData.setValues(ReceverId + "");
+            Params.add(setGetAPIPostData);
 
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("lang_id");
-            apipostdata.setValues(AppConstant.Language);
-            Params.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("lang_id");
+            setGetAPIPostData.setValues(AppConstant.Language);
+            Params.add(setGetAPIPostData);
 
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("msg_lat");
-            apipostdata.setValues(place.getLatLng().latitude + "");
-            Params.add(apipostdata);
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("message_type");
-            apipostdata.setValues(MessageFragment.MESSAGECODE + "");
-            Params.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("msg_lat");
+            setGetAPIPostData.setValues(place.getLatLng().latitude + "");
+            Params.add(setGetAPIPostData);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("message_type");
+            setGetAPIPostData.setValues(MessageFragment.MESSAGECODE + "");
+            Params.add(setGetAPIPostData);
 
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("msg_long");
-            apipostdata.setValues(place.getLatLng().longitude + "");
-            Params.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("msg_long");
+            setGetAPIPostData.setValues(place.getLatLng().longitude + "");
+            Params.add(setGetAPIPostData);
 
-            apipostdata = new APIPOSTDATA();
-            apipostdata.setPARAMS("url_location");
-            apipostdata.setValues(MAPIMGAEURL);
-            Params.add(apipostdata);
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("url_location");
+            setGetAPIPostData.setValues(MAPIMGAEURL);
+            Params.add(setGetAPIPostData);
 
             new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
                 @Override
@@ -463,41 +463,41 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
     private void FileUpload() {
         appLoader.Show();
-        ArrayList<APIPOSTDATA> Params = new ArrayList<>();
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("message");
-        apipostdata.setValues("");
-        Params.add(apipostdata);
+        ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("message");
+        setGetAPIPostData.setValues("");
+        Params.add(setGetAPIPostData);
         TimeZone tz = TimeZone.getDefault();
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_timezone");
-        apipostdata.setValues(tz.getID() + "");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_timezone");
+        setGetAPIPostData.setValues(tz.getID() + "");
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_id");
-        apipostdata.setValues("" + AppConstant.UserId);
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues("" + AppConstant.UserId);
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("message_id");
-        apipostdata.setValues(MessageId + "");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("message_id");
+        setGetAPIPostData.setValues(MessageId + "");
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("message_type");
-        apipostdata.setValues(MessageFragment.MESSAGECODE + "");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("message_type");
+        setGetAPIPostData.setValues(MessageFragment.MESSAGECODE + "");
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("receiver_id");
-        apipostdata.setValues(ReceverId + "");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("receiver_id");
+        setGetAPIPostData.setValues(ReceverId + "");
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppConstant.Language);
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("lang_id");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        Params.add(setGetAPIPostData);
         ArrayList<File> Files = new ArrayList<>();
         Files.add(photofile);
         CustomJSONParser.ImageParam = "msg_attachment";

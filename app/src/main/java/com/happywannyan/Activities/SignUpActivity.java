@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -76,21 +76,21 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                     } else {
                         appLoader.Show();
-                        ArrayList<APIPOSTDATA> apipostdataArrayList = new ArrayList<>();
-                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("user_email");
-                        apipostdata.setValues(EDX_email.getText().toString());
-                        apipostdataArrayList.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("password");
-                        apipostdata.setValues(EDX_Password.getText().toString());
-                        apipostdataArrayList.add(apipostdata);
-                        apipostdata = new APIPOSTDATA();
-                        apipostdata.setPARAMS("langid");
-                        apipostdata.setValues(AppConstant.Language);
+                        ArrayList<SetGetAPIPostData> setGetAPIPostDataArrayList = new ArrayList<>();
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_email");
+                        setGetAPIPostData.setValues(EDX_email.getText().toString());
+                        setGetAPIPostDataArrayList.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("password");
+                        setGetAPIPostData.setValues(EDX_Password.getText().toString());
+                        setGetAPIPostDataArrayList.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("langid");
+                        setGetAPIPostData.setValues(AppConstant.Language);
                         Loger.MSG("@@ LANG-", " " + AppConstant.Language);
-                        apipostdataArrayList.add(apipostdata);
-                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_regirsation\n", apipostdataArrayList, new CustomJSONParser.JSONResponseInterface() {
+                        setGetAPIPostDataArrayList.add(setGetAPIPostData);
+                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_regirsation\n", setGetAPIPostDataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ REG", Result);

@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.MessageFragment;
-import com.happywannyan.POJO.MessageDataType;
+import com.happywannyan.POJO.SetGetMessageDataType;
 import com.happywannyan.R;
 import com.happywannyan.Utils.ColorCircleDrawable;
 import com.happywannyan.Utils.Loger;
@@ -31,7 +31,7 @@ import java.util.ArrayList;
  */
 
 public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHolder> {
-    ArrayList<MessageDataType> MessageList;
+    ArrayList<SetGetMessageDataType> MessageList;
     Context context;
     int from = 0;
     int Screenwidth = 0;
@@ -39,7 +39,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
     public int nextData = 1;
     MessageFragment message_fragment;
 
-    public AdapterMessage(Context context, MessageFragment message_fragment, ArrayList<MessageDataType> MessageList) {
+    public AdapterMessage(Context context, MessageFragment message_fragment, ArrayList<SetGetMessageDataType> MessageList) {
         this.context = context;
         this.message_fragment = message_fragment;
         this.MessageList = MessageList;

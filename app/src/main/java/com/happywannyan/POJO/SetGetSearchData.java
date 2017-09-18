@@ -6,10 +6,9 @@ import org.json.JSONObject;
  * Created by apple on 27/05/17.
  */
 
-public class SearchData {
+public class SetGetSearchData {
 
    JSONObject SearcItem;
-
 
     public JSONObject getSearcItem() {
         return SearcItem;

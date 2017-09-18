@@ -26,7 +26,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -92,14 +92,14 @@ String TAG="@@@Edit";
         }
 
 
-//        new CustomJSONParser().API_FOR_GET(AppConstant.BASEURL + "parent_service", new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONRESPONSE() {
+//        new CustomJSONParser().API_FOR_GET(AppConstant.BASEURL + "parent_service", new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONRESPONSE() {
 //            @Override
 //            public void OnSuccess(String Result) {
 //                try {
 //                    JSONObject object = new JSONObject(Result);
 //                    Loger.MSG("@@" + getClass().getName(), object.toString());
 //                    appLoader.Dismiss();
-//                    PetService = object.getJSONArray("allPetDetails");
+//                    SetGetPetService = object.getJSONArray("allPetDetails");
 //
 //                } catch (JSONException e) {
 //                    appLoader.Dismiss();
@@ -130,23 +130,23 @@ String TAG="@@@Edit";
             case R.id.Hea:
 
 //                new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit("" + getResources().getString(R.string.Chosepettype),
-//                        PetService, "name", new MYAlert.OnSignleListTextSelected() {
+//                        SetGetPetService, "name", new MYAlert.OnSignleListTextSelected() {
 //                            @Override
 //                            public void OnSelectedTEXT(JSONObject jsonObject) {
 //                                Loger.MSG("@@ Data", "" + jsonObject);
 //                                try {
 //                                    PetTypeId = jsonObject.getString("id");
 //                                    ((SFNFTextView) findViewById(R.id.Txt_type)).setText(jsonObject.getString("name"));
-//                                    ArrayList<APIPOSTDATA> params = new ArrayList<>();
-//                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
+//                                    ArrayList<SetGetAPIPostData> params = new ArrayList<>();
+//                                    SetGetAPIPostData apipostdata = new SetGetAPIPostData();
 //                                    apipostdata.setPARAMS("user_id");
 //                                    apipostdata.setValues(AppConstant.UserId);
 //                                    params.add(apipostdata);
-//                                    apipostdata = new APIPOSTDATA();
+//                                    apipostdata = new SetGetAPIPostData();
 //                                    apipostdata.setPARAMS("lang_id");
 //                                    apipostdata.setValues(AppConstant.Language);
 //                                    params.add(apipostdata);
-//                                    apipostdata = new APIPOSTDATA();
+//                                    apipostdata = new SetGetAPIPostData();
 //                                    apipostdata.setPARAMS("pet_type_id");
 //                                    apipostdata.setValues(PetTypeId);
 //                                    params.add(apipostdata);
@@ -627,50 +627,50 @@ String TAG="@@@Edit";
                                                     Loger.MSG(" Select-", Select.toString());
 
 
-                                                    ArrayList<APIPOSTDATA> Params = new ArrayList<>();
-                                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("user_id");
+                                                    ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+                                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("user_id");
                                                     Loger.MSG("user_id", "" + AppConstant.UserId);
-                                                    apipostdata.setValues(AppConstant.UserId);
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData.setValues(AppConstant.UserId);
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("langid");
-                                                    apipostdata.setValues(AppConstant.Language);
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("langid");
+                                                    setGetAPIPostData.setValues(AppConstant.Language);
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("pettypeid");
-                                                    apipostdata.setValues(AppConstant.Language);
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("pettypeid");
+                                                    setGetAPIPostData.setValues(AppConstant.Language);
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("text");
-                                                    apipostdata.setValues(Text.toString());
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("text");
+                                                    setGetAPIPostData.setValues(Text.toString());
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("textarea");
-                                                    apipostdata.setValues(InputArea.toString());
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("textarea");
+                                                    setGetAPIPostData.setValues(InputArea.toString());
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("radio");
-                                                    apipostdata.setValues(RadioArray.toString());
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("radio");
+                                                    setGetAPIPostData.setValues(RadioArray.toString());
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("select");
-                                                    apipostdata.setValues(Select.toString());
-                                                    Params.add(apipostdata);
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("pettypeid");
-                                                    apipostdata.setValues(PetTypeId);
-                                                    Params.add(apipostdata);
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("edit_pet_id");
-                                                    apipostdata.setValues(EditId);
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("select");
+                                                    setGetAPIPostData.setValues(Select.toString());
+                                                    Params.add(setGetAPIPostData);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("pettypeid");
+                                                    setGetAPIPostData.setValues(PetTypeId);
+                                                    Params.add(setGetAPIPostData);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("edit_pet_id");
+                                                    setGetAPIPostData.setValues(EditId);
+                                                    Params.add(setGetAPIPostData);
 
                                                     ArrayList<File> PhotoFiles=new ArrayList<>();
                                                     PhotoFiles.add(photofile);

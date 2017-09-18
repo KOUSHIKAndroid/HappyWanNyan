@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
 import com.happywannyan.Utils.AppLoader;
@@ -30,7 +30,7 @@ import java.util.ArrayList;
  * Created by su on 9/7/17.
  */
 
-public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.MyViewHolder> {
+public class PaymentListAdapter extends RecyclerView.Adapter<PaymentListAdapter.MyViewHolder> {
     Context mContext;
     JSONObject MainObject;
     JSONArray ARRY;
@@ -38,7 +38,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
     BookingFragmentFoure.onClickItem onClickItem;
     JSONArray Crad;
 
-    public AdapterPaymentList(Context context, String Response, BookingFragmentFoure.onClickItem onClickItem) {
+    public PaymentListAdapter(Context context, String Response, BookingFragmentFoure.onClickItem onClickItem) {
         this.mContext = context;
         appLoader = new AppLoader(mContext);
         try {
@@ -53,13 +53,13 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
     }
 
     @Override
-    public AdapterPaymentList.MyViewHolder onCreateViewHolder(ViewGroup parent, int i) {
+    public PaymentListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_details_adapter, parent, false);
-        return new AdapterPaymentList.MyViewHolder(itemView);
+        return new PaymentListAdapter.MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(AdapterPaymentList.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(PaymentListAdapter.MyViewHolder holder, final int position) {
         try {
             final JSONObject OB = ARRY.getJSONObject(position);
 
@@ -152,7 +152,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
     public void selectionCard(String default_card_id, final int position, final JSONObject OB) {
         appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "make_card_default?user_id=" + AppConstant.UserId + "&default_card_id=" + default_card_id
-                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -199,7 +199,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
     public void deleteCard(String default_card_id, final int position) {
         appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_delete_card?user_id=" + AppConstant.UserId + "&del_card_id=" + default_card_id
-                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();

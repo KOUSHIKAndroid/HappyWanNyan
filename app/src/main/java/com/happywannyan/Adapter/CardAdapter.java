@@ -23,13 +23,13 @@ import java.util.ArrayList;
  * Created by apple on 10/08/17.
  */
 
-public class AdapterCard extends RecyclerView.Adapter<AdapterCard.CardViewHolder> {
+public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder> {
     Context mContext;
     AppLoader appLoader;
     BookingFragmentFoure.onClickItem onClickItem;
     ArrayList<SetGetCards> setGetCardsArrayList;
 
-    public AdapterCard(Context context, ArrayList<SetGetCards> setGetCardsArrayList, BookingFragmentFoure.onClickItem onClickItem) {
+    public CardAdapter(Context context, ArrayList<SetGetCards> setGetCardsArrayList, BookingFragmentFoure.onClickItem onClickItem) {
         this.mContext = context;
         appLoader = new AppLoader(mContext);
         this.setGetCardsArrayList = setGetCardsArrayList;

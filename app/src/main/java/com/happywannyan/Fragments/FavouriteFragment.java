@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.FavouriteRecyclerAdapter;
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
@@ -91,21 +91,21 @@ public class FavouriteFragment extends Fragment {
     }
 
     private void CallAPIFROMDATA(final int startpoint) {
-        ArrayList<APIPOSTDATA> Params = new ArrayList<>();
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppConstant.UserId);
-        Params.add(apipostdata);
+        ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("start_form");
-        apipostdata.setValues(startpoint + "");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("start_form");
+        setGetAPIPostData.setValues(startpoint + "");
+        Params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("per_page");
-        apipostdata.setValues("10");
-        Params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("per_page");
+        setGetAPIPostData.setValues("10");
+        Params.add(setGetAPIPostData);
         appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "users_favsetters_list?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override

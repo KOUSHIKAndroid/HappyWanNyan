@@ -30,13 +30,13 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.CalenderActivity;
 import com.happywannyan.Activities.SearchResultActivity;
-import com.happywannyan.Adapter.AdapterPetListDialog;
+import com.happywannyan.Adapter.PetListDialogAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.CustomRangeBar.RangeSeekBar;
 import com.happywannyan.Events;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
-import com.happywannyan.POJO.PetService;
+import com.happywannyan.POJO.SetGetAPIPostData;
+import com.happywannyan.POJO.SetGetPetService;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLocationProvider;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -83,7 +83,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
     AlertDialog Dialog;
     ImageView IMG_SERVICE;
     SFNFTextView TXT_SERVICENAME;
-    AdapterPetListDialog adapter_petlist;
+    PetListDialogAdapter adapter_petlist;
 
     public AdvancedSearchFragment() {
         // Required empty public constructor
@@ -161,7 +161,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
             Loger.MSG("mParam_allPetDetails", "" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
 
             new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?pet_type_id=" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id") + "&langid=" + AppConstant.Language,
-                    new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                    new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
                             try {
@@ -328,7 +328,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                                     try {
                                         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?&pet_type_id=" + jsonObject.getString("id") + "&langid=" + AppConstant.Language,
-                                                new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                                                new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                     @Override
                                                     public void OnSuccess(String Result) {
                                                         try {
@@ -520,7 +520,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
     public void dialogChooseCause() {
 
         final RecyclerView Rec_petlist_dailog;
-        final ArrayList<PetService> ArrayPetService = new ArrayList<>();
+        final ArrayList<SetGetPetService> arraySetGetPetService = new ArrayList<>();
 
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -536,7 +536,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         Button BTN_CANCEL = (Button) LayView.findViewById(R.id.BTN_CANCEL);
 
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -545,21 +545,21 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                     JSONArray PetService = object.getJSONArray("serviceCatList");
                     for (int i = 0; i < PetService.length(); i++) {
                         JSONObject OBJE = PetService.getJSONObject(i);
-                        com.happywannyan.POJO.PetService petService = new PetService();
-                        petService.setId(OBJE.getString("id"));
-                        petService.setName(OBJE.getString("name"));
-                        petService.setDefault_image(OBJE.getString("default_image"));
-                        petService.setSelected_image(OBJE.getString("selected_image"));
-                        petService.setTooltip_name(OBJE.getString("tooltip_name"));
-                        petService.setJsondata(OBJE);
-                        petService.setTick_value(false);
+                        SetGetPetService setGetPetService = new SetGetPetService();
+                        setGetPetService.setId(OBJE.getString("id"));
+                        setGetPetService.setName(OBJE.getString("name"));
+                        setGetPetService.setDefault_image(OBJE.getString("default_image"));
+                        setGetPetService.setSelected_image(OBJE.getString("selected_image"));
+                        setGetPetService.setTooltip_name(OBJE.getString("tooltip_name"));
+                        setGetPetService.setJsondata(OBJE);
+                        setGetPetService.setTick_value(false);
 
-                        ArrayPetService.add(petService);
+                        arraySetGetPetService.add(setGetPetService);
                     }
 
-//                    ArrayPetService.get(0).setTick_value(true);
+//                    arraySetGetPetService.get(0).setTick_value(true);
 
-                    adapter_petlist = new AdapterPetListDialog(AdvancedSearchFragment.this, getActivity(), ArrayPetService);
+                    adapter_petlist = new PetListDialogAdapter(AdvancedSearchFragment.this, getActivity(), arraySetGetPetService);
                     Rec_petlist_dailog.setAdapter(adapter_petlist);
 
                 } catch (JSONException e) {
@@ -583,22 +583,22 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
             @Override
             public void onClick(View v) {
 
-                for (int i = 0; i < ArrayPetService.size(); i++) {
+                for (int i = 0; i < arraySetGetPetService.size(); i++) {
 
-                    if (ArrayPetService.get(i).isTick_value()) {
+                    if (arraySetGetPetService.get(i).isTick_value()) {
 
                         Loger.MSG("position", "" + i);
-                        Loger.MSG("isTick-", "" + ArrayPetService.get(i).getId());
-                        Loger.MSG("name-", ArrayPetService.get(i).getName());
-                        Loger.MSG("Selected_image-", ArrayPetService.get(i).getSelected_image());
+                        Loger.MSG("isTick-", "" + arraySetGetPetService.get(i).getId());
+                        Loger.MSG("name-", arraySetGetPetService.get(i).getName());
+                        Loger.MSG("Selected_image-", arraySetGetPetService.get(i).getSelected_image());
 
                         refreshPage(
-                                ArrayPetService.get(i).getId(),
-                                ArrayPetService.get(i).getName(),
-                                ArrayPetService.get(i).getSelected_image());
+                                arraySetGetPetService.get(i).getId(),
+                                arraySetGetPetService.get(i).getName(),
+                                arraySetGetPetService.get(i).getSelected_image());
                         Dialog.dismiss();
                         break;
-                    } else if (!ArrayPetService.get(i).isTick_value() && i == ArrayPetService.size() - 1) {
+                    } else if (!arraySetGetPetService.get(i).isTick_value() && i == arraySetGetPetService.size() - 1) {
                         Toast.makeText(getActivity(), "Select at least one option", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -643,7 +643,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
         try {
             new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?pet_type_id=" + 1 + "&langid=" + AppConstant.Language,
-                    new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                    new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
                             try {

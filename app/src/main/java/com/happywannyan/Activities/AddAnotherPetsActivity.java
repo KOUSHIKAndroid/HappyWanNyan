@@ -25,7 +25,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -74,7 +74,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         Rad_catf = (RadioGroup) findViewById(R.id.Rad_catf);
          img_pet = (ImageView) findViewById(R.id.img_pet);
         new AppConstant(this);
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -119,19 +119,19 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                 try {
                                     PetTypeId = jsonObject.getString("id");
                                     ((SFNFTextView) findViewById(R.id.Txt_type)).setText(jsonObject.getString("name"));
-                                    ArrayList<APIPOSTDATA> params = new ArrayList<>();
-                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                    apipostdata.setPARAMS("user_id");
-                                    apipostdata.setValues(AppConstant.UserId);
-                                    params.add(apipostdata);
-                                    apipostdata = new APIPOSTDATA();
-                                    apipostdata.setPARAMS("lang_id");
-                                    apipostdata.setValues(AppConstant.Language);
-                                    params.add(apipostdata);
-                                    apipostdata = new APIPOSTDATA();
-                                    apipostdata.setPARAMS("pet_type_id");
-                                    apipostdata.setValues(PetTypeId);
-                                    params.add(apipostdata);
+                                    ArrayList<SetGetAPIPostData> params = new ArrayList<>();
+                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("user_id");
+                                    setGetAPIPostData.setValues(AppConstant.UserId);
+                                    params.add(setGetAPIPostData);
+                                    setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("lang_id");
+                                    setGetAPIPostData.setValues(AppConstant.Language);
+                                    params.add(setGetAPIPostData);
+                                    setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("pet_type_id");
+                                    setGetAPIPostData.setValues(PetTypeId);
+                                    params.add(setGetAPIPostData);
                                     appLoader.Show();
                                     new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONResponseInterface() {
                                         @Override
@@ -546,46 +546,46 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                                     Loger.MSG(" Select-", Select.toString());
 
 
-                                                    ArrayList<APIPOSTDATA> Params = new ArrayList<>();
-                                                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("user_id");
+                                                    ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+                                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("user_id");
                                                     Loger.MSG("user_id", "" + AppConstant.UserId);
-                                                    apipostdata.setValues(AppConstant.UserId);
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData.setValues(AppConstant.UserId);
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("langid");
-                                                    apipostdata.setValues(AppConstant.Language);
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("langid");
+                                                    setGetAPIPostData.setValues(AppConstant.Language);
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("pettypeid");
-                                                    apipostdata.setValues(AppConstant.Language);
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("pettypeid");
+                                                    setGetAPIPostData.setValues(AppConstant.Language);
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("text");
-                                                    apipostdata.setValues(Text.toString());
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("text");
+                                                    setGetAPIPostData.setValues(Text.toString());
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("textarea");
-                                                    apipostdata.setValues(InputArea.toString());
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("textarea");
+                                                    setGetAPIPostData.setValues(InputArea.toString());
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("radio");
-                                                    apipostdata.setValues(RadioArray.toString());
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("radio");
+                                                    setGetAPIPostData.setValues(RadioArray.toString());
+                                                    Params.add(setGetAPIPostData);
 
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("select");
-                                                    apipostdata.setValues(Select.toString());
-                                                    Params.add(apipostdata);
-                                                    apipostdata = new APIPOSTDATA();
-                                                    apipostdata.setPARAMS("pettypeid");
-                                                    apipostdata.setValues(PetTypeId);
-                                                    Params.add(apipostdata);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("select");
+                                                    setGetAPIPostData.setValues(Select.toString());
+                                                    Params.add(setGetAPIPostData);
+                                                    setGetAPIPostData = new SetGetAPIPostData();
+                                                    setGetAPIPostData.setPARAMS("pettypeid");
+                                                    setGetAPIPostData.setValues(PetTypeId);
+                                                    Params.add(setGetAPIPostData);
 
                                                     ArrayList<File> PhotoFiles=new ArrayList<>();
                                                     PhotoFiles.add(photofile);

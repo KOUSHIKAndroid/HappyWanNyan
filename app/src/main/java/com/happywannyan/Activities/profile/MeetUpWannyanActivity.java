@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppCalender;
 import com.happywannyan.Utils.AppLoader;
@@ -75,47 +75,47 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
                 onBackPressed();
                 break;
             case R.id.reservation:
-                ArrayList<APIPOSTDATA> apipostdatas = new ArrayList<>();
-                APIPOSTDATA apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("user_id");
-                apipostdata.setValues(AppConstant.UserId);
-                apipostdatas.add(apipostdata);
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("sitter_id");
-                apipostdata.setValues(getIntent().getStringExtra("DATA"));
-                apipostdatas.add(apipostdata);
+                ArrayList<SetGetAPIPostData> setGetAPIPostDatas = new ArrayList<>();
+                SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("user_id");
+                setGetAPIPostData.setValues(AppConstant.UserId);
+                setGetAPIPostDatas.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("sitter_id");
+                setGetAPIPostData.setValues(getIntent().getStringExtra("DATA"));
+                setGetAPIPostDatas.add(setGetAPIPostData);
 
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("lang_id");
-                apipostdata.setValues(AppConstant.Language);
-                apipostdatas.add(apipostdata);
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("user_timezone");
-                apipostdata.setValues(Calendar.getInstance().getTimeZone().getID());
-                apipostdatas.add(apipostdata);
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("meet_date");
-                apipostdata.setValues(((SFNFTextView) findViewById(R.id.startdate)).toString());
-                apipostdatas.add(apipostdata);
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("alt_date");
-                apipostdata.setValues(((SFNFTextView) findViewById(R.id.AlterDate)).toString());
-                apipostdatas.add(apipostdata);
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("message");
-                apipostdata.setValues(((EditText) findViewById(R.id.EDX_msg)).toString());
-                apipostdatas.add(apipostdata);
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("with_pet_status");
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("lang_id");
+                setGetAPIPostData.setValues(AppConstant.Language);
+                setGetAPIPostDatas.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("user_timezone");
+                setGetAPIPostData.setValues(Calendar.getInstance().getTimeZone().getID());
+                setGetAPIPostDatas.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("meet_date");
+                setGetAPIPostData.setValues(((SFNFTextView) findViewById(R.id.startdate)).toString());
+                setGetAPIPostDatas.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("alt_date");
+                setGetAPIPostData.setValues(((SFNFTextView) findViewById(R.id.AlterDate)).toString());
+                setGetAPIPostDatas.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("message");
+                setGetAPIPostData.setValues(((EditText) findViewById(R.id.EDX_msg)).toString());
+                setGetAPIPostDatas.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("with_pet_status");
                 if (((CheckBox) findViewById(R.id.Check)).isChecked())
-                    apipostdata.setValues("1");
+                    setGetAPIPostData.setValues("1");
                 else
-                    apipostdata.setValues("0");
-                apipostdatas.add(apipostdata);
-                apipostdata = new APIPOSTDATA();
-                apipostdata.setPARAMS("No_of_pet");
-                apipostdata.setValues(((SFNFTextView) findViewById(R.id.EDX_no_of_pets)).toString());
-                apipostdatas.add(apipostdata);
+                    setGetAPIPostData.setValues("0");
+                setGetAPIPostDatas.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("No_of_pet");
+                setGetAPIPostData.setValues(((SFNFTextView) findViewById(R.id.EDX_no_of_pets)).toString());
+                setGetAPIPostDatas.add(setGetAPIPostData);
 
                 if(((SFNFTextView) findViewById(R.id.startdate)).getText().toString().trim().equals(""))
                 {
@@ -134,7 +134,7 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
 
 
                     appLoader.Show();
-                    new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "meetandgreet_request", apipostdatas, new CustomJSONParser.JSONResponseInterface() {
+                    new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "meetandgreet_request", setGetAPIPostDatas, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
                             appLoader.Dismiss();

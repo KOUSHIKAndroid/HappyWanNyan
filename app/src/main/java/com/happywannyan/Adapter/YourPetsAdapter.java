@@ -12,8 +12,8 @@ import com.happywannyan.Activities.EditAnotherPetsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
-import com.happywannyan.POJO.YourPets;
+import com.happywannyan.POJO.SetGetAPIPostData;
+import com.happywannyan.POJO.SetGetYourPets;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -30,14 +30,14 @@ import java.util.ArrayList;
  * Created by su on 5/26/17.
  */
 
-public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyViewHolder> {
-    ArrayList<YourPets> yourPetsArrayList;
+public class YourPetsAdapter extends RecyclerView.Adapter<YourPetsAdapter.MyViewHolder> {
+    ArrayList<SetGetYourPets> setGetYourPetsArrayList;
     Context context;
     AppLoader appLoader;
 
-    public YourPets_Adapter(Context context, ArrayList<YourPets> yourPetsArrayList){
+    public YourPetsAdapter(Context context, ArrayList<SetGetYourPets> setGetYourPetsArrayList){
         this.context=context;
-        this.yourPetsArrayList=yourPetsArrayList;
+        this.setGetYourPetsArrayList = setGetYourPetsArrayList;
         appLoader = new AppLoader(context);
     }
 
@@ -50,7 +50,7 @@ public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyVi
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
-        final YourPets data=yourPetsArrayList.get(position);
+        final SetGetYourPets data= setGetYourPetsArrayList.get(position);
 
 
         holder.tv_name.setText(data.getPet_name());
@@ -147,7 +147,7 @@ public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyVi
 
     @Override
     public int getItemCount() {
-        return yourPetsArrayList.size();
+        return setGetYourPetsArrayList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -186,23 +186,23 @@ public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyVi
     public void deleteYourPet(String delId, final int position){
         appLoader.Show();
 
-        ArrayList<APIPOSTDATA> params = new ArrayList<>();
+        ArrayList<SetGetAPIPostData> params = new ArrayList<>();
 
-        APIPOSTDATA apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("user_id");
-        apipostdata.setValues(AppConstant.UserId);
-        params.add(apipostdata);
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        params.add(setGetAPIPostData);
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("lang_id");
-        apipostdata.setValues(AppConstant.Language);
-        params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("lang_id");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        params.add(setGetAPIPostData);
 
 
-        apipostdata = new APIPOSTDATA();
-        apipostdata.setPARAMS("DelId");
-        apipostdata.setValues(delId);
-        params.add(apipostdata);
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("DelId");
+        setGetAPIPostData.setValues(delId);
+        params.add(setGetAPIPostData);
 
         /////////delete here and api fire////////////////
 
@@ -217,7 +217,7 @@ public class YourPets_Adapter extends RecyclerView.Adapter<YourPets_Adapter.MyVi
                     Loger.MSG("DeletejObject",""+jObject);
 
                     if (jObject.getBoolean("response")) {
-                        yourPetsArrayList.remove(position);
+                        setGetYourPetsArrayList.remove(position);
                         //notifyDataSetChanged();
                         notifyItemRemoved(position);
                     }

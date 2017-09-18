@@ -11,10 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.happywannyan.Adapter.AdapterCard;
+import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.OnFragmentInteractionListener;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetCards;
 import com.happywannyan.POJO.SetGetStripData;
 import com.happywannyan.R;
@@ -123,10 +123,10 @@ public class BookingFragmentFoure extends Fragment {
                                             ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("id"));
                                             break;
                                         } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
-                                            APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                            apipostdata.setPARAMS("user_card_id");
-                                            apipostdata.setValues(cardFinalSelection.getString("id"));
-                                            ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                            SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                            setGetAPIPostData.setPARAMS("user_card_id");
+                                            setGetAPIPostData.setValues(cardFinalSelection.getString("id"));
+                                            ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                         }
                                     } catch (Exception ex) {
                                         ex.printStackTrace();
@@ -138,10 +138,10 @@ public class BookingFragmentFoure extends Fragment {
                                         ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues("");
                                         break;
                                     } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
-                                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                        apipostdata.setPARAMS("user_new_card");
-                                        apipostdata.setValues("");
-                                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("user_new_card");
+                                        setGetAPIPostData.setValues("");
+                                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                     }
                                 }
 
@@ -150,10 +150,10 @@ public class BookingFragmentFoure extends Fragment {
                                         ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues("");
                                         break;
                                     } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
-                                        APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                        apipostdata.setPARAMS("stripeToken");
-                                        apipostdata.setValues("");
-                                        ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("stripeToken");
+                                        setGetAPIPostData.setValues("");
+                                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                     }
                                 }
 
@@ -163,10 +163,10 @@ public class BookingFragmentFoure extends Fragment {
                                             ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("name_on_card"));
                                             break;
                                         } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
-                                            APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                            apipostdata.setPARAMS("name_on_card");
-                                            apipostdata.setValues(cardFinalSelection.getString("name_on_card"));
-                                            ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                            SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                            setGetAPIPostData.setPARAMS("name_on_card");
+                                            setGetAPIPostData.setValues(cardFinalSelection.getString("name_on_card"));
+                                            ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                         }
                                     } catch (Exception ex) {
                                         ex.printStackTrace();
@@ -180,10 +180,10 @@ public class BookingFragmentFoure extends Fragment {
                                             ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(cardFinalSelection.getString("cvv_code"));
                                             break;
                                         } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
-                                            APIPOSTDATA apipostdata = new APIPOSTDATA();
-                                            apipostdata.setPARAMS("security_code");
-                                            apipostdata.setValues(cardFinalSelection.getString("cvv_code"));
-                                            ((BookingOneActivity) getActivity()).FirstPageData.add(apipostdata);
+                                            SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                            setGetAPIPostData.setPARAMS("security_code");
+                                            setGetAPIPostData.setValues(cardFinalSelection.getString("cvv_code"));
+                                            ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                         }
                                     } catch (Exception ex) {
                                         ex.printStackTrace();
@@ -320,7 +320,7 @@ public class BookingFragmentFoure extends Fragment {
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CRAD RESP-", Result);
                                                 new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
-                                                        , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                                                        , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 appLoader.Dismiss();
@@ -352,7 +352,7 @@ public class BookingFragmentFoure extends Fragment {
                                                                     e.printStackTrace();
                                                                 }
 
-                                                                REC_Card.setAdapter(new AdapterCard(getActivity(), setGetCardsArrayList, new onClickItem() {
+                                                                REC_Card.setAdapter(new CardAdapter(getActivity(), setGetCardsArrayList, new onClickItem() {
                                                                     @Override
                                                                     public void onSelectItemClick(int position, JSONObject data) {
                                                                         cardFinalSelection = data;
@@ -430,7 +430,7 @@ public class BookingFragmentFoure extends Fragment {
     private void SetCardDetails() {
         appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
-                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -479,7 +479,7 @@ public class BookingFragmentFoure extends Fragment {
                             e.printStackTrace();
                         }
 
-                        REC_Card.setAdapter(new AdapterCard(getActivity(), setGetCardsArrayList, new onClickItem() {
+                        REC_Card.setAdapter(new CardAdapter(getActivity(), setGetCardsArrayList, new onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
                                 cardFinalSelection = data;

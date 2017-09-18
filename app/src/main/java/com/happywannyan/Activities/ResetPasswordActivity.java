@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.MYAlert;
@@ -53,13 +53,13 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                     });
 
                 }else{
-                    ArrayList<APIPOSTDATA> valuse=new ArrayList<>();
+                    ArrayList<SetGetAPIPostData> valuse=new ArrayList<>();
 
-                    APIPOSTDATA data=new APIPOSTDATA();
+                    SetGetAPIPostData data=new SetGetAPIPostData();
                     data.setPARAMS("cur_code");
                     data.setValues(Code.getText().toString());
                     valuse.add(data);
-                    data=new APIPOSTDATA();
+                    data=new SetGetAPIPostData();
                     data.setPARAMS("new_pass");
                     data.setValues(Password.getText().toString());
                     valuse.add(data);

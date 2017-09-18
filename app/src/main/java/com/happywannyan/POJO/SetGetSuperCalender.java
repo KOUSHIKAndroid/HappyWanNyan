@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by apple on 24/05/17.
  */
 
-public class SuperCalender {
+public class SetGetSuperCalender {
     int Month;
     int Year;
     ArrayList<SetGetCalender> MonthBoject;

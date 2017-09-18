@@ -32,7 +32,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CircleTransform;
@@ -298,16 +298,16 @@ public class MyProfileFragment extends Fragment {
 
                 }
 
-                ArrayList<APIPOSTDATA> Params = new ArrayList<APIPOSTDATA>();
-                APIPOSTDATA Post = new APIPOSTDATA();
+                ArrayList<SetGetAPIPostData> Params = new ArrayList<SetGetAPIPostData>();
+                SetGetAPIPostData Post = new SetGetAPIPostData();
                 Post.setPARAMS("user_id");
                 Post.setValues(AppConstant.UserId);
                 Params.add(Post);
-                Post = new APIPOSTDATA();
+                Post = new SetGetAPIPostData();
                 Post.setPARAMS("lang_id");
                 Post.setValues(AppConstant.Language);
                 Params.add(Post);
-                Post = new APIPOSTDATA();
+                Post = new SetGetAPIPostData();
                 Post.setPARAMS("user_info");
                 Post.setValues(new JSONObject().put("users_information",UserInfo).toString());
                 Params.add(Post);
@@ -464,7 +464,7 @@ public class MyProfileFragment extends Fragment {
 
     public void loadPage(){
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_about?user_id=" + AppConstant.UserId, new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_about?user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

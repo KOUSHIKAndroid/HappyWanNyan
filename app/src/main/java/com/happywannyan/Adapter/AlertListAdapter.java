@@ -19,14 +19,14 @@ import org.json.JSONObject;
  * Created by su on 5/22/17.
  */
 
-public class AdapterAlertList extends RecyclerView.Adapter<AdapterAlertList.MyViewHolder> {
+public class AlertListAdapter extends RecyclerView.Adapter<AlertListAdapter.MyViewHolder> {
     JSONArray MessageList;
     Context context;
     AlertDialog Dialog;
     MYAlert.OnSignleListTextSelected onSignleListTextSelected;
     String params;
     MYAlert myAlert;
-    public AdapterAlertList(MYAlert myAlert, Context mContext, MYAlert.OnSignleListTextSelected onSignleListTextSelected, AlertDialog dialog, JSONArray listArray, String getPramsName) {
+    public AlertListAdapter(MYAlert myAlert, Context mContext, MYAlert.OnSignleListTextSelected onSignleListTextSelected, AlertDialog dialog, JSONArray listArray, String getPramsName) {
         this.context=mContext;
         this.MessageList=listArray;
         this.Dialog=dialog;

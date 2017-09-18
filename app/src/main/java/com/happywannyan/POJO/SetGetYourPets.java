@@ -7,7 +7,7 @@ import org.json.JSONObject;
  * Created by su on 5/26/17.
  */
 
-public class YourPets {
+public class SetGetYourPets {
     String edit_id,pet_type_id,pet_name,pet_image;
     JSONObject Otherinfo;
 

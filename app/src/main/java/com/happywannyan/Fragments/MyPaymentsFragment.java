@@ -12,9 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Adapter.AdapterPaymentList;
+import com.happywannyan.Adapter.PaymentListAdapter;
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.POJO.APIPOSTDATA;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
 import com.happywannyan.SitterBooking.NewCardAddActivity;
@@ -51,7 +51,7 @@ public class MyPaymentsFragment extends Fragment {
 
     RecyclerView recycler_view;
     AppLoader appLoader;
-    AdapterPaymentList adapterPaymentList;
+    PaymentListAdapter paymentListAdapter;
     final int GET_NEW_CARD = 2;
     Card card;
     String make_defaultValue="0";
@@ -141,18 +141,18 @@ public class MyPaymentsFragment extends Fragment {
     public void LoadPaymentDetails(){
         appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
-                , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         Log.i("Result",""+Result);
                         appLoader.Dismiss();
-                        adapterPaymentList=new AdapterPaymentList(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
+                        paymentListAdapter =new PaymentListAdapter(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
 
                             }
                         });
-                        recycler_view.setAdapter(adapterPaymentList);
+                        recycler_view.setAdapter(paymentListAdapter);
                     }
                     @Override
                     public void OnError(String Error, String Response) {
@@ -250,18 +250,18 @@ public class MyPaymentsFragment extends Fragment {
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CARD RESP-", Result);
                                                 new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
-                                                        , new ArrayList<APIPOSTDATA>(), new CustomJSONParser.JSONResponseInterface() {
+                                                        , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 appLoader.Dismiss();
 
-                                                                adapterPaymentList=new AdapterPaymentList(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
+                                                                paymentListAdapter =new PaymentListAdapter(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
                                                                     @Override
                                                                     public void onSelectItemClick(int position, JSONObject data) {
 
                                                                     }
                                                                 });
-                                                                recycler_view.setAdapter(adapterPaymentList);
+                                                                recycler_view.setAdapter(paymentListAdapter);
                                                             }
 
                                                             @Override

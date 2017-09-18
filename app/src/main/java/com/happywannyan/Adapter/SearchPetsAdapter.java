@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.POJO.SearchData;
+import com.happywannyan.POJO.SetGetSearchData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.provider.RatingColor;
@@ -33,9 +33,9 @@ import java.util.ArrayList;
 public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<SearchData> searchPetArrayList;
+    ArrayList<SetGetSearchData> searchPetArrayList;
 
-    public SearchPetsAdapter(Context context, ArrayList<SearchData> searchPetArrayList) {
+    public SearchPetsAdapter(Context context, ArrayList<SetGetSearchData> searchPetArrayList) {
         this.context = context;
         this.searchPetArrayList = searchPetArrayList;
     }
@@ -48,23 +48,23 @@ public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.My
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-        final SearchData searchData = searchPetArrayList.get(position);
+        final SetGetSearchData setGetSearchData = searchPetArrayList.get(position);
 
 
         try {
-            Glide.with(context).load(searchData.getSearcItem().getString("photo_url")).into(holder.img_view);
-            holder.tv_title.setText(searchData.getSearcItem().getString("nickname"));
+            Glide.with(context).load(setGetSearchData.getSearcItem().getString("photo_url")).into(holder.img_view);
+            holder.tv_title.setText(setGetSearchData.getSearcItem().getString("nickname"));
 
 
 //        holder.tv_days.setText(searchPetArrayList.get(position).getDays());
-            holder.tv_name.setText(searchData.getSearcItem().getString("business_name"));
-            holder.tv_service_.setText(searchData.getSearcItem().getString("service_name_all"));
-            holder.tv_details.setText(searchData.getSearcItem().getString("Profile_summary"));
-            holder.tv_address.setText(searchData.getSearcItem().getString("whole_address"));
-            holder.tv_Price.setText(Html.fromHtml(searchData.getSearcItem().getString("currency")) + " " + searchData.getSearcItem().getString("price_one"));
-            holder.tv_review.setText(searchData.getSearcItem().getString("num_rvw") + " " + context.getResources().getString(R.string.review));
+            holder.tv_name.setText(setGetSearchData.getSearcItem().getString("business_name"));
+            holder.tv_service_.setText(setGetSearchData.getSearcItem().getString("service_name_all"));
+            holder.tv_details.setText(setGetSearchData.getSearcItem().getString("Profile_summary"));
+            holder.tv_address.setText(setGetSearchData.getSearcItem().getString("whole_address"));
+            holder.tv_Price.setText(Html.fromHtml(setGetSearchData.getSearcItem().getString("currency")) + " " + setGetSearchData.getSearcItem().getString("price_one"));
+            holder.tv_review.setText(setGetSearchData.getSearcItem().getString("num_rvw") + " " + context.getResources().getString(R.string.review));
 
-            holder.rating_bar.setRating(Float.parseFloat(searchData.getSearcItem().getString("ave_rating")));
+            holder.rating_bar.setRating(Float.parseFloat(setGetSearchData.getSearcItem().getString("ave_rating")));
             holder.rating_bar.setIsIndicator(true);
             LayerDrawable stars = (LayerDrawable) holder.rating_bar.getProgressDrawable();
             RatingColor.SETRatingColor(stars);
@@ -72,11 +72,11 @@ public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.My
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Loger.MSG("@@@ddata-->",""+searchData.getSearcItem());
+                    Loger.MSG("@@@ddata-->",""+ setGetSearchData.getSearcItem());
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                     Intent intent = new Intent(context, ProfileDetailsActivity.class);
-                    Loger.MSG("data", "" + searchData.getSearcItem());
-                    intent.putExtra("data", "" + searchData.getSearcItem());
+                    Loger.MSG("data", "" + setGetSearchData.getSearcItem());
+                    intent.putExtra("data", "" + setGetSearchData.getSearcItem());
                     context.startActivity(intent, options.toBundle());
 //                 context.startActivity(new Intent(context, ProfileDetailsActivity.class));
                 }
