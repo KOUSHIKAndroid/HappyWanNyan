@@ -100,7 +100,7 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
                     else {
                         Intent intent = new Intent(mContext, BookingOneActivity.class);
                         intent.putExtra("LIST", "");
-                        intent.putExtra("ItemDetails", "" + ((ProfileDetailsActivity) mContext).PrevJSON);
+                        intent.putExtra("ItemDetails", "" + ((ProfileDetailsActivity) mContext).PrevJSONObject);
                         intent.putExtra("Single", true);
                         intent.putExtra("SELECT", "" + object);
                         mContext.startActivity(intent);

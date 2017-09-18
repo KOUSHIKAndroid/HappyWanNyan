@@ -72,6 +72,7 @@ public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.My
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Loger.MSG("@@@ddata-->",""+searchData.getSearcItem());
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                     Intent intent = new Intent(context, ProfileDetailsActivity.class);
                     Loger.MSG("data", "" + searchData.getSearcItem());

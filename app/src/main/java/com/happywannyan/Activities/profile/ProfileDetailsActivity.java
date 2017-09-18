@@ -43,7 +43,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
     private ViewPager viewpager;
     private ProfileFragPagerAdapter pagerAdapter = null;
     private LinearLayout reservation = null;
-    public JSONObject PrevJSON;
+    public JSONObject PrevJSONObject;
     RatingBar Rating;
     String SitterId;
     String UserData;
@@ -65,21 +65,21 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         try {
             new AppConstant(this);
             UserData = AppConstant.UserId;
-            this.PrevJSON = new JSONObject(getIntent().getStringExtra("data"));
-            Loger.MSG("@@@ PROFILE DATA ", "" + PrevJSON);
-            if (PrevJSON.has("sitter_user_id")) {
-                SitterId = PrevJSON.getString("sitter_user_id");
-            } else if (PrevJSON.has("sitter_users_id")) {
-                SitterId = PrevJSON.getString("sitter_users_id");
+            this.PrevJSONObject = new JSONObject(getIntent().getStringExtra("data"));
+            Loger.MSG("@@@ PROFILE DATA ", "" + PrevJSONObject);
+            if (PrevJSONObject.has("sitter_user_id")) {
+                SitterId = PrevJSONObject.getString("sitter_user_id");
+            } else if (PrevJSONObject.has("sitter_users_id")) {
+                SitterId = PrevJSONObject.getString("sitter_users_id");
             } else {
-                SitterId = PrevJSON.getString("id");
+                SitterId = PrevJSONObject.getString("id");
             }
 
             findViewById(R.id.map_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     try {
-                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=%d&q=%f,%f", Double.parseDouble(PrevJSON.getString("lat")), Double.parseDouble(PrevJSON.getString("long")), 17, Double.parseDouble(PrevJSON.getString("lat")), Double.parseDouble(PrevJSON.getString("long")));
+                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=%d&q=%f,%f", Double.parseDouble(PrevJSONObject.getString("lat")), Double.parseDouble(PrevJSONObject.getString("long")), 17, Double.parseDouble(PrevJSONObject.getString("lat")), Double.parseDouble(PrevJSONObject.getString("long")));
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                         startActivity(intent);
                     } catch (JSONException e) {
@@ -260,12 +260,12 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     Intent intent = new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
                     try {
                         intent.putExtra("LIST", "" + new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist"));
-                        intent.putExtra("ItemDetails", "" + PrevJSON);
+                        intent.putExtra("ItemDetails", "" + PrevJSONObject);
                         intent.putExtra("Single", false);
                         JSONArray ARRYA = new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
                         for (int j = 0; j < ARRYA.length(); j++) {
                             JSONObject OBJECT = ARRYA.getJSONObject(j);
-                            if (OBJECT.getString("service_id").equals(PrevJSON.getString("manage_service_id"))) {
+                            if (OBJECT.getString("service_id").equals(PrevJSONObject.getString("manage_service_id"))) {
                                 intent.putExtra("SELECT", "" + OBJECT);
                                 break;
                             }
