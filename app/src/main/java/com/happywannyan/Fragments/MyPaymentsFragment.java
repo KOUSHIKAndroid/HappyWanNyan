@@ -221,8 +221,9 @@ public class MyPaymentsFragment extends Fragment {
                                         Loger.MSG("@@ TOKEN finger-", token.getCard().getFingerprint() + "");
                                         Loger.MSG("@@ TOKEN Brand-", token.getCard().getBrand() + "");
                                         Loger.MSG("@@ TOKEN customerId-", token.getCard().getCustomerId() + "");
-                                        Loger.MSG("@@ TOKEN customerId-", token.getCard().getLast4() + "");
+                                        Loger.MSG("@@ TOKEN customerLast4Digits-", token.getCard().getLast4() + "");
                                         Loger.MSG("@@ TOKEN ID-", token.getCard().getId() + "");
+
                                         HashMap<String, String> Params = new HashMap<String, String>();
                                         Params.put("user_id", AppConstant.UserId);
                                         Params.put("stripe_id", CustomerID + "");
