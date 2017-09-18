@@ -23,16 +23,16 @@ public class AlertListAdapter extends RecyclerView.Adapter<AlertListAdapter.MyVi
     JSONArray MessageList;
     Context context;
     AlertDialog Dialog;
-    MYAlert.OnSignleListTextSelected onSignleListTextSelected;
+    MYAlert.OnSingleListTextSelected onSingleListTextSelected;
     String params;
     MYAlert myAlert;
 
-    public AlertListAdapter(MYAlert myAlert, Context mContext, MYAlert.OnSignleListTextSelected onSignleListTextSelected, AlertDialog dialog, JSONArray listArray, String getPramsName) {
+    public AlertListAdapter(MYAlert myAlert, Context mContext, MYAlert.OnSingleListTextSelected onSingleListTextSelected, AlertDialog dialog, JSONArray listArray, String getPramsName) {
         this.context = mContext;
         this.MessageList = listArray;
         this.Dialog = dialog;
         this.myAlert = myAlert;
-        this.onSignleListTextSelected = onSignleListTextSelected;
+        this.onSingleListTextSelected = onSingleListTextSelected;
         this.params = getPramsName;
     }
 
@@ -54,8 +54,8 @@ public class AlertListAdapter extends RecyclerView.Adapter<AlertListAdapter.MyVi
                 public void onClick(View view) {
 
                     try {
-                        onSignleListTextSelected.OnSelectedTEXT(new JSONObject(view.getTag().toString()));
-                        myAlert.dismised();
+                        onSingleListTextSelected.OnSelectedTEXT(new JSONObject(view.getTag().toString()));
+                        myAlert.dismissed();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

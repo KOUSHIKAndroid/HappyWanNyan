@@ -304,7 +304,7 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
             case R.id.RL_ChoseCat:
                 if (!((BookingOneActivity) getActivity()).DropDown)
                     try {
-                        new MYAlert(getActivity()).AlertTextLsit("" + getString(R.string.ChooseService), new JSONArray(mParam1), "service_name", new MYAlert.OnSignleListTextSelected() {
+                        new MYAlert(getActivity()).AlertTextLsit("" + getString(R.string.ChooseService), new JSONArray(mParam1), "service_name", new MYAlert.OnSingleListTextSelected() {
                             @Override
                             public void OnSelectedTEXT(JSONObject jsonObject) {
                                 try {
@@ -363,7 +363,7 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
 
             case R.id.RL_ExtraDropDown:
                 Loger.MSG("ExtraPopup", "" + ExtraPopup);
-                new MYAlert(getActivity()).AlertTextLsit("", ExtraPopup, "name", new MYAlert.OnSignleListTextSelected() {
+                new MYAlert(getActivity()).AlertTextLsit("", ExtraPopup, "name", new MYAlert.OnSingleListTextSelected() {
                     @Override
                     public void OnSelectedTEXT(JSONObject jsonObject) {
                         try {

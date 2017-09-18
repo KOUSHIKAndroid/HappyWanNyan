@@ -65,7 +65,7 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
             case R.id.RL_PickupTime:
                 try {
-                    new MYAlert(this).AlertTextLsit(getString(R.string.pickuptime), JSONARRAY, "name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(this).AlertTextLsit(getString(R.string.pickuptime), JSONARRAY, "name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             Log.d("@@@fhjhf", "--" + jsonObject);
@@ -84,7 +84,7 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
             case R.id.RL_DropOffTime:
                 try {
-                    new MYAlert(this).AlertTextLsit(getString(R.string.dropofftime), JSONARRAY, "name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(this).AlertTextLsit(getString(R.string.dropofftime), JSONARRAY, "name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             Log.d("@@@fhjhf", "--" + jsonObject);

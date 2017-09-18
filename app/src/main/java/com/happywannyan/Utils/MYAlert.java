@@ -30,7 +30,7 @@ public class MYAlert {
     AlertDialog Dialog;
     android.app.Dialog dialog;
 
-    public void dismised() {
+    public void dismissed() {
         Dialog.dismiss();
     }
 
@@ -44,7 +44,7 @@ public class MYAlert {
         void OnCancel();
     }
 
-    public interface OnSignleListTextSelected {
+    public interface OnSingleListTextSelected {
         public void OnSelectedTEXT(JSONObject jsonObject);
     }
 
@@ -164,7 +164,7 @@ public class MYAlert {
         Dialog.show();
     }
 
-    public void AlertTextLsit(String Title, JSONArray ListArray, String GetPramsName, final OnSignleListTextSelected onSignleListTextSelected) {
+    public void AlertTextLsit(String Title, JSONArray ListArray, String GetPramsName, final OnSingleListTextSelected onSingleListTextSelected) {
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
                 (Context.LAYOUT_INFLATER_SERVICE);
@@ -174,7 +174,7 @@ public class MYAlert {
         TXTTitle.setText(Title);
         RecyclerView ListLay = (RecyclerView) LayView.findViewById(R.id.recycler_view);
         ListLay.setLayoutManager(new LinearLayoutManager(mContext));
-        ListLay.setAdapter(new AlertListAdapter(this, mContext, onSignleListTextSelected, Dialog, ListArray, GetPramsName));
+        ListLay.setAdapter(new AlertListAdapter(this, mContext, onSingleListTextSelected, Dialog, ListArray, GetPramsName));
 
         LayView.findViewById(R.id.IMG_Back).setOnClickListener(new View.OnClickListener() {
             @Override

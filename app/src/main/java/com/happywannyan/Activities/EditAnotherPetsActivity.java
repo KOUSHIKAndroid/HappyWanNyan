@@ -184,7 +184,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                 break;
             case R.id.SE_Year:
                 try {
-                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(0).getString("input_name"), SelectObject.getJSONObject(0).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(0).getString("input_name"), SelectObject.getJSONObject(0).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {
@@ -202,7 +202,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                 break;
             case R.id.SE_Month:
                 try {
-                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(1).getString("input_name"), SelectObject.getJSONObject(1).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(1).getString("input_name"), SelectObject.getJSONObject(1).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {
@@ -220,7 +220,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                 break;
             case R.id.RL_Gender:
                 try {
-                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(2).getString("input_name"), SelectObject.getJSONObject(2).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(2).getString("input_name"), SelectObject.getJSONObject(2).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {
@@ -238,7 +238,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
 
             case R.id.RL_petBreed:
                 try {
-                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(3).getString("input_name"), SelectObject.getJSONObject(3).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(3).getString("input_name"), SelectObject.getJSONObject(3).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {
@@ -255,7 +255,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                 break;
             case R.id.RL_petSize:
                 try {
-                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(4).getString("input_name"), SelectObject.getJSONObject(4).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(EditAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(4).getString("input_name"), SelectObject.getJSONObject(4).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {

@@ -51,7 +51,7 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
                     e.printStackTrace();
                 }
                 Loger.MSG("@@" + getClass().getName(), array.toString());
-                new MYAlert(this).AlertTextLsit(getString(R.string.numberofpets), array, "name", new MYAlert.OnSignleListTextSelected() {
+                new MYAlert(this).AlertTextLsit(getString(R.string.numberofpets), array, "name", new MYAlert.OnSingleListTextSelected() {
                     @Override
                     public void OnSelectedTEXT(JSONObject jsonObject) {
                         try {

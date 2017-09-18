@@ -115,7 +115,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
             case R.id.Hea:
 
                 new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit("" + getResources().getString(R.string.Chosepettype),
-                        PetService, "name", new MYAlert.OnSignleListTextSelected() {
+                        PetService, "name", new MYAlert.OnSingleListTextSelected() {
                             @Override
                             public void OnSelectedTEXT(JSONObject jsonObject) {
                                 Loger.MSG("@@ Data", "" + jsonObject);
@@ -169,7 +169,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.SE_Year:
                 try {
-                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(0).getString("input_name"), SelectObject.getJSONObject(0).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(0).getString("input_name"), SelectObject.getJSONObject(0).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {
@@ -187,7 +187,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.SE_Month:
                 try {
-                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(1).getString("input_name"), SelectObject.getJSONObject(1).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(1).getString("input_name"), SelectObject.getJSONObject(1).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {
@@ -205,7 +205,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.RL_Gender:
                 try {
-                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(2).getString("input_name"), SelectObject.getJSONObject(2).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(2).getString("input_name"), SelectObject.getJSONObject(2).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {
@@ -223,7 +223,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
 
             case R.id.RL_petBreed:
                 try {
-                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(3).getString("input_name"), SelectObject.getJSONObject(3).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(3).getString("input_name"), SelectObject.getJSONObject(3).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {
@@ -240,7 +240,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.RL_petSize:
                 try {
-                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(4).getString("input_name"), SelectObject.getJSONObject(4).getJSONArray("input_option"), "option_name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(AddAnotherPetsActivity.this).AlertTextLsit(SelectObject.getJSONObject(4).getString("input_name"), SelectObject.getJSONObject(4).getJSONArray("input_option"), "option_name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             try {

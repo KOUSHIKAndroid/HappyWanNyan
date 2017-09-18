@@ -47,7 +47,7 @@ public class CancelBookingWithReasonsActivity extends AppCompatActivity implemen
 
                     if (DATAObject.getJSONObject("booking_info").has("cancel_reason_type") && DATAObject.getJSONObject("booking_info").getJSONArray("cancel_reason_type").length() > 0) {
                         cancel_reason_type = DATAObject.getJSONObject("booking_info").getJSONArray("cancel_reason_type");
-                        myAlert.AlertTextLsit(getString(R.string.select_cancel_reason), cancel_reason_type, "cancel_reason", new MYAlert.OnSignleListTextSelected() {
+                        myAlert.AlertTextLsit(getString(R.string.select_cancel_reason), cancel_reason_type, "cancel_reason", new MYAlert.OnSingleListTextSelected() {
                             @Override
                             public void OnSelectedTEXT(JSONObject jsonObject) {
                                 try {

@@ -314,7 +314,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                 try {
 
                     new MYAlert(getActivity()).AlertTextLsit(getString(R.string.chose_pettype), mParam1.getJSONArray("allPetDetails"), "name"
-                            , new MYAlert.OnSignleListTextSelected() {
+                            , new MYAlert.OnSingleListTextSelected() {
                                 @Override
                                 public void OnSelectedTEXT(JSONObject jsonObject) {
                                     Loger.MSG("@@ SelevetPet", "" + jsonObject);

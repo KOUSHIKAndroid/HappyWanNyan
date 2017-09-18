@@ -261,7 +261,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                 try {
                     MainJ = new JSONObject(mParam1).getJSONObject("info_array");
                     JSONArray Array = MainJ.getJSONArray("perf_start_droptime");
-                    new MYAlert(getActivity()).AlertTextLsit(getString(R.string.pickuptime), Array, "name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(getActivity()).AlertTextLsit(getString(R.string.pickuptime), Array, "name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             Log.d("@@@fhjhf", "--" + jsonObject);
@@ -282,7 +282,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                 try {
                     MainJ = new JSONObject(mParam1).getJSONObject("info_array");
                     JSONArray Array = MainJ.getJSONArray("perf_end_droptime");
-                    new MYAlert(getActivity()).AlertTextLsit(getString(R.string.dropofftime), Array, "name", new MYAlert.OnSignleListTextSelected() {
+                    new MYAlert(getActivity()).AlertTextLsit(getString(R.string.dropofftime), Array, "name", new MYAlert.OnSingleListTextSelected() {
                         @Override
                         public void OnSelectedTEXT(JSONObject jsonObject) {
                             Log.d("@@@fhjhf", "--" + jsonObject);
