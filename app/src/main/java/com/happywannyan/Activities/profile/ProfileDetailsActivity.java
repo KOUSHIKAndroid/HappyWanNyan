@@ -15,22 +15,25 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RatingBar;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
-import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Activities.profile.fragmentPagerAdapter.ProfileFragPagerAdapter;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.APIPOSTDATA;
 import com.happywannyan.R;
+import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
-import com.happywannyan.Utils.provider.RatingColor;
 import com.happywannyan.Utils.provider.AppTimeZone;
+import com.happywannyan.Utils.provider.RatingColor;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -51,6 +54,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
     public String JSONRESPONSESTRING;
     int block_user_status = 0;
     PopupWindow popupWindow;
+    String lat, lng;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,15 +82,11 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             findViewById(R.id.map_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    try {
-                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=%d&q=%f,%f", Double.parseDouble(PrevJSONObject.getString("lat")), Double.parseDouble(PrevJSONObject.getString("long")), 17, Double.parseDouble(PrevJSONObject.getString("lat")), Double.parseDouble(PrevJSONObject.getString("long")));
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                        startActivity(intent);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+
+                    String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=%d&q=%f,%f", Double.parseDouble(lat), Double.parseDouble(lng), 17, Double.parseDouble(lat), Double.parseDouble(lng));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                    startActivity(intent);
+
                 }
             });
         } catch (JSONException e) {
@@ -122,6 +122,8 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                 Loger.MSG("@@ SITTER", "- " + Result);
                 try {
                     final JSONObject BasicInfo = new JSONObject(Result).getJSONObject("info_array").getJSONObject("basic_info");
+                    lat = BasicInfo.getString("lat");
+                    lng = BasicInfo.getString("long");
                     block_user_status = BasicInfo.getInt("block_user_status");
                     Glide.with(ProfileDetailsActivity.this).load(BasicInfo.getString("sittersimage")).into((ImageView) findViewById(R.id.IMG_Profile));
                     Rating.setRating(Float.parseFloat(BasicInfo.getString("ave_rating")));
@@ -260,7 +262,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     Intent intent = new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
                     try {
                         intent.putExtra("LIST", "" + new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist"));
-                        intent.putExtra("ItemDetails", "" + PrevJSONObject);
+                        intent.putExtra("ItemDetailsSitterUserId", "" + PrevJSONObject.getString("sitter_user_id"));
                         intent.putExtra("Single", false);
                         JSONArray ARRYA = new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
                         for (int j = 0; j < ARRYA.length(); j++) {

@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -38,7 +39,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
     public String PRESelectService;
 
     AppLoader appLoader;
-    JSONObject ItemDetails;
+    String ItemDetailsSitterUserId;
     public ArrayList<String> MyPetList;
     public boolean DropDown = true;
 
@@ -56,19 +57,16 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
         appLoader = new AppLoader(this);
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        try {
-            ServiceList = getIntent().getStringExtra("LIST");
-            DropDown = getIntent().getBooleanExtra("Single", true);
-            Loger.MSG("@@ LIST", " DATA-" + ServiceList);
-            PRESelectService = getIntent().getStringExtra("SELECT");
-            Loger.MSG("@@ SELECT", " DATA-" + PRESelectService);
 
-            ItemDetails = new JSONObject(getIntent().getStringExtra("ItemDetails"));
-            Loger.MSG("@@ ITEM", " DATA-" + ItemDetails);
+        ServiceList = getIntent().getStringExtra("LIST");
+        DropDown = getIntent().getBooleanExtra("Single", true);
+        Loger.MSG("@@ LIST", " DATA-" + ServiceList);
+        PRESelectService = getIntent().getStringExtra("SELECT");
+        Loger.MSG("@@ SELECT", " DATA-" + PRESelectService);
 
-        } catch (JSONException e) {
-            Loger.Error("@@ Error", e.getMessage());
-        }
+        ItemDetailsSitterUserId = getIntent().getStringExtra("ItemDetails");
+        Loger.MSG("@@ ItemDetailsSitterUserId", " DATA-" + ItemDetailsSitterUserId);
+
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.Body, BookingFragmentOne.newInstance(ServiceList, PRESelectService));
@@ -109,16 +107,10 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             case "Two":
                 appLoader.Show();
 
-                try {
-                    APIPOSTDATA apipostdata = new APIPOSTDATA();
-                    apipostdata.setPARAMS("sitter_user_id");
-                    apipostdata.setValues(ItemDetails.getString("sitter_user_id"));
-                    FirstPageData.add(apipostdata);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
+                APIPOSTDATA apipostdata = new APIPOSTDATA();
+                apipostdata.setPARAMS("sitter_user_id");
+                apipostdata.setValues(ItemDetailsSitterUserId);
+                FirstPageData.add(apipostdata);
 
                 new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
