@@ -36,12 +36,12 @@
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/mr_ic_play_dark.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/login_facebook.png",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/login_facebook.png"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/login_facebook.png",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/login_facebook.png"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
@@ -68,12 +68,12 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\1c41aa67ac2f73f125dbb67c304a3533e357226e\\output\\res\\drawable\\cast_ic_mini_controller_mute.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_icon_mastercard.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_icon_mastercard.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_normal.xml",
         "source": "/home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/res/drawable/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_icon_mastercard.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_icon_mastercard.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
@@ -96,12 +96,12 @@
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_dark.xml",
-        "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/mr_ic_cast_dark.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_check_box_unchecked.xml",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_check_box_unchecked.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_dark.xml",
+        "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/mr_ic_cast_dark.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_billing_visa_logo.png",
@@ -156,12 +156,12 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_check_red.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_more_white.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_more_white.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_more_white.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_more_white.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_user.xml",
@@ -252,12 +252,12 @@
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_trash.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_trash.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_msg_placeholder.png",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_msg_placeholder.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_trash.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_trash.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cast_ic_notification_rewind10.xml",
@@ -280,12 +280,12 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\f6119351d2679839853b83617020c97639f2de8a\\output\\res\\drawable\\chip.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
-        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/drawable/design_fab_background.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
+        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/drawable/design_fab_background.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/messenger_button_white_bg_selector.xml",
@@ -408,12 +408,12 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_arrow_black.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
-        "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_tab_indicator_material.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_tab_indicator_material.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
@@ -524,12 +524,12 @@
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_send_button_icon.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\\output\\res\\drawable\\com_facebook_send_button_icon.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_send_button_icon.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\b08ee40cc3a80a2f54213bdf26e7e37c4a7ca3d2\\output\\res\\drawable\\com_facebook_send_button_icon.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_icon_discover.xml",
@@ -624,12 +624,12 @@
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/ic_collapse.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_close_grey.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_close_grey.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_profile.xml",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_profile.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_close_grey.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_close_grey.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_light.xml",
@@ -672,12 +672,12 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\drawable\\ic_close_grey.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_on_light.xml",
-        "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/mr_ic_media_route_on_light.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/ic_user.xml",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable/ic_user.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable/mr_ic_media_route_on_light.xml",
+        "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable/mr_ic_media_route_on_light.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",

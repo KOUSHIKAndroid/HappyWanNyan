@@ -52,20 +52,20 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_secondary_text_material_dark.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
         "source": "/home/su/.android/build-cache/6def7622c3971d03ddc574397c5334b1fbebcd92/output/res/color/common_google_signin_btn_tint.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\6b1a5be63642a00b7901749f9343886b26877891\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",

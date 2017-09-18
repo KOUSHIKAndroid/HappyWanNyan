@@ -390,8 +390,6 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                 });
                 datePickerFragment.show(getActivity().getFragmentManager(), "Date");
                 break;
-
         }
-
     }
 }

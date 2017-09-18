@@ -48,12 +48,12 @@
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/profile_image_item_row.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/profile_image_item_row.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cast_expanded_controller_activity.xml",
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\1c41aa67ac2f73f125dbb67c304a3533e357226e\\output\\res\\layout\\cast_expanded_controller_activity.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/profile_image_item_row.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/profile_image_item_row.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml",

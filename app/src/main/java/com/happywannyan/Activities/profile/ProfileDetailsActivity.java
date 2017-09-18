@@ -262,7 +262,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     Intent intent = new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
                     try {
                         intent.putExtra("LIST", "" + new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist"));
-                        intent.putExtra("ItemDetailsSitterUserId", "" + PrevJSONObject.getString("sitter_user_id"));
+                        intent.putExtra("ItemDetails", "" + PrevJSONObject);
                         intent.putExtra("Single", false);
                         JSONArray ARRYA = new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
                         for (int j = 0; j < ARRYA.length(); j++) {
