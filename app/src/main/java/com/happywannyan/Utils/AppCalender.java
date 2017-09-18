@@ -3,16 +3,12 @@ package com.happywannyan.Utils;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.widget.DatePicker;
 
 import com.happywannyan.R;
-import com.happywannyan.SitterBooking.BookingFragmnetOne;
 
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by su on 6/28/17.

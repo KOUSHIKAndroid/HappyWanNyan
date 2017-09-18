@@ -71,7 +71,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
         }
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.Body, BookingFragmnetOne.newInstance(ServiceList, PRESelectService));
+        fragmentTransaction.add(R.id.Body, BookingFragmentOne.newInstance(ServiceList, PRESelectService));
         fragmentTransaction.disallowAddToBackStack().commit();
 
     }
@@ -149,7 +149,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.add(R.id.Body, BookingFrgamnetThree.newInstance(Result, null));
+                        fragmentTransaction.add(R.id.Body, BookingFragmentThree.newInstance(Result, null));
                         fragmentTransaction.addToBackStack(null).commit();
                     }
 

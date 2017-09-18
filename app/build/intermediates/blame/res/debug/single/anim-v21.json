@@ -1,10 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
     }
 ]

@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
 
-public class BookingFragmnetOne extends Fragment implements View.OnClickListener {
+public class BookingFragmentOne extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -53,11 +53,11 @@ public class BookingFragmnetOne extends Fragment implements View.OnClickListener
     private static final int CALL_CALENDER = 12;
     String no_of_visit = "0", no_of_times = "0";
 
-    public BookingFragmnetOne() {
+    public BookingFragmentOne() {
     }
 
-    public static BookingFragmnetOne newInstance(String param1, String param2) {
-        BookingFragmnetOne fragment = new BookingFragmnetOne();
+    public static BookingFragmentOne newInstance(String param1, String param2) {
+        BookingFragmentOne fragment = new BookingFragmentOne();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

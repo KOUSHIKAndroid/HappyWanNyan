@@ -1,10 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     },
     {
-        "merged": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_signup.xml",
-        "source": "C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw600dp\\activity_signup.xml"
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\.android\\build-cache\\114eb0c6d5fd07b6acfd54fd175c2d516227b787\\output\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/activity_signup.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout-sw600dp/activity_signup.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_signup.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/C:\\Users\\suraj\\AndroidStudioProjects\\HappyWanNyan\\app\\src\\main\\res\\layout-sw600dp\\activity_signup.xml"
     }
 ]

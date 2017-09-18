@@ -29,7 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 
-public class BookingFrgamnetThree extends Fragment implements View.OnClickListener {
+public class BookingFragmentThree extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -49,12 +49,12 @@ public class BookingFrgamnetThree extends Fragment implements View.OnClickListen
     //TextInputLayout input_layout_coupon_code;
     private OnFragmentInteractionListener mListener;
 
-    public BookingFrgamnetThree() {
+    public BookingFragmentThree() {
         // Required empty public constructor
     }
 
-    public static BookingFrgamnetThree newInstance(String param1, String param2) {
-        BookingFrgamnetThree fragment = new BookingFrgamnetThree();
+    public static BookingFragmentThree newInstance(String param1, String param2) {
+        BookingFragmentThree fragment = new BookingFragmentThree();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
