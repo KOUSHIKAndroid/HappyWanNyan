@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.PaymentListAdapter;
 import com.happywannyan.Constant.AppConstant;
@@ -26,9 +27,12 @@ import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
+
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import static android.app.Activity.RESULT_OK;
 
 /**
@@ -54,7 +58,7 @@ public class MyPaymentsFragment extends Fragment {
     PaymentListAdapter paymentListAdapter;
     final int GET_NEW_CARD = 2;
     Card card;
-    String make_defaultValue="0";
+    String make_defaultValue = "0";
 
     private OnFragmentInteractionListener mListener;
 
@@ -99,7 +103,7 @@ public class MyPaymentsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recycler_view= (RecyclerView) view.findViewById(R.id.recycler_view);
+        recycler_view = (RecyclerView) view.findViewById(R.id.recycler_view);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
         appLoader = new AppLoader(getActivity());
 
@@ -121,8 +125,6 @@ public class MyPaymentsFragment extends Fragment {
     }
 
 
-
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -138,15 +140,15 @@ public class MyPaymentsFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    public void LoadPaymentDetails(){
+    public void LoadPaymentDetails() {
         appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                 , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
-                        Log.i("Result",""+Result);
+                        Log.i("Result", "" + Result);
                         appLoader.Dismiss();
-                        paymentListAdapter =new PaymentListAdapter(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
+                        paymentListAdapter = new PaymentListAdapter(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
 
@@ -154,10 +156,12 @@ public class MyPaymentsFragment extends Fragment {
                         });
                         recycler_view.setAdapter(paymentListAdapter);
                     }
+
                     @Override
                     public void OnError(String Error, String Response) {
                         appLoader.Dismiss();
                     }
+
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
@@ -165,7 +169,7 @@ public class MyPaymentsFragment extends Fragment {
                 });
     }
 
-//    public interface onClickItem {
+    //    public interface onClickItem {
 //        void onSelectItemClick(int position, JSONObject data);
 //    }
     @Override
@@ -178,15 +182,15 @@ public class MyPaymentsFragment extends Fragment {
             final String cardNumber = data.getStringExtra("cardNumber");
             String expiry = data.getStringExtra("expiry");
             String cvv = data.getStringExtra("cvv");
-            make_defaultValue=data.getStringExtra("make_default");
+            make_defaultValue = data.getStringExtra("make_default");
 
             final int year = Integer.parseInt(
 //                    "20" +
-                            expiry.split("/")[1]);
+                    expiry.split("/")[1]);
             final int month = Integer.parseInt(expiry.split("/")[0]);
 
-            Loger.MSG("@@ Expiry-", "CardHolderName-"+cardHolderName);
-            Loger.MSG("@@ Expiry-", "CardNumber-"+cardNumber);
+            Loger.MSG("@@ Expiry-", "CardHolderName-" + cardHolderName);
+            Loger.MSG("@@ Expiry-", "CardNumber-" + cardNumber);
             Loger.MSG("@@ Expiry-", "Year-" + year);
             Loger.MSG("@@ Expiry-", "Month-" + month);
             Loger.MSG("@@ Expiry-", "cvv-" + cvv);
@@ -227,19 +231,19 @@ public class MyPaymentsFragment extends Fragment {
                                         HashMap<String, String> Params = new HashMap<String, String>();
                                         Params.put("user_id", AppConstant.UserId);
                                         Params.put("stripe_id", CustomerID + "");
-                                        Params.put("card_id", token.getCard().getId()+"");
+                                        Params.put("card_id", token.getCard().getId() + "");
                                         Params.put("name_on_card", cardHolderName);
                                         Params.put("description", "");
-                                        Params.put("address_city", token.getCard().getAddressCity()+"");
-                                        Params.put("address_country", token.getCard().getAddressCountry()+"");
-                                        Params.put("address_line1", token.getCard().getAddressLine1()+"");
-                                        Params.put("address_line2", token.getCard().getAddressLine2()+"");
-                                        Params.put("address_state", token.getCard().getAddressState()+"");
-                                        Params.put("address_zip", token.getCard().getAddressZip()+"");
+                                        Params.put("address_city", token.getCard().getAddressCity() + "");
+                                        Params.put("address_country", token.getCard().getAddressCountry() + "");
+                                        Params.put("address_line1", token.getCard().getAddressLine1() + "");
+                                        Params.put("address_line2", token.getCard().getAddressLine2() + "");
+                                        Params.put("address_state", token.getCard().getAddressState() + "");
+                                        Params.put("address_zip", token.getCard().getAddressZip() + "");
                                         Params.put("exp_month", month + "");
                                         Params.put("exp_year", year + "");
-                                        Params.put("card_brand", token.getCard().getBrand()+"");
-                                        Params.put("card_last_digits", token.getCard().getLast4()+"");
+                                        Params.put("card_brand", token.getCard().getBrand() + "");
+                                        Params.put("card_last_digits", token.getCard().getLast4() + "");
                                         Params.put("card_status", "");
                                         Params.put("cvv_code", card.getCVC() + "");
                                         Params.put("new_card", "1");
@@ -255,7 +259,7 @@ public class MyPaymentsFragment extends Fragment {
                                                             public void OnSuccess(String Result) {
                                                                 appLoader.Dismiss();
 
-                                                                paymentListAdapter =new PaymentListAdapter(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
+                                                                paymentListAdapter = new PaymentListAdapter(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
                                                                     @Override
                                                                     public void onSelectItemClick(int position, JSONObject data) {
 
@@ -281,12 +285,14 @@ public class MyPaymentsFragment extends Fragment {
                                                 Loger.MSG("@@ CARD Error ->", Response);
                                                 appLoader.Dismiss();
                                             }
+
                                             @Override
                                             public void OnError(String Error) {
                                                 appLoader.Dismiss();
                                             }
                                         });
                                     }
+
                                     @Override
                                     public void OnError(String Error, String Response) {
                                         Loger.MSG("@@ CARD Error ->", Error);

@@ -1,7 +1,5 @@
 package com.happywannyan.Login_Slider;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -45,10 +43,11 @@ public class slider2 extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImageView imageView=(ImageView)view.findViewById(R.id.IMG);
+        ImageView imageView = (ImageView) view.findViewById(R.id.IMG);
         Glide.with(getActivity()).load(R.drawable.img_slider1).into(imageView);
     }
 
@@ -67,8 +66,6 @@ public class slider2 extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_slider2, container, false);
     }
-
-
 
 
 }

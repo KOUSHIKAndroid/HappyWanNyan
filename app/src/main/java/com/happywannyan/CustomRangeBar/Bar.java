@@ -60,14 +60,14 @@ public class Bar {
      * @param barColor     the color of the bar
      */
     public Bar(Context ctx,
-            float x,
-            float y,
-            float length,
-            int tickCount,
-            float tickHeightDP,
-            int tickColor,
-            float barWeight,
-            int barColor) {
+               float x,
+               float y,
+               float length,
+               int tickCount,
+               float tickHeightDP,
+               int tickColor,
+               float barWeight,
+               int barColor) {
 
         mLeftX = x;
         mRightX = x + length;

@@ -1,8 +1,8 @@
 package com.happywannyan.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
@@ -15,33 +15,32 @@ import com.happywannyan.Utils.Validation;
 
 import java.util.ArrayList;
 
-public class ResetPasswordActivity extends AppCompatActivity implements View.OnClickListener{
-    EditText Code,Password;
+public class ResetPasswordActivity extends AppCompatActivity implements View.OnClickListener {
+    EditText Code, Password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
-        Password=(EditText)findViewById(R.id.EDX_password);
-        Code=(EditText)findViewById(R.id.EDX_code);
+        Password = (EditText) findViewById(R.id.EDX_password);
+        Code = (EditText) findViewById(R.id.EDX_code);
     }
 
     @Override
     public void onClick(View v) {
 
-        if(v.getId()==R.id.Card_Ok)
-        {
+        if (v.getId() == R.id.Card_Ok) {
 
-            if(Code.getText().length()<=0)
-            {
+            if (Code.getText().length() <= 0) {
                 new MYAlert(ResetPasswordActivity.this).AlertOnly(getResources().getString(R.string.ForgotPassword), getResources().getString(R.string.please_enter_code), new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
-                        if(res ){
+                        if (res) {
                             Code.requestFocus();
                         }
                     }
                 });
-            }else {
+            } else {
                 if (!Validation.isPassword(Password.getText().toString()) || Password.getText().toString().trim().length() < 6) {
                     new MYAlert(ResetPasswordActivity.this).AlertOnly(getResources().getString(R.string.ResetPassword), getResources().getString(R.string.signup_password_checkingtext), new MYAlert.OnlyMessage() {
                         @Override
@@ -52,14 +51,14 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                         }
                     });
 
-                }else{
-                    ArrayList<SetGetAPIPostData> valuse=new ArrayList<>();
+                } else {
+                    ArrayList<SetGetAPIPostData> valuse = new ArrayList<>();
 
-                    SetGetAPIPostData data=new SetGetAPIPostData();
+                    SetGetAPIPostData data = new SetGetAPIPostData();
                     data.setPARAMS("cur_code");
                     data.setValues(Code.getText().toString());
                     valuse.add(data);
-                    data=new SetGetAPIPostData();
+                    data = new SetGetAPIPostData();
                     data.setPARAMS("new_pass");
                     data.setValues(Password.getText().toString());
                     valuse.add(data);
@@ -68,7 +67,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                         @Override
                         public void OnSuccess(String Result) {
 
-                            startActivity(new Intent(ResetPasswordActivity.this,LoginActivity.class));
+                            startActivity(new Intent(ResetPasswordActivity.this, LoginActivity.class));
                             finish();
 
                         }
@@ -93,7 +92,6 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                             });
                         }
                     });
-
 
 
                 }

@@ -15,8 +15,7 @@ public class AppTimeZone {
         this.context = context;
     }
 
-    public static String GetTimeZone()
-    {
+    public static String GetTimeZone() {
         TimeZone tz = TimeZone.getDefault();
         return tz.getID();
 

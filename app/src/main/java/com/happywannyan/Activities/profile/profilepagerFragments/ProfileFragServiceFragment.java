@@ -27,7 +27,7 @@ import org.json.JSONObject;
 public class ProfileFragServiceFragment extends Fragment {
 
     JSONArray ServiceArray;
-    int block_user_status=0;
+    int block_user_status = 0;
 
     @Nullable
     @Override
@@ -41,20 +41,22 @@ public class ProfileFragServiceFragment extends Fragment {
         RecyclerView list = (RecyclerView) view.findViewById(R.id.service_recycler);
 
         try {
-            ServiceArray=new JSONObject(((ProfileDetailsActivity)getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
-            final JSONObject BasicInfo=new JSONObject(((ProfileDetailsActivity)getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONObject("basic_info");
-            block_user_status=BasicInfo.getInt("block_user_status");
-            Loger.MSG("ServiceArray","-->"+ServiceArray.toString());
+            ServiceArray = new JSONObject(((ProfileDetailsActivity) getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
+            final JSONObject BasicInfo = new JSONObject(((ProfileDetailsActivity) getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONObject("basic_info");
+            block_user_status = BasicInfo.getInt("block_user_status");
+            Loger.MSG("ServiceArray", "-->" + ServiceArray.toString());
 
-            if(ServiceArray.length()>0){
+            if (ServiceArray.length() > 0) {
                 view.findViewById(R.id.No_Review).setVisibility(View.GONE);
                 list.setLayoutManager(new LinearLayoutManager(getActivity()));
-                list.setAdapter(new ProfileServiceListingAdapter(getActivity(),ServiceArray,block_user_status));
-            }else {
-                ((SFNFTextView)view.findViewById(R.id.No_Review)).setText(getString(R.string.no_ServicesFound));
+                list.setAdapter(new ProfileServiceListingAdapter(getActivity(), ServiceArray, block_user_status));
+            } else {
+                ((SFNFTextView) view.findViewById(R.id.No_Review)).setText(getString(R.string.no_ServicesFound));
                 view.findViewById(R.id.No_Review).setVisibility(View.VISIBLE);
             }
 
-        }catch (JSONException e){e.printStackTrace();}
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

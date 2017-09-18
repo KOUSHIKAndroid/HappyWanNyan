@@ -106,10 +106,10 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         EDX_Text = (EditText) findViewById(R.id.EDX_Text);
         LL_USER_TIME = (LinearLayout) findViewById(R.id.LL_USER_TIME);
 
-        Localreceiver= mMessageReceiver;
+        Localreceiver = mMessageReceiver;
         IntentFilter filter = new IntentFilter();
         filter.addAction("CONNECT_MESSAGE_LIVE");
-        LocalBroadcastManager.getInstance(this).registerReceiver(Localreceiver,filter);
+        LocalBroadcastManager.getInstance(this).registerReceiver(Localreceiver, filter);
 
 
         RL_ButtomSheet.setOnClickListener(new View.OnClickListener() {
@@ -153,19 +153,19 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                         LL_USER_TIME.setVisibility(View.GONE);
                     TXT_JoinTime.setText(getString(R.string.join) + OBJ.getString("message_joined"));
 
-                    if(OBJ.getInt("block_user_status")==1){
+                    if (OBJ.getInt("block_user_status") == 1) {
                         findViewById(R.id.LL_Buttom).setVisibility(View.GONE);
-                    }else {
+                    } else {
                         findViewById(R.id.LL_Buttom).setVisibility(View.VISIBLE);
                     }
 
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(IMGE_FROM);
 
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(USER_IMAGE);
-                     ARRAy = OBJ.getJSONArray("all_message_details");
+                    ARRAy = OBJ.getJSONArray("all_message_details");
 //                    if (messageAdapter == null) {
-                        messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
-                        LL_UserInfo.setAdapter(messageAdapter);
+                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
+                    LL_UserInfo.setAdapter(messageAdapter);
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
                     appLoader.Dismiss();
@@ -611,12 +611,12 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             Log.d("receiver", "ID message: " + MessageId);
 
             try {
-                if(MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("parent_id"))) {
+                if (MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("parent_id"))) {
                     ARRAy.getJSONObject(ARRAy.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
                     messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
                     LL_UserInfo.setAdapter(messageAdapter);
                     Log.d("receiver", "Got message:2 " + message);
-                }else {
+                } else {
                     /*
                     Integrate Notification Message if needed
                      */

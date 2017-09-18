@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -24,8 +25,10 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
@@ -103,10 +106,10 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             case "Two":
                 appLoader.Show();
 
-                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("sitter_user_id");
-                    setGetAPIPostData.setValues(SitterId);
-                    FirstPageData.add(setGetAPIPostData);
+                SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("sitter_user_id");
+                setGetAPIPostData.setValues(SitterId);
+                FirstPageData.add(setGetAPIPostData);
 
                 new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override

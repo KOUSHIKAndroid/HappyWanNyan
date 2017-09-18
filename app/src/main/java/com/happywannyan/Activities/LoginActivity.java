@@ -1,8 +1,8 @@
 package com.happywannyan.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.EditText;
@@ -10,8 +10,8 @@ import android.widget.EditText;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
-import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.AppDataHolder;
+import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
@@ -19,21 +19,22 @@ import com.happywannyan.Utils.Validation;
 
 import java.util.ArrayList;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-    EditText EDX_email,EDX_Password;
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    EditText EDX_email, EDX_Password;
     CardView Card_Login;
     AppLoader appLoader;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Card_Login=(CardView)findViewById(R.id.Card_Login);
+        Card_Login = (CardView) findViewById(R.id.Card_Login);
         Card_Login.setOnClickListener(this);
-        EDX_email=(EditText)findViewById(R.id.EDX_email);
+        EDX_email = (EditText) findViewById(R.id.EDX_email);
         EDX_email.setText("koushik.sarkar@esolzmail.com");
-        EDX_Password=(EditText)findViewById(R.id.EDX_Password);
+        EDX_Password = (EditText) findViewById(R.id.EDX_Password);
         EDX_Password.setText("123456");
-        appLoader=new AppLoader(LoginActivity.this);
+        appLoader = new AppLoader(LoginActivity.this);
 
         findViewById(R.id.FORGOT).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,16 +44,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
 
 
-
     }
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==FacebookActivity.FacebookResponse && resultCode==RESULT_OK)
-        {
-            startActivity(new Intent(LoginActivity.this,BaseActivity.class));
+        if (requestCode == FacebookActivity.FacebookResponse && resultCode == RESULT_OK) {
+            startActivity(new Intent(LoginActivity.this, BaseActivity.class));
             finish();
         }
 
@@ -61,36 +60,34 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onBackPressed() {
 //        super.onBackPressed();
-        startActivity(new Intent(LoginActivity.this,LoginChooserActivity.class));
+        startActivity(new Intent(LoginActivity.this, LoginChooserActivity.class));
         finish();
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.Card_Login:
 
-                if(!EDX_email.getText().toString().trim().equals("") &&
-                        !EDX_Password.getText().toString().trim().equalsIgnoreCase(""))
-                {
-                    if(!Validation.isValidEmail(EDX_email.getText()))
-                    {
+                if (!EDX_email.getText().toString().trim().equals("") &&
+                        !EDX_Password.getText().toString().trim().equalsIgnoreCase("")) {
+                    if (!Validation.isValidEmail(EDX_email.getText())) {
                         new MYAlert(LoginActivity.this).AlertOnly(getResources().getString(R.string.LoginAlertTitle), getResources().getString(R.string.Please_enter_valid_email), new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
-                                if(res ){
+                                if (res) {
                                     EDX_email.requestFocus();
                                 }
                             }
                         });
 
-                    }else {
-                        ArrayList<SetGetAPIPostData> setGetAPIPostDataArrayList =new ArrayList<>();
-                        SetGetAPIPostData setGetAPIPostData =new SetGetAPIPostData();
+                    } else {
+                        ArrayList<SetGetAPIPostData> setGetAPIPostDataArrayList = new ArrayList<>();
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
                         setGetAPIPostData.setPARAMS("user_email");
                         setGetAPIPostData.setValues(EDX_email.getText().toString());
-                            setGetAPIPostDataArrayList.add(setGetAPIPostData);
-                        setGetAPIPostData =new SetGetAPIPostData();
+                        setGetAPIPostDataArrayList.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
                         setGetAPIPostData.setPARAMS("password");
                         setGetAPIPostData.setValues(EDX_Password.getText().toString());
                         setGetAPIPostDataArrayList.add(setGetAPIPostData);
@@ -98,10 +95,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_login", setGetAPIPostDataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
-                                Loger.MSG("@@ LOGIN",Result);
-                                new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData,Result);
+                                Loger.MSG("@@ LOGIN", Result);
+                                new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData, Result);
                                 appLoader.Dismiss();
-                                startActivity(new Intent(LoginActivity.this,BaseActivity.class));
+                                startActivity(new Intent(LoginActivity.this, BaseActivity.class));
                                 finish();
 
 
@@ -119,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                             @Override
                             public void OnError(String Error) {
-                                Loger.Error("@@ LOGIN",Error);
+                                Loger.Error("@@ LOGIN", Error);
                                 appLoader.Dismiss();
                                 new MYAlert(LoginActivity.this).AlertOnly(getResources().getString(R.string.LoginAlertTitle), Error, new MYAlert.OnlyMessage() {
                                     @Override
@@ -130,13 +127,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         });
                     }
 
-                }else {
+                } else {
                     new MYAlert(LoginActivity.this).AlertOnly(getResources().getString(R.string.LoginAlertTitle), getResources().getString(R.string.Please_enter_both), new MYAlert.OnlyMessage() {
                         @Override
                         public void OnOk(boolean res) {
-                            if(res && EDX_email.getText().toString().trim().equals("")){
+                            if (res && EDX_email.getText().toString().trim().equals("")) {
                                 EDX_email.requestFocus();
-                            }else {
+                            } else {
                                 EDX_Password.requestFocus();
                             }
 

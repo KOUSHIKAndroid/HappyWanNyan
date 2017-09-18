@@ -32,7 +32,7 @@ import java.util.Locale;
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
     Context mContext;
     JSONArray Array;
-    String USerTime="",SenderTime="";
+    String USerTime = "", SenderTime = "";
 
 
     public MessageAdapter(Context mContext, JSONArray array) {
@@ -59,20 +59,19 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                     SFNFTextView TXT_User_Time = (SFNFTextView) UserItem.findViewById(R.id.TXT_User_Time);
                     SFNFTextView TXT_User_Message = (SFNFTextView) UserItem.findViewById(R.id.TXT_User_Message);
-                    ImageView IMG_User_Attach=(ImageView)UserItem.findViewById(R.id.IMG_User_Attach);
-                    ImageView IMG_User_MAP=(ImageView)UserItem.findViewById(R.id.IMG_User_MAP);
+                    ImageView IMG_User_Attach = (ImageView) UserItem.findViewById(R.id.IMG_User_Attach);
+                    ImageView IMG_User_MAP = (ImageView) UserItem.findViewById(R.id.IMG_User_MAP);
 
 
-                    if(!USerTime.equals(MsgItem.getString("postedon"))) {
-                        String[] words=MsgItem.getString("postedon").split("\\s");
-                        TXT_User_Time.setText(words[words.length-2]+" "+words[words.length-1]);
-                        USerTime=MsgItem.getString("postedon");
-                    }else {
+                    if (!USerTime.equals(MsgItem.getString("postedon"))) {
+                        String[] words = MsgItem.getString("postedon").split("\\s");
+                        TXT_User_Time.setText(words[words.length - 2] + " " + words[words.length - 1]);
+                        USerTime = MsgItem.getString("postedon");
+                    } else {
                         TXT_User_Time.setVisibility(View.GONE);
                     }
 
-                    if(MsgItem.getString("msg_lat").length()>0 && MsgItem.getString("msg_long").length()>0)
-                    {
+                    if (MsgItem.getString("msg_lat").length() > 0 && MsgItem.getString("msg_long").length() > 0) {
 
 
                         Picasso.with(mContext).load(MsgItem.getString("url_location")).into(IMG_User_MAP);
@@ -92,20 +91,18 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                                 }
 
 
-
                             }
                         });
 
-                    }else {
+                    } else {
                         IMG_User_MAP.setVisibility(View.GONE);
                     }
 
 
-                    if(MsgItem.getString("message_info").equals(""))
-                    {
+                    if (MsgItem.getString("message_info").equals("")) {
                         TXT_User_Message.setVisibility(View.GONE);
                         Glide.with(mContext).load(MsgItem.getString("message_attachment")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_Attach);
-                    }else {
+                    } else {
                         IMG_User_Attach.setVisibility(View.GONE);
                         TXT_User_Message.setText(MsgItem.getString("message_info"));
                     }
@@ -118,16 +115,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                     SFNFTextView TXT_Sender_message = (SFNFTextView) SenderItem.findViewById(R.id.TXT_Sender_message);
                     SFNFTextView TXT_sender_name_time = (SFNFTextView) SenderItem.findViewById(R.id.TXT_sender_name_time);
-                    ImageView IMG_Sender_Attach=(ImageView)SenderItem.findViewById(R.id.IMG_Sender_Attach);
-                    ImageView IMG_SenderUser=(ImageView)SenderItem.findViewById(R.id.IMG_SenderUser);
-                    ImageView IMG_Sender_Map=(ImageView)SenderItem.findViewById(R.id.IMG_Sender_Map);
-                    RelativeLayout RL_Sender=(RelativeLayout)SenderItem.findViewById(R.id.RL_Sender);
+                    ImageView IMG_Sender_Attach = (ImageView) SenderItem.findViewById(R.id.IMG_Sender_Attach);
+                    ImageView IMG_SenderUser = (ImageView) SenderItem.findViewById(R.id.IMG_SenderUser);
+                    ImageView IMG_Sender_Map = (ImageView) SenderItem.findViewById(R.id.IMG_Sender_Map);
+                    RelativeLayout RL_Sender = (RelativeLayout) SenderItem.findViewById(R.id.RL_Sender);
 
-                    Loger.MSG("@@ ITEM ",i+" - "+MsgItem);
+                    Loger.MSG("@@ ITEM ", i + " - " + MsgItem);
 
 
-                    if(MsgItem.getString("msg_lat").length()>0 && MsgItem.getString("msg_long").length()>0)
-                    {
+                    if (MsgItem.getString("msg_lat").length() > 0 && MsgItem.getString("msg_long").length() > 0) {
                         Picasso.with(mContext).load(MsgItem.getString("url_location")).into(IMG_Sender_Map);
 
 //                        Glide.with(mContext).load(MsgItem.getString("url_location")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_Sender_Map);
@@ -146,27 +142,26 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                             }
                         });
 
-                    }else {
+                    } else {
                         IMG_Sender_Map.setVisibility(View.GONE);
                     }
 
 
-                    if(!SenderTime.equals(MsgItem.getString("postedon"))){
-                        String[] words=MsgItem.getString("postedon").split("\\s");
-                        TXT_sender_name_time.setText(words[words.length-2]+" "+words[words.length-1]);
-                        SenderTime=MsgItem.getString("postedon");
+                    if (!SenderTime.equals(MsgItem.getString("postedon"))) {
+                        String[] words = MsgItem.getString("postedon").split("\\s");
+                        TXT_sender_name_time.setText(words[words.length - 2] + " " + words[words.length - 1]);
+                        SenderTime = MsgItem.getString("postedon");
                         Glide.with(mContext).load(MsgItem.getString("usersimage")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_SenderUser);
 
-                    }else {
+                    } else {
                         RL_Sender.setVisibility(View.GONE);
                         TXT_sender_name_time.setVisibility(View.GONE);
                     }
 
-                    if(MsgItem.getString("message_info").equals(""))
-                    {
+                    if (MsgItem.getString("message_info").equals("")) {
                         TXT_Sender_message.setVisibility(View.GONE);
                         Glide.with(mContext).load(MsgItem.getString("message_attachment")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_Sender_Attach);
-                    }else {
+                    } else {
                         IMG_Sender_Attach.setVisibility(View.GONE);
                         TXT_Sender_message.setText(MsgItem.getString("message_info"));
 

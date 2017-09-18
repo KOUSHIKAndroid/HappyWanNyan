@@ -50,12 +50,12 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
     JSONArray other_info;
     AppLoader appLoader;
     JSONArray PetService;
-    String PetTypeId = "",EditId="";
+    String PetTypeId = "", EditId = "";
     EditText TXTName;
     JSONArray SelectObject;
     RadioGroup Radio_Catspayed, Rad_catf;
     JSONArray Text, InputArea, Select, RadioArray;
-String TAG="@@@Edit";
+    String TAG = "@@@Edit";
     AlertDialog Dialog;
     ImageView img_pet;
     private static final int REQUEST_WRITE_PERMISSION1 = 3000;
@@ -75,15 +75,15 @@ String TAG="@@@Edit";
         TXTName = (EditText) findViewById(R.id.TXTName);
         Radio_Catspayed = (RadioGroup) findViewById(R.id.Radio_Catspayed);
         Rad_catf = (RadioGroup) findViewById(R.id.Rad_catf);
-         img_pet = (ImageView) findViewById(R.id.img_pet);
+        img_pet = (ImageView) findViewById(R.id.img_pet);
         findViewById(R.id.IMG_ARROW).setVisibility(View.INVISIBLE);
         new AppConstant(this);
 
         try {
-            MainObject=new JSONObject(getIntent().getStringExtra("Data"));
-            Loger.MSG(TAG,MainObject.toString());
-            PetTypeId=MainObject.getString("pet_type_id");
-            EditId=MainObject.getString("edit_id");
+            MainObject = new JSONObject(getIntent().getStringExtra("Data"));
+            Loger.MSG(TAG, MainObject.toString());
+            PetTypeId = MainObject.getString("pet_type_id");
+            EditId = MainObject.getString("edit_id");
             ((SFNFTextView) findViewById(R.id.Txt_type)).setText(MainObject.getString("pet_name"));
             Glide.with(getApplicationContext()).load(MainObject.getString("pet_image")).into(img_pet);
             SETDatField(MainObject);
@@ -350,8 +350,7 @@ String TAG="@@@Edit";
 
 
                         Radio_Catspayed.addView(btn);
-                        if(object.getInt("option_status")==1)
-                        {
+                        if (object.getInt("option_status") == 1) {
                             Radio_Catspayed.check(btn.getId());
                         }
                     }
@@ -370,10 +369,9 @@ String TAG="@@@Edit";
                         btn.setText(object.getString("option_name"));
 
                         Rad_catf.addView(btn);
-                        if(object.getInt("option_status")==1)
-                        {
+                        if (object.getInt("option_status") == 1) {
                             Rad_catf.check(btn.getId());
-                        }else {
+                        } else {
                             btn.setChecked(false);
                         }
 
@@ -383,10 +381,9 @@ String TAG="@@@Edit";
 
 
             ((SFNFTextView) findViewById(R.id.T4)).setText(SelectObject.getJSONObject(0).getString("input_name"));
-            for(int i=0;i<SelectObject.getJSONObject(0).getJSONArray("input_option").length();i++)
-            {
-                JSONObject obj=SelectObject.getJSONObject(0).getJSONArray("input_option").getJSONObject(i);
-                if(obj.getInt("option_status")==1) {
+            for (int i = 0; i < SelectObject.getJSONObject(0).getJSONArray("input_option").length(); i++) {
+                JSONObject obj = SelectObject.getJSONObject(0).getJSONArray("input_option").getJSONObject(i);
+                if (obj.getInt("option_status") == 1) {
                     ((SFNFTextView) findViewById(R.id.TXT_Year)).setText(obj.getString("option_name"));
                     ((SFNFTextView) findViewById(R.id.TXT_Year)).setTag(obj);
                     break;
@@ -394,12 +391,10 @@ String TAG="@@@Edit";
             }
 
 
-
             ((SFNFTextView) findViewById(R.id.T3)).setText(SelectObject.getJSONObject(1).getString("input_name"));
-            for(int i=0;i<SelectObject.getJSONObject(1).getJSONArray("input_option").length();i++)
-            {
-                JSONObject obj=SelectObject.getJSONObject(1).getJSONArray("input_option").getJSONObject(i);
-                if(obj.getInt("option_status")==1) {
+            for (int i = 0; i < SelectObject.getJSONObject(1).getJSONArray("input_option").length(); i++) {
+                JSONObject obj = SelectObject.getJSONObject(1).getJSONArray("input_option").getJSONObject(i);
+                if (obj.getInt("option_status") == 1) {
                     ((SFNFTextView) findViewById(R.id.TXT_Month)).setText(obj.getString("option_name"));
                     ((SFNFTextView) findViewById(R.id.TXT_Month)).setTag(obj);
                     break;
@@ -408,10 +403,9 @@ String TAG="@@@Edit";
 
 
             ((SFNFTextView) findViewById(R.id.T5)).setText(SelectObject.getJSONObject(2).getString("input_name"));
-            for(int i=0;i<SelectObject.getJSONObject(2).getJSONArray("input_option").length();i++)
-            {
-                JSONObject obj=SelectObject.getJSONObject(2).getJSONArray("input_option").getJSONObject(i);
-                if(obj.getInt("option_status")==1) {
+            for (int i = 0; i < SelectObject.getJSONObject(2).getJSONArray("input_option").length(); i++) {
+                JSONObject obj = SelectObject.getJSONObject(2).getJSONArray("input_option").getJSONObject(i);
+                if (obj.getInt("option_status") == 1) {
                     ((SFNFTextView) findViewById(R.id.TXT_gender)).setText(obj.getString("option_name"));
                     ((SFNFTextView) findViewById(R.id.TXT_gender)).setTag(obj);
                     break;
@@ -419,10 +413,9 @@ String TAG="@@@Edit";
             }
 
             ((SFNFTextView) findViewById(R.id.T6)).setText(SelectObject.getJSONObject(3).getString("input_name"));
-            for(int i=0;i<SelectObject.getJSONObject(3).getJSONArray("input_option").length();i++)
-            {
-                JSONObject obj=SelectObject.getJSONObject(3).getJSONArray("input_option").getJSONObject(i);
-                if(obj.getInt("option_status")==1) {
+            for (int i = 0; i < SelectObject.getJSONObject(3).getJSONArray("input_option").length(); i++) {
+                JSONObject obj = SelectObject.getJSONObject(3).getJSONArray("input_option").getJSONObject(i);
+                if (obj.getInt("option_status") == 1) {
                     ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setText(obj.getString("option_name"));
                     ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setTag(obj);
                     break;
@@ -430,13 +423,11 @@ String TAG="@@@Edit";
             }
 
 
-
             if (SelectObject.length() > 3) {
                 ((SFNFTextView) findViewById(R.id.A1)).setText(SelectObject.getJSONObject(4).getString("input_name"));
-                for(int i=0;i<SelectObject.getJSONObject(4).getJSONArray("input_option").length();i++)
-                {
-                    JSONObject obj=SelectObject.getJSONObject(4).getJSONArray("input_option").getJSONObject(i);
-                    if(obj.getInt("option_status")==1) {
+                for (int i = 0; i < SelectObject.getJSONObject(4).getJSONArray("input_option").length(); i++) {
+                    JSONObject obj = SelectObject.getJSONObject(4).getJSONArray("input_option").getJSONObject(i);
+                    if (obj.getInt("option_status") == 1) {
                         ((SFNFTextView) findViewById(R.id.TXT_petsize)).setText(obj.getString("option_name"));
                         ((SFNFTextView) findViewById(R.id.TXT_petsize)).setTag(obj);
                         break;
@@ -510,204 +501,199 @@ String TAG="@@@Edit";
         } else {
 
 
-                Log.i("TXTName", "TXTName");
-                ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                if (((EditText) findViewById(R.id.TXTName)).getText().toString().trim().equals("")) {
+            Log.i("TXTName", "TXTName");
+            ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+            if (((EditText) findViewById(R.id.TXTName)).getText().toString().trim().equals("")) {
 
-                    ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
-                    ((EditText) findViewById(R.id.TXTName)).requestFocus();
+                ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+                ((EditText) findViewById(R.id.TXTName)).requestFocus();
+            } else {
+                Log.i("TXT_Year", "TXT_Year");
+                ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+
+                if (((SFNFTextView) findViewById(R.id.TXT_Year)).getText().toString().trim().equals("")) {
+                    ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                 } else {
-                    Log.i("TXT_Year", "TXT_Year");
-                    ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-
-                    if (((SFNFTextView) findViewById(R.id.TXT_Year)).getText().toString().trim().equals("")) {
-                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+                    Log.i("TXT_Month", "TXT_Month");
+                    ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+                    if (((SFNFTextView) findViewById(R.id.TXT_Month)).getText().toString().trim().equals("")) {
+                        ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                     } else {
-                        Log.i("TXT_Month", "TXT_Month");
-                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                        if (((SFNFTextView) findViewById(R.id.TXT_Month)).getText().toString().trim().equals("")) {
-                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+                        Log.i("TXT_gender", "TXT_gender");
+                        ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+                        if (((SFNFTextView) findViewById(R.id.TXT_gender)).getText().toString().trim().equals("")) {
+                            ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                         } else {
-                            Log.i("TXT_gender", "TXT_gender");
-                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                            if (((SFNFTextView) findViewById(R.id.TXT_gender)).getText().toString().trim().equals("")) {
-                                ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+                            Log.i("TXT_breed", "TXT_breed");
+                            ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+                            if (((SFNFTextView) findViewById(R.id.TXT_petbreed)).getText().toString().trim().equals("")) {
+                                ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                             } else {
-                                Log.i("TXT_breed", "TXT_breed");
-                                ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                                if (((SFNFTextView) findViewById(R.id.TXT_petbreed)).getText().toString().trim().equals("")) {
-                                    ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+                                Log.i("TXT_petsize", "TXT_petsize");
+                                ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+                                if (((SFNFTextView) findViewById(R.id.TXT_petsize)).getText().toString().trim().equals("")
+                                        && findViewById(R.id.RL_petSize).getVisibility() == View.VISIBLE) {
+                                    ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                                 } else {
-                                    Log.i("TXT_petsize", "TXT_petsize");
-                                    ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                                    if (((SFNFTextView) findViewById(R.id.TXT_petsize)).getText().toString().trim().equals("")
-                                            && findViewById(R.id.RL_petSize).getVisibility() == View.VISIBLE) {
-                                        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+                                    ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+                                    if (((EditText) findViewById(R.id.EditDescribe)).getText().toString().trim().equals("")) {
+                                        ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+                                        ((EditText) findViewById(R.id.EditDescribe)).requestFocus();
                                     } else {
-                                        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                                        if (((EditText) findViewById(R.id.EditDescribe)).getText().toString().trim().equals("")) {
-                                            ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
-                                            ((EditText) findViewById(R.id.EditDescribe)).requestFocus();
+                                        ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+                                        InputArea = new JSONArray();
+                                        RadioArray = new JSONArray();
+                                        Text = new JSONArray();
+                                        Select = new JSONArray();
+
+
+                                        if (Radio_Catspayed.getCheckedRadioButtonId() == -1) {
+                                            // No item selected
+                                            Toast.makeText(this, "No item selected in pet friendly", Toast.LENGTH_SHORT).show();
                                         } else {
-                                            ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                                            InputArea = new JSONArray();
-                                            RadioArray = new JSONArray();
-                                            Text = new JSONArray();
-                                            Select = new JSONArray();
+                                            String radiovalue1 = ((RadioButton) findViewById(Radio_Catspayed.getCheckedRadioButtonId())).getTag().toString();
+                                            try {
+                                                RadioArray.put(new JSONObject(radiovalue1));
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
 
-
-                                            if (Radio_Catspayed.getCheckedRadioButtonId() == -1) {
-                                                // No item selected
-                                                Toast.makeText(this, "No item selected in pet friendly", Toast.LENGTH_SHORT).show();
+                                            if (findViewById(R.id.Radio2).getVisibility() == View.VISIBLE && Rad_catf.getCheckedRadioButtonId() == -1) {
+                                                Toast.makeText(this, "No item selected in pet spayed or neutered", Toast.LENGTH_SHORT).show();
                                             } else {
-                                                String radiovalue1 = ((RadioButton) findViewById(Radio_Catspayed.getCheckedRadioButtonId())).getTag().toString();
+
+                                                if (findViewById(R.id.Radio2).getVisibility() == View.VISIBLE) {
+                                                    String radiovalue2 = ((RadioButton) findViewById(Rad_catf.getCheckedRadioButtonId())).getTag().toString();
+                                                    try {
+                                                        RadioArray.put(new JSONObject(radiovalue2));
+                                                    } catch (JSONException e) {
+                                                        e.printStackTrace();
+                                                    }
+                                                }
+
+
                                                 try {
-                                                    RadioArray.put(new JSONObject(radiovalue1));
+                                                    JSONObject textarea = new JSONObject();
+                                                    textarea.put("id", new JSONObject(((EditText) findViewById(R.id.EditDescribe)).getTag().toString()).getString("id"));
+                                                    textarea.put("value", ((EditText) findViewById(R.id.EditDescribe)).getText());
+                                                    InputArea.put(textarea);
+
                                                 } catch (JSONException e) {
                                                     e.printStackTrace();
                                                 }
 
-                                                if (findViewById(R.id.Radio2).getVisibility() == View.VISIBLE && Rad_catf.getCheckedRadioButtonId() == -1) {
-                                                    Toast.makeText(this, "No item selected in pet spayed or neutered", Toast.LENGTH_SHORT).show();
-                                                } else {
 
-                                                    if(findViewById(R.id.Radio2).getVisibility() == View.VISIBLE) {
-                                                        String radiovalue2 = ((RadioButton) findViewById(Rad_catf.getCheckedRadioButtonId())).getTag().toString();
+                                                try {
+                                                    JSONObject textarea = new JSONObject();
+                                                    textarea.put("id", new JSONObject(((EditText) findViewById(R.id.TXTName)).getTag().toString()).getString("id"));
+                                                    textarea.put("value", ((EditText) findViewById(R.id.TXTName)).getText());
+                                                    Text.put(textarea);
+
+                                                } catch (JSONException e) {
+                                                    e.printStackTrace();
+                                                }
+
+
+                                                try {
+                                                    Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_gender)).getTag().toString()));
+                                                    Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_petbreed)).getTag().toString()));
+
+                                                    if (findViewById(R.id.RL_petSize).getVisibility() == View.VISIBLE) {
+                                                        Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_petsize)).getTag().toString()));
+                                                    }
+
+                                                    Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_Month)).getTag().toString()));
+                                                    Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_Year)).getTag().toString()));
+                                                } catch (JSONException e) {
+                                                    e.printStackTrace();
+                                                }
+
+
+                                                Loger.MSG(" Name-", Text.toString());
+                                                Loger.MSG(" TeatArea-", InputArea.toString());
+                                                Loger.MSG(" Radio-", RadioArray.toString());
+                                                Loger.MSG(" Select-", Select.toString());
+
+
+                                                ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+                                                SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("user_id");
+                                                Loger.MSG("user_id", "" + AppConstant.UserId);
+                                                setGetAPIPostData.setValues(AppConstant.UserId);
+                                                Params.add(setGetAPIPostData);
+
+                                                setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("langid");
+                                                setGetAPIPostData.setValues(AppConstant.Language);
+                                                Params.add(setGetAPIPostData);
+
+                                                setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("pettypeid");
+                                                setGetAPIPostData.setValues(AppConstant.Language);
+                                                Params.add(setGetAPIPostData);
+
+                                                setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("text");
+                                                setGetAPIPostData.setValues(Text.toString());
+                                                Params.add(setGetAPIPostData);
+
+                                                setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("textarea");
+                                                setGetAPIPostData.setValues(InputArea.toString());
+                                                Params.add(setGetAPIPostData);
+
+                                                setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("radio");
+                                                setGetAPIPostData.setValues(RadioArray.toString());
+                                                Params.add(setGetAPIPostData);
+
+                                                setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("select");
+                                                setGetAPIPostData.setValues(Select.toString());
+                                                Params.add(setGetAPIPostData);
+                                                setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("pettypeid");
+                                                setGetAPIPostData.setValues(PetTypeId);
+                                                Params.add(setGetAPIPostData);
+                                                setGetAPIPostData = new SetGetAPIPostData();
+                                                setGetAPIPostData.setPARAMS("edit_pet_id");
+                                                setGetAPIPostData.setValues(EditId);
+                                                Params.add(setGetAPIPostData);
+
+                                                ArrayList<File> PhotoFiles = new ArrayList<>();
+                                                PhotoFiles.add(photofile);
+                                                Loger.MSG("@@", " SIZE-" + PhotoFiles.size() + "");
+
+
+                                                appLoader.Show();
+                                                new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_addpetinfo?", Params, PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
+                                                    @Override
+                                                    public void OnSuccess(String Result) {
+                                                        appLoader.Dismiss();
                                                         try {
-                                                            RadioArray.put(new JSONObject(radiovalue2));
+                                                            new MYAlert(EditAnotherPetsActivity.this).AlertOnly(getString(R.string.add_another_pets), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
+                                                                @Override
+                                                                public void OnOk(boolean res) {
+                                                                    onBackPressed();
+                                                                }
+                                                            });
                                                         } catch (JSONException e) {
                                                             e.printStackTrace();
                                                         }
                                                     }
 
-
-
-                                                    try {
-                                                        JSONObject textarea = new JSONObject();
-                                                        textarea.put("id", new JSONObject(((EditText) findViewById(R.id.EditDescribe)).getTag().toString()).getString("id"));
-                                                        textarea.put("value", ((EditText) findViewById(R.id.EditDescribe)).getText());
-                                                        InputArea.put(textarea);
-
-                                                    } catch (JSONException e) {
-                                                        e.printStackTrace();
+                                                    @Override
+                                                    public void OnError(String Error, String Response) {
+                                                        Loger.MSG("Error", Error);
+                                                        appLoader.Dismiss();
                                                     }
 
-
-                                                    try {
-                                                        JSONObject textarea = new JSONObject();
-                                                        textarea.put("id", new JSONObject(((EditText) findViewById(R.id.TXTName)).getTag().toString()).getString("id"));
-                                                        textarea.put("value", ((EditText) findViewById(R.id.TXTName)).getText());
-                                                        Text.put(textarea);
-
-                                                    } catch (JSONException e) {
-                                                        e.printStackTrace();
+                                                    @Override
+                                                    public void OnError(String Error) {
+                                                        Loger.MSG("Error2", Error);
+                                                        appLoader.Dismiss();
                                                     }
-
-
-
-                                                    try {
-                                                        Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_gender)).getTag().toString()));
-                                                        Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_petbreed)).getTag().toString()));
-
-                                                        if(findViewById(R.id.RL_petSize).getVisibility()==View.VISIBLE) {
-                                                            Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_petsize)).getTag().toString()));
-                                                        }
-
-                                                        Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_Month)).getTag().toString()));
-                                                        Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_Year)).getTag().toString()));
-                                                    } catch (JSONException e) {
-                                                        e.printStackTrace();
-                                                    }
-
-
-
-                                                    Loger.MSG(" Name-", Text.toString());
-                                                    Loger.MSG(" TeatArea-", InputArea.toString());
-                                                    Loger.MSG(" Radio-", RadioArray.toString());
-                                                    Loger.MSG(" Select-", Select.toString());
-
-
-                                                    ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
-                                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("user_id");
-                                                    Loger.MSG("user_id", "" + AppConstant.UserId);
-                                                    setGetAPIPostData.setValues(AppConstant.UserId);
-                                                    Params.add(setGetAPIPostData);
-
-                                                    setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("langid");
-                                                    setGetAPIPostData.setValues(AppConstant.Language);
-                                                    Params.add(setGetAPIPostData);
-
-                                                    setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("pettypeid");
-                                                    setGetAPIPostData.setValues(AppConstant.Language);
-                                                    Params.add(setGetAPIPostData);
-
-                                                    setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("text");
-                                                    setGetAPIPostData.setValues(Text.toString());
-                                                    Params.add(setGetAPIPostData);
-
-                                                    setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("textarea");
-                                                    setGetAPIPostData.setValues(InputArea.toString());
-                                                    Params.add(setGetAPIPostData);
-
-                                                    setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("radio");
-                                                    setGetAPIPostData.setValues(RadioArray.toString());
-                                                    Params.add(setGetAPIPostData);
-
-                                                    setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("select");
-                                                    setGetAPIPostData.setValues(Select.toString());
-                                                    Params.add(setGetAPIPostData);
-                                                    setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("pettypeid");
-                                                    setGetAPIPostData.setValues(PetTypeId);
-                                                    Params.add(setGetAPIPostData);
-                                                    setGetAPIPostData = new SetGetAPIPostData();
-                                                    setGetAPIPostData.setPARAMS("edit_pet_id");
-                                                    setGetAPIPostData.setValues(EditId);
-                                                    Params.add(setGetAPIPostData);
-
-                                                    ArrayList<File> PhotoFiles=new ArrayList<>();
-                                                    PhotoFiles.add(photofile);
-                                                    Loger.MSG("@@"," SIZE-"+PhotoFiles.size()+"");
-
-
-
-                                                    appLoader.Show();
-                                                    new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_addpetinfo?", Params,  PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
-                                                        @Override
-                                                        public void OnSuccess(String Result) {
-                                                            appLoader.Dismiss();
-                                                            try {
-                                                                new MYAlert(EditAnotherPetsActivity.this).AlertOnly(getString(R.string.add_another_pets), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
-                                                                    @Override
-                                                                    public void OnOk(boolean res) {
-                                                                        onBackPressed();
-                                                                    }
-                                                                });
-                                                            } catch (JSONException e) {
-                                                                e.printStackTrace();
-                                                            }
-                                                        }
-
-                                                        @Override
-                                                        public void OnError(String Error, String Response) {
-                                                            Loger.MSG("Error", Error);
-                                                            appLoader.Dismiss();
-                                                        }
-
-                                                        @Override
-                                                        public void OnError(String Error) {
-                                                            Loger.MSG("Error2", Error);
-                                                            appLoader.Dismiss();
-                                                        }
-                                                    });
-                                                }
+                                                });
                                             }
                                         }
                                     }
@@ -716,6 +702,7 @@ String TAG="@@@Edit";
                         }
                     }
                 }
+            }
 
         }
     }
@@ -764,13 +751,12 @@ String TAG="@@@Edit";
     }
 
 
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
 
-        Loger.MSG("@@ CAM SERVICEID-",getIntent().getStringExtra("SERVICEID")+"\n USERID-"+getIntent().getStringExtra("USERID"));
+        Loger.MSG("@@ CAM SERVICEID-", getIntent().getStringExtra("SERVICEID") + "\n USERID-" + getIntent().getStringExtra("USERID"));
         if (photofile != null) {
             outState.putString(BITMAP_STORAGE_URL, photofile.getAbsolutePath().toString());
             Log.i("@@", "onSaveInstanceState : " + photofile.getAbsolutePath().toString());
@@ -784,18 +770,16 @@ String TAG="@@@Edit";
         try {
 
 
-
             if (photofile == null) {
 
                 photofile = new File(savedInstanceState.getString(BITMAP_STORAGE_URL));
                 Glide.with(getApplicationContext()).load(photofile).into(img_pet);
             }
             Log.i("@@", "onRestoreInstanceState : " + photofile.getAbsolutePath().toString());
-        }catch (NullPointerException e)
-        {}
+        } catch (NullPointerException e) {
+        }
 
     }
-
 
 
     @Override
@@ -804,9 +788,9 @@ String TAG="@@@Edit";
         super.onActivityResult(requestCode, resultCode, data);
 
 
-        if (requestCode == CAMERA_CAPTURE && resultCode == RESULT_OK && data != null ) {
+        if (requestCode == CAMERA_CAPTURE && resultCode == RESULT_OK && data != null) {
 
-            if(Build.VERSION.SDK_INT<Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
                 Uri selectedImageURI = data.getData();
                 try {
                     photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
@@ -814,12 +798,12 @@ String TAG="@@@Edit";
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }else {
+            } else {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
                 storeImage(photo);
             }
 
-        } else if (requestCode ==PICK_IMAGE_REQUEST  && resultCode == RESULT_OK && photofile != null) {
+        } else if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && photofile != null) {
             Uri selectedImageURI = data.getData();
             try {
                 photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
@@ -831,8 +815,9 @@ String TAG="@@@Edit";
             Toast.makeText(this, "Image Error", Toast.LENGTH_SHORT).show();
         }
     }
+
     private void storeImage(Bitmap image) {
-        File pictureFile =  new File(Environment.getExternalStoragePublicDirectory(
+        File pictureFile = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), "FREEWILDER");
         if (pictureFile == null) {
             Loger.MSG("@@",
@@ -840,9 +825,9 @@ String TAG="@@@Edit";
             return;
         }
         try {
-            Loger.MSG("@@","PIPATH"+pictureFile.getAbsolutePath());
-            String uriSting = (pictureFile.getAbsolutePath()  + System.currentTimeMillis() + ".jpg");
-            photofile=new File(uriSting);
+            Loger.MSG("@@", "PIPATH" + pictureFile.getAbsolutePath());
+            String uriSting = (pictureFile.getAbsolutePath() + System.currentTimeMillis() + ".jpg");
+            photofile = new File(uriSting);
             FileOutputStream fos = new FileOutputStream(uriSting);
             image.compress(Bitmap.CompressFormat.PNG, 90, fos);
             fos.close();
@@ -853,6 +838,7 @@ String TAG="@@@Edit";
             Loger.MSG("@@", "Error accessing file: " + e.getMessage());
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == REQUEST_WRITE_PERMISSION1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -874,7 +860,6 @@ String TAG="@@@Edit";
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
-
 
 
         Dialog.dismiss();
@@ -901,8 +886,6 @@ String TAG="@@@Edit";
         File image = File.createTempFile(imagefilename, ".jpg", storageDirectory);/////new approach
         return image;
     }
-
-
 
 
     @Override

@@ -1,6 +1,5 @@
 package com.happywannyan.Login_Slider;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -81,7 +80,7 @@ public class slider3 extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImageView imageView=(ImageView)view.findViewById(R.id.IMG);
+        ImageView imageView = (ImageView) view.findViewById(R.id.IMG);
         Glide.with(getActivity()).load(R.drawable.img_slider1).into(imageView);
     }
 

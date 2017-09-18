@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class SetGetSearchData {
 
-   JSONObject SearcItem;
+    JSONObject SearcItem;
 
     public JSONObject getSearcItem() {
         return SearcItem;

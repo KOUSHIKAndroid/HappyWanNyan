@@ -2,8 +2,8 @@ package com.happywannyan.Activities.profile;
 
 import android.app.DialogFragment;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -117,20 +117,17 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
                 setGetAPIPostData.setValues(((SFNFTextView) findViewById(R.id.EDX_no_of_pets)).toString());
                 setGetAPIPostDatas.add(setGetAPIPostData);
 
-                if(((SFNFTextView) findViewById(R.id.startdate)).getText().toString().trim().equals(""))
-                {
+                if (((SFNFTextView) findViewById(R.id.startdate)).getText().toString().trim().equals("")) {
                     ((SFNFTextView) findViewById(R.id.startdate)).setHintTextColor(Color.RED);
                     ((SFNFTextView) findViewById(R.id.startdate)).setHint(getString(R.string.pleaseselect));
-                }else if(((SFNFTextView) findViewById(R.id.AlterDate)).getText().toString().trim().equals(""))
-                {
+                } else if (((SFNFTextView) findViewById(R.id.AlterDate)).getText().toString().trim().equals("")) {
                     ((SFNFTextView) findViewById(R.id.AlterDate)).setHint(getString(R.string.pleaseselect));
                     ((SFNFTextView) findViewById(R.id.AlterDate)).setHintTextColor(Color.RED);
-                }else if(((EditText) findViewById(R.id.EDX_msg)).getText().toString().trim().equals(""))
-                {
+                } else if (((EditText) findViewById(R.id.EDX_msg)).getText().toString().trim().equals("")) {
                     ((EditText) findViewById(R.id.EDX_msg)).setHint(getString(R.string.please_enter_message));
                     ((EditText) findViewById(R.id.EDX_msg)).setHintTextColor(Color.RED);
                     ((EditText) findViewById(R.id.EDX_msg)).requestFocus();
-                }else {
+                } else {
 
 
                     appLoader.Show();

@@ -20,6 +20,7 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,11 +31,11 @@ import java.util.TimeZone;
 
 public class BookingDetailsActivity extends AppCompatActivity {
 
-   public  static  JSONObject jsonObject;
+    public static JSONObject jsonObject;
     JSONArray PetInfo;
     LinearLayout LLPetInfo, LL_FOOTER1, LL_FOOTER2;
     AppLoader appLoader;
-    int block_user_status=0;
+    int block_user_status = 0;
     TimeZone Tz;
     MYAlert MYALERT;
 
@@ -43,8 +44,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_details);
-        Tz=TimeZone.getDefault();
-        MYALERT=new MYAlert(this);
+        Tz = TimeZone.getDefault();
+        MYALERT = new MYAlert(this);
         findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,9 +53,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
             }
         });
 
-        Loger.MSG("## KOUSHIK","dfghjkl---------");
+        Loger.MSG("## KOUSHIK", "dfghjkl---------");
         try {
-            appLoader =new AppLoader(this);
+            appLoader = new AppLoader(this);
             jsonObject = new JSONObject(getIntent().getStringExtra("data"));
             PetInfo = jsonObject.getJSONArray("pet_details");
             ImageView profimage = (ImageView) findViewById(R.id.img_view);
@@ -64,7 +65,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
             LL_FOOTER1 = (LinearLayout) findViewById(R.id.LL_FOOTER1);
             LL_FOOTER2 = (LinearLayout) findViewById(R.id.LL_FOOTER2);
 
-            block_user_status=jsonObject.getJSONObject("booking_info").getInt("block_user_status");
+            block_user_status = jsonObject.getJSONObject("booking_info").getInt("block_user_status");
 
             Glide.with(this).load(jsonObject.getJSONObject("users_profile").getString("booked_user_image")).into(profimage);
             ((SFNFTextView) findViewById(R.id.tv_name)).setText(jsonObject.getJSONObject("users_profile").getString("who_booked"));
@@ -78,11 +79,10 @@ public class BookingDetailsActivity extends AppCompatActivity {
             ((SFNFBoldTextView) findViewById(R.id.tv_service_value)).setText(jsonObject.getJSONObject("booking_info").getString("booking_service"));
 
 
-
             if (jsonObject.getJSONObject("booking_info").has("accept_button") && !jsonObject.getJSONObject("booking_info").getString("accept_button").trim().equals("")) {
 
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
-                ((CardView)ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
+                ((CardView) ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("accept_button"));
                 LL_FOOTER1.addView(ButtomView);
                 ButtomView.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +96,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
             if (jsonObject.getJSONObject("booking_info").has("deny_button") && !jsonObject.getJSONObject("booking_info").getString("deny_button").trim().equals("")) {
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("deny_button"));
-                if (LL_FOOTER1.getChildCount() <2)
+                if (LL_FOOTER1.getChildCount() < 2)
                     LL_FOOTER1.addView(ButtomView);
                 else
                     LL_FOOTER2.addView(ButtomView);
@@ -117,7 +117,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             if (jsonObject.getJSONObject("booking_info").has("send_msg_status") && !jsonObject.getJSONObject("booking_info").getString("send_msg_status").trim().equals("")) {
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
-                ((CardView)ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
+                ((CardView) ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("send_msg_status"));
                 if (LL_FOOTER1.getChildCount() < 2)
                     LL_FOOTER1.addView(ButtomView);
@@ -128,21 +128,19 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try {
-                            if(jsonObject.getJSONObject("booking_info").has("send_msg_show") && jsonObject.getJSONObject("booking_info").getInt("send_msg_show")==0) {
+                            if (jsonObject.getJSONObject("booking_info").has("send_msg_show") && jsonObject.getJSONObject("booking_info").getInt("send_msg_show") == 0) {
                                 if (block_user_status == 0) {
                                     Send_Message(jsonObject.getJSONObject("booking_info").getString("send_msg_status"), getString(R.string.please_enter_message), getString(R.string.submit)
                                             , jsonObject.getJSONObject("booking_info").getString("id"), jsonObject.getJSONObject("booking_info").getString("booking_type"));
-                                }
-                                else {
-                                    MYALERT.AlertOnly(getResources().getString(R.string.message),getResources().getString(R.string.unable_to_send_message), new MYAlert.OnlyMessage() {
+                                } else {
+                                    MYALERT.AlertOnly(getResources().getString(R.string.message), getResources().getString(R.string.unable_to_send_message), new MYAlert.OnlyMessage() {
                                         @Override
                                         public void OnOk(boolean res) {
 
                                         }
                                     });
                                 }
-                            }
-                            else {
+                            } else {
                                 GotoMessage(jsonObject.getJSONObject("booking_info").getString("message_id"));
                             }
                         } catch (JSONException e) {
@@ -156,7 +154,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
             if (jsonObject.getJSONObject("booking_info").has("delete_button") && !jsonObject.getJSONObject("booking_info").getString("delete_button").trim().equals("")) {
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("delete_button"));
-                if (LL_FOOTER1.getChildCount() <2)
+                if (LL_FOOTER1.getChildCount() < 2)
                     LL_FOOTER1.addView(ButtomView);
                 else
                     LL_FOOTER2.addView(ButtomView);
@@ -172,7 +170,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
             if (jsonObject.getJSONObject("booking_info").has("review_status") && !jsonObject.getJSONObject("booking_info").getString("review_status").trim().equals("")) {
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("review_status"));
-                if (LL_FOOTER1.getChildCount() <2)
+                if (LL_FOOTER1.getChildCount() < 2)
                     LL_FOOTER1.addView(ButtomView);
                 else
                     LL_FOOTER2.addView(ButtomView);
@@ -187,7 +185,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             if (jsonObject.getJSONObject("booking_info").has("cancel_status") && !jsonObject.getJSONObject("booking_info").getString("cancel_status").trim().equals("")) {
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
-                ((CardView)ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
+                ((CardView) ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("cancel_status"));
                 if (LL_FOOTER1.getChildCount() < 2)
                     LL_FOOTER1.addView(ButtomView);
@@ -198,10 +196,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try {
-                            if(jsonObject.getJSONObject("booking_info").getInt("refund_status")==0)
-                            CancelStatusWork(jsonObject.getJSONObject("booking_info").getString("booking_id"),jsonObject.getJSONObject("booking_info").getString("booking_type"));
-                            if(jsonObject.getJSONObject("booking_info").getInt("refund_status")==1)
-                            {
+                            if (jsonObject.getJSONObject("booking_info").getInt("refund_status") == 0)
+                                CancelStatusWork(jsonObject.getJSONObject("booking_info").getString("booking_id"), jsonObject.getJSONObject("booking_info").getString("booking_type"));
+                            if (jsonObject.getJSONObject("booking_info").getInt("refund_status") == 1) {
                                 CancelWith_Reasons();
                             }
 
@@ -216,25 +213,19 @@ public class BookingDetailsActivity extends AppCompatActivity {
             if (jsonObject.getJSONObject("booking_info").has("cancel_status_button") && !jsonObject.getJSONObject("booking_info").getString("cancel_status_button").trim().equals("")) {
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
                 ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(jsonObject.getJSONObject("booking_info").getString("cancel_status_button"));
-                if (LL_FOOTER1.getChildCount() <2)
+                if (LL_FOOTER1.getChildCount() < 2)
                     LL_FOOTER1.addView(ButtomView);
                 else
                     LL_FOOTER2.addView(ButtomView);
 
 
-                ((CardView)ButtomView.findViewById(R.id.Card_AddRevw)).setOnClickListener(new View.OnClickListener() {
+                ((CardView) ButtomView.findViewById(R.id.Card_AddRevw)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
                     }
                 });
             }
-
-
-
-
-
-
 
 
             if (PetInfo.length() <= 0) {
@@ -251,48 +242,48 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     ImageView petimage = (ImageView) PetView.findViewById(R.id.img_view_pets);
                     Glide.with(this).load(PetObj.getString("pet_image")).into(petimage);
 
-                    if(PetObj.getJSONArray("pet_info").length()>0) {
+                    if (PetObj.getJSONArray("pet_info").length() > 0) {
 
                         ((SFNFTextView) PetView.findViewById(R.id.tv_describe_name)).setText(PetObj.getJSONArray("pet_info").getJSONObject(0).getString("name"));
                         ((SFNFTextView) PetView.findViewById(R.id.tv_describe_value)).setText(PetObj.getJSONArray("pet_info").getJSONObject(0).getString("value"));
 
                     }
-                    if(PetObj.getJSONArray("pet_info").length()>1) {
+                    if (PetObj.getJSONArray("pet_info").length() > 1) {
                         ((SFNFTextView) PetView.findViewById(R.id.tv_name_pet)).setText(PetObj.getJSONArray("pet_info").getJSONObject(1).getString("name"));
                         ((SFNFTextView) PetView.findViewById(R.id.tv_pet_name_value)).setText(PetObj.getJSONArray("pet_info").getJSONObject(1).getString("value"));
                     }
 
-                    if(PetObj.getJSONArray("pet_info").length()>2) {
+                    if (PetObj.getJSONArray("pet_info").length() > 2) {
                         ((SFNFTextView) PetView.findViewById(R.id.tv_question_one)).setText(PetObj.getJSONArray("pet_info").getJSONObject(2).getString("name"));
                         ((SFNFTextView) PetView.findViewById(R.id.tv_answer_one)).setText(PetObj.getJSONArray("pet_info").getJSONObject(2).getString("value"));
                     }
 
-                    if(PetObj.getJSONArray("pet_info").length()>3) {
+                    if (PetObj.getJSONArray("pet_info").length() > 3) {
                         ((SFNFTextView) PetView.findViewById(R.id.tv_question_two)).setText(PetObj.getJSONArray("pet_info").getJSONObject(3).getString("name"));
                         ((SFNFTextView) PetView.findViewById(R.id.tv_answer_two)).setText(PetObj.getJSONArray("pet_info").getJSONObject(3).getString("value"));
                     }
 
-                    if(PetObj.getJSONArray("pet_info").length()>4) {
+                    if (PetObj.getJSONArray("pet_info").length() > 4) {
                         ((SFNFTextView) PetView.findViewById(R.id.tv_month_lbl)).setText(PetObj.getJSONArray("pet_info").getJSONObject(4).getString("name"));
                         ((SFNFBoldTextView) PetView.findViewById(R.id.tv_month)).setText(PetObj.getJSONArray("pet_info").getJSONObject(4).getString("value"));
                     }
 
-                    if(PetObj.getJSONArray("pet_info").length()>5) {
+                    if (PetObj.getJSONArray("pet_info").length() > 5) {
                         ((SFNFTextView) PetView.findViewById(R.id.tv_breed_lbl)).setText(PetObj.getJSONArray("pet_info").getJSONObject(5).getString("name"));
                         ((SFNFBoldTextView) PetView.findViewById(R.id.tv_breed)).setText(PetObj.getJSONArray("pet_info").getJSONObject(5).getString("value"));
                     }
 
-                    if(PetObj.getJSONArray("pet_info").length()>6) {
+                    if (PetObj.getJSONArray("pet_info").length() > 6) {
                         ((SFNFTextView) PetView.findViewById(R.id.tv_gender_lbl)).setText(PetObj.getJSONArray("pet_info").getJSONObject(6).getString("name"));
                         ((SFNFBoldTextView) PetView.findViewById(R.id.tv_gender)).setText(PetObj.getJSONArray("pet_info").getJSONObject(6).getString("value"));
                     }
 
-                    if(PetObj.getJSONArray("pet_info").length()>7) {
+                    if (PetObj.getJSONArray("pet_info").length() > 7) {
                         ((SFNFTextView) PetView.findViewById(R.id.year_lbl)).setText(PetObj.getJSONArray("pet_info").getJSONObject(7).getString("name"));
                         ((SFNFBoldTextView) PetView.findViewById(R.id.tv_year)).setText(PetObj.getJSONArray("pet_info").getJSONObject(7).getString("value"));
                     }
 
-                    if(PetObj.getJSONArray("pet_info").length()>8) {
+                    if (PetObj.getJSONArray("pet_info").length() > 8) {
                         ((SFNFTextView) PetView.findViewById(R.id.tv_size_name)).setText(PetObj.getJSONArray("pet_info").getJSONObject(8).getString("name"));
                         ((SFNFBoldTextView) PetView.findViewById(R.id.tv_size_value)).setText(PetObj.getJSONArray("pet_info").getJSONObject(8).getString("value"));
                     }
@@ -317,19 +308,19 @@ public class BookingDetailsActivity extends AppCompatActivity {
     }
 
     private void CancelWith_Reasons() {
-        Loger.MSG("@@BBB",jsonObject+" 33");
+        Loger.MSG("@@BBB", jsonObject + " 33");
 
-        Intent intent=new Intent(this,CancelBookingWithReasonsActivity.class);
-        intent.putExtra("OBJECTDATA",jsonObject+"");
+        Intent intent = new Intent(this, CancelBookingWithReasonsActivity.class);
+        intent.putExtra("OBJECTDATA", jsonObject + "");
         startActivity(intent);
 
     }
 
     private void GotoMessage(String MsgId) {
 
-        Intent intent=new Intent(this, MessageDetailsPageActivity.class);
+        Intent intent = new Intent(this, MessageDetailsPageActivity.class);
         intent.putExtra("receiver_id", AppConstant.UserId);
-        intent.putExtra("message_id",MsgId);
+        intent.putExtra("message_id", MsgId);
         startActivity(intent);
 
 
@@ -338,22 +329,21 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void AcceptButton() {
 
         try {
-            if(jsonObject.getJSONObject("booking_info").getString("accept_type_booking").equals("N"))
-            {
+            if (jsonObject.getJSONObject("booking_info").getString("accept_type_booking").equals("N")) {
 //                Normal Confimation Accpet
                 MYALERT.AlertAccept_Cancel(getString(R.string.accept), getString(R.string.confirm_somple_msg), new MYAlert.OnOkCancel() {
                     @Override
                     public void OnOk() {
                         appLoader.Show();
-                        HashMap<String,String>Params=new HashMap<String, String>();
+                        HashMap<String, String> Params = new HashMap<String, String>();
                         Params.put("user_id", AppConstant.UserId);
                         try {
-                            Params.put("booking_id",jsonObject.getJSONObject("booking_info").getString("id"));
+                            Params.put("booking_id", jsonObject.getJSONObject("booking_info").getString("id"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                         Params.put("langid", AppConstant.Language);
-                        Params.put("user_timezone",TimeZone.getDefault().getID());
+                        Params.put("user_timezone", TimeZone.getDefault().getID());
 
                         new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
                             @Override
@@ -408,10 +398,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 });
 
 
-
-            }else  if(jsonObject.getJSONObject("booking_info").getString("accept_type_booking").equals("P")){
+            } else if (jsonObject.getJSONObject("booking_info").getString("accept_type_booking").equals("P")) {
 //                Open Popup With pet_info_section and  users_payment_section from JSON
-                startActivity(new Intent(this,AcceptBookingActivity.class));
+                startActivity(new Intent(this, AcceptBookingActivity.class));
 
             }
         } catch (JSONException e) {
@@ -423,14 +412,14 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void Deny_Button(String BookingID) {
         appLoader.Show();
 
-        String URL= AppConstant.BASEURL+"booking_deny_confirm?user_id="+ AppConstant.UserId+"&booking_id="+BookingID;
+        String URL = AppConstant.BASEURL + "booking_deny_confirm?user_id=" + AppConstant.UserId + "&booking_id=" + BookingID;
         new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
 
-                String Message="";
+                String Message = "";
                 try {
-                    Message=new JSONObject(Result).getString("message");
+                    Message = new JSONObject(Result).getString("message");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -463,25 +452,25 @@ public class BookingDetailsActivity extends AppCompatActivity {
             public void OnEditSubmit(String Messge) {
 
                 appLoader.Show();
-                HashMap<String,String> Params=new HashMap<String, String>();
+                HashMap<String, String> Params = new HashMap<String, String>();
 //                try {
 //                    Params.put("booking_id",jsonObject.getJSONObject("booking_info").getString("id"));
 //                } catch (JSONException e) {
 //                    e.printStackTrace();
 //                }
-                Params.put("booking_id",BookingID);
-                Params.put("message",Messge);
+                Params.put("booking_id", BookingID);
+                Params.put("message", Messge);
                 Params.put("user_id", AppConstant.UserId);
                 Params.put("lang_id", AppConstant.Language);
-                Params.put("user_timezone",Tz.getID());
+                Params.put("user_timezone", Tz.getID());
 
                 new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
-                        String Message="";
+                        String Message = "";
                         try {
-                            Message=new JSONObject(Result).getString("message");
+                            Message = new JSONObject(Result).getString("message");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -534,9 +523,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
     private void Review_Status() {
         try {
-            Intent intent=new Intent(this,AddReviewActivity.class);
-            intent.putExtra("B_ID",jsonObject.getJSONObject("booking_info").getString("booking_id"));
-            startActivity(new Intent(this,AddReviewActivity.class));
+            Intent intent = new Intent(this, AddReviewActivity.class);
+            intent.putExtra("B_ID", jsonObject.getJSONObject("booking_info").getString("booking_id"));
+            startActivity(new Intent(this, AddReviewActivity.class));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -544,26 +533,26 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
     }
 
-    private void CancelStatusWork(final String BookingID,final String BookingType) {
+    private void CancelStatusWork(final String BookingID, final String BookingType) {
 
         new MYAlert(BookingDetailsActivity.this).AlertOkCancel(getString(R.string.cancel), getString(R.string.do_you_want_to_cancel_booking), new MYAlert.OnOkCancel() {
             @Override
             public void OnOk() {
                 appLoader.Show();
-                HashMap<String,String> Params=new HashMap<String, String>();
-                Params.put("booking_id",BookingID);
-                Params.put("booking_type",BookingType);
+                HashMap<String, String> Params = new HashMap<String, String>();
+                Params.put("booking_id", BookingID);
+                Params.put("booking_type", BookingType);
                 Params.put("user_id", AppConstant.UserId);
                 Params.put("lang_id", AppConstant.Language);
-                Params.put("user_timezone",Tz.getID());
+                Params.put("user_timezone", Tz.getID());
 
                 new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
-                        String Message="";
+                        String Message = "";
                         try {
-                            Message=new JSONObject(Result).getString("message");
+                            Message = new JSONObject(Result).getString("message");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -600,7 +589,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                     }
                 });
-
 
 
             }

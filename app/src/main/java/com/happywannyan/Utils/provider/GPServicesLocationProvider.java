@@ -228,8 +228,7 @@ public class GPServicesLocationProvider extends LocationProvider implements Loca
         try {
             LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, configuration.getLocationRequest(), this);
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
     }

@@ -38,7 +38,6 @@ import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
-
 import com.happywannyan.R;
 
 import java.util.HashMap;
@@ -594,6 +593,7 @@ public class RangeBar extends View {
         mPinColor = pinColor;
         createPins();
     }
+
     /**
      * Set the color of the text within the pin.
      *
@@ -707,12 +707,12 @@ public class RangeBar extends View {
     public void setRangePinsByIndices(int leftPinIndex, int rightPinIndex) {
         if (indexOutOfRange(leftPinIndex, rightPinIndex)) {
             Log.e(TAG,
-                    "Pin index left " + leftPinIndex + ", or right "+rightPinIndex
+                    "Pin index left " + leftPinIndex + ", or right " + rightPinIndex
                             + " is out of bounds. Check that it is greater than the minimum ("
                             + mTickStart + ") and less than the maximum value ("
                             + mTickEnd + ")");
             throw new IllegalArgumentException(
-                    "Pin index left " + leftPinIndex + ", or right "+rightPinIndex
+                    "Pin index left " + leftPinIndex + ", or right " + rightPinIndex
                             + " is out of bounds. Check that it is greater than the minimum ("
                             + mTickStart + ") and less than the maximum value ("
                             + mTickEnd + ")");
@@ -780,15 +780,15 @@ public class RangeBar extends View {
     public void setRangePinsByValue(float leftPinValue, float rightPinValue) {
         if (valueOutOfRange(leftPinValue, rightPinValue)) {
             Log.e(TAG,
-                    "Pin value left " + leftPinValue + ", or right "+rightPinValue
+                    "Pin value left " + leftPinValue + ", or right " + rightPinValue
                             + " is out of bounds. Check that it is greater than the minimum ("
                             + mTickStart + ") and less than the maximum value ("
                             + mTickEnd + ")");
             throw new IllegalArgumentException(
-                            "Pin value left " + leftPinValue + ", or right "+rightPinValue
-                                    + " is out of bounds. Check that it is greater than the minimum ("
-                                    + mTickStart + ") and less than the maximum value ("
-                                    + mTickEnd + ")");
+                    "Pin value left " + leftPinValue + ", or right " + rightPinValue
+                            + " is out of bounds. Check that it is greater than the minimum ("
+                            + mTickStart + ") and less than the maximum value ("
+                            + mTickEnd + ")");
         } else {
             if (mFirstSetTickCount) {
                 mFirstSetTickCount = false;
@@ -878,14 +878,13 @@ public class RangeBar extends View {
     }
 
     @Override
-    public void setEnabled(boolean enabled){
-        if(!enabled) {
+    public void setEnabled(boolean enabled) {
+        if (!enabled) {
             mBarColor = DEFAULT_BAR_COLOR;
             mConnectingLineColor = DEFAULT_BAR_COLOR;
             mCircleColor = DEFAULT_BAR_COLOR;
             mTickColor = DEFAULT_BAR_COLOR;
-        }
-        else{
+        } else {
             mBarColor = mActiveBarColor;
             mConnectingLineColor = mActiveConnectingLineColor;
             mCircleColor = mActiveCircleColor;
@@ -1280,8 +1279,8 @@ public class RangeBar extends View {
      */
     private String getPinValue(int tickIndex) {
         float tickValue = (tickIndex == (mTickCount - 1))
-                            ? mTickEnd
-                            : (tickIndex * mTickInterval) + mTickStart;
+                ? mTickEnd
+                : (tickIndex * mTickInterval) + mTickStart;
         String xValue = mTickMap.get(tickValue);
         if (xValue == null) {
             if (tickValue == Math.ceil(tickValue)) {

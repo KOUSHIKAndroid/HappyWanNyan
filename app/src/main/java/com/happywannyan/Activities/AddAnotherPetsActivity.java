@@ -22,6 +22,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -32,9 +33,11 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.ImageFilePath;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -72,9 +75,9 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         TXTName = (EditText) findViewById(R.id.TXTName);
         Radio_Catspayed = (RadioGroup) findViewById(R.id.Radio_Catspayed);
         Rad_catf = (RadioGroup) findViewById(R.id.Rad_catf);
-         img_pet = (ImageView) findViewById(R.id.img_pet);
+        img_pet = (ImageView) findViewById(R.id.img_pet);
         new AppConstant(this);
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -423,7 +426,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
             Log.i("Txt_type", "Txt_type");
         } else {
 
-            if (photofile==null) {
+            if (photofile == null) {
                 Toast.makeText(this, "Select pet image", Toast.LENGTH_SHORT).show();
             } else {
 
@@ -438,7 +441,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                     ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
 
                     if (((SFNFTextView) findViewById(R.id.TXT_Year)).getText().toString().trim().equals("")) {
-                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed     ));
+                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                     } else {
                         Log.i("TXT_Month", "TXT_Month");
                         ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
@@ -461,7 +464,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                             && findViewById(R.id.RL_petSize).getVisibility() == View.VISIBLE) {
                                         ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                                     } else {
-                                        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color                                    .colorTextDarkGray));
+                                        ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                                         if (((EditText) findViewById(R.id.EditDescribe)).getText().toString().trim().equals("")) {
                                             ((EditText) findViewById(R.id.EditDescribe)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                                             ((EditText) findViewById(R.id.EditDescribe)).requestFocus();
@@ -476,7 +479,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                             if (Radio_Catspayed.getCheckedRadioButtonId() == -1) {
                                                 // No item selected
                                                 Log.i("radiovalue", "No item selected");
-                                                Toast.makeText(this, getString(R.string.pleaseselect)+" "+((SFNFTextView) findViewById(R.id.B1)).getText(), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(this, getString(R.string.pleaseselect) + " " + ((SFNFTextView) findViewById(R.id.B1)).getText(), Toast.LENGTH_SHORT).show();
                                             } else {
                                                 String radiovalue1 = ((RadioButton) findViewById(Radio_Catspayed.getCheckedRadioButtonId())).getTag().toString();
                                                 try {
@@ -487,10 +490,10 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
 
                                                 if (findViewById(R.id.Radio2).getVisibility() == View.VISIBLE && Rad_catf.getCheckedRadioButtonId() == -1) {
                                                     Log.i("radiovalue", "No item selected");
-                                                    Toast.makeText(this, getString(R.string.pleaseselect)+" "+((SFNFTextView) findViewById(R.id.C1)).getText(), Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(this, getString(R.string.pleaseselect) + " " + ((SFNFTextView) findViewById(R.id.C1)).getText(), Toast.LENGTH_SHORT).show();
                                                 } else {
 
-                                                    if(findViewById(R.id.Radio2).getVisibility() == View.VISIBLE) {
+                                                    if (findViewById(R.id.Radio2).getVisibility() == View.VISIBLE) {
                                                         String radiovalue2 = ((RadioButton) findViewById(Rad_catf.getCheckedRadioButtonId())).getTag().toString();
                                                         try {
                                                             RadioArray.put(new JSONObject(radiovalue2));
@@ -498,7 +501,6 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                                             e.printStackTrace();
                                                         }
                                                     }
-
 
 
                                                     try {
@@ -523,12 +525,11 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                                     }
 
 
-
                                                     try {
                                                         Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_gender)).getTag().toString()));
                                                         Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_petbreed)).getTag().toString()));
 
-                                                        if(findViewById(R.id.RL_petSize).getVisibility()==View.VISIBLE) {
+                                                        if (findViewById(R.id.RL_petSize).getVisibility() == View.VISIBLE) {
                                                             Select.put(new JSONObject(((SFNFTextView) findViewById(R.id.TXT_petsize)).getTag().toString()));
                                                         }
 
@@ -537,7 +538,6 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                                     } catch (JSONException e) {
                                                         e.printStackTrace();
                                                     }
-
 
 
                                                     Loger.MSG(" Name-", Text.toString());
@@ -587,14 +587,13 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                                     setGetAPIPostData.setValues(PetTypeId);
                                                     Params.add(setGetAPIPostData);
 
-                                                    ArrayList<File> PhotoFiles=new ArrayList<>();
+                                                    ArrayList<File> PhotoFiles = new ArrayList<>();
                                                     PhotoFiles.add(photofile);
-                                                    Loger.MSG("@@"," SIZE-"+PhotoFiles.size()+"");
-
+                                                    Loger.MSG("@@", " SIZE-" + PhotoFiles.size() + "");
 
 
                                                     appLoader.Show();
-                                                    new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_addpetinfo?", Params,  PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
+                                                    new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_addpetinfo?", Params, PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
                                                         @Override
                                                         public void OnSuccess(String Result) {
                                                             appLoader.Dismiss();
@@ -679,13 +678,12 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
     }
 
 
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
 
-        Loger.MSG("@@ CAM SERVICEID-",getIntent().getStringExtra("SERVICEID")+"\n USERID-"+getIntent().getStringExtra("USERID"));
+        Loger.MSG("@@ CAM SERVICEID-", getIntent().getStringExtra("SERVICEID") + "\n USERID-" + getIntent().getStringExtra("USERID"));
         if (photofile != null) {
             outState.putString(BITMAP_STORAGE_URL, photofile.getAbsolutePath().toString());
             Log.i("@@", "onSaveInstanceState : " + photofile.getAbsolutePath().toString());
@@ -699,18 +697,16 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         try {
 
 
-
             if (photofile == null) {
 
                 photofile = new File(savedInstanceState.getString(BITMAP_STORAGE_URL));
                 Glide.with(getApplicationContext()).load(photofile).into(img_pet);
             }
             Log.i("@@", "onRestoreInstanceState : " + photofile.getAbsolutePath().toString());
-        }catch (NullPointerException e)
-        {}
+        } catch (NullPointerException e) {
+        }
 
     }
-
 
 
     @Override
@@ -719,9 +715,9 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         super.onActivityResult(requestCode, resultCode, data);
 
 
-        if (requestCode == CAMERA_CAPTURE && resultCode == RESULT_OK && data != null ) {
+        if (requestCode == CAMERA_CAPTURE && resultCode == RESULT_OK && data != null) {
 
-            if(Build.VERSION.SDK_INT<Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
                 Uri selectedImageURI = data.getData();
                 try {
                     photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
@@ -729,12 +725,12 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }else {
+            } else {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
                 storeImage(photo);
             }
 
-        } else if (requestCode ==PICK_IMAGE_REQUEST  && resultCode == RESULT_OK && photofile != null) {
+        } else if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && photofile != null) {
             Uri selectedImageURI = data.getData();
             try {
                 photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
@@ -746,8 +742,9 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
             Toast.makeText(this, "Image Error", Toast.LENGTH_SHORT).show();
         }
     }
+
     private void storeImage(Bitmap image) {
-        File pictureFile =  new File(Environment.getExternalStoragePublicDirectory(
+        File pictureFile = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), "FREEWILDER");
         if (pictureFile == null) {
             Loger.MSG("@@",
@@ -755,9 +752,9 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
             return;
         }
         try {
-            Loger.MSG("@@","PIPATH"+pictureFile.getAbsolutePath());
-            String uriSting = (pictureFile.getAbsolutePath()  + System.currentTimeMillis() + ".jpg");
-            photofile=new File(uriSting);
+            Loger.MSG("@@", "PIPATH" + pictureFile.getAbsolutePath());
+            String uriSting = (pictureFile.getAbsolutePath() + System.currentTimeMillis() + ".jpg");
+            photofile = new File(uriSting);
             FileOutputStream fos = new FileOutputStream(uriSting);
             image.compress(Bitmap.CompressFormat.PNG, 90, fos);
             fos.close();
@@ -768,6 +765,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
             Loger.MSG("@@", "Error accessing file: " + e.getMessage());
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == REQUEST_WRITE_PERMISSION1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -789,7 +787,6 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
-
 
 
         Dialog.dismiss();
@@ -816,8 +813,6 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         File image = File.createTempFile(imagefilename, ".jpg", storageDirectory);/////new approach
         return image;
     }
-
-
 
 
     @Override

@@ -170,13 +170,13 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case CALL_CALENDER:
-                if(resultCode==RESULT_OK) {
+                if (resultCode == RESULT_OK) {
                     String StartDate = data.getStringExtra("startdate");
                     String EndDate = data.getStringExtra("enddate");
                     TXT_StartDate.setText(StartDate);
                     TXT_EndDte.setText(EndDate);
                     TXT_SingleDate.setText("");
-            }
+                }
                 break;
         }
     }
@@ -211,7 +211,7 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                     ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
 
-                    java.util.TimeZone tz= java.util.TimeZone.getDefault();
+                    java.util.TimeZone tz = java.util.TimeZone.getDefault();
                     setGetAPIPostData = new SetGetAPIPostData();
                     setGetAPIPostData.setPARAMS("user_timezone");
                     setGetAPIPostData.setValues(tz.getID());

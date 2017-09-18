@@ -23,19 +23,18 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
     ArrayList<SetGetCalender> calenderArrayList;
     Context context;
 
-   public int startPosition=-1;
-    int endPostition=-1;
-   public int night=0;
+    public int startPosition = -1;
+    int endPostition = -1;
+    public int night = 0;
 
 
     Calendar calendar;
 
 
-
     public CalendarAdapter(ArrayList<SetGetCalender> calenderArrayList, Context context) {
         this.calenderArrayList = calenderArrayList;
-        this.context=context;
-        calendar=Calendar.getInstance(Locale.getDefault());
+        this.context = context;
+        calendar = Calendar.getInstance(Locale.getDefault());
     }
 
     @Override
@@ -53,7 +52,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
         holder.day.setTextColor(Color.parseColor("#A4A4A4"));
         holder.day.setBackgroundColor(Color.WHITE);
 
-        if(!calenderArrayList.get(position).getDay().equals("")) {
+        if (!calenderArrayList.get(position).getDay().equals("")) {
 //            Log.i("currentAdapterYear",""+ApplicationClass.yearValue);
 //            Log.i("currentAdapterMonth",""+ApplicationClass.monthValue);
 //            Log.i("currentAdapterDate",calenderArrayList.get(position).getDay());
@@ -62,53 +61,44 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 //            Log.i("monthStringValue",""+(int)calendar.get(Calendar.MONTH));
 //            Log.i("currentDate",""+(int)calendar.get(Calendar.DATE));
 
-            if (((CalenderActivity)context).yearValue== (int)calendar.get(Calendar.YEAR)) {
-                if (((CalenderActivity)context).monthValue == (int)calendar.get(Calendar.MONTH)) {
+            if (((CalenderActivity) context).yearValue == (int) calendar.get(Calendar.YEAR)) {
+                if (((CalenderActivity) context).monthValue == (int) calendar.get(Calendar.MONTH)) {
 
-                    if (Integer.parseInt(calenderArrayList.get(position).getDay()) == (int)calendar.get(Calendar.DATE)) {
+                    if (Integer.parseInt(calenderArrayList.get(position).getDay()) == (int) calendar.get(Calendar.DATE)) {
                         //Log.i("EnterInCurrentDate","yes");
                         holder.day.setBackgroundResource(R.drawable.text_view_calander_background_rectangle);
-                    }
-                    else if (Integer.parseInt(calenderArrayList.get(position).getDay()) >(int) calendar.get(Calendar.DATE)) {
+                    } else if (Integer.parseInt(calenderArrayList.get(position).getDay()) > (int) calendar.get(Calendar.DATE)) {
                         holder.day.setTextColor(Color.parseColor("#000000"));
-                    }
-                    else {
+                    } else {
                         holder.day.setTextColor(Color.parseColor("#A4A4A4"));
                     }
-                }
-                else if(((CalenderActivity)context).monthValue> (int)calendar.get(Calendar.MONTH)){
+                } else if (((CalenderActivity) context).monthValue > (int) calendar.get(Calendar.MONTH)) {
                     holder.day.setTextColor(Color.parseColor("#000000"));
-                }
-                else {
+                } else {
                     holder.day.setTextColor(Color.parseColor("#A4A4A4"));
                 }
-            }
-            else if(((CalenderActivity)context).yearValue > (int)calendar.get(Calendar.YEAR)){
+            } else if (((CalenderActivity) context).yearValue > (int) calendar.get(Calendar.YEAR)) {
                 holder.day.setTextColor(Color.parseColor("#000000"));
-            }
-            else {
+            } else {
                 holder.day.setTextColor(Color.parseColor("#A4A4A4"));
             }
 
 
 /////////////////////////////selection view change//////////////////////////////////////
-            if (calenderArrayList.get(position).isSelected()){
+            if (calenderArrayList.get(position).isSelected()) {
 
                 holder.day.setTextColor(Color.WHITE);
                 holder.day.setBackgroundColor(Color.parseColor("#C44C56"));
 
             }
 
-            if(calenderArrayList.get(position).isStartdate())
-            {
+            if (calenderArrayList.get(position).isStartdate()) {
                 holder.day.setBackgroundResource(R.drawable.start_date_picture);
             }
 
-            if(calenderArrayList.get(position).isEnddate()){
+            if (calenderArrayList.get(position).isEnddate()) {
                 holder.day.setBackgroundResource(R.drawable.end_date_picture);
             }
-
-
 
 
             ///////////////////////////end/////////////////////////////////////////
@@ -118,7 +108,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
             @Override
             public void onClick(View view) {
 
-                if(!calenderArrayList.get(position).getDay().equals("")){
+                if (!calenderArrayList.get(position).getDay().equals("")) {
 
 //                    Log.i("currentAdapterYear",""+((CalenderActivity)context).yearValue);
 //                    Log.i("currentAdapterMonth",""+((CalenderActivity)context).monthValue);
@@ -128,31 +118,26 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 //                    Log.i("monthStringValue",""+(int)calendar.get(Calendar.MONTH));
 //                    Log.i("currentDate",""+(int)calendar.get(Calendar.DATE));
 
-                    if (((CalenderActivity)context).yearValue == (int)calendar.get(Calendar.YEAR)) {
-                        if (((CalenderActivity)context).monthValue == (int)calendar.get(Calendar.MONTH)) {
+                    if (((CalenderActivity) context).yearValue == (int) calendar.get(Calendar.YEAR)) {
+                        if (((CalenderActivity) context).monthValue == (int) calendar.get(Calendar.MONTH)) {
 
-                            if (Integer.parseInt(calenderArrayList.get(position).getDay()) >=(int) calendar.get(Calendar.DATE)) {
+                            if (Integer.parseInt(calenderArrayList.get(position).getDay()) >= (int) calendar.get(Calendar.DATE)) {
 
-                                CleckTask(holder,position);
+                                CleckTask(holder, position);
+                            } else {
+                                Toast.makeText(context, "You can't select before current date", Toast.LENGTH_SHORT).show();
                             }
-                            else {
-                                Toast.makeText(context,"You can't select before current date",Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                        else if(((CalenderActivity)context).monthValue> (int)calendar.get(Calendar.MONTH)){
+                        } else if (((CalenderActivity) context).monthValue > (int) calendar.get(Calendar.MONTH)) {
 
-                            CleckTask(holder,position);
+                            CleckTask(holder, position);
+                        } else {
+                            Toast.makeText(context, "You can't select before current date", Toast.LENGTH_SHORT).show();
                         }
-                        else {
-                            Toast.makeText(context,"You can't select before current date",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    else if(((CalenderActivity)context).yearValue > (int)calendar.get(Calendar.YEAR)){
+                    } else if (((CalenderActivity) context).yearValue > (int) calendar.get(Calendar.YEAR)) {
 
-                        CleckTask(holder,position);
-                    }
-                    else {
-                        Toast.makeText(context,"You can't select before current date",Toast.LENGTH_SHORT).show();
+                        CleckTask(holder, position);
+                    } else {
+                        Toast.makeText(context, "You can't select before current date", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -161,31 +146,29 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
     private void CleckTask(MyViewHolder holder, int position) {
 
-        if(!((CalenderActivity)context).firstclick && !((CalenderActivity)context).secondclick)
-        {
+        if (!((CalenderActivity) context).firstclick && !((CalenderActivity) context).secondclick) {
             calenderArrayList.get(position).setSelected(true);
             calenderArrayList.get(position).setStartdate(true);
-            ((CalenderActivity)context).firstclick=true;
-            startPosition=position;
-        }else  if(((CalenderActivity)context).firstclick && !((CalenderActivity)context).secondclick){
+            ((CalenderActivity) context).firstclick = true;
+            startPosition = position;
+        } else if (((CalenderActivity) context).firstclick && !((CalenderActivity) context).secondclick) {
             calenderArrayList.get(position).setEnddate(true);
             calenderArrayList.get(position).setSelected(true);
-            ((CalenderActivity)context).secondclick=true;
+            ((CalenderActivity) context).secondclick = true;
 
-            boolean startcolor=false;
+            boolean startcolor = false;
 
-            for(SetGetSuperCalender scal:((CalenderActivity)context).ArrayCalender)
-            {
+            for (SetGetSuperCalender scal : ((CalenderActivity) context).ArrayCalender) {
 
-                for(SetGetCalender dd: scal.getMonthBoject())
-                {   if(dd.isStartdate())
-                        startcolor=true;
+                for (SetGetCalender dd : scal.getMonthBoject()) {
+                    if (dd.isStartdate())
+                        startcolor = true;
 
-                    if(startcolor)
+                    if (startcolor)
                         dd.setSelected(true);
 
-                    if( dd.isEnddate()) {
-                        startcolor=false;
+                    if (dd.isEnddate()) {
+                        startcolor = false;
                         break;
                     }
 
@@ -194,22 +177,21 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
             }
 
-            if(((CalenderActivity)context).samepage && position<startPosition)
-            {
+            if (((CalenderActivity) context).samepage && position < startPosition) {
                 calenderArrayList.get(position).setStartdate(true);
                 calenderArrayList.get(position).setEnddate(false);
                 calenderArrayList.get(startPosition).setEnddate(true);
                 calenderArrayList.get(startPosition).setStartdate(false);
 
-                for(SetGetCalender dd: calenderArrayList)
-                {   if(dd.isStartdate())
-                    startcolor=true;
+                for (SetGetCalender dd : calenderArrayList) {
+                    if (dd.isStartdate())
+                        startcolor = true;
 
-                    if(startcolor)
+                    if (startcolor)
                         dd.setSelected(true);
 
-                    if( dd.isEnddate()) {
-                        startcolor=false;
+                    if (dd.isEnddate()) {
+                        startcolor = false;
                         break;
                     }
 
@@ -218,15 +200,12 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
             // if same month call a loop for selected dates
 
-        }
-        else if(((CalenderActivity)context).firstclick && ((CalenderActivity)context).secondclick){
-            ((CalenderActivity)context).firstclick=false;
-            ((CalenderActivity)context).secondclick=false;
-            for(SetGetSuperCalender scal:((CalenderActivity)context).ArrayCalender)
-            {
+        } else if (((CalenderActivity) context).firstclick && ((CalenderActivity) context).secondclick) {
+            ((CalenderActivity) context).firstclick = false;
+            ((CalenderActivity) context).secondclick = false;
+            for (SetGetSuperCalender scal : ((CalenderActivity) context).ArrayCalender) {
 
-                for(SetGetCalender dd: scal.getMonthBoject())
-                {
+                for (SetGetCalender dd : scal.getMonthBoject()) {
                     dd.setEnddate(false);
                     dd.setStartdate(false);
                     dd.setSelected(false);
@@ -234,17 +213,17 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
 
             }
-            startPosition=position;
+            startPosition = position;
             calenderArrayList.get(position).setSelected(true);
             calenderArrayList.get(position).setStartdate(true);
-            ((CalenderActivity)context).firstclick=true;
-            ((CalenderActivity)context).samepage=true;
+            ((CalenderActivity) context).firstclick = true;
+            ((CalenderActivity) context).samepage = true;
         }
 
         notifyDataSetChanged();
 
 
-        ((CalenderActivity)context).ViewLabel();
+        ((CalenderActivity) context).ViewLabel();
     }
 
     @Override
@@ -259,11 +238,10 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            day= (SFNFTextView) itemView.findViewById(R.id.day);
-            totalView=itemView;
+            day = (SFNFTextView) itemView.findViewById(R.id.day);
+            totalView = itemView;
         }
     }
-
 
 
 }

@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class SetGetMessageDataType {
     JSONObject jsonObject;
-    boolean scrooll=false;
+    boolean scrooll = false;
 
     public JSONObject getJsonObject() {
         return jsonObject;

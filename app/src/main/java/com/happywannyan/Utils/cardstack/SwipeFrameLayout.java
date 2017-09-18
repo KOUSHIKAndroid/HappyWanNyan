@@ -4,11 +4,9 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
 
 import java.util.ArrayList;
 
@@ -47,20 +45,20 @@ public class SwipeFrameLayout extends FrameLayout {
 
         ArrayList<View> children = new ArrayList<>();
         View swipeDeck = null;
-        for(int i=0; i< childCount; ++i){
+        for (int i = 0; i < childCount; ++i) {
             View child = getChildAt(i);
-            if(child instanceof SwipeDeck){
+            if (child instanceof SwipeDeck) {
                 swipeDeck = getChildAt(i);
-            }else{
+            } else {
                 children.add(child);
             }
         }
         removeAllViews();
         removeAllViewsInLayout();
-        for(View v : children){
+        for (View v : children) {
             addViewInLayout(v, -1, v.getLayoutParams(), true);
         }
-        if(swipeDeck != null){
+        if (swipeDeck != null) {
             addViewInLayout(swipeDeck, -1, swipeDeck.getLayoutParams(), true);
         }
         invalidate();

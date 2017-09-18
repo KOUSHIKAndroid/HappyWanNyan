@@ -24,21 +24,21 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class CalenderActivity extends AppCompatActivity implements View.OnClickListener{
+public class CalenderActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     public static Calendar APPcalendar;
-    public static int currentDate ;
-    public static int currentDay ;
-    public static int currentMonth ;
-    public static int currentYear ;
+    public static int currentDate;
+    public static int currentDay;
+    public static int currentMonth;
+    public static int currentYear;
 
     public static String fisrtdayofmonth = "";
     public static String monthName = "";
 
     public static int yearValue;
     public static int monthValue;
-    public static int maximumDaysOfMonth ; // 28
+    public static int maximumDaysOfMonth; // 28
 
 
     SFNFTextView tv_month_year_header;
@@ -79,14 +79,13 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
         currentDay = APPcalendar.getActualMinimum(Calendar.DAY_OF_MONTH);
         currentMonth = APPcalendar.get(Calendar.MONTH);
         currentYear = APPcalendar.get(Calendar.YEAR);
-        SharePrefernce= PreferenceManager.getDefaultSharedPreferences(this);
-        if(SharePrefernce.getString("SHULD","N").equals("Y"))
-        {
+        SharePrefernce = PreferenceManager.getDefaultSharedPreferences(this);
+        if (SharePrefernce.getString("SHULD", "N").equals("Y")) {
             findViewById(R.id.RL_Tutorial).setVisibility(View.GONE);
-        }else {
+        } else {
             findViewById(R.id.RL_Tutorial).setVisibility(View.VISIBLE);
         }
-        IMG_Tutorial=(ImageView)findViewById(R.id.IMG_Tutorial);
+        IMG_Tutorial = (ImageView) findViewById(R.id.IMG_Tutorial);
         IMG_Tutorial.setImageResource(R.drawable.calender_tutorail);
 
         // Get the background, which has been compiled to an AnimationDrawable object.
@@ -509,10 +508,10 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
             }
         }
 
-        if(EndDate.equals(""))
-        tv_date_limit.setText(StartDate);
+        if (EndDate.equals(""))
+            tv_date_limit.setText(StartDate);
         else
-            tv_date_limit.setText(StartDate+ "  to  "+EndDate);
+            tv_date_limit.setText(StartDate + "  to  " + EndDate);
 
         TXT_OK.setTextColor(Color.WHITE);
         TXT_OK.setBackgroundColor(Color.parseColor("#bf3e49"));
@@ -520,7 +519,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.BTN_Dismiss:
                 findViewById(R.id.RL_Tutorial).setVisibility(View.GONE);
                 break;
@@ -528,8 +527,8 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
                 findViewById(R.id.RL_Tutorial).setVisibility(View.VISIBLE);
                 break;
             case R.id.BTN_Nver:
-                SharedPreferences.Editor editor=SharePrefernce.edit();
-                editor.putString("SHULD","Y").commit();
+                SharedPreferences.Editor editor = SharePrefernce.edit();
+                editor.putString("SHULD", "Y").commit();
                 findViewById(R.id.RL_Tutorial).setVisibility(View.GONE);
                 break;
         }

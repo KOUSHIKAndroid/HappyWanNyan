@@ -110,7 +110,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
         IMG_erase_location = (ImageView) view.findViewById(R.id.IMG_erase_location);
         Rec_petlist.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -119,10 +119,10 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
                     SharedPreferences pref = getActivity().getSharedPreferences("unread_msg_count", 0); // 0 - for private mode
                     SharedPreferences.Editor editor = pref.edit();
-                    Loger.MSG("total_message_count",""+object.getInt("total_message_count"));
-                    editor.putInt("count",object.getInt("total_message_count"));
+                    Loger.MSG("total_message_count", "" + object.getInt("total_message_count"));
+                    editor.putInt("count", object.getInt("total_message_count"));
                     editor.commit();
-                    Loger.MSG("message_count",""+ pref.getInt("count", 0));
+                    Loger.MSG("message_count", "" + pref.getInt("count", 0));
 
 
                     JSONArray PetService = object.getJSONArray("serviceCatList");
@@ -145,7 +145,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     adapter_petList = new PetListAdapter(SearchBasicFragment.this, getActivity(), arraySetGetPetService);
                     Rec_petlist.setAdapter(adapter_petList);
                 } catch (JSONException e) {
-                        e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
 
@@ -201,7 +201,6 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 }
             }
         });
-
 
 
         view.findViewById(R.id.ImgMyLocation).setOnClickListener(new View.OnClickListener() {
@@ -317,7 +316,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
         }
     }
 
-    public void searchAndIntent(){
+    public void searchAndIntent() {
 
         if (TXT_Loction.getText().toString().trim().equals("")) {
             TXT_Loction.setHintTextColor(Color.RED);
@@ -368,7 +367,6 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
             }
             Loger.MSG("@@", "" + SearchJSON.toString());
             ////////
-
 
 
             Intent intent = new Intent(new Intent(getActivity(), SearchResultActivity.class));

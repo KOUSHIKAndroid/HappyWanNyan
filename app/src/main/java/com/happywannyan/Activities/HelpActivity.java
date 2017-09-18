@@ -1,7 +1,7 @@
 package com.happywannyan.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 
@@ -13,12 +13,12 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
-        ((WebView)findViewById(R.id.Web)).loadUrl("http://esolz.co.in/lab6/HappywanNyan/support-center");
+        ((WebView) findViewById(R.id.Web)).loadUrl("http://esolz.co.in/lab6/HappywanNyan/support-center");
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.IMG_icon_back:
                 finish();
                 break;

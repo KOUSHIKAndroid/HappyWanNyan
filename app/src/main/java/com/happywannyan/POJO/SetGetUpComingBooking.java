@@ -5,7 +5,7 @@ package com.happywannyan.POJO;
  */
 
 public class SetGetUpComingBooking {
-    String img,title,name,start_date,end_date,booking_id,service_name,total_pets,total_amount;
+    String img, title, name, start_date, end_date, booking_id, service_name, total_pets, total_amount;
 
     public String getImg() {
         return img;

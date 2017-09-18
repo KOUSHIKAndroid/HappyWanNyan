@@ -17,6 +17,7 @@ import java.util.Calendar;
 public class AppCalender extends DialogFragment
         implements DatePickerDialog.OnDateSetListener {
     private static final String VIEWID = "viewid";
+
     public static AppCalender newInstance(int startdate) {
         AppCalender fragment = new AppCalender();
         Bundle args = new Bundle();
@@ -26,7 +27,7 @@ public class AppCalender extends DialogFragment
     }
 
     public interface OnDateSelect {
-        void Ondate(Calendar date,int viewid);
+        void Ondate(Calendar date, int viewid);
     }
 
     @Override
@@ -36,11 +37,12 @@ public class AppCalender extends DialogFragment
     }
 
     public OnDateSelect onDateSelect;
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the current date as the default date in the picker
 
-        onDateSelect=(OnDateSelect)getActivity();
+        onDateSelect = (OnDateSelect) getActivity();
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
@@ -52,9 +54,9 @@ public class AppCalender extends DialogFragment
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
-      Calendar calendar=Calendar.getInstance();
-        calendar.set(year,month,day);
-        onDateSelect.Ondate(calendar,getArguments().getInt(VIEWID));
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, day);
+        onDateSelect.Ondate(calendar, getArguments().getInt(VIEWID));
 
     }
 }

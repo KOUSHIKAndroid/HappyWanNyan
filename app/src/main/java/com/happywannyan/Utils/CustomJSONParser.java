@@ -81,10 +81,10 @@ public class CustomJSONParser {
                         responseString = response.body().string();
                         new JSONObject(responseString);
 
-                       // Loger.MSG("response", "response_::" + responseString);
-                       // Loger.MSG("response", "response_ww_message::" + response.message());
-                       // Loger.MSG("response", "response_ww_headers::" + response.headers());
-                       // Loger.MSG("response", "response_ww_isRedirect::" + response.isRedirect());
+                        // Loger.MSG("response", "response_::" + responseString);
+                        // Loger.MSG("response", "response_ww_message::" + response.message());
+                        // Loger.MSG("response", "response_ww_headers::" + response.headers());
+                        // Loger.MSG("response", "response_ww_isRedirect::" + response.isRedirect());
 //                       Loger.MSG("response", "response_ww_body::" + response.body().string());
                     }
                 } catch (Exception e) {
@@ -467,9 +467,9 @@ public class CustomJSONParser {
 
         Iterator<String> itr = params.keys();
 
-        while(itr.hasNext()){
+        while (itr.hasNext()) {
 
-            String key= itr.next();
+            String key = itr.next();
             Object value = params.get(key);
 
             if (first)
@@ -485,29 +485,29 @@ public class CustomJSONParser {
         return result.toString();
     }
 
-    public void postDataUsingHttp(final String URL, final ArrayList<SetGetAPIPostData> apiPostData, final JSONResponseInterface jsonResponseInterface){
+    public void postDataUsingHttp(final String URL, final ArrayList<SetGetAPIPostData> apiPostData, final JSONResponseInterface jsonResponseInterface) {
 
-       new AsyncTask<String, Void, String>() {
+        new AsyncTask<String, Void, String>() {
 
-           private String responseString = null;
-           private Exception exception = null;
+            private String responseString = null;
+            private Exception exception = null;
 
-            protected void onPreExecute(){
+            protected void onPreExecute() {
 
             }
 
             protected String doInBackground(String... arg0) {
 
-                try{
+                try {
                     URL url = new URL(URL);
                     JSONObject postDataParams = new JSONObject();
 
-                    for (int j=0;j<apiPostData.size();j++){
-                        postDataParams.put(apiPostData.get(j).getPARAMS(),apiPostData.get(j).getValues());
+                    for (int j = 0; j < apiPostData.size(); j++) {
+                        postDataParams.put(apiPostData.get(j).getPARAMS(), apiPostData.get(j).getValues());
                     }
 
 
-                    Log.e("params",postDataParams.toString());
+                    Log.e("params", postDataParams.toString());
 
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setReadTimeout(15000 /* milliseconds */);
@@ -525,30 +525,28 @@ public class CustomJSONParser {
                     writer.close();
                     os.close();
 
-                    int responseCode=conn.getResponseCode();
+                    int responseCode = conn.getResponseCode();
 
                     if (responseCode == HttpsURLConnection.HTTP_OK) {
 
-                        BufferedReader in=new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                         StringBuffer sb = new StringBuffer("");
-                        String line="";
+                        String line = "";
 
-                        while((line = in.readLine()) != null) {
+                        while ((line = in.readLine()) != null) {
                             sb.append(line);
                             break;
                         }
 
                         in.close();
-                        responseString=sb.toString();
+                        responseString = sb.toString();
                         return sb.toString();
 
+                    } else {
+                        return "" + responseCode;
                     }
-                    else {
-                        return ""+responseCode;
-                    }
-                }
-                catch(Exception e){
-                    this.exception=e;
+                } catch (Exception e) {
+                    this.exception = e;
                     e.printStackTrace();
                     return new String("Exception: " + e.getMessage());
                 }

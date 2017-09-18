@@ -20,8 +20,7 @@ public class Utils {
     }
 
 
-    public int GetWeidth()
-    {
+    public int GetWeidth() {
         DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;

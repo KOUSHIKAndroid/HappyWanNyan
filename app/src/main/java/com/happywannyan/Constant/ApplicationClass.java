@@ -10,7 +10,7 @@ import com.android.volley.toolbox.Volley;
 
 public class ApplicationClass extends Application {
 
-    private static ApplicationClass instance=null;
+    private static ApplicationClass instance = null;
 
     private RequestQueue mRequestQueue;
 
@@ -22,7 +22,7 @@ public class ApplicationClass extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        instance=this;
+        instance = this;
     }
 
 

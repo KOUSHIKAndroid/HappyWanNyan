@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -44,6 +45,7 @@ import com.happywannyan.Utils.LocationListener.MyLocalLocationManager;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.constants.LogType;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -145,12 +147,11 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         TXT_highestRange = (SFNFTextView) view.findViewById(R.id.TXT_highestRange);
         IMG_Location = (ImageView) view.findViewById(R.id.ImgMyLocation);
         IMG_erase_location = (ImageView) view.findViewById(R.id.IMG_erase_location);
-        RL_Search=(RelativeLayout)view.findViewById(R.id.RL_Search);
-        SCROLLL=(ScrollView)view.findViewById(R.id.SCROLLL);
+        RL_Search = (RelativeLayout) view.findViewById(R.id.RL_Search);
+        SCROLLL = (ScrollView) view.findViewById(R.id.SCROLLL);
         TXT_petType = (SFNFTextView) view.findViewById(R.id.TXT_petType);
 
         try {
-
 
 
             if (mParam1.getJSONArray("allPetDetails").length() > 0) {
@@ -454,13 +455,12 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
             public void onClick(View v) {
 
 
-                if(TXT_petType.getText().toString().trim().equals(""))
-                {
+                if (TXT_petType.getText().toString().trim().equals("")) {
                     TXT_petType.setHintTextColor(Color.RED);
                     SCROLLL.scrollTo(0, TXT_petType.getBottom());
 
-                }else
-                nextIntentShow();
+                } else
+                    nextIntentShow();
             }
         });
 
@@ -536,7 +536,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         Button BTN_CANCEL = (Button) LayView.findViewById(R.id.BTN_CANCEL);
 
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id="+ AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -738,7 +738,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
             data = new JSONObject();
             data.put("name", "serviceCat");
-            data.put("value", ""+TXT_SERVICENAME.getTag());
+            data.put("value", "" + TXT_SERVICENAME.getTag());
             Searchkeyinfor.put(data);
 
             data = new JSONObject();

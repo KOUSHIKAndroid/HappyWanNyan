@@ -4,9 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.widget.EditText;
 
 /**
  * Created by apple on 18/05/17.
@@ -43,17 +41,15 @@ public class SFNFEditText extends AppCompatEditText {
     }
 
 
-
-
     @Override
     protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
-        if(focused)
+        if (focused)
             super.onFocusChanged(focused, direction, previouslyFocusedRect);
     }
 
     @Override
     public void onWindowFocusChanged(boolean focused) {
-        if(focused)
+        if (focused)
             super.onWindowFocusChanged(focused);
     }
 

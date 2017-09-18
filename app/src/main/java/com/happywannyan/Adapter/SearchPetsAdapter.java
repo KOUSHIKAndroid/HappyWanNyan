@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
+
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
@@ -72,7 +73,7 @@ public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.My
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Loger.MSG("@@@ddata-->",""+ setGetSearchData.getSearcItem());
+                    Loger.MSG("@@@ddata-->", "" + setGetSearchData.getSearcItem());
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
                     Intent intent = new Intent(context, ProfileDetailsActivity.class);
                     Loger.MSG("data", "" + setGetSearchData.getSearcItem());

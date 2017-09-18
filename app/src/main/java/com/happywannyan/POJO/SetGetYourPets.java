@@ -1,6 +1,5 @@
 package com.happywannyan.POJO;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -8,7 +7,7 @@ import org.json.JSONObject;
  */
 
 public class SetGetYourPets {
-    String edit_id,pet_type_id,pet_name,pet_image;
+    String edit_id, pet_type_id, pet_name, pet_image;
     JSONObject Otherinfo;
 
     public String getEdit_id() {

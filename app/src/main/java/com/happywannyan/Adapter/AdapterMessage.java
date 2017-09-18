@@ -100,7 +100,6 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
 //                holder.TXT_MSG_STATUS.setBackgroundDrawable(footerBackground);
 
 
-
 //                GradientDrawable shape = new GradientDrawable();
 ////                shape.setShape(GradientDrawable.OVAL);
 //                shape.setCornerRadii(new float[] { 25, 25, 25, 25, 25, 25, 25, 25 });
@@ -154,15 +153,15 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
 
                             SharedPreferences pref = context.getSharedPreferences("unread_msg_count", 0); // 0 - for private mode
                             SharedPreferences.Editor editor = pref.edit();
-                            Loger.MSG("message_count",""+ pref.getInt("count", 0));
-                            editor.putInt("count",(pref.getInt("count", 0))-(object.getInt("unread_msg_count")));
+                            Loger.MSG("message_count", "" + pref.getInt("count", 0));
+                            editor.putInt("count", (pref.getInt("count", 0)) - (object.getInt("unread_msg_count")));
                             editor.commit();
 
-                            Loger.MSG("message_count_after",""+ pref.getInt("count", 0));
+                            Loger.MSG("message_count_after", "" + pref.getInt("count", 0));
 
                             (message_fragment).CallDetailsPage(object);
                         }
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }

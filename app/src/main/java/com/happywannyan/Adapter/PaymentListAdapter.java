@@ -130,7 +130,7 @@ public class PaymentListAdapter extends RecyclerView.Adapter<PaymentListAdapter.
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView img_delete, IMG_VISA, img_default;
         LinearLayout LLDefault;
-        SFNFTextView tv_name_on_card, tv_card_number, tv_card_month_date, tv_added_on,tv_default;
+        SFNFTextView tv_name_on_card, tv_card_number, tv_card_month_date, tv_added_on, tv_default;
 
 
         public MyViewHolder(View itemView) {

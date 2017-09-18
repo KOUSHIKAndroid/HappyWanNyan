@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 
 public class SetGetCards {
-    String user_email,communication_messege_email;
+    String user_email, communication_messege_email;
     JSONArray JsonArrayCardDetails;
     ArrayList<SetGetStripData> stripDataArrayList;
 

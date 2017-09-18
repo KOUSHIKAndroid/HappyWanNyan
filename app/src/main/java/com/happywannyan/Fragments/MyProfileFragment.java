@@ -36,8 +36,8 @@ import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CircleTransform;
-import com.happywannyan.Utils.ImageFilePath;
 import com.happywannyan.Utils.CustomJSONParser;
+import com.happywannyan.Utils.ImageFilePath;
 import com.happywannyan.Utils.Loger;
 
 import org.json.JSONException;
@@ -142,7 +142,7 @@ public class MyProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new AppConstant(getActivity());
-        appLoader =new AppLoader(getActivity());
+        appLoader = new AppLoader(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -161,7 +161,7 @@ public class MyProfileFragment extends Fragment {
     public void onViewCreated(final View Mview, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(Mview, savedInstanceState);
 
-        this.Mview=Mview;
+        this.Mview = Mview;
         Mview.findViewById(R.id.IMG_icon_drwaer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -204,49 +204,41 @@ public class MyProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if(((EditText) Mview.findViewById(R.id.EDX_FNAME)).getText().toString().trim().length()>0)
-                {
-                    if(((EditText) Mview.findViewById(R.id.EDX_Lname)).getText().toString().trim().length()>0)
-                    {
+                if (((EditText) Mview.findViewById(R.id.EDX_FNAME)).getText().toString().trim().length() > 0) {
+                    if (((EditText) Mview.findViewById(R.id.EDX_Lname)).getText().toString().trim().length() > 0) {
 
-                        if(((EditText) Mview.findViewById(R.id.EDX_F_FName)).getText().toString().trim().length()>0)
-                        {
-                            if(((EditText) Mview.findViewById(R.id.EDX_F_LName)).getText().toString().trim().length()>0)
-                            {
+                        if (((EditText) Mview.findViewById(R.id.EDX_F_FName)).getText().toString().trim().length() > 0) {
+                            if (((EditText) Mview.findViewById(R.id.EDX_F_LName)).getText().toString().trim().length() > 0) {
 
-                                if(((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).getText().toString().trim().length()>0)
-                                {
-                                    if(((EditText) Mview.findViewById(R.id.EDX_Phone)).getText().toString().trim().length()>0)
-                                    {
-                                            SUBMITDETAILS();
-                                    }else {
+                                if (((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).getText().toString().trim().length() > 0) {
+                                    if (((EditText) Mview.findViewById(R.id.EDX_Phone)).getText().toString().trim().length() > 0) {
+                                        SUBMITDETAILS();
+                                    } else {
                                         ((EditText) Mview.findViewById(R.id.EDX_Phone)).setHintTextColor(Color.RED);
                                         ((EditText) Mview.findViewById(R.id.EDX_Phone)).requestFocus();
                                     }
-                                }else {
+                                } else {
                                     ((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).setHintTextColor(Color.RED);
                                     ((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).setHint(getString(R.string.pleasenteraddress));
                                     ((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).requestFocus();
                                 }
-                            }else {
+                            } else {
                                 ((EditText) Mview.findViewById(R.id.EDX_F_LName)).setHintTextColor(Color.RED);
                                 ((EditText) Mview.findViewById(R.id.EDX_F_LName)).requestFocus();
                             }
-                        }else {
+                        } else {
                             ((EditText) Mview.findViewById(R.id.EDX_F_FName)).setHintTextColor(Color.RED);
                             ((EditText) Mview.findViewById(R.id.EDX_F_FName)).requestFocus();
                         }
-                    }else {
+                    } else {
                         ((EditText) Mview.findViewById(R.id.EDX_Lname)).setHintTextColor(Color.RED);
                         ((EditText) Mview.findViewById(R.id.EDX_Lname)).requestFocus();
                     }
 
-                }else {
+                } else {
                     ((EditText) Mview.findViewById(R.id.EDX_FNAME)).setHintTextColor(Color.RED);
                     ((EditText) Mview.findViewById(R.id.EDX_FNAME)).requestFocus();
                 }
-
-
 
 
             }
@@ -280,11 +272,11 @@ public class MyProfileFragment extends Fragment {
                             UserInfo.put(key, "" + ((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).getText());
                             break;
                         case "lat_addr":
-                            if (place !=null  && !value.equals("" + place.getLatLng().latitude))
+                            if (place != null && !value.equals("" + place.getLatLng().latitude))
                                 UserInfo.put(key, "" + place.getLatLng().latitude);
                             break;
                         case "long_addr":
-                            if (place !=null  &&!value.equals("" + place.getLatLng().longitude))
+                            if (place != null && !value.equals("" + place.getLatLng().longitude))
                                 UserInfo.put(key, "" + place.getLatLng().longitude);
                             break;
                         case "optional_promo_code":
@@ -309,9 +301,9 @@ public class MyProfileFragment extends Fragment {
                 Params.add(Post);
                 Post = new SetGetAPIPostData();
                 Post.setPARAMS("user_info");
-                Post.setValues(new JSONObject().put("users_information",UserInfo).toString());
+                Post.setValues(new JSONObject().put("users_information", UserInfo).toString());
                 Params.add(Post);
-                ArrayList<File>Photos=new ArrayList<File>();
+                ArrayList<File> Photos = new ArrayList<File>();
                 Photos.add(photofile);
                 new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONResponseInterface() {
                     @Override
@@ -331,7 +323,7 @@ public class MyProfileFragment extends Fragment {
                     }
                 });
 
-                Loger.MSG("@@ 888", new JSONObject().put("users_information",UserInfo).toString());
+                Loger.MSG("@@ 888", new JSONObject().put("users_information", UserInfo).toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -462,7 +454,7 @@ public class MyProfileFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    public void loadPage(){
+    public void loadPage() {
         appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_about?user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
@@ -478,11 +470,11 @@ public class MyProfileFragment extends Fragment {
                     ((EditText) Mview.findViewById(R.id.EDX_F_LName)).setText(UserInfo.getString("lastname_phonetic"));
                     ((EditText) Mview.findViewById(R.id.EDX_Phone)).setText(UserInfo.getString("mobilenum"));
 
-                    if(UserInfo.getString("optional_promo_code").trim().equals("")){
+                    if (UserInfo.getString("optional_promo_code").trim().equals("")) {
                         Mview.findViewById(R.id.input_promo_code).setVisibility(View.VISIBLE);
                         Mview.findViewById(R.id.view_promo_code).setVisibility(View.VISIBLE);
                         ((EditText) Mview.findViewById(R.id.EDX_optional_promo_code)).setText(UserInfo.getString("optional_promo_code"));
-                    }else {
+                    } else {
                         Mview.findViewById(R.id.input_promo_code).setVisibility(View.GONE);
                         Mview.findViewById(R.id.view_promo_code).setVisibility(View.GONE);
                     }

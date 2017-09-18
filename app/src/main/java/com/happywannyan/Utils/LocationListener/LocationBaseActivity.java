@@ -13,7 +13,7 @@ import com.happywannyan.Events;
  * Created by Yahya Bayramoglu on 10/02/16.
  */
 public abstract class LocationBaseActivity extends AppCompatActivity implements LocationListener {
-Events events;
+    Events events;
     private MyLocalLocationManager locationManager;
 
     public abstract LocationConfiguration getLocationConfiguration();
@@ -27,10 +27,10 @@ Events events;
     }
 
     public void getLocation(Events events) {
-        this.events=events;
+        this.events = events;
         if (locationManager != null) {
             locationManager.get();
-            Log.d("LocationBaseActivity","\"Couldn't get location, because network is not accessible!\"");
+            Log.d("LocationBaseActivity", "\"Couldn't get location, because network is not accessible!\"");
         }
     }
 
@@ -92,7 +92,7 @@ Events events;
 
         @Override
         public void onLocationFailed(int failType) {
-            Log.d("LocationBaseActivity"," OFF"+failType);
+            Log.d("LocationBaseActivity", " OFF" + failType);
             LocationBaseActivity.this.onLocationFailed(failType);
         }
 
@@ -104,13 +104,13 @@ Events events;
 
         @Override
         public void onProviderEnabled(String provider) {
-            Log.d("LocationBaseActivity"," Enable"+provider);
+            Log.d("LocationBaseActivity", " Enable" + provider);
             LocationBaseActivity.this.onProviderEnabled(provider);
         }
 
         @Override
         public void onProviderDisabled(String provider) {
-            Log.d("LocationBaseActivity"," Desable"+provider);
+            Log.d("LocationBaseActivity", " Desable" + provider);
             LocationBaseActivity.this.onProviderDisabled(provider);
         }
     };

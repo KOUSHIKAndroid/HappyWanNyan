@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.FrameLayout;
 
-
 import com.happywannyan.R;
 
 import java.util.ArrayList;
@@ -59,7 +58,7 @@ public class SwipeDeck extends FrameLayout {
 
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
-               R.styleable.SwipeDeck,
+                R.styleable.SwipeDeck,
                 0, 0);
         try {
             NUMBER_OF_CARDS = a.getInt(R.styleable.SwipeDeck_max_visible, 3);
@@ -109,7 +108,7 @@ public class SwipeDeck extends FrameLayout {
         }
         mAdapter = adapter;
         // if we're not restoring previous instance state
-        if(!restoreInstanceState)nextAdapterCard = 0;
+        if (!restoreInstanceState) nextAdapterCard = 0;
 
         observer = new DataSetObserver() {
             @Override
@@ -120,7 +119,7 @@ public class SwipeDeck extends FrameLayout {
                 //is less than the max number of cards to display) add the cards.
                 int childCount = getChildCount();
                 //only perform action if there are less cards on screen than NUMBER_OF_CARDS
-                if(childCount < NUMBER_OF_CARDS) {
+                if (childCount < NUMBER_OF_CARDS) {
                     for (int i = childCount; i < NUMBER_OF_CARDS; ++i) {
                         addNextCard();
                     }
@@ -146,8 +145,8 @@ public class SwipeDeck extends FrameLayout {
     }
 
 
-    public void setSelection(int position){
-        if(position < mAdapter.getCount()){
+    public void setSelection(int position) {
+        if (position < mAdapter.getCount()) {
             this.nextAdapterCard = position;
             removeAllViews();
             requestLayout();
@@ -292,7 +291,7 @@ public class SwipeDeck extends FrameLayout {
 
         child.animate()
                 .setDuration(restoreInstanceState ? 0 : 160)
-        .y(paddingTop + offset);
+                .y(paddingTop + offset);
 
         restoreInstanceState = false;
     }
@@ -372,14 +371,14 @@ public class SwipeDeck extends FrameLayout {
 
                 @Override
                 public void cardActionDown() {
-                    if(eventCallback!=null) eventCallback.cardActionDown();
+                    if (eventCallback != null) eventCallback.cardActionDown();
                     cardInteraction = true;
                 }
 
                 @Override
                 public void cardActionUp() {
 
-                    if(eventCallback!=null) eventCallback.cardActionUp();
+                    if (eventCallback != null) eventCallback.cardActionUp();
                     cardInteraction = false;
                 }
 
@@ -457,10 +456,12 @@ public class SwipeDeck extends FrameLayout {
 
     public interface CardPositionCallback {
         void xPos(Float x);
+
         void yPos(Float y);
     }
 
     private int AnimationTime = 160;
+
     private class RemoveViewOnAnimCompleted extends AsyncTask<View, Void, View> {
 
         @Override

@@ -38,15 +38,14 @@ public class ProfileFragReviewFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         try {
-            Reviews= new JSONObject(((ProfileDetailsActivity)getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("review_list");
-            if(Reviews.length()>0)
-            {
+            Reviews = new JSONObject(((ProfileDetailsActivity) getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("review_list");
+            if (Reviews.length() > 0) {
                 view.findViewById(R.id.No_Review).setVisibility(View.GONE);
                 RecyclerView list = (RecyclerView) view.findViewById(R.id.service_recycler);
                 list.setLayoutManager(new LinearLayoutManager(getActivity()));
-                list.setAdapter(new ProfileReviewListingAdapter(getActivity(),Reviews));
-            }else {
-                ((SFNFTextView)view.findViewById(R.id.No_Review)).setText(getString(R.string.no_reviewFound));
+                list.setAdapter(new ProfileReviewListingAdapter(getActivity(), Reviews));
+            } else {
+                ((SFNFTextView) view.findViewById(R.id.No_Review)).setText(getString(R.string.no_reviewFound));
                 view.findViewById(R.id.No_Review).setVisibility(View.VISIBLE);
             }
         } catch (JSONException e) {

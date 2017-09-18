@@ -5,7 +5,6 @@ import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-
 import com.happywannyan.Utils.LocationListener.LocationConfiguration;
 
 import java.util.Date;

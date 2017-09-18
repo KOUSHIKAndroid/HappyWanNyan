@@ -1,6 +1,5 @@
 package com.happywannyan.POJO;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -9,7 +8,7 @@ import org.json.JSONObject;
 
 public class SetGetStripData {
     JSONObject jsonObjectUserStripeData;
-    boolean isCheck=false;
+    boolean isCheck = false;
 
     public JSONObject getJsonObjectUserStripeData() {
         return jsonObjectUserStripeData;

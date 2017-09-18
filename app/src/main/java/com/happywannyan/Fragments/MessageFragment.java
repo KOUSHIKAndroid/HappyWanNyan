@@ -44,9 +44,11 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.MethodsUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -357,7 +359,7 @@ public class MessageFragment extends Fragment {
 
         if (AppConstant.go_to.trim().equals("message_all")) {
             try {
-                JSONObject jsonObject=new JSONObject(AppConstant.message_object_string);
+                JSONObject jsonObject = new JSONObject(AppConstant.message_object_string);
                 try {
                     Intent intent = new Intent(getActivity(), MessageDetailsPageActivity.class);
                     intent.putExtra("message_id", jsonObject.getString("message_id").trim());
@@ -371,13 +373,12 @@ public class MessageFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                AppConstant.go_to="";
-                AppConstant.message_object_string="";
+                AppConstant.go_to = "";
+                AppConstant.message_object_string = "";
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }
-        else {
+        } else {
             loadList("0");
         }
     }

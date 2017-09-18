@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.OnFragmentInteractionListener;
@@ -46,7 +47,7 @@ public class BookingFragmentFoure extends Fragment {
     ArrayList<SetGetCards> setGetCardsArrayList;
 
     final int GET_NEW_CARD = 2;
-    String make_defaultValue="0";
+    String make_defaultValue = "0";
 
     JSONObject cardFinalSelection;
 
@@ -237,17 +238,16 @@ public class BookingFragmentFoure extends Fragment {
             final String cardNumber = data.getStringExtra("cardNumber");
             String expiry = data.getStringExtra("expiry");
             String cvv = data.getStringExtra("cvv");
-            make_defaultValue=data.getStringExtra("make_default");
-
+            make_defaultValue = data.getStringExtra("make_default");
 
 
             final int year = Integer.parseInt(
 //                    "20" +
-                            expiry.split("/")[1]);
+                    expiry.split("/")[1]);
             final int month = Integer.parseInt(expiry.split("/")[0]);
 
-            Loger.MSG("@@ Expiry-", "CardHolderName-"+cardHolderName);
-            Loger.MSG("@@ Expiry-", "CardNumber-"+cardNumber);
+            Loger.MSG("@@ Expiry-", "CardHolderName-" + cardHolderName);
+            Loger.MSG("@@ Expiry-", "CardNumber-" + cardNumber);
             Loger.MSG("@@ Expiry-", "Year-" + year);
             Loger.MSG("@@ Expiry-", "Month-" + month);
             Loger.MSG("@@ Expiry-", "cvv-" + cvv);
@@ -297,19 +297,19 @@ public class BookingFragmentFoure extends Fragment {
                                         HashMap<String, String> Params = new HashMap<String, String>();
                                         Params.put("user_id", AppConstant.UserId);
                                         Params.put("stripe_id", CustomerID + "");
-                                        Params.put("card_id", token.getCard().getId()+"");
+                                        Params.put("card_id", token.getCard().getId() + "");
                                         Params.put("name_on_card", cardHolderName);
                                         Params.put("description", "");
-                                        Params.put("address_city", token.getCard().getAddressCity()+"");
-                                        Params.put("address_country", token.getCard().getAddressCountry()+"");
-                                        Params.put("address_line1", token.getCard().getAddressLine1()+"");
-                                        Params.put("address_line2", token.getCard().getAddressLine2()+"");
-                                        Params.put("address_state", token.getCard().getAddressState()+"");
-                                        Params.put("address_zip", token.getCard().getAddressZip()+"");
+                                        Params.put("address_city", token.getCard().getAddressCity() + "");
+                                        Params.put("address_country", token.getCard().getAddressCountry() + "");
+                                        Params.put("address_line1", token.getCard().getAddressLine1() + "");
+                                        Params.put("address_line2", token.getCard().getAddressLine2() + "");
+                                        Params.put("address_state", token.getCard().getAddressState() + "");
+                                        Params.put("address_zip", token.getCard().getAddressZip() + "");
                                         Params.put("exp_month", month + "");
                                         Params.put("exp_year", year + "");
-                                        Params.put("card_brand", token.getCard().getBrand()+"");
-                                        Params.put("card_last_digits", token.getCard().getLast4()+"");
+                                        Params.put("card_brand", token.getCard().getBrand() + "");
+                                        Params.put("card_last_digits", token.getCard().getLast4() + "");
                                         Params.put("card_status", "");
                                         Params.put("cvv_code", card.getCVC() + "");
                                         Params.put("new_card", "1");

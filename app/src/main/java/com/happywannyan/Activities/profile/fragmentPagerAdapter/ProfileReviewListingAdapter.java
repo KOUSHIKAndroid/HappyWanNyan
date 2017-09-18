@@ -25,10 +25,11 @@ import org.json.JSONObject;
 public class ProfileReviewListingAdapter extends RecyclerView.Adapter<ProfileReviewListingAdapter.ViewHolder> {
 
     private Context mContext = null;
-JSONArray JSONArry;
-    public ProfileReviewListingAdapter(Context mContext,JSONArray jsonArray) {
+    JSONArray JSONArry;
+
+    public ProfileReviewListingAdapter(Context mContext, JSONArray jsonArray) {
         this.mContext = mContext;
-        this.JSONArry=jsonArray;
+        this.JSONArry = jsonArray;
     }
 
     @Override
@@ -44,7 +45,7 @@ JSONArray JSONArry;
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         try {
-            JSONObject jsonObject=JSONArry.getJSONObject(position);
+            JSONObject jsonObject = JSONArry.getJSONObject(position);
             holder.UserName.setText(jsonObject.getString("review_user_name"));
             holder.Description.setText(jsonObject.getString("review_message"));
 //            holder.Date.setText(jsonObject.getString(""));
@@ -62,13 +63,14 @@ JSONArray JSONArry;
         ImageView IMG_Profile;
         SFNFTextView Date;
         SFNFTextView Description;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            UserName=(SFNFBoldTextView)itemView.findViewById(R.id.UserName);
-            Rating=(RatingBar)itemView.findViewById(R.id.Rating);
-            Date=(SFNFTextView)itemView.findViewById(R.id.Date);
-            Description=(SFNFTextView)itemView.findViewById(R.id.Description);
-            IMG_Profile=(ImageView)itemView.findViewById(R.id.IMG_Profile);
+            UserName = (SFNFBoldTextView) itemView.findViewById(R.id.UserName);
+            Rating = (RatingBar) itemView.findViewById(R.id.Rating);
+            Date = (SFNFTextView) itemView.findViewById(R.id.Date);
+            Description = (SFNFTextView) itemView.findViewById(R.id.Description);
+            IMG_Profile = (ImageView) itemView.findViewById(R.id.IMG_Profile);
         }
 
         @Override

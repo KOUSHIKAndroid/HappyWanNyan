@@ -57,7 +57,6 @@ public class SetGetPetService {
     }
 
 
-
     public String getDefault_image() {
         return default_image;
     }

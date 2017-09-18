@@ -7,10 +7,11 @@ import android.util.Log;
  */
 
 public class Loger {
-    public static void MSG(String TAG,String MSG){
-        Log.d(TAG,MSG);
+    public static void MSG(String TAG, String MSG) {
+        Log.d(TAG, MSG);
     }
-    public static void Error(String TAG,String MSG){
-        Log.e(TAG,MSG);
+
+    public static void Error(String TAG, String MSG) {
+        Log.e(TAG, MSG);
     }
 }

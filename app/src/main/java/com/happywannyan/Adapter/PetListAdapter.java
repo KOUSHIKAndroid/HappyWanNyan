@@ -1,4 +1,5 @@
 package com.happywannyan.Adapter;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.content.res.ResourcesCompat;
@@ -9,11 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
 import com.bumptech.glide.Glide;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.SearchBasicFragment;
 import com.happywannyan.POJO.SetGetPetService;
 import com.happywannyan.R;
+
 import java.util.ArrayList;
 
 /**
@@ -24,9 +27,10 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
     ArrayList<SetGetPetService> serviceCatListArrayList;
     Context context;
     SearchBasicFragment search_basicFragment;
-    public PetListAdapter(SearchBasicFragment search_basicFragment, Context context, ArrayList<SetGetPetService> serviceCatListArrayList){
-        this.context=context;
-        this.serviceCatListArrayList=serviceCatListArrayList;
+
+    public PetListAdapter(SearchBasicFragment search_basicFragment, Context context, ArrayList<SetGetPetService> serviceCatListArrayList) {
+        this.context = context;
+        this.serviceCatListArrayList = serviceCatListArrayList;
         this.search_basicFragment = search_basicFragment;
     }
 
@@ -42,10 +46,10 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
 
         holder.tv_walking.setText(serviceCatListArrayList.get(position).getName());
 
-        Log.i("default img",""+serviceCatListArrayList.get(position).getDefault_image());
-        Log.i("selected img",""+serviceCatListArrayList.get(position).getSelected_image());
+        Log.i("default img", "" + serviceCatListArrayList.get(position).getDefault_image());
+        Log.i("selected img", "" + serviceCatListArrayList.get(position).getSelected_image());
 
-        if (serviceCatListArrayList.get(position).isTick_value()){
+        if (serviceCatListArrayList.get(position).isTick_value()) {
 
             holder.img_tick.setImageResource(R.drawable.ic_checked_brown);
             holder.img_tick.setVisibility(View.VISIBLE);
@@ -57,8 +61,7 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
 //                    .placeholder(R.drawable.ic_photo_black_24dp)
                     .into(holder.img_walking);
 
-        }
-        else {
+        } else {
             holder.img_tick.setVisibility(View.INVISIBLE);
 
             holder.tv_walking.setTextColor(Color.parseColor("#000000"));
@@ -72,22 +75,21 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
         holder.Rel_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("Rel_main","Rel_main");
-                for(int i=0;i<serviceCatListArrayList.size();i++){
-                    if (i==position){
+                Log.i("Rel_main", "Rel_main");
+                for (int i = 0; i < serviceCatListArrayList.size(); i++) {
+                    if (i == position) {
                         serviceCatListArrayList.get(i).setTick_value(true);
-                    }
-                    else {
+                    } else {
                         serviceCatListArrayList.get(i).setTick_value(false);
                     }
                 }
 
-                for (int print=0;print<serviceCatListArrayList.size();print++){
-                    Log.i("value["+print+"]",""+serviceCatListArrayList.get(print).isTick_value());
+                for (int print = 0; print < serviceCatListArrayList.size(); print++) {
+                    Log.i("value[" + print + "]", "" + serviceCatListArrayList.get(print).isTick_value());
                 }
                 notifyDataSetChanged();
 
-              search_basicFragment.GotoAdvancedSearched(serviceCatListArrayList.get(position).getJsondata());
+                search_basicFragment.GotoAdvancedSearched(serviceCatListArrayList.get(position).getJsondata());
 
             }
         });
@@ -99,15 +101,16 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView img_tick,img_walking;
+        ImageView img_tick, img_walking;
         RelativeLayout Rel_main;
         SFNFTextView tv_walking;
+
         public MyViewHolder(View itemView) {
             super(itemView);
-            Rel_main= (RelativeLayout) itemView.findViewById(R.id.Rel_main);
-            img_tick= (ImageView) itemView.findViewById(R.id.img_tick);
-            img_walking= (ImageView) itemView.findViewById(R.id.img_walking);
-            tv_walking= (SFNFTextView) itemView.findViewById(R.id.tv_walking);
+            Rel_main = (RelativeLayout) itemView.findViewById(R.id.Rel_main);
+            img_tick = (ImageView) itemView.findViewById(R.id.img_tick);
+            img_walking = (ImageView) itemView.findViewById(R.id.img_walking);
+            tv_walking = (SFNFTextView) itemView.findViewById(R.id.tv_walking);
         }
     }
 }

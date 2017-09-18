@@ -1,10 +1,10 @@
 package com.happywannyan.Activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,31 +19,30 @@ import com.happywannyan.R;
 
 import java.util.LinkedList;
 
-public class LoginChooserActivity extends AppCompatActivity  implements View.OnClickListener{
+public class LoginChooserActivity extends AppCompatActivity implements View.OnClickListener {
     LinkedList<Fragment> fragmentList;
     ViewPager viewPager;
-    private int dotscount=0;
+    private int dotscount = 0;
     private ImageView[] dots;
     LinearLayout LL_dotc;
     LinearLayout LL_SINGIN;
     LinearLayout LL_Facbook;
     LinearLayout LL_SIGNUP;
-
     SFNFTextView Txt_skip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_choser);
-        viewPager=(ViewPager)findViewById(R.id.viewpager) ;
-        LL_dotc=(LinearLayout)findViewById(R.id.LL_dotc);
-        LL_SINGIN=(LinearLayout)findViewById(R.id.LL_SINGIN);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        LL_dotc = (LinearLayout) findViewById(R.id.LL_dotc);
+        LL_SINGIN = (LinearLayout) findViewById(R.id.LL_SINGIN);
         LL_SINGIN.setOnClickListener(this);
-        LL_Facbook=(LinearLayout)findViewById(R.id.LL_Facbook);
+        LL_Facbook = (LinearLayout) findViewById(R.id.LL_Facbook);
         LL_Facbook.setOnClickListener(this);
-        LL_SIGNUP=(LinearLayout)findViewById(R.id.LL_SIGNUP);
+        LL_SIGNUP = (LinearLayout) findViewById(R.id.LL_SIGNUP);
         LL_SIGNUP.setOnClickListener(this);
-        Txt_skip=(SFNFTextView)findViewById(R.id.TXT_skip);
+        Txt_skip = (SFNFTextView) findViewById(R.id.TXT_skip);
         Txt_skip.setOnClickListener(this);
         fragmentList = new LinkedList<>();
 
@@ -53,7 +52,7 @@ public class LoginChooserActivity extends AppCompatActivity  implements View.OnC
         fragmentList.add(new slider3());
         fragmentList.add(new slider4());
 
-        LoginFragmentViewPager adapter=new LoginFragmentViewPager(this,getSupportFragmentManager(),fragmentList);
+        LoginFragmentViewPager adapter = new LoginFragmentViewPager(this, getSupportFragmentManager(), fragmentList);
 
         //Adding adapter to pager
         viewPager.setAdapter(adapter);
@@ -67,8 +66,7 @@ public class LoginChooserActivity extends AppCompatActivity  implements View.OnC
 
             @Override
             public void onPageSelected(int position) {
-                for (int i=0;i<fragmentList.size();i++)
-                {
+                for (int i = 0; i < fragmentList.size(); i++) {
                     dots[i].setImageResource(R.drawable.ic_dot_outline);
                 }
                 dots[position].setImageResource(R.drawable.ic_dot);
@@ -82,15 +80,14 @@ public class LoginChooserActivity extends AppCompatActivity  implements View.OnC
         });
 
 
-
     }
 
-    private void UIindicator(int totalcount){
-        dots=new ImageView[totalcount];
-        for(int i=0;i<totalcount;i++){
-            dots[i]=new ImageView(this);
+    private void UIindicator(int totalcount) {
+        dots = new ImageView[totalcount];
+        for (int i = 0; i < totalcount; i++) {
+            dots[i] = new ImageView(this);
             dots[i].setImageResource(R.drawable.ic_dot_outline);
-            dots[i].setPadding(10,0,10,0);
+            dots[i].setPadding(10, 0, 10, 0);
             LL_dotc.addView(dots[i]);
         }
         dots[0].setImageResource(R.drawable.ic_dot);
@@ -98,22 +95,21 @@ public class LoginChooserActivity extends AppCompatActivity  implements View.OnC
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.TXT_skip:
-                startActivity(new Intent(LoginChooserActivity.this,BaseActivity.class));
+                startActivity(new Intent(LoginChooserActivity.this, BaseActivity.class));
                 finish();
                 break;
             case R.id.LL_Facbook:
-                startActivityForResult(new Intent(LoginChooserActivity.this,FacebookActivity.class),FacebookActivity.FacebookResponse);
+                startActivityForResult(new Intent(LoginChooserActivity.this, FacebookActivity.class), FacebookActivity.FacebookResponse);
                 break;
             case R.id.LL_SINGIN:
-                startActivity(new Intent(LoginChooserActivity.this,LoginActivity.class));
-                    finish();
+                startActivity(new Intent(LoginChooserActivity.this, LoginActivity.class));
+                finish();
                 break;
 
             case R.id.LL_SIGNUP:
-                startActivity(new Intent(LoginChooserActivity.this,SignUpActivity.class));
+                startActivity(new Intent(LoginChooserActivity.this, SignUpActivity.class));
 //                finish();
                 break;
 
@@ -123,9 +119,8 @@ public class LoginChooserActivity extends AppCompatActivity  implements View.OnC
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==FacebookActivity.FacebookResponse && resultCode==RESULT_OK)
-        {
-            startActivity(new Intent(LoginChooserActivity.this,BaseActivity.class));
+        if (requestCode == FacebookActivity.FacebookResponse && resultCode == RESULT_OK) {
+            startActivity(new Intent(LoginChooserActivity.this, BaseActivity.class));
             finish();
         }
 

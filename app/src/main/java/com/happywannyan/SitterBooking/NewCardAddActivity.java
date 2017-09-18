@@ -17,10 +17,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+
 import com.happywannyan.Adapter.CustomListAdapter;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -31,7 +33,7 @@ import java.util.Calendar;
 public class NewCardAddActivity extends AppCompatActivity {
     boolean defaultValue = false;
     PopupWindow popupWindow;
-    SFNFTextView tv_month,tv_year;
+    SFNFTextView tv_month, tv_year;
     Calendar calendar;
 
     @Override
@@ -43,7 +45,7 @@ public class NewCardAddActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 defaultValue = isChecked;
-                Loger.MSG("isCheck",""+isChecked);
+                Loger.MSG("isCheck", "" + isChecked);
             }
         });
         findViewById(R.id.Card_save).setOnClickListener(new View.OnClickListener() {
@@ -56,7 +58,7 @@ public class NewCardAddActivity extends AppCompatActivity {
         findViewById(R.id.tv_month).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (popupWindow!=null) {
+                if (popupWindow != null) {
                     popupWindow.dismiss();
                 }
                 showDialogMonth(view);
@@ -71,15 +73,15 @@ public class NewCardAddActivity extends AppCompatActivity {
         findViewById(R.id.tv_year).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (popupWindow!=null) {
+                if (popupWindow != null) {
                     popupWindow.dismiss();
                 }
                 showDialogYear(view);
             }
         });
-        tv_month= (SFNFTextView) findViewById(R.id.tv_month);
-        tv_year= (SFNFTextView) findViewById(R.id.tv_year);
-        calendar= Calendar.getInstance();
+        tv_month = (SFNFTextView) findViewById(R.id.tv_month);
+        tv_year = (SFNFTextView) findViewById(R.id.tv_year);
+        calendar = Calendar.getInstance();
     }
 
     public void checkCardValidation() {
@@ -120,16 +122,16 @@ public class NewCardAddActivity extends AppCompatActivity {
                                 Loger.MSG("finish", "Yes");
 
                                 Intent returnIntent = new Intent();
-                                returnIntent.putExtra("cardHolderName",((EditText) findViewById(R.id.edtxt_card_name)).getText().toString().trim());
-                                returnIntent.putExtra("cardNumber",((EditText) findViewById(R.id.edtxt_card_number)).getText().toString().trim());
-                                returnIntent.putExtra("expiry",((SFNFTextView) findViewById(R.id.tv_month)).getText().toString().trim()+"/"+((SFNFTextView) findViewById(R.id.tv_year)).getText().toString().trim());
-                                returnIntent.putExtra("cvv",((EditText) findViewById(R.id.edt_cvv)).getText().toString().trim());
-                                if (defaultValue){
-                                    returnIntent.putExtra("make_default","1");
-                                }else {
-                                    returnIntent.putExtra("make_default","0");
+                                returnIntent.putExtra("cardHolderName", ((EditText) findViewById(R.id.edtxt_card_name)).getText().toString().trim());
+                                returnIntent.putExtra("cardNumber", ((EditText) findViewById(R.id.edtxt_card_number)).getText().toString().trim());
+                                returnIntent.putExtra("expiry", ((SFNFTextView) findViewById(R.id.tv_month)).getText().toString().trim() + "/" + ((SFNFTextView) findViewById(R.id.tv_year)).getText().toString().trim());
+                                returnIntent.putExtra("cvv", ((EditText) findViewById(R.id.edt_cvv)).getText().toString().trim());
+                                if (defaultValue) {
+                                    returnIntent.putExtra("make_default", "1");
+                                } else {
+                                    returnIntent.putExtra("make_default", "0");
                                 }
-                                setResult(Activity.RESULT_OK,returnIntent);
+                                setResult(Activity.RESULT_OK, returnIntent);
                                 finish();
                             }
                         }
@@ -140,7 +142,7 @@ public class NewCardAddActivity extends AppCompatActivity {
     }
 
     private void showDialogMonth(View v) {
-        ArrayList<String> monthArrayList=new ArrayList<>();
+        ArrayList<String> monthArrayList = new ArrayList<>();
         monthArrayList.add("01");
         monthArrayList.add("02");
         monthArrayList.add("03");
@@ -164,19 +166,19 @@ public class NewCardAddActivity extends AppCompatActivity {
         View dailogView = getLayoutInflater().inflate(R.layout.dialog_show_list, null);
 
         final ListView listView = (ListView) dailogView.findViewById(R.id.listView);
-        CustomListAdapter customListAdapter=new CustomListAdapter(NewCardAddActivity.this,monthArrayList);
+        CustomListAdapter customListAdapter = new CustomListAdapter(NewCardAddActivity.this, monthArrayList);
 
-        listView.setLayoutParams( new ListView.LayoutParams(60, 300) );
+        listView.setLayoutParams(new ListView.LayoutParams(60, 300));
         listView.setAdapter(customListAdapter);
         // some other visual settings
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // ListView Clicked item value
-                String  itemValueMonth    = (String) listView.getItemAtPosition(position);
+                String itemValueMonth = (String) listView.getItemAtPosition(position);
                 int currentMonth = calendar.get(Calendar.MONTH);
-                Loger.MSG("currentMonth",""+currentMonth);
-                Loger.MSG("itemValueMonth",""+itemValueMonth);
+                Loger.MSG("currentMonth", "" + currentMonth);
+                Loger.MSG("itemValueMonth", "" + itemValueMonth);
 
                 tv_month.setText(itemValueMonth);
 
@@ -195,13 +197,13 @@ public class NewCardAddActivity extends AppCompatActivity {
     }
 
     private void showDialogYear(View v) {
-        ArrayList<String> monthArrayList=new ArrayList<>();
+        ArrayList<String> monthArrayList = new ArrayList<>();
         int year = calendar.get(Calendar.YEAR);
 
         monthArrayList.add(String.valueOf(year));
-        int yearValue=year;
-        for (int i=1;i<20;i++){
-            yearValue=yearValue+1;
+        int yearValue = year;
+        for (int i = 1; i < 20; i++) {
+            yearValue = yearValue + 1;
             monthArrayList.add(String.valueOf(yearValue));
         }
 
@@ -216,18 +218,18 @@ public class NewCardAddActivity extends AppCompatActivity {
         View dailogView = getLayoutInflater().inflate(R.layout.dialog_show_list, null);
 
         final ListView listView = (ListView) dailogView.findViewById(R.id.listView);
-        CustomListAdapter customListAdapter=new CustomListAdapter(NewCardAddActivity.this,monthArrayList);
+        CustomListAdapter customListAdapter = new CustomListAdapter(NewCardAddActivity.this, monthArrayList);
 
-        listView.setLayoutParams( new ListView.LayoutParams(60, 300) );
+        listView.setLayoutParams(new ListView.LayoutParams(60, 300));
         listView.setAdapter(customListAdapter);
         // some other visual settings
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // ListView Clicked item value
-                String  itemValueYear    = (String) listView.getItemAtPosition(position);
+                String itemValueYear = (String) listView.getItemAtPosition(position);
                 tv_year.setText(itemValueYear);
-                Loger.MSG("itemValueYear",""+itemValueYear);
+                Loger.MSG("itemValueYear", "" + itemValueYear);
                 popupWindow.dismiss();
             }
         });

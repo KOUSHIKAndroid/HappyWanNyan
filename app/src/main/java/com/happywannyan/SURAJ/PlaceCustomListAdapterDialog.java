@@ -21,16 +21,18 @@ public class PlaceCustomListAdapterDialog extends RecyclerView.Adapter<PlaceCust
     Context mContext;
     JSONArray predictionsJsonArray;
     MessageFragment.onOptionSelected callback;
-    public PlaceCustomListAdapterDialog(Context mContext,JSONArray predictionsJsonArray, MessageFragment.onOptionSelected callback){
-        this.mContext=mContext;
-        this.predictionsJsonArray=predictionsJsonArray;
-        this.callback=callback;
+
+    public PlaceCustomListAdapterDialog(Context mContext, JSONArray predictionsJsonArray, MessageFragment.onOptionSelected callback) {
+        this.mContext = mContext;
+        this.predictionsJsonArray = predictionsJsonArray;
+        this.callback = callback;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_dailog_member, parent, false);
-        return new MyViewHolder(itemView);    }
+        return new MyViewHolder(itemView);
+    }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
@@ -44,7 +46,7 @@ public class PlaceCustomListAdapterDialog extends RecyclerView.Adapter<PlaceCust
             @Override
             public void onClick(View view) {
                 try {
-                    callback.onItemPassed(position,predictionsJsonArray.getJSONObject(position));
+                    callback.onItemPassed(position, predictionsJsonArray.getJSONObject(position));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -59,13 +61,15 @@ public class PlaceCustomListAdapterDialog extends RecyclerView.Adapter<PlaceCust
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         SFNFTextView tv;
+
         public MyViewHolder(View itemView) {
             super(itemView);
-            tv= (SFNFTextView) itemView.findViewById(R.id.tv);
+            tv = (SFNFTextView) itemView.findViewById(R.id.tv);
         }
     }
-    public void setRefresh(JSONArray predictionsJsonArray){
-        this.predictionsJsonArray=predictionsJsonArray;
+
+    public void setRefresh(JSONArray predictionsJsonArray) {
+        this.predictionsJsonArray = predictionsJsonArray;
         notifyDataSetChanged();
     }
 }

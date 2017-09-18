@@ -23,6 +23,7 @@ public class SearchListFragment extends Fragment {
     private String mParam2;
 
     RecyclerView recycler_view;
+
     public SearchListFragment() {
         // Required empty public constructor
     }
@@ -56,11 +57,11 @@ public class SearchListFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recycler_view=(RecyclerView)view.findViewById(R.id.recycler_view);
+        recycler_view = (RecyclerView) view.findViewById(R.id.recycler_view);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recycler_view.setAdapter(new SearchPetsAdapter(getActivity(),((SearchResultActivity)getActivity()).ListARRY));
-        ((SearchResultActivity)getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
-        ((SearchResultActivity)getActivity()). findViewById(R.id.fab).setVisibility(View.VISIBLE);
+        recycler_view.setAdapter(new SearchPetsAdapter(getActivity(), ((SearchResultActivity) getActivity()).ListARRY));
+        ((SearchResultActivity) getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
+        ((SearchResultActivity) getActivity()).findViewById(R.id.fab).setVisibility(View.VISIBLE);
 //
 //        ((SearchResultActivity)getActivity()). findViewById(R.id.fab_plus).setOnClickListener(new View.OnClickListener() {
 //            @Override

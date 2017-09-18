@@ -26,13 +26,14 @@ public class AlertListAdapter extends RecyclerView.Adapter<AlertListAdapter.MyVi
     MYAlert.OnSignleListTextSelected onSignleListTextSelected;
     String params;
     MYAlert myAlert;
+
     public AlertListAdapter(MYAlert myAlert, Context mContext, MYAlert.OnSignleListTextSelected onSignleListTextSelected, AlertDialog dialog, JSONArray listArray, String getPramsName) {
-        this.context=mContext;
-        this.MessageList=listArray;
-        this.Dialog=dialog;
-        this.myAlert=myAlert;
-        this.onSignleListTextSelected=onSignleListTextSelected;
-        this.params=getPramsName;
+        this.context = mContext;
+        this.MessageList = listArray;
+        this.Dialog = dialog;
+        this.myAlert = myAlert;
+        this.onSignleListTextSelected = onSignleListTextSelected;
+        this.params = getPramsName;
     }
 
     @Override
@@ -45,7 +46,7 @@ public class AlertListAdapter extends RecyclerView.Adapter<AlertListAdapter.MyVi
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         try {
-            JSONObject data2=MessageList.getJSONObject(position);
+            JSONObject data2 = MessageList.getJSONObject(position);
             holder.Title.setText(data2.getString(params));
             holder.Title.setTag(data2);
             holder.Title.setOnClickListener(new View.OnClickListener() {
@@ -60,14 +61,11 @@ public class AlertListAdapter extends RecyclerView.Adapter<AlertListAdapter.MyVi
                     }
                 }
             });
-        }catch (JSONException e)
-        {
+        } catch (JSONException e) {
 
         }
     }
 
-
-    
 
     @Override
     public int getItemCount() {

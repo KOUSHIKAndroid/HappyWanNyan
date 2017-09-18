@@ -34,14 +34,14 @@ import java.util.ArrayList;
  * Created by su on 5/30/17.
  */
 
-public class BookingFragment extends Fragment{
+public class BookingFragment extends Fragment {
 
     RecyclerView recyclerView;
 
-    SFNFTextView tv_up_coming,tv_current,tv_pending,tv_past;
-    View view_between_upcoming_current_booking,view_between_current_pending_booking,view_between_pending_past;
+    SFNFTextView tv_up_coming, tv_current, tv_pending, tv_past;
+    View view_between_upcoming_current_booking, view_between_current_pending_booking, view_between_pending_past;
 
-    ArrayList<SetGetAPIPostData> Params ;
+    ArrayList<SetGetAPIPostData> Params;
     AppLoader appLoader;
     ArrayList<JSONObject> AllBooking;
 
@@ -52,7 +52,7 @@ public class BookingFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_upcoming_booking,container,false);
+        return inflater.inflate(R.layout.fragment_upcoming_booking, container, false);
     }
 
     @Override
@@ -61,26 +61,26 @@ public class BookingFragment extends Fragment{
 
         AllBooking = new ArrayList<>();
         Params = new ArrayList<>();
-        appLoader=new AppLoader(getActivity());
+        appLoader = new AppLoader(getActivity());
     }
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         new AppConstant(getActivity());
-        recyclerView= (RecyclerView) view.findViewById(R.id.rcv_upcoming_booking);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rcv_upcoming_booking);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-        tv_up_coming= (SFNFTextView) view.findViewById(R.id.tv_up_coming);
-        tv_current= (SFNFTextView) view.findViewById(R.id.tv_current);
-        tv_pending= (SFNFTextView)view.findViewById(R.id.tv_pending);
-        tv_past= (SFNFTextView)view.findViewById(R.id.tv_past);
+        tv_up_coming = (SFNFTextView) view.findViewById(R.id.tv_up_coming);
+        tv_current = (SFNFTextView) view.findViewById(R.id.tv_current);
+        tv_pending = (SFNFTextView) view.findViewById(R.id.tv_pending);
+        tv_past = (SFNFTextView) view.findViewById(R.id.tv_past);
 
-        view_between_upcoming_current_booking=view.findViewById(R.id.view_between_upcoming_current_booking);
-        view_between_current_pending_booking=view.findViewById(R.id.view_between_current_pending_booking);
-        view_between_pending_past=view.findViewById(R.id.view_between_pending_past);
+        view_between_upcoming_current_booking = view.findViewById(R.id.view_between_upcoming_current_booking);
+        view_between_current_pending_booking = view.findViewById(R.id.view_between_current_pending_booking);
+        view_between_pending_past = view.findViewById(R.id.view_between_pending_past);
 
         view.findViewById(R.id.IMG_icon_drwaer).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,9 +119,7 @@ public class BookingFragment extends Fragment{
         setGetAPIPostData.setValues("");
         Params.add(setGetAPIPostData);
 
-        type="past_booking_list";
-
-
+        type = "past_booking_list";
 
 
         tv_up_coming.setOnClickListener(new View.OnClickListener() {
@@ -137,7 +135,7 @@ public class BookingFragment extends Fragment{
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
                 AllBooking = new ArrayList<>();
-                type="upcoming_booking_list";
+                type = "upcoming_booking_list";
                 loadList("0");
             }
         });
@@ -155,7 +153,7 @@ public class BookingFragment extends Fragment{
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
                 AllBooking = new ArrayList<>();
-                type="current_booking_list";
+                type = "current_booking_list";
                 loadList("0");
 
             }
@@ -173,7 +171,7 @@ public class BookingFragment extends Fragment{
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
                 AllBooking = new ArrayList<>();
-                type="pending_booking_list";
+                type = "pending_booking_list";
                 loadList("0");
             }
         });
@@ -191,34 +189,33 @@ public class BookingFragment extends Fragment{
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
                 AllBooking = new ArrayList<>();
-                type="past_booking_list";
+                type = "past_booking_list";
                 loadList("0");
             }
         });
 
-        if(AppConstant.go_to.trim().equals("")){
+        if (AppConstant.go_to.trim().equals("")) {
             tv_up_coming.performClick();
-        }
-        else {
+        } else {
             tv_pending.performClick();
-            AppConstant.go_to="";
+            AppConstant.go_to = "";
         }
 
 //        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeColors(
 //                Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
 
-        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
+        ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
                 R.color.colorRefreshProgress_1,
                 R.color.colorRefreshProgress_2,
                 R.color.colorRefreshProgress_3);
 
 
-        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 AllBooking = new ArrayList<>();
                 loadList("0");
-                ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setRefreshing(false);
+                ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setRefreshing(false);
             }
         });
 
@@ -228,45 +225,40 @@ public class BookingFragment extends Fragment{
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==222)
-        {
+        if (requestCode == 222) {
             loadList("0");
         }
 
     }
 
-    public void loadList(final String start_from){
+    public void loadList(final String start_from) {
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL+type+"?", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + type + "?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
-                    JSONObject jsonObject=new JSONObject(Result);
-                    JSONArray all_booking=jsonObject.getJSONArray("booking_info_array");
+                    JSONObject jsonObject = new JSONObject(Result);
+                    JSONArray all_booking = jsonObject.getJSONArray("booking_info_array");
 
-                    int next_data=jsonObject.getInt("next_data");
-                    Loger.MSG("next_data",""+next_data);
+                    int next_data = jsonObject.getInt("next_data");
+                    Loger.MSG("next_data", "" + next_data);
 
-                    for(int i=0;i<all_booking.length();i++)
-                    {
+                    for (int i = 0; i < all_booking.length(); i++) {
                         AllBooking.add(all_booking.getJSONObject(i));
                     }
-                    Log.i("AllBookingSize",""+AllBooking.size());
+                    Log.i("AllBookingSize", "" + AllBooking.size());
 
-                    if(start_from.equals("0")) {
-                        bookingAdapter = new BookingAdapter(getActivity(),BookingFragment.this, AllBooking);
+                    if (start_from.equals("0")) {
+                        bookingAdapter = new BookingAdapter(getActivity(), BookingFragment.this, AllBooking);
                         recyclerView.setAdapter(bookingAdapter);
-                    }
-                    else
-                    {
-                        bookingAdapter.nextData=next_data;
+                    } else {
+                        bookingAdapter.nextData = next_data;
                         bookingAdapter.notifyDataSetChanged();
                     }
                     appLoader.Dismiss();
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                     appLoader.Dismiss();
                 }
@@ -277,8 +269,8 @@ public class BookingFragment extends Fragment{
                 appLoader.Dismiss();
                 try {
 
-                    JSONObject jsonObject=    new JSONObject(Response);
-                    if(jsonObject.getInt("next_data")==0 && jsonObject.getInt("start_form")==0 && AllBooking.size()==0){
+                    JSONObject jsonObject = new JSONObject(Response);
+                    if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") == 0 && AllBooking.size() == 0) {
                         recyclerView.setAdapter(null);
                         new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.app_name), Error, new MYAlert.OnlyMessage() {
                             @Override
@@ -288,8 +280,7 @@ public class BookingFragment extends Fragment{
                         });
                     }
 
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

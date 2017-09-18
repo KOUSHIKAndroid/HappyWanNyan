@@ -27,7 +27,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 
-
 import com.happywannyan.Utils.constants.RequestCode;
 
 import java.util.ArrayList;

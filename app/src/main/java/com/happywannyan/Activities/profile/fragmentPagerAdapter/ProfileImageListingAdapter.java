@@ -1,7 +1,6 @@
 package com.happywannyan.Activities.profile.fragmentPagerAdapter;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,10 +24,11 @@ import org.json.JSONException;
 public class ProfileImageListingAdapter extends RecyclerView.Adapter<ProfileImageListingAdapter.ViewHolder> {
 
     private Context mContext = null;
-JSONArray array;
+    JSONArray array;
+
     public ProfileImageListingAdapter(Context mContext, JSONArray images) {
         this.mContext = mContext;
-        this.array=images;
+        this.array = images;
     }
 
     @Override
@@ -44,7 +44,7 @@ JSONArray array;
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        LinearLayout.LayoutParams params =new LinearLayout.LayoutParams(new Utils(mContext).GetWeidth()/4,new Utils(mContext).GetWeidth()/4);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(new Utils(mContext).GetWeidth() / 4, new Utils(mContext).GetWeidth() / 4);
         holder.imageView.setLayoutParams(params);
 
         try {
@@ -73,9 +73,10 @@ JSONArray array;
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            imageView=(ImageView)itemView.findViewById(R.id.IMG);
+            imageView = (ImageView) itemView.findViewById(R.id.IMG);
         }
 
         @Override

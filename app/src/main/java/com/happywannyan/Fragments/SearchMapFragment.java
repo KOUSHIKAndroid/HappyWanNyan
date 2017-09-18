@@ -37,7 +37,7 @@ import org.json.JSONObject;
 import static com.happywannyan.Constant.ApplicationClass.TAG;
 
 public class SearchMapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraMoveStartedListener,
-        GoogleMap.OnCameraIdleListener{
+        GoogleMap.OnCameraIdleListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -47,8 +47,9 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
     private String mParam1;
     private String mParam2;
     LatLngBounds PresetLatBounds;
-    int Screenwidth=0;
+    int Screenwidth = 0;
     GoogleMap Map;
+
     public SearchMapFragment() {
         // Required empty public constructor
     }
@@ -93,8 +94,8 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
         mapFragment.getMapAsync(this);
 
 
-        ((SearchResultActivity)getActivity()).findViewById(R.id.list).setVisibility(View.VISIBLE);
-        ((SearchResultActivity)getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
+        ((SearchResultActivity) getActivity()).findViewById(R.id.list).setVisibility(View.VISIBLE);
+        ((SearchResultActivity) getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
 
 //        ((SearchResultActivity)getActivity()). findViewById(R.id.fab_plus).setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -124,7 +125,7 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
 
     @Override
     public void onCameraIdle() {
-        Loger.MSG("@@ Zoom"," "+Map.getCameraPosition().zoom);
+        Loger.MSG("@@ Zoom", " " + Map.getCameraPosition().zoom);
     }
 
     @Override
@@ -150,13 +151,13 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-       marker.showInfoWindow();
+        marker.showInfoWindow();
         return false;
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Map=googleMap;
+        Map = googleMap;
         Map.setOnCameraIdleListener(this);
         Map.setOnCameraMoveListener(this);
         Map.setMinZoomPreference((float) 4.99);
@@ -172,17 +173,17 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
             public View getInfoContents(Marker marker) {
                 // Getting view from the layout file info_window_layout
                 View v = getActivity().getLayoutInflater().inflate(R.layout.map_popup_time, null);
-                v.setLayoutParams(new RelativeLayout.LayoutParams(Screenwidth/2, ViewGroup.LayoutParams.WRAP_CONTENT));
+                v.setLayoutParams(new RelativeLayout.LayoutParams(Screenwidth / 2, ViewGroup.LayoutParams.WRAP_CONTENT));
                 LatLng latLng = marker.getPosition();
                 try {
-                    JSONObject jsonObject=new JSONObject(marker.getTitle()+"");
-                    Loger.MSG("@@ MAR",""+jsonObject);
-                    ((SFNFBoldTextView)v.findViewById(R.id.tv_name)).setText(""+jsonObject.getString("service_name"));
-                    ((SFNFTextView)v.findViewById(R.id.tv_place)).setText(""+jsonObject.getString("whole_address"));
-                    ((SFNFTextView)v.findViewById(R.id.tv_time)).setText(""+jsonObject.getString("unit"));
-                    ((SFNFTextView)v.findViewById(R.id.TXT_sitter)).setText(""+jsonObject.getString("sitter_name"));
-                    ((RatingBar)v.findViewById(R.id.Rating)).setNumStars(Integer.parseInt(jsonObject.getString("ave_rating")));
-                    LayerDrawable stars = (LayerDrawable)((RatingBar)v.findViewById(R.id.Rating)).getProgressDrawable();
+                    JSONObject jsonObject = new JSONObject(marker.getTitle() + "");
+                    Loger.MSG("@@ MAR", "" + jsonObject);
+                    ((SFNFBoldTextView) v.findViewById(R.id.tv_name)).setText("" + jsonObject.getString("service_name"));
+                    ((SFNFTextView) v.findViewById(R.id.tv_place)).setText("" + jsonObject.getString("whole_address"));
+                    ((SFNFTextView) v.findViewById(R.id.tv_time)).setText("" + jsonObject.getString("unit"));
+                    ((SFNFTextView) v.findViewById(R.id.TXT_sitter)).setText("" + jsonObject.getString("sitter_name"));
+                    ((RatingBar) v.findViewById(R.id.Rating)).setNumStars(Integer.parseInt(jsonObject.getString("ave_rating")));
+                    LayerDrawable stars = (LayerDrawable) ((RatingBar) v.findViewById(R.id.Rating)).getProgressDrawable();
                     RatingColor.SETRatingColor(stars);
 
                 } catch (JSONException e) {
@@ -200,7 +201,7 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
 
 //              ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity)getActivity(), holder.img_view, "cardimage");
                 Intent intent = new Intent(getActivity(), ProfileDetailsActivity.class);
-                intent.putExtra("data", "" + ((SearchResultActivity)getActivity()).ListARRY.get((Integer) marker.getTag()).getSearcItem());
+                intent.putExtra("data", "" + ((SearchResultActivity) getActivity()).ListARRY.get((Integer) marker.getTag()).getSearcItem());
                 startActivity(intent);
             }
         });
@@ -214,41 +215,36 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
 
         try {
             LatLngBounds.Builder builder2 = new LatLngBounds.Builder();
-            for (int i = 0; i <((SearchResultActivity)getActivity()). ListARRY.size(); i++) {
+            for (int i = 0; i < ((SearchResultActivity) getActivity()).ListARRY.size(); i++) {
 
 
                 try {
-                    LatLng latLng=new LatLng(Double.parseDouble(((SearchResultActivity)getActivity()).ListARRY.get(i).getSearcItem().getString("lat")),Double.parseDouble(((SearchResultActivity)getActivity()).ListARRY.get(i).getSearcItem().getString("long")));
+                    LatLng latLng = new LatLng(Double.parseDouble(((SearchResultActivity) getActivity()).ListARRY.get(i).getSearcItem().getString("lat")), Double.parseDouble(((SearchResultActivity) getActivity()).ListARRY.get(i).getSearcItem().getString("long")));
                     MarkerOptions markerOptions = new MarkerOptions().
                             icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_map_icon)).
                             position(latLng).zIndex(0.0f);
 //                        .anchor(iconFactory.getAnchorU(), iconFactory.getAnchorV());
 
                     Marker lomarakar = Map.addMarker(markerOptions);
-                    lomarakar.setTitle(((SearchResultActivity)getActivity()). ListARRY.get(i).getSearcItem()+"");
+                    lomarakar.setTitle(((SearchResultActivity) getActivity()).ListARRY.get(i).getSearcItem() + "");
                     builder2.include(markerOptions.getPosition());
                     lomarakar.setTag(i);
-                }catch (Exception ee){
-                    Loger.Error(TAG,"3 "+ee.getMessage());
+                } catch (Exception ee) {
+                    Loger.Error(TAG, "3 " + ee.getMessage());
                 }
-
-
-
-
 
 
             }
 
             LatLngBounds bounds = builder2.build();
-            PresetLatBounds=builder2.build();
+            PresetLatBounds = builder2.build();
             int padding = 200; // offset from edges of the map in pixels
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
 //            CameraUpdate cu = CameraUpdateFactory.newLatLngZoom(PresetLatBounds.getCenter(), 15);
 //            CameraUpdate cu = CameraUpdateFactory.newLatLngZoom(PresetLatBounds.getCenter(), 15);
             Map.animateCamera(cu);
-        }catch (Exception e)
-        {
-            Loger.Error(TAG," "+e.getMessage());
+        } catch (Exception e) {
+            Loger.Error(TAG, " " + e.getMessage());
         }
 
 //        int padding = 100; // offset from edges of the map in pixels

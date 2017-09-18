@@ -37,9 +37,11 @@ public class MYAlert {
     public interface OnlyMessage {
         public void OnOk(boolean res);
     }
-    public interface  OnOkCancel{
+
+    public interface OnOkCancel {
         void OnOk();
-        void  OnCancel();
+
+        void OnCancel();
     }
 
     public interface OnSignleListTextSelected {
@@ -54,7 +56,7 @@ public class MYAlert {
 
     public MYAlert(Context mContext) {
         this.mContext = mContext;
-        dialog=new Dialog(mContext);
+        dialog = new Dialog(mContext);
     }
 
     public void AlertOnly(String Title, String Message, final OnlyMessage onlyMessage) {
@@ -70,7 +72,7 @@ public class MYAlert {
 
         if (Title.trim().equals("")) {
             TXTTitle.setVisibility(View.GONE);
-        }else {
+        } else {
             TXTTitle.setVisibility(View.VISIBLE);
             TXTTitle.setText(Title);
         }
@@ -99,7 +101,7 @@ public class MYAlert {
         SFNFTextView TXTTitle = (SFNFTextView) LayView.findViewById(R.id.Title);
         if (Title.trim().equals("")) {
             TXTTitle.setVisibility(View.GONE);
-        }else {
+        } else {
             TXTTitle.setVisibility(View.VISIBLE);
             TXTTitle.setText(Title);
         }
@@ -187,7 +189,7 @@ public class MYAlert {
     }
 
 
-    public void AlertBoxMessageSend(String Titile,String EditTextName, String ButtonName, final OnEditTexSubmit onEditTexSubmit) {
+    public void AlertBoxMessageSend(String Titile, String EditTextName, String ButtonName, final OnEditTexSubmit onEditTexSubmit) {
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
                 (Context.LAYOUT_INFLATER_SERVICE);
@@ -209,11 +211,10 @@ public class MYAlert {
         BTN_OK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(EDX_message.getText().toString().trim().length()>0)
-                {
+                if (EDX_message.getText().toString().trim().length() > 0) {
                     onEditTexSubmit.OnEditSubmit(EDX_message.getText().toString());
                     Dialog.dismiss();
-                }else {
+                } else {
                     EDX_message.setHintTextColor(Color.RED);
                     EDX_message.requestFocus();
                 }
@@ -224,7 +225,6 @@ public class MYAlert {
         Dialog = alertbuilder.create();
         Dialog.show();
     }
-
 
 
     public void AlertForAPIRESPONSE(String Title, String Message, final OnlyMessage onlyMessage) {
@@ -247,17 +247,16 @@ public class MYAlert {
         });
 
 
-
         alertbuilder.setView(LayView);
         Dialog = alertbuilder.create();
         Dialog.show();
     }
 
 
-    public void PhotoAlert(String ImagePath, final OnlyMessage onlyMessage){
+    public void PhotoAlert(String ImagePath, final OnlyMessage onlyMessage) {
         View LayView = LayoutInflater.from(mContext).inflate(R.layout.alert_for_photo, null);
-        ImageView Image=(ImageView)LayView.findViewById(R.id.IMAGE);
-        ImageView Image_close=(ImageView)LayView.findViewById(R.id.CLOSE);
+        ImageView Image = (ImageView) LayView.findViewById(R.id.IMAGE);
+        ImageView Image_close = (ImageView) LayView.findViewById(R.id.CLOSE);
         Image_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 
@@ -21,16 +20,16 @@ public class AddCreditCard {
 
     public AddCreditCard(Context mContext) {
         this.mContext = mContext;
-        dialog=new Dialog(mContext);
+        dialog = new Dialog(mContext);
     }
 
-    public interface OnCradListener{
+    public interface OnCradListener {
         void OnAddComplete(String data);
+
         void OnCancel();
     }
 
-    public void AddNewOnClick(OnCradListener onCradListener )
-    {
+    public void AddNewOnClick(OnCradListener onCradListener) {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); //before
         dialog.setContentView(R.layout.add_card_layout);
 
@@ -39,8 +38,8 @@ public class AddCreditCard {
             // Do not continue token creation.
         }
 
-        EditText Month=(EditText)dialog.findViewById(R.id.month) ;
-        EditText cardNumber=(EditText)dialog.findViewById(R.id.cardNumber) ;
+        EditText Month = (EditText) dialog.findViewById(R.id.month);
+        EditText cardNumber = (EditText) dialog.findViewById(R.id.cardNumber);
         cardNumber.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

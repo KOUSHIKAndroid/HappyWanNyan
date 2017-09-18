@@ -19,33 +19,34 @@ public class Validation {
 
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
+
     public static boolean isPassword(String text) {
-         String SPECIAL = "^(?=.*[@#$%^&+=])(?=\\S+$).{4,}$";
-        String NUBER="^(?=.*[0-9])";
+        String SPECIAL = "^(?=.*[@#$%^&+=])(?=\\S+$).{4,}$";
+        String NUBER = "^(?=.*[0-9])";
         Pattern p = Pattern.compile(SPECIAL);
         Matcher m = p.matcher(text);
 
-        Pattern num=Pattern.compile(NUBER);
-        Matcher N=num.matcher(text);
+        Pattern num = Pattern.compile(NUBER);
+        Matcher N = num.matcher(text);
 
 
         int SP_count = 0;
         while (m.find()) {
-            SP_count = SP_count+1;
-            System.out.println("position "  + m.start() + ": " + text.charAt(m.start()));
+            SP_count = SP_count + 1;
+            System.out.println("position " + m.start() + ": " + text.charAt(m.start()));
         }
         System.out.println("There are " + SP_count + " special characters");
 
 
-        int NU_Count=0;
+        int NU_Count = 0;
         while (N.find()) {
-            NU_Count = NU_Count+1;
-            System.out.println("position "  + N.start() + ": " + text.charAt(N.start()));
+            NU_Count = NU_Count + 1;
+            System.out.println("position " + N.start() + ": " + text.charAt(N.start()));
         }
         System.out.println("There are " + NU_Count + " special Number");
 
 
-        return (NU_Count>0 && SP_count>0);
+        return (NU_Count > 0 && SP_count > 0);
     }
 
     public static boolean isPlayServicesAvailable(Activity context) {

@@ -85,10 +85,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             SharedPreferences pref = getApplicationContext().getSharedPreferences("unread_msg_count", MODE_PRIVATE); // 0 - for private mode
             SharedPreferences.Editor editor = pref.edit();
 
-            editor.putInt("count",pref.getInt("count", 0)+1);
+            editor.putInt("count", pref.getInt("count", 0) + 1);
             editor.commit();
 
-            Loger.MSG("after_push_msg_count",""+pref.getInt("count", 0));
+            Loger.MSG("after_push_msg_count", "" + pref.getInt("count", 0));
 
 
             Log.d("PushResponse", "==" + Object.toString());
@@ -105,10 +105,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             e.printStackTrace();
         }
 
-        if(applicationInForeground()){
-            Loger.MSG("fore ground-->",""+applicationInForeground());
-        }else {
-            Loger.MSG("fore ground-->",""+applicationInForeground());
+        if (applicationInForeground()) {
+            Loger.MSG("fore ground-->", "" + applicationInForeground());
+        } else {
+            Loger.MSG("fore ground-->", "" + applicationInForeground());
         }
 
         try {
@@ -153,7 +153,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Intent intent = new Intent(this, BaseActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             intent.putExtra("go_to", "message_all");
-            Loger.MSG("object",""+messageBody.toString());
+            Loger.MSG("object", "" + messageBody.toString());
             intent.putExtra("object", messageBody.toString());
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                     PendingIntent.FLAG_ONE_SHOT
@@ -173,7 +173,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

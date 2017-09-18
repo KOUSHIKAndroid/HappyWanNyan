@@ -33,10 +33,10 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
     JSONArray ServiceArray;
     int block_user_status;
 
-    public ProfileServiceListingAdapter(Context mContext, JSONArray serviceArray,int block_user_status) {
+    public ProfileServiceListingAdapter(Context mContext, JSONArray serviceArray, int block_user_status) {
         this.mContext = mContext;
         this.ServiceArray = serviceArray;
-        this.block_user_status=block_user_status;
+        this.block_user_status = block_user_status;
     }
 
     @Override
@@ -58,16 +58,14 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
             holder.PricePer.setText(object.getString("service_price") + "/" + object.getString("unit_name"));
 
             Glide.with(mContext).load(object.getString("service_image")).into(holder.IMG_SERVICES);
-            if(object.getString("description").toString().length()>70)
-            {
+            if (object.getString("description").toString().length() > 70) {
                 holder.TXT_ViewMore.setVisibility(View.VISIBLE);
                 holder.Description.setMaxLines(2);
-                Loger.MSG("@@ LENTH-",holder.Description.getText().length()+"");
-            }else {
+                Loger.MSG("@@ LENTH-", holder.Description.getText().length() + "");
+            } else {
                 holder.TXT_ViewMore.setVisibility(View.GONE);
                 holder.Description.setTag("jjjjj");
             }
-
 
 
             holder.TXT_ViewMore.setOnClickListener(new View.OnClickListener() {
@@ -89,15 +87,14 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
             holder.RL_Book.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (block_user_status==1){
+                    if (block_user_status == 1) {
                         new MYAlert(mContext).AlertOnly(mContext.getResources().getString(R.string.booknow), mContext.getResources().getString(R.string.unable_to_make_book), new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
 
                             }
                         });
-                    }
-                    else {
+                    } else {
                         Intent intent = new Intent(mContext, BookingOneActivity.class);
                         intent.putExtra("LIST", "");
                         intent.putExtra("ItemDetails", "" + ((ProfileDetailsActivity) mContext).PrevJSONObject);
@@ -117,7 +114,7 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
     class ViewHolder extends RecyclerView.ViewHolder {
         SFNFBoldTextView Title;
         SFNFTextView Description;
-        SFNFTextView PricePer,TXT_ViewMore;
+        SFNFTextView PricePer, TXT_ViewMore;
         RelativeLayout RL_Book;
         ImageView IMG_SERVICES;
 
@@ -128,7 +125,7 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
             TXT_ViewMore = (SFNFTextView) itemView.findViewById(R.id.TXT_ViewMore);
             PricePer = (SFNFTextView) itemView.findViewById(R.id.PricePer);
             RL_Book = (RelativeLayout) itemView.findViewById(R.id.RL_Book);
-            IMG_SERVICES=(ImageView)itemView.findViewById(R.id.IMG_SERVICES);
+            IMG_SERVICES = (ImageView) itemView.findViewById(R.id.IMG_SERVICES);
 
         }
 

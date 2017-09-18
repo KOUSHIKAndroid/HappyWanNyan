@@ -38,21 +38,20 @@ public class ProfileFragImagesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         try {
-            Images=new JSONObject(((ProfileDetailsActivity)getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("imagelist");
-            if(Images.length()>0){
+            Images = new JSONObject(((ProfileDetailsActivity) getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("imagelist");
+            if (Images.length() > 0) {
                 view.findViewById(R.id.No_Review).setVisibility(View.GONE);
                 RecyclerView list = (RecyclerView) view.findViewById(R.id.service_recycler);
                 list.setLayoutManager(new GridLayoutManager(getActivity(), 4));
-                list.setAdapter(new ProfileImageListingAdapter(getActivity(),Images));
-            }else {
-                ((SFNFTextView)view.findViewById(R.id.No_Review)).setText(getString(R.string.no_ImagesFound));
+                list.setAdapter(new ProfileImageListingAdapter(getActivity(), Images));
+            } else {
+                ((SFNFTextView) view.findViewById(R.id.No_Review)).setText(getString(R.string.no_ImagesFound));
                 view.findViewById(R.id.No_Review).setVisibility(View.VISIBLE);
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
 
 
     }

@@ -1,7 +1,6 @@
 package com.happywannyan.Utils.cardstack;
 
 import android.animation.Animator;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +76,7 @@ public class SwipeListener implements View.OnTouchListener {
                 x = event.getX();
                 y = event.getY();
 
-                if(event.findPointerIndex(mActivePointerId) == 0) {
+                if (event.findPointerIndex(mActivePointerId) == 0) {
                     callback.cardActionDown();
                 }
 
@@ -90,7 +89,7 @@ public class SwipeListener implements View.OnTouchListener {
 
                 final int pointerIndex = event.findPointerIndex(mActivePointerId);
                 //Log.i("pointer index: " , Integer.toString(pointerIndex));
-                if(pointerIndex < 0 || pointerIndex > 0 ){
+                if (pointerIndex < 0 || pointerIndex > 0) {
                     break;
                 }
 
@@ -103,7 +102,7 @@ public class SwipeListener implements View.OnTouchListener {
 
                 //throw away the move in this case as it seems to be wrong
                 //TODO: figure out why this is the case
-                if((int)initialXPress == 0 && (int) initialYPress == 0){
+                if ((int) initialXPress == 0 && (int) initialYPress == 0) {
                     //makes sure the pointer is valid
                     break;
                 }
@@ -122,7 +121,7 @@ public class SwipeListener implements View.OnTouchListener {
                 float rotation = ROTATION_DEGREES * 2.f * distobjectX / parentWidth;
                 card.setRotation(rotation);
 
-                if (rightView != null && leftView != null){
+                if (rightView != null && leftView != null) {
                     //set alpha of left and right image
                     float alpha = (((posX - paddingLeft) / (parentWidth * OPACITY_END)));
                     //float alpha = (((posX - paddingLeft) / parentWidth) * ALPHA_MAGNITUDE );
@@ -139,7 +138,7 @@ public class SwipeListener implements View.OnTouchListener {
                 //card position
                 checkCardForEvent();
 
-                if(event.findPointerIndex(mActivePointerId) == 0) {
+                if (event.findPointerIndex(mActivePointerId) == 0) {
                     callback.cardActionUp();
                 }
                 //check if this is a click event and then perform a click
@@ -226,8 +225,8 @@ public class SwipeListener implements View.OnTouchListener {
     }
 
     private ViewPropertyAnimator resetCardPosition() {
-        if(rightView!=null)rightView.setAlpha(0);
-        if(leftView!=null)leftView.setAlpha(0);
+        if (rightView != null) rightView.setAlpha(0);
+        if (leftView != null) leftView.setAlpha(0);
         return card.animate()
                 .setDuration(200)
                 .setInterpolator(new OvershootInterpolator(1.5f))
@@ -263,9 +262,13 @@ public class SwipeListener implements View.OnTouchListener {
 
     public interface SwipeCallback {
         void cardSwipedLeft();
+
         void cardSwipedRight();
+
         void cardOffScreen();
+
         void cardActionDown();
+
         void cardActionUp();
     }
 }

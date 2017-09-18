@@ -80,7 +80,7 @@ public class PastSitterFragment extends Fragment {
                 ((BaseActivity) getActivity()).Menu_Drawer();
             }
         });
-        ((SFNFTextView)view.findViewById(R.id.PAGE_Titile)).setText(getActivity().getResources().getString(R.string.past_sitters));
+        ((SFNFTextView) view.findViewById(R.id.PAGE_Titile)).setText(getActivity().getResources().getString(R.string.past_sitters));
         rcv_favourite = (RecyclerView) view.findViewById(R.id.recycler_view);
         rcv_favourite.setLayoutManager(new LinearLayoutManager(getActivity()));
 

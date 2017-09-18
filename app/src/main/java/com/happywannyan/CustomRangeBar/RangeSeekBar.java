@@ -15,8 +15,6 @@ import android.os.Parcelable;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
-import android.widget.ImageView;
-
 
 import com.happywannyan.R;
 
@@ -103,8 +101,7 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
         // in case absoluteMinValue == absoluteMaxValue, avoid division by zero when normalizing.
         if (0 == (absoluteMaxValuePrim - absoluteMinValuePrim)) {
             setNormalizedMinValue(0d);
-        }
-        else {
+        } else {
             setNormalizedMinValue(valueToNormalized(value));
         }
     }
@@ -119,8 +116,7 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
         // in case absoluteMinValue == absoluteMaxValue, avoid division by zero when normalizing.
         if (0 == (absoluteMaxValuePrim - absoluteMinValuePrim)) {
             setNormalizedMaxValue(1d);
-        }
-        else {
+        } else {
             setNormalizedMaxValue(valueToNormalized(value));
         }
     }
@@ -129,7 +125,6 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
     public void setOnRangeSeekBarChangeListener(OnRangeSeekBarChangeListener<T> listener) {
         this.listener = listener;
     }
-
 
 
     @Override
@@ -167,8 +162,7 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
 
                     if (mIsDragging) {
                         trackTouchEvent(event);
-                    }
-                    else {
+                    } else {
                         // Scroll to follow the motion event
                         pointerIndex = event.findPointerIndex(mActivePointerId);
                         final float x = event.getX(pointerIndex);
@@ -193,8 +187,7 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
                     trackTouchEvent(event);
                     onStopTrackingTouch();
                     setPressed(false);
-                }
-                else {
+                } else {
                     // Touch up when we never crossed the touch slop threshold
                     // should be interpreted as a tap-seek to that location.
                     onStartTrackingTouch();
@@ -256,8 +249,7 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
 
         if (Thumb.MIN.equals(pressedThumb)) {
             setNormalizedMinValue(screenToNormalized(x));
-        }
-        else if (Thumb.MAX.equals(pressedThumb)) {
+        } else if (Thumb.MAX.equals(pressedThumb)) {
             setNormalizedMaxValue(screenToNormalized(x));
         }
     }
@@ -356,11 +348,9 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
         if (minThumbPressed && maxThumbPressed) {
             // if both thumbs are pressed (they lie on top of each other), choose the one with more room to drag. this avoids "stalling" the thumbs in a corner, not being able to drag them apart anymore.
             result = (touchX / getWidth() > 0.5f) ? Thumb.MIN : Thumb.MAX;
-        }
-        else if (minThumbPressed) {
+        } else if (minThumbPressed) {
             result = Thumb.MIN;
-        }
-        else if (maxThumbPressed) {
+        } else if (maxThumbPressed) {
             result = Thumb.MAX;
         }
         return result;
@@ -409,8 +399,7 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
         if (width <= 2 * padding) {
             // prevent division by zero, simply return 0.
             return 0d;
-        }
-        else {
+        } else {
             double result = (screenCoord - padding) / (width - 2 * padding);
             return Math.min(1d, Math.max(0d, result));
         }
@@ -419,11 +408,11 @@ public class RangeSeekBar<T extends Number> extends AppCompatImageView {
 
     public interface OnRangeSeekBarChangeListener<T> {
         void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, T minValue, T maxValue);
+
         void onRangeSeekBarValuesChanging(RangeSeekBar<?> bar, int minValue, int maxValue);
 //public void onRangeSeekBarValuesChanging(RangeSeekBar<?> bar, T minValue, T maxValue);
 
     }
-
 
 
     private enum Thumb {

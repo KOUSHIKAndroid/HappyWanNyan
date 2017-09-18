@@ -10,7 +10,8 @@ public class SetGetFavourite {
 
     boolean checkRightValue;
 
-JSONObject dataObject;
+    JSONObject dataObject;
+
     public boolean isCheckRightValue() {
         return checkRightValue;
     }

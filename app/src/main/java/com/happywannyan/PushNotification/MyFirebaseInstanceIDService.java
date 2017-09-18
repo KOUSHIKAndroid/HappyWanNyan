@@ -14,7 +14,6 @@ import java.util.HashMap;
  */
 
 
-
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private static final String TAG = "MyFirebaseIIDService";
@@ -39,9 +38,9 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     // [END refresh_token]
 
     private void sendRegistrationToServer(String token) {
-        HashMap<String,String> Params=new HashMap<>();
+        HashMap<String, String> Params = new HashMap<>();
         Params.put("user_id", AppConstant.UserId);
-        Params.put("anorid_device_id",token);
+        Params.put("anorid_device_id", token);
 
         new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override

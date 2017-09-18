@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.happywannyan.Activities.AddAnotherPetsActivity;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.YourPetsAdapter;
@@ -146,10 +147,10 @@ public class MyPetsFragments extends Fragment {
                         setGetYourPets.setOtherinfo(jsonObject);
                         ListPets.add(setGetYourPets);
                     }
-                    if(i==0) {
+                    if (i == 0) {
                         yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets);
                         recyclerView.setAdapter(yourPets_adapter);
-                    }else {
+                    } else {
                         yourPets_adapter.notifyDataSetChanged();
                     }
 
