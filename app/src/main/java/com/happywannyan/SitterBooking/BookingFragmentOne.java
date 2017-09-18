@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import static android.app.Activity.RESULT_OK;
 
 public class BookingFragmentOne extends Fragment implements View.OnClickListener {
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
