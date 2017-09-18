@@ -58,6 +58,7 @@
                     android:layout_gravity="center" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_default"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"

@@ -220,7 +220,7 @@ public class NewCardAddActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // ListView Clicked item value
                 String  itemValueYear    = (String) listView.getItemAtPosition(position);
-                tv_year.setText(itemValueYear.substring(2,itemValueYear.length()));
+                tv_year.setText(itemValueYear.substring(0,itemValueYear.length()));
                 Loger.MSG("itemValueYear",""+itemValueYear);
                 popupWindow.dismiss();
             }

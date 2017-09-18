@@ -238,7 +238,9 @@ public class BookingFragmentFoure extends Fragment {
             String cvv = data.getStringExtra("cvv");
 
 
-            final int year = Integer.parseInt("20" + expiry.split("/")[1]);
+            final int year = Integer.parseInt(
+//                    "20" +
+                            expiry.split("/")[1]);
             final int month = Integer.parseInt(expiry.split("/")[0]);
 
             Loger.MSG("@@ Expiry-", "CardHolderName-"+cardHolderName);

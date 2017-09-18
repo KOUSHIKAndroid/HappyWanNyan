@@ -75,8 +75,10 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
             holder.tv_card_number.setText("**** **** **** " + OB.getString("card_last_digits"));
             if (OB.getString("is_default").equalsIgnoreCase("1")) {
                 holder.img_default.setImageResource(R.drawable.ic_check_checked);
+                holder.tv_default.setText(mContext.getResources().getString(R.string.default2));
             } else {
                 holder.img_default.setImageResource(R.drawable.ic_check_box_unchecked);
+                holder.tv_default.setText(mContext.getResources().getString(R.string.make_default));
             }
 
             holder.LLDefault.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +130,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView img_delete, IMG_VISA, img_default;
         LinearLayout LLDefault;
-        SFNFTextView tv_name_on_card, tv_card_number, tv_card_month_date, tv_added_on;
+        SFNFTextView tv_name_on_card, tv_card_number, tv_card_month_date, tv_added_on,tv_default;
 
 
         public MyViewHolder(View itemView) {
@@ -140,6 +142,7 @@ public class AdapterPaymentList extends RecyclerView.Adapter<AdapterPaymentList.
             tv_card_number = (SFNFTextView) itemView.findViewById(R.id.tv_card_number);
             tv_card_month_date = (SFNFTextView) itemView.findViewById(R.id.tv_card_month_date);
             tv_added_on = (SFNFTextView) itemView.findViewById(R.id.tv_added_on);
+            tv_default = (SFNFTextView) itemView.findViewById(R.id.tv_default);
             img_default = (ImageView) itemView.findViewById(R.id.img_default);
             LLDefault = (LinearLayout) itemView.findViewById(R.id.LLDefault);
 
