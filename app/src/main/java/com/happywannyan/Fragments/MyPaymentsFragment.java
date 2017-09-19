@@ -215,6 +215,9 @@ public class MyPaymentsFragment extends Fragment {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ TokenSuccess", Result);
+
+                                        //String CustomerID = ""+token.getId();
+
                                         String CustomerID="";
 
                                         try {

@@ -270,7 +270,17 @@ public class BookingFragmentFoure extends Fragment {
                                         Loger.MSG("@@ TokenSuccess", Result);
 
                                         //String CustomerID = ""+token.getId();
-                                        String CustomerID = ""+token.getCard().getCustomerId();
+
+                                        String CustomerID="";
+
+                                        try {
+                                            JSONObject JSONObjectTokenSuccessData=new JSONObject(Result);
+                                            JSONArray jsonArray=JSONObjectTokenSuccessData.getJSONArray("data");
+                                            CustomerID=jsonArray.getJSONObject(0).getString("id");
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+
 //                                        try {
 //                                            CustomerID=new JSONObject(Result).getString("id");
 //                                        } catch (JSONException e) {
