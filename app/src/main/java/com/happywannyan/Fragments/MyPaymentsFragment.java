@@ -214,7 +214,8 @@ public class MyPaymentsFragment extends Fragment {
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ TokenSuccess", Result);
 
-                                        String CustomerID = "";
+                                        //String CustomerID = ""+token.getId();
+                                        String CustomerID = ""+token.getCard().getCustomerId();
 //                                        try {
 //                                            CustomerID=new JSONObject(Result).getString("id");
 //                                        } catch (JSONException e) {
@@ -228,28 +229,105 @@ public class MyPaymentsFragment extends Fragment {
                                         Loger.MSG("@@ TOKEN customerLast4Digits-", token.getCard().getLast4() + "");
                                         Loger.MSG("@@ TOKEN ID-", token.getCard().getId() + "");
 
-                                        HashMap<String, String> Params = new HashMap<String, String>();
-                                        Params.put("user_id", AppConstant.UserId);
-                                        Params.put("stripe_id", CustomerID + "");
-                                        Params.put("card_id", token.getCard().getId() + "");
-                                        Params.put("name_on_card", cardHolderName);
-                                        Params.put("description", "");
-                                        Params.put("address_city", token.getCard().getAddressCity() + "");
-                                        Params.put("address_country", token.getCard().getAddressCountry() + "");
-                                        Params.put("address_line1", token.getCard().getAddressLine1() + "");
-                                        Params.put("address_line2", token.getCard().getAddressLine2() + "");
-                                        Params.put("address_state", token.getCard().getAddressState() + "");
-                                        Params.put("address_zip", token.getCard().getAddressZip() + "");
-                                        Params.put("exp_month", month + "");
-                                        Params.put("exp_year", year + "");
-                                        Params.put("card_brand", token.getCard().getBrand() + "");
-                                        Params.put("card_last_digits", token.getCard().getLast4() + "");
-                                        Params.put("card_status", "");
-                                        Params.put("cvv_code", card.getCVC() + "");
-                                        Params.put("new_card", "1");
-                                        Params.put("make_default", make_defaultValue);
+                                        ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
 
-                                        new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
+                                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("card_brand");
+                                        setGetAPIPostData.setValues(token.getCard().getBrand() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("name_on_card");
+                                        setGetAPIPostData.setValues(cardHolderName);
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("card_id");
+                                        setGetAPIPostData.setValues(token.getCard().getId() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_line2");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressLine2() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_city");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressCity() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("user_id");
+                                        setGetAPIPostData.setValues(AppConstant.UserId+"");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_zip");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressZip() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("new_card");
+                                        setGetAPIPostData.setValues("1");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_line1");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressLine1() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("exp_month");
+                                        setGetAPIPostData.setValues(month + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_state");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressState() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("stripe_id");
+                                        setGetAPIPostData.setValues(CustomerID);
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("card_last_digits");
+                                        setGetAPIPostData.setValues(token.getCard().getLast4() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("card_status");
+                                        setGetAPIPostData.setValues("");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("cvv_code");
+                                        setGetAPIPostData.setValues(card.getCVC()+"");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("make_default");
+                                        setGetAPIPostData.setValues(make_defaultValue);
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_country");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressCountry() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("exp_year");
+                                        setGetAPIPostData.setValues(year + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("description");
+                                        setGetAPIPostData.setValues("");
+                                        Params.add(setGetAPIPostData);
+
+
+                                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CARD RESP-", Result);

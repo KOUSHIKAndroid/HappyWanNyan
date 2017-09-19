@@ -49,6 +49,8 @@ public class BookingFragmentFoure extends Fragment {
     final int GET_NEW_CARD = 2;
     String make_defaultValue = "0";
 
+    CardAdapter cardAdapter;
+
     JSONObject cardFinalSelection;
 
     // TODO: Rename and change types of parameters
@@ -227,7 +229,6 @@ public class BookingFragmentFoure extends Fragment {
         SetCardDetails();
     }
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -239,7 +240,6 @@ public class BookingFragmentFoure extends Fragment {
             String expiry = data.getStringExtra("expiry");
             String cvv = data.getStringExtra("cvv");
             make_defaultValue = data.getStringExtra("make_default");
-
 
             final int year = Integer.parseInt(
 //                    "20" +
@@ -253,22 +253,10 @@ public class BookingFragmentFoure extends Fragment {
             Loger.MSG("@@ Expiry-", "cvv-" + cvv);
             Loger.MSG("@@ Expiry-", "make_defaultValue-" + make_defaultValue);
 
-//            final String cardHolderName = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
-//            final String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
-//            String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
-//            String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
-//            Loger.MSG("@@ Expiry-", cardNumber);
-//
-//            final int year = Integer.parseInt("20" + expiry.split("/")[1]);
-//            final int month = Integer.parseInt(expiry.split("/")[0]);
-//            Loger.MSG("@@ Expiry-", " YEAR-" + year);
-//            Loger.MSG("@@ Expiry-", " MONTH-" + month);
-
             card = new Card(cardNumber, month, year, cvv);
             if (card.validateCard()) {
                 Loger.MSG("@@ Card ID->", card.getId() + "");
                 Loger.MSG("@@ Card Number->", card.getNumber() + "");
-
                 card.setName(cardHolderName);
 
                 Stripe stripe = new Stripe(getActivity(), AppConstant.STRIPE_PUBLISH_KEY);
@@ -282,48 +270,130 @@ public class BookingFragmentFoure extends Fragment {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ TokenSuccess", Result);
-                                        String CustomerID = "";
+
+                                        //String CustomerID = ""+token.getId();
+                                        String CustomerID = ""+token.getCard().getCustomerId();
 //                                        try {
 //                                            CustomerID=new JSONObject(Result).getString("id");
 //                                        } catch (JSONException e) {
 //                                            e.printStackTrace();
 //                                        }
+
+
                                         Loger.MSG("@@ TOKEN finger-", token.getCard().getFingerprint() + "");
                                         Loger.MSG("@@ TOKEN Brand-", token.getCard().getBrand() + "");
                                         Loger.MSG("@@ TOKEN customerId-", token.getCard().getCustomerId() + "");
                                         Loger.MSG("@@ TOKEN customerLast4Digits-", token.getCard().getLast4() + "");
                                         Loger.MSG("@@ TOKEN ID-", token.getCard().getId() + "");
 
-                                        HashMap<String, String> Params = new HashMap<String, String>();
-                                        Params.put("user_id", AppConstant.UserId);
-                                        Params.put("stripe_id", CustomerID + "");
-                                        Params.put("card_id", token.getCard().getId() + "");
-                                        Params.put("name_on_card", cardHolderName);
-                                        Params.put("description", "");
-                                        Params.put("address_city", token.getCard().getAddressCity() + "");
-                                        Params.put("address_country", token.getCard().getAddressCountry() + "");
-                                        Params.put("address_line1", token.getCard().getAddressLine1() + "");
-                                        Params.put("address_line2", token.getCard().getAddressLine2() + "");
-                                        Params.put("address_state", token.getCard().getAddressState() + "");
-                                        Params.put("address_zip", token.getCard().getAddressZip() + "");
-                                        Params.put("exp_month", month + "");
-                                        Params.put("exp_year", year + "");
-                                        Params.put("card_brand", token.getCard().getBrand() + "");
-                                        Params.put("card_last_digits", token.getCard().getLast4() + "");
-                                        Params.put("card_status", "");
-                                        Params.put("cvv_code", card.getCVC() + "");
-                                        Params.put("new_card", "1");
-                                        Params.put("make_default", make_defaultValue);
+                                        ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
 
-                                        new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
+                                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("card_brand");
+                                        setGetAPIPostData.setValues(token.getCard().getBrand() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("name_on_card");
+                                        setGetAPIPostData.setValues(cardHolderName);
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("card_id");
+                                        setGetAPIPostData.setValues(token.getCard().getId() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_line2");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressLine2() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_city");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressCity() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("user_id");
+                                        setGetAPIPostData.setValues(AppConstant.UserId+"");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_zip");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressZip() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("new_card");
+                                        setGetAPIPostData.setValues("1");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_line1");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressLine1() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("exp_month");
+                                        setGetAPIPostData.setValues(month + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_state");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressState() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("stripe_id");
+                                        setGetAPIPostData.setValues(CustomerID);
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("card_last_digits");
+                                        setGetAPIPostData.setValues(token.getCard().getLast4() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("card_status");
+                                        setGetAPIPostData.setValues("");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("cvv_code");
+                                        setGetAPIPostData.setValues(card.getCVC()+"");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("make_default");
+                                        setGetAPIPostData.setValues(make_defaultValue);
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("address_country");
+                                        setGetAPIPostData.setValues(token.getCard().getAddressCountry() + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("exp_year");
+                                        setGetAPIPostData.setValues(year + "");
+                                        Params.add(setGetAPIPostData);
+
+                                        setGetAPIPostData = new SetGetAPIPostData();
+                                        setGetAPIPostData.setPARAMS("description");
+                                        setGetAPIPostData.setValues("");
+                                        Params.add(setGetAPIPostData);
+
+
+                                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {
-                                                Loger.MSG("@@ CRAD RESP-", Result);
+                                                Loger.MSG("@@ CARD RESP-", Result);
                                                 new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                                                         , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 appLoader.Dismiss();
+                                                                setGetCardsArrayList.clear();
                                                                 try {
                                                                     JSONObject jsonObject = new JSONObject(Result);
                                                                     JSONArray jsonArrayUserStripeData = jsonObject.getJSONArray("user_stripe_data");
@@ -351,14 +421,7 @@ public class BookingFragmentFoure extends Fragment {
                                                                 } catch (JSONException e) {
                                                                     e.printStackTrace();
                                                                 }
-
-                                                                REC_Card.setAdapter(new CardAdapter(getActivity(), setGetCardsArrayList, new onClickItem() {
-                                                                    @Override
-                                                                    public void onSelectItemClick(int position, JSONObject data) {
-                                                                        cardFinalSelection = data;
-                                                                        Loger.MSG("SelectedData", "" + data);
-                                                                    }
-                                                                }));
+                                                                cardAdapter.notifyDataSetChanged();
                                                             }
 
                                                             @Override
@@ -399,8 +462,6 @@ public class BookingFragmentFoure extends Fragment {
                                         appLoader.Dismiss();
                                     }
                                 });
-
-
                             }
 
                             public void onError(Exception error) {
@@ -420,7 +481,6 @@ public class BookingFragmentFoure extends Fragment {
                 new MYAlert(getActivity()).AlertOnly("Add Card Error", "Invalid card please add a correct card", new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
-
                     }
                 });
             }
@@ -479,13 +539,14 @@ public class BookingFragmentFoure extends Fragment {
                             e.printStackTrace();
                         }
 
-                        REC_Card.setAdapter(new CardAdapter(getActivity(), setGetCardsArrayList, new onClickItem() {
+                        cardAdapter=new CardAdapter(getActivity(), setGetCardsArrayList, new onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
                                 cardFinalSelection = data;
                                 Loger.MSG("SelectedData", "" + data);
                             }
-                        }));
+                        });
+                        REC_Card.setAdapter(cardAdapter);
                     }
 
                     @Override

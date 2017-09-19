@@ -74,7 +74,7 @@ public class CustomJSONParser {
                 try {
                     if (!isCancelled()) {
 
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL + PARAMS).build();
                         Response response = client.newCall(request).execute();
 
@@ -138,7 +138,7 @@ public class CustomJSONParser {
                 try {
                     if (!isCancelled()) {
                         MultipartBody requestBody = builderNew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -206,7 +206,7 @@ public class CustomJSONParser {
                 try {
                     if (!isCancelled()) {
                         MultipartBody requestBody = builderNew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(60000, TimeUnit.MILLISECONDS).retryOnConnectionFailure(true).build();
+                        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(6000, TimeUnit.MILLISECONDS).retryOnConnectionFailure(true).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -278,7 +278,7 @@ public class CustomJSONParser {
                     if (!isCancelled()) {
 
                         MultipartBody requestBody = builderNew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
@@ -363,7 +363,7 @@ public class CustomJSONParser {
                     if (!isCancelled()) {
 
                         MultipartBody requestBody = builderNew.build();
-                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(60000, TimeUnit.MILLISECONDS).build();
+                        OkHttpClient client = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(6000, TimeUnit.MILLISECONDS).build();
                         Request request = new Request.Builder().url(URL).method("POST", RequestBody.create(null, new byte[0]))
                                 .post(requestBody).build();
                         Response response = client.newCall(request).execute();
