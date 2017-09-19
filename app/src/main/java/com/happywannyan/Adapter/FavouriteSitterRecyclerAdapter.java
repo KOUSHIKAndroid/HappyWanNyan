@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
 import com.bumptech.glide.Glide;
 import com.chauthai.swipereveallayout.SwipeRevealLayout;
 import com.chauthai.swipereveallayout.ViewBinderHelper;
@@ -24,19 +25,20 @@ import com.happywannyan.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
  * Created by su on 6/26/17.
  */
 
-public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecyclerAdapter.MyViewHolder> {
+public class FavouriteSitterRecyclerAdapter extends RecyclerView.Adapter<FavouriteSitterRecyclerAdapter.MyViewHolder> {
     DisplayMetrics displayMetrics;
     Context context;
     ArrayList<SetGetFavourite> favouriteArrayList;
     private final ViewBinderHelper binderHelper = new ViewBinderHelper();
 
-    public FavouriteRecyclerAdapter(Context context, ArrayList<SetGetFavourite> favouriteArrayList) {
+    public FavouriteSitterRecyclerAdapter(Context context, ArrayList<SetGetFavourite> favouriteArrayList) {
         this.context = context;
         this.favouriteArrayList = favouriteArrayList;
         displayMetrics = context.getResources().getDisplayMetrics();
@@ -60,10 +62,9 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
         holder.bind(data);
 
 
-
         holder.RL_Main.getLayoutParams().width = displayMetrics.widthPixels;
         holder.LLDelete.getLayoutParams().width = (displayMetrics.widthPixels) / 3;
-       // holder.LLDelete.getLayoutParams().height = (displayMetrics.widthPixels) / 3;
+        // holder.LLDelete.getLayoutParams().height = (displayMetrics.widthPixels) / 3;
 
         final JSONObject object = favouriteArrayList.get(position).getDataObject();
 

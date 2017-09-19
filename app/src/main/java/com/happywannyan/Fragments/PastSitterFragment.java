@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Adapter.FavouriteRecyclerAdapter;
+import com.happywannyan.Adapter.PastSitterRecyclerAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -38,7 +38,7 @@ public class PastSitterFragment extends Fragment {
 
     RecyclerView rcv_favourite;
     ArrayList<SetGetFavourite> favouriteArrayList;
-    FavouriteRecyclerAdapter favouriteRecyclerAdapter;
+    PastSitterRecyclerAdapter pastSitterRecyclerAdapter;
 
     public PastSitterFragment() {
         // Required empty public constructor
@@ -125,10 +125,10 @@ public class PastSitterFragment extends Fragment {
 
                     }
                     if (startpoint == 0) {
-                        favouriteRecyclerAdapter = new FavouriteRecyclerAdapter(getActivity(), favouriteArrayList);
-                        rcv_favourite.setAdapter(favouriteRecyclerAdapter);
+                        pastSitterRecyclerAdapter = new PastSitterRecyclerAdapter(getActivity(), favouriteArrayList);
+                        rcv_favourite.setAdapter(pastSitterRecyclerAdapter);
                     } else
-                        favouriteRecyclerAdapter.notifyDataSetChanged();
+                        pastSitterRecyclerAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

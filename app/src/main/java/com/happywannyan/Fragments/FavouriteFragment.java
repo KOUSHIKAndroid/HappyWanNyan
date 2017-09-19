@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Adapter.FavouriteRecyclerAdapter;
+import com.happywannyan.Adapter.FavouriteSitterRecyclerAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetFavourite;
@@ -37,7 +37,7 @@ public class FavouriteFragment extends Fragment {
 
     RecyclerView rcv_favourite;
     ArrayList<SetGetFavourite> favouriteArrayList;
-    FavouriteRecyclerAdapter favouriteRecyclerAdapter;
+    FavouriteSitterRecyclerAdapter favouriteSitterRecyclerAdapter;
 
     public FavouriteFragment() {
         // Required empty public constructor
@@ -121,10 +121,10 @@ public class FavouriteFragment extends Fragment {
                         favouriteArrayList.add(setGetFavourite);
                     }
                     if (startpoint == 0) {
-                        favouriteRecyclerAdapter = new FavouriteRecyclerAdapter(getActivity(), favouriteArrayList);
-                        rcv_favourite.setAdapter(favouriteRecyclerAdapter);
+                        favouriteSitterRecyclerAdapter = new FavouriteSitterRecyclerAdapter(getActivity(), favouriteArrayList);
+                        rcv_favourite.setAdapter(favouriteSitterRecyclerAdapter);
                     } else
-                        favouriteRecyclerAdapter.notifyDataSetChanged();
+                        favouriteSitterRecyclerAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
