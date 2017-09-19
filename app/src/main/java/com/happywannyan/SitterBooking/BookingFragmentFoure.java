@@ -27,13 +27,11 @@ import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
+
 
 import static android.app.Activity.RESULT_OK;
 
@@ -466,7 +464,7 @@ public class BookingFragmentFoure extends Fragment {
 
                             public void onError(Exception error) {
                                 appLoader.Dismiss();
-                                new MYAlert(getActivity()).AlertOnly("Add Card Error", error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
+                                new MYAlert(getActivity()).AlertOnly(getActivity().getResources().getString(R.string.add_card_error), error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
 
@@ -478,7 +476,7 @@ public class BookingFragmentFoure extends Fragment {
                 );
 
             } else {
-                new MYAlert(getActivity()).AlertOnly("Add Card Error", "Invalid card please add a correct card", new MYAlert.OnlyMessage() {
+                new MYAlert(getActivity()).AlertOnly(getActivity().getResources().getString(R.string.add_card_error),getActivity().getResources().getString(R.string.invalid_card_please_add), new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
                     }
