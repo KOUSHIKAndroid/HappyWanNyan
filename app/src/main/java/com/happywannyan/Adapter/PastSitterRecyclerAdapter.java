@@ -167,7 +167,7 @@ public class PastSitterRecyclerAdapter extends RecyclerView.Adapter<PastSitterRe
                             context.getResources().getString(R.string.are_you_sure_you_want_to_delete), new MYAlert.OnOkCancel() {
                                 @Override
                                 public void OnOk() {
-                                    //onBackPressed();
+
                                 }
 
                                 @Override
