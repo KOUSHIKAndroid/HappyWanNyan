@@ -119,7 +119,7 @@ public class PastSitterFragment extends Fragment {
                     for (int i = 0; i < Array.length(); i++) {
 
                         SetGetFavourite setGetFavourite = new SetGetFavourite();
-                        setGetFavourite.setCheckRightValue(false);
+                        setGetFavourite.setTagName("view " + i);
                         setGetFavourite.setDataObject(Array.getJSONObject(i));
                         favouriteArrayList.add(setGetFavourite);
 

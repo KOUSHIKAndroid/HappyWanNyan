@@ -6,17 +6,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-
+import android.widget.RelativeLayout;
 import com.bumptech.glide.Glide;
+import com.chauthai.swipereveallayout.SwipeRevealLayout;
+import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.happywannyan.Activities.profile.ContactMsgActivity;
 import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
@@ -26,7 +24,6 @@ import com.happywannyan.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 /**
@@ -37,6 +34,7 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
     DisplayMetrics displayMetrics;
     Context context;
     ArrayList<SetGetFavourite> favouriteArrayList;
+    private final ViewBinderHelper binderHelper = new ViewBinderHelper();
 
     public FavouriteRecyclerAdapter(Context context, ArrayList<SetGetFavourite> favouriteArrayList) {
         this.context = context;
@@ -53,17 +51,19 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
+        final String data = favouriteArrayList.get(position).getTagName();
+        // Use ViewBindHelper to restore and save the open/close state of the SwipeRevealView
+        // put an unique string id as value, can be any string which uniquely define the data
+        binderHelper.bind(holder.swipe_layout, data);
 
-        if (!favouriteArrayList.get(position).isCheckRightValue()) {
-            //holder.horizontalScrollView.invalidate();
-            holder.horizontalScrollView.fullScroll(HorizontalScrollView.FOCUS_LEFT);
-        } else {
-            holder.horizontalScrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
-        }
+        // Bind your data here
+        holder.bind(data);
 
 
-        holder.LLMain.getLayoutParams().width = displayMetrics.widthPixels;
+
+        holder.RL_Main.getLayoutParams().width = displayMetrics.widthPixels;
         holder.LLDelete.getLayoutParams().width = (displayMetrics.widthPixels) / 3;
+       // holder.LLDelete.getLayoutParams().height = (displayMetrics.widthPixels) / 3;
 
         final JSONObject object = favouriteArrayList.get(position).getDataObject();
 
@@ -75,7 +75,7 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
 //            holder.tv_meet_up.setText(favouriteArrayList.get(position).getMeet_up());
 //            holder.tv_contact.setText(favouriteArrayList.get(position).getContact());
 
-            holder.LLMain.setOnClickListener(new View.OnClickListener() {
+            holder.RL_Main.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
@@ -121,85 +121,9 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
                     }
                 }
             });
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
-        holder.horizontalScrollView.setOnTouchListener(new View.OnTouchListener() {
-            float x1 = 0, x2 = 0;
-            float MIN_DISTANCE = 0;
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        x1 = event.getX();
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        x2 = event.getX();
-                        float deltaX = x2 - x1;
-
-                        if (Math.abs(deltaX) > MIN_DISTANCE) {
-                            // Left to Right swipe action
-                            if (x2 > x1) {
-                                Toast.makeText(context, "Left to Right swipe [Next]", Toast.LENGTH_SHORT).show();
-
-                                Log.i("position", "position:" + position);
-                                Log.i("start", "start");
-
-                                if (favouriteArrayList.get(position).isCheckRightValue()) {
-                                    favouriteArrayList.get(position).setCheckRightValue(false);
-                                }
-
-                                notifyDataSetChanged();
-
-
-                                for (int i = 0; i < favouriteArrayList.size(); i++) {
-                                    Log.i("isopen", "[" + i + "]" + favouriteArrayList.get(i).isCheckRightValue());
-                                }
-                            }
-
-                            // Right to left swipe action
-                            else {
-                                Toast.makeText(context, "Right to Left swipe [Previous]", Toast.LENGTH_SHORT).show();
-
-                                Log.i("position", "position:" + position);
-                                Log.i("start", "start");
-
-                                if (!favouriteArrayList.get(position).isCheckRightValue()) {
-
-                                    favouriteArrayList.get(position).setCheckRightValue(true);
-                                }
-
-
-                                for (int i = 0; i < favouriteArrayList.size(); i++) {
-                                    if (i != position) {
-                                        if (favouriteArrayList.get(i).isCheckRightValue()) {
-                                            favouriteArrayList.get(i).setCheckRightValue(false);
-
-                                            notifyItemChanged(i);
-
-                                            break;
-                                        }
-                                    }
-                                }
-
-                                for (int i = 0; i < favouriteArrayList.size(); i++) {
-                                    Log.i("isopen", "[" + i + "]" + favouriteArrayList.get(i).isCheckRightValue());
-                                }
-                            }
-
-                        } else {
-                            // consider as something else - a screen tap for example
-                        }
-                        break;
-                }
-                return false;
-            }
-        });
 
     }
 
@@ -211,9 +135,10 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView img_view;
         SFNFTextView tv_title, tv_reserve_or_not_reserve, tv_address, tv_meet_up, tv_contact;
-        LinearLayout LLMain, LLDelete;
-        HorizontalScrollView horizontalScrollView;
+        LinearLayout LLDelete;
+        RelativeLayout RL_Main;
         View itemView;
+        SwipeRevealLayout swipe_layout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -225,12 +150,20 @@ public class FavouriteRecyclerAdapter extends RecyclerView.Adapter<FavouriteRecy
             tv_address = (SFNFTextView) itemView.findViewById(R.id.tv_address);
             tv_meet_up = (SFNFTextView) itemView.findViewById(R.id.tv_meet_up);
             tv_contact = (SFNFTextView) itemView.findViewById(R.id.tv_contact);
-
-
-            LLMain = (LinearLayout) itemView.findViewById(R.id.LLMain);
+            swipe_layout = (SwipeRevealLayout) itemView.findViewById(R.id.swipe_layout);
+            RL_Main = (RelativeLayout) itemView.findViewById(R.id.RL_Main);
             LLDelete = (LinearLayout) itemView.findViewById(R.id.LLDelete);
 
-            horizontalScrollView = (HorizontalScrollView) itemView.findViewById(R.id.scrollview);
+        }
+
+        public void bind(String data) {
+            LLDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    /////fcdgfghg
+                }
+            });
+
             this.itemView = itemView;
         }
     }

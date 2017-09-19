@@ -642,6 +642,7 @@
             <enum name="center" value="1"/>
             <enum name="bottom" value="2"/>
         </attr></declare-styleable>
+    <declare-styleable name="SwipeRevealLayout"><attr name="dragEdge"><flag name="left" value="1"/><flag name="right" value="2"/><flag name="top" value="4"/><flag name="bottom" value="8"/></attr><attr name="mode"><enum name="normal" value="0"/><enum name="same_level" value="1"/></attr><attr format="integer" name="flingVelocity"/><attr format="dimension" name="minDistRequestDisallowParent"/></declare-styleable>
     <declare-styleable name="SwitchCompat"><attr name="android:thumb"/><attr format="color" name="thumbTint"/><attr name="thumbTintMode">
             
             <enum name="src_over" value="3"/>
@@ -1178,6 +1179,7 @@
     <string name="add_image">Add Image</string>
     <string name="added_on">Added On</string>
     <string name="addnewcard">Add New Card</string>
+    <string name="agree_to_the_terms_and_conditions">By clicking Send Request, you agree to make all reservations and payments through HappywanNyan, and agree to the terms and conditions</string>
     <string name="all_messages">All Messages</string>
     <string name="alreadymember">Already a member</string>
     <string name="alternative_date">Alternate Date</string>
@@ -1185,6 +1187,7 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="apply">Apply</string>
     <string name="are_you_want_to_delete">Are you want to delete?</string>
+    <string name="available_Pets_Details">Available Pet(s) Details</string>
     <string name="booknow">BOOK NOW</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="breed">Breed</string>
@@ -1236,10 +1239,11 @@
     <string name="cast_tracks_chooser_dialog_subtitles">Subtitles</string>
     <string name="cast_unmute">Unmute</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="check_at_least_one_pet">Check at least one pet</string>
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">25afea5b-06ec-4de2-a933-3b5d494e2032</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">f0c85399-2995-493d-928b-32c58367433a</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1316,6 +1320,8 @@
     <string name="facebook_app_id" translatable="false">1381434255240015</string>
     <string name="favorite_sitters_delete">Delete</string>
     <string name="fb_login_protocol_scheme">fb1381434255240015</string>
+    <string name="field_length_must_be_greater_than_five">Field length must be greater then 5</string>
+    <string name="filed_can_not_be_empty">Field can\'t be empty</string>
     <string name="firebase_database_url" translatable="false">https://happywannyan-168107.firebaseio.com</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="gcm_defaultSenderId" translatable="false">279432934653</string>
@@ -1332,9 +1338,11 @@
     <string name="hint_search_addrres">Enter Postal Code or Address</string>
     <string name="how_many_times">How many times?</string>
     <string name="how_many_visits">How many visits?</string>
+    <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
     <string name="i_am_looking">I am looking for....</string>
     <string name="ic_vector_favourite_delete">Delete</string>
     <string name="ihavenotdateyet">I don\'t have dates yet</string>
+    <string name="image_error">Image Error</string>
     <string name="images">Photos</string>
     <string name="invalid_card_please_add">Invalid card please add a correct card</string>
     <string name="invalid_date">Date must be between %1$s and %2$s.</string>
@@ -1388,6 +1396,8 @@
     <string name="no_ImagesFound">No Images Found</string>
     <string name="no_ServicesFound">No Service Found</string>
     <string name="no_data_found">No Data found</string>
+    <string name="no_item_selected_in_pet_friendly">No item selected in pet friendly</string>
+    <string name="no_item_selected_in_pet_neutered">No item selected in pet spayed or neutered</string>
     <string name="no_pet_data_found">No Pet information Found</string>
     <string name="no_reviewFound">No Review found</string>
     <string name="noofnight">No. of Nights</string>
@@ -1413,7 +1423,16 @@
     <string name="pickuptime">Pick-Up Time</string>
     <string name="place_autocomplete_clear_button">Clear search</string>
     <string name="place_autocomplete_search_hint">Search</string>
+    <string name="please_check_your_mail">Please Check your mail</string>
+    <string name="please_choose_a_type">Please Choose a type</string>
+    <string name="please_choose_month">Please choose month</string>
+    <string name="please_choose_year">Please choose year</string>
+    <string name="please_enter_card_holder_name">Please Enter card holder name</string>
+    <string name="please_enter_card_holder_number">Please Enter card holder number</string>
     <string name="please_enter_code">Please enter a valid code</string>
+    <string name="please_enter_correct_cvv">Please enter correct CVV</string>
+    <string name="please_enter_correct_holder_number">Please Enter correct card number</string>
+    <string name="please_enter_cvv">Please enter CVV</string>
     <string name="please_enter_message">Please type message here</string>
     <string name="pleasenteraddress">Please Enter Address</string>
     <string name="pleaseselect">Please Slect</string>
@@ -1428,7 +1447,9 @@
     <string name="search_menu_title">Search</string>
     <string name="searchpage_txt">Our Community helps pet parent find the perfect solution for their sitting needs.</string>
     <string name="select">Please Seclect</string>
+    <string name="select_at_least_one_pet_service">Select at least one pet service</string>
     <string name="select_cancel_reason">Select a cancellation reason </string>
+    <string name="select_pet_image">Select pet image</string>
     <string name="select_service">select service</string>
     <string name="send">Send</string>
     <string name="send_request">Send Request</string>
@@ -1455,6 +1476,7 @@
     <string name="this_is_just_a_reservation_request">This is just a Reservation Request.Your card is only charged after the Sitter accept this request.</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_search_result">Map</string>
+    <string name="to">to</string>
     <string name="tota_amnt">Total Amount</string>
     <string name="total_Payableamount">Total Payable Amount</string>
     <string name="trust_safty">Trust &amp; Safety  Fee</string>
@@ -1477,6 +1499,7 @@
     <string name="with_pet">With Pet</string>
     <string name="would_you_mind_to_turn_gps_on">Would you mind to turn GPS on?</string>
     <string name="writeyourcomment">Write your comment</string>
+    <string name="you_can_not_select_before_current_date">You can\'t select before current date</string>
     <string name="youcanloginwith">You can login with</string>
     <string name="youcansignupwith">You can Sign Up With</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

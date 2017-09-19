@@ -8,17 +8,17 @@ import org.json.JSONObject;
 
 public class SetGetFavourite {
 
-    boolean checkRightValue;
+    String tagName = "";
+
+    public String getTagName() {
+        return tagName;
+    }
+
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
+    }
 
     JSONObject dataObject;
-
-    public boolean isCheckRightValue() {
-        return checkRightValue;
-    }
-
-    public void setCheckRightValue(boolean checkRightValue) {
-        this.checkRightValue = checkRightValue;
-    }
 
     public JSONObject getDataObject() {
         return dataObject;

@@ -137,13 +137,14 @@ MERGED from [com.google.android.gms:play-services-base:10.2.4] /home/su/.android
 MERGED from [com.google.android.gms:play-services-tasks:10.2.4] /home/su/.android/build-cache/ad64125e162a7f7a392c37757099b23ed7dce8cd/output/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/su/.android/build-cache/e4f3fe69a66795e4978deceb7888091e9208b443/output/AndroidManifest.xml:19:5-21:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] /home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:26:5-20
+MERGED from [com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.0] /home/su/.android/build-cache/9a1e049093e64126ec093f117602760e03f416bf/output/AndroidManifest.xml:12:5-20
 MERGED from [com.android.support:support-v4:25.3.1] /home/su/.android/build-cache/f553d2884f70e949a0b705288734fd238572e30a/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] /home/su/.android/build-cache/1d165c93439735381fabeccdc5c0f6bc5dc1bcca/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.1] /home/su/.android/build-cache/98d63d9875eff9563ab702853d5d1cb47b4b9590/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-ui:25.3.1] /home/su/.android/build-cache/1da62d3730aa99bdd01d8c2ee5951ceef959224d/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:25.3.1] /home/su/.android/build-cache/7b4acec3dfa7e5d35b25b9c05826fc6ca068c15e/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:25.3.1] /home/su/.android/build-cache/d9fd1756abc16a7b4bee4aee3f5caa39bcdea0f7/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.volley:volley:1.0.0] /home/su/.android/build-cache/1e869a9853a03d49a3a72ebb6c117cbdd96ce2bf/output/AndroidManifest.xml:9:5-20
 	android:label
@@ -469,13 +470,14 @@ MERGED from [com.mindorks:placeholderview:0.2.7] /home/su/.android/build-cache/1
 MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/su/.android/build-cache/324a952cda67fa2df195cce88bd576c64dd8513b/output/AndroidManifest.xml:20:5-43
 MERGED from [com.stripe:stripe-android:4.1.1] /home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.3.1] /home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:20:5-43
+MERGED from [com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.0] /home/su/.android/build-cache/9a1e049093e64126ec093f117602760e03f416bf/output/AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:support-v4:25.3.1] /home/su/.android/build-cache/f553d2884f70e949a0b705288734fd238572e30a/output/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.1] /home/su/.android/build-cache/1d165c93439735381fabeccdc5c0f6bc5dc1bcca/output/AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.3.1] /home/su/.android/build-cache/98d63d9875eff9563ab702853d5d1cb47b4b9590/output/AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-core-ui:25.3.1] /home/su/.android/build-cache/1da62d3730aa99bdd01d8c2ee5951ceef959224d/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.3.1] /home/su/.android/build-cache/7b4acec3dfa7e5d35b25b9c05826fc6ca068c15e/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.1] /home/su/.android/build-cache/d9fd1756abc16a7b4bee4aee3f5caa39bcdea0f7/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.volley:volley:1.0.0] /home/su/.android/build-cache/1e869a9853a03d49a3a72ebb6c117cbdd96ce2bf/output/AndroidManifest.xml:7:5-43
 	tools:overrideLibrary
@@ -493,13 +495,13 @@ MERGED from [com.android.support:cardview-v7:25.3.1] /home/su/.android/build-cac
 MERGED from [com.android.support:customtabs:25.3.1] /home/su/.android/build-cache/e4f4c7e01daa0a18ee58fbc51ef56ec7e0d15e12/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/su/.android/build-cache/324a952cda67fa2df195cce88bd576c64dd8513b/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:appcompat-v7:25.3.1] /home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-v4:25.3.1] /home/su/.android/build-cache/f553d2884f70e949a0b705288734fd238572e30a/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.1] /home/su/.android/build-cache/1d165c93439735381fabeccdc5c0f6bc5dc1bcca/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.1] /home/su/.android/build-cache/98d63d9875eff9563ab702853d5d1cb47b4b9590/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-ui:25.3.1] /home/su/.android/build-cache/1da62d3730aa99bdd01d8c2ee5951ceef959224d/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-utils:25.3.1] /home/su/.android/build-cache/7b4acec3dfa7e5d35b25b9c05826fc6ca068c15e/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.android/build-cache/81cf030de5c30c7144fdedae96bae26e5bcf7baa/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.android/build-cache/e2077f3c1e344c3ceb9f18961003abd029ecd056/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-compat:25.3.1] /home/su/.android/build-cache/d9fd1756abc16a7b4bee4aee3f5caa39bcdea0f7/output/AndroidManifest.xml:25:5-27:34
 	android:value
 		ADDED from [com.android.support:design:25.3.1] /home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/AndroidManifest.xml:27:9-31
