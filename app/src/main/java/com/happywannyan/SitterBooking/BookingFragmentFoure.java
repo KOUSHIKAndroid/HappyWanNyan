@@ -27,11 +27,12 @@ import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -271,12 +272,12 @@ public class BookingFragmentFoure extends Fragment {
 
                                         //String CustomerID = ""+token.getId();
 
-                                        String CustomerID="";
+                                        String CustomerID = "";
 
                                         try {
-                                            JSONObject JSONObjectTokenSuccessData=new JSONObject(Result);
-                                            JSONArray jsonArray=JSONObjectTokenSuccessData.getJSONArray("data");
-                                            CustomerID=jsonArray.getJSONObject(0).getString("id");
+                                            JSONObject JSONObjectTokenSuccessData = new JSONObject(Result);
+                                            JSONArray jsonArray = JSONObjectTokenSuccessData.getJSONArray("data");
+                                            CustomerID = jsonArray.getJSONObject(0).getString("id");
                                         } catch (JSONException e) {
                                             e.printStackTrace();
                                         }
@@ -323,7 +324,7 @@ public class BookingFragmentFoure extends Fragment {
 
                                         setGetAPIPostData = new SetGetAPIPostData();
                                         setGetAPIPostData.setPARAMS("user_id");
-                                        setGetAPIPostData.setValues(AppConstant.UserId+"");
+                                        setGetAPIPostData.setValues(AppConstant.UserId + "");
                                         Params.add(setGetAPIPostData);
 
                                         setGetAPIPostData = new SetGetAPIPostData();
@@ -368,7 +369,7 @@ public class BookingFragmentFoure extends Fragment {
 
                                         setGetAPIPostData = new SetGetAPIPostData();
                                         setGetAPIPostData.setPARAMS("cvv_code");
-                                        setGetAPIPostData.setValues(card.getCVC()+"");
+                                        setGetAPIPostData.setValues(card.getCVC() + "");
                                         Params.add(setGetAPIPostData);
 
                                         setGetAPIPostData = new SetGetAPIPostData();
@@ -486,7 +487,7 @@ public class BookingFragmentFoure extends Fragment {
                 );
 
             } else {
-                new MYAlert(getActivity()).AlertOnly(getActivity().getResources().getString(R.string.add_card_error),getActivity().getResources().getString(R.string.invalid_card_please_add), new MYAlert.OnlyMessage() {
+                new MYAlert(getActivity()).AlertOnly(getActivity().getResources().getString(R.string.add_card_error), getActivity().getResources().getString(R.string.invalid_card_please_add), new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
                     }
@@ -547,7 +548,7 @@ public class BookingFragmentFoure extends Fragment {
                             e.printStackTrace();
                         }
 
-                        cardAdapter=new CardAdapter(getActivity(), setGetCardsArrayList, new onClickItem() {
+                        cardAdapter = new CardAdapter(getActivity(), setGetCardsArrayList, new onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
                                 cardFinalSelection = data;

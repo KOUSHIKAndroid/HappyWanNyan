@@ -33,7 +33,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -218,12 +217,12 @@ public class MyPaymentsFragment extends Fragment {
 
                                         //String CustomerID = ""+token.getId();
 
-                                        String CustomerID="";
+                                        String CustomerID = "";
 
                                         try {
-                                            JSONObject JSONObjectTokenSuccessData=new JSONObject(Result);
-                                            JSONArray jsonArray=JSONObjectTokenSuccessData.getJSONArray("data");
-                                            CustomerID=jsonArray.getJSONObject(0).getString("id");
+                                            JSONObject JSONObjectTokenSuccessData = new JSONObject(Result);
+                                            JSONArray jsonArray = JSONObjectTokenSuccessData.getJSONArray("data");
+                                            CustomerID = jsonArray.getJSONObject(0).getString("id");
                                         } catch (JSONException e) {
                                             e.printStackTrace();
                                         }
@@ -269,7 +268,7 @@ public class MyPaymentsFragment extends Fragment {
 
                                         setGetAPIPostData = new SetGetAPIPostData();
                                         setGetAPIPostData.setPARAMS("user_id");
-                                        setGetAPIPostData.setValues(AppConstant.UserId+"");
+                                        setGetAPIPostData.setValues(AppConstant.UserId + "");
                                         Params.add(setGetAPIPostData);
 
                                         setGetAPIPostData = new SetGetAPIPostData();
@@ -314,7 +313,7 @@ public class MyPaymentsFragment extends Fragment {
 
                                         setGetAPIPostData = new SetGetAPIPostData();
                                         setGetAPIPostData.setPARAMS("cvv_code");
-                                        setGetAPIPostData.setValues(card.getCVC()+"");
+                                        setGetAPIPostData.setValues(card.getCVC() + "");
                                         Params.add(setGetAPIPostData);
 
                                         setGetAPIPostData = new SetGetAPIPostData();
