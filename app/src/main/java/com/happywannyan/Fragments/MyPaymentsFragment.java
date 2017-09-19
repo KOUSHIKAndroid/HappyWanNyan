@@ -28,6 +28,8 @@ import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -213,15 +215,21 @@ public class MyPaymentsFragment extends Fragment {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ TokenSuccess", Result);
+                                        String CustomerID="";
 
-                                        //String CustomerID = ""+token.getId();
-                                        String CustomerID = ""+token.getCard().getCustomerId();
+                                        try {
+                                            JSONObject JSONObjectTokenSuccessData=new JSONObject(Result);
+                                            JSONArray jsonArray=JSONObjectTokenSuccessData.getJSONArray("data");
+                                            CustomerID=jsonArray.getJSONObject(0).getString("id");
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+
 //                                        try {
 //                                            CustomerID=new JSONObject(Result).getString("id");
 //                                        } catch (JSONException e) {
 //                                            e.printStackTrace();
 //                                        }
-
 
                                         Loger.MSG("@@ TOKEN finger-", token.getCard().getFingerprint() + "");
                                         Loger.MSG("@@ TOKEN Brand-", token.getCard().getBrand() + "");

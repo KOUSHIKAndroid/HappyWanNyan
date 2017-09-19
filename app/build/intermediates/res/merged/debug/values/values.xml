@@ -1174,6 +1174,7 @@
     <string name="add">Add</string>
     <string name="add_a_message">Add a Message</string>
     <string name="add_another_pets">Add Another Pets</string>
+    <string name="add_card_error">Add Card Error</string>
     <string name="add_image">Add Image</string>
     <string name="added_on">Added On</string>
     <string name="addnewcard">Add New Card</string>
@@ -1238,7 +1239,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">6ac7d2d3-f9f0-4289-9b1a-4010588bb344</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">2b83d715-215e-4262-9642-9bcf307f8f26</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1335,6 +1336,7 @@
     <string name="ic_vector_favourite_delete">Delete</string>
     <string name="ihavenotdateyet">I don\'t have dates yet</string>
     <string name="images">Photos</string>
+    <string name="invalid_card_please_add">Invalid card please add a correct card</string>
     <string name="invalid_date">Date must be between %1$s and %2$s.</string>
     <string name="isyourcatfriendlywithotherpets">Is your cat friendly with other pets?</string>
     <string name="isyourcatspayedorneutered">Is your cat spayed or neutered?</string>
