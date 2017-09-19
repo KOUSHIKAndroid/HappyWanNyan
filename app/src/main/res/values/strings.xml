@@ -224,4 +224,5 @@
     <string name="unable_to_make_book">Unable to make book now.Please contact to HappyWanYan</string>
     <string name="name_on_card">Name On Card</string>
     <string name="card_number">Card Number</string>
+    <string name="select_service">select service</string>
 </resources>

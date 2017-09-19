@@ -162,7 +162,7 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
             LL_S_F.setVisibility(View.GONE);
             RL_SingleDate.setVisibility(View.GONE);
             RL_ExtraDropDown.setVisibility(View.GONE);
-            TXT_ServiceName.setText("select service");
+            TXT_ServiceName.setText(getActivity().getResources().getString(R.string.select_service));
         }
     }
 
