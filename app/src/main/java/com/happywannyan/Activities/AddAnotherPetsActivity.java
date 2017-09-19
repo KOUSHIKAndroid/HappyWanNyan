@@ -427,7 +427,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         } else {
 
             if (photofile == null) {
-                Toast.makeText(this, "Select pet image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,getResources().getString(R.string.select_pet_image), Toast.LENGTH_SHORT).show();
             } else {
 
                 Log.i("TXTName", "TXTName");
@@ -739,7 +739,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(this, "Image Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.image_error), Toast.LENGTH_SHORT).show();
         }
     }
 

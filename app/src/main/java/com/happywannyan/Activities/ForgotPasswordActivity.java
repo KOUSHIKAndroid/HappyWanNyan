@@ -72,7 +72,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
                                 try {
                                     JSONObject response = new JSONObject(Result);
                                     if (response.getBoolean("response")) {
-                                        new MYAlert(ForgotPasswordActivity.this).AlertOnly(getResources().getString(R.string.ForgotPassword), "Please Check your mail", new MYAlert.OnlyMessage() {
+                                        new MYAlert(ForgotPasswordActivity.this).AlertOnly(getResources().getString(R.string.ForgotPassword), getResources().getString(R.string.please_check_your_mail), new MYAlert.OnlyMessage() {
                                             @Override
                                             public void OnOk(boolean res) {
                                                 startActivity(new Intent(ForgotPasswordActivity.this, ResetPasswordActivity.class));

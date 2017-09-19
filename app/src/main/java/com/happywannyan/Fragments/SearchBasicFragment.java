@@ -321,7 +321,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
         if (TXT_Loction.getText().toString().trim().equals("")) {
             TXT_Loction.setHintTextColor(Color.RED);
         } else if (SearchJSON == null) {
-            Toast.makeText(getActivity(), "Please Choose an type", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),getActivity().getResources().getString(R.string.please_choose_a_type), Toast.LENGTH_SHORT).show();
         } else {
 
             /////////

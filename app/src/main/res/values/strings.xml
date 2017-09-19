@@ -227,4 +227,15 @@
     <string name="select_service">select service</string>
     <string name="add_card_error">Add Card Error</string>
     <string name="invalid_card_please_add">Invalid card please add a correct card</string>
+    <string name="select_pet_image">Select pet image</string>
+    <string name="image_error">Image Error</string>
+    <string name="no_item_selected_in_pet_friendly">No item selected in pet friendly</string>
+    <string name="no_item_selected_in_pet_neutered">No item selected in pet spayed or neutered</string>
+    <string name="you_can_not_select_before_current_date">You can\'t select before current date</string>
+    <string name="select_at_least_one_pet_service">Select at least one pet service</string>
+    <string name="please_choose_a_type">Please Choose a type</string>
+    <string name="check_at_least_one_pet">Check at least one pet</string>
+    <string name="please_choose_month">Please choose month</string>
+    <string name="please_choose_year">Please choose year</string>
+    <string name="please_check_your_mail">Please Check your mail</string>
 </resources>

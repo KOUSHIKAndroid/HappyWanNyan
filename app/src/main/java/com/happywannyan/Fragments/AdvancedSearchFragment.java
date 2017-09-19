@@ -599,7 +599,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                         Dialog.dismiss();
                         break;
                     } else if (!arraySetGetPetService.get(i).isTick_value() && i == arraySetGetPetService.size() - 1) {
-                        Toast.makeText(getActivity(), "Select at least one option", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),getActivity().getResources().getString(R.string.select_at_least_one_pet_service), Toast.LENGTH_SHORT).show();
                     }
                 }
             }

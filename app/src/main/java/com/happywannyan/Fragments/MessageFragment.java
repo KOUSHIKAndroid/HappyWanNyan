@@ -28,7 +28,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
@@ -483,7 +482,7 @@ public class MessageFragment extends Fragment {
 
                         @Override
                         public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                            Toast.makeText(getActivity(), "on Swiped ", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getActivity(), "on Swiped ", Toast.LENGTH_SHORT).show();
                             //Remove swiped item from list and notify the RecyclerView
                             int position = viewHolder.getAdapterPosition();
 

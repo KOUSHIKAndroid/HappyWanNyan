@@ -549,7 +549,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
 
                                         if (Radio_Catspayed.getCheckedRadioButtonId() == -1) {
                                             // No item selected
-                                            Toast.makeText(this, "No item selected in pet friendly", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(this,getResources().getString(R.string.no_item_selected_in_pet_friendly), Toast.LENGTH_SHORT).show();
                                         } else {
                                             String radiovalue1 = ((RadioButton) findViewById(Radio_Catspayed.getCheckedRadioButtonId())).getTag().toString();
                                             try {
@@ -559,7 +559,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                                             }
 
                                             if (findViewById(R.id.Radio2).getVisibility() == View.VISIBLE && Rad_catf.getCheckedRadioButtonId() == -1) {
-                                                Toast.makeText(this, "No item selected in pet spayed or neutered", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(this,getResources().getString(R.string.no_item_selected_in_pet_neutered), Toast.LENGTH_SHORT).show();
                                             } else {
 
                                                 if (findViewById(R.id.Radio2).getVisibility() == View.VISIBLE) {
@@ -812,7 +812,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(this, "Image Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getResources().getString(R.string.image_error), Toast.LENGTH_SHORT).show();
         }
     }
 

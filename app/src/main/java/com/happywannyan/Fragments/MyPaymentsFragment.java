@@ -398,7 +398,7 @@ public class MyPaymentsFragment extends Fragment {
 
                             public void onError(Exception error) {
                                 appLoader.Dismiss();
-                                new MYAlert(getActivity()).AlertOnly("Add Card Error", error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
+                                new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.add_card_error), error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
 
@@ -410,7 +410,7 @@ public class MyPaymentsFragment extends Fragment {
                 );
 
             } else {
-                new MYAlert(getActivity()).AlertOnly("Add Card Error", "Invalid card please add a correct card", new MYAlert.OnlyMessage() {
+                new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.add_card_error),getResources().getString(R.string.invalid_card_please_add), new MYAlert.OnlyMessage() {
                     @Override
                     public void OnOk(boolean res) {
                     }

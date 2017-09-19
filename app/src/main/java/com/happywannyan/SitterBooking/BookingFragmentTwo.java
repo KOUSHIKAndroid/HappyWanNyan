@@ -166,7 +166,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                             mListener.onFragmentInteraction("Three");
 
                         } else {
-                            Toast.makeText(getActivity(), "Check at least one pet", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.check_at_least_one_pet), Toast.LENGTH_SHORT).show();
                         }
                     }
                 }

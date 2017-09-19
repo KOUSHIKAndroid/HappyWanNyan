@@ -125,19 +125,18 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
                                 CleckTask(holder, position);
                             } else {
-                                Toast.makeText(context, "You can't select before current date", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, context.getResources().getString(R.string.you_can_not_select_before_current_date), Toast.LENGTH_SHORT).show();
                             }
                         } else if (((CalenderActivity) context).monthValue > (int) calendar.get(Calendar.MONTH)) {
 
                             CleckTask(holder, position);
                         } else {
-                            Toast.makeText(context, "You can't select before current date", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context,context.getResources().getString(R.string.you_can_not_select_before_current_date), Toast.LENGTH_SHORT).show();
                         }
                     } else if (((CalenderActivity) context).yearValue > (int) calendar.get(Calendar.YEAR)) {
-
                         CleckTask(holder, position);
                     } else {
-                        Toast.makeText(context, "You can't select before current date", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context,context.getResources().getString(R.string.you_can_not_select_before_current_date), Toast.LENGTH_SHORT).show();
                     }
                 }
             }

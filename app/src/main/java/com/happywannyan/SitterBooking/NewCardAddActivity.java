@@ -100,10 +100,10 @@ public class NewCardAddActivity extends AppCompatActivity {
             } else {
                 ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setErrorEnabled(false);
                 if (((SFNFTextView) findViewById(R.id.tv_month)).getText().toString().trim().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Please choose month", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),getResources().getString(R.string.please_choose_month), Toast.LENGTH_SHORT).show();
                 } else {
                     if (((SFNFTextView) findViewById(R.id.tv_year)).getText().toString().trim().equals("")) {
-                        Toast.makeText(getApplicationContext(), "Please choose year", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getResources().getString(R.string.please_choose_year), Toast.LENGTH_SHORT).show();
                     } else {
 
                         if (((EditText) findViewById(R.id.edt_cvv)).getText().toString().trim().equals("")) {

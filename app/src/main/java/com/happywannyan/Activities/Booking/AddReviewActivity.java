@@ -116,7 +116,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(this, "Image Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getResources().getString(R.string.image_error), Toast.LENGTH_SHORT).show();
         }
     }
 
