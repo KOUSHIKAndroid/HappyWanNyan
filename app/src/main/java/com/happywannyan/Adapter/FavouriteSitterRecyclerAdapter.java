@@ -22,6 +22,7 @@ import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
+import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -161,7 +162,18 @@ public class FavouriteSitterRecyclerAdapter extends RecyclerView.Adapter<Favouri
             LLDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    /////fcdgfghg
+                    new MYAlert(context).AlertOkCancel("",
+                            context.getResources().getString(R.string.are_you_sure_you_want_to_delete), new MYAlert.OnOkCancel() {
+                                @Override
+                                public void OnOk() {
+                                    //onBackPressed();
+                                }
+
+                                @Override
+                                public void OnCancel() {
+
+                                }
+                            });
                 }
             });
 

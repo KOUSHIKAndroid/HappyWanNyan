@@ -249,4 +249,5 @@
     <string name="available_Pets_Details">Available Pet(s) Details</string>
     <string name="agree_to_the_terms_and_conditions">By clicking Send Request, you agree to make all reservations and payments through HappywanNyan, and agree to the terms and conditions</string>
     <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete?</string>
 </resources>
