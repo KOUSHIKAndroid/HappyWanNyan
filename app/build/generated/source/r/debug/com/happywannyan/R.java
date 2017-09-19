@@ -6791,8 +6791,6 @@ containing a value of this type.
         public static final int Animation_AppCompat_Dialog=0x7f0a00a5;
         public static final int Animation_AppCompat_DropDownUp=0x7f0a00a6;
         public static final int Animation_Design_BottomSheetDialog=0x7f0a00a7;
-        /** <item name="android:windowTranslucentNavigation">true</item>
-         */
         public static final int AppTheme=0x7f0a00a8;
         public static final int AppTheme_AppBarOverlay=0x7f0a00a9;
         public static final int AppTheme_PopupOverlay=0x7f0a00aa;
