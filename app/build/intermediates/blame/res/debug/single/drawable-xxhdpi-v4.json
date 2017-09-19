@@ -312,12 +312,12 @@
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-xxhdpi-v4/ic_media_route_connecting_02_light.png"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_media_route_connecting_22_light.png",
-        "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-xxhdpi-v4/ic_media_route_connecting_22_light.png"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/quantum_ic_replay_white_24.png",
         "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable-xxhdpi-v4/quantum_ic_replay_white_24.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_media_route_connecting_22_light.png",
+        "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-xxhdpi-v4/ic_media_route_connecting_22_light.png"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_media_route_on_light.png",

@@ -364,12 +364,12 @@
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-hdpi-v4/ic_cast_dark.png"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_vector_favourite_delete.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_vector_favourite_delete.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_audiotrack.png",
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-hdpi-v4/ic_audiotrack.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_vector_favourite_delete.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/drawable-hdpi/ic_vector_favourite_delete.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/quantum_ic_skip_next_grey600_36.png",
