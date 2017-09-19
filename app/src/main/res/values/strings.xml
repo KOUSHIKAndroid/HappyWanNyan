@@ -238,4 +238,15 @@
     <string name="please_choose_month">Please choose month</string>
     <string name="please_choose_year">Please choose year</string>
     <string name="please_check_your_mail">Please Check your mail</string>
+    <string name="to">to</string>
+    <string name="filed_can_not_be_empty">Field can\'t be empty</string>
+    <string name="field_length_must_be_greater_than_five">Field length must be greater then 5</string>
+    <string name="please_enter_card_holder_name">Please Enter card holder name</string>
+    <string name="please_enter_card_holder_number">Please Enter card holder number</string>
+    <string name="please_enter_correct_holder_number">Please Enter correct card number</string>
+    <string name="please_enter_cvv">Please enter CVV</string>
+    <string name="please_enter_correct_cvv">Please enter correct CVV</string>
+    <string name="available_Pets_Details">Available Pet(s) Details</string>
+    <string name="agree_to_the_terms_and_conditions">By clicking Send Request, you agree to make all reservations and payments through HappywanNyan, and agree to the terms and conditions</string>
+    <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
 </resources>

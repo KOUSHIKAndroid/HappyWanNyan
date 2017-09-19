@@ -88,15 +88,15 @@ public class NewCardAddActivity extends AppCompatActivity {
 
         if (((EditText) findViewById(R.id.edtxt_card_name)).getText().toString().trim().equals("")) {
             ((TextInputLayout) findViewById(R.id.input_txt_card_name)).setErrorEnabled(true);
-            ((TextInputLayout) findViewById(R.id.input_txt_card_name)).setError("Please Enter card holder name");
+            ((TextInputLayout) findViewById(R.id.input_txt_card_name)).setError(getResources().getString(R.string.please_enter_card_holder_name));
         } else {
             ((TextInputLayout) findViewById(R.id.input_txt_card_name)).setErrorEnabled(false);
             if (((EditText) findViewById(R.id.edtxt_card_number)).getText().toString().trim().equals("")) {
                 ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setErrorEnabled(true);
-                ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setError("Please Enter card holder number");
+                ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setError(getResources().getString(R.string.please_enter_card_holder_number));
             } else if (((EditText) findViewById(R.id.edtxt_card_number)).getText().toString().trim().length() < 14) {
                 ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setErrorEnabled(true);
-                ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setError("Please Enter correct card number");
+                ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setError(getResources().getString(R.string.please_enter_correct_holder_number));
             } else {
                 ((TextInputLayout) findViewById(R.id.input_txt_card_number)).setErrorEnabled(false);
                 if (((SFNFTextView) findViewById(R.id.tv_month)).getText().toString().trim().equals("")) {
@@ -108,13 +108,13 @@ public class NewCardAddActivity extends AppCompatActivity {
 
                         if (((EditText) findViewById(R.id.edt_cvv)).getText().toString().trim().equals("")) {
                             ((TextInputLayout) findViewById(R.id.input_cvv)).setErrorEnabled(true);
-                            ((TextInputLayout) findViewById(R.id.input_cvv)).setError("Please enter CVV");
+                            ((TextInputLayout) findViewById(R.id.input_cvv)).setError(getResources().getString(R.string.please_enter_cvv));
                         } else {
                             ((TextInputLayout) findViewById(R.id.input_cvv)).setErrorEnabled(false);
 
                             if (((EditText) findViewById(R.id.edt_cvv)).getText().toString().trim().length() < 3) {
                                 ((TextInputLayout) findViewById(R.id.input_cvv)).setErrorEnabled(true);
-                                ((TextInputLayout) findViewById(R.id.input_cvv)).setError("Please enter correct CVV");
+                                ((TextInputLayout) findViewById(R.id.input_cvv)).setError(getResources().getString(R.string.please_enter_correct_cvv));
                             } else {
                                 ((TextInputLayout) findViewById(R.id.input_cvv)).setErrorEnabled(false);
                                 ///////////////submit task////////////////////////////////////

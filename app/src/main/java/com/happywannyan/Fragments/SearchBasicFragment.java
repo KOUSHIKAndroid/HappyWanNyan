@@ -272,7 +272,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     Loger.MSG("@@ START", StartDate);
                     Loger.MSG("@@ END", EndDate);
                     if (EndDate.length() > 0)
-                        TXT_DateRange.setText(StartDate + "  to   " + EndDate);
+                        TXT_DateRange.setText(StartDate + " " +getResources().getString(R.string.to)+" "+ EndDate);
                     else
                         TXT_DateRange.setText(StartDate);
 

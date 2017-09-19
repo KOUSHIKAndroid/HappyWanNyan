@@ -487,7 +487,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                     Loger.MSG("@@ START", StartDate);
                     Loger.MSG("@@ END", EndDate);
-                    TXT_DateRange.setText(StartDate + "  to   " + EndDate);
+                    TXT_DateRange.setText(StartDate + " "+getActivity().getResources().getString(R.string.to)+" " + EndDate);
 
                     break;
                 case PLACE_AUTOCOMPLETE_REQUEST_CODE:

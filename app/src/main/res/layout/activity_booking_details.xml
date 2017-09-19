@@ -294,7 +294,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="40dp"
-                    android:text="Available Pet(s) Details"
+                    android:text="@string/available_Pets_Details"
                     android:textAllCaps="true"
                     android:textColor="@color/colorBlack"
                     android:textSize="16sp" />

@@ -511,7 +511,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
         if (EndDate.equals(""))
             tv_date_limit.setText(StartDate);
         else
-            tv_date_limit.setText(StartDate + "  to  " + EndDate);
+            tv_date_limit.setText(StartDate + " "+getResources().getString(R.string.to)+" " + EndDate);
 
         TXT_OK.setTextColor(Color.WHITE);
         TXT_OK.setBackgroundColor(Color.parseColor("#bf3e49"));

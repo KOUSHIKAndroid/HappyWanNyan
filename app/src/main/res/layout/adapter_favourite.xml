@@ -59,7 +59,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="37dp"
                         android:paddingBottom="15dp"
-                        android:text="Reservation"
+                        android:text="@string/reservation"
                         android:textColor="@color/colorBtnRed"
                         android:textSize="16sp" />
 

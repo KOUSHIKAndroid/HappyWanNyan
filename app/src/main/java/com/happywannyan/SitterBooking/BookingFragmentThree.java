@@ -176,14 +176,14 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
                     //input_layout_coupon_code.setErrorEnabled(true);
                     //input_layout_coupon_code.setError("Field can't be empty");
                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
-                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText("Field can't be empty");
+                    ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText(getActivity().getResources().getString(R.string.filed_can_not_be_empty));
                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
                 } else {
                     if (EDX_coupon_code.getText().toString().trim().length() < 6) {
                         //input_layout_coupon_code.setErrorEnabled(true);
                         //input_layout_coupon_code.setError("Field must be greater then 5");
                         ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
-                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText("Field must be greater then 5");
+                        ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText(getActivity().getResources().getString(R.string.field_length_must_be_greater_than_five));
                         ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
                     } else {
                         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();

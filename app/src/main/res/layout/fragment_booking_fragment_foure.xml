@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="By clicking Send Request, you agree to make all reservations and payments through HappywanNyan, and agree to the terms and conditions"
+                android:text="@string/agree_to_the_terms_and_conditions"
                 android:textColor="@color/colorBlack" />
 
 

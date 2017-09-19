@@ -80,7 +80,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="12dp"
                 android:src="@drawable/ic_search_list"
-                android:text="Button" />
+                />
         </RelativeLayout>
 
         <HorizontalScrollView
