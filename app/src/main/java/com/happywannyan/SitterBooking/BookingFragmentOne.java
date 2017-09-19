@@ -107,54 +107,62 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
         LL_S_F.setVisibility(View.GONE);
 
 
-        if (!mParam2.equals("NA")) {
-            try {
-                JSONObject jsonObject = new JSONObject(mParam2);
-                Loger.MSG("jsonObject", "" + jsonObject);
-                TXT_ServiceName.setText(jsonObject.getString("service_name"));
-                TXT_ServiceName.setTag(jsonObject);
-                RL_SingleDate.setVisibility(View.GONE);
+        if (mParam2!=null){
 
-                RL_ExtraDropDown.setVisibility(View.GONE);
-                LL_S_F.setVisibility(View.GONE);
-                TXT_Price.setText(jsonObject.getString("service_price") + " / " + jsonObject.getString("unit_name"));
-                if (jsonObject.getString("date_field").equals("double")) {
-                    LL_S_F.setVisibility(View.VISIBLE);
-                    ((BookingOneActivity) getActivity()).DoubleDate = true;
-                } else {
-                    ((BookingOneActivity) getActivity()).DoubleDate = false;
-                    RL_SingleDate.setVisibility(View.VISIBLE);
-                }
+            if (!mParam2.equals("NA")) {
+                try {
+                    JSONObject jsonObject = new JSONObject(mParam2);
+                    Loger.MSG("jsonObject", "" + jsonObject);
+                    TXT_ServiceName.setText(jsonObject.getString("service_name"));
+                    TXT_ServiceName.setTag(jsonObject);
+                    RL_SingleDate.setVisibility(View.GONE);
 
-                if (jsonObject.getString("no_of_times").equals("1") ||
-                        jsonObject.getString("no_of_visit").equals("1")) {
-                    if (jsonObject.getString("no_of_times").equals("1")) {
-                        RL_ExtraDropDown.setVisibility(View.VISIBLE);
-                        tv_times_visit.setText(getString(R.string.how_many_times));
-                        no_of_times = "1";
-                        no_of_visit = "0";
-                        ExtraPopup = jsonObject.getJSONArray("no_of_times_dropdown");
-                        TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
-                        TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
-                    }
-
-                    if (jsonObject.getString("no_of_visit").equals("1")) {
-                        RL_ExtraDropDown.setVisibility(View.VISIBLE);
-                        tv_times_visit.setText(getString(R.string.how_many_visits));
-                        no_of_times = "0";
-                        no_of_visit = "1";
-                        ExtraPopup = jsonObject.getJSONArray("no_of_visit_dropdown");
-                        TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
-                        TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
-                    }
-                } else {
                     RL_ExtraDropDown.setVisibility(View.GONE);
-                    ExtraPopup = null;
-                }
+                    LL_S_F.setVisibility(View.GONE);
+                    TXT_Price.setText(jsonObject.getString("service_price") + " / " + jsonObject.getString("unit_name"));
+                    if (jsonObject.getString("date_field").equals("double")) {
+                        LL_S_F.setVisibility(View.VISIBLE);
+                        ((BookingOneActivity) getActivity()).DoubleDate = true;
+                    } else {
+                        ((BookingOneActivity) getActivity()).DoubleDate = false;
+                        RL_SingleDate.setVisibility(View.VISIBLE);
+                    }
 
-            } catch (JSONException e) {
-                e.printStackTrace();
+                    if (jsonObject.getString("no_of_times").equals("1") ||
+                            jsonObject.getString("no_of_visit").equals("1")) {
+                        if (jsonObject.getString("no_of_times").equals("1")) {
+                            RL_ExtraDropDown.setVisibility(View.VISIBLE);
+                            tv_times_visit.setText(getString(R.string.how_many_times));
+                            no_of_times = "1";
+                            no_of_visit = "0";
+                            ExtraPopup = jsonObject.getJSONArray("no_of_times_dropdown");
+                            TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
+                            TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
+                        }
+
+                        if (jsonObject.getString("no_of_visit").equals("1")) {
+                            RL_ExtraDropDown.setVisibility(View.VISIBLE);
+                            tv_times_visit.setText(getString(R.string.how_many_visits));
+                            no_of_times = "0";
+                            no_of_visit = "1";
+                            ExtraPopup = jsonObject.getJSONArray("no_of_visit_dropdown");
+                            TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
+                            TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
+                        }
+                    } else {
+                        RL_ExtraDropDown.setVisibility(View.GONE);
+                        ExtraPopup = null;
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
+        }else {
+            LL_S_F.setVisibility(View.GONE);
+            RL_SingleDate.setVisibility(View.GONE);
+            RL_ExtraDropDown.setVisibility(View.GONE);
+            TXT_ServiceName.setText("select service");
         }
     }
 
@@ -202,103 +210,104 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.Card_next:
-                try {
-                    ((BookingOneActivity) getActivity()).FirstPageData = new ArrayList<>();
 
-                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("langid");
-                    setGetAPIPostData.setValues(AppConstant.Language);
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+                    if(!TXT_ServiceName.getText().toString().trim().equals("select service")) {
+                        try {
+                        ((BookingOneActivity) getActivity()).FirstPageData = new ArrayList<>();
 
-
-                    java.util.TimeZone tz = java.util.TimeZone.getDefault();
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("user_timezone");
-                    setGetAPIPostData.setValues(tz.getID());
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
-
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("user_id");
-                    setGetAPIPostData.setValues(AppConstant.UserId);
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("langid");
+                        setGetAPIPostData.setValues(AppConstant.Language);
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
 
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("service_id");
-                    setGetAPIPostData.setValues(new JSONObject(TXT_ServiceName.getTag() + "").getString("service_id"));
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
-
-                    if (TXT_SingleDate.getText().equals("")) {
-
+                        java.util.TimeZone tz = java.util.TimeZone.getDefault();
                         setGetAPIPostData = new SetGetAPIPostData();
-                        setGetAPIPostData.setPARAMS("start_date");
-                        setGetAPIPostData.setValues(TXT_StartDate.getText().toString());
+                        setGetAPIPostData.setPARAMS("user_timezone");
+                        setGetAPIPostData.setValues(tz.getID());
                         ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
                         setGetAPIPostData = new SetGetAPIPostData();
-                        setGetAPIPostData.setPARAMS("end_date");
-                        setGetAPIPostData.setValues(TXT_EndDte.getText().toString());
+                        setGetAPIPostData.setPARAMS("user_id");
+                        setGetAPIPostData.setValues(AppConstant.UserId);
                         ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
-                    } else {
 
                         setGetAPIPostData = new SetGetAPIPostData();
-                        setGetAPIPostData.setPARAMS("start_date");
-                        setGetAPIPostData.setValues(TXT_SingleDate.getText().toString());
+                        setGetAPIPostData.setPARAMS("service_id");
+                        setGetAPIPostData.setValues(new JSONObject(TXT_ServiceName.getTag() + "").getString("service_id"));
                         ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
-                        setGetAPIPostData = new SetGetAPIPostData();
-                        setGetAPIPostData.setPARAMS("end_date");
-                        setGetAPIPostData.setValues("");
-                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
-                    }
+                        if (TXT_SingleDate.getText().equals("")) {
 
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    if (no_of_visit.equals("1")) {
-                        setGetAPIPostData.setPARAMS("no_of_visit");
-                        setGetAPIPostData.setValues(TXT_ExtarItem.getTag() + "");
-                    } else {
-                        setGetAPIPostData.setPARAMS("no_of_visit");
-                        setGetAPIPostData.setValues("");
-                    }
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+                            setGetAPIPostData = new SetGetAPIPostData();
+                            setGetAPIPostData.setPARAMS("start_date");
+                            setGetAPIPostData.setValues(TXT_StartDate.getText().toString());
+                            ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
+                            setGetAPIPostData = new SetGetAPIPostData();
+                            setGetAPIPostData.setPARAMS("end_date");
+                            setGetAPIPostData.setValues(TXT_EndDte.getText().toString());
+                            ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    if (no_of_times.equals("1")) {
-                        setGetAPIPostData.setPARAMS("no_times");
-                        setGetAPIPostData.setValues(TXT_ExtarItem.getTag() + "");
-                    } else {
-                        setGetAPIPostData.setPARAMS("no_times");
-                        setGetAPIPostData.setValues("");
-                    }
-                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                if (TXT_ServiceName.getText().length() > 0) {
-                    if (LL_S_F.getVisibility() == View.VISIBLE && TXT_StartDate.getText().length() > 0) {
-                        //((BookingOneActivity)getActivity()).showConfirmReservationRequest();
-                        mListener.onFragmentInteraction("Two");
-
-                    } else {
-                        TXT_StartDate.setHintTextColor(Color.RED);
-                    }
-
-                    if (LL_S_F.getVisibility() == View.GONE) {
-                        if (TXT_SingleDate.getText().length() > 0) {
-                            mListener.onFragmentInteraction("Two");
                         } else {
-                            TXT_SingleDate.setHintTextColor(Color.RED);
+
+                            setGetAPIPostData = new SetGetAPIPostData();
+                            setGetAPIPostData.setPARAMS("start_date");
+                            setGetAPIPostData.setValues(TXT_SingleDate.getText().toString());
+                            ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+
+                            setGetAPIPostData = new SetGetAPIPostData();
+                            setGetAPIPostData.setPARAMS("end_date");
+                            setGetAPIPostData.setValues("");
+                            ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                         }
+
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        if (no_of_visit.equals("1")) {
+                            setGetAPIPostData.setPARAMS("no_of_visit");
+                            setGetAPIPostData.setValues(TXT_ExtarItem.getTag() + "");
+                        } else {
+                            setGetAPIPostData.setPARAMS("no_of_visit");
+                            setGetAPIPostData.setValues("");
+                        }
+                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+
+
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        if (no_of_times.equals("1")) {
+                            setGetAPIPostData.setPARAMS("no_times");
+                            setGetAPIPostData.setValues(TXT_ExtarItem.getTag() + "");
+                        } else {
+                            setGetAPIPostData.setPARAMS("no_times");
+                            setGetAPIPostData.setValues("");
+                        }
+
+                            if (LL_S_F.getVisibility() == View.VISIBLE && TXT_StartDate.getText().length() > 0) {
+                                //((BookingOneActivity)getActivity()).showConfirmReservationRequest();
+                                ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+                                mListener.onFragmentInteraction("Two");
+
+                            } else {
+                                TXT_StartDate.setHintTextColor(Color.RED);
+                            }
+
+                            if (LL_S_F.getVisibility() == View.GONE) {
+                                if (TXT_SingleDate.getText().length() > 0) {
+                                    mListener.onFragmentInteraction("Two");
+                                } else {
+                                    TXT_SingleDate.setHintTextColor(Color.RED);
+                                }
+                            }
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }else {
+                        TXT_ServiceName.setHintTextColor(Color.RED);
                     }
-
-                } else {
-                    TXT_ServiceName.setHintTextColor(Color.RED);
-                }
-
 
                 break;
             case R.id.RL_ChoseCat:
