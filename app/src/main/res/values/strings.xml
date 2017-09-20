@@ -48,7 +48,7 @@
     <string name="calender">Calender</string>
     <string name="month_name_format">MMMM yyyy</string>
     <string name="day_name_format">EEE</string>
-    <string name="invalid_date">Date must be between %1$s and %2$s.</string>
+    <!--<string name="invalid_date">Date must be between %1$s and %2$s.</string>-->
     <string name="signup_password_checkingtext">Password should contain alphanumeric character and at least one special character and should be at least 6 characters</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="pet_size">Pet size</string>
@@ -116,10 +116,10 @@
     <string name="ic_vector_favourite_delete">Delete</string>
     <string name="next">Next</string>
     <string name="FirestName">First Name</string>
-    <string name="FirestName_photo">First Name (Phonetic)</string>
+    <string name="FirstName_photo">First Name (Phonetic)</string>
     <string name="LastName">Last Name</string>
     <string name="LastName_photo">Last Name (Phonetic)</string>
-    <string name="letthesitter">Let the sitter know your prefered time (Optional)</string>
+    <string name="letthesitter">Let the sitter know your preferred time (Optional)</string>
     <string name="noofnight">No. of Nights</string>
     <string name="noofpet">No. of Pets</string>
     <string name="trust_safty"><![CDATA[Trust & Safety  Fee]]></string>
@@ -149,7 +149,7 @@
     <string name="Caontact_lebel1">Add details about your schedule, ask questions, or just introduce yourself!</string>
     <string name="add_a_message">Add a Message</string>
     <string name="send">Send</string>
-    <string name="ihavenotdateyet">I don\'t have dates yet</string>
+    <string name="ihavenotdateyet" translatable="false">I don\'t have dates yet</string>
     <string name="pickuptime">Pick-Up Time</string>
     <string name="dropofftime">Drop-Off Time</string>
     <string name="pleaseselect">Please Slect</string>
@@ -194,7 +194,6 @@
     <string name="viewmore">View More..</string>
     <string name="description">Description</string>
     <string name="lbl_cardno">Credit card Number</string>
-    <string name="lbl_crad_holdername">Name on card</string>
     <string name="lbl_secrect">Security code</string>
     <string name="existingcard">Your Cards</string>
     <string name="addnewcard">Add New Card</string>

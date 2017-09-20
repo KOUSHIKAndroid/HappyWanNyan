@@ -1107,7 +1107,7 @@
     <string name="Error">Error</string>
     <string name="Existing">Existing</string>
     <string name="FirestName">First Name</string>
-    <string name="FirestName_photo">First Name (Phonetic)</string>
+    <string name="FirstName_photo">First Name (Phonetic)</string>
     <string name="ForgotPassword">Forgot Password</string>
     <string name="Gender">Gender</string>
     <string name="Instruction_for_Cancel_req">According to the cancellation policy you will be charged for 50% of the booking total, up to ¥5000.</string>
@@ -1244,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">22b7a29f-c7d4-4100-84a1-36e8e6535d69</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">691a3ca5-c866-482a-bb16-15386ea77625</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1342,18 +1342,16 @@
     <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
     <string name="i_am_looking">I am looking for....</string>
     <string name="ic_vector_favourite_delete">Delete</string>
-    <string name="ihavenotdateyet">I don\'t have dates yet</string>
+    <string name="ihavenotdateyet" translatable="false">I don\'t have dates yet</string>
     <string name="image_error">Image Error</string>
     <string name="images">Photos</string>
     <string name="invalid_card_please_add">Invalid card please add a correct card</string>
-    <string name="invalid_date">Date must be between %1$s and %2$s.</string>
     <string name="isyourcatfriendlywithotherpets">Is your cat friendly with other pets?</string>
     <string name="isyourcatspayedorneutered">Is your cat spayed or neutered?</string>
     <string name="join">Joined:</string>
     <string name="lbl_cardno">Credit card Number</string>
-    <string name="lbl_crad_holdername">Name on card</string>
     <string name="lbl_secrect">Security code</string>
-    <string name="letthesitter">Let the sitter know your prefered time (Optional)</string>
+    <string name="letthesitter">Let the sitter know your preferred time (Optional)</string>
     <string name="loading">Loading...</string>
     <string name="location">LOCATION</string>
     <string name="make_default">Make Default</string>

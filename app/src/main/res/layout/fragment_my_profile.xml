@@ -152,7 +152,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
-                            android:hint="@string/FirestName_photo"
+                            android:hint="@string/FirstName_photo"
                             android:inputType="textPhonetic" />
 
                     </android.support.design.widget.TextInputLayout>

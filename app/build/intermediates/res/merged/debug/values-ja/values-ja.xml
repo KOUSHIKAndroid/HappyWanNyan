@@ -2,7 +2,7 @@
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <string name="Booking">予約</string>
     <string name="BookingId">予約ID:</string>
-    <string name="Caontact_lebel1"/>
+    <string name="Caontact_lebel1">あなたのスケジュールについての詳細を追加したり、質問したり、自分自身を紹介してください。</string>
     <string name="ChooseService">サービスを選択</string>
     <string name="Chosepettype">ペットの種類を選択</string>
     <string name="Code">コードを入力する</string>
@@ -12,14 +12,16 @@
     <string name="Dismiss">次へ</string>
     <string name="Email">Eメール</string>
     <string name="Enddate">終了日</string>
-    <string name="Enter_your_msg_bellow"/>
+    <string name="Enter_your_msg_bellow">あなたのメッセージを入力してください</string>
     <string name="Error">エラー</string>
     <string name="Existing">既存</string>
     <string name="FirestName">名</string>
+    <string name="FirstName_photo">名（音名）</string>
     <string name="ForgotPassword">パスワードをお忘れですか</string>
     <string name="Gender">性別</string>
-    <string name="Instruction_for_Cancel_req"/>
+    <string name="Instruction_for_Cancel_req">キャンセルポリシーに従って、予約の合計金額の50％、最大5,000円が請求されます。</string>
     <string name="LastName">姓</string>
+    <string name="LastName_photo">姓（音韻）</string>
     <string name="Login">ログイン</string>
     <string name="LoginAlertTitle">アラート</string>
     <string name="Loginnow">ここでログイン</string>
@@ -27,12 +29,14 @@
     <string name="Name">名前</string>
     <string name="NewCard">新しいカード</string>
     <string name="Password">パスワード</string>
-    <string name="Please_enter_both"/>
-    <string name="Please_enter_valid_email"/>
+    <string name="Please_enter_both">メールIDとパスワードの両方を入力してください</string>
+    <string name="Please_enter_valid_email">有効なメールIDを入力してください</string>
     <string name="ResetPassword">有効なメールIDを入力してください</string>
     <string name="SignUp">サインアップ</string>
     <string name="StartDate">開始日</string>
     <string name="TermsCondition">利用規約</string>
+    <string name="Title_req_meetup">リクエストWan-Nyanが出会う</string>
+    <string name="Title_send_a_msg">メッセージを送ります</string>
     <string name="TotalPets">ペット数</string>
     <string name="Walking">ウォーキング</string>
     <string name="Year">年齢</string>
@@ -67,21 +71,26 @@
     <string name="add">追加</string>
     <string name="add_a_message">メッセージを追加</string>
     <string name="add_another_pets">別のペットを追加する</string>
+    <string name="add_card_error">カードエラーを追加</string>
     <string name="add_image">画像を追加</string>
     <string name="added_on">登録日</string>
     <string name="addnewcard">カードを追加</string>
+    <string name="agree_to_the_terms_and_conditions">リクエストの送信をクリックすることにより、HappywanNyanを通じてすべての予約と支払いを行い、利用規約に同意することに同意したことになります</string>
     <string name="all_messages">すべてのメッセージ</string>
     <string name="alreadymember">既にメンバー</string>
     <string name="alternative_date">代替日付</string>
     <string name="app_name">Happy Wan Nyan</string>
     <string name="apply">次へ</string>
+    <string name="are_you_sure_you_want_to_delete">消去してもよろしいですか？</string>
     <string name="are_you_want_to_delete">あなたは削除しますか？</string>
+    <string name="available_Pets_Details">利用可能なペットの詳細</string>
     <string name="booknow">予約する</string>
     <string name="breed">種類</string>
     <string name="calender">カレンダー</string>
     <string name="calender_tips">予約日を選ぶ</string>
     <string name="cancel">キャンセル</string>
     <string name="cancelpolicy">キャンセルポリシー</string>
+    <string name="card_number">カード番号</string>
     <string msgid="4778414446709286370" name="cast_ad_label">"広告"</string>
     <string msgid="366047012176970604" name="cast_casting_to_device">"「%1$s」にキャストしています"</string>
     <string msgid="2888745622334830481" name="cast_closed_captions">"クローズド キャプション"</string>
@@ -121,6 +130,7 @@
     <string msgid="3804878371876790270" name="cast_tracks_chooser_dialog_ok">"OK"</string>
     <string msgid="2454147715032376208" name="cast_tracks_chooser_dialog_subtitles">"字幕"</string>
     <string msgid="2913461521603516868" name="cast_unmute">"ミュートを解除"</string>
+    <string name="check_at_least_one_pet">ペットを少なくとも1つはチェックしてください</string>
     <string name="choose_cause_type">私は私のペットを探しています..</string>
     <string name="chose_pettype">ペットの種類を選択</string>
     <string name="chosedate">予約日を選ぶ</string>
@@ -165,7 +175,7 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"ログイン"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Googleにログイン"</string>
     <string name="confirm">確認</string>
-    <string name="confirm_somple_msg"/>
+    <string name="confirm_somple_msg">この予約を受け入れてもよろしいですか？</string>
     <string name="contact">連絡する</string>
     <string name="coupon_code">コーポンコード</string>
     <string name="coupon_code_applied">クーポンコードが適用されました！</string>
@@ -179,21 +189,31 @@
     <string msgid="6099173376375995052" name="decline">"同意しない"</string>
     <string name="default2">デフォルト</string>
     <string name="delete">削除する</string>
-    <string name="delete_message"/>
+    <string name="delete_message">このメッセージを削除しますか？</string>
+    <string name="description">説明</string>
+    <string name="discount_amount">割引額</string>
+    <string name="do_you_want_to_cancel_booking">この予約をキャンセルしてもよろしいですか？</string>
+    <string name="do_you_want_to_delete">あなたは削除しますか？</string>
+    <string name="donthaveanacc">アカウントを持っていないのですか？</string>
     <string name="dropofftime">お迎え時間</string>
-    <string name="existingcard"/>
+    <string name="existingcard">あなたのカード</string>
     <string name="expiry_date_hint">MM/YY</string>
-    <string name="expiry_month_and_year">有効期限</string>
+    <string name="expiry_month_and_year">有効期限の月と年</string>
     <string name="favorite_sitters_delete">削除する</string>
+    <string name="forgot_password">パスワードをお忘れですか</string>
+    <string name="generalequerys">一般的なお問い合わせ</string>
+    <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します
+</string>
     <string name="ic_vector_favourite_delete">削除する</string>
+    <string name="image_error">イメージエラー</string>
     <string name="images">写真</string>
-    <string name="invalid_date"/>
-    <string name="isyourcatfriendlywithotherpets"/>
+    <string name="invalid_card_please_add">無効なカード正しいカードを追加してください</string>
+    <string name="isyourcatfriendlywithotherpets">あなたの猫は他のペットと親しみやすいですか？</string>
     <string name="join">参加した:</string>
-    <string name="lbl_crad_holdername">カードの名義</string>
+    <string name="lbl_cardno">クレジットカード番号</string>
     <string name="lbl_secrect">セキュリティコード</string>
-    <string name="letthesitter"/>
-    <string name="loading"/>
+    <string name="letthesitter">あなたの好みの時間を仲間に知らせる（オプション）</string>
+    <string name="loading">読み込んでいます...</string>
     <string name="location">その他のペット</string>
     <string name="make_default">デフォルトする</string>
     <string name="messenger_send_button_text">送信</string>
@@ -214,6 +234,7 @@
     <string msgid="5441529851481176817" name="mr_system_route_name">"システム"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"端末"</string>
     <string name="mypets">ペットについて</string>
+    <string name="name_on_card">カードの名義</string>
     <string name="nav_booking">予約</string>
     <string name="nav_favoritesitter">お気に入りのシッター</string>
     <string name="nav_help">ヘルプ</string>
@@ -226,11 +247,12 @@
     <string name="nevershowstng">今後このメッセージを表示しない</string>
     <string name="newPassword">新しいパスワード</string>
     <string name="next">次へ</string>
+    <string name="no_data_found">何もデータが見つかりませんでした</string>
     <string name="noofnight">宿泊数</string>
     <string name="noofpet">ペット数</string>
     <string name="numberofpets">宿泊数\"</string>
     <string name="ok">次へ</string>
-    <string name="optional_promo_code"/>
+    <string name="optional_promo_code">プロモーションコード（オプション）</string>
     <string name="otherOption">その他のオプション</string>
     <string name="past_booking">予約履歴</string>
     <string name="past_sitters">シッター履歴</string>
@@ -257,6 +279,10 @@
     <string name="search">検索</string>
     <string msgid="146198913615257606" name="search_menu_title">"検索"</string>
     <string name="select">選んでください</string>
+    <string name="select_at_least_one_pet_service">少なくとも1つのペットサービスを選択してください</string>
+    <string name="select_cancel_reason">キャンセルの理由を選択 </string>
+    <string name="select_pet_image">ペット画像を選択</string>
+    <string name="select_service">サービスを選択する</string>
     <string name="send">送信</string>
     <string name="send_request">予約リクエストを送る</string>
     <string name="service">サービス</string>
@@ -273,6 +299,7 @@
     <string name="submit_review">レビューを提出する</string>
     <string name="subtotal_amount">小計</string>
     <string name="sucess">成功</string>
+    <string name="to">に</string>
     <string name="tota_amnt">合計金額</string>
     <string name="trust_safty">手数料</string>
     <string name="up_coming_booking">今後の予約</string>
@@ -285,9 +312,12 @@
     <string name="upload_attachment">添付ファイルをアップロード</string>
     <string name="viewmore">もっと見る</string>
     <string msgid="363496807345461806" name="wallet_buy_button_place_holder">"Googleで購入"</string>
+    <string name="wanyanmeetup">ワンニャンは会う</string>
+    <string name="whatisyourdailybudgetperpet">ペット1人当たりの1日の予算はいくらですか？</string>
     <string name="with_pet">ペットの場合</string>
-    <string name="would_you_mind_to_turn_gps_on"/>
+    <string name="would_you_mind_to_turn_gps_on">GPSをオンにしてもよろしいですか？</string>
     <string name="writeyourcomment">メッセージ</string>
+    <string name="you_can_not_select_before_current_date">現在の日付より前に選択することはできません</string>
     <string name="youcanloginwith">あなたはでログインすることができます</string>
     <string name="youcansignupwith">一緒にサインアップすることができます</string>
 </resources>
