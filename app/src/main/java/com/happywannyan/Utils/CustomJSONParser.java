@@ -108,7 +108,7 @@ public class CustomJSONParser {
                         e.printStackTrace();
                     }
                 } else {
-                    jsonResponseInterface.OnSuccess(exception.getMessage() + "");
+                    jsonResponseInterface.OnError(exception.getMessage() + "");
                 }
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);

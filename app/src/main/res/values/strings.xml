@@ -138,7 +138,7 @@
     <string name="no_reviewFound">No Review found</string>
     <string name="no_ImagesFound">No Images Found</string>
     <string name="no_ServicesFound">No Service Found</string>
-    <!--<string name="meeting_date">Meeting Date</string>-->
+    <string name="meeting_date">Meeting Date</string>
     <string name="Title_req_meetup">Request Wan-Nyan meet up</string>
     <string name="alternative_date">Alternate Date</string>
     <string name="with_pet">With Pet</string>
@@ -249,4 +249,6 @@
     <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
     <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete?</string>
     <string name="please_enter_correct_holder_number">Please enter correct card holder name</string>
+    <string name="nav_switch_language">Switch Language</string>
+    <string name="remember_me">Remember me</string>
 </resources>

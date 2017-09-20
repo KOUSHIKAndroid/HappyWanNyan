@@ -4,8 +4,11 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
@@ -47,6 +50,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 
 public class BaseActivity extends LocationBaseActivity
@@ -118,6 +122,35 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+            }
+        });
+
+        navigationView.findViewById(R.id.LL_Switch_language).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(BaseActivity.this);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("LanguageId", "ja");
+                editor.apply();
+                editor.commit();
+
+
+                Locale locale = new Locale("ja");
+                Locale.setDefault(locale);
+                Configuration config = new Configuration();
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    config.setLocale(locale);
+                }else{
+                    config.locale = locale;
+                }
+
+                getBaseContext().createConfigurationContext(config);
+
             }
         });
 

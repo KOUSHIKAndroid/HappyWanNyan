@@ -1244,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">fd9011f7-0690-481f-9235-58e6e6746240</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">36ec5559-a0f7-4d03-8ecc-e7dad01d4f8b</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1355,6 +1355,8 @@
     <string name="loading">Loading...</string>
     <string name="location">LOCATION</string>
     <string name="make_default">Make Default</string>
+    <string name="meeting_date">Meeting Date</string>
+    <string name="message">Message</string>
     <string name="messenger_send_button_text">Send</string>
     <string name="month_name_format">MMMM yyyy</string>
     <string name="mr_button_content_description">Cast button</string>
@@ -1383,6 +1385,7 @@
     <string name="nav_pastsitter">Past Sitters</string>
     <string name="nav_payment">Payment</string>
     <string name="nav_profile">Profile</string>
+    <string name="nav_switch_language">Switch Language</string>
     <string name="nav_yourpet">Your Pet</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

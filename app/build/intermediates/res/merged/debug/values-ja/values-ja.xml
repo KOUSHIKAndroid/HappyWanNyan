@@ -219,7 +219,7 @@
     <string name="loading">読み込んでいます...</string>
     <string name="location">その他のペット</string>
     <string name="make_default">デフォルトする</string>
-    <string name="meeting_date"/>
+    <string name="meeting_date">会議の開催日</string>
     <string name="messenger_send_button_text">送信</string>
     <string msgid="3698378085901466129" name="mr_button_content_description">"キャストアイコン"</string>
     <string msgid="6349900579507521956" name="mr_chooser_searching">"端末を検索しています"</string>
@@ -247,6 +247,7 @@
     <string name="nav_pastsitter">シッター履歴</string>
     <string name="nav_payment">支払い</string>
     <string name="nav_profile">プロフィール</string>
+    <string name="nav_switch_language">スイッチ言語</string>
     <string name="nav_yourpet">ペットについて</string>
     <string name="nevershowstng">今後このメッセージを表示しない</string>
     <string name="newPassword">新しいパスワード</string>

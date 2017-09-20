@@ -212,6 +212,7 @@
     <string name="unable_to_make_book">今すぐ予約できません。HappyWanYanにご連絡ください。</string>
     <string name="how_many_times">何回ですか？</string>
     <string name="how_many_visits">何回訪問？</string>
-    <string name="meeting_date"></string>
+    <string name="nav_switch_language">スイッチ言語</string>
+    <string name="meeting_date">会議の開催日</string>
 
 </resources>
