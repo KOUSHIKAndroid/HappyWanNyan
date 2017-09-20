@@ -157,6 +157,19 @@ public class BaseActivity extends LocationBaseActivity
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                 onConfigurationChanged(config);
 
+
+                ((SFNFTextView)findViewById(R.id.tv_nav_search)).setText(getResources().getString(R.string.search));
+                ((SFNFTextView)findViewById(R.id.tv_nav_message)).setText(getResources().getString(R.string.nav_messages));
+                ((SFNFTextView)findViewById(R.id.tv_nav_booking)).setText(getResources().getString(R.string.nav_booking));
+                ((SFNFTextView)findViewById(R.id.tv_nav_your_pet)).setText(getResources().getString(R.string.nav_yourpet));
+                ((SFNFTextView)findViewById(R.id.tv_nav_payment)).setText(getResources().getString(R.string.nav_payment));
+                ((SFNFTextView)findViewById(R.id.tv_nav_profile)).setText(getResources().getString(R.string.nav_profile));
+                ((SFNFTextView)findViewById(R.id.tv_nav_favoritesitter)).setText(getResources().getString(R.string.nav_favoritesitter));
+                ((SFNFTextView)findViewById(R.id.tv_nav_pastsitter)).setText(getResources().getString(R.string.nav_pastsitter));
+                ((SFNFTextView)findViewById(R.id.tv_nav_help)).setText(getResources().getString(R.string.nav_help));
+                ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText(getResources().getString(R.string.nav_switch_language));
+                ((SFNFTextView)findViewById(R.id.tv_nav_logout)).setText(getResources().getString(R.string.nav_logout));
+
             }
         });
 

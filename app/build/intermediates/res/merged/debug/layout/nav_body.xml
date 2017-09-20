@@ -39,6 +39,7 @@
                     android:src="@drawable/ic_search_white" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -61,6 +62,7 @@
                     android:src="@mipmap/ic_nav_msg" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -97,6 +99,7 @@
                     android:src="@mipmap/ic_nav_booking" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_booking"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -120,6 +123,7 @@
                     android:src="@mipmap/ic_nav_yourpet" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_your_pet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -143,6 +147,7 @@
                     android:src="@mipmap/ic_nav_pymnt" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_payment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -166,6 +171,7 @@
                     android:src="@mipmap/ic_nav_profile" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -189,6 +195,7 @@
                     android:src="@drawable/ic_nav_favorite_white" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_favoritesitter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -212,6 +219,7 @@
                     android:src="@mipmap/ic_nav_past_fav" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_pastsitter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -234,6 +242,7 @@
                     android:src="@mipmap/ic_nav_help" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_help"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -258,6 +267,7 @@
                     android:src="@drawable/ic_translation" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_switch_language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
@@ -281,6 +291,7 @@
                     android:src="@mipmap/ic_nav_logout" />
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_nav_logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
