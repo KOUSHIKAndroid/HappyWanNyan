@@ -6664,8 +6664,8 @@ containing a value of this type.
         public static final int donthaveanacc=0x7f08014a;
         public static final int dropofftime=0x7f0800cd;
         public static final int existingcard=0x7f0800ce;
-        public static final int expire_month_and_year=0x7f0800cf;
         public static final int expiry_date_hint=0x7f080084;
+        public static final int expiry_month_and_year=0x7f0800cf;
         public static final int explain_why_cancel=0x7f08014b;
         public static final int facebook=0x7f08014c;
         public static final int facebook_app_id=0x7f08014d;

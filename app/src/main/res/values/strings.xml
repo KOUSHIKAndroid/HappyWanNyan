@@ -211,7 +211,7 @@
     <string name="coupon_code_applied">Coupon Code Applied!</string>
     <string name="are_you_want_to_delete">Are you want to delete?</string>
     <string name="past_sitters">Past Sitters</string>
-    <string name="expire_month_and_year">Expire Month and Year</string>
+    <string name="expiry_month_and_year">Expiry Month and Year</string>
     <string name="cvv">CVV</string>
     <string name="make_default">Make Default</string>
     <string name="price">Price</string>

@@ -182,8 +182,8 @@
     <string name="delete_message"/>
     <string name="dropofftime">お迎え時間</string>
     <string name="existingcard"/>
-    <string name="expire_month_and_year">有効期限</string>
     <string name="expiry_date_hint">MM/YY</string>
+    <string name="expiry_month_and_year">有効期限</string>
     <string name="favorite_sitters_delete">削除する</string>
     <string name="ic_vector_favourite_delete">削除する</string>
     <string name="images">写真</string>

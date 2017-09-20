@@ -1244,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">0711c9d8-ab4a-4843-88c5-7f9478499361</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">22b7a29f-c7d4-4100-84a1-36e8e6535d69</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1314,8 +1314,8 @@
     <string name="donthaveanacc">Don\'t have an account?</string>
     <string name="dropofftime">Drop-Off Time</string>
     <string name="existingcard">Your Cards</string>
-    <string name="expire_month_and_year">Expire Month and Year</string>
     <string name="expiry_date_hint">MM/YY</string>
+    <string name="expiry_month_and_year">Expiry Month and Year</string>
     <string name="explain_why_cancel">Explain why you are cancelling this booking</string>
     <string name="facebook">Facebook</string>
     <string name="facebook_app_id" translatable="false">1381434255240015</string>

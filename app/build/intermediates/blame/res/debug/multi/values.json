@@ -8650,23 +8650,23 @@
                     "startLine": 1316,
                     "startColumn": 4,
                     "startOffset": 104125,
-                    "endColumn": 71,
-                    "endOffset": 104192
+                    "endColumn": 50,
+                    "endOffset": 104171
                 },
                 "from": {
-                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values/strings.xml"
+                    "file": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/values/values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 1317,
                     "startColumn": 4,
-                    "startOffset": 104197,
-                    "endColumn": 50,
+                    "startOffset": 104176,
+                    "endColumn": 71,
                     "endOffset": 104243
                 },
                 "from": {
-                    "file": "/home/su/.android/build-cache/9445301c7e27843d33159b4231c19b8d9601e770/output/res/values/values.xml"
+                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values/strings.xml"
                 }
             },
             {

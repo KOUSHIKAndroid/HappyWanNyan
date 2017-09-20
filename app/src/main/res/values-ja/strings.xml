@@ -50,7 +50,7 @@
     <string name="Name">名前</string>
     <string name="Month">月</string>
     <string name="favorite_sitters_delete">削除する</string>
-    <string name="expire_month_and_year">有効期限</string>
+    <string name="expiry_month_and_year">有効期限</string>
     <string name="StartDate">開始日</string>
     <string name="TotalPets">ペット数</string>
     <string name="TermsCondition">利用規約</string>

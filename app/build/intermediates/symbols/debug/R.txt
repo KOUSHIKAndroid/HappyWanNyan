@@ -2789,8 +2789,8 @@ int string do_you_want_to_delete 0x7f080149
 int string donthaveanacc 0x7f08014a
 int string dropofftime 0x7f0800cd
 int string existingcard 0x7f0800ce
-int string expire_month_and_year 0x7f0800cf
 int string expiry_date_hint 0x7f080084
+int string expiry_month_and_year 0x7f0800cf
 int string explain_why_cancel 0x7f08014b
 int string facebook 0x7f08014c
 int string facebook_app_id 0x7f08014d

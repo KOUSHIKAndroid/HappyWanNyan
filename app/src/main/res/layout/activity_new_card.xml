@@ -125,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/input_txt_card_number"
             android:layout_marginTop="10dp"
-            android:text="@string/expire_month_and_year"
+            android:text="@string/expiry_month_and_year"
             android:textColor="@color/colorTextDarkGray"
             android:textSize="16dp" />
 
