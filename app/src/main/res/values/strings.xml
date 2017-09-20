@@ -138,7 +138,7 @@
     <string name="no_reviewFound">No Review found</string>
     <string name="no_ImagesFound">No Images Found</string>
     <string name="no_ServicesFound">No Service Found</string>
-    <string name="meeting_date">Meeting Date</string>
+    <!--<string name="meeting_date">Meeting Date</string>-->
     <string name="Title_req_meetup">Request Wan-Nyan meet up</string>
     <string name="alternative_date">Alternate Date</string>
     <string name="with_pet">With Pet</string>
@@ -164,7 +164,7 @@
     <string name="no_pet_data_found">No Pet information Found</string>
     <string name="slectDate">Select Date</string>
     <string name="generalequerys">General Inquiries</string>
-    <string name="meetgreet">Meet Greet</string>
+    <!--<string name="meetgreet">Meet Greet</string>-->
     <string name="mypets">My Pets</string>
     <string name="calender_tips">Select the start date and then the end date on the same page</string>
     <string name="Dismiss">Dismiss</string>
@@ -242,11 +242,11 @@
     <string name="field_length_must_be_greater_than_five">Field length must be greater then 5</string>
     <string name="please_enter_card_holder_name">Please Enter card holder name</string>
     <string name="please_enter_card_holder_number">Please Enter card holder number</string>
-    <string name="please_enter_correct_holder_number">Please Enter correct card number</string>
     <string name="please_enter_cvv">Please enter CVV</string>
     <string name="please_enter_correct_cvv">Please enter correct CVV</string>
     <string name="available_Pets_Details">Available Pet(s) Details</string>
     <string name="agree_to_the_terms_and_conditions">By clicking Send Request, you agree to make all reservations and payments through HappywanNyan, and agree to the terms and conditions</string>
     <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
     <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete?</string>
+    <string name="please_enter_correct_holder_number">Please enter correct card holder name</string>
 </resources>

@@ -1244,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">691a3ca5-c866-482a-bb16-15386ea77625</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">fd9011f7-0690-481f-9235-58e6e6746240</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1355,9 +1355,6 @@
     <string name="loading">Loading...</string>
     <string name="location">LOCATION</string>
     <string name="make_default">Make Default</string>
-    <string name="meetgreet">Meet Greet</string>
-    <string name="meeting_date">Meeting Date</string>
-    <string name="message">Message</string>
     <string name="messenger_send_button_text">Send</string>
     <string name="month_name_format">MMMM yyyy</string>
     <string name="mr_button_content_description">Cast button</string>
@@ -1430,7 +1427,7 @@
     <string name="please_enter_card_holder_number">Please Enter card holder number</string>
     <string name="please_enter_code">Please enter a valid code</string>
     <string name="please_enter_correct_cvv">Please enter correct CVV</string>
-    <string name="please_enter_correct_holder_number">Please Enter correct card number</string>
+    <string name="please_enter_correct_holder_number">Please enter correct card holder name</string>
     <string name="please_enter_cvv">Please enter CVV</string>
     <string name="please_enter_message">Please type message here</string>
     <string name="pleasenteraddress">Please Enter Address</string>

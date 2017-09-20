@@ -187,6 +187,31 @@
     <string name="generalequerys">一般的なお問い合わせ</string>
     <string name="lbl_cardno">クレジットカード番号</string>
     <string name="image_error">イメージエラー</string>
-    <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します
-</string>
+    <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します</string>
+    <string name="i_am_looking">を探しています....</string>
+    <string name="isyourcatspayedorneutered">あなたの猫は去勢されているの？</string>
+    <string name="no_reviewFound">レビューが見つかりません</string>
+    <string name="no_pet_data_found">ペット情報が見つかりません</string>
+    <string name="no_item_selected_in_pet_friendly">ペットフレンドリーで選択されたアイテムがありません</string>
+    <string name="no_item_selected_in_pet_neutered">ペットの妊娠または出産に際して選択された項目がない</string>
+    <string name="no_ServicesFound">サービスが見つかりません</string>
+    <string name="no_ImagesFound">画像が見つかりません</string>
+    <string name="please_check_your_mail">あなたのメールをチェックしてください</string>
+    <string name="please_choose_a_type">タイプをお選びください</string>
+    <string name="please_choose_month">月を選んでください</string>
+    <string name="please_choose_year">年を選んでください</string>
+    <string name="please_enter_card_holder_name">カード所有者名を入力してください</string>
+    <string name="please_enter_card_holder_number">カード所有者番号を入力してください</string>
+    <string name="please_enter_correct_cvv">正しいCVVを入力してください</string>
+    <string name="please_enter_cvv">CVVを入力してください</string>
+    <string name="please_enter_correct_holder_number">正しいカード所有者名を入力してください</string>
+    <string name="this_is_just_a_reservation_request">これはちょうど予約リクエストです。あなたのカードは、このリクエストをSitterが受け入れた後にのみ請求されます。</string>
+    <string name="total_Payableamount">支払総額</string>
+    <string name="unable_to_send_message">メッセージを送信できません。 HappyWanNyanに連絡してください</string>
+    <string name="unable_to_make_reservation_request">予約リクエストができません。HappyWanNyanにご連絡ください。</string>
+    <string name="unable_to_make_book">今すぐ予約できません。HappyWanYanにご連絡ください。</string>
+    <string name="how_many_times">何回ですか？</string>
+    <string name="how_many_visits">何回訪問？</string>
+    <string name="meeting_date"></string>
+
 </resources>

@@ -202,13 +202,16 @@
     <string name="favorite_sitters_delete">削除する</string>
     <string name="forgot_password">パスワードをお忘れですか</string>
     <string name="generalequerys">一般的なお問い合わせ</string>
-    <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します
-</string>
+    <string name="how_many_times">何回ですか？</string>
+    <string name="how_many_visits">何回訪問？</string>
+    <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します</string>
+    <string name="i_am_looking">を探しています....</string>
     <string name="ic_vector_favourite_delete">削除する</string>
     <string name="image_error">イメージエラー</string>
     <string name="images">写真</string>
     <string name="invalid_card_please_add">無効なカード正しいカードを追加してください</string>
     <string name="isyourcatfriendlywithotherpets">あなたの猫は他のペットと親しみやすいですか？</string>
+    <string name="isyourcatspayedorneutered">あなたの猫は去勢されているの？</string>
     <string name="join">参加した:</string>
     <string name="lbl_cardno">クレジットカード番号</string>
     <string name="lbl_secrect">セキュリティコード</string>
@@ -216,6 +219,7 @@
     <string name="loading">読み込んでいます...</string>
     <string name="location">その他のペット</string>
     <string name="make_default">デフォルトする</string>
+    <string name="meeting_date"/>
     <string name="messenger_send_button_text">送信</string>
     <string msgid="3698378085901466129" name="mr_button_content_description">"キャストアイコン"</string>
     <string msgid="6349900579507521956" name="mr_chooser_searching">"端末を検索しています"</string>
@@ -247,7 +251,13 @@
     <string name="nevershowstng">今後このメッセージを表示しない</string>
     <string name="newPassword">新しいパスワード</string>
     <string name="next">次へ</string>
+    <string name="no_ImagesFound">画像が見つかりません</string>
+    <string name="no_ServicesFound">サービスが見つかりません</string>
     <string name="no_data_found">何もデータが見つかりませんでした</string>
+    <string name="no_item_selected_in_pet_friendly">ペットフレンドリーで選択されたアイテムがありません</string>
+    <string name="no_item_selected_in_pet_neutered">ペットの妊娠または出産に際して選択された項目がない</string>
+    <string name="no_pet_data_found">ペット情報が見つかりません</string>
+    <string name="no_reviewFound">レビューが見つかりません</string>
     <string name="noofnight">宿泊数</string>
     <string name="noofpet">ペット数</string>
     <string name="numberofpets">宿泊数\"</string>
@@ -266,7 +276,16 @@
     <string name="pickuptime">お預け時間</string>
     <string msgid="1303870564366209730" name="place_autocomplete_clear_button">"検索をクリア"</string>
     <string msgid="2809095107724486040" name="place_autocomplete_search_hint">"検索"</string>
+    <string name="please_check_your_mail">あなたのメールをチェックしてください</string>
+    <string name="please_choose_a_type">タイプをお選びください</string>
+    <string name="please_choose_month">月を選んでください</string>
+    <string name="please_choose_year">年を選んでください</string>
+    <string name="please_enter_card_holder_name">カード所有者名を入力してください</string>
+    <string name="please_enter_card_holder_number">カード所有者番号を入力してください</string>
     <string name="please_enter_code">有効なコードを入力してください</string>
+    <string name="please_enter_correct_cvv">正しいCVVを入力してください</string>
+    <string name="please_enter_correct_holder_number">正しいカード所有者名を入力してください</string>
+    <string name="please_enter_cvv">CVVを入力してください</string>
     <string name="please_enter_message">ここにメッセージを入力してください</string>
     <string name="pleasenteraddress">アドレスを入力してください</string>
     <string name="pleaseselect">選んでください</string>
@@ -299,9 +318,14 @@
     <string name="submit_review">レビューを提出する</string>
     <string name="subtotal_amount">小計</string>
     <string name="sucess">成功</string>
+    <string name="this_is_just_a_reservation_request">これはちょうど予約リクエストです。あなたのカードは、このリクエストをSitterが受け入れた後にのみ請求されます。</string>
     <string name="to">に</string>
     <string name="tota_amnt">合計金額</string>
+    <string name="total_Payableamount">支払総額</string>
     <string name="trust_safty">手数料</string>
+    <string name="unable_to_make_book">今すぐ予約できません。HappyWanYanにご連絡ください。</string>
+    <string name="unable_to_make_reservation_request">予約リクエストができません。HappyWanNyanにご連絡ください。</string>
+    <string name="unable_to_send_message">メッセージを送信できません。 HappyWanNyanに連絡してください</string>
     <string name="up_coming_booking">今後の予約</string>
     <string name="up_coming_booking_end_date">終了日</string>
     <string name="up_coming_booking_id">予約ID</string>
