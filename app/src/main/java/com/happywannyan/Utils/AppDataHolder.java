@@ -19,6 +19,7 @@ public abstract class AppDataHolder {
     public abstract Void userDetailsAbstract(String UserId);
 
     SharedPreferences AppUserData;
+    SharedPreferences AppRemember;
     Activity activity;
 
     public void logOutClearAllData() {
@@ -33,10 +34,17 @@ public abstract class AppDataHolder {
         void notAvailable(String Error);
     }
 
+    public interface AppSharePreferenceRememberInterface {
+        void available(String id, String password);
+
+        void notAvailable(String Error);
+    }
+
 
     public AppDataHolder(Activity activity) {
         this.activity = activity;
         AppUserData = PreferenceManager.getDefaultSharedPreferences(activity);
+        AppRemember = PreferenceManager.getDefaultSharedPreferences(activity);
     }
 
     public void setShareDATA(int DataName, String Data) {
@@ -44,8 +52,31 @@ public abstract class AppDataHolder {
         switch (DataName) {
             case UserData:
                 editor.putString("UserData", Data);
+                editor.apply();
                 editor.commit();
                 break;
+        }
+    }
+
+    public void setRememberShare(String id, String password) {
+        SharedPreferences.Editor editor = AppRemember.edit();
+        editor.putString("rememberID", id);
+        editor.putString("rememberPassword", password);
+        editor.apply();
+        editor.commit();
+    }
+
+    public void getRememberShare(AppSharePreferenceRememberInterface appSharePreferenceRememberInterface) {
+        String userRememberID = AppUserData.getString("rememberID", "NO");
+        String userRememberPassword = AppUserData.getString("rememberPassword", "NO");
+
+        if (userRememberID.equalsIgnoreCase("NO")) {
+            appSharePreferenceRememberInterface.notAvailable("NODATAFOUND");
+        } else if (userRememberID.trim().length() > 0) {
+            appSharePreferenceRememberInterface.available(userRememberID, userRememberPassword);
+            //userDetailsAbstract(userRememberID);
+        } else {
+            appSharePreferenceRememberInterface.notAvailable("NODATAFOUND");
         }
     }
 

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.happywannyan.Constant.AppConstant;
@@ -31,9 +32,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Card_Login = (CardView) findViewById(R.id.Card_Login);
         Card_Login.setOnClickListener(this);
         EDX_email = (EditText) findViewById(R.id.EDX_email);
-        EDX_email.setText("koushik.sarkar@esolzmail.com");
+
+        new AppConstant(LoginActivity.this).getRememberShare(new AppDataHolder.AppSharePreferenceRememberInterface() {
+            @Override
+            public void available(String id, String password) {
+                EDX_email.setText(id);
+                EDX_Password.setText(password);
+            }
+
+            @Override
+            public void notAvailable(String Error) {
+
+            }
+        });
+
+        //EDX_email.setText("koushik.sarkar@esolzmail.com");
         EDX_Password = (EditText) findViewById(R.id.EDX_Password);
-        EDX_Password.setText("123456");
+        //EDX_Password.setText("123456");
         appLoader = new AppLoader(LoginActivity.this);
 
         findViewById(R.id.FORGOT).setOnClickListener(new View.OnClickListener() {
@@ -98,10 +113,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 Loger.MSG("@@ LOGIN", Result);
                                 new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData, Result);
                                 appLoader.Dismiss();
+
+
+                                /////////////////For Remember me ///////////////////////////
+                                if (((CheckBox) findViewById(R.id.check_remember)).isChecked()) {
+                                    new AppConstant(LoginActivity.this).setRememberShare(EDX_email.getText().toString().trim(),
+                                            EDX_Password.getText().toString().trim());
+                                }
+                                /////////////////////End////////////////////////////////////
+
+
                                 startActivity(new Intent(LoginActivity.this, BaseActivity.class));
                                 finish();
-
-
                             }
 
                             @Override

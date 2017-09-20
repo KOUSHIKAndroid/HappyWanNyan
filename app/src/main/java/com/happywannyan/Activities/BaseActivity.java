@@ -145,7 +145,7 @@ public class BaseActivity extends LocationBaseActivity
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     config.setLocale(locale);
-                }else{
+                } else {
                     config.locale = locale;
                 }
 
