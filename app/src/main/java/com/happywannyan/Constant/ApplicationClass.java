@@ -1,17 +1,21 @@
 package com.happywannyan.Constant;
 
 import android.app.Application;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.text.TextUtils;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.happywannyan.Utils.Loger;
+
+import java.util.Locale;
 
 
 public class ApplicationClass extends Application {
 
     private static ApplicationClass instance = null;
-
     private RequestQueue mRequestQueue;
 
 
@@ -53,5 +57,4 @@ public class ApplicationClass extends Application {
             mRequestQueue.cancelAll(tag);
         }
     }
-
 }

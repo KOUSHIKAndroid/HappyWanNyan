@@ -6,9 +6,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
@@ -60,6 +58,7 @@ public class BaseActivity extends LocationBaseActivity
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     AppLoader appLoader;
     NavigationView navigationView;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onPause() {
@@ -132,24 +131,31 @@ public class BaseActivity extends LocationBaseActivity
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
 
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(BaseActivity.this);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("LanguageId", "ja");
+                sharedPreferences = getSharedPreferences("AutoLanguage", MODE_PRIVATE);
+                String shortLanguage = sharedPreferences.getString("shortLanguage", "NO");
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                Configuration config = getBaseContext().getResources().getConfiguration();
+                Locale locale;
+
+                if (shortLanguage.equalsIgnoreCase("en")) {
+                    editor.putString("shortLanguage", "ja");
+                    AppConstant.Language = "ja";
+                    locale = new Locale("ja");
+                } else {
+                    editor.putString("shortLanguage", "en");
+                    AppConstant.Language = "en";
+                    locale = new Locale("en");
+                }
+
                 editor.apply();
                 editor.commit();
 
-
-                Locale locale = new Locale("ja");
                 Locale.setDefault(locale);
-                Configuration config = new Configuration();
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    config.setLocale(locale);
-                } else {
-                    config.locale = locale;
-                }
-
-                getBaseContext().createConfigurationContext(config);
+                config.locale = locale;
+                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+                onConfigurationChanged(config);
 
             }
         });
@@ -184,8 +190,6 @@ public class BaseActivity extends LocationBaseActivity
                         startActivity(new Intent(BaseActivity.this, LoginActivity.class));
                     }
                 });
-
-
             }
         });
 
@@ -429,9 +433,7 @@ public class BaseActivity extends LocationBaseActivity
             return;
         } else {
 //            locationManager.requestLocationUpdates(provider, INTERVAL, 1, this);
-
         }
-
     }
 
     @Override
@@ -469,19 +471,22 @@ public class BaseActivity extends LocationBaseActivity
     @Override
     public void onProviderEnabled(String s) {
         Loger.MSG("@@ Provider enable", s);
-
     }
 
     @Override
     public void onProviderDisabled(String s) {
         Loger.MSG("@@ Provider Disable", s);
-
     }
 
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
 }
