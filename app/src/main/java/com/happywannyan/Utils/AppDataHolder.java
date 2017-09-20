@@ -19,12 +19,20 @@ public abstract class AppDataHolder {
     public abstract Void userDetailsAbstract(String UserId);
 
     SharedPreferences AppUserData;
-    SharedPreferences AppRemember;
     Activity activity;
 
     public void logOutClearAllData() {
         SharedPreferences.Editor editor = AppUserData.edit();
-        editor.clear();
+        editor.remove("UserData");
+        editor.apply();
+        editor.commit();
+    }
+
+    public void clearRememberMe(){
+        SharedPreferences.Editor editor=AppUserData.edit();
+        editor.remove("rememberID");
+        editor.remove("rememberPassword");
+        editor.apply();
         editor.commit();
     }
 
@@ -44,7 +52,6 @@ public abstract class AppDataHolder {
     public AppDataHolder(Activity activity) {
         this.activity = activity;
         AppUserData = PreferenceManager.getDefaultSharedPreferences(activity);
-        AppRemember = PreferenceManager.getDefaultSharedPreferences(activity);
     }
 
     public void setShareDATA(int DataName, String Data) {
@@ -59,7 +66,7 @@ public abstract class AppDataHolder {
     }
 
     public void setRememberShare(String id, String password) {
-        SharedPreferences.Editor editor = AppRemember.edit();
+        SharedPreferences.Editor editor = AppUserData.edit();
         editor.putString("rememberID", id);
         editor.putString("rememberPassword", password);
         editor.apply();
@@ -74,7 +81,7 @@ public abstract class AppDataHolder {
             appSharePreferenceRememberInterface.notAvailable("NODATAFOUND");
         } else if (userRememberID.trim().length() > 0) {
             appSharePreferenceRememberInterface.available(userRememberID, userRememberPassword);
-            //userDetailsAbstract(userRememberID);
+            userDetailsAbstract(userRememberID);
         } else {
             appSharePreferenceRememberInterface.notAvailable("NODATAFOUND");
         }

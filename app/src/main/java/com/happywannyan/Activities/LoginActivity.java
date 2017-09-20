@@ -32,22 +32,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Card_Login = (CardView) findViewById(R.id.Card_Login);
         Card_Login.setOnClickListener(this);
         EDX_email = (EditText) findViewById(R.id.EDX_email);
+        EDX_Password = (EditText) findViewById(R.id.EDX_Password);
 
         new AppConstant(LoginActivity.this).getRememberShare(new AppDataHolder.AppSharePreferenceRememberInterface() {
             @Override
             public void available(String id, String password) {
+
+                Loger.MSG("id",id);
                 EDX_email.setText(id);
                 EDX_Password.setText(password);
+                ((CheckBox) findViewById(R.id.check_remember)).setChecked(true);
             }
 
             @Override
             public void notAvailable(String Error) {
-
+                Loger.MSG("Error",Error);
             }
         });
 
         //EDX_email.setText("koushik.sarkar@esolzmail.com");
-        EDX_Password = (EditText) findViewById(R.id.EDX_Password);
         //EDX_Password.setText("123456");
         appLoader = new AppLoader(LoginActivity.this);
 
@@ -57,7 +60,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
             }
         });
-
 
     }
 
@@ -117,8 +119,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                                 /////////////////For Remember me ///////////////////////////
                                 if (((CheckBox) findViewById(R.id.check_remember)).isChecked()) {
+                                    Loger.MSG("remember",""+((CheckBox) findViewById(R.id.check_remember)).isChecked());
                                     new AppConstant(LoginActivity.this).setRememberShare(EDX_email.getText().toString().trim(),
                                             EDX_Password.getText().toString().trim());
+                                }
+                                else {
+                                    new AppConstant(LoginActivity.this).clearRememberMe();
                                 }
                                 /////////////////////End////////////////////////////////////
 
