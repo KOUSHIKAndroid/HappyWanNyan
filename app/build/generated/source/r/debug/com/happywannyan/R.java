@@ -5774,7 +5774,7 @@ containing a value of this type.
         public static final int blurred_background_image_view=0x7f0f01f3;
         public static final int book_now=0x7f0f0083;
         public static final int bottom=0x7f0f003c;
-        public static final int bottom_view=0x7f0f0194;
+        public static final int bottom_view=0x7f0f0193;
         public static final int box_count=0x7f0f0097;
         public static final int button=0x7f0f0098;
         public static final int buttonPanel=0x7f0f00a9;
@@ -5946,7 +5946,7 @@ containing a value of this type.
         public static final int large_icon_uri=0x7f0f0056;
         public static final int left=0x7f0f0042;
         public static final int left_image=0x7f0f031a;
-        public static final int left_red_view=0x7f0f018e;
+        public static final int left_red_view=0x7f0f0194;
         public static final int light=0x7f0f004e;
         public static final int line1=0x7f0f02ee;
         public static final int line3=0x7f0f02ef;
@@ -6135,7 +6135,7 @@ containing a value of this type.
         public static final int tv=0x7f0f0189;
         public static final int tv_Price=0x7f0f019b;
         public static final int tv_added_on=0x7f0f02f7;
-        public static final int tv_address=0x7f0f0191;
+        public static final int tv_address=0x7f0f0190;
         public static final int tv_all_message=0x7f0f0279;
         public static final int tv_answer_one=0x7f0f01d3;
         public static final int tv_answer_two=0x7f0f0113;
@@ -6147,7 +6147,7 @@ containing a value of this type.
         public static final int tv_card_month_date=0x7f0f02f6;
         public static final int tv_card_number=0x7f0f02f5;
         public static final int tv_cardnumber=0x7f0f015a;
-        public static final int tv_contact=0x7f0f0193;
+        public static final int tv_contact=0x7f0f0192;
         public static final int tv_coupon_code=0x7f0f0271;
         public static final int tv_current=0x7f0f0297;
         public static final int tv_cvv=0x7f0f0162;
@@ -6165,7 +6165,7 @@ containing a value of this type.
         public static final int tv_friendly_value=0x7f0f01b4;
         public static final int tv_gender=0x7f0f01a7;
         public static final int tv_gender_lbl=0x7f0f01ac;
-        public static final int tv_meet_up=0x7f0f0192;
+        public static final int tv_meet_up=0x7f0f0191;
         public static final int tv_month=0x7f0f015f;
         public static final int tv_month_lbl=0x7f0f01ab;
         public static final int tv_month_year_header=0x7f0f01d9;
@@ -6179,7 +6179,7 @@ containing a value of this type.
         public static final int tv_question_one=0x7f0f01d2;
         public static final int tv_question_two=0x7f0f01d4;
         public static final int tv_reservation_message=0x7f0f027b;
-        public static final int tv_reserve_or_not_reserve=0x7f0f018f;
+        public static final int tv_reserve_or_not_reserve=0x7f0f018e;
         public static final int tv_review=0x7f0f0195;
         public static final int tv_service_=0x7f0f0198;
         public static final int tv_service_name=0x7f0f010c;
@@ -6194,7 +6194,7 @@ containing a value of this type.
         public static final int tv_start_date_name=0x7f0f0105;
         public static final int tv_time=0x7f0f019c;
         public static final int tv_times_visit=0x7f0f025b;
-        public static final int tv_title=0x7f0f0190;
+        public static final int tv_title=0x7f0f018f;
         public static final int tv_total_amount_value=0x7f0f01a3;
         public static final int tv_total_pets_name=0x7f0f010f;
         public static final int tv_total_pets_value=0x7f0f01a2;
