@@ -65,8 +65,8 @@ public class CustomJSONParser {
                     for (SetGetAPIPostData data : apiPostDataArrayList) {
                         PARAMS = PARAMS + data.getPARAMS() + "=" + data.getValues() + "&";
                     }
-                    Loger.MSG("url", "" + URL + PARAMS);
                 }
+                Loger.MSG("url", "" + URL + PARAMS);
             }
 
             @Override
