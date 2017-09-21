@@ -628,11 +628,6 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                                                 Params.add(setGetAPIPostData);
 
                                                 setGetAPIPostData = new SetGetAPIPostData();
-                                                setGetAPIPostData.setPARAMS("pettypeid");
-                                                setGetAPIPostData.setValues(AppConstant.Language);
-                                                Params.add(setGetAPIPostData);
-
-                                                setGetAPIPostData = new SetGetAPIPostData();
                                                 setGetAPIPostData.setPARAMS("text");
                                                 setGetAPIPostData.setValues(Text.toString());
                                                 Params.add(setGetAPIPostData);
@@ -651,10 +646,12 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                                                 setGetAPIPostData.setPARAMS("select");
                                                 setGetAPIPostData.setValues(Select.toString());
                                                 Params.add(setGetAPIPostData);
+
                                                 setGetAPIPostData = new SetGetAPIPostData();
                                                 setGetAPIPostData.setPARAMS("pettypeid");
                                                 setGetAPIPostData.setValues(PetTypeId);
                                                 Params.add(setGetAPIPostData);
+
                                                 setGetAPIPostData = new SetGetAPIPostData();
                                                 setGetAPIPostData.setPARAMS("edit_pet_id");
                                                 setGetAPIPostData.setValues(EditId);
