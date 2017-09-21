@@ -34,7 +34,6 @@ public class AppLocationProvider {
 
     public void OnGetAddress(final Context context, final Location location, final AddressListener addressListener) {
 
-
         new AsyncTask<Void, Void, String>() {
 
             private String respose = null;

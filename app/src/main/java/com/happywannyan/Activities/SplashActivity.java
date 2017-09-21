@@ -29,8 +29,10 @@ public class SplashActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("AutoLanguage", MODE_PRIVATE);
 
-        if (!sharedPreferences.getString("shortLanguage", "").equals(""))
+        if (!sharedPreferences.getString("shortLanguage", "").equals("")) {
             setLangRecreate(sharedPreferences.getString("shortLanguage", ""));
+            AppConstant.Language = sharedPreferences.getString("shortLanguage", "");
+        }
         else {
             AppConstant.Language = Locale.getDefault().getLanguage();
             Loger.MSG("Device language", ":::" + AppConstant.Language );

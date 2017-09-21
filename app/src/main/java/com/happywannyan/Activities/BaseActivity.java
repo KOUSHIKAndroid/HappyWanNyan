@@ -132,14 +132,12 @@ public class BaseActivity extends LocationBaseActivity
                 drawer.closeDrawer(GravityCompat.START);
 
                 sharedPreferences = getSharedPreferences("AutoLanguage", MODE_PRIVATE);
-                String shortLanguage = sharedPreferences.getString("shortLanguage", "NO");
-
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 Configuration config = getBaseContext().getResources().getConfiguration();
                 Locale locale;
 
-                if (shortLanguage.equalsIgnoreCase("en")) {
+                if (sharedPreferences.getString("shortLanguage", "NO").equalsIgnoreCase("en")) {
                     editor.putString("shortLanguage", "ja");
                     AppConstant.Language = "ja";
                     locale = new Locale("ja");
