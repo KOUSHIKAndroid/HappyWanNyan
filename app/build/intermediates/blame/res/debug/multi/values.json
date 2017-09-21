@@ -8967,14 +8967,7 @@
                     "endOffset": 106292
                 },
                 "from": {
-                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 150,
-                        "startColumn": 4,
-                        "startOffset": 8279,
-                        "endColumn": 67,
-                        "endOffset": 8342
-                    }
+                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values/strings.xml"
                 }
             },
             {
