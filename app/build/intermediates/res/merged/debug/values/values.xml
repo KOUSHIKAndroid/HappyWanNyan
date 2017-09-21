@@ -1119,7 +1119,7 @@
     <string name="Month">Month</string>
     <string name="Name">Name</string>
     <string name="NewCard">New Card</string>
-    <string name="OfDays"># of Days</string>
+    <string name="OfDays">number of Days</string>
     <string name="Password">Password</string>
     <string name="Please_enter_both">Please Enter Email Id and Password Both</string>
     <string name="Please_enter_valid_email">Please Enter Valid Email Id</string>
@@ -1244,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">6787cf74-7893-4519-81e7-8139881e1fd9</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">778ff91c-3159-461f-a04e-e6ad98fbbd47</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1342,7 +1342,7 @@
     <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
     <string name="i_am_looking">I am looking for....</string>
     <string name="ic_vector_favourite_delete">Delete</string>
-    <string name="ihavenotdateyet" translatable="false">I don\'t have dates yet</string>
+    <string name="ihavenotdateyet">I don\'t have dates yet</string>
     <string name="image_error">Image Error</string>
     <string name="images">Photos</string>
     <string name="invalid_card_please_add">Invalid card please add a correct card</string>
@@ -1480,7 +1480,6 @@
     <string name="tota_amnt">Total Amount</string>
     <string name="total_Payableamount">Total Payable Amount</string>
     <string name="trust_safty">Trust &amp; Safety  Fee</string>
-    <string name="un_responded">Un Responded</string>
     <string name="unable_to_make_book">Unable to make book now.Please contact to HappyWanYan</string>
     <string name="unable_to_make_reservation_request">Unable to make Reservation Request.Please contact to HappyWanNyan</string>
     <string name="unable_to_send_message">Unable to Send Message. Please contact HappyWanNyan</string>

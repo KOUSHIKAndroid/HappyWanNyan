@@ -496,8 +496,8 @@ public final class R {
         public static final int cast_forward_10 = 0x7f080020;
         public static final int cast_forward_30 = 0x7f080021;
         public static final int cast_intro_overlay_button_text = 0x7f080022;
-        public static final int cast_invalid_stream_duration_text = 0x7f080169;
-        public static final int cast_invalid_stream_position_text = 0x7f08016a;
+        public static final int cast_invalid_stream_duration_text = 0x7f080176;
+        public static final int cast_invalid_stream_position_text = 0x7f080177;
         public static final int cast_mute = 0x7f080023;
         public static final int cast_notification_connected_message = 0x7f080024;
         public static final int cast_notification_connecting_message = 0x7f080025;

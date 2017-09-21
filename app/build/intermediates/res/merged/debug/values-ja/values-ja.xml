@@ -28,6 +28,7 @@
     <string name="Month">月</string>
     <string name="Name">名前</string>
     <string name="NewCard">新しいカード</string>
+    <string name="OfDays">日数</string>
     <string name="Password">パスワード</string>
     <string name="Please_enter_both">メールIDとパスワードの両方を入力してください</string>
     <string name="Please_enter_valid_email">有効なメールIDを入力してください</string>
@@ -190,6 +191,7 @@
     <string name="default2">デフォルト</string>
     <string name="delete">削除する</string>
     <string name="delete_message">このメッセージを削除しますか？</string>
+    <string name="describeyourcat">あなたの猫を説明してください</string>
     <string name="description">説明</string>
     <string name="discount_amount">割引額</string>
     <string name="do_you_want_to_cancel_booking">この予約をキャンセルしてもよろしいですか？</string>
@@ -199,14 +201,20 @@
     <string name="existingcard">あなたのカード</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="expiry_month_and_year">有効期限の月と年</string>
+    <string name="explain_why_cancel">この予約をキャンセルする理由を説明してください</string>
     <string name="favorite_sitters_delete">削除する</string>
+    <string name="field_length_must_be_greater_than_five">フィールド長は5より大きくなければなりません</string>
+    <string name="filed_can_not_be_empty">フィールドを空にすることはできません</string>
     <string name="forgot_password">パスワードをお忘れですか</string>
     <string name="generalequerys">一般的なお問い合わせ</string>
+    <string name="give_the_permission">許可を与える！</string>
+    <string name="hint_search_addrres">郵便番号または住所を入力してください</string>
     <string name="how_many_times">何回ですか？</string>
     <string name="how_many_visits">何回訪問？</string>
     <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します</string>
     <string name="i_am_looking">を探しています....</string>
     <string name="ic_vector_favourite_delete">削除する</string>
+    <string name="ihavenotdateyet">私はまだ日付がありません</string>
     <string name="image_error">イメージエラー</string>
     <string name="images">写真</string>
     <string name="invalid_card_please_add">無効なカード正しいカードを追加してください</string>
@@ -220,6 +228,7 @@
     <string name="location">その他のペット</string>
     <string name="make_default">デフォルトする</string>
     <string name="meeting_date">会議の開催日</string>
+    <string name="message">メッセージ</string>
     <string name="messenger_send_button_text">送信</string>
     <string msgid="3698378085901466129" name="mr_button_content_description">"キャストアイコン"</string>
     <string msgid="6349900579507521956" name="mr_chooser_searching">"端末を検索しています"</string>
@@ -291,6 +300,7 @@
     <string name="pleasenteraddress">アドレスを入力してください</string>
     <string name="pleaseselect">選んでください</string>
     <string name="price">価格</string>
+    <string name="remember_me">私を覚えてますか</string>
     <string name="request_reservation">予約リクエスト</string>
     <string name="reservation">ご予約に関するメッセージ</string>
     <string name="reservation_request">予約リクエスト</string>
@@ -298,6 +308,7 @@
     <string name="save">セーブ</string>
     <string name="search">検索</string>
     <string msgid="146198913615257606" name="search_menu_title">"検索"</string>
+    <string name="searchpage_txt">私たちのコミュニティは、ペットの親が彼らの座っているニーズに最適なソリューションを見つけるのを助けます。</string>
     <string name="select">選んでください</string>
     <string name="select_at_least_one_pet_service">少なくとも1つのペットサービスを選択してください</string>
     <string name="select_cancel_reason">キャンセルの理由を選択 </string>
@@ -306,10 +317,13 @@
     <string name="send">送信</string>
     <string name="send_request">予約リクエストを送る</string>
     <string name="service">サービス</string>
+    <string name="signup_password_checkingtext">パスワードは、英数字と少なくとも1つの特殊文字を含む必要があり、6文字以上である必要があります</string>
     <string name="signuplebel">アカウントの作成またはFacebookでの登録をクリックすると、利用規約に同意することが確認されます</string>
     <string name="signupnow">今すぐ申し込む</string>
+    <string name="signupsuccess">あなたのメールアドレスを確認してください</string>
     <string name="skip">スキップ</string>
     <string name="slectDate">日付を選択</string>
+    <string name="slide1_text">完璧なペットシッターを見つける</string>
     <string name="specialaccomod">特別対応できるサービス</string>
     <string name="specialskill">資格</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>

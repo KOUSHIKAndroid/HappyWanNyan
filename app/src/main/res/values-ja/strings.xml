@@ -214,5 +214,21 @@
     <string name="how_many_visits">何回訪問？</string>
     <string name="nav_switch_language">スイッチ言語</string>
     <string name="meeting_date">会議の開催日</string>
+    <string name="hint_search_addrres">郵便番号または住所を入力してください</string>
+    <string name="signup_password_checkingtext">パスワードは、英数字と少なくとも1つの特殊文字を含む必要があり、6文字以上である必要があります</string>
+    <string name="searchpage_txt">私たちのコミュニティは、ペットの親が彼らの座っているニーズに最適なソリューションを見つけるのを助けます。</string>
+    <string name="signupsuccess">あなたのメールアドレスを確認してください</string>
+    <string name="remember_me">私を覚えてますか</string>
+    <string name="message">メッセージ</string>
+    <string name="explain_why_cancel">この予約をキャンセルする理由を説明してください</string>
+    <string name="describeyourcat">あなたの猫を説明してください</string>
+    <string name="slide1_text">完璧なペットシッターを見つける</string>
+    <string name="give_the_permission">許可を与える！</string>
+    <string name="field_length_must_be_greater_than_five">フィールド長は5より大きくなければなりません</string>
+    <string name="filed_can_not_be_empty">フィールドを空にすることはできません</string>
+    <string name="OfDays">日数</string>
+    <string name="ihavenotdateyet">私はまだ日付がありません</string>
+
+
 
 </resources>

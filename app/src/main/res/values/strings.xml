@@ -57,7 +57,6 @@
     <string name="otherOption">Other Option</string>
     <string name="facebook_app_id" translatable="false">1381434255240015</string>
     <string name="title_activity_search_result">Map</string>
-    <string name="un_responded">Un Responded</string>
     <string name="reservation">Reservation</string>
     <string name="request_reservation">Request Reservation</string>
     <string name="all_messages">All Messages</string>
@@ -149,7 +148,7 @@
     <string name="Caontact_lebel1">Add details about your schedule, ask questions, or just introduce yourself!</string>
     <string name="add_a_message">Add a Message</string>
     <string name="send">Send</string>
-    <string name="ihavenotdateyet" translatable="false">I don\'t have dates yet</string>
+    <string name="ihavenotdateyet">I don\'t have dates yet</string>
     <string name="pickuptime">Pick-Up Time</string>
     <string name="dropofftime">Drop-Off Time</string>
     <string name="pleaseselect">Please Slect</string>
@@ -171,7 +170,7 @@
     <string name="nevershowstng">Never show this message again</string>
     <string name="writeyourcomment">Write your comment</string>
     <string name="Date">Date</string>
-    <string name="OfDays"># of Days</string>
+    <string name="OfDays">number of Days</string>
     <string name="total_Payableamount">Total Payable Amount</string>
     <string name="Existing">Existing</string>
     <string name="NewCard">New Card</string>
