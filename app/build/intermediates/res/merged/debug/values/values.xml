@@ -1244,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">25c3df04-4e1f-4c56-90ae-cd1e70d80b7b</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">d9db2566-fb9f-4e94-9255-fca128b8e171</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1345,6 +1345,7 @@
     <string name="ihavenotdateyet">I don\'t have dates yet</string>
     <string name="image_error">Image Error</string>
     <string name="images">Photos</string>
+    <string name="info">Info</string>
     <string name="invalid_card_please_add">Invalid card please add a correct card</string>
     <string name="isyourcatfriendlywithotherpets">Is your cat friendly with other pets?</string>
     <string name="isyourcatspayedorneutered">Is your cat spayed or neutered?</string>
@@ -1403,7 +1404,7 @@
     <string name="noofpet">No. of Pets</string>
     <string name="numberofpets">Number of pets</string>
     <string name="ok">OK</string>
-    <string name="optional_promo_code">Optional promo code</string>
+    <string name="optional_promo_code">Sign up code</string>
     <string name="otherOption">Other Option</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="past_booking">Past</string>

@@ -217,6 +217,7 @@
     <string name="ihavenotdateyet">私はまだ日付がありません</string>
     <string name="image_error">イメージエラー</string>
     <string name="images">写真</string>
+    <string name="info">情報</string>
     <string name="invalid_card_please_add">無効なカード正しいカードを追加してください</string>
     <string name="isyourcatfriendlywithotherpets">あなたの猫は他のペットと親しみやすいですか？</string>
     <string name="isyourcatspayedorneutered">あなたの猫は去勢されているの？</string>
@@ -272,7 +273,7 @@
     <string name="noofpet">ペット数</string>
     <string name="numberofpets">宿泊数\"</string>
     <string name="ok">次へ</string>
-    <string name="optional_promo_code">プロモーションコード（オプション）</string>
+    <string name="optional_promo_code">サインアップコード</string>
     <string name="otherOption">その他のオプション</string>
     <string name="past_booking">予約履歴</string>
     <string name="past_sitters">シッター履歴</string>

@@ -30,6 +30,7 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Activities.LoginActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -39,6 +40,7 @@ import com.happywannyan.Utils.CircleTransform;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.ImageFilePath;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -244,7 +246,18 @@ public class MyProfileFragment extends Fragment {
         Mview.findViewById(R.id.img_info).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (UserInfo!=null && UserInfo.has("sign_up_info")) {
+                    try {
+                        new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.info), UserInfo.getString("sign_up_info"), new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+                            }
+                        });
+                    }
+                    catch (Exception ex){
+                        ex.printStackTrace();
+                    }
+                }
             }
         });
 
@@ -474,11 +487,12 @@ public class MyProfileFragment extends Fragment {
                     ((EditText) Mview.findViewById(R.id.EDX_Phone)).setText(UserInfo.getString("mobilenum"));
 
                     if (UserInfo.getString("optional_promo_code").trim().equals("")) {
-                        Mview.findViewById(R.id.input_promo_code).setVisibility(View.VISIBLE);
+                        Mview.findViewById(R.id.RL_promo_code).setVisibility(View.VISIBLE);
                         Mview.findViewById(R.id.view_promo_code).setVisibility(View.VISIBLE);
-                        ((EditText) Mview.findViewById(R.id.EDX_optional_promo_code)).setText(UserInfo.getString("optional_promo_code"));
+//                        ((EditText) Mview.findViewById(R.id.EDX_optional_promo_code)).setText(UserInfo.getString("optional_promo_code"));
+
                     } else {
-                        Mview.findViewById(R.id.input_promo_code).setVisibility(View.GONE);
+                        Mview.findViewById(R.id.RL_promo_code).setVisibility(View.GONE);
                         Mview.findViewById(R.id.view_promo_code).setVisibility(View.GONE);
                     }
 

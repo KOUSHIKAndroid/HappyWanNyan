@@ -250,4 +250,5 @@
     <string name="please_enter_correct_holder_number">Please enter correct card holder name</string>
     <string name="nav_switch_language">Switch Language</string>
     <string name="remember_me">Remember me</string>
+    <string name="info">Info</string>
 </resources>
