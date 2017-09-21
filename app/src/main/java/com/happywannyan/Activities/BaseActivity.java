@@ -170,6 +170,68 @@ public class BaseActivity extends LocationBaseActivity
                 ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText(getResources().getString(R.string.nav_switch_language));
                 ((SFNFTextView)findViewById(R.id.tv_nav_logout)).setText(getResources().getString(R.string.nav_logout));
 
+
+
+                if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MessageFragment)
+                {
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    MessageFragment search_basic = new MessageFragment();
+                    fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof SearchBasicFragment){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    SearchBasicFragment search_basicFragment = new SearchBasicFragment();
+                    fragmentTransaction.replace(R.id.Base_fargment_layout, search_basicFragment);
+                    fragmentTransaction.commit();
+                }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof BookingFragment){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof PastSitterFragment){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.Base_fargment_layout, new PastSitterFragment());
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyProfileFragment){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPetsFragments){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.Base_fargment_layout, MyPetsFragments.newInstance(null, null));
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPaymentsFragment){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.Base_fargment_layout, FavouriteFragment.newInstance(null, null));
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+
+
             }
         });
 
