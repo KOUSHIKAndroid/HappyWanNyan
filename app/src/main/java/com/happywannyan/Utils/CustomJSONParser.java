@@ -190,6 +190,7 @@ public class CustomJSONParser {
             protected void onPreExecute() {
                 super.onPreExecute();
                 builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
+
                 Loger.MSG("@@ POST URL- ", URL);
 
                 Iterator myVeryOwnIterator = apiPostDataHashMap.keySet().iterator();
@@ -261,9 +262,12 @@ public class CustomJSONParser {
             protected void onPreExecute() {
                 super.onPreExecute();
 
+                Loger.MSG("@@ POST URL- ", URL);
+
                 builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
                 for (SetGetAPIPostData data : apiPostDataArrayList) {
                     builderNew.addFormDataPart("" + data.getPARAMS(), data.getValues());
+                    Loger.MSG(data.getPARAMS(), data.getValues());
                 }
 
                 for (File file : Photos) {
@@ -334,6 +338,8 @@ public class CustomJSONParser {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
+
+                Loger.MSG("@@ POST URL- ", URL);
 
                 builderNew = new MultipartBody.Builder().setType(MultipartBody.FORM);
                 Iterator myVeryOwnIterator = apiPostDataHashMap.keySet().iterator();
@@ -499,6 +505,9 @@ public class CustomJSONParser {
             protected String doInBackground(String... arg0) {
 
                 try {
+
+                    Loger.MSG("@@ POST URL- ", URL);
+
                     URL url = new URL(URL);
                     JSONObject postDataParams = new JSONObject();
 
@@ -507,7 +516,7 @@ public class CustomJSONParser {
                     }
 
 
-                    Log.e("params", postDataParams.toString());
+                    Loger.MSG("params", postDataParams.toString());
 
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setReadTimeout(15000 /* milliseconds */);
