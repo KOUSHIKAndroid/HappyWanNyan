@@ -239,11 +239,14 @@ public class MyProfileFragment extends Fragment {
                     ((EditText) Mview.findViewById(R.id.EDX_FNAME)).setHintTextColor(Color.RED);
                     ((EditText) Mview.findViewById(R.id.EDX_FNAME)).requestFocus();
                 }
-
+            }
+        });
+        Mview.findViewById(R.id.img_info).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
             }
         });
-
 
     }
 

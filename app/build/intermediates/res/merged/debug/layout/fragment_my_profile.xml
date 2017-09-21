@@ -238,20 +238,39 @@
             </LinearLayout>
 
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_promo_code"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_alignParentBottom="true">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/EDX_optional_promo_code"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_promo_code"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    android:hint="@string/optional_promo_code" />
+                    android:layout_height="54dp"
+                    >
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/EDX_optional_promo_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/optional_promo_code" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/img_info"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_info"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </RelativeLayout>
+
+
 
             <View
                 android:id="@+id/view_promo_code"
