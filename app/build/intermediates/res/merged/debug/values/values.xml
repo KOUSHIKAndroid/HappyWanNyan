@@ -1244,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">3f44b4c8-999d-4908-b1a3-b39bf8387572</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">17d5a6cf-e49b-49f7-8647-93098c9e65d9</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1313,7 +1313,7 @@
     <string name="do_you_want_to_delete">Do you want to delete ?</string>
     <string name="donthaveanacc">Don\'t have an account?</string>
     <string name="dropofftime">Drop-Off Time</string>
-    <string name="email_confirm">Thanks for signing up with HappyWanNyan! Please click the link in the confirmation email we just sent you and login again</string>
+    <string name="email_confirm">Please vrify confirmation email we just sent you and login again</string>
     <string name="existingcard">Your Cards</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="expiry_month_and_year">Expiry Month and Year</string>
@@ -1474,6 +1474,7 @@
     <string name="tagmanager_preview_dialog_button">Continue</string>
     <string name="tagmanager_preview_dialog_message">Preview mode updated.</string>
     <string name="tagmanager_preview_dialog_title">Preview</string>
+    <string name="thanks_for_sign_up">Thanks for signing up with HappyWanNyan! Please click the link in the confirmation email we just sent you and login again</string>
     <string name="this_is_just_a_reservation_request">This is just a Reservation Request.Your card is only charged after the Sitter accept this request.</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_search_result">Map</string>

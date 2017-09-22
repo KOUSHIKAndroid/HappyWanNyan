@@ -198,7 +198,7 @@
     <string name="do_you_want_to_delete">あなたは削除しますか？</string>
     <string name="donthaveanacc">アカウントを持っていないのですか？</string>
     <string name="dropofftime">お迎え時間</string>
-    <string name="email_confirm">確認メールを送信致しました。送られたリンクを選択し本登録を完了してください。</string>
+    <string name="email_confirm">ちょうどあなたに送った確認メールを確認してから再度ログインしてください</string>
     <string name="existingcard">あなたのカード</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="expiry_month_and_year">有効期限の月と年</string>
@@ -334,6 +334,7 @@
     <string name="submit_review">レビューを提出する</string>
     <string name="subtotal_amount">小計</string>
     <string name="sucess">成功</string>
+    <string name="thanks_for_sign_up">確認メールを送信致しました。送られたリンクを選択し本登録を完了してください。</string>
     <string name="this_is_just_a_reservation_request">これはちょうど予約リクエストです。あなたのカードは、このリクエストをSitterが受け入れた後にのみ請求されます。</string>
     <string name="to">に</string>
     <string name="tota_amnt">合計金額</string>

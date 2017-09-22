@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    >
+
+    <com.happywannyan.Font.SFNFTextView
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/thanks_for_sign_up"
+        android:textSize="14sp"/>
+
+
+    <com.happywannyan.Font.SFNFTextView
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_ok"
+        android:background="@color/colorPrimary"
+        android:text="@string/ok"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:layout_width="54dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

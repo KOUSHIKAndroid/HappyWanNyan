@@ -94,20 +94,31 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ REG", Result);
-                                try {
+//                                try {
                                     appLoader.Dismiss();
-                                    JSONObject object = new JSONObject(Result);
-                                    new MYAlert(SignUpActivity.this).AlertOnly(getResources().getString(R.string.SignUp), object.getString("message"), new MYAlert.OnlyMessage() {
-                                        @Override
-                                        public void OnOk(boolean res) {
-                                            startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
-                                            finish();
-                                        }
-                                    });
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
 
+
+                                    Intent intent=new Intent(SignUpActivity.this,SignUpSuccessfullyMsgActivity.class);
+                                    startActivity(intent);
+
+                                    finish();
+
+//                                    JSONObject object = new JSONObject(Result);
+
+//                                    new MYAlert(SignUpActivity.this).AlertOnly(getResources().getString(R.string.SignUp), object.getString("message"), new MYAlert.OnlyMessage() {
+//                                        @Override
+//                                        public void OnOk(boolean res) {
+//                                            //startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+//
+//                                            Intent intent=new Intent(SignUpActivity.this,SignUpSuccessfullyMsgActivity.class);
+//                                            startActivity(intent);
+//
+//                                            finish();
+//                                        }
+//                                    });
+//                                } catch (JSONException e) {
+//                                    e.printStackTrace();
+//                                }
 
                             }
 

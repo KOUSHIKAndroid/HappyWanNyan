@@ -164,12 +164,11 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.happywannyan.Activities.Booking.CancelBookingWithReasonsActivity" />
-        <activity
-            android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
-
+        <!-- <activity android:name="com.cooltechworks.creditcarddesign.CardEditActivity" -->
+        <!-- android:theme="@style/AppTheme" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:windowSoftInputMode="adjustPan" -->
+        <!-- /> -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="f578e59c70f464e14e363fdf973f894b57235ce5" />
@@ -184,6 +183,10 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.happywannyan.SitterBooking.NewCardAddActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.happywannyan.Activities.SignUpSuccessfullyMsgActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->

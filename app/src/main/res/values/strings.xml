@@ -250,5 +250,6 @@
     <string name="please_enter_correct_holder_number">Please enter correct card holder name</string>
     <string name="remember_me">Remember me</string>
     <string name="info">Info</string>
-    <string name="email_confirm">Thanks for signing up with HappyWanNyan! Please click the link in the confirmation email we just sent you and login again</string>
+    <string name="email_confirm">Please vrify confirmation email we just sent you and login again</string>
+    <string name="thanks_for_sign_up">Thanks for signing up with HappyWanNyan! Please click the link in the confirmation email we just sent you and login again</string>
 </resources>
