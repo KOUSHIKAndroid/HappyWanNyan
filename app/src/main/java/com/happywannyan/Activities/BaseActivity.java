@@ -435,6 +435,7 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+
             }
         } else {
             fragmentManager = getSupportFragmentManager();
