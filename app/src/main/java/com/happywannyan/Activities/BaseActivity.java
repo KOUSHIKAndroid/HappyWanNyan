@@ -165,7 +165,14 @@ public class BaseActivity extends LocationBaseActivity
                 ((SFNFTextView)findViewById(R.id.tv_nav_favoritesitter)).setText(getResources().getString(R.string.nav_favoritesitter));
                 ((SFNFTextView)findViewById(R.id.tv_nav_pastsitter)).setText(getResources().getString(R.string.nav_pastsitter));
                 ((SFNFTextView)findViewById(R.id.tv_nav_help)).setText(getResources().getString(R.string.nav_help));
-                ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText(getResources().getString(R.string.nav_switch_language));
+
+                if (AppConstant.Language.equals("en")){
+                    ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("日本語");
+                }else {
+                    ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("English");
+                }
+
+
                 ((SFNFTextView)findViewById(R.id.tv_nav_logout)).setText(getResources().getString(R.string.nav_logout));
 
 
@@ -437,6 +444,11 @@ public class BaseActivity extends LocationBaseActivity
             fragmentTransaction.commit();
         }
 
+        if (AppConstant.Language.equals("en")){
+            ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("日本語");
+        }else {
+            ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("English");
+        }
     }
 
 

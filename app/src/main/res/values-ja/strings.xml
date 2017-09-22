@@ -212,7 +212,6 @@
     <string name="unable_to_make_book">今すぐ予約できません。HappyWanYanにご連絡ください。</string>
     <string name="how_many_times">何回ですか？</string>
     <string name="how_many_visits">何回訪問？</string>
-    <string name="nav_switch_language">スイッチ言語</string>
     <string name="meeting_date">会議の開催日</string>
     <string name="hint_search_addrres">郵便番号または住所を入力してください</string>
     <string name="signup_password_checkingtext">パスワードは、英数字と少なくとも1つの特殊文字を含む必要があり、6文字以上である必要があります</string>

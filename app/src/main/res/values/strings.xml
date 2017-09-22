@@ -248,7 +248,6 @@
     <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
     <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete?</string>
     <string name="please_enter_correct_holder_number">Please enter correct card holder name</string>
-    <string name="nav_switch_language">Switch Language</string>
     <string name="remember_me">Remember me</string>
     <string name="info">Info</string>
     <string name="email_confirm">Thanks for signing up with HappyWanNyan! Please click the link in the confirmation email we just sent you and login again</string>
