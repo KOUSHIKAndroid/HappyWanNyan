@@ -198,6 +198,7 @@
     <string name="do_you_want_to_delete">あなたは削除しますか？</string>
     <string name="donthaveanacc">アカウントを持っていないのですか？</string>
     <string name="dropofftime">お迎え時間</string>
+    <string name="email_confirm">確認メールを送信致しました。送られたリンクを選択し本登録を完了してください。</string>
     <string name="existingcard">あなたのカード</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="expiry_month_and_year">有効期限の月と年</string>
