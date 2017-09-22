@@ -229,6 +229,7 @@
     <string name="OfDays">日数</string>
     <string name="ihavenotdateyet">私はまだ日付がありません</string>
     <string name="info">情報</string>
+    <string name="email_confirm">確認メールを送信致しました。送られたリンクを選択し本登録を完了してください。</string>
 
 
 

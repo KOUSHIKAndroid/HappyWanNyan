@@ -7,6 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -17,6 +18,10 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.Validation;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -113,24 +118,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ LOGIN", Result);
-                                new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData, Result);
                                 appLoader.Dismiss();
+                                try {
+                                    JSONObject jsonObject=new JSONObject(Result);
+                                    if (jsonObject.getString("email_verified_status").equals("1")){
+                                        new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData, Result);
 
+                                        /////////////////For Remember me ///////////////////////////
+                                        if (((CheckBox) findViewById(R.id.check_remember)).isChecked()) {
+                                            Loger.MSG("remember",""+((CheckBox) findViewById(R.id.check_remember)).isChecked());
+                                            new AppConstant(LoginActivity.this).setRememberShare(EDX_email.getText().toString().trim(),
+                                                    EDX_Password.getText().toString().trim());
+                                        }
+                                        else {
+                                            new AppConstant(LoginActivity.this).clearRememberMe();
+                                        }
+                                        /////////////////////End////////////////////////////////////
 
-                                /////////////////For Remember me ///////////////////////////
-                                if (((CheckBox) findViewById(R.id.check_remember)).isChecked()) {
-                                    Loger.MSG("remember",""+((CheckBox) findViewById(R.id.check_remember)).isChecked());
-                                    new AppConstant(LoginActivity.this).setRememberShare(EDX_email.getText().toString().trim(),
-                                            EDX_Password.getText().toString().trim());
+                                        startActivity(new Intent(LoginActivity.this, BaseActivity.class));
+                                        finish();
+                                    }
+                                    else {
+                                        Toast.makeText(LoginActivity.this,getResources().getString(R.string.email_confirm),Toast.LENGTH_LONG).show();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
-                                else {
-                                    new AppConstant(LoginActivity.this).clearRememberMe();
-                                }
-                                /////////////////////End////////////////////////////////////
-
-
-                                startActivity(new Intent(LoginActivity.this, BaseActivity.class));
-                                finish();
                             }
 
                             @Override

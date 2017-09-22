@@ -251,4 +251,5 @@
     <string name="nav_switch_language">Switch Language</string>
     <string name="remember_me">Remember me</string>
     <string name="info">Info</string>
+    <string name="email_confirm">Thanks for signing up with HappyWanNyan! Please click the link in the confirmation email we just sent you and login again</string>
 </resources>
