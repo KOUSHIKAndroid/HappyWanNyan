@@ -82,6 +82,8 @@
     <string name="alternative_date">代替日付</string>
     <string name="app_name">Happy Wan Nyan</string>
     <string name="apply">次へ</string>
+    <string name="are_you_sure_want_to_log_out">ログアウトしてもよろしいですか？</string>
+    <string name="are_you_sure_you_want_to_cancel_reservation_request">予約リクエストをキャンセルしてもよろしいですか？</string>
     <string name="are_you_sure_you_want_to_delete">消去してもよろしいですか？</string>
     <string name="are_you_want_to_delete">あなたは削除しますか？</string>
     <string name="available_Pets_Details">利用可能なペットの詳細</string>

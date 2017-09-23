@@ -231,4 +231,7 @@
     <string name="email_confirm">ちょうどあなたに送った確認メールを確認してから再度ログインしてください</string>
     <string name="thanks_for_sign_up">確認メールを送信致しました。送られたリンクを選択し本登録を完了してください。</string>
 
+    <string name="are_you_sure_want_to_log_out">ログアウトしてもよろしいですか？</string>
+    <string name="are_you_sure_you_want_to_cancel_reservation_request">予約リクエストをキャンセルしてもよろしいですか？</string>
+
 </resources>

@@ -196,8 +196,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try {
+                            Loger.MSG("refund_status-->",""+jsonObject.getJSONObject("booking_info").getInt("refund_status"));
                             if (jsonObject.getJSONObject("booking_info").getInt("refund_status") == 0)
-                                CancelStatusWork(jsonObject.getJSONObject("booking_info").getString("booking_id"), jsonObject.getJSONObject("booking_info").getString("booking_type"));
+                                CancelStatusWork(jsonObject.getJSONObject("booking_info").getString("booking_id"), jsonObject.getJSONObject("booking_info").getString("booking_type"),getString(R.string.do_you_want_to_cancel_booking));
                             if (jsonObject.getJSONObject("booking_info").getInt("refund_status") == 1) {
                                 CancelWith_Reasons();
                             }
@@ -207,7 +208,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         }
                     }
                 });
-
             }
 
             if (jsonObject.getJSONObject("booking_info").has("cancel_status_button") && !jsonObject.getJSONObject("booking_info").getString("cancel_status_button").trim().equals("")) {
@@ -222,7 +222,13 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 ((CardView) ButtomView.findViewById(R.id.Card_AddRevw)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Loger.MSG("cancel_status_button-->","Cancel");
 
+                        try {
+                            CancelStatusWork(jsonObject.getJSONObject("booking_info").getString("id"), jsonObject.getJSONObject("booking_info").getString("booking_type"),getString(R.string.are_you_sure_you_want_to_cancel_reservation_request));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
             }
@@ -287,11 +293,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         ((SFNFTextView) PetView.findViewById(R.id.tv_size_name)).setText(PetObj.getJSONArray("pet_info").getJSONObject(8).getString("name"));
                         ((SFNFBoldTextView) PetView.findViewById(R.id.tv_size_value)).setText(PetObj.getJSONArray("pet_info").getJSONObject(8).getString("value"));
                     }
-
                     LLPetInfo.addView(PetView);
                 }
             }
-
 
             backimage.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -317,17 +321,13 @@ public class BookingDetailsActivity extends AppCompatActivity {
     }
 
     private void GotoMessage(String MsgId) {
-
         Intent intent = new Intent(this, MessageDetailsPageActivity.class);
         intent.putExtra("receiver_id", AppConstant.UserId);
         intent.putExtra("message_id", MsgId);
         startActivity(intent);
-
-
     }
 
     private void AcceptButton() {
-
         try {
             if (jsonObject.getJSONObject("booking_info").getString("accept_type_booking").equals("N")) {
 //                Normal Confimation Accpet
@@ -533,9 +533,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
     }
 
-    private void CancelStatusWork(final String BookingID, final String BookingType) {
+    private void CancelStatusWork(final String BookingID, final String BookingType,String dialogMSG) {
 
-        new MYAlert(BookingDetailsActivity.this).AlertOkCancel(getString(R.string.cancel), getString(R.string.do_you_want_to_cancel_booking), new MYAlert.OnOkCancel() {
+        new MYAlert(BookingDetailsActivity.this).AlertOkCancel(getString(R.string.cancel), dialogMSG, new MYAlert.OnOkCancel() {
             @Override
             public void OnOk() {
                 appLoader.Show();
@@ -559,22 +559,23 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Message, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
-
+                                finish();
                             }
                         });
-
                     }
-
                     @Override
                     public void OnError(String Error, String Response) {
                         appLoader.Dismiss();
-                        MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Response, new MYAlert.OnlyMessage() {
-                            @Override
-                            public void OnOk(boolean res) {
+                        try {
+                            MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                @Override
+                                public void OnOk(boolean res) {
 
-                            }
-                        });
-
+                                }
+                            });
+                        }catch (Exception ex){
+                            ex.printStackTrace();
+                        }
                     }
 
                     @Override
@@ -589,19 +590,11 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                     }
                 });
-
-
             }
-
             @Override
             public void OnCancel() {
 
             }
-
-
         });
-
-
     }
-
 }

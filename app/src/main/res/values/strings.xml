@@ -254,4 +254,5 @@
     <string name="thanks_for_sign_up">Thanks for signing up with HappyWanNyan! Please click the link in the confirmation email we just sent you and login again</string>
     <string name="go_to_sitters_profile">Go to Sitter\'s Profile?</string>
     <string name="are_you_sure_want_to_log_out">Are you sure you want to log out?</string>
+    <string name="are_you_sure_you_want_to_cancel_reservation_request">Are you sure you want to cancel Reservation Request?</string>
 </resources>

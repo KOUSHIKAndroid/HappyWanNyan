@@ -134,7 +134,7 @@ public class BookingFragment extends Fragment {
                 view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
-                AllBooking = new ArrayList<>();
+                AllBooking.clear();
                 type = "upcoming_booking_list";
                 loadList("0");
             }
@@ -152,7 +152,7 @@ public class BookingFragment extends Fragment {
                 view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 
-                AllBooking = new ArrayList<>();
+                AllBooking.clear();
                 type = "current_booking_list";
                 loadList("0");
 
@@ -170,7 +170,7 @@ public class BookingFragment extends Fragment {
                 view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
-                AllBooking = new ArrayList<>();
+                AllBooking.clear();
                 type = "pending_booking_list";
                 loadList("0");
             }
@@ -188,7 +188,7 @@ public class BookingFragment extends Fragment {
                 view_between_current_pending_booking.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
-                AllBooking = new ArrayList<>();
+                AllBooking.clear();
                 type = "past_booking_list";
                 loadList("0");
             }
@@ -213,7 +213,7 @@ public class BookingFragment extends Fragment {
         ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                AllBooking = new ArrayList<>();
+                AllBooking.clear();
                 loadList("0");
                 ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setRefreshing(false);
             }
@@ -229,6 +229,13 @@ public class BookingFragment extends Fragment {
             loadList("0");
         }
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        AllBooking.clear();
+        loadList("0");
     }
 
     public void loadList(final String start_from) {
