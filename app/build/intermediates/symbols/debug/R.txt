@@ -2992,7 +2992,7 @@ int string wanyanmeetup 0x7f080161
 int string whatisyourdailybudgetperpet 0x7f080162
 int string with_pet 0x7f080163
 int string would_you_mind_to_turn_gps_on 0x7f080164
-int string writeyourcomment 0x7f080165
+int string writeyourmessage 0x7f080165
 int string you_can_not_select_before_current_date 0x7f080166
 int string youcanloginwith 0x7f080167
 int string youcansignupwith 0x7f080168

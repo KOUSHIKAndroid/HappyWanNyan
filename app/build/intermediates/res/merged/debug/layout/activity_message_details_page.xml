@@ -100,7 +100,6 @@
                         android:paddingBottom="10dp"
                         android:paddingTop="10dp"
                         android:text="@string/generalequerys"
-                        android:textAllCaps="true"
                         android:textColor="@color/colorBlack" />
 
                     <ImageView
@@ -356,7 +355,7 @@
                 android:layout_toLeftOf="@+id/IMG_Send"
                 android:layout_toRightOf="@+id/IMAGE_Attach"
                 android:background="@android:color/transparent"
-                android:hint="@string/writeyourcomment" />
+                android:hint="@string/writeyourmessage" />
 
 
             <ImageView

@@ -1245,7 +1245,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">d304fae5-6b25-4fd2-8984-ab8ef5eb4b32</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">9629d9c6-bf27-4a35-9c9c-0a73e6f44995</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1501,7 +1501,7 @@
     <string name="whatisyourdailybudgetperpet">What is your daily budget per pet?</string>
     <string name="with_pet">With Pet</string>
     <string name="would_you_mind_to_turn_gps_on">Would you mind to turn GPS on?</string>
-    <string name="writeyourcomment">Write your comment</string>
+    <string name="writeyourmessage">Write your message</string>
     <string name="you_can_not_select_before_current_date">You can\'t select before current date</string>
     <string name="youcanloginwith">You can login with</string>
     <string name="youcansignupwith">You can Sign Up With</string>

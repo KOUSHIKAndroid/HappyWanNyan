@@ -187,8 +187,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                         TXT_EndDate.setText(OBJ.getString("message_enddate"));
                         TXT_DropTime.setText(OBJ.getString("message_droptime"));
                         TXT_PickTime.setText(OBJ.getString("message_picktime"));
-                    } else
+                    } else {
                         LL_USER_TIME.setVisibility(View.GONE);
+                    }
                     TXT_JoinTime.setText(getString(R.string.join) + OBJ.getString("message_joined"));
 
                     if (OBJ.getInt("block_user_status") == 1) {

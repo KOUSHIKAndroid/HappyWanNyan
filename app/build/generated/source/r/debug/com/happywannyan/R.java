@@ -6867,7 +6867,7 @@ containing a value of this type.
         public static final int whatisyourdailybudgetperpet=0x7f080162;
         public static final int with_pet=0x7f080163;
         public static final int would_you_mind_to_turn_gps_on=0x7f080164;
-        public static final int writeyourcomment=0x7f080165;
+        public static final int writeyourmessage=0x7f080165;
         public static final int you_can_not_select_before_current_date=0x7f080166;
         public static final int youcanloginwith=0x7f080167;
         public static final int youcansignupwith=0x7f080168;
