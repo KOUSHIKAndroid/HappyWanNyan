@@ -1,5 +1,6 @@
 package com.happywannyan.Activities.Booking;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -178,7 +181,15 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 ButtomView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Review_Status();
+                        try {
+                            if (jsonObjectPrevious.getJSONObject("booking_info").has("review_details")) {
+                                showReviewStatus();
+                            }else {
+                                AddReviewStatus();
+                            }
+                        }catch (Exception ex){
+                            ex.printStackTrace();
+                        }
                     }
                 });
 
@@ -519,7 +530,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void Delete_Button() {
     }
 
-    private void Review_Status() {
+    private void AddReviewStatus() {
         try {
             Intent intent = new Intent(this, AddReviewActivity.class);
             Loger.MSG("During_Intent_B_ID","-->"+jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
@@ -611,5 +622,33 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 finish();
             }
         }
+    }
+
+    private void showReviewStatus(){
+        // custom dialog
+        final Dialog dialog = new Dialog(BookingDetailsActivity.this);
+        dialog.setContentView(R.layout.dailog_custom_review);
+        dialog.setTitle("");
+
+        RatingBar rtb_review = (RatingBar) dialog.findViewById(R.id.rtb_review);
+        ImageView img_review= (ImageView) dialog.findViewById(R.id.img_review);
+        SFNFTextView tv_review_desc= (SFNFTextView) dialog.findViewById(R.id.tv_review_desc);
+
+
+        try {
+            rtb_review.setRating(Float.parseFloat(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("type_overall")));
+            tv_review_desc.setText(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("review_desc"));
+            if(!jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment").equals("")) {
+                img_review.setVisibility(View.VISIBLE);
+                Glide.with(this).load(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment")).into(img_review);
+            }
+            else {
+                img_review.setVisibility(View.GONE);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        dialog.show();
     }
 }
