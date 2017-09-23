@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Activities.LoginChooserActivity;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
@@ -527,6 +531,47 @@ public class BookingDetailsActivity extends AppCompatActivity {
     }
 
     private void Delete_Button() {
+        new MYAlert(BookingDetailsActivity.this).AlertOkCancel("", getString(R.string.are_you_sure_you_want_to_delete), new MYAlert.OnOkCancel() {
+            @Override
+            public void OnOk() {
+                //appLoader.Show();
+//                String URL = AppConstant.BASEURL + "app_logout?user_id=" + AppConstant.UserId + "&anorid_status=1";
+//                new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+//                    @Override
+//                    public void OnSuccess(String Result) {
+//                        appLoader.Dismiss();
+//                        Loger.MSG("Result", Result);
+//
+//                        try {
+//                            if (new JSONObject(Result).getBoolean("response")) {
+//                                new AppConstant(BaseActivity.this).logOutClearAllData();
+//                                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//                                drawer.closeDrawer(GravityCompat.START);
+//                                startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
+//                                finish();
+//                            }
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void OnError(String Error, String Response) {
+//                        appLoader.Dismiss();
+//                    }
+//
+//                    @Override
+//                    public void OnError(String Error) {
+//                        appLoader.Dismiss();
+//                    }
+//                });
+            }
+            @Override
+            public void OnCancel() {
+
+            }
+        });
     }
 
     private void AddReviewStatus() {
