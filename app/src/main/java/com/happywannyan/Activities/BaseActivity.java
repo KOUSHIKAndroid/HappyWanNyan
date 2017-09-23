@@ -237,8 +237,6 @@ public class BaseActivity extends LocationBaseActivity
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }
-
-
             }
         });
 
