@@ -82,24 +82,31 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
             holder.img_card_view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    new MYAlert(context).AlertOkCancel("", context.getString(R.string.go_to_sitters_profile), new MYAlert.OnOkCancel() {
-                        @Override
-                        public void OnOk() {
-                            try {
-                                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
-                                Intent intent = new Intent(context, ProfileDetailsActivity.class);
-                                intent.putExtra("data", "" + object.getJSONObject("booking_info"));
-                                context.startActivity(intent, options.toBundle());
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
-                            }
-                        }
+                    try {
+                        if(object.getJSONObject("users_profile").getString("type").equalsIgnoreCase("S")){
+                            new MYAlert(context).AlertOkCancel("", context.getString(R.string.go_to_sitters_profile), new MYAlert.OnOkCancel() {
+                                @Override
+                                public void OnOk() {
+                                    try {
+                                        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
+                                        Intent intent = new Intent(context, ProfileDetailsActivity.class);
+                                        intent.putExtra("data", "" + object.getJSONObject("booking_info"));
+                                        context.startActivity(intent, options.toBundle());
+                                    } catch (Exception ex) {
+                                        ex.printStackTrace();
+                                    }
+                                }
 
-                        @Override
-                        public void OnCancel() {
+                                @Override
+                                public void OnCancel() {
 
+                                }
+                            });
                         }
-                    });
+                    }catch (Exception ex)
+                    {
+                        ex.printStackTrace();
+                    }
                 }
             });
 //            holder.tv_name.setOnClickListener(new View.OnClickListener() {
