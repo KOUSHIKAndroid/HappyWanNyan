@@ -54,6 +54,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addreview);
         BookingId = getIntent().getStringExtra("B_ID");
+        Loger.MSG("B_ID-->","--"+BookingId);
         appLoader = new AppLoader(this);
     }
 
@@ -195,7 +196,6 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         Dialog = alertbuilder.create();
         Dialog.show();
     }
-
 
     private void openImageGallery() {
         try {

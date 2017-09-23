@@ -346,7 +346,7 @@ public class CustomJSONParser {
                 while (myVeryOwnIterator.hasNext()) {
                     String key = (String) myVeryOwnIterator.next();
                     String value = (String) apiPostDataHashMap.get(key);
-                    Loger.MSG(key, value);
+                    Loger.MSG(""+key, ""+value);
                     builderNew.addFormDataPart(key, value);
                 }
 
