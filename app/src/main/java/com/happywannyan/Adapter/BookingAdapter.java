@@ -19,6 +19,7 @@ import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONObject;
 
@@ -81,17 +82,32 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
             holder.img_card_view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    try {
+                    new MYAlert(context).AlertOkCancel("", context.getString(R.string.go_to_sitters_profile), new MYAlert.OnOkCancel() {
+                        @Override
+                        public void OnOk() {
+                            try {
+                                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
+                                Intent intent = new Intent(context, ProfileDetailsActivity.class);
+                                intent.putExtra("data", "" + object.getJSONObject("booking_info"));
+                                context.startActivity(intent, options.toBundle());
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+                        }
 
-                        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
-                        Intent intent = new Intent(context, ProfileDetailsActivity.class);
-                        intent.putExtra("data", "" + object.getJSONObject("booking_info"));
-                        context.startActivity(intent, options.toBundle());
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
+                        @Override
+                        public void OnCancel() {
+
+                        }
+                    });
                 }
             });
+//            holder.tv_name.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+//                }
+//            });
 
         } catch (Exception e) {
             e.printStackTrace();
