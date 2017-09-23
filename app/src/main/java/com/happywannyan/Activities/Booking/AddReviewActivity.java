@@ -1,6 +1,7 @@
 package com.happywannyan.Activities.Booking;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -29,6 +30,8 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.ImageFilePath;
 import com.happywannyan.Utils.Loger;
 
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -56,6 +59,13 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         BookingId = getIntent().getStringExtra("B_ID");
         Loger.MSG("B_ID-->","--"+BookingId);
         appLoader = new AppLoader(this);
+
+        findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 
@@ -76,8 +86,6 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         try {
-
-
             if (photofile == null) {
 
                 photofile = new File(savedInstanceState.getString(BITMAP_STORAGE_URL));
@@ -269,8 +277,10 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
+                Intent resultIntent=new Intent();
+                resultIntent.putExtra("Result", Result);
+                setResult(Activity.RESULT_OK, resultIntent);
                 finish();
-
             }
 
             @Override

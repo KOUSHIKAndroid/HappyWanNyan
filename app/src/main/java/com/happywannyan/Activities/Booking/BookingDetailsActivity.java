@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
@@ -521,12 +522,12 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void Review_Status() {
         try {
             Intent intent = new Intent(this, AddReviewActivity.class);
+            Loger.MSG("During_Intent_B_ID","-->"+jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
             intent.putExtra("B_ID", jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
-            startActivity(new Intent(this, AddReviewActivity.class));
+            startActivityForResult(intent,1);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
 
     }
 
@@ -594,5 +595,21 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                String Result = data.getStringExtra("Result");
+                try {
+                    Toast.makeText(BookingDetailsActivity.this,""+new  JSONObject(Result).getString("message"),Toast.LENGTH_SHORT).show();
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+                finish();
+            }
+        }
     }
 }

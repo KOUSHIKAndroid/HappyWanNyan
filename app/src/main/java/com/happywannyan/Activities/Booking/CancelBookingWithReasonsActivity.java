@@ -34,7 +34,7 @@ public class CancelBookingWithReasonsActivity extends AppCompatActivity implemen
         setContentView(R.layout.activity_cancel_booking_with_reasons);
         myAlert = new MYAlert(this);
         appLoader = new AppLoader(this);
-        DATAObject = (BookingDetailsActivity.jsonObject);
+        DATAObject = (BookingDetailsActivity.jsonObjectPrevious);
         Loger.MSG("#@@@@", "--- " + DATAObject.toString());
 
     }
