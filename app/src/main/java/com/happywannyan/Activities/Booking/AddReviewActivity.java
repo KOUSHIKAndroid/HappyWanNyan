@@ -286,6 +286,11 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
+                try {
+                    Toast.makeText(AddReviewActivity.this,""+new  JSONObject(Response).getString("message"),Toast.LENGTH_SHORT).show();
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
             }
 
             @Override
