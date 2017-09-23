@@ -21,6 +21,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
@@ -41,6 +42,7 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.LocationListener.LocationBaseActivity;
 import com.happywannyan.Utils.LocationListener.LocationConfiguration;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.constants.ProviderType;
 
 import org.json.JSONException;
@@ -276,39 +278,48 @@ public class BaseActivity extends LocationBaseActivity
         navigationView.findViewById(R.id.LL_Logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                appLoader.Show();
-                String URL = AppConstant.BASEURL + "app_logout?user_id=" + AppConstant.UserId + "&anorid_status=1";
-                new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                new MYAlert(BaseActivity.this).AlertOkCancel(getString(R.string.nav_logout), getString(R.string.are_you_sure_want_to_log_out), new MYAlert.OnOkCancel() {
                     @Override
-                    public void OnSuccess(String Result) {
-                        appLoader.Dismiss();
-                        Loger.MSG("Result", Result);
+                    public void OnOk() {
+                        appLoader.Show();
+                        String URL = AppConstant.BASEURL + "app_logout?user_id=" + AppConstant.UserId + "&anorid_status=1";
+                        new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                            @Override
+                            public void OnSuccess(String Result) {
+                                appLoader.Dismiss();
+                                Loger.MSG("Result", Result);
 
-                        try {
-                            if (new JSONObject(Result).getBoolean("response")) {
-                                new AppConstant(BaseActivity.this).logOutClearAllData();
-                                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                                drawer.closeDrawer(GravityCompat.START);
-                                startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
-                                finish();
+                                try {
+                                    if (new JSONObject(Result).getBoolean("response")) {
+                                        new AppConstant(BaseActivity.this).logOutClearAllData();
+                                        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                                        drawer.closeDrawer(GravityCompat.START);
+                                        startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
+                                        finish();
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
+                            @Override
+                            public void OnError(String Error, String Response) {
+                                appLoader.Dismiss();
+                            }
 
-                    @Override
-                    public void OnError(String Error, String Response) {
-                        appLoader.Dismiss();
+                            @Override
+                            public void OnError(String Error) {
+                                appLoader.Dismiss();
+                            }
+                        });
                     }
-
                     @Override
-                    public void OnError(String Error) {
-                        appLoader.Dismiss();
+                    public void OnCancel() {
+
                     }
                 });
+
             }
         });
 
