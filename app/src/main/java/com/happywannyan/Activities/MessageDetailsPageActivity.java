@@ -1,6 +1,8 @@
 package com.happywannyan.Activities;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -28,6 +30,8 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
+import com.happywannyan.Activities.Booking.BookingDetailsActivity;
+import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Adapter.MessageAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -38,6 +42,7 @@ import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.ImageFilePath;
 import com.happywannyan.Utils.Loger;
+import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,6 +55,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.TimeZone;
 
 public class MessageDetailsPageActivity extends AppCompatActivity implements View.OnClickListener {
@@ -58,6 +64,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
     MessageAdapter messageAdapter;
     private LinearLayoutManager mLinearLayoutManager;
 
+    String userType="";
     RelativeLayout RL_ButtomSheet;
     private static final int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
 
@@ -78,6 +85,8 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
     private int PICK_IMAGE_REQUEST = 100;
     private int CAMERA_CAPTURE = 200;
 
+    JSONObject jsonObjectForProfile=null;
+    LinearLayout LL_user_profile;
     private BroadcastReceiver Localreceiver;
 
 
@@ -105,6 +114,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         TXT_MessageType = (SFNFTextView) findViewById(R.id.TXT_MessageType);
         EDX_Text = (EditText) findViewById(R.id.EDX_Text);
         LL_USER_TIME = (LinearLayout) findViewById(R.id.LL_USER_TIME);
+        LL_user_profile= (LinearLayout) findViewById(R.id.LL_user_profile);
 
         Localreceiver = mMessageReceiver;
         IntentFilter filter = new IntentFilter();
@@ -124,7 +134,32 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         MessageId = getIntent().getStringExtra("message_id");
 
         FetCh();
+
         TXT_MessageType.setText(MessageFragment.TAGNAME);
+
+        LL_user_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (!userType.trim().equals("")){
+                    if(userType.equalsIgnoreCase("S")){
+                        new MYAlert(MessageDetailsPageActivity.this).AlertOkCancel("", getString(R.string.go_to_sitters_profile), new MYAlert.OnOkCancel() {
+                            @Override
+                            public void OnOk() {
+                                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) MessageDetailsPageActivity.this, IMGE_FROM, "cardimage");
+                                Intent intent = new Intent(MessageDetailsPageActivity.this, ProfileDetailsActivity.class);
+                                intent.putExtra("data", "" + jsonObjectForProfile);
+                                startActivity(intent, options.toBundle());
+                            }
+                            @Override
+                            public void OnCancel() {
+
+                            }
+                        });
+                    }
+                }
+            }
+        });
 
 
     }
@@ -144,6 +179,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     PAGE_Titile.setText(OBJ.getString("message_to"));
                     TXT_UserName.setText(OBJ.getString("message_to"));
                     USerName.setText(OBJ.getString("message_from"));
+
+                    userType=OBJ.getString("type");
+
                     if (OBJ.has("message_startdate")) {
                         TXT_StartNAme.setText(OBJ.getString("message_startdate"));
                         TXT_EndDate.setText(OBJ.getString("message_enddate"));
@@ -162,6 +200,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(IMGE_FROM);
 
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(USER_IMAGE);
+
+                    jsonObjectForProfile=OBJ.getJSONArray("all_message_details").getJSONObject(0).getJSONArray("info").getJSONObject(0);
+
                     ARRAy = OBJ.getJSONArray("all_message_details");
 //                    if (messageAdapter == null) {
                     messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);

@@ -72,7 +72,10 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                 SitterId = PrevJSONObject.getString("sitter_user_id");
             } else if (PrevJSONObject.has("sitter_users_id")) {
                 SitterId = PrevJSONObject.getString("sitter_users_id");
-            } else {
+            }else if(PrevJSONObject.has("receiver_id")){
+                SitterId = PrevJSONObject.getString("receiver_id");
+            }
+            else{
                 SitterId = PrevJSONObject.getString("id");
             }
 

@@ -1244,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">17d5a6cf-e49b-49f7-8647-93098c9e65d9</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">f64eff1e-df4e-4961-81af-9948af5f39a9</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1329,6 +1329,7 @@
     <string name="gcm_defaultSenderId" translatable="false">279432934653</string>
     <string name="generalequerys">General Inquiries</string>
     <string name="give_the_permission">Give the permission!</string>
+    <string name="go_to_sitters_profile">Go to Sitter\'s Profile?</string>
     <string name="google_api_key" translatable="false">AIzaSyAc3KazLjS3IxyJ33NeEDVAKppZ1NLeB-c</string>
     <string name="google_app_id" translatable="false">1:279432934653:android:ab824595d924efdf</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAc3KazLjS3IxyJ33NeEDVAKppZ1NLeB-c</string>
