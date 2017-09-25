@@ -239,10 +239,14 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                 break;
 
             case R.id.RL_User_ClickBar:
-                if (findViewById(R.id.LL_UserInfo_body).getVisibility() == View.GONE)
+                if (findViewById(R.id.LL_UserInfo_body).getVisibility() == View.GONE) {
                     findViewById(R.id.LL_UserInfo_body).setVisibility(View.VISIBLE);
-                else
+                    ((ImageView)findViewById(R.id.img_more_or_less)).setImageResource(R.drawable.ic_expand_less_black_24dp);
+                }
+                else {
                     findViewById(R.id.LL_UserInfo_body).setVisibility(View.GONE);
+                    ((ImageView)findViewById(R.id.img_more_or_less)).setImageResource(R.drawable.ic_expand_more_black_24dp);
+                }
                 break;
 
             case R.id.IMAGE_Attach:
