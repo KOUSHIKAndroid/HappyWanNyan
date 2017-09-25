@@ -47,7 +47,7 @@
     <string name="up_coming_booking_id">予約ID</string>
     <string name="up_coming_booking_service">サービス</string>
     <string name="Gender">性別</string>
-    <string name="Name">名前</string>
+    <string name="Name">名</string>
     <string name="Month">月</string>
     <string name="favorite_sitters_delete">削除する</string>
     <string name="expiry_month_and_year">有効期限の月と年</string>
@@ -77,7 +77,7 @@
     <string name="nav_favoritesitter">お気に入りのシッター</string>
     <string name="nav_booking">予約</string>
     <string name="chosedate">予約日を選ぶ</string>
-    <string name="Year">年齢</string>
+    <string name="Year">年</string>
     <string name="adapter_your_pets_month">月</string>
     <string name="adapter_your_pets_year">年齢</string>
     <string name="adapter_your_pets_size">サイズ</string>
@@ -235,5 +235,10 @@
 
     <string name="address">住所</string>
     <string name="trust_and_safety_fee">信頼と安全料金</string>
+    <string name="months">ヶ月</string>
+    <string name="sex">性別</string>
+    <string name="pet_type">ペットの種類</string>
+    <string name="about_your_pet">あなたのペットについて</string>
+    <string name="is_your_pet_friendly_with_other_pets">あなたのペットは他のペットと親しみやすいですか？</string>
 
 </resources>

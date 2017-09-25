@@ -256,5 +256,11 @@
     <string name="are_you_sure_you_want_to_cancel_reservation_request">Are you sure you want to cancel Reservation Request?</string>
     <string name="address">Address</string>
     <string name="trust_and_safety_fee"><![CDATA[Trust & Safety Fee]]></string>
+    <string name="months">months</string>
+    <string name="sex">sex</string>
+    <string name="pet_type">Pet type</string>
+    <string name="about_your_pet">About your pet</string>
+    <string name="is_your_pet_friendly_with_other_pets">Is your pet friendly with other pets?</string>
+
 
 </resources>
