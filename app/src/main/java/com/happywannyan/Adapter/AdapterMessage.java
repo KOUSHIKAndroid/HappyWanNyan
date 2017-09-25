@@ -154,6 +154,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
                             SharedPreferences.Editor editor = pref.edit();
                             Loger.MSG("message_count", "" + pref.getInt("count", 0));
                             editor.putInt("count", (pref.getInt("count", 0)) - (object.getInt("unread_msg_count")));
+                            editor.apply();
                             editor.commit();
 
                             Loger.MSG("message_count_after", "" + pref.getInt("count", 0));
@@ -178,7 +179,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
             }
 
         } catch (JSONException e) {
-
+            e.printStackTrace();
         }
     }
 
