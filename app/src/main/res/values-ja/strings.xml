@@ -99,7 +99,7 @@
     <string name="specialskill">資格</string>
     <string name="specialaccomod">特別対応できるサービス</string>
     <string name="viewmore">もっと見る</string>
-    <string name="ForgotPassword">パスワードをお忘れですか</string>
+    <string name="ForgotPassword">パスワードをお忘れですか？</string>
     <string name="Instruction_for_Cancel_req">キャンセルポリシーに従って、予約の合計金額の50％、最大5,000円が請求されます。</string>
     <string name="LoginAlertTitle">アラート</string>
     <string name="NewCard">新しいカード</string>

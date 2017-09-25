@@ -17,7 +17,7 @@
     <string name="Existing">既存</string>
     <string name="FirestName">名</string>
     <string name="FirstName_photo">名（音名）</string>
-    <string name="ForgotPassword">パスワードをお忘れですか</string>
+    <string name="ForgotPassword">パスワードをお忘れですか？</string>
     <string name="Gender">性別</string>
     <string name="Instruction_for_Cancel_req">キャンセルポリシーに従って、予約の合計金額の50％、最大5,000円が請求されます。</string>
     <string name="LastName">姓</string>
