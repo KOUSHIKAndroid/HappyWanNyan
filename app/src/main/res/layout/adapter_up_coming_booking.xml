@@ -54,7 +54,6 @@
                     android:layout_marginTop="37dp"
                     android:layout_toRightOf="@+id/img_card_view"
                     android:text="JOHN DOE"
-                    android:textAllCaps="true"
                     android:textColor="@color/colorTextDarkGray"
                     android:textSize="12sp" />
 
@@ -104,6 +103,7 @@
 
 
                     <com.happywannyan.Font.SFNFTextView
+                        android:id="@+id/tv_bookingID_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -152,7 +152,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="201705045916"
+                        android:text=""
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
 

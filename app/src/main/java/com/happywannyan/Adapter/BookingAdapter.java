@@ -61,7 +61,14 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             holder.tv_start_date.setText(object.getJSONObject("booking_info").getString("booking_start_date"));
             holder.tv_end_date.setText(object.getJSONObject("booking_info").getString("booking_end_date"));
-            holder.tv_booking_id.setText(object.getJSONObject("booking_info").getString("booking_id"));
+            if (object.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")){
+                holder.tv_bookingID_name.setText("");
+                holder.tv_booking_id.setText("");
+            }else {
+                holder.tv_bookingID_name.setText(context.getResources().getString(R.string.up_coming_booking_id));
+                holder.tv_booking_id.setText(object.getJSONObject("booking_info").getString("booking_id"));
+            }
+
             holder.tv_service_value.setText(object.getJSONObject("booking_info").getString("booking_service"));
             holder.tv_total_pets_value.setText(object.getJSONObject("booking_info").getString("booked_total_pet"));
             holder.tv_total_amount_value.setText(object.getJSONObject("booking_info").getString("booked_total_amount"));
@@ -143,9 +150,9 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         AppCompatImageView img_view;
-        SFNFTextView tv_title, tv_name;
+        SFNFTextView tv_title, tv_name,tv_bookingID_name;
         CardView img_card_view;
-        SFNFBoldTextView tv_start_date, tv_end_date, tv_booking_id, tv_service_value, tv_total_pets_value, tv_total_amount_value;
+        SFNFBoldTextView tv_start_date, tv_end_date,tv_booking_id, tv_service_value, tv_total_pets_value, tv_total_amount_value;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -156,6 +163,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             tv_start_date = (SFNFBoldTextView) itemView.findViewById(R.id.tv_start_date);
             tv_end_date = (SFNFBoldTextView) itemView.findViewById(R.id.tv_end_date);
+            tv_bookingID_name = (SFNFTextView) itemView.findViewById(R.id.tv_bookingID_name);
             tv_booking_id = (SFNFBoldTextView) itemView.findViewById(R.id.tv_booking_id);
             tv_service_value = (SFNFBoldTextView) itemView.findViewById(R.id.tv_service_value);
             tv_total_pets_value = (SFNFBoldTextView) itemView.findViewById(R.id.tv_total_pets_value);
