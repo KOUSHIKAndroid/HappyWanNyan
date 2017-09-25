@@ -372,7 +372,6 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                         } else {
                             btn.setChecked(false);
                         }
-
                     }
                 }
             }
