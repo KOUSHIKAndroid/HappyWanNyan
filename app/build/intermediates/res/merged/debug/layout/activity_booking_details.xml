@@ -183,12 +183,35 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_trust_and_safety_fee_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/LLStartEndDateBookingValue"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/trust_and_safety_fee"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
+
+
+                <com.happywannyan.Font.SFNFBoldTextView
+                    android:id="@+id/tv_trust_and_safety_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_trust_and_safety_fee_name"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="#225"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
+
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/tv_service_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/LLStartEndDateBookingValue"
+                    android:layout_below="@+id/tv_trust_and_safety_value"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:text="@string/service"
@@ -267,6 +290,7 @@
                             android:textSize="12sp" />
 
                         <com.happywannyan.Font.SFNFTextView
+                            android:id="@+id/tv_total_amount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"

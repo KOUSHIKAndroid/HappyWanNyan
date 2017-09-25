@@ -255,4 +255,6 @@
     <string name="are_you_sure_want_to_log_out">Are you sure you want to log out?</string>
     <string name="are_you_sure_you_want_to_cancel_reservation_request">Are you sure you want to cancel Reservation Request?</string>
     <string name="address">Address</string>
+    <string name="trust_and_safety_fee"><![CDATA[Trust & Safety Fee]]></string>
+
 </resources>

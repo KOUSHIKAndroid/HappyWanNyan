@@ -234,5 +234,6 @@
     <string name="are_you_sure_you_want_to_cancel_reservation_request">予約リクエストをキャンセルしてもよろしいですか？</string>
 
     <string name="address">住所</string>
+    <string name="trust_and_safety_fee">信頼と安全料金</string>
 
 </resources>

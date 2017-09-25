@@ -1246,7 +1246,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">0ebee136-54b5-42d8-85d9-50ec2b8fe62c</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">7e8f2967-bf9e-493e-a77e-886a35fad0f0</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1484,6 +1484,7 @@
     <string name="to">to</string>
     <string name="tota_amnt">Total Amount</string>
     <string name="total_Payableamount">Total Payable Amount</string>
+    <string name="trust_and_safety_fee">Trust &amp; Safety Fee</string>
     <string name="trust_safty">Trust &amp; Safety  Fee</string>
     <string name="unable_to_make_book">Unable to make book now.Please contact to HappyWanYan</string>
     <string name="unable_to_make_reservation_request">Unable to make Reservation Request.Please contact to HappyWanNyan</string>

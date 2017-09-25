@@ -60,7 +60,14 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
             holder.tv_name.setText(object.getJSONObject("users_profile").getString("booked_user_name"));
 
             holder.tv_start_date.setText(object.getJSONObject("booking_info").getString("booking_start_date"));
-            holder.tv_end_date.setText(object.getJSONObject("booking_info").getString("booking_end_date"));
+
+            if(object.getJSONObject("booking_info").getString("booking_end_date").trim().equals("")){
+                holder.tv_end_date.setText(object.getJSONObject("booking_info").getString("booking_start_date"));
+            }else {
+                holder.tv_end_date.setText(object.getJSONObject("booking_info").getString("booking_end_date"));
+            }
+
+
             if (object.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")){
                 holder.tv_bookingID_name.setText("");
                 holder.tv_booking_id.setText("");

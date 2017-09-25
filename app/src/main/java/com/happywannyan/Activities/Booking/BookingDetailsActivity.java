@@ -76,9 +76,17 @@ public class BookingDetailsActivity extends AppCompatActivity {
             ((SFNFTextView) findViewById(R.id.TXT_total_no_pet)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_pet"));
 
             ((SFNFBoldTextView) findViewById(R.id.StartDate)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_start_date"));
-            ((SFNFBoldTextView) findViewById(R.id.Enddate)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_end_date"));
+            if(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_end_date").trim().equals("")){
+                ((SFNFBoldTextView) findViewById(R.id.Enddate)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_start_date"));
+            }else {
+                ((SFNFBoldTextView) findViewById(R.id.Enddate)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_end_date"));
+            }
+
             ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id"));
             ((SFNFBoldTextView) findViewById(R.id.tv_service_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_service"));
+
+            ((SFNFBoldTextView) findViewById(R.id.tv_trust_and_safety_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("trust_safety_fee"));
+            ((SFNFTextView) findViewById(R.id.tv_total_amount)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_amount"));
 
 
             if (jsonObjectPrevious.getJSONObject("booking_info").has("accept_button") && !jsonObjectPrevious.getJSONObject("booking_info").getString("accept_button").trim().equals("")) {
