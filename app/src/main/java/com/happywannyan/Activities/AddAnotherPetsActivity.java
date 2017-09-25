@@ -593,6 +593,9 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
 
 
                                                     appLoader.Show();
+
+                                                    CustomJSONParser.ImageParam = "petimg";
+
                                                     new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_addpetinfo?", Params, PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
                                                         @Override
                                                         public void OnSuccess(String Result) {

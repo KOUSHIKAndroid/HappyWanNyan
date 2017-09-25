@@ -548,6 +548,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         Params.add(setGetAPIPostData);
         ArrayList<File> Files = new ArrayList<>();
         Files.add(photofile);
+
         CustomJSONParser.ImageParam = "msg_attachment";
 
         new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "reply_message", Params, Files, new CustomJSONParser.JSONResponseInterface() {

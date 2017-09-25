@@ -321,6 +321,9 @@ public class MyProfileFragment extends Fragment {
                 Params.add(Post);
                 ArrayList<File> Photos = new ArrayList<File>();
                 Photos.add(photofile);
+
+                CustomJSONParser.ImageParam = "photo";
+
                 new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
@@ -368,6 +371,7 @@ public class MyProfileFragment extends Fragment {
                 Uri selectedImageURI = data.getData();
                 try {
                     photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
+                    Loger.MSG("photofile",""+photofile);
                     Glide.with(getApplicationContext()).load(photofile).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -381,6 +385,7 @@ public class MyProfileFragment extends Fragment {
             Uri selectedImageURI = data.getData();
             try {
                 photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
+                Loger.MSG("photofile",""+photofile);
                 Glide.with(getApplicationContext()).load(photofile).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
             } catch (Exception e) {
                 e.printStackTrace();
