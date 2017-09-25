@@ -66,25 +66,21 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/LL_UserInfo"
+            android:layout_above="@+id/LL_Buttom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/RL_HEADER"
             android:animateLayoutChanges="true"
             android:background="@color/colorWhite"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="5dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:background="@color/colorBtnRed" />
+            android:orientation="vertical">
 
             <LinearLayout
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:id="@+id/LL_UserInfo"
+                android:background="@drawable/vertical_line_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -318,17 +314,16 @@
 
             </LinearLayout>
 
+            <android.support.v7.widget.RecyclerView
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:id="@+id/List_Recy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/List_Recy"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/LL_Buttom"
-            android:layout_below="@+id/LL_UserInfo">
-
-        </android.support.v7.widget.RecyclerView>
 
 
         <RelativeLayout
