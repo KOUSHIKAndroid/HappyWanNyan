@@ -115,7 +115,6 @@
     <string name="add_another_pets">別のペットを追加する</string>
     <string name="add_image">画像を追加</string>
     <string name="alternative_date">代替日付</string>
-    <string name="are_you_want_to_delete">あなたは削除しますか？</string>
     <string name="choose_cause_type">私は私のペットを探しています..</string>
     <string name="confirm">確認</string>
     <string name="coupon_code_applied">クーポンコードが適用されました！</string>
@@ -187,7 +186,7 @@
     <string name="generalequerys">一般的なお問い合わせ</string>
     <string name="lbl_cardno">クレジットカード番号</string>
     <string name="image_error">イメージエラー</string>
-    <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します</string>
+    <string name="i_agree_the_terms_and_service">私は利用規約に同意します</string>
     <string name="i_am_looking">を探しています....</string>
     <string name="isyourcatspayedorneutered">あなたの猫は去勢されているの？</string>
     <string name="no_reviewFound">レビューが見つかりません</string>
@@ -233,5 +232,7 @@
 
     <string name="are_you_sure_want_to_log_out">ログアウトしてもよろしいですか？</string>
     <string name="are_you_sure_you_want_to_cancel_reservation_request">予約リクエストをキャンセルしてもよろしいですか？</string>
+
+    <string name="address">住所</string>
 
 </resources>

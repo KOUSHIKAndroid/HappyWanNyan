@@ -60,7 +60,7 @@
 
 
             <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -68,21 +68,19 @@
                 android:layout_toLeftOf="@+id/img_edit"
                 android:layout_toRightOf="@+id/img_card_view"
                 android:text="Name"
-                android:textAllCaps="true"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 
             <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_type"
+                android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_name"
+                android:layout_below="@+id/tv_type"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_toLeftOf="@+id/img_edit"
                 android:layout_toRightOf="@+id/img_card_view"
                 android:text="Lee Shung Yang"
-                android:textAllCaps="true"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 

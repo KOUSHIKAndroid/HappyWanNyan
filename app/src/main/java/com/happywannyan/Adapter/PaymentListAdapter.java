@@ -96,7 +96,7 @@ public class PaymentListAdapter extends RecyclerView.Adapter<PaymentListAdapter.
                 @Override
                 public void onClick(View view) {
                     new MYAlert(mContext).AlertOkCancel("",
-                            mContext.getResources().getString(R.string.are_you_want_to_delete), new MYAlert.OnOkCancel() {
+                            mContext.getResources().getString(R.string.are_you_sure_you_want_to_delete), new MYAlert.OnOkCancel() {
                                 @Override
                                 public void OnOk() {
                                     try {

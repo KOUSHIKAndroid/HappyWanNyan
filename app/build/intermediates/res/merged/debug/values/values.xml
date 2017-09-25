@@ -1179,6 +1179,7 @@
     <string name="add_image">Add Image</string>
     <string name="added_on">Added On</string>
     <string name="addnewcard">Add New Card</string>
+    <string name="address">Address</string>
     <string name="agree_to_the_terms_and_conditions">By clicking Send Request, you agree to make all reservations and payments through HappywanNyan, and agree to the terms and conditions</string>
     <string name="all_messages">All Messages</string>
     <string name="alreadymember">Already a member</string>
@@ -1246,7 +1247,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">8ce586b4-637f-4992-9a4f-1c1a70525f5e</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">74d39d7a-3267-4151-986a-3457cfddb2dc</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1343,7 +1344,7 @@
     <string name="hint_search_addrres">Search Postal Code or Address</string>
     <string name="how_many_times">How many times?</string>
     <string name="how_many_visits">How many visits?</string>
-    <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
+    <string name="i_agree_the_terms_and_service">I Agree to Terms and Service</string>
     <string name="i_am_looking">I am looking for....</string>
     <string name="ic_vector_favourite_delete">Delete</string>
     <string name="ihavenotdateyet">I don\'t have dates yet</string>

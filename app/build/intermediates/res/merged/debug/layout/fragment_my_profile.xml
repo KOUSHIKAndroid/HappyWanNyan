@@ -224,6 +224,13 @@
                 android:orientation="vertical">
 
                 <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/TXT_Address_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="@string/address" />
+
+                <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/TXT_Address"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
@@ -336,7 +343,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="@string/i_agree_to_the_terms_of_service" />
+                android:text="@string/i_agree_the_terms_and_service" />
         </LinearLayout>
     </ScrollView>
 

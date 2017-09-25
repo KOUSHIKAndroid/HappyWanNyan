@@ -76,6 +76,7 @@
     <string name="add_image">画像を追加</string>
     <string name="added_on">登録日</string>
     <string name="addnewcard">カードを追加</string>
+    <string name="address">住所</string>
     <string name="agree_to_the_terms_and_conditions">リクエストの送信をクリックすることにより、HappywanNyanを通じてすべての予約と支払いを行い、利用規約に同意することに同意したことになります</string>
     <string name="all_messages">すべてのメッセージ</string>
     <string name="alreadymember">既にメンバー</string>
@@ -214,7 +215,7 @@
     <string name="hint_search_addrres">郵便番号または住所の検索</string>
     <string name="how_many_times">何回ですか？</string>
     <string name="how_many_visits">何回訪問？</string>
-    <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します</string>
+    <string name="i_agree_the_terms_and_service">私は利用規約に同意します</string>
     <string name="i_am_looking">を探しています....</string>
     <string name="ic_vector_favourite_delete">削除する</string>
     <string name="ihavenotdateyet">私はまだ日付がありません</string>

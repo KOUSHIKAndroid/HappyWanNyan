@@ -155,9 +155,8 @@ public class MyPetsFragments extends Fragment {
                     }
 
                 } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-
-
             }
 
             @Override

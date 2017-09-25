@@ -207,7 +207,6 @@
     <string name="subtotal_amount">Subtotal Amount</string>
     <string name="discount_amount">Discount Amount</string>
     <string name="coupon_code_applied">Coupon Code Applied!</string>
-    <string name="are_you_want_to_delete">Are you want to delete?</string>
     <string name="past_sitters">Past Sitters</string>
     <string name="expiry_month_and_year">Expiry Month and Year</string>
     <string name="cvv">CVV</string>
@@ -245,7 +244,7 @@
     <string name="please_enter_correct_cvv">Please enter correct CVV</string>
     <string name="available_Pets_Details">Available Pet(s) Details</string>
     <string name="agree_to_the_terms_and_conditions">By clicking Send Request, you agree to make all reservations and payments through HappywanNyan, and agree to the terms and conditions</string>
-    <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
+    <string name="i_agree_the_terms_and_service">I Agree to Terms and Service</string>
     <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete?</string>
     <string name="please_enter_correct_holder_number">Please enter correct card holder name</string>
     <string name="remember_me">Remember me</string>
@@ -255,4 +254,5 @@
     <string name="go_to_sitters_profile">Go to Sitter\'s Profile?</string>
     <string name="are_you_sure_want_to_log_out">Are you sure you want to log out?</string>
     <string name="are_you_sure_you_want_to_cancel_reservation_request">Are you sure you want to cancel Reservation Request?</string>
+    <string name="address">Address</string>
 </resources>
