@@ -278,8 +278,6 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
             case R.id.img_pet:
                 showPhotoDialog();
                 break;
-
-
         }
     }
 
