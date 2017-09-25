@@ -1085,13 +1085,13 @@ int drawable abc_textfield_search_default_mtrl_alpha 0x7f020050
 int drawable abc_textfield_search_material 0x7f020051
 int drawable abc_vector_test 0x7f020052
 int drawable avd_hide_password 0x7f020053
-int drawable avd_hide_password_1 0x7f02022d
-int drawable avd_hide_password_2 0x7f02022e
-int drawable avd_hide_password_3 0x7f02022f
+int drawable avd_hide_password_1 0x7f02022e
+int drawable avd_hide_password_2 0x7f02022f
+int drawable avd_hide_password_3 0x7f020230
 int drawable avd_show_password 0x7f020054
-int drawable avd_show_password_1 0x7f020230
-int drawable avd_show_password_2 0x7f020231
-int drawable avd_show_password_3 0x7f020232
+int drawable avd_show_password_1 0x7f020231
+int drawable avd_show_password_2 0x7f020232
+int drawable avd_show_password_3 0x7f020233
 int drawable calender_tutorail 0x7f020055
 int drawable cast_abc_scrubber_control_off_mtrl_alpha 0x7f020056
 int drawable cast_abc_scrubber_control_to_pressed_mtrl_000 0x7f020057
@@ -1497,8 +1497,8 @@ int drawable notification_bg_low_pressed 0x7f0201e6
 int drawable notification_bg_normal 0x7f0201e7
 int drawable notification_bg_normal_pressed 0x7f0201e8
 int drawable notification_icon_background 0x7f0201e9
-int drawable notification_template_icon_bg 0x7f02022b
-int drawable notification_template_icon_low_bg 0x7f02022c
+int drawable notification_template_icon_bg 0x7f02022c
+int drawable notification_template_icon_low_bg 0x7f02022d
 int drawable notification_tile_bg 0x7f0201ea
 int drawable notify_panel_notification_icon_bg 0x7f0201eb
 int drawable oval 0x7f0201ec
@@ -1564,6 +1564,7 @@ int drawable side_nav_bar 0x7f020227
 int drawable start_date_picture 0x7f020228
 int drawable temp_03 0x7f020229
 int drawable text_view_calander_background_rectangle 0x7f02022a
+int drawable vertical_line_bg 0x7f02022b
 int id A1 0x7f0f00ec
 int id AlterDate 0x7f0f0120
 int id B1 0x7f0f00f0
@@ -2060,7 +2061,7 @@ int id img_gallery 0x7f0f01c1
 int id img_info 0x7f0f028e
 int id img_next_date 0x7f0f01dd
 int id img_pet 0x7f0f00d9
-int id img_place 0x7f0f019d
+int id img_place 0x7f0f019c
 int id img_previous_date 0x7f0f01db
 int id img_review 0x7f0f0229
 int id img_selection 0x7f0f01ef
@@ -2089,7 +2090,7 @@ int id largeLabel 0x7f0f022b
 int id large_icon_uri 0x7f0f0056
 int id left 0x7f0f0042
 int id left_image 0x7f0f032f
-int id left_red_view 0x7f0f0197
+int id left_red_view 0x7f0f019f
 int id light 0x7f0f004e
 int id line1 0x7f0f0303
 int id line3 0x7f0f0304
@@ -2172,7 +2173,7 @@ int id progress_bar 0x7f0f021a
 int id progress_circular 0x7f0f0014
 int id progress_horizontal 0x7f0f0015
 int id radio 0x7f0f00bb
-int id rating_bar 0x7f0f0199
+int id rating_bar 0x7f0f0198
 int id rcv_ 0x7f0f0237
 int id rcv_upcoming_booking 0x7f0f02a5
 int id recycler_view 0x7f0f01c6
@@ -2277,7 +2278,7 @@ int id touch_outside 0x7f0f022c
 int id transition_current_scene 0x7f0f0019
 int id transition_scene_layoutid_cache 0x7f0f001a
 int id tv 0x7f0f018c
-int id tv_Price 0x7f0f019e
+int id tv_Price 0x7f0f019d
 int id tv_added_on 0x7f0f030c
 int id tv_address 0x7f0f0193
 int id tv_all_message 0x7f0f0281
@@ -2301,7 +2302,7 @@ int id tv_default 0x7f0f0309
 int id tv_default_status 0x7f0f01f3
 int id tv_describe_name 0x7f0f01d2
 int id tv_describe_value 0x7f0f01d3
-int id tv_details 0x7f0f019a
+int id tv_details 0x7f0f0199
 int id tv_end_date 0x7f0f01a3
 int id tv_end_date_name 0x7f0f0106
 int id tv_expiremonth 0x7f0f015f
@@ -2336,10 +2337,10 @@ int id tv_question_one 0x7f0f01d5
 int id tv_question_two 0x7f0f01d7
 int id tv_reservation_message 0x7f0f0283
 int id tv_reserve_or_not_reserve 0x7f0f0191
-int id tv_review 0x7f0f0198
+int id tv_review 0x7f0f0197
 int id tv_review_desc 0x7f0f0227
 int id tv_review_desc_name 0x7f0f0226
-int id tv_service_ 0x7f0f019b
+int id tv_service_ 0x7f0f019a
 int id tv_service_name 0x7f0f010c
 int id tv_service_value 0x7f0f010d
 int id tv_size 0x7f0f01ab
@@ -2350,7 +2351,7 @@ int id tv_spayed_or_neutered 0x7f0f01b4
 int id tv_spayed_or_neutered_value 0x7f0f01b5
 int id tv_start_date 0x7f0f01a2
 int id tv_start_date_name 0x7f0f0105
-int id tv_time 0x7f0f019f
+int id tv_time 0x7f0f019e
 int id tv_times_visit 0x7f0f0263
 int id tv_title 0x7f0f0192
 int id tv_total_amount_value 0x7f0f01a6
@@ -2372,7 +2373,7 @@ int id view_between_current_pending_booking 0x7f0f02a1
 int id view_between_pending_past 0x7f0f02a3
 int id view_between_upcoming_current_booking 0x7f0f029f
 int id view_down_header 0x7f0f01de
-int id view_horizontal_line 0x7f0f019c
+int id view_horizontal_line 0x7f0f019b
 int id view_offset_helper 0x7f0f001c
 int id view_promo_code 0x7f0f028f
 int id view_unResponded_reservation_message 0x7f0f0284

@@ -4946,13 +4946,13 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020051;
         public static final int abc_vector_test=0x7f020052;
         public static final int avd_hide_password=0x7f020053;
-        public static final int avd_hide_password_1=0x7f02022d;
-        public static final int avd_hide_password_2=0x7f02022e;
-        public static final int avd_hide_password_3=0x7f02022f;
+        public static final int avd_hide_password_1=0x7f02022e;
+        public static final int avd_hide_password_2=0x7f02022f;
+        public static final int avd_hide_password_3=0x7f020230;
         public static final int avd_show_password=0x7f020054;
-        public static final int avd_show_password_1=0x7f020230;
-        public static final int avd_show_password_2=0x7f020231;
-        public static final int avd_show_password_3=0x7f020232;
+        public static final int avd_show_password_1=0x7f020231;
+        public static final int avd_show_password_2=0x7f020232;
+        public static final int avd_show_password_3=0x7f020233;
         public static final int calender_tutorail=0x7f020055;
         public static final int cast_abc_scrubber_control_off_mtrl_alpha=0x7f020056;
         public static final int cast_abc_scrubber_control_to_pressed_mtrl_000=0x7f020057;
@@ -5358,8 +5358,8 @@ containing a value of this type.
         public static final int notification_bg_normal=0x7f0201e7;
         public static final int notification_bg_normal_pressed=0x7f0201e8;
         public static final int notification_icon_background=0x7f0201e9;
-        public static final int notification_template_icon_bg=0x7f02022b;
-        public static final int notification_template_icon_low_bg=0x7f02022c;
+        public static final int notification_template_icon_bg=0x7f02022c;
+        public static final int notification_template_icon_low_bg=0x7f02022d;
         public static final int notification_tile_bg=0x7f0201ea;
         public static final int notify_panel_notification_icon_bg=0x7f0201eb;
         public static final int oval=0x7f0201ec;
@@ -5425,6 +5425,7 @@ containing a value of this type.
         public static final int start_date_picture=0x7f020228;
         public static final int temp_03=0x7f020229;
         public static final int text_view_calander_background_rectangle=0x7f02022a;
+        public static final int vertical_line_bg=0x7f02022b;
     }
     public static final class id {
         public static final int A1=0x7f0f00ec;
@@ -5923,7 +5924,7 @@ containing a value of this type.
         public static final int img_info=0x7f0f028e;
         public static final int img_next_date=0x7f0f01dd;
         public static final int img_pet=0x7f0f00d9;
-        public static final int img_place=0x7f0f019d;
+        public static final int img_place=0x7f0f019c;
         public static final int img_previous_date=0x7f0f01db;
         public static final int img_review=0x7f0f0229;
         public static final int img_selection=0x7f0f01ef;
@@ -5952,7 +5953,7 @@ containing a value of this type.
         public static final int large_icon_uri=0x7f0f0056;
         public static final int left=0x7f0f0042;
         public static final int left_image=0x7f0f032f;
-        public static final int left_red_view=0x7f0f0197;
+        public static final int left_red_view=0x7f0f019f;
         public static final int light=0x7f0f004e;
         public static final int line1=0x7f0f0303;
         public static final int line3=0x7f0f0304;
@@ -6035,7 +6036,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f0f0014;
         public static final int progress_horizontal=0x7f0f0015;
         public static final int radio=0x7f0f00bb;
-        public static final int rating_bar=0x7f0f0199;
+        public static final int rating_bar=0x7f0f0198;
         public static final int rcv_=0x7f0f0237;
         public static final int rcv_upcoming_booking=0x7f0f02a5;
         public static final int recycler_view=0x7f0f01c6;
@@ -6140,7 +6141,7 @@ containing a value of this type.
         public static final int transition_current_scene=0x7f0f0019;
         public static final int transition_scene_layoutid_cache=0x7f0f001a;
         public static final int tv=0x7f0f018c;
-        public static final int tv_Price=0x7f0f019e;
+        public static final int tv_Price=0x7f0f019d;
         public static final int tv_added_on=0x7f0f030c;
         public static final int tv_address=0x7f0f0193;
         public static final int tv_all_message=0x7f0f0281;
@@ -6164,7 +6165,7 @@ containing a value of this type.
         public static final int tv_default_status=0x7f0f01f3;
         public static final int tv_describe_name=0x7f0f01d2;
         public static final int tv_describe_value=0x7f0f01d3;
-        public static final int tv_details=0x7f0f019a;
+        public static final int tv_details=0x7f0f0199;
         public static final int tv_end_date=0x7f0f01a3;
         public static final int tv_end_date_name=0x7f0f0106;
         public static final int tv_expiremonth=0x7f0f015f;
@@ -6199,10 +6200,10 @@ containing a value of this type.
         public static final int tv_question_two=0x7f0f01d7;
         public static final int tv_reservation_message=0x7f0f0283;
         public static final int tv_reserve_or_not_reserve=0x7f0f0191;
-        public static final int tv_review=0x7f0f0198;
+        public static final int tv_review=0x7f0f0197;
         public static final int tv_review_desc=0x7f0f0227;
         public static final int tv_review_desc_name=0x7f0f0226;
-        public static final int tv_service_=0x7f0f019b;
+        public static final int tv_service_=0x7f0f019a;
         public static final int tv_service_name=0x7f0f010c;
         public static final int tv_service_value=0x7f0f010d;
         public static final int tv_size=0x7f0f01ab;
@@ -6213,7 +6214,7 @@ containing a value of this type.
         public static final int tv_spayed_or_neutered_value=0x7f0f01b5;
         public static final int tv_start_date=0x7f0f01a2;
         public static final int tv_start_date_name=0x7f0f0105;
-        public static final int tv_time=0x7f0f019f;
+        public static final int tv_time=0x7f0f019e;
         public static final int tv_times_visit=0x7f0f0263;
         public static final int tv_title=0x7f0f0192;
         public static final int tv_total_amount_value=0x7f0f01a6;
@@ -6235,7 +6236,7 @@ containing a value of this type.
         public static final int view_between_pending_past=0x7f0f02a3;
         public static final int view_between_upcoming_current_booking=0x7f0f029f;
         public static final int view_down_header=0x7f0f01de;
-        public static final int view_horizontal_line=0x7f0f019c;
+        public static final int view_horizontal_line=0x7f0f019b;
         public static final int view_offset_helper=0x7f0f001c;
         public static final int view_promo_code=0x7f0f028f;
         public static final int view_unResponded_reservation_message=0x7f0f0284;

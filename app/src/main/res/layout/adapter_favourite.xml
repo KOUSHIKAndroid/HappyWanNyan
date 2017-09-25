@@ -34,6 +34,7 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:background="@drawable/vertical_line_bg"
         android:id="@+id/RL_Main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -162,12 +163,6 @@
             android:layout_height="5px"
             android:layout_alignParentBottom="true"
             android:background="@color/colorGrayProject" />
-
-        <View
-            android:id="@+id/left_red_view"
-            android:layout_width="10px"
-            android:layout_height="187dp"
-            android:background="@color/colorBtnRed" />
 
     </RelativeLayout>
 
