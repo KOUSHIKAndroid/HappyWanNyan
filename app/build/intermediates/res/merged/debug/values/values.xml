@@ -1164,6 +1164,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="about">About</string>
+    <string name="about_your_pet">About your pet</string>
     <string name="acc_label_card_number">"card number"</string>
     <string name="acc_label_expiry_date">"expiration date"</string>
     <string name="accept">Accept</string>
@@ -1246,7 +1247,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">645bf9b3-77c0-411e-9d03-b9e461044838</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">940cb8ba-2280-41c4-ae16-3634632d549b</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1351,6 +1352,7 @@
     <string name="images">Photos</string>
     <string name="info">Info</string>
     <string name="invalid_card_please_add">Invalid card please add a correct card</string>
+    <string name="is_your_pet_friendly_with_other_pets">Is your pet friendly with other pets?</string>
     <string name="isyourcatfriendlywithotherpets">Is your cat friendly with other pets?</string>
     <string name="isyourcatspayedorneutered">Is your cat spayed or neutered?</string>
     <string name="join">Joined:</string>
@@ -1364,6 +1366,7 @@
     <string name="message">Message</string>
     <string name="messenger_send_button_text">Send</string>
     <string name="month_name_format">MMMM yyyy</string>
+    <string name="months">months</string>
     <string name="mr_button_content_description">Cast button</string>
     <string name="mr_chooser_searching">Finding devices</string>
     <string name="mr_chooser_title">Cast to</string>
@@ -1421,6 +1424,7 @@
     <string name="pet_age">Pet age</string>
     <string name="pet_homestay">Pet Homestay</string>
     <string name="pet_size">Pet size</string>
+    <string name="pet_type">Pet type</string>
     <string name="petrequirement">PET SIZE ACCEPTED</string>
     <string name="petsitting">Pet Sitting</string>
     <string name="pickuptime">Pick-Up Time</string>
@@ -1458,6 +1462,7 @@
     <string name="send">Send</string>
     <string name="send_request">Send Request</string>
     <string name="service">Service</string>
+    <string name="sex">sex</string>
     <string name="signup_password_checkingtext">Password should contain alphanumeric character and at least one special character and should be at least 6 characters</string>
     <string name="signuplebel">By clicking Create Account or Sign Up with Facebook, you confirm that you accept the Terms of Service</string>
     <string name="signupnow">Sign Up now</string>

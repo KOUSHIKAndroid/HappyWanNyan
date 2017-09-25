@@ -26,7 +26,7 @@
     <string name="LoginAlertTitle">アラート</string>
     <string name="Loginnow">ここでログイン</string>
     <string name="Month">月</string>
-    <string name="Name">名前</string>
+    <string name="Name">名</string>
     <string name="NewCard">新しいカード</string>
     <string name="OfDays">日数</string>
     <string name="Password">パスワード</string>
@@ -40,7 +40,7 @@
     <string name="Title_send_a_msg">メッセージを送ります</string>
     <string name="TotalPets">ペット数</string>
     <string name="Walking">ウォーキング</string>
-    <string name="Year">年齢</string>
+    <string name="Year">年</string>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"ホームへ移動"</string>
     <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s、%2$s"</string>
     <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s、%2$s、%3$s"</string>
@@ -61,6 +61,7 @@
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"%sと共有"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"折りたたむ"</string>
     <string name="about">プロフィール</string>
+    <string name="about_your_pet">あなたのペットについて</string>
     <string name="acc_label_card_number">"カード番号"</string>
     <string name="acc_label_expiry_date">"有効期限"</string>
     <string msgid="5835639618285370804" name="accept">"同意する"</string>
@@ -222,6 +223,7 @@
     <string name="images">写真</string>
     <string name="info">情報</string>
     <string name="invalid_card_please_add">無効なカード正しいカードを追加してください</string>
+    <string name="is_your_pet_friendly_with_other_pets">あなたのペットは他のペットと親しみやすいですか？</string>
     <string name="isyourcatfriendlywithotherpets">あなたの猫は他のペットと親しみやすいですか？</string>
     <string name="isyourcatspayedorneutered">あなたの猫は去勢されているの？</string>
     <string name="join">参加した:</string>
@@ -234,6 +236,7 @@
     <string name="meeting_date">会議の開催日</string>
     <string name="message">メッセージ</string>
     <string name="messenger_send_button_text">送信</string>
+    <string name="months">ヶ月</string>
     <string msgid="3698378085901466129" name="mr_button_content_description">"キャストアイコン"</string>
     <string msgid="6349900579507521956" name="mr_chooser_searching">"端末を検索しています"</string>
     <string msgid="414301941546135990" name="mr_chooser_title">"キャストするデバイス"</string>
@@ -284,6 +287,7 @@
     <string name="pet_age">ペットの年齢</string>
     <string name="pet_homestay">ペットホームステイ</string>
     <string name="pet_size">ペットのサイズ</string>
+    <string name="pet_type">ペットの種類</string>
     <string name="petrequirement">対応可能なペットのサイズ</string>
     <string name="petsitting">ペットの座り</string>
     <string name="pickuptime">お預け時間</string>
@@ -320,6 +324,7 @@
     <string name="send">送信</string>
     <string name="send_request">予約リクエストを送る</string>
     <string name="service">サービス</string>
+    <string name="sex">性別</string>
     <string name="signup_password_checkingtext">パスワードは、英数字と少なくとも1つの特殊文字を含む必要があり、6文字以上である必要があります</string>
     <string name="signuplebel">アカウントの作成またはFacebookでの登録をクリックすると、利用規約に同意することが確認されます</string>
     <string name="signupnow">今すぐ申し込む</string>
