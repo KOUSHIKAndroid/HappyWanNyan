@@ -27,7 +27,7 @@
     <string name="nav_help">Help</string>
     <string name="nav_logout">Log Out</string>
     <string name="search">Search</string>
-    <string name="hint_search_addrres">Enter Postal Code or Address</string>
+    <string name="hint_search_addrres">Search Postal Code or Address</string>
     <string name="chosedate">Choose Date</string>
     <string name="searchpage_txt">Our Community helps pet parent find the perfect solution for their sitting needs.</string>
     <string name="i_am_looking">I am looking for....</string>

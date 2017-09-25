@@ -211,7 +211,7 @@
     <string name="forgot_password">パスワードをお忘れですか</string>
     <string name="generalequerys">一般的なお問い合わせ</string>
     <string name="give_the_permission">許可を与える！</string>
-    <string name="hint_search_addrres">郵便番号または住所を入力してください</string>
+    <string name="hint_search_addrres">郵便番号または住所の検索</string>
     <string name="how_many_times">何回ですか？</string>
     <string name="how_many_visits">何回訪問？</string>
     <string name="i_agree_to_the_terms_of_service">私はサービス規約に同意します</string>

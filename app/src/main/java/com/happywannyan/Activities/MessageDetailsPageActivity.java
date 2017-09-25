@@ -190,7 +190,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     } else {
                         LL_USER_TIME.setVisibility(View.GONE);
                     }
-                    TXT_JoinTime.setText(getString(R.string.join) + OBJ.getString("message_joined"));
+                    TXT_JoinTime.setText(
+//                            getString(R.string.join) +
+                                    OBJ.getString("message_joined"));
 
                     if (OBJ.getInt("block_user_status") == 1) {
                         findViewById(R.id.LL_Buttom).setVisibility(View.GONE);
