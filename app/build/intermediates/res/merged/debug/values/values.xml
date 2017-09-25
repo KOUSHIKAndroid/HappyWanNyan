@@ -1190,7 +1190,6 @@
     <string name="are_you_sure_want_to_log_out">Are you sure you want to log out?</string>
     <string name="are_you_sure_you_want_to_cancel_reservation_request">Are you sure you want to cancel Reservation Request?</string>
     <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete?</string>
-    <string name="are_you_want_to_delete">Are you want to delete?</string>
     <string name="available_Pets_Details">Available Pet(s) Details</string>
     <string name="booknow">BOOK NOW</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -1247,7 +1246,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">74d39d7a-3267-4151-986a-3457cfddb2dc</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">e70415cb-fb91-4d27-b22b-1ad3c7517e50</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>

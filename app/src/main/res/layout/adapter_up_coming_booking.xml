@@ -179,7 +179,6 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
                     android:text="Day care for cats"
-                    android:textAllCaps="true"
                     android:textColor="@color/colorBlack"
                     android:textSize="14sp" />
 
