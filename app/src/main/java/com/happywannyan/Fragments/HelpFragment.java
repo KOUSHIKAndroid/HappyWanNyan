@@ -107,43 +107,43 @@ public class HelpFragment extends Fragment {
 
         appLoader = new AppLoader(getActivity());
 
-        appLoader.Show();
+        //appLoader.Show();
 
-       // webView.loadUrl(AppConstant.BASEURL+"help-page?lang_id="+AppConstant.Language);
+        webView.loadUrl(AppConstant.BASEURL+"help-page?lang_id="+AppConstant.Language);
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "help?lang_id=" + AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
-            @Override
-            public void OnSuccess(String Result) {
-                appLoader.Dismiss();
-                Loger.MSG("Result", Result);
-                try {
-                    if (new JSONObject(Result).getBoolean("response")) {
-                        //Toast.makeText(getActivity(),new JSONObject(Result).getString("page"),Toast.LENGTH_SHORT).show();
-                        webView.loadUrl(new JSONObject(Result).getString("page")+"?lang_id="+AppConstant.Language);
-                        //webView.loadUrl(AppConstant.BASEURL+""+new JSONObject(Result).getString("page_new")+"?lang_id="+AppConstant.Language);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void OnError(String Error, String Response) {
-                appLoader.Dismiss();
+//        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "help?lang_id=" + AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+//            @Override
+//            public void OnSuccess(String Result) {
+//                appLoader.Dismiss();
+//                Loger.MSG("Result", Result);
 //                try {
-//                    if (new JSONObject(Response).getBoolean("response")) {
-//                        Toast.makeText(getActivity(),new JSONObject(Response).getString("page"),Toast.LENGTH_SHORT).show();
+//                    if (new JSONObject(Result).getBoolean("response")) {
+//                        //Toast.makeText(getActivity(),new JSONObject(Result).getString("page"),Toast.LENGTH_SHORT).show();
+//                        webView.loadUrl(new JSONObject(Result).getString("page")+"?lang_id="+AppConstant.Language);
+//                        //webView.loadUrl(AppConstant.BASEURL+""+new JSONObject(Result).getString("page_new")+"?lang_id="+AppConstant.Language);
 //                    }
 //                } catch (JSONException e) {
 //                    e.printStackTrace();
 //                }
-            }
-
-            @Override
-            public void OnError(String Error) {
-                appLoader.Dismiss();
-            }
-        });
+//            }
+//
+//            @Override
+//            public void OnError(String Error, String Response) {
+//                appLoader.Dismiss();
+////                try {
+////                    if (new JSONObject(Response).getBoolean("response")) {
+////                        Toast.makeText(getActivity(),new JSONObject(Response).getString("page"),Toast.LENGTH_SHORT).show();
+////                    }
+////                } catch (JSONException e) {
+////                    e.printStackTrace();
+////                }
+//            }
+//
+//            @Override
+//            public void OnError(String Error) {
+//                appLoader.Dismiss();
+//            }
+//        });
     }
 }
 
