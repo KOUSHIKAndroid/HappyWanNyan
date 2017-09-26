@@ -86,9 +86,7 @@ public class ContactUsFragment extends Fragment {
 
         appLoader.Show();
 
-        String  URL = AppConstant.BASEURL + "contact?lang_id="+AppConstant.Language;
-
-        new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "contact?lang_id="+AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
