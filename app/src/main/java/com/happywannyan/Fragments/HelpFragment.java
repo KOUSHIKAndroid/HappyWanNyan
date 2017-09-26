@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -18,7 +17,6 @@ import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
-import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -91,7 +89,7 @@ public class HelpFragment extends Fragment {
             }
         });
 
-        webView=((WebView) view.findViewById(R.id.Web));
+        webView = ((WebView) view.findViewById(R.id.Web));
         // Enable Javascript
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -109,7 +107,7 @@ public class HelpFragment extends Fragment {
 
         appLoader.Show();
 
-        new CustomJSONParser().APIForGetMethodUsingHttp(AppConstant.BASEURL + "help?lang_id="+AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethodUsingHttp(AppConstant.BASEURL + "help?lang_id=" + AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

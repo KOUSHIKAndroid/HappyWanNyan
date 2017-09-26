@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -84,7 +83,7 @@ public class ContactUsFragment extends Fragment {
             }
         });
 
-        webView=((WebView) view.findViewById(R.id.Web));
+        webView = ((WebView) view.findViewById(R.id.Web));
         // Enable Javascript
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -102,7 +101,7 @@ public class ContactUsFragment extends Fragment {
 
         appLoader.Show();
 
-        new CustomJSONParser().APIForGetMethodUsingHttp(AppConstant.BASEURL + "contact?lang_id="+AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethodUsingHttp(AppConstant.BASEURL + "contact?lang_id=" + AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
