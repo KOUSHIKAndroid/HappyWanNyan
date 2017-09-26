@@ -1,7 +1,6 @@
 package com.happywannyan.Utils;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -11,6 +10,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -345,7 +345,7 @@ public class CustomJSONParser {
                 while (myVeryOwnIterator.hasNext()) {
                     String key = (String) myVeryOwnIterator.next();
                     String value = (String) apiPostDataHashMap.get(key);
-                    Loger.MSG(""+key, ""+value);
+                    Loger.MSG("" + key, "" + value);
                     builderNew.addFormDataPart(key, value);
                 }
 
@@ -502,9 +502,7 @@ public class CustomJSONParser {
             }
 
             protected String doInBackground(String... arg0) {
-
                 try {
-
                     Loger.MSG("@@ POST URL- ", URL);
 
                     URL url = new URL(URL);
@@ -579,4 +577,79 @@ public class CustomJSONParser {
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
+
+    public void APIForGetMethodUsingHttp(final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
+        new AsyncTask<Void, Void, Void>() {
+
+            private String responseString = null;
+            private Exception exception = null;
+            String PARAMS = "";
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                if (apiPostDataArrayList != null && apiPostDataArrayList.size() > 0) {
+                    PARAMS = "&";
+                    for (SetGetAPIPostData data : apiPostDataArrayList) {
+                        PARAMS = PARAMS + data.getPARAMS() + "=" + data.getValues() + "&";
+                    }
+                }
+                Loger.MSG("url", "" + URL + PARAMS);
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+
+                try {
+                    URL mUrl = new URL(URL + PARAMS);
+                    HttpURLConnection httpConnection = (HttpURLConnection) mUrl.openConnection();
+                    httpConnection.setRequestMethod("GET");
+                    httpConnection.setRequestProperty("Content-length", "0");
+                    httpConnection.setUseCaches(false);
+                    httpConnection.setAllowUserInteraction(false);
+                    httpConnection.setConnectTimeout(15000);
+                    httpConnection.setReadTimeout(15000);
+
+                    httpConnection.connect();
+
+                    int responseCode = httpConnection.getResponseCode();
+
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        BufferedReader br = new BufferedReader(new InputStreamReader(httpConnection.getInputStream()));
+                        StringBuilder sb = new StringBuilder();
+                        String line;
+                        while ((line = br.readLine()) != null) {
+                            sb.append(line + "\n");
+                        }
+                        br.close();
+                        responseString = sb.toString();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                if (!isCancelled() && exception == null) {
+                    try {
+                        if (new JSONObject(responseString).getBoolean("response")) {
+                            jsonResponseInterface.OnSuccess(responseString);
+                        } else {
+                            jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    jsonResponseInterface.OnError(exception.getMessage() + "");
+                }
+            }
+        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
 }

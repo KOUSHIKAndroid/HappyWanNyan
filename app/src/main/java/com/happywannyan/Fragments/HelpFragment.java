@@ -109,7 +109,7 @@ public class HelpFragment extends Fragment {
 
         appLoader.Show();
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "help?lang_id="+AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethodUsingHttp(AppConstant.BASEURL + "help?lang_id="+AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
