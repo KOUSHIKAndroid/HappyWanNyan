@@ -116,7 +116,7 @@ public class HelpFragment extends Fragment {
                 Loger.MSG("Result", Result);
                 try {
                     if (new JSONObject(Result).getBoolean("response")) {
-                        Toast.makeText(getActivity(),new JSONObject(Result).getString("page"),Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(),new JSONObject(Result).getString("page"),Toast.LENGTH_SHORT).show();
                         webView.loadUrl(new JSONObject(Result).getString("page"));
                     }
                 } catch (JSONException e) {
