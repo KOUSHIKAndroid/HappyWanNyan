@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -22,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -107,6 +109,8 @@ public class HelpFragment extends Fragment {
 
         appLoader.Show();
 
+       // webView.loadUrl(AppConstant.BASEURL+"help-page?lang_id="+AppConstant.Language);
+
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "help?lang_id=" + AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
@@ -115,7 +119,8 @@ public class HelpFragment extends Fragment {
                 try {
                     if (new JSONObject(Result).getBoolean("response")) {
                         //Toast.makeText(getActivity(),new JSONObject(Result).getString("page"),Toast.LENGTH_SHORT).show();
-                        webView.loadUrl(new JSONObject(Result).getString("page"));
+                        webView.loadUrl(new JSONObject(Result).getString("page")+"?lang_id="+AppConstant.Language);
+                        //webView.loadUrl(AppConstant.BASEURL+""+new JSONObject(Result).getString("page_new")+"?lang_id="+AppConstant.Language);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
