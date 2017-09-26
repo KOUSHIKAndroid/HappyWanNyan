@@ -240,10 +240,17 @@ public class BaseActivity extends LocationBaseActivity
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment){
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof ContactUsFragment){
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.add(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof HelpFragment){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }
