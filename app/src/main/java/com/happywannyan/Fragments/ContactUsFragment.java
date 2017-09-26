@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class ContactUsFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     AppLoader appLoader;
+    WebView webView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -82,6 +84,20 @@ public class ContactUsFragment extends Fragment {
             }
         });
 
+        webView=((WebView) view.findViewById(R.id.Web));
+        // Enable Javascript
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        ////////////////////Improve WebVIew Performance Load Faster with WebSettings ///////////////////
+        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webSettings.setAppCacheEnabled(true);
+        webSettings.setDatabaseEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setSaveFormData(true);
+
         appLoader = new AppLoader(getActivity());
 
         appLoader.Show();
@@ -94,7 +110,7 @@ public class ContactUsFragment extends Fragment {
                 try {
                     if (new JSONObject(Result).getBoolean("response")) {
                         Toast.makeText(getActivity(),new JSONObject(Result).getString("page"),Toast.LENGTH_SHORT).show();
-                        ((WebView) view.findViewById(R.id.Web)).loadUrl(new JSONObject(Result).getString("page"));
+                        webView.loadUrl(new JSONObject(Result).getString("page"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
