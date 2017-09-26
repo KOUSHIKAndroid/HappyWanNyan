@@ -21,11 +21,12 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
+import com.happywannyan.Fragments.ContactUsFragment;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.Fragments.FavouriteFragment;
+import com.happywannyan.Fragments.HelpFragment;
 import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.Fragments.MyPaymentsFragment;
 import com.happywannyan.Fragments.MyPetsFragments;
@@ -167,6 +168,8 @@ public class BaseActivity extends LocationBaseActivity
                 ((SFNFTextView)findViewById(R.id.tv_nav_favoritesitter)).setText(getResources().getString(R.string.nav_favoritesitter));
                 ((SFNFTextView)findViewById(R.id.tv_nav_pastsitter)).setText(getResources().getString(R.string.nav_pastsitter));
                 ((SFNFTextView)findViewById(R.id.tv_nav_help)).setText(getResources().getString(R.string.nav_help));
+                ((SFNFTextView)findViewById(R.id.tv_about_us)).setText(getResources().getString(R.string.nav_contact_us));
+
 
                 if (AppConstant.Language.equals("en")){
                     ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("日本語");
@@ -237,6 +240,13 @@ public class BaseActivity extends LocationBaseActivity
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }
+                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
             }
         });
 
@@ -270,6 +280,19 @@ public class BaseActivity extends LocationBaseActivity
                         startActivity(new Intent(BaseActivity.this, LoginActivity.class));
                     }
                 });
+            }
+        });
+
+        navigationView.findViewById(R.id.LL_contact_us).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
@@ -368,7 +391,14 @@ public class BaseActivity extends LocationBaseActivity
             public void onClick(View view) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-                startActivity(new Intent(BaseActivity.this, HelpActivity.class));
+
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+               // startActivity(new Intent(BaseActivity.this, HelpActivity.class));
             }
         });
 

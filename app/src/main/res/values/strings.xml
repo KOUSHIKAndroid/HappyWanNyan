@@ -261,6 +261,7 @@
     <string name="pet_type">Pet type</string>
     <string name="about_your_pet">About your pet</string>
     <string name="is_your_pet_friendly_with_other_pets">Is your pet friendly with other pets?</string>
+    <string name="nav_contact_us">Contact Us</string>
 
 
 </resources>

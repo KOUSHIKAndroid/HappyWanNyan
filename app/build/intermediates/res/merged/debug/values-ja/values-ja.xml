@@ -256,6 +256,7 @@
     <string name="mypets">ペットについて</string>
     <string name="name_on_card">カードの名義</string>
     <string name="nav_booking">予約</string>
+    <string name="nav_contact_us">お問い合わせ</string>
     <string name="nav_favoritesitter">お気に入りのシッター</string>
     <string name="nav_help">ヘルプ</string>
     <string name="nav_logout">ログアウト</string>
