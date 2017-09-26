@@ -7,9 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
+import com.happywannyan.Utils.AppLoader;
+import com.happywannyan.Utils.CustomJSONParser;
+import com.happywannyan.Utils.Loger;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +33,8 @@ public class ContactUsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    AppLoader appLoader;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -60,7 +73,7 @@ public class ContactUsFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         view.findViewById(R.id.IMG_icon_drwaer).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +81,45 @@ public class ContactUsFragment extends Fragment {
                 ((BaseActivity) getActivity()).Menu_Drawer();
             }
         });
-        ((WebView) view.findViewById(R.id.Web)).loadUrl("http://esolz.co.in/lab6/HappywanNyan/contact-us?prev_url=footer");
+
+        appLoader = new AppLoader(getActivity());
+
+        appLoader.Show();
+
+        String  URL = AppConstant.BASEURL + "contact?lang_id="+AppConstant.Language;
+
+        new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+            @Override
+            public void OnSuccess(String Result) {
+                appLoader.Dismiss();
+                Loger.MSG("Result", Result);
+                try {
+                    if (new JSONObject(Result).getBoolean("response")) {
+                        Toast.makeText(getActivity(),new JSONObject(Result).getString("page"),Toast.LENGTH_SHORT).show();
+                        ((WebView) view.findViewById(R.id.Web)).loadUrl(new JSONObject(Result).getString("page"));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                appLoader.Dismiss();
+//                try {
+//                    if (new JSONObject(Response).getBoolean("response")) {
+//                        Toast.makeText(getActivity(),new JSONObject(Response).getString("page"),Toast.LENGTH_SHORT).show();
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+            }
+
+            @Override
+            public void OnError(String Error) {
+                appLoader.Dismiss();
+            }
+        });
     }
 
     @Override
