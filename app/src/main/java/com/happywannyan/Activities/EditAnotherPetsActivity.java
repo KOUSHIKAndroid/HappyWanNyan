@@ -513,9 +513,9 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                 } else {
                     Log.i("TXT_Month", "TXT_Month");
                     ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                    if (((SFNFTextView) findViewById(R.id.TXT_Month)).getText().toString().trim().equals("")) {
-                        ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
-                    } else {
+//                    if (((SFNFTextView) findViewById(R.id.TXT_Month)).getText().toString().trim().equals("")) {
+//                        ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+//                    } else {
                         Log.i("TXT_gender", "TXT_gender");
                         ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                         if (((SFNFTextView) findViewById(R.id.TXT_gender)).getText().toString().trim().equals("")) {
@@ -697,7 +697,7 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
                                 }
                             }
                         }
-                    }
+//                    }
                 }
             }
 

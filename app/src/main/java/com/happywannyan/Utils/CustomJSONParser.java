@@ -50,7 +50,6 @@ public class CustomJSONParser {
 
 
     public void APIForGetMethod(final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
-
         new AsyncTask<Void, Void, Void>() {
 
             private String responseString = null;
