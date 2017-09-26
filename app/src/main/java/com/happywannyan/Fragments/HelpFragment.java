@@ -11,8 +11,6 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Activities.Booking.BookingDetailsActivity;
-import com.happywannyan.Activities.EditAnotherPetsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
