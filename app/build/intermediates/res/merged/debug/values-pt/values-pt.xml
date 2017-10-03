@@ -42,7 +42,6 @@
     <string gender="unknown" name="com_facebook_smart_login_confirmation_continue_as">Continuar como %1$s</string>
     <string gender="unknown" name="com_facebook_smart_login_confirmation_title">Confirmar login</string>
     <string gender="unknown" name="com_facebook_tooltip_default">Você está no controle — escolha quais informações você quer compartilhar com os aplicativos.</string>
-    <string name="messenger_send_button_text">Enviar</string>
     <string msgid="3698378085901466129" name="mr_button_content_description">"Botão Transmitir"</string>
     <string msgid="6349900579507521956" name="mr_chooser_searching">"Localizando dispositivos"</string>
     <string msgid="414301941546135990" name="mr_chooser_title">"Transmitir para"</string>

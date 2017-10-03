@@ -4,12 +4,12 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/add_card_layout.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/calender_activity.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/calender_activity.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
         "source": "/home/su/.android/build-cache/0665c1bb5043dee0ca7c8bd951eb8acf620fa49e/output/res/layout/design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/calender_activity.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/calender_activity.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/adapter_favourite.xml",
@@ -28,12 +28,12 @@
         "source": "/home/su/.android/build-cache/430766f9032cff3c42e82927b7f78c7a18733e92/output/res/layout/place_autocomplete_item_prediction.xml"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_login_choser.xml",
-        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/activity_login_choser.xml"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_login_choser.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/activity_login_choser.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/profile_about_items.xml",
@@ -65,7 +65,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/com_facebook_device_auth_dialog_fragment.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/com_facebook_device_auth_dialog_fragment.xml"
+        "source": "/home/su/.android/build-cache/ab5fc64772ed68d2c50444489fdeee639f94b92b/output/res/layout/com_facebook_device_auth_dialog_fragment.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
@@ -217,11 +217,11 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/messenger_button_send_white_small.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/messenger_button_send_white_small.xml"
+        "source": "/home/su/.android/build-cache/8175d85b8115353c72f275e26038551ed0bf696c/output/res/layout/messenger_button_send_white_small.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/com_facebook_login_fragment.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/com_facebook_login_fragment.xml"
+        "source": "/home/su/.android/build-cache/ab5fc64772ed68d2c50444489fdeee639f94b92b/output/res/layout/com_facebook_login_fragment.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
@@ -273,7 +273,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_small.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/messenger_button_send_blue_small.xml"
+        "source": "/home/su/.android/build-cache/8175d85b8115353c72f275e26038551ed0bf696c/output/res/layout/messenger_button_send_blue_small.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/alert_dialog_api_response.xml",
@@ -281,7 +281,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_large.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/messenger_button_send_blue_large.xml"
+        "source": "/home/su/.android/build-cache/8175d85b8115353c72f275e26038551ed0bf696c/output/res/layout/messenger_button_send_blue_large.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_reset_password.xml",
@@ -373,7 +373,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/com_facebook_smart_device_dialog_fragment.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/com_facebook_smart_device_dialog_fragment.xml"
+        "source": "/home/su/.android/build-cache/ab5fc64772ed68d2c50444489fdeee639f94b92b/output/res/layout/com_facebook_smart_device_dialog_fragment.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/payment_details_adapter.xml",
@@ -449,7 +449,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/messenger_button_send_white_round.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/messenger_button_send_white_round.xml"
+        "source": "/home/su/.android/build-cache/8175d85b8115353c72f275e26038551ed0bf696c/output/res/layout/messenger_button_send_white_round.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
@@ -489,7 +489,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/com_facebook_tooltip_bubble.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/com_facebook_tooltip_bubble.xml"
+        "source": "/home/su/.android/build-cache/2a2d93ea9b9e8c3780186a081abd7e1a17da56b1/output/res/layout/com_facebook_tooltip_bubble.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/alert_dialog_choose_cause.xml",
@@ -573,7 +573,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_round.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/messenger_button_send_blue_round.xml"
+        "source": "/home/su/.android/build-cache/8175d85b8115353c72f275e26038551ed0bf696c/output/res/layout/messenger_button_send_blue_round.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/nav_body.xml",
@@ -585,7 +585,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/messenger_button_send_white_large.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/messenger_button_send_white_large.xml"
+        "source": "/home/su/.android/build-cache/8175d85b8115353c72f275e26038551ed0bf696c/output/res/layout/messenger_button_send_white_large.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/msg_item_sender.xml",
@@ -633,7 +633,7 @@
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/com_facebook_activity_layout.xml",
-        "source": "/home/su/.android/build-cache/907d73ee044718a4f3f1a3134997f1d0514c1617/output/res/layout/com_facebook_activity_layout.xml"
+        "source": "/home/su/.android/build-cache/ab5fc64772ed68d2c50444489fdeee639f94b92b/output/res/layout/com_facebook_activity_layout.xml"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/mr_playback_control.xml",
