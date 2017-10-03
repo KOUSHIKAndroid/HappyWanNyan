@@ -322,6 +322,10 @@ public class BaseActivity extends LocationBaseActivity
 
                                 try {
                                     if (new JSONObject(Result).getBoolean("response")) {
+
+                                        AppConstant.UserEmail="";
+                                        AppConstant.UserName="";
+
                                         new AppConstant(BaseActivity.this).logOutClearAllData();
                                         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                                         drawer.closeDrawer(GravityCompat.START);
