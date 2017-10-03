@@ -241,5 +241,6 @@
     <string name="about_your_pet">あなたのペットについて</string>
     <string name="is_your_pet_friendly_with_other_pets">あなたのペットは他のペットと親しみやすいですか？</string>
     <string name="nav_contact_us">お問い合わせ</string>
+    <string name="want_to_change_language">言語を変更したいですか？</string>
 
 </resources>
