@@ -218,7 +218,6 @@ public class BookingFragment extends Fragment {
                 ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setRefreshing(false);
             }
         });
-
     }
 
 
