@@ -84,14 +84,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                                 String uri = "";
                                 try {
-                                    uri = String.format(Locale.ENGLISH, "geo:%f,%f", MsgItem.getString("msg_lat"), MsgItem.getString("msg_long"));
+                                    uri = String.format(Locale.ENGLISH, "geo:%f,%f", Float.parseFloat(MsgItem.getString("msg_lat")),Float.parseFloat(MsgItem.getString("msg_long")));
                                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                                     mContext.startActivity(intent);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-
-
                             }
                         });
 
