@@ -226,6 +226,7 @@ public class BookingFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 222) {
             //AllBooking.clear();
+            Loger.MSG("requestCode",""+222);
             loadList("0");
         }
     }
@@ -233,6 +234,7 @@ public class BookingFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        Loger.MSG("Resume","Resume");
         AllBooking.clear();
         loadList("0");
     }
