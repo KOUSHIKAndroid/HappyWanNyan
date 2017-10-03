@@ -86,6 +86,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                                 try {
                                     uri = String.format(Locale.ENGLISH, "geo:%f,%f", Float.parseFloat(MsgItem.getString("msg_lat")),Float.parseFloat(MsgItem.getString("msg_long")));
                                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                    intent.setPackage("com.google.android.apps.maps");
                                     mContext.startActivity(intent);
                                 } catch (JSONException e) {
                                     e.printStackTrace();

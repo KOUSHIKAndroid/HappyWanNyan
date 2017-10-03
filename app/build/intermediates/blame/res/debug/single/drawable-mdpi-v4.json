@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/com_facebook_tooltip_black_topnub.png",
-        "source": "/home/su/.android/build-cache/2a2d93ea9b9e8c3780186a081abd7e1a17da56b1/output/res/drawable-mdpi-v4/com_facebook_tooltip_black_topnub.png"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/quantum_ic_replay_30_white_24.png",
         "source": "/home/su/.android/build-cache/8d896a429bea9caf952f449577e5c3dcf7ec0fad/output/res/drawable-mdpi-v4/quantum_ic_replay_30_white_24.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/com_facebook_tooltip_black_topnub.png",
+        "source": "/home/su/.android/build-cache/2a2d93ea9b9e8c3780186a081abd7e1a17da56b1/output/res/drawable-mdpi-v4/com_facebook_tooltip_black_topnub.png"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/quantum_ic_cast_connected_white_24.png",
