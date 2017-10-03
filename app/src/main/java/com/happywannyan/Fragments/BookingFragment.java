@@ -218,6 +218,8 @@ public class BookingFragment extends Fragment {
                 ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setRefreshing(false);
             }
         });
+
+        loadList("0");
     }
 
 
@@ -227,17 +229,18 @@ public class BookingFragment extends Fragment {
         if (requestCode == 222) {
             //AllBooking.clear();
             Loger.MSG("requestCode",""+222);
+            AllBooking.clear();
             loadList("0");
         }
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Loger.MSG("Resume","Resume");
-        AllBooking.clear();
-        loadList("0");
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        Loger.MSG("Resume","Resume");
+//        AllBooking.clear();
+//        loadList("0");
+//    }
 
     public void loadList(final String start_from) {
         appLoader.Show();
