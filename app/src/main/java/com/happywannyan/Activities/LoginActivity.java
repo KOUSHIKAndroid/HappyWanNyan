@@ -124,6 +124,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     if (jsonObject.getString("email_verified_status").equals("1")){
                                         new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData, Result);
 
+                                        AppConstant.UserEmail=jsonObject.getJSONObject("info_array").getString("emailid");
+
+                                        if(!jsonObject.getJSONObject("info_array").getString("lastname").equals("")) {
+                                            AppConstant.UserName = jsonObject.getJSONObject("info_array").getString("firstname")+" "+jsonObject.getJSONObject("info_array").getString("lastname");
+                                        }else {
+                                            AppConstant.UserName = jsonObject.getJSONObject("info_array").getString("firstname");
+                                        }
+
                                         /////////////////For Remember me ///////////////////////////
                                         if (((CheckBox) findViewById(R.id.check_remember)).isChecked()) {
                                             Loger.MSG("remember",""+((CheckBox) findViewById(R.id.check_remember)).isChecked());

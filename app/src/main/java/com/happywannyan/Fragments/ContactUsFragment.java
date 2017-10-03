@@ -102,7 +102,7 @@ public class ContactUsFragment extends Fragment {
 
         //appLoader.Show();
 
-        webView.loadUrl(AppConstant.BASEURL+"contact-page?lang_id="+AppConstant.Language);
+        webView.loadUrl(AppConstant.BASEURL+"contact-page?lang_id="+AppConstant.Language+"&user_name="+AppConstant.UserName+"&user_email="+AppConstant.UserEmail);
 
 
 //        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "contact?lang_id=" + AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
