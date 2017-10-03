@@ -1,5 +1,6 @@
 package com.happywannyan.Activities.Booking;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -76,9 +78,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
             ((SFNFTextView) findViewById(R.id.TXT_total_no_pet)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_pet"));
 
             ((SFNFBoldTextView) findViewById(R.id.StartDate)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_start_date"));
-            if(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_end_date").trim().equals("")){
+            if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_end_date").trim().equals("")) {
                 ((SFNFBoldTextView) findViewById(R.id.Enddate)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_start_date"));
-            }else {
+            } else {
                 ((SFNFBoldTextView) findViewById(R.id.Enddate)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_end_date"));
             }
 
@@ -190,10 +192,10 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         try {
                             if (jsonObjectPrevious.getJSONObject("booking_info").has("review_details")) {
                                 showReviewStatus();
-                            }else {
+                            } else {
                                 AddReviewStatus();
                             }
-                        }catch (Exception ex){
+                        } catch (Exception ex) {
                             ex.printStackTrace();
                         }
                     }
@@ -540,7 +542,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 appLoader.Show();
                 String URL = null;
                 try {
-                    URL = AppConstant.BASEURL + "delete_booking_api?user_id=" + AppConstant.UserId + "&booking_id="+jsonObjectPrevious.getJSONObject("booking_info").getString("id");
+                    URL = AppConstant.BASEURL + "delete_booking_api?user_id=" + AppConstant.UserId + "&booking_id=" + jsonObjectPrevious.getJSONObject("booking_info").getString("id");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -551,7 +553,12 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         Loger.MSG("Result", Result);
                         try {
                             if (new JSONObject(Result).getBoolean("response")) {
-                               Toast.makeText(BookingDetailsActivity.this,new JSONObject(Result).getString("messege"),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(BookingDetailsActivity.this, new JSONObject(Result).getString("messege"), Toast.LENGTH_SHORT).show();
+
+                                Intent resultIntent = new Intent();
+                                resultIntent.putExtra("value", "done");
+                                setResult(Activity.RESULT_OK, resultIntent);
+
                                 finish();
                             }
                         } catch (JSONException e) {
@@ -564,7 +571,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         appLoader.Dismiss();
                         try {
                             if (new JSONObject(Response).getBoolean("response")) {
-                                Toast.makeText(BookingDetailsActivity.this,new JSONObject(Response).getString("message"),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(BookingDetailsActivity.this, new JSONObject(Response).getString("message"), Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -577,6 +584,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     }
                 });
             }
+
             @Override
             public void OnCancel() {
 
@@ -587,9 +595,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void AddReviewStatus() {
         try {
             Intent intent = new Intent(this, AddReviewActivity.class);
-            Loger.MSG("During_Intent_B_ID","-->"+jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
+            Loger.MSG("During_Intent_B_ID", "-->" + jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
             intent.putExtra("B_ID", jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
-            startActivityForResult(intent,1);
+            startActivityForResult(intent, 1);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -622,6 +630,11 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Message, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
+
+                                Intent resultIntent = new Intent();
+                                resultIntent.putExtra("value", "done");
+                                setResult(Activity.RESULT_OK, resultIntent);
+
                                 finish();
                             }
                         });
@@ -666,37 +679,41 @@ public class BookingDetailsActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
-            if(resultCode == RESULT_OK) {
+            if (resultCode == RESULT_OK) {
                 String Result = data.getStringExtra("Result");
                 try {
-                    Toast.makeText(BookingDetailsActivity.this,""+new  JSONObject(Result).getString("message"),Toast.LENGTH_SHORT).show();
-                }catch (Exception ex){
+                    Toast.makeText(BookingDetailsActivity.this, "" + new JSONObject(Result).getString("message"), Toast.LENGTH_SHORT).show();
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
+
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("value", "done");
+                setResult(Activity.RESULT_OK, resultIntent);
+
                 finish();
             }
         }
     }
 
-    private void showReviewStatus(){
+    private void showReviewStatus() {
         // custom dialog
         final Dialog dialog = new Dialog(BookingDetailsActivity.this);
         dialog.setContentView(R.layout.dailog_custom_review);
         dialog.setTitle("");
 
         RatingBar rtb_review = (RatingBar) dialog.findViewById(R.id.rtb_review);
-        ImageView img_review= (ImageView) dialog.findViewById(R.id.img_review);
-        SFNFTextView tv_review_desc= (SFNFTextView) dialog.findViewById(R.id.tv_review_desc);
+        ImageView img_review = (ImageView) dialog.findViewById(R.id.img_review);
+        SFNFTextView tv_review_desc = (SFNFTextView) dialog.findViewById(R.id.tv_review_desc);
 
 
         try {
             rtb_review.setRating(Float.parseFloat(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("type_overall")));
             tv_review_desc.setText(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("review_desc"));
-            if(!jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment").equals("")) {
+            if (!jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment").equals("")) {
                 img_review.setVisibility(View.VISIBLE);
                 Glide.with(this).load(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment")).into(img_review);
-            }
-            else {
+            } else {
                 img_review.setVisibility(View.GONE);
             }
 

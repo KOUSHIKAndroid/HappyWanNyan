@@ -1,5 +1,6 @@
 package com.happywannyan.Fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -226,7 +227,7 @@ public class BookingFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 222) {
+        if (requestCode == 222 && resultCode == Activity.RESULT_OK) {
             //AllBooking.clear();
             Loger.MSG("requestCode",""+222);
             AllBooking.clear();
