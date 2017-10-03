@@ -23,8 +23,8 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
-import com.happywannyan.Fragments.ContactUsFragment;
 import com.happywannyan.Fragments.BookingFragment;
+import com.happywannyan.Fragments.ContactUsFragment;
 import com.happywannyan.Fragments.FavouriteFragment;
 import com.happywannyan.Fragments.HelpFragment;
 import com.happywannyan.Fragments.MessageFragment;
@@ -159,95 +159,84 @@ public class BaseActivity extends LocationBaseActivity
                 onConfigurationChanged(config);
 
 
-                ((SFNFTextView)findViewById(R.id.tv_nav_search)).setText(getResources().getString(R.string.search));
-                ((SFNFTextView)findViewById(R.id.tv_nav_message)).setText(getResources().getString(R.string.nav_messages));
-                ((SFNFTextView)findViewById(R.id.tv_nav_booking)).setText(getResources().getString(R.string.nav_booking));
-                ((SFNFTextView)findViewById(R.id.tv_nav_your_pet)).setText(getResources().getString(R.string.nav_yourpet));
-                ((SFNFTextView)findViewById(R.id.tv_nav_payment)).setText(getResources().getString(R.string.nav_payment));
-                ((SFNFTextView)findViewById(R.id.tv_nav_profile)).setText(getResources().getString(R.string.nav_profile));
-                ((SFNFTextView)findViewById(R.id.tv_nav_favoritesitter)).setText(getResources().getString(R.string.nav_favoritesitter));
-                ((SFNFTextView)findViewById(R.id.tv_nav_pastsitter)).setText(getResources().getString(R.string.nav_pastsitter));
-                ((SFNFTextView)findViewById(R.id.tv_nav_help)).setText(getResources().getString(R.string.nav_help));
-                ((SFNFTextView)findViewById(R.id.tv_about_us)).setText(getResources().getString(R.string.nav_contact_us));
+                ((SFNFTextView) findViewById(R.id.tv_nav_search)).setText(getResources().getString(R.string.search));
+                ((SFNFTextView) findViewById(R.id.tv_nav_message)).setText(getResources().getString(R.string.nav_messages));
+                ((SFNFTextView) findViewById(R.id.tv_nav_booking)).setText(getResources().getString(R.string.nav_booking));
+                ((SFNFTextView) findViewById(R.id.tv_nav_your_pet)).setText(getResources().getString(R.string.nav_yourpet));
+                ((SFNFTextView) findViewById(R.id.tv_nav_payment)).setText(getResources().getString(R.string.nav_payment));
+                ((SFNFTextView) findViewById(R.id.tv_nav_profile)).setText(getResources().getString(R.string.nav_profile));
+                ((SFNFTextView) findViewById(R.id.tv_nav_favoritesitter)).setText(getResources().getString(R.string.nav_favoritesitter));
+                ((SFNFTextView) findViewById(R.id.tv_nav_pastsitter)).setText(getResources().getString(R.string.nav_pastsitter));
+                ((SFNFTextView) findViewById(R.id.tv_nav_help)).setText(getResources().getString(R.string.nav_help));
+                ((SFNFTextView) findViewById(R.id.tv_about_us)).setText(getResources().getString(R.string.nav_contact_us));
 
 
-                if (AppConstant.Language.equals("en")){
-                    ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("日本語");
-                }else {
-                    ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("English");
+                if (AppConstant.Language.equals("en")) {
+                    ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("日本語");
+                } else {
+                    ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("English");
                 }
 
 
-                ((SFNFTextView)findViewById(R.id.tv_nav_logout)).setText(getResources().getString(R.string.nav_logout));
+                ((SFNFTextView) findViewById(R.id.tv_nav_logout)).setText(getResources().getString(R.string.nav_logout));
 
 
-
-                if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MessageFragment)
-                {
+                if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MessageFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     MessageFragment search_basic = new MessageFragment();
                     fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof SearchBasicFragment){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof SearchBasicFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     SearchBasicFragment search_basicFragment = new SearchBasicFragment();
                     fragmentTransaction.replace(R.id.Base_fargment_layout, search_basicFragment);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof BookingFragment){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof BookingFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof PastSitterFragment){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof PastSitterFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.Base_fargment_layout, new PastSitterFragment());
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyProfileFragment){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyProfileFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPetsFragments){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPetsFragments) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.add(R.id.Base_fargment_layout, MyPetsFragments.newInstance(null, null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPaymentsFragment){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPaymentsFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.add(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.add(R.id.Base_fargment_layout, FavouriteFragment.newInstance(null, null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof ContactUsFragment){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof ContactUsFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.add(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                }
-                else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof HelpFragment){
+                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof HelpFragment) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.add(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
@@ -342,6 +331,7 @@ public class BaseActivity extends LocationBaseActivity
                             }
                         });
                     }
+
                     @Override
                     public void OnCancel() {
 
@@ -405,7 +395,7 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
-               // startActivity(new Intent(BaseActivity.this, HelpActivity.class));
+                // startActivity(new Intent(BaseActivity.this, HelpActivity.class));
             }
         });
 
@@ -491,10 +481,10 @@ public class BaseActivity extends LocationBaseActivity
             fragmentTransaction.commit();
         }
 
-        if (AppConstant.Language.equals("en")){
-            ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("日本語");
-        }else {
-            ((SFNFTextView)findViewById(R.id.tv_nav_switch_language)).setText("English");
+        if (AppConstant.Language.equals("en")) {
+            ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("日本語");
+        } else {
+            ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("English");
         }
     }
 
