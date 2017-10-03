@@ -73,8 +73,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                     if (MsgItem.getString("msg_lat").length() > 0 && MsgItem.getString("msg_long").length() > 0) {
 
-
-                        Picasso.with(mContext).load(MsgItem.getString("url_location")).into(IMG_User_MAP);
+                        if (!MsgItem.getString("url_location").equals("")) {
+                            Picasso.with(mContext).load(MsgItem.getString("url_location")).into(IMG_User_MAP);
+                        }
 //                        Glide.with(mContext).load(MsgItem.getString("url_location")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_MAP);
 //                        Glide.with(mContext).load("https://maps.googleapis.com/maps/api/staticmap?center=22.585072500000003,88.49047265625003&zoom=13&size=200x200&markers=%@&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M").override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_MAP);
                         IMG_User_MAP.setOnClickListener(new View.OnClickListener() {
