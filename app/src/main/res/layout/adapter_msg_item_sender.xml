@@ -45,10 +45,10 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_below="@+id/LLMain"
         android:id="@+id/RL_Sender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/LLMain"
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
@@ -90,27 +90,53 @@ sd      jhbcdhsjbc hjsdc jksdckj dsjcb bds
 dschjbsdhb"
                 android:textSize="14sp" />
 
-            <ImageView
-                android:id="@+id/IMG_Sender_Attach"
+            <RelativeLayout
+                android:id="@+id/RL_Attached"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="2dp"
-                android:background="#FFB6C9"
-                android:scaleType="fitXY"
-                android:padding="1px" />
+                android:layout_height="200dp">
 
-            <ImageView
-                android:id="@+id/IMG_Sender_Map"
+                <ImageView
+                    android:id="@+id/IMG_Sender_Attach"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#FFB6C9"
+                    android:padding="1px"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/img_attached"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_download_arrow"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RL_Map"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="2dp"
-                android:scaleType="fitXY"
-                android:background="#FFB6C9"
-                android:padding="1px" />
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/IMG_Sender_Map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp"
+                    android:background="#FFB6C9"
+                    android:padding="1px"
+                    android:scaleType="fitXY" />
+                <ImageView
+                    android:id="@+id/img_map"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_download_arrow"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
