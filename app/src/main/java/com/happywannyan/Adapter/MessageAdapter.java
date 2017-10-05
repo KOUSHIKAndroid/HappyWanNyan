@@ -38,6 +38,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public MessageAdapter(Context mContext, JSONArray array) {
         this.mContext = mContext;
         Array = array;
+        Loger.MSG("Array_length",""+Array.length());
     }
 
     @Override
@@ -51,8 +52,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             JSONObject ItemObject = Array.getJSONObject(position);
             holder.TXT_date.setText(ItemObject.getString("date"));
             JSONArray DATAARY = ItemObject.getJSONArray("info");
+
             for (int i = 0; i < DATAARY.length(); i++) {
+
                 final JSONObject MsgItem = DATAARY.getJSONObject(i);
+                Loger.MSG("MsgItem",""+MsgItem);
+
                 if (MsgItem.has("sender_id") && MsgItem.getString("sender_id").equals(AppConstant.UserId)) {
 
                     View UserItem = LayoutInflater.from(mContext).inflate(R.layout.msg_item_user, null);
@@ -100,12 +105,21 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
 
                     if (MsgItem.getString("message_info").equals("")) {
-                        TXT_User_Message.setVisibility(View.GONE);
-                        Glide.with(mContext).load(MsgItem.getString("message_attachment")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_Attach);
+
+                        if(MsgItem.getString("message_attachment").endsWith(".doc")||MsgItem.getString("message_attachment").endsWith(".pdf")){
+                            TXT_User_Message.setVisibility(View.VISIBLE);
+                            TXT_User_Message.setText(MsgItem.getString("message_attachment"));
+                        }
+                        else {
+                            TXT_User_Message.setVisibility(View.GONE);
+                            Glide.with(mContext).load(MsgItem.getString("message_attachment")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_Attach);
+                        }
+
                     } else {
                         IMG_User_Attach.setVisibility(View.GONE);
                         TXT_User_Message.setText(MsgItem.getString("message_info"));
                     }
+
 
                     holder.LLMain.addView(UserItem);
 
@@ -152,24 +166,32 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                         TXT_sender_name_time.setText(words[words.length - 2] + " " + words[words.length - 1]);
                         SenderTime = MsgItem.getString("postedon");
                         Glide.with(mContext).load(MsgItem.getString("usersimage")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_SenderUser);
-
                     } else {
                         RL_Sender.setVisibility(View.GONE);
                         TXT_sender_name_time.setVisibility(View.GONE);
                     }
 
+
                     if (MsgItem.getString("message_info").equals("")) {
-                        TXT_Sender_message.setVisibility(View.GONE);
-                        Glide.with(mContext).load(MsgItem.getString("message_attachment")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_Sender_Attach);
+
+                        if(MsgItem.getString("message_attachment").endsWith(".doc")||MsgItem.getString("message_attachment").endsWith(".pdf")){
+                            TXT_Sender_message.setVisibility(View.VISIBLE);
+                            TXT_Sender_message.setText(MsgItem.getString("message_attachment"));
+                        }
+                        else {
+                            TXT_Sender_message.setVisibility(View.GONE);
+                            Glide.with(mContext).load(MsgItem.getString("message_attachment")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_Sender_Attach);
+                        }
+
                     } else {
                         IMG_Sender_Attach.setVisibility(View.GONE);
                         TXT_Sender_message.setText(MsgItem.getString("message_info"));
-
                     }
 
 
                     holder.LLMain.addView(SenderItem);
                 }
+                Loger.MSG("info_size",""+DATAARY.length());
             }
         } catch (JSONException e) {
             e.printStackTrace();

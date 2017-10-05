@@ -6,6 +6,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
@@ -160,8 +162,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 //                0
             );
 
+
+            Bitmap icon = BitmapFactory.decodeResource(getResources(),
+                    R.drawable.logo_happywan);
+
             Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                    .setLargeIcon(icon)
                     .setSmallIcon(R.drawable.logo_happywan)
                     .setContentTitle(messageBody.getString("usersname"))
                     .setContentText(messageBody.getString("message_info"))

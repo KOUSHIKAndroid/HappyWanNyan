@@ -33,10 +33,12 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Adapter.MessageAdapter;
+import com.happywannyan.Adapter.MessageAdapterSuraj;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.MessageFragment;
 import com.happywannyan.POJO.SetGetAPIPostData;
+import com.happywannyan.POJO.SetGetMessageDetailsPojo;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -61,7 +63,8 @@ import java.util.TimeZone;
 public class MessageDetailsPageActivity extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView LL_UserInfo;
-    MessageAdapter messageAdapter;
+//    MessageAdapter messageAdapter;
+    MessageAdapterSuraj messageAdapterSuraj;
     private LinearLayoutManager mLinearLayoutManager;
 
     String userType="";
@@ -75,7 +78,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
     AppLoader appLoader;
     LinearLayout LL_USER_TIME;
     File photofile;
-    JSONArray ARRAy;
+    ArrayList<SetGetMessageDetailsPojo> messageDetailsPojoArrayList;
     private static String ReceverId = "";
     private static String MessageId = "";
 
@@ -120,6 +123,8 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         IntentFilter filter = new IntentFilter();
         filter.addAction("CONNECT_MESSAGE_LIVE");
         LocalBroadcastManager.getInstance(this).registerReceiver(Localreceiver, filter);
+
+        messageDetailsPojoArrayList=new ArrayList<>();
 
 
         RL_ButtomSheet.setOnClickListener(new View.OnClickListener() {
@@ -206,10 +211,49 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
                     jsonObjectForProfile=OBJ.getJSONArray("all_message_details").getJSONObject(0).getJSONArray("info").getJSONObject(0);
 
-                    ARRAy = OBJ.getJSONArray("all_message_details");
+//                    jsonArrayMessage = OBJ.getJSONArray("all_message_details");
+
+                    for(int i=0;i<OBJ.getJSONArray("all_message_details").length();i++){
+
+                        for(int j=0;j<OBJ.getJSONArray("all_message_details").getJSONObject(i).getJSONArray("info").length();j++){
+                            SetGetMessageDetailsPojo messageDetailsPojo=new SetGetMessageDetailsPojo();
+
+                            JSONObject jsonObject=OBJ.getJSONArray("all_message_details").getJSONObject(i).getJSONArray("info").getJSONObject(j);
+
+                            if(j==0){
+                                messageDetailsPojo.setDate(OBJ.getJSONArray("all_message_details").getJSONObject(i).getString("date"));
+
+                            }else {
+                                messageDetailsPojo.setDate("");
+                            }
+
+                            messageDetailsPojo.setSender_id(jsonObject.getString("sender_id"));
+                            messageDetailsPojo.setReceiver_id(jsonObject.getString("receiver_id"));
+                            messageDetailsPojo.setMessage_id(jsonObject.getString("message_id"));
+                            messageDetailsPojo.setMessage_type(jsonObject.getString("message_type"));
+                            messageDetailsPojo.setMessage_type_code(jsonObject.getString("message_type_code"));
+                            messageDetailsPojo.setMessage_info(jsonObject.getString("message_info"));
+                            messageDetailsPojo.setMessage_attachment(jsonObject.getString("message_attachment"));
+                            messageDetailsPojo.setMsg_lat(jsonObject.getString("msg_lat"));
+                            messageDetailsPojo.setMsg_long(jsonObject.getString("msg_long"));
+                            messageDetailsPojo.setUrl_location(jsonObject.getString("url_location"));
+                            messageDetailsPojo.setPostedon(jsonObject.getString("postedon"));
+                            messageDetailsPojo.setUsersname(jsonObject.getString("usersname"));
+                            messageDetailsPojo.setUsersimage(jsonObject.getString("usersimage"));
+                            messageDetailsPojo.setTime_difference(jsonObject.getString("time_difference"));
+
+                            messageDetailsPojoArrayList.add(messageDetailsPojo);
+                        }
+                    }
+                    Loger.MSG("messageListSize-->",""+messageDetailsPojoArrayList.size());
+
 //                    if (messageAdapter == null) {
-                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
-                    LL_UserInfo.setAdapter(messageAdapter);
+
+//                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
+
+                    messageAdapterSuraj=new MessageAdapterSuraj(MessageDetailsPageActivity.this,messageDetailsPojoArrayList);
+//                    LL_UserInfo.setAdapter(messageAdapter);
+                    LL_UserInfo.setAdapter(messageAdapterSuraj);
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
                     appLoader.Dismiss();
@@ -661,9 +705,35 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
             try {
                 if (MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("parent_id"))) {
-                    ARRAy.getJSONObject(ARRAy.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
-                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
-                    LL_UserInfo.setAdapter(messageAdapter);
+
+                    JSONObject jsonObject=new JSONObject(message).getJSONObject("message_info");
+
+                    SetGetMessageDetailsPojo messageDetailsPojo=new SetGetMessageDetailsPojo();
+
+                    messageDetailsPojo.setDate("");
+                    messageDetailsPojo.setSender_id(jsonObject.getString("sender_id"));
+                    messageDetailsPojo.setReceiver_id(jsonObject.getString("receiver_id"));
+                    messageDetailsPojo.setMessage_id(jsonObject.getString("message_id"));
+                    messageDetailsPojo.setMessage_type(jsonObject.getString("message_type"));
+                    messageDetailsPojo.setMessage_type_code(jsonObject.getString("message_type_code"));
+                    messageDetailsPojo.setMessage_info(jsonObject.getString("message_info"));
+                    messageDetailsPojo.setMessage_attachment(jsonObject.getString("message_attachment"));
+                    messageDetailsPojo.setMsg_lat(jsonObject.getString("msg_lat"));
+                    messageDetailsPojo.setMsg_long(jsonObject.getString("msg_long"));
+                    messageDetailsPojo.setUrl_location(jsonObject.getString("url_location"));
+                    messageDetailsPojo.setPostedon(jsonObject.getString("postedon"));
+                    messageDetailsPojo.setUsersname(jsonObject.getString("usersname"));
+                    messageDetailsPojo.setUsersimage(jsonObject.getString("usersimage"));
+                    messageDetailsPojo.setTime_difference(jsonObject.getString("time_difference"));
+
+                    messageDetailsPojoArrayList.add(messageDetailsPojo);
+
+//                    jsonArrayMessage.getJSONObject(jsonArrayMessage.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
+//                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
+                    messageAdapterSuraj=new MessageAdapterSuraj(MessageDetailsPageActivity.this,messageDetailsPojoArrayList);
+                    LL_UserInfo.setAdapter(messageAdapterSuraj);
+
+
                     Log.d("receiver", "Got message:2 " + message);
                 } else {
                     /*
