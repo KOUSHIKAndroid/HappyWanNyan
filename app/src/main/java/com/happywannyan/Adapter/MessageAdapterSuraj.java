@@ -176,7 +176,7 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private class ViewHolder1 extends RecyclerView.ViewHolder {
         private SFNFTextView TXT_date, TXT_User_Time, TXT_User_Message;
-        private ImageView IMG_User_Attach, IMG_User_MAP;
+        private ImageView IMG_User_Attach, IMG_User_MAP,img_attached_download,img_map_download;
         RelativeLayout RL_Attached, RL_Map;
         private LinearLayout LLMain;
 

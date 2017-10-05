@@ -83,7 +83,7 @@ dschjbsdhb"
                 android:scaleType="fitXY" />
 
             <ImageView
-                android:id="@+id/img_attached"
+                android:id="@+id/img_attached_download"
                 android:padding="10dp"
                 android:src="@drawable/ic_download_arrow"
                 android:layout_alignParentBottom="true"
@@ -108,7 +108,7 @@ dschjbsdhb"
                 android:padding="1px"
                 android:scaleType="fitXY" />
             <ImageView
-                android:id="@+id/img_map"
+                android:id="@+id/img_map_download"
                 android:padding="10dp"
                 android:src="@drawable/ic_download_arrow"
                 android:layout_alignParentBottom="true"
