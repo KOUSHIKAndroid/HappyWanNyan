@@ -127,14 +127,14 @@ dschjbsdhb"
                     android:background="#FFB6C9"
                     android:padding="1px"
                     android:scaleType="fitXY" />
-                <ImageView
-                    android:id="@+id/img_map_download"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_download_arrow"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <!--<ImageView-->
+                    <!--android:id="@+id/img_map_download"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:src="@drawable/ic_download_arrow"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content" />-->
 
             </RelativeLayout>
 

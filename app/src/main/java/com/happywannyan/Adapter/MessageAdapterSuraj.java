@@ -73,13 +73,6 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                     viewHolder1.RL_Map.setVisibility(View.VISIBLE);
                     if (!MsgItem.getUrl_location().equals("")) {
                         Picasso.with(mContext).load(MsgItem.getUrl_location()).into(viewHolder1.IMG_User_MAP);
-
-                        viewHolder1.img_map_download.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-                            }
-                        });
                     }
 //                        Glide.with(mContext).load(MsgItem.getString("url_location")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_MAP);
 //                        Glide.with(mContext).load("https://maps.googleapis.com/maps/api/staticmap?center=22.585072500000003,88.49047265625003&zoom=13&size=200x200&markers=%@&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M").override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_MAP);
@@ -156,13 +149,6 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
 
                     if (!MsgItem.getUrl_location().equals("")) {
                         Picasso.with(mContext).load(MsgItem.getUrl_location()).into(viewHolder2.IMG_Sender_Map);
-
-                        viewHolder2.img_map_download.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-                            }
-                        });
                     }
 
 //                        Glide.with(mContext).load(MsgItem.getString("url_location")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_Sender_Map);
@@ -227,7 +213,7 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private class ViewHolder1 extends RecyclerView.ViewHolder {
         private SFNFTextView TXT_date, TXT_User_Time, TXT_User_Message;
-        private ImageView IMG_User_Attach, IMG_User_MAP,img_attached_download,img_map_download;
+        private ImageView IMG_User_Attach, IMG_User_MAP,img_attached_download;
         RelativeLayout RL_Attached, RL_Map;
         private LinearLayout LLMain;
 
@@ -242,13 +228,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
             IMG_User_MAP = (ImageView) itemView.findViewById(R.id.IMG_User_MAP);
             LLMain = (LinearLayout) itemView.findViewById(R.id.LLMain);
             img_attached_download= (ImageView) itemView.findViewById(R.id.img_attached_download);
-            img_map_download= (ImageView) itemView.findViewById(R.id.img_map_download);
         }
     }
 
     private class ViewHolder2 extends RecyclerView.ViewHolder {
         private SFNFTextView TXT_date, TXT_Sender_message, TXT_sender_name_time;
-        private ImageView IMG_Sender_Attach, IMG_SenderUser, IMG_Sender_Map,img_attached_download,img_map_download;
+        private ImageView IMG_Sender_Attach, IMG_SenderUser, IMG_Sender_Map,img_attached_download;
         private RelativeLayout RL_Attached, RL_Map;
         private LinearLayout LLMain;
 
@@ -264,7 +249,6 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
             RL_Attached = (RelativeLayout) itemView.findViewById(R.id.RL_Attached);
             RL_Map = (RelativeLayout) itemView.findViewById(R.id.RL_Map);
             img_attached_download= (ImageView) itemView.findViewById(R.id.img_attached_download);
-            img_map_download= (ImageView) itemView.findViewById(R.id.img_map_download);
         }
     }
 
