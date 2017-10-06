@@ -84,6 +84,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
     private static final int REQUEST_WRITE_PERMISSION1 = 3000;
     private static final int REQUEST_WRITE_PERMISSION2 = 4000;
+    public static final int REQUEST_WRITE_PERMISSION3 = 5000;
     final String BITMAP_STORAGE_URL = "IMAGE_URL";
     private int PICK_IMAGE_REQUEST = 100;
     private int CAMERA_CAPTURE = 200;
@@ -648,6 +649,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         }
         if (requestCode == REQUEST_WRITE_PERMISSION2 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             openCamera();
+        }
+        if (requestCode == REQUEST_WRITE_PERMISSION3 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            messageAdapterSuraj.DownloadAndShow();
         }
     }
 

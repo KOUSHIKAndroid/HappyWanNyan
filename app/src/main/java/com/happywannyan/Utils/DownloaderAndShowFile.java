@@ -3,6 +3,7 @@ package com.happywannyan.Utils;
 import android.annotation.TargetApi;
 import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,13 +14,18 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.appcompat.BuildConfig;
 import android.webkit.MimeTypeMap;
+import android.widget.Toast;
 
 import com.happywannyan.R;
 
 import java.io.File;
 
+import static java.security.AccessController.getContext;
 
 
 /**
@@ -60,14 +66,14 @@ public class DownloaderAndShowFile {
         // Get filename
         final String filename = pdfUrl.substring( pdfUrl.lastIndexOf( "/" ) + 1 );
 
-        final String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(pdfUrl));
-
-        Loger.MSG("mimeType",""+mimeType);
+//        final String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(pdfUrl));
+//
+//        Loger.MSG("mimeType",""+mimeType);
         // The place where the downloaded PDF file will be put
         final File tempFile = new File( context.getExternalFilesDir( Environment.DIRECTORY_DOWNLOADS ), filename );
         if ( tempFile.exists() ) {
             // If we have downloaded the file before, just go ahead and show it.
-            openPDF( context, Uri.fromFile( tempFile ),mimeType );
+            openPDF( context,tempFile);
             return;
         }
 
@@ -93,7 +99,7 @@ public class DownloaderAndShowFile {
                 if ( c.moveToFirst() ) {
                     int status = c.getInt( c.getColumnIndex( DownloadManager.COLUMN_STATUS ) );
                     if ( status == DownloadManager.STATUS_SUCCESSFUL ) {
-                        openPDF( context, Uri.fromFile( tempFile ),mimeType);
+                        openPDF( context,tempFile);
                     }
                 }
                 c.close();
@@ -137,13 +143,38 @@ public class DownloaderAndShowFile {
     /**
      * Open a local PDF file with an installed reader
      * @param context
-     * @param localUri
-     * @param MIME_TYPE
+     * @param tempFile
      */
-    public static final void openPDF(Context context, Uri localUri ,String MIME_TYPE) {
-        Intent i = new Intent( Intent.ACTION_VIEW );
-        i.setDataAndType( localUri, MIME_TYPE );
-        context.startActivity( i );
+    public static final void openPDF(Context context,File tempFile) {
+
+//        url.toString() return a String in the format: "file:///mnt/sdcard/myPicture.jpg",
+//                whereas url.getPath() returns a String in the format: "/mnt/sdcard/myPicture.jpg",
+
+
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        String ext = tempFile.getName().substring(tempFile.getName().lastIndexOf(".") + 1);
+        String type = mime.getMimeTypeFromExtension(ext);
+        try {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                Uri contentUri = FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".provider", tempFile);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
+                intent.setDataAndType(contentUri, type);
+            } else {
+                intent.setDataAndType(Uri.fromFile(tempFile), type);
+            }
+            context.startActivity(intent);
+        } catch (ActivityNotFoundException anfe) {
+            Toast.makeText(context, "No activity found to open this attachment.", Toast.LENGTH_LONG).show();
+        }
+
+
+
+//        Intent i = new Intent( Intent.ACTION_VIEW );
+//        i.setDataAndType( localUri, MIME_TYPE );
+//        context.startActivity( i );
     }
 
 

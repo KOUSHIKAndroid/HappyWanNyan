@@ -2,7 +2,9 @@ package com.happywannyan.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetMessageDetailsPojo;
@@ -29,7 +32,7 @@ import java.util.Locale;
  */
 
 public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
+    String MsgItemTouch;
     ArrayList<SetGetMessageDetailsPojo> messageDetailsPojoArrayList;
     Context mContext;
 
@@ -104,7 +107,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                         viewHolder1.img_attached_download.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItem.getMessage_attachment());
+                                MsgItemTouch=MsgItem.getMessage_attachment();
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
+                                } else {
+                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                }
                             }
                         });
                     } else if (MsgItem.getMessage_attachment().trim().endsWith(".pdf")) {
@@ -112,7 +120,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                         viewHolder1.img_attached_download.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItem.getMessage_attachment());
+                                MsgItemTouch=MsgItem.getMessage_attachment();
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
+                                } else {
+                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                }
                             }
                         });
                     } else if (MsgItem.getMessage_attachment().endsWith(".png") || MsgItem.getMessage_attachment().endsWith(".jpg")) {
@@ -120,7 +133,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                         viewHolder1.img_attached_download.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItem.getMessage_attachment());
+                                MsgItemTouch=MsgItem.getMessage_attachment();
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
+                                } else {
+                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                }
                             }
                         });
                     }
@@ -181,7 +199,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                         viewHolder2.img_attached_download.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItem.getMessage_attachment());
+                                MsgItemTouch=MsgItem.getMessage_attachment();
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
+                                } else {
+                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                }
                             }
                         });
                     } else if (MsgItem.getMessage_attachment().trim().endsWith(".pdf")) {
@@ -189,7 +212,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                         viewHolder2.img_attached_download.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItem.getMessage_attachment());
+                                MsgItemTouch=MsgItem.getMessage_attachment();
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
+                                } else {
+                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                }
                             }
                         });
                     } else if (MsgItem.getMessage_attachment().trim().endsWith(".png") || MsgItem.getMessage_attachment().trim().endsWith(".jpg")) {
@@ -197,7 +225,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                         viewHolder2.img_attached_download.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItem.getMessage_attachment());
+                                MsgItemTouch=MsgItem.getMessage_attachment();
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
+                                } else {
+                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                }
                             }
                         });
                     }
@@ -261,5 +294,10 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
         } else {
             return 2;
         }
+    }
+
+
+    public void DownloadAndShow(){
+        DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
     }
 }
