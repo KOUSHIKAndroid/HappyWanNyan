@@ -426,7 +426,6 @@ provider#android.support.v4.content.FileProvider
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:187:9-195:20
 	android:authorities
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:189:13-60
-		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
 	android:grantUriPermissions
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:191:13-47
 	android:exported

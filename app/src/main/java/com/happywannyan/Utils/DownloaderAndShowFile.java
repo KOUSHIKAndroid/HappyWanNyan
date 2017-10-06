@@ -138,7 +138,8 @@ public class DownloaderAndShowFile {
             intent.setAction(Intent.ACTION_VIEW);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                Uri contentUri = FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".provider", tempFile);
+                Loger.MSG("temp_path",""+tempFile.getAbsolutePath());
+                Uri contentUri = FileProvider.getUriForFile(context, "com.happywannyan.provider", tempFile);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
                 intent.setDataAndType(contentUri, type);
             } else {
