@@ -269,6 +269,7 @@
     <string name="pdf_show_online_dialog_question">Are you want to open file?</string>
     <string name="pdf_show_local_progress_title">Downloading...</string>
     <string name="pdf_show_local_progress_content">File</string>
+    <string name="please_give_your_ratting">Please give your ratting</string>
 
 
 </resources>

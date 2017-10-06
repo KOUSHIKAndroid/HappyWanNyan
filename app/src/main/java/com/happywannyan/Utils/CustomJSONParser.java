@@ -354,12 +354,13 @@ public class CustomJSONParser {
                     String key = (String) myVeryOwnIterator.next();
                     File value = (File) Photos.get(key);
                     {
-                        if (value != null)
+                        if (value != null) {
+                            Loger.MSG("key",""+key);
+                            Loger.MSG("value",""+value.getAbsolutePath());
                             builderNew.addFormDataPart("" + key, value.getName() + "", RequestBody.create(MEDIA_TYPE_PNG, value.getName()));
+                        }
                     }
                 }
-
-
             }
 
             @Override

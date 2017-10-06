@@ -22,8 +22,10 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -37,6 +39,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.TimeZone;
@@ -57,7 +60,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addreview);
         BookingId = getIntent().getStringExtra("B_ID");
-        Loger.MSG("B_ID-->","--"+BookingId);
+        Loger.MSG("B_ID-->", "--" + BookingId);
         appLoader = new AppLoader(this);
 
         findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
@@ -109,6 +112,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
                 Uri selectedImageURI = data.getData();
                 try {
                     photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
+                    Glide.with(AddReviewActivity.this).load(selectedImageURI).into((ImageView) findViewById(R.id.img_upload_review));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -121,11 +125,12 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             Uri selectedImageURI = data.getData();
             try {
                 photofile = new File(ImageFilePath.getPath(getApplicationContext(), selectedImageURI));
+                Glide.with(AddReviewActivity.this).load(selectedImageURI).into((ImageView) findViewById(R.id.img_upload_review));
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(this,getResources().getString(R.string.image_error), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.image_error), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -250,7 +255,9 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
                 showPhotoDialog();
                 break;
             case R.id.BTN_Confirm:
-                if (((EditText) findViewById(R.id.EDX_message)).getText().toString().trim().equals("")) {
+                if (((RatingBar) findViewById(R.id.RATINGID)).getRating() == 0.0) {
+                    Toast.makeText(AddReviewActivity.this, getResources().getString(R.string.please_give_your_ratting), Toast.LENGTH_SHORT).show();
+                } else if (((EditText) findViewById(R.id.EDX_message)).getText().toString().trim().equals("")) {
                     ((EditText) findViewById(R.id.EDX_message)).setHint(R.string.please_enter_message);
                     ((EditText) findViewById(R.id.EDX_message)).setHintTextColor(Color.RED);
                     ((EditText) findViewById(R.id.EDX_message)).requestFocus();
@@ -263,21 +270,56 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
     private void SUBMIT_Review() {
         appLoader.Show();
         new AppConstant(this);
-        HashMap<String, String> Params = new HashMap<String, String>();
-        Params.put("booking_id", BookingId);
-        Params.put("langid", AppConstant.Language);
-        Params.put("user_id", AppConstant.UserId);
-        Params.put("rating_input", ((RatingBar) findViewById(R.id.RATINGID)).getRating() + "");
-        Params.put("exp_message", ((EditText) findViewById(R.id.EDX_message)).getText() + "");
-        Params.put("user_timezone", TimeZone.getDefault().getID());
-        HashMap<String, File> FileParams = new HashMap<String, File>();
-        FileParams.put("msg_attachment", photofile);
 
-        new CustomJSONParser().APIForWithPhotoPostMethod2(AppConstant.BASEURL + "app_add_review", Params, FileParams, new CustomJSONParser.JSONResponseInterface() {
+
+        ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("booking_id");
+        setGetAPIPostData.setValues(BookingId);
+        Params.add(setGetAPIPostData);
+        Loger.MSG("booking_id-->", "" + BookingId);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("langid");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        Params.add(setGetAPIPostData);
+        Loger.MSG("langid-->", "" + AppConstant.Language);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        Params.add(setGetAPIPostData);
+        Loger.MSG("user_id-->", "" + AppConstant.UserId);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("rating_input");
+        setGetAPIPostData.setValues(((RatingBar) findViewById(R.id.RATINGID)).getRating() + "");
+        Params.add(setGetAPIPostData);
+        Loger.MSG("rating_input-->", "" + ((RatingBar) findViewById(R.id.RATINGID)).getRating() + "");
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("exp_message");
+        setGetAPIPostData.setValues(((EditText) findViewById(R.id.EDX_message)).getText() + "");
+        Params.add(setGetAPIPostData);
+        Loger.MSG("exp_message-->", "" + ((EditText) findViewById(R.id.EDX_message)).getText() + "");
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_timezone");
+        setGetAPIPostData.setValues(TimeZone.getDefault().getID());
+        Params.add(setGetAPIPostData);
+        Loger.MSG("user_timezone-->", "" + TimeZone.getDefault().getID());
+
+        CustomJSONParser.ImageParam = "msg_attachment";
+
+        ArrayList<File> PhotoFiles = new ArrayList<>();
+        PhotoFiles.add(photofile);
+        Loger.MSG("@@", " SIZE-" + PhotoFiles.size() + "");
+
+        new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_add_review", Params, PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
-                Intent resultIntent=new Intent();
+                Intent resultIntent = new Intent();
                 resultIntent.putExtra("Result", Result);
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
@@ -287,8 +329,8 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
                 try {
-                    Toast.makeText(AddReviewActivity.this,""+new  JSONObject(Response).getString("message"),Toast.LENGTH_SHORT).show();
-                }catch (Exception ex){
+                    Toast.makeText(AddReviewActivity.this, "" + new JSONObject(Response).getString("message"), Toast.LENGTH_SHORT).show();
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
             }
