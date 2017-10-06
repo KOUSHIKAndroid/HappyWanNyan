@@ -33,28 +33,8 @@ import static java.security.AccessController.getContext;
  */
 
 public class DownloaderAndShowFile {
-
     private static final String GOOGLE_DRIVE_PDF_READER_PREFIX = "http://drive.google.com/viewer?url=";
     private static final String HTML_MIME_TYPE = "text/html";
-
-    /**
-     * If a PDF reader is installed, download the PDF file and open it in a reader.
-     * Otherwise ask the user if he/she wants to view it in the Google Drive online PDF reader.<br />
-     * <br />
-     * <b>BEWARE:</b> This method
-     * @param context
-     * @param pdfUrl
-     * @return
-     */
-    public static void showPDFUrl( final Context context, final String pdfUrl ) {
-        final String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(pdfUrl));
-        Loger.MSG("mimeType",""+mimeType);
-        if ( isPDFSupported( context ,mimeType) ) {
-            downloadAndOpenPDF(context, pdfUrl);
-        } else {
-            askToOpenPDFThroughGoogleDrive( context, pdfUrl );
-        }
-    }
 
     /**
      * Downloads a PDF with the Android DownloadManager and opens it with an installed PDF reader app.
@@ -150,7 +130,6 @@ public class DownloaderAndShowFile {
 //        url.toString() return a String in the format: "file:///mnt/sdcard/myPicture.jpg",
 //                whereas url.getPath() returns a String in the format: "/mnt/sdcard/myPicture.jpg",
 
-
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         String ext = tempFile.getName().substring(tempFile.getName().lastIndexOf(".") + 1);
         String type = mime.getMimeTypeFromExtension(ext);
@@ -169,24 +148,5 @@ public class DownloaderAndShowFile {
         } catch (ActivityNotFoundException anfe) {
             Toast.makeText(context, "No activity found to open this attachment.", Toast.LENGTH_LONG).show();
         }
-
-
-
-//        Intent i = new Intent( Intent.ACTION_VIEW );
-//        i.setDataAndType( localUri, MIME_TYPE );
-//        context.startActivity( i );
-    }
-
-
-    /**
-     * Checks if any apps are installed that supports reading of PDF files.
-     * @param context
-     * @return
-     */
-    public static boolean isPDFSupported( Context context,String MIME_TYPE) {
-        Intent i = new Intent( Intent.ACTION_VIEW );
-        final File tempFile = new File( context.getExternalFilesDir( Environment.DIRECTORY_DOWNLOADS ), "test.pdf" );
-        i.setDataAndType( Uri.fromFile( tempFile ), MIME_TYPE );
-        return context.getPackageManager().queryIntentActivities( i, PackageManager.MATCH_DEFAULT_ONLY ).size() > 0;
     }
 }
