@@ -85,6 +85,7 @@ public class MyProfileFragment extends Fragment {
     View Mview;
 
     public MyProfileFragment() {
+
         // Required empty public constructor
     }
 
