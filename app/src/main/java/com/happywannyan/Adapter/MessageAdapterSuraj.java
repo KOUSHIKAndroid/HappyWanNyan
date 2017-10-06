@@ -170,7 +170,7 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                         @Override
                         public void onClick(View v) {
                             String uri = "";
-                            uri = String.format(Locale.ENGLISH, "geo:%f,%f", MsgItem.getMsg_lat(), MsgItem.getMsg_long());
+                            uri = String.format(Locale.ENGLISH, "geo:%f,%f", Float.parseFloat(MsgItem.getMsg_lat()), Float.parseFloat(MsgItem.getMsg_long()));
                             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                             mContext.startActivity(intent);
                         }

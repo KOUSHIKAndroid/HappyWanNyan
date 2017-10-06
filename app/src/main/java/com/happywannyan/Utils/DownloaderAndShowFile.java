@@ -14,6 +14,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.support.v7.app.AlertDialog;
+import android.webkit.MimeTypeMap;
+
 import com.happywannyan.R;
 
 import java.io.File;
@@ -27,7 +29,6 @@ import java.io.File;
 public class DownloaderAndShowFile {
 
     private static final String GOOGLE_DRIVE_PDF_READER_PREFIX = "http://drive.google.com/viewer?url=";
-    private static final String PDF_MIME_TYPE = "application/pdf";
     private static final String HTML_MIME_TYPE = "text/html";
 
     /**
@@ -40,7 +41,9 @@ public class DownloaderAndShowFile {
      * @return
      */
     public static void showPDFUrl( final Context context, final String pdfUrl ) {
-        if ( isPDFSupported( context ) ) {
+        final String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(pdfUrl));
+        Loger.MSG("mimeType",""+mimeType);
+        if ( isPDFSupported( context ,mimeType) ) {
             downloadAndOpenPDF(context, pdfUrl);
         } else {
             askToOpenPDFThroughGoogleDrive( context, pdfUrl );
@@ -56,16 +59,20 @@ public class DownloaderAndShowFile {
     public static void downloadAndOpenPDF(final Context context, final String pdfUrl) {
         // Get filename
         final String filename = pdfUrl.substring( pdfUrl.lastIndexOf( "/" ) + 1 );
+
+        final String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(pdfUrl));
+
+        Loger.MSG("mimeType",""+mimeType);
         // The place where the downloaded PDF file will be put
         final File tempFile = new File( context.getExternalFilesDir( Environment.DIRECTORY_DOWNLOADS ), filename );
         if ( tempFile.exists() ) {
             // If we have downloaded the file before, just go ahead and show it.
-            openPDF( context, Uri.fromFile( tempFile ) );
+            openPDF( context, Uri.fromFile( tempFile ),mimeType );
             return;
         }
 
         // Show progress dialog while downloading
-        final ProgressDialog progress = ProgressDialog.show( context, context.getString( R.string.pdf_show_local_progress_title ), context.getString( R.string.file ), true );
+        final ProgressDialog progress = ProgressDialog.show( context, context.getString( R.string.pdf_show_local_progress_title ), context.getString( R.string.pdf_show_local_progress_content ), true );
 
         // Create the download request
         DownloadManager.Request r = new DownloadManager.Request( Uri.parse( pdfUrl ) );
@@ -86,7 +93,7 @@ public class DownloaderAndShowFile {
                 if ( c.moveToFirst() ) {
                     int status = c.getInt( c.getColumnIndex( DownloadManager.COLUMN_STATUS ) );
                     if ( status == DownloadManager.STATUS_SUCCESSFUL ) {
-                        openPDF( context, Uri.fromFile( tempFile ) );
+                        openPDF( context, Uri.fromFile( tempFile ),mimeType);
                     }
                 }
                 c.close();
@@ -131,21 +138,24 @@ public class DownloaderAndShowFile {
      * Open a local PDF file with an installed reader
      * @param context
      * @param localUri
+     * @param MIME_TYPE
      */
-    public static final void openPDF(Context context, Uri localUri ) {
+    public static final void openPDF(Context context, Uri localUri ,String MIME_TYPE) {
         Intent i = new Intent( Intent.ACTION_VIEW );
-        i.setDataAndType( localUri, PDF_MIME_TYPE );
+        i.setDataAndType( localUri, MIME_TYPE );
         context.startActivity( i );
     }
+
+
     /**
      * Checks if any apps are installed that supports reading of PDF files.
      * @param context
      * @return
      */
-    public static boolean isPDFSupported( Context context ) {
+    public static boolean isPDFSupported( Context context,String MIME_TYPE) {
         Intent i = new Intent( Intent.ACTION_VIEW );
         final File tempFile = new File( context.getExternalFilesDir( Environment.DIRECTORY_DOWNLOADS ), "test.pdf" );
-        i.setDataAndType( Uri.fromFile( tempFile ), PDF_MIME_TYPE );
+        i.setDataAndType( Uri.fromFile( tempFile ), MIME_TYPE );
         return context.getPackageManager().queryIntentActivities( i, PackageManager.MATCH_DEFAULT_ONLY ).size() > 0;
     }
 }

@@ -1239,7 +1239,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">1fc11531-2f26-45e0-b890-ab71e5a7e418</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">c60c202d-bfd3-4b9a-857c-714bd1f87555</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1318,7 +1318,6 @@
     <string name="favorite_sitters_delete">Delete</string>
     <string name="fb_login_protocol_scheme">fb1381434255240015</string>
     <string name="field_length_must_be_greater_than_five">Field length must be greater then 5</string>
-    <string name="file">File</string>
     <string name="filed_can_not_be_empty">Field can\'t be empty</string>
     <string name="firebase_database_url" translatable="false">https://happywannyan-168107.firebaseio.com</string>
     <string name="forgot_password">Forgot Password</string>
@@ -1415,6 +1414,7 @@
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="payment_details">Payment Details</string>
+    <string name="pdf_show_local_progress_content">File</string>
     <string name="pdf_show_local_progress_title">Downloading...</string>
     <string name="pdf_show_online_dialog_question">Are you want to open file?</string>
     <string name="pdf_show_online_dialog_title">Open</string>

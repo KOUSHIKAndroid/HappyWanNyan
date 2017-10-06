@@ -268,7 +268,7 @@
     <string name="pdf_show_online_dialog_title">Open</string>
     <string name="pdf_show_online_dialog_question">Are you want to open file?</string>
     <string name="pdf_show_local_progress_title">Downloading...</string>
-    <string name="file">File</string>
+    <string name="pdf_show_local_progress_content">File</string>
 
 
 </resources>
