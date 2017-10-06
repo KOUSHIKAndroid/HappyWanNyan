@@ -264,6 +264,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     messageAdapterSuraj=new MessageAdapterSuraj(MessageDetailsPageActivity.this,messageDetailsPojoArrayList);
 //                    LL_UserInfo.setAdapter(messageAdapter);
                     LL_UserInfo.setAdapter(messageAdapterSuraj);
+                    LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
                     appLoader.Dismiss();

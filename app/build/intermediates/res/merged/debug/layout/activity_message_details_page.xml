@@ -66,22 +66,22 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_above="@+id/LL_Buttom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/LL_Buttom"
             android:layout_below="@+id/RL_HEADER"
             android:animateLayoutChanges="true"
             android:background="@color/colorWhite"
             android:orientation="vertical">
 
             <LinearLayout
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
                 android:id="@+id/LL_UserInfo"
-                android:background="@drawable/vertical_line_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@drawable/vertical_line_bg"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
 
                 <RelativeLayout
                     android:id="@+id/RL_User_ClickBar"
@@ -315,13 +315,11 @@
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
                 android:id="@+id/List_Recy"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                >
-            </android.support.v7.widget.RecyclerView>
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"></android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
 
@@ -332,7 +330,7 @@
             android:layout_height="70dp"
             android:layout_alignParentBottom="true"
             android:background="@color/colorWhite"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/IMAGE_Attach"
