@@ -550,9 +550,9 @@ public final class R {
         public static final int place_autocomplete_search_hint = 0x7f08007b;
         public static final int store_picture_message = 0x7f08007e;
         public static final int store_picture_title = 0x7f08007f;
-        public static final int tagmanager_preview_dialog_button = 0x7f0801a0;
-        public static final int tagmanager_preview_dialog_message = 0x7f0801a1;
-        public static final int tagmanager_preview_dialog_title = 0x7f0801a2;
+        public static final int tagmanager_preview_dialog_button = 0x7f0801a5;
+        public static final int tagmanager_preview_dialog_message = 0x7f0801a6;
+        public static final int tagmanager_preview_dialog_title = 0x7f0801a7;
         public static final int wallet_buy_button_place_holder = 0x7f080080;
     }
     public static final class style {
