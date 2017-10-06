@@ -109,9 +109,9 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                             public void onClick(View view) {
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
-                                } else {
-                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                    if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
+                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                    }
                                 }
                             }
                         });
@@ -122,9 +122,9 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                             public void onClick(View view) {
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
-                                } else {
-                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                    if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
+                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                    }
                                 }
                             }
                         });
@@ -135,9 +135,9 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                             public void onClick(View view) {
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
-                                } else {
-                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                    if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
+                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                    }
                                 }
                             }
                         });
@@ -201,9 +201,9 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                             public void onClick(View view) {
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
-                                } else {
-                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                    if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
+                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                    }
                                 }
                             }
                         });
@@ -214,9 +214,9 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                             public void onClick(View view) {
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
-                                } else {
-                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                    if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
+                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                    }
                                 }
                             }
                         });
@@ -227,9 +227,9 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                             public void onClick(View view) {
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                    ((MessageDetailsPageActivity)mContext).requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},((MessageDetailsPageActivity)mContext). REQUEST_WRITE_PERMISSION3);
-                                } else {
-                                    DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+                                    if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
+                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                    }
                                 }
                             }
                         });

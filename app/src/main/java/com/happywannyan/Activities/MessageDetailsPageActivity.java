@@ -14,6 +14,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -58,6 +60,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TimeZone;
 
 public class MessageDetailsPageActivity extends AppCompatActivity implements View.OnClickListener {
@@ -66,6 +69,12 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 //    MessageAdapter messageAdapter;
     MessageAdapterSuraj messageAdapterSuraj;
     private LinearLayoutManager mLinearLayoutManager;
+
+    String[] permissions = new String[]{
+            Manifest.permission.INTERNET,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+    };
 
     String userType="";
     RelativeLayout RL_ButtomSheet;
@@ -84,7 +93,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
     private static final int REQUEST_WRITE_PERMISSION1 = 3000;
     private static final int REQUEST_WRITE_PERMISSION2 = 4000;
-    public static final int REQUEST_WRITE_PERMISSION3 = 5000;
+
     final String BITMAP_STORAGE_URL = "IMAGE_URL";
     private int PICK_IMAGE_REQUEST = 100;
     private int CAMERA_CAPTURE = 200;
@@ -650,8 +659,13 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         if (requestCode == REQUEST_WRITE_PERMISSION2 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             openCamera();
         }
-        if (requestCode == REQUEST_WRITE_PERMISSION3 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            messageAdapterSuraj.DownloadAndShow();
+        if (requestCode == 5000){
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // do something
+                messageAdapterSuraj.DownloadAndShow();
+            }
+            return;
         }
     }
 
@@ -749,4 +763,20 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             }
         }
     };
+
+    public boolean checkPermissions() {
+        int result;
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        for (String p : permissions) {
+            result = ContextCompat.checkSelfPermission(this, p);
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                listPermissionsNeeded.add(p);
+            }
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]),5000 );
+            return false;
+        }
+        return true;
+    }
 }
