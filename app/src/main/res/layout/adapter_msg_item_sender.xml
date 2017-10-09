@@ -71,7 +71,6 @@
                 android:id="@+id/TXT_Sender_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/ic_receverbackground"
                 android:elevation="3dp"
@@ -82,20 +81,17 @@ dschjbsdhb"
                 android:textSize="14sp" />
 
             <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:id="@+id/RL_Attached"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:visibility="visible">
-
                 <ImageView
                     android:id="@+id/IMG_Sender_Attach"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="#FFB6C9"
-                    android:padding="1px"
                     android:scaleType="fitXY" />
-
                 <ImageView
                     android:id="@+id/img_attached_download"
                     android:padding="10dp"
@@ -109,6 +105,7 @@ dschjbsdhb"
             <RelativeLayout
                 android:visibility="visible"
                 android:id="@+id/RL_Map"
+                android:layout_marginTop="5dp"
                 android:layout_width="200dp"
                 android:layout_height="200dp">
 
@@ -116,9 +113,7 @@ dschjbsdhb"
                     android:id="@+id/IMG_Sender_Map"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="2dp"
                     android:background="#FFB6C9"
-                    android:padding="1px"
                     android:scaleType="fitXY" />
                 <!--<ImageView-->
                     <!--android:id="@+id/img_map_download"-->

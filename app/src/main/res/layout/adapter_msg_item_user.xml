@@ -46,7 +46,6 @@
             android:id="@+id/TXT_User_Message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/ic_sender_background"
             android:elevation="3dp"
@@ -60,19 +59,16 @@ dschjbsdhb"
         <RelativeLayout
             android:id="@+id/RL_Attached"
             android:layout_gravity="right"
+            android:layout_marginTop="5dp"
             android:layout_width="200dp"
-            android:visibility="visible"
-            android:layout_height="200dp">
-
+            android:layout_height="200dp"
+            android:visibility="visible">
             <ImageView
                 android:id="@+id/IMG_User_Attach"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="2dp"
                 android:background="@drawable/ic_sender_background"
-                android:padding="1px"
                 android:scaleType="fitXY" />
-
             <ImageView
                 android:id="@+id/img_attached_download"
                 android:padding="10dp"
@@ -81,7 +77,6 @@ dschjbsdhb"
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
         </RelativeLayout>
 
 
@@ -90,15 +85,14 @@ dschjbsdhb"
             android:id="@+id/RL_Map"
             android:layout_gravity="right"
             android:layout_width="200dp"
-            android:layout_height="200dp">
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp">
 
             <ImageView
                 android:id="@+id/IMG_User_MAP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="2dp"
                 android:background="@drawable/ic_sender_background"
-                android:padding="1px"
                 android:scaleType="fitXY" />
             <!--<ImageView-->
                 <!--android:id="@+id/img_map_download"-->
