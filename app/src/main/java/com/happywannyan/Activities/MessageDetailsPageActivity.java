@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,11 +20,9 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,9 +34,7 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
-import com.happywannyan.Adapter.MessageAdapter;
 import com.happywannyan.Adapter.MessageAdapterSuraj;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -53,7 +48,6 @@ import com.happywannyan.Utils.ImageFilePath;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -64,14 +58,13 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.TimeZone;
 
 public class MessageDetailsPageActivity extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView LL_UserInfo;
-//    MessageAdapter messageAdapter;
+    //    MessageAdapter messageAdapter;
     MessageAdapterSuraj messageAdapterSuraj;
     private LinearLayoutManager mLinearLayoutManager;
 
@@ -81,7 +74,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
     };
 
-    String userType="";
+    String userType = "";
     RelativeLayout RL_ButtomSheet;
     private static final int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
 
@@ -103,7 +96,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
     private int PICK_IMAGE_REQUEST = 100;
     private int CAMERA_CAPTURE = 200;
 
-    JSONObject jsonObjectForProfile=null;
+    JSONObject jsonObjectForProfile = null;
     LinearLayout LL_user_profile;
     private BroadcastReceiver Localreceiver;
 
@@ -118,6 +111,8 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         USER_IMAGE = (ImageView) findViewById(R.id.USER_IMAGE);
         RL_ButtomSheet = (RelativeLayout) findViewById(R.id.RL_ButtomSheet);
         appLoader = new AppLoader(this);
+
+        // mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mLinearLayoutManager.setStackFromEnd(true);
         LL_UserInfo.setLayoutManager(mLinearLayoutManager);
@@ -132,7 +127,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         TXT_MessageType = (SFNFTextView) findViewById(R.id.TXT_MessageType);
         EDX_Text = (EditText) findViewById(R.id.EDX_Text);
         LL_USER_TIME = (LinearLayout) findViewById(R.id.LL_USER_TIME);
-        LL_user_profile= (LinearLayout) findViewById(R.id.LL_user_profile);
+        LL_user_profile = (LinearLayout) findViewById(R.id.LL_user_profile);
 
         EDX_Text.setFocusableInTouchMode(true);
         EDX_Text.setOnTouchListener(new View.OnTouchListener() {
@@ -146,13 +141,12 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         });
 
 
-
         Localreceiver = mMessageReceiver;
         IntentFilter filter = new IntentFilter();
         filter.addAction("CONNECT_MESSAGE_LIVE");
         LocalBroadcastManager.getInstance(this).registerReceiver(Localreceiver, filter);
 
-        messageDetailsPojoArrayList=new ArrayList<>();
+        messageDetailsPojoArrayList = new ArrayList<>();
 
 
         RL_ButtomSheet.setOnClickListener(new View.OnClickListener() {
@@ -174,8 +168,8 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             @Override
             public void onClick(View view) {
 
-                if (!userType.trim().equals("")){
-                    if(userType.equalsIgnoreCase("S")){
+                if (!userType.trim().equals("")) {
+                    if (userType.equalsIgnoreCase("S")) {
                         new MYAlert(MessageDetailsPageActivity.this).AlertOkCancel("", getString(R.string.go_to_sitters_profile), new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
@@ -184,6 +178,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                                 intent.putExtra("data", "" + jsonObjectForProfile);
                                 startActivity(intent, options.toBundle());
                             }
+
                             @Override
                             public void OnCancel() {
 
@@ -213,7 +208,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     TXT_UserName.setText(OBJ.getString("message_to"));
                     USerName.setText(OBJ.getString("message_from"));
 
-                    userType=OBJ.getString("type");
+                    userType = OBJ.getString("type");
 
                     if (OBJ.has("message_startdate")) {
                         TXT_StartNAme.setText(OBJ.getString("message_startdate"));
@@ -225,7 +220,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     }
                     TXT_JoinTime.setText(
 //                            getString(R.string.join) +
-                                    OBJ.getString("message_joined"));
+                            OBJ.getString("message_joined"));
 
                     if (OBJ.getInt("block_user_status") == 1) {
                         findViewById(R.id.LL_Buttom).setVisibility(View.GONE);
@@ -237,21 +232,21 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
                     Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(USER_IMAGE);
 
-                    jsonObjectForProfile=OBJ.getJSONArray("all_message_details").getJSONObject(0).getJSONArray("info").getJSONObject(0);
+                    jsonObjectForProfile = OBJ.getJSONArray("all_message_details").getJSONObject(0).getJSONArray("info").getJSONObject(0);
 
 //                    jsonArrayMessage = OBJ.getJSONArray("all_message_details");
 
-                    for(int i=0;i<OBJ.getJSONArray("all_message_details").length();i++){
+                    for (int i = 0; i < OBJ.getJSONArray("all_message_details").length(); i++) {
 
-                        for(int j=0;j<OBJ.getJSONArray("all_message_details").getJSONObject(i).getJSONArray("info").length();j++){
-                            SetGetMessageDetailsPojo messageDetailsPojo=new SetGetMessageDetailsPojo();
+                        for (int j = 0; j < OBJ.getJSONArray("all_message_details").getJSONObject(i).getJSONArray("info").length(); j++) {
+                            SetGetMessageDetailsPojo messageDetailsPojo = new SetGetMessageDetailsPojo();
 
-                            JSONObject jsonObject=OBJ.getJSONArray("all_message_details").getJSONObject(i).getJSONArray("info").getJSONObject(j);
+                            JSONObject jsonObject = OBJ.getJSONArray("all_message_details").getJSONObject(i).getJSONArray("info").getJSONObject(j);
 
-                            if(j==0){
+                            if (j == 0) {
                                 messageDetailsPojo.setDate(OBJ.getJSONArray("all_message_details").getJSONObject(i).getString("date"));
 
-                            }else {
+                            } else {
                                 messageDetailsPojo.setDate("");
                             }
 
@@ -273,13 +268,13 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                             messageDetailsPojoArrayList.add(messageDetailsPojo);
                         }
                     }
-                    Loger.MSG("messageListSize-->",""+messageDetailsPojoArrayList.size());
+                    Loger.MSG("messageListSize-->", "" + messageDetailsPojoArrayList.size());
 
 //                    if (messageAdapter == null) {
 
 //                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
 
-                    messageAdapterSuraj=new MessageAdapterSuraj(MessageDetailsPageActivity.this,messageDetailsPojoArrayList);
+                    messageAdapterSuraj = new MessageAdapterSuraj(MessageDetailsPageActivity.this, messageDetailsPojoArrayList);
 //                    LL_UserInfo.setAdapter(messageAdapter);
                     LL_UserInfo.setAdapter(messageAdapterSuraj);
                     //LL_UserInfo.getLayoutManager().smoothScrollToPosition(LL_UserInfo,null, messageDetailsPojoArrayList.size()-1);
@@ -317,11 +312,10 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             case R.id.RL_User_ClickBar:
                 if (findViewById(R.id.LL_UserInfo_body).getVisibility() == View.GONE) {
                     findViewById(R.id.LL_UserInfo_body).setVisibility(View.VISIBLE);
-                    ((ImageView)findViewById(R.id.img_more_or_less)).setImageResource(R.drawable.ic_expand_less_black_24dp);
-                }
-                else {
+                    ((ImageView) findViewById(R.id.img_more_or_less)).setImageResource(R.drawable.ic_expand_less_black_24dp);
+                } else {
                     findViewById(R.id.LL_UserInfo_body).setVisibility(View.GONE);
-                    ((ImageView)findViewById(R.id.img_more_or_less)).setImageResource(R.drawable.ic_expand_more_black_24dp);
+                    ((ImageView) findViewById(R.id.img_more_or_less)).setImageResource(R.drawable.ic_expand_more_black_24dp);
                 }
                 break;
 
@@ -679,7 +673,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         if (requestCode == REQUEST_WRITE_PERMISSION2 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             openCamera();
         }
-        if (requestCode == 5000){
+        if (requestCode == 5000) {
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // do something
@@ -744,9 +738,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             try {
                 if (MessageId.equals(new JSONObject(message).getJSONObject("message_info").getString("parent_id"))) {
 
-                    JSONObject jsonObject=new JSONObject(message).getJSONObject("message_info");
+                    JSONObject jsonObject = new JSONObject(message).getJSONObject("message_info");
 
-                    SetGetMessageDetailsPojo messageDetailsPojo=new SetGetMessageDetailsPojo();
+                    SetGetMessageDetailsPojo messageDetailsPojo = new SetGetMessageDetailsPojo();
 
                     messageDetailsPojo.setDate("");
                     messageDetailsPojo.setSender_id(jsonObject.getString("sender_id"));
@@ -768,7 +762,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
 //                    jsonArrayMessage.getJSONObject(jsonArrayMessage.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
 //                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
-                    messageAdapterSuraj=new MessageAdapterSuraj(MessageDetailsPageActivity.this,messageDetailsPojoArrayList);
+                    messageAdapterSuraj = new MessageAdapterSuraj(MessageDetailsPageActivity.this, messageDetailsPojoArrayList);
                     messageAdapterSuraj.notifyDataSetChanged();
                     //LL_UserInfo.setAdapter(messageAdapterSuraj);
 
@@ -797,7 +791,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             }
         }
         if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]),5000 );
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), 5000);
             return false;
         }
         return true;
