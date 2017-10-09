@@ -143,20 +143,18 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.SitterBooking.BookingOneActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.SearchResultActivity"
             android:label="@string/title_activity_search_result"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name="com.happywannyan.Activities.ForgotPasswordActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.ResetPasswordActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.Booking.BookingDetailsActivity"
             android:screenOrientation="portrait"
