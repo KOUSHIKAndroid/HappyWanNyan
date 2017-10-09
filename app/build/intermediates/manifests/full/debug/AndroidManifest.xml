@@ -138,11 +138,13 @@
             android:label="@string/title_activity_base"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.happywannyan.Activities.FacebookActivity" />
+        <activity
+            android:name="com.happywannyan.Activities.FacebookActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.SitterBooking.BookingOneActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.happywannyan.Activities.SearchResultActivity"
             android:label="@string/title_activity_search_result"
@@ -177,7 +179,9 @@
             android:name="com.happywannyan.Activities.MessageDetailsPageActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name="com.happywannyan.Activities.Booking.CancelBookingWithReasonsActivity" />
+        <activity
+            android:name="com.happywannyan.Activities.Booking.CancelBookingWithReasonsActivity"
+            android:screenOrientation="portrait" />
         <!-- <activity android:name="com.cooltechworks.creditcarddesign.CardEditActivity" -->
         <!-- android:theme="@style/AppTheme" -->
         <!-- android:screenOrientation="portrait" -->

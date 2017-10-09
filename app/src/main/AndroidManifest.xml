@@ -116,11 +116,13 @@
             android:label="@string/title_activity_base"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activities.FacebookActivity" />
+        <activity android:name=".Activities.FacebookActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SitterBooking.BookingOneActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan"
+             />
         <activity
             android:name=".Activities.SearchResultActivity"
             android:label="@string/title_activity_search_result"
@@ -157,7 +159,8 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name=".Activities.Booking.CancelBookingWithReasonsActivity" />
+        <activity android:name=".Activities.Booking.CancelBookingWithReasonsActivity"
+            android:screenOrientation="portrait"/>
         <!--<activity android:name="com.cooltechworks.creditcarddesign.CardEditActivity"-->
         <!--android:theme="@style/AppTheme"-->
         <!--android:screenOrientation="portrait"-->
