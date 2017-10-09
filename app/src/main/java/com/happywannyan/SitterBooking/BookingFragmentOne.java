@@ -284,7 +284,7 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                         }
 
                             if (LL_S_F.getVisibility() == View.VISIBLE && TXT_StartDate.getText().length() > 0) {
-                                //((BookingOneActivity)getActivity()).showConfirmReservationRequest();
+                                ((BookingOneActivity)getActivity()).showConfirmReservationRequest();
                                 ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                 mListener.onFragmentInteraction("Two");
 
