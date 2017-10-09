@@ -13,6 +13,8 @@ import com.happywannyan.Activities.EditAnotherPetsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
+import com.happywannyan.Fragments.MyPaymentsFragment;
+import com.happywannyan.Fragments.MyPetsFragments;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetYourPets;
 import com.happywannyan.R;
@@ -35,10 +37,12 @@ public class YourPetsAdapter extends RecyclerView.Adapter<YourPetsAdapter.MyView
     ArrayList<SetGetYourPets> setGetYourPetsArrayList;
     Context context;
     AppLoader appLoader;
+    MyPetsFragments myPetsFragments;
 
-    public YourPetsAdapter(Context context, ArrayList<SetGetYourPets> setGetYourPetsArrayList) {
+    public YourPetsAdapter(Context context, ArrayList<SetGetYourPets> setGetYourPetsArrayList,MyPetsFragments myPetsFragments) {
         this.context = context;
         this.setGetYourPetsArrayList = setGetYourPetsArrayList;
+        this.myPetsFragments=myPetsFragments;
         appLoader = new AppLoader(context);
     }
 
@@ -142,6 +146,10 @@ public class YourPetsAdapter extends RecyclerView.Adapter<YourPetsAdapter.MyView
 
             }
         });
+
+        if(position==setGetYourPetsArrayList.size()-1){
+            myPetsFragments.GET_PETDATA(setGetYourPetsArrayList.size());
+        }
     }
 
     @Override

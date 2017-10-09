@@ -108,7 +108,7 @@ public class MyPetsFragments extends Fragment {
 
     }
 
-    private void GET_PETDATA(final int i) {
+    public void GET_PETDATA(final int i) {
         appLoader.Show();
         ArrayList<SetGetAPIPostData> params = new ArrayList<>();
         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
@@ -148,7 +148,7 @@ public class MyPetsFragments extends Fragment {
                         ListPets.add(setGetYourPets);
                     }
                     if (i == 0) {
-                        yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets);
+                        yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets,MyPetsFragments.this);
                         recyclerView.setAdapter(yourPets_adapter);
                     } else {
                         yourPets_adapter.notifyDataSetChanged();
@@ -189,7 +189,7 @@ public class MyPetsFragments extends Fragment {
         Loger.MSG("DEBUG", "onResume of HomeFragment");
         ListPets = new ArrayList<>();
         GET_PETDATA(0);
-        yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets);
+        yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets,MyPetsFragments.this);
         recyclerView.setAdapter(yourPets_adapter);
     }
 }
