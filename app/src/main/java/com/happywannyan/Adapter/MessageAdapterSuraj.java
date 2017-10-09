@@ -24,6 +24,8 @@ import com.happywannyan.Utils.DownloaderAndShowFile;
 import com.happywannyan.Utils.Loger;
 import com.squareup.picasso.Picasso;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -98,7 +100,11 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                 if (!MsgItem.getMessage_info().trim().equals("")) {
                     viewHolder1.RL_Attached.setVisibility(View.GONE);
                     viewHolder1.TXT_User_Message.setVisibility(View.VISIBLE);
-                    viewHolder1.TXT_User_Message.setText(MsgItem.getMessage_info());
+                    try {
+                        viewHolder1.TXT_User_Message.setText(URLDecoder.decode(MsgItem.getMessage_info(), "UTF-8"));
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     viewHolder1.RL_Attached.setVisibility(View.VISIBLE);
                     viewHolder1.TXT_User_Message.setVisibility(View.GONE);

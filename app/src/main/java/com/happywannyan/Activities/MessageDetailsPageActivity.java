@@ -55,6 +55,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -328,46 +329,47 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                 if (EDX_Text.getText().toString().trim().equals("")) {
 
                 } else {
-                    appLoader.Show();
-                    ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
-                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("message");
-                    setGetAPIPostData.setValues(EDX_Text.getText() + "");
-                    Params.add(setGetAPIPostData);
-                    TimeZone tz = TimeZone.getDefault();
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("user_timezone");
-                    setGetAPIPostData.setValues(tz.getID() + "");
-                    Params.add(setGetAPIPostData);
+                    try {
+                        appLoader.Show();
+                        ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("message");
+                        setGetAPIPostData.setValues(URLEncoder.encode("" + EDX_Text.getText(), "UTF-8"));
+                        Params.add(setGetAPIPostData);
+                        TimeZone tz = TimeZone.getDefault();
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_timezone");
+                        setGetAPIPostData.setValues(tz.getID() + "");
+                        Params.add(setGetAPIPostData);
 
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("message_type");
-                    setGetAPIPostData.setValues(MessageFragment.MESSAGECODE + "");
-                    Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("message_type");
+                        setGetAPIPostData.setValues(MessageFragment.MESSAGECODE + "");
+                        Params.add(setGetAPIPostData);
 
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("user_id");
-                    setGetAPIPostData.setValues("" + AppConstant.UserId);
-                    Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_id");
+                        setGetAPIPostData.setValues("" + AppConstant.UserId);
+                        Params.add(setGetAPIPostData);
 
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("message_id");
-                    setGetAPIPostData.setValues(MessageId + "");
-                    Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("message_id");
+                        setGetAPIPostData.setValues(MessageId + "");
+                        Params.add(setGetAPIPostData);
 
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("receiver_id");
-                    setGetAPIPostData.setValues(ReceverId + "");
-                    Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("receiver_id");
+                        setGetAPIPostData.setValues(ReceverId + "");
+                        Params.add(setGetAPIPostData);
 
-                    setGetAPIPostData = new SetGetAPIPostData();
-                    setGetAPIPostData.setPARAMS("lang_id");
-                    setGetAPIPostData.setValues(AppConstant.Language);
-                    Params.add(setGetAPIPostData);
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("lang_id");
+                        setGetAPIPostData.setValues(AppConstant.Language);
+                        Params.add(setGetAPIPostData);
 
-                    new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
-                        @Override
-                        public void OnSuccess(String Result) {
+                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
+                            @Override
+                            public void OnSuccess(String Result) {
 //                            try {
 //                                ARRAy.getJSONObject(ARRAy.length()-1).getJSONArray("info").put(new JSONObject(Result).getJSONObject("info"));
 //                                messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, ARRAy);
@@ -377,22 +379,25 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 //                            }
 
 
-                            FetCh();
-                            EDX_Text.setText("");
-                            appLoader.Dismiss();
-                        }
+                                FetCh();
+                                EDX_Text.setText("");
+                                appLoader.Dismiss();
+                            }
 
-                        @Override
-                        public void OnError(String Error, String Response) {
-                            appLoader.Dismiss();
-                        }
+                            @Override
+                            public void OnError(String Error, String Response) {
+                                appLoader.Dismiss();
+                            }
 
-                        @Override
-                        public void OnError(String Error) {
-                            appLoader.Dismiss();
-                        }
-                    });
+                            @Override
+                            public void OnError(String Error) {
+                                appLoader.Dismiss();
+                            }
+                        });
 
+                    }catch (Exception ex){
+                        ex.printStackTrace();
+                    }
                 }
 
 
@@ -500,78 +505,83 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                 e.printStackTrace();
             }
         } else if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE && resultCode == RESULT_OK) {
-            Place place = PlacePicker.getPlace(MessageDetailsPageActivity.this, data);
-            Loger.MSG("@@ PLACE", "" + place.getLatLng());
-            String MAPIMGAEURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&zoom=13&size=1000x1000&markers=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M";
-            appLoader.Show();
-            ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
-            SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("message");
-            setGetAPIPostData.setValues(EDX_Text.getText() + "");
-            Params.add(setGetAPIPostData);
-            TimeZone tz = TimeZone.getDefault();
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("user_timezone");
-            setGetAPIPostData.setValues(tz.getID() + "");
-            Params.add(setGetAPIPostData);
 
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("user_id");
-            setGetAPIPostData.setValues("" + AppConstant.UserId);
-            Params.add(setGetAPIPostData);
+            try {
+                Place place = PlacePicker.getPlace(MessageDetailsPageActivity.this, data);
+                Loger.MSG("@@ PLACE", "" + place.getLatLng());
+                String MAPIMGAEURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&zoom=13&size=1000x1000&markers=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M";
+                appLoader.Show();
+                ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
+                SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("message");
+                setGetAPIPostData.setValues(URLEncoder.encode("" + EDX_Text.getText(), "UTF-8"));
+                Params.add(setGetAPIPostData);
+                TimeZone tz = TimeZone.getDefault();
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("user_timezone");
+                setGetAPIPostData.setValues(tz.getID() + "");
+                Params.add(setGetAPIPostData);
 
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("message_id");
-            setGetAPIPostData.setValues(MessageId + "");
-            Params.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("user_id");
+                setGetAPIPostData.setValues("" + AppConstant.UserId);
+                Params.add(setGetAPIPostData);
 
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("receiver_id");
-            setGetAPIPostData.setValues(ReceverId + "");
-            Params.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("message_id");
+                setGetAPIPostData.setValues(MessageId + "");
+                Params.add(setGetAPIPostData);
 
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("lang_id");
-            setGetAPIPostData.setValues(AppConstant.Language);
-            Params.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("receiver_id");
+                setGetAPIPostData.setValues(ReceverId + "");
+                Params.add(setGetAPIPostData);
 
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("msg_lat");
-            setGetAPIPostData.setValues(place.getLatLng().latitude + "");
-            Params.add(setGetAPIPostData);
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("message_type");
-            setGetAPIPostData.setValues(MessageFragment.MESSAGECODE + "");
-            Params.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("lang_id");
+                setGetAPIPostData.setValues(AppConstant.Language);
+                Params.add(setGetAPIPostData);
 
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("msg_long");
-            setGetAPIPostData.setValues(place.getLatLng().longitude + "");
-            Params.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("msg_lat");
+                setGetAPIPostData.setValues(place.getLatLng().latitude + "");
+                Params.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("message_type");
+                setGetAPIPostData.setValues(MessageFragment.MESSAGECODE + "");
+                Params.add(setGetAPIPostData);
 
-            setGetAPIPostData = new SetGetAPIPostData();
-            setGetAPIPostData.setPARAMS("url_location");
-            setGetAPIPostData.setValues(MAPIMGAEURL);
-            Params.add(setGetAPIPostData);
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("msg_long");
+                setGetAPIPostData.setValues(place.getLatLng().longitude + "");
+                Params.add(setGetAPIPostData);
 
-            new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
-                @Override
-                public void OnSuccess(String Result) {
-                    FetCh();
-                    EDX_Text.setText("");
-                    appLoader.Dismiss();
-                }
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("url_location");
+                setGetAPIPostData.setValues(MAPIMGAEURL);
+                Params.add(setGetAPIPostData);
 
-                @Override
-                public void OnError(String Error, String Response) {
-                    appLoader.Dismiss();
-                }
+                new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
+                    @Override
+                    public void OnSuccess(String Result) {
+                        FetCh();
+                        EDX_Text.setText("");
+                        appLoader.Dismiss();
+                    }
 
-                @Override
-                public void OnError(String Error) {
-                    appLoader.Dismiss();
-                }
-            });
+                    @Override
+                    public void OnError(String Error, String Response) {
+                        appLoader.Dismiss();
+                    }
+
+                    @Override
+                    public void OnError(String Error) {
+                        appLoader.Dismiss();
+                    }
+                });
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
         } else {
 //            Toast.makeText(this, "Image Error", Toast.LENGTH_SHORT).show();
         }

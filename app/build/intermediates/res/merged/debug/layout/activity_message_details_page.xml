@@ -350,7 +350,6 @@
                 android:layout_toRightOf="@+id/IMAGE_Attach"
                 android:background="@android:color/transparent"
                 android:inputType="textMultiLine"
-                android:singleLine="false"
                 android:hint="@string/writeyourmessage" />
 
 
