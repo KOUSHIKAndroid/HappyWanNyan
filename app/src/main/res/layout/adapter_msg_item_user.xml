@@ -65,8 +65,8 @@ dschjbsdhb"
             android:visibility="visible">
             <ImageView
                 android:id="@+id/IMG_User_Attach"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/ic_sender_background"
                 android:scaleType="fitXY" />
             <ImageView
