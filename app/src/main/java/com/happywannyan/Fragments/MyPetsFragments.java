@@ -125,7 +125,7 @@ public class MyPetsFragments extends Fragment {
         params.add(setGetAPIPostData);
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("per_page");
-        setGetAPIPostData.setValues("10");
+        setGetAPIPostData.setValues("100");
         params.add(setGetAPIPostData);
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override

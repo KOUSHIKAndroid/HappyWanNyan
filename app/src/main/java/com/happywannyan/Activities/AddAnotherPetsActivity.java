@@ -286,7 +286,13 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
             ((SFNFTextView) findViewById(R.id.TXT_gender)).setTag(null);
 
             ((SFNFTextView) findViewById(R.id.TXT_Month)).setText("");
-            ((SFNFTextView) findViewById(R.id.TXT_Month)).setTag(null);
+            JSONObject jsonObjectMonth=new JSONObject();
+            jsonObjectMonth.put("option_id","18");
+            jsonObjectMonth.put("option_value","0");
+            jsonObjectMonth.put("option_name","");
+            jsonObjectMonth.put("option_status",0);
+            ((SFNFTextView) findViewById(R.id.TXT_Month)).setTag(jsonObjectMonth);
+            //((SFNFTextView) findViewById(R.id.TXT_Month)).setTag(null);
 
             ((SFNFTextView) findViewById(R.id.TXT_Year)).setText("");
             ((SFNFTextView) findViewById(R.id.TXT_Year)).setTag(null);
@@ -414,7 +420,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         ((SFNFTextView) findViewById(R.id.Txt_type)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
         ((EditText) findViewById(R.id.TXTName)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
         ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-        ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+        //((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
         ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
         ((SFNFTextView) findViewById(R.id.TXT_petbreed)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
         ((SFNFTextView) findViewById(R.id.TXT_petsize)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
@@ -444,12 +450,12 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                         ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                     } else {
                         Log.i("TXT_Month", "TXT_Month");
-                        ((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
-                        if (((SFNFTextView) findViewById(R.id.TXT_Month)).getText().toString().trim().equals("")) {
-                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
-                        } else {
+                        //((SFNFTextView) findViewById(R.id.TXT_Year)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+//                        if (((SFNFTextView) findViewById(R.id.TXT_Month)).getText().toString().trim().equals("")) {
+//                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
+//                        } else {
                             Log.i("TXT_gender", "TXT_gender");
-                            ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
+                           // ((SFNFTextView) findViewById(R.id.TXT_Month)).setHintTextColor(ContextCompat.getColor(this, R.color.colorTextDarkGray));
                             if (((SFNFTextView) findViewById(R.id.TXT_gender)).getText().toString().trim().equals("")) {
                                 ((SFNFTextView) findViewById(R.id.TXT_gender)).setHintTextColor(ContextCompat.getColor(this, R.color.colorBtnRed));
                             } else {
@@ -630,7 +636,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                     }
                                 }
                             }
-                        }
+                        //}
                     }
                 }
             }
