@@ -266,7 +266,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 //                    LL_UserInfo.setAdapter(messageAdapter);
                     LL_UserInfo.setAdapter(messageAdapterSuraj);
                     //LL_UserInfo.getLayoutManager().smoothScrollToPosition(LL_UserInfo,null, messageDetailsPojoArrayList.size()-1);
-                    LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
+//                    LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
                     appLoader.Dismiss();
@@ -752,9 +752,10 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 //                    jsonArrayMessage.getJSONObject(jsonArrayMessage.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
 //                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
                     messageAdapterSuraj=new MessageAdapterSuraj(MessageDetailsPageActivity.this,messageDetailsPojoArrayList);
-                    LL_UserInfo.setAdapter(messageAdapterSuraj);
-                    LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
+                    messageAdapterSuraj.notifyDataSetChanged();
+                    //LL_UserInfo.setAdapter(messageAdapterSuraj);
 
+                    //LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
                     //LL_UserInfo.getLayoutManager().smoothScrollToPosition(LL_UserInfo,null, messageDetailsPojoArrayList.size()-1);
 
                     Log.d("receiver", "Got message:2 " + message);
