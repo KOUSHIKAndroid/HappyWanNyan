@@ -71,6 +71,7 @@ dschjbsdhb"
             android:id="@+id/RL_Attached"
             android:layout_gravity="right"
             android:layout_width="200dp"
+            android:visibility="gone"
             android:layout_height="200dp">
 
             <ImageView
@@ -94,6 +95,7 @@ dschjbsdhb"
 
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/RL_Map"
             android:layout_gravity="right"
             android:layout_width="200dp"
