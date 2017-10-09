@@ -151,17 +151,17 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
 
 
                             for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
-                                if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("total_pets")) {
+                                if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("no_of_pet")) {
                                     ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(((BookingOneActivity) getActivity()).MyPetList.size() + "");
                                     break;
                                 } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
                                     SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
-                                    setGetAPIPostData.setPARAMS("total_pets");
+                                    setGetAPIPostData.setPARAMS("no_of_pet");
                                     setGetAPIPostData.setValues(((BookingOneActivity) getActivity()).MyPetList.size() + "");
                                     ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                 }
                             }
-                            //((BookingOneActivity)getActivity()).showConfirmReservationRequest();
+                            ((BookingOneActivity)getActivity()).showConfirmReservationRequest();
 
                             mListener.onFragmentInteraction("Three");
 

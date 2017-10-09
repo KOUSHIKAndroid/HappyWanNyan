@@ -166,11 +166,11 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-//    public void showConfirmReservationRequest() {
-//        for (int i = 0; i < FirstPageData.size(); i++) {
-//            Loger.MSG(FirstPageData.get(i).getPARAMS(), "-->" + FirstPageData.get(i).getValues());
-//        }
-//    }
+    public void showConfirmReservationRequest() {
+        for (int i = 0; i < FirstPageData.size(); i++) {
+            Loger.MSG(FirstPageData.get(i).getPARAMS(), "-->" + FirstPageData.get(i).getValues());
+        }
+    }
 
     public void submitConfirmReservationRequest() {
         appLoader.Show();
