@@ -61,10 +61,10 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
 
 
                 if (!MsgItem.getDate().equals("")) {
-                    viewHolder1.LLMain.setVisibility(View.VISIBLE);
+                    viewHolder1.RL_Date.setVisibility(View.VISIBLE);
                     viewHolder1.TXT_date.setText(MsgItem.getDate());
                 } else {
-                    viewHolder1.LLMain.setVisibility(View.GONE);
+                    viewHolder1.RL_Date.setVisibility(View.GONE);
                 }
 
 
@@ -151,10 +151,10 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                 ViewHolder2 viewHolder2 = (ViewHolder2) viewHolder;
 
                 if (!MsgItem.getDate().equals("")) {
-                    viewHolder2.LLMain.setVisibility(View.VISIBLE);
+                    viewHolder2.RL_Date.setVisibility(View.VISIBLE);
                     viewHolder2.TXT_date.setText(MsgItem.getDate());
                 } else {
-                    viewHolder2.LLMain.setVisibility(View.GONE);
+                    viewHolder2.RL_Date.setVisibility(View.GONE);
                 }
 
 
@@ -248,7 +248,7 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
         private SFNFTextView TXT_date, TXT_User_Time, TXT_User_Message;
         private ImageView IMG_User_Attach, IMG_User_MAP,img_attached_download;
         RelativeLayout RL_Attached, RL_Map;
-        private LinearLayout LLMain;
+        private RelativeLayout RL_Date;
 
         private ViewHolder1(View itemView) {
             super(itemView);
@@ -259,7 +259,7 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
             TXT_User_Message = (SFNFTextView) itemView.findViewById(R.id.TXT_User_Message);
             IMG_User_Attach = (ImageView) itemView.findViewById(R.id.IMG_User_Attach);
             IMG_User_MAP = (ImageView) itemView.findViewById(R.id.IMG_User_MAP);
-            LLMain = (LinearLayout) itemView.findViewById(R.id.LLMain);
+            RL_Date = (RelativeLayout) itemView.findViewById(R.id.RL_Date);
             img_attached_download= (ImageView) itemView.findViewById(R.id.img_attached_download);
         }
     }
@@ -268,11 +268,11 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
         private SFNFTextView TXT_date, TXT_Sender_message, TXT_sender_name_time;
         private ImageView IMG_Sender_Attach, IMG_SenderUser, IMG_Sender_Map,img_attached_download;
         private RelativeLayout RL_Attached, RL_Map;
-        private LinearLayout LLMain;
+        private RelativeLayout RL_Date;
 
         private ViewHolder2(View itemView) {
             super(itemView);
-            LLMain = (LinearLayout) itemView.findViewById(R.id.LLMain);
+            RL_Date = (RelativeLayout) itemView.findViewById(R.id.RL_Date);
             TXT_date = (SFNFTextView) itemView.findViewById(R.id.TXT_date);
             TXT_Sender_message = (SFNFTextView) itemView.findViewById(R.id.TXT_Sender_message);
             TXT_sender_name_time = (SFNFTextView) itemView.findViewById(R.id.TXT_sender_name_time);

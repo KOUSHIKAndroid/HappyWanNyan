@@ -112,10 +112,12 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         RL_ButtomSheet = (RelativeLayout) findViewById(R.id.RL_ButtomSheet);
         appLoader = new AppLoader(this);
 
-        // mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        mLinearLayoutManager = new LinearLayoutManager(this);
+        //mLinearLayoutManager = new LinearLayoutManager(this);
+        mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mLinearLayoutManager.setStackFromEnd(true);
+
         LL_UserInfo.setLayoutManager(mLinearLayoutManager);
+
         PAGE_Titile = (SFNFTextView) findViewById(R.id.PAGE_Titile);
         TXT_UserName = (SFNFTextView) findViewById(R.id.TXT_UserName);
         TXT_JoinTime = (SFNFTextView) findViewById(R.id.TXT_JoinTime);
@@ -275,10 +277,8 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 //                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
 
                     messageAdapterSuraj = new MessageAdapterSuraj(MessageDetailsPageActivity.this, messageDetailsPojoArrayList);
-//                    LL_UserInfo.setAdapter(messageAdapter);
+//                  LL_UserInfo.setAdapter(messageAdapter);
                     LL_UserInfo.setAdapter(messageAdapterSuraj);
-                    //LL_UserInfo.getLayoutManager().smoothScrollToPosition(LL_UserInfo,null, messageDetailsPojoArrayList.size()-1);
-//                    LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
                     appLoader.Dismiss();
@@ -765,9 +765,6 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     messageAdapterSuraj = new MessageAdapterSuraj(MessageDetailsPageActivity.this, messageDetailsPojoArrayList);
                     messageAdapterSuraj.notifyDataSetChanged();
                     //LL_UserInfo.setAdapter(messageAdapterSuraj);
-
-                    //LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
-                    //LL_UserInfo.getLayoutManager().smoothScrollToPosition(LL_UserInfo,null, messageDetailsPojoArrayList.size()-1);
 
                     Log.d("receiver", "Got message:2 " + message);
                 } else {

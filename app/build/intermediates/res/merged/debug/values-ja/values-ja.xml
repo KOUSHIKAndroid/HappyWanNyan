@@ -267,6 +267,7 @@
     <string name="nevershowstng">今後このメッセージを表示しない</string>
     <string name="newPassword">新しいパスワード</string>
     <string name="next">次へ</string>
+    <string name="no">いいえ</string>
     <string name="no_ImagesFound">画像が見つかりません</string>
     <string name="no_ServicesFound">サービスが見つかりません</string>
     <string name="no_data_found">何もデータが見つかりませんでした</string>
@@ -283,6 +284,10 @@
     <string name="past_booking">予約履歴</string>
     <string name="past_sitters">シッター履歴</string>
     <string name="payment_details">支払い詳細</string>
+    <string name="pdf_show_local_progress_content">ファイル</string>
+    <string name="pdf_show_local_progress_title">ダウンロード...</string>
+    <string name="pdf_show_online_dialog_question">ファイルを開きますか</string>
+    <string name="pdf_show_online_dialog_title">開いた</string>
     <string name="pending_booking">保留中の予約</string>
     <string name="pet_age">ペットの年齢</string>
     <string name="pet_homestay">ペットホームステイ</string>
@@ -304,6 +309,7 @@
     <string name="please_enter_correct_holder_number">正しいカード所有者名を入力してください</string>
     <string name="please_enter_cvv">CVVを入力してください</string>
     <string name="please_enter_message">ここにメッセージを入力してください</string>
+    <string name="please_give_your_ratting">あなたのラッティングをお願いします</string>
     <string name="pleasenteraddress">アドレスを入力してください</string>
     <string name="pleaseselect">選んでください</string>
     <string name="price">価格</string>
@@ -367,6 +373,7 @@
     <string name="with_pet">ペットの場合</string>
     <string name="would_you_mind_to_turn_gps_on">GPSをオンにしてもよろしいですか？</string>
     <string name="writeyourmessage">あなたのメッセージを書く</string>
+    <string name="yes">はい</string>
     <string name="you_can_not_select_before_current_date">現在の日付より前に選択することはできません</string>
     <string name="youcanloginwith">あなたはでログインすることができます</string>
     <string name="youcansignupwith">一緒にサインアップすることができます</string>

@@ -242,5 +242,12 @@
     <string name="is_your_pet_friendly_with_other_pets">あなたのペットは他のペットと親しみやすいですか？</string>
     <string name="nav_contact_us">お問い合わせ</string>
     <string name="want_to_change_language">言語を変更したいですか？</string>
+    <string name="no">いいえ</string>
+    <string name="please_give_your_ratting">あなたのラッティングをお願いします</string>
+    <string name="yes">はい</string>
+    <string name="pdf_show_local_progress_content">ファイル</string>
+    <string name="pdf_show_local_progress_title">ダウンロード...</string>
+    <string name="pdf_show_online_dialog_question">ファイルを開きますか</string>
+    <string name="pdf_show_online_dialog_title">開いた</string>
 
 </resources>
