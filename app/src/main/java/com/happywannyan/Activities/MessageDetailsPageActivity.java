@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,8 +21,12 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -128,6 +133,18 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         EDX_Text = (EditText) findViewById(R.id.EDX_Text);
         LL_USER_TIME = (LinearLayout) findViewById(R.id.LL_USER_TIME);
         LL_user_profile= (LinearLayout) findViewById(R.id.LL_user_profile);
+
+        EDX_Text.setFocusableInTouchMode(true);
+        EDX_Text.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                EDX_Text.requestFocus();
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+                return false;
+            }
+        });
+
 
 
         Localreceiver = mMessageReceiver;
@@ -785,4 +802,5 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         }
         return true;
     }
+
 }
