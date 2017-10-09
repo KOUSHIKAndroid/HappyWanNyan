@@ -129,6 +129,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         LL_USER_TIME = (LinearLayout) findViewById(R.id.LL_USER_TIME);
         LL_user_profile= (LinearLayout) findViewById(R.id.LL_user_profile);
 
+
         Localreceiver = mMessageReceiver;
         IntentFilter filter = new IntentFilter();
         filter.addAction("CONNECT_MESSAGE_LIVE");
@@ -264,6 +265,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     messageAdapterSuraj=new MessageAdapterSuraj(MessageDetailsPageActivity.this,messageDetailsPojoArrayList);
 //                    LL_UserInfo.setAdapter(messageAdapter);
                     LL_UserInfo.setAdapter(messageAdapterSuraj);
+                    //LL_UserInfo.getLayoutManager().smoothScrollToPosition(LL_UserInfo,null, messageDetailsPojoArrayList.size()-1);
                     LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
@@ -751,7 +753,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 //                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
                     messageAdapterSuraj=new MessageAdapterSuraj(MessageDetailsPageActivity.this,messageDetailsPojoArrayList);
                     LL_UserInfo.setAdapter(messageAdapterSuraj);
+                    LL_UserInfo.scrollToPosition(messageDetailsPojoArrayList.size());
 
+                    //LL_UserInfo.getLayoutManager().smoothScrollToPosition(LL_UserInfo,null, messageDetailsPojoArrayList.size()-1);
 
                     Log.d("receiver", "Got message:2 " + message);
                 } else {
