@@ -349,6 +349,8 @@
                 android:layout_toLeftOf="@+id/IMG_Send"
                 android:layout_toRightOf="@+id/IMAGE_Attach"
                 android:background="@android:color/transparent"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
                 android:hint="@string/writeyourmessage" />
 
 
