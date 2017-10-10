@@ -66,6 +66,9 @@ public class BaseActivity extends LocationBaseActivity
     NavigationView navigationView;
     SharedPreferences sharedPreferences;
 
+    ImageView UserImage;
+    SFNFTextView txt_login_label ,UserName;
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -110,9 +113,9 @@ public class BaseActivity extends LocationBaseActivity
          */
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
-        final ImageView UserImage = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.imageView);
-        final SFNFTextView UserName = (SFNFTextView) navigationView.getHeaderView(0).findViewById(R.id.TXT_UserName);
-        final SFNFTextView txt_login_label = (SFNFTextView) navigationView.getHeaderView(0).findViewById(R.id.TXT_loginlabel);
+        UserImage = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.imageView);
+        UserName = (SFNFTextView) navigationView.getHeaderView(0).findViewById(R.id.TXT_UserName);
+        txt_login_label = (SFNFTextView) navigationView.getHeaderView(0).findViewById(R.id.TXT_loginlabel);
 
 
         navigationView.findViewById(R.id.LL_message).setOnClickListener(new View.OnClickListener() {
@@ -260,38 +263,10 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
 
-        new AppConstant(BaseActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
-            @Override
-            public void available(boolean available, JSONObject data) {
-                try {
-                    Loger.MSG("@@ DADAD", "" + data);
-                    Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("image_path")).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
-                    UserName.setText(data.getJSONObject("info_array").getString("firstname"));
-                    txt_login_label.setVisibility(View.GONE);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
 
-            @Override
-            public void notAvailable(String Error) {
-                navigationView.findViewById(R.id.LL_message).setVisibility(View.GONE);
-                navigationView.findViewById(R.id.LL_Booking).setVisibility(View.GONE);
-                navigationView.findViewById(R.id.LL_yourPets).setVisibility(View.GONE);
-                navigationView.findViewById(R.id.LL_Payment).setVisibility(View.GONE);
-                navigationView.findViewById(R.id.LL_Profile).setVisibility(View.GONE);
-                navigationView.findViewById(R.id.LL_Logout).setVisibility(View.GONE);
-                navigationView.findViewById(R.id.LL_Favorite).setVisibility(View.GONE);
-                navigationView.findViewById(R.id.LL_Past_Favorite).setVisibility(View.GONE);
-
-                navigationView.getHeaderView(0).findViewById(R.id.RL_HEADER).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(new Intent(BaseActivity.this, LoginActivity.class));
-                    }
-                });
-            }
-        });
+        ////////////////Set Login User Details///////////Or Host///////////////////
+        setProfileLoginUserDetails();
+        ///////////////////END///////////////////////////////////////////////////
 
         navigationView.findViewById(R.id.LL_contact_us).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -629,4 +604,38 @@ public class BaseActivity extends LocationBaseActivity
         super.onConfigurationChanged(newConfig);
     }
 
+    public void setProfileLoginUserDetails(){
+        new AppConstant(BaseActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
+            @Override
+            public void available(boolean available, JSONObject data) {
+                try {
+                    Loger.MSG("@@ DADAD", "" + data);
+                    Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("image_path")).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
+                    UserName.setText(data.getJSONObject("info_array").getString("firstname"));
+                    txt_login_label.setVisibility(View.GONE);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void notAvailable(String Error) {
+                navigationView.findViewById(R.id.LL_message).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Booking).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_yourPets).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Payment).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Profile).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Logout).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Favorite).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Past_Favorite).setVisibility(View.GONE);
+
+                navigationView.getHeaderView(0).findViewById(R.id.RL_HEADER).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(BaseActivity.this, LoginActivity.class));
+                    }
+                });
+            }
+        });
+    }
 }

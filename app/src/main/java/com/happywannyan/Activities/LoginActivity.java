@@ -122,6 +122,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 try {
                                     JSONObject jsonObject=new JSONObject(Result);
                                     if (jsonObject.getString("email_verified_status").equals("1")){
+
                                         new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData, Result);
 
                                         AppConstant.UserEmail=jsonObject.getJSONObject("info_array").getString("emailid");

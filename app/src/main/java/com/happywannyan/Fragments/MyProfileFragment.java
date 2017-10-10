@@ -35,6 +35,7 @@ import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CircleTransform;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -485,6 +486,17 @@ public class MyProfileFragment extends Fragment {
                     appLoader.Dismiss();
                     JSONObject Ob = new JSONObject(Result);
                     UserInfo = Ob.getJSONObject("users_information");
+
+
+                    /////////////////////update Share Preference (Login credential)////////////////////////////////////
+                    new AppConstant(getActivity()).upDateShareDATA(AppDataHolder.UserData,UserInfo.getString("photo"),UserInfo.getString("firstname"),UserInfo.getString("lastname"));
+                    ///////////////////////////////////////////////////////END//////////////////////////////////
+
+
+                    /////////////////Set Login User Details in Left Drawable///////////////////
+                    ((BaseActivity)getActivity()).setProfileLoginUserDetails();
+                    ////////////////////////////////////END///////////////////////////////
+
                     Glide.with(getActivity()).load(UserInfo.getString("photo")).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
                     ((EditText) Mview.findViewById(R.id.EDX_FNAME)).setText(UserInfo.getString("firstname"));
                     ((EditText) Mview.findViewById(R.id.EDX_Lname)).setText(UserInfo.getString("lastname"));

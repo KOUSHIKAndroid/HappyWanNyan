@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,8 +29,8 @@ public abstract class AppDataHolder {
         editor.commit();
     }
 
-    public void clearRememberMe(){
-        SharedPreferences.Editor editor=AppUserData.edit();
+    public void clearRememberMe() {
+        SharedPreferences.Editor editor = AppUserData.edit();
         editor.remove("rememberID");
         editor.remove("rememberPassword");
         editor.apply();
@@ -62,6 +63,36 @@ public abstract class AppDataHolder {
                 editor.apply();
                 editor.commit();
                 break;
+        }
+    }
+
+    public void upDateShareDATA(int DataName, String img,String firstName,String lastName) {
+        switch (DataName) {
+            case UserData:
+                String userCredentialString = AppUserData.getString("UserData", "NO");
+                if (userCredentialString.trim().length() > 0) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(userCredentialString);
+
+                        JSONObject info_array=jsonObject.getJSONObject("info_array");
+                        info_array.put("image_path",img);
+                        info_array.put("firstname",firstName);
+                        info_array.put("lastname",lastName);
+
+                        jsonObject.put("info_array",info_array);
+
+
+                        SharedPreferences.Editor editor = AppUserData.edit();
+                        editor.putString("UserData", jsonObject.toString());
+                        editor.apply();
+                        editor.commit();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    break;
+                }
         }
     }
 
