@@ -23,6 +23,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.TimeZone;
@@ -165,10 +167,14 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                             TimeZone tz = TimeZone.getDefault();
                             Params.put("user_timezone", tz.getID());
 
-                            Params.put("firstname", EDX_first_name.getText().toString());
-                            Params.put("lastname", EDX_last_name.getText().toString());
 
-                            Params.put("add_message", EDX_msg.getText().toString());
+                            try {
+                                Params.put("firstname",EDX_first_name.getText().toString().trim());
+                                Params.put("lastname", EDX_last_name.getText().toString().trim());
+                                Params.put("add_message", URLEncoder.encode("" + EDX_msg.getText().toString().trim(), "UTF-8"));
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            }
 
                             Params.put("start_date", ((SFNFTextView) findViewById(R.id.startdate)).getText().toString());
                             Params.put("end_date", ((SFNFTextView) findViewById(R.id.AlterDate)).getText().toString());
