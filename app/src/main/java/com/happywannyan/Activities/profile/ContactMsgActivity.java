@@ -13,6 +13,7 @@ import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppCalender;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
@@ -30,7 +31,7 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
 
     JSONArray JSONARRAY = new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{\"name\":\"12:00 AM\",\"value\":\"12:00 AM\"},{\"name\":\"12:30 AM\",\"value\":\"12:30 AM\"},{\"name\":\"01:00 AM\",\"value\":\"01:00 AM\"},{\"name\":\"01:30 AM\",\"value\":\"01:30 AM\"},{\"name\":\"02:00 AM\",\"value\":\"02:00 AM\"},{\"name\":\"02:30 AM\",\"value\":\"02:30 AM\"},{\"name\":\"03:00 AM\",\"value\":\"03:00 AM\"},{\"name\":\"03:30 AM\",\"value\":\"03:30 AM\"},{\"name\":\"04:00 AM\",\"value\":\"04:00 AM\"},{\"name\":\"04:30 AM\",\"value\":\"04:30 AM\"},{\"name\":\"05:00 AM\",\"value\":\"05:00 AM\"},{\"name\":\"05:30 AM\",\"value\":\"05:30 AM\"},{\"name\":\"06:00 AM\",\"value\":\"06:00 AM\"},{\"name\":\"06:30 AM\",\"value\":\"06:30 AM\"},{\"name\":\"07:00 AM\",\"value\":\"07:00 AM\"},{\"name\":\"07:30 AM\",\"value\":\"07:30 AM\"},{\"name\":\"08:00 AM\",\"value\":\"08:00 AM\"},{\"name\":\"08:30 AM\",\"value\":\"08:30 AM\"},{\"name\":\"09:00 AM\",\"value\":\"09:00 AM\"},{\"name\":\"09:30 AM\",\"value\":\"09:30 AM\"},{\"name\":\"10:00 AM\",\"value\":\"10:00 AM\"},{\"name\":\"10:30 AM\",\"value\":\"10:30 AM\"},{\"name\":\"11:00 AM\",\"value\":\"11:00 AM\"},{\"name\":\"11:30 AM\",\"value\":\"11:30 AM\"},{\"name\":\"12:00 PM\",\"value\":\"12:00 PM\"},{\"name\":\"12:30 PM\",\"value\":\"12:30 PM\"},{\"name\":\"01:00 PM\",\"value\":\"01:00 PM\"},{\"name\":\"01:30 PM\",\"value\":\"01:30 PM\"},{\"name\":\"02:00 PM\",\"value\":\"02:00 PM\"},{\"name\":\"02:30 PM\",\"value\":\"02:30 PM\"},{\"name\":\"03:00 PM\",\"value\":\"03:00 PM\"},{\"name\":\"03:30 PM\",\"value\":\"03:30 PM\"},{\"name\":\"04:00 PM\",\"value\":\"04:00 PM\"},{\"name\":\"04:30 PM\",\"value\":\"04:30 PM\"},{\"name\":\"05:00 PM\",\"value\":\"05:00 PM\"},{\"name\":\"05:30 PM\",\"value\":\"05:30 PM\"},{\"name\":\"06:00 PM\",\"value\":\"06:00 PM\"},{\"name\":\"06:30 PM\",\"value\":\"06:30 PM\"},{\"name\":\"07:00 PM\",\"value\":\"07:00 PM\"},{\"name\":\"07:30 PM\",\"value\":\"07:30 PM\"},{\"name\":\"08:00 PM\",\"value\":\"08:00 PM\"},{\"name\":\"08:30 PM\",\"value\":\"08:30 PM\"},{\"name\":\"09:00 PM\",\"value\":\"09:00 PM\"},{\"name\":\"09:30 PM\",\"value\":\"09:30 PM\"},{\"name\":\"10:00 PM\",\"value\":\"10:00 PM\"},{\"name\":\"10:30 PM\",\"value\":\"10:30 PM\"},{\"name\":\"11:00 PM\",\"value\":\"11:00 PM\"},{\"name\":\"11:30 PM\",\"value\":\"11:30 PM\"}]");
-    EditText EDX_msg;
+    EditText EDX_msg, EDX_first_name, EDX_last_name;
     String ID = "";
     AppLoader appLoader;
     CheckBox CHEK;
@@ -42,10 +43,42 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_msg);
+
         EDX_msg = (EditText) findViewById(R.id.EDX_msg);
+        EDX_first_name = (EditText) findViewById(R.id.EDX_first_name);
+        EDX_last_name = (EditText) findViewById(R.id.EDX_last_name);
+
         CHEK = (CheckBox) findViewById(R.id.CHEK);
         ID = getIntent().getStringExtra("DATA");
         appLoader = new AppLoader(this);
+
+        new AppConstant(ContactMsgActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
+            @Override
+            public void available(boolean available, JSONObject data) {
+                try {
+                    Loger.MSG("@@ DADAD", "" + data);
+
+                    EDX_first_name.setText(data.getJSONObject("info_array").getString("firstname").trim());
+                    EDX_last_name.setText(data.getJSONObject("info_array").getString("lastname").trim());
+
+                    if (data.getJSONObject("info_array").getString("firstname").trim().equals("") && data.getJSONObject("info_array").getString("lastname").trim().equals("")) {
+                        findViewById(R.id.Crad0).setVisibility(View.VISIBLE);
+                    } else {
+                        findViewById(R.id.Crad0).setVisibility(View.GONE);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void notAvailable(String Error) {
+
+            }
+        });
+
+
     }
 
     @Override
@@ -103,72 +136,89 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
             case R.id.Card_next:
 
-                if (EDX_msg.getText().toString().trim().length() > 0) {
-                    appLoader.Show();
-                    String CHCH = "0";
-                    if (CHEK.isChecked())
-                        CHCH = "1";
+                if (EDX_first_name.getText().toString().equals("")) {
 
+                    EDX_first_name.setHintTextColor(Color.RED);
+                    EDX_first_name.setHint(getString(R.string.please_enter_first_name));
+                    EDX_first_name.requestFocus();
 
-                    HashMap<String, String> Params = new HashMap<>();
-                    Params.put("user_id", AppConstant.UserId);
-                    Params.put("lang_id", AppConstant.Language);
-                    Params.put("sitter_id", ID);
-                    TimeZone tz = TimeZone.getDefault();
-                    Params.put("user_timezone", tz.getID());
-                    Params.put("add_message", EDX_msg.getText().toString());
-                    Params.put("start_date", ((SFNFTextView) findViewById(R.id.startdate)).getText().toString());
-                    Params.put("end_date", ((SFNFTextView) findViewById(R.id.AlterDate)).getText().toString());
-                    Params.put("drop_off", ((SFNFTextView) findViewById(R.id.TXT_DropTime)).getText().toString());
-                    Params.put("pick_up", ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).getText().toString());
-                    Params.put("dont_date", CHCH);
-                    new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
-                        @Override
-                        public void OnSuccess(String Result) {
-                            appLoader.Dismiss();
-                            try {
-                                new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
-                                    @Override
-                                    public void OnOk(boolean res) {
-
-                                    }
-                                });
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-
-                        }
-
-                        @Override
-                        public void OnError(String Error, String Response) {
-                            appLoader.Dismiss();
-                            try {
-                                new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
-                                    @Override
-                                    public void OnOk(boolean res) {
-
-                                    }
-                                });
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-
-                        @Override
-                        public void OnError(String Error) {
-                            appLoader.Dismiss();
-                        }
-                    });
                 } else {
-                    EDX_msg.setHintTextColor(Color.RED);
-                    EDX_msg.setHint(getString(R.string.please_enter_message));
-                    EDX_msg.requestFocus();
+                    if (EDX_last_name.getText().toString().equals("")) {
+
+                        EDX_last_name.setHintTextColor(Color.RED);
+                        EDX_last_name.setHint(getString(R.string.please_enter_last_name));
+                        EDX_last_name.requestFocus();
+
+                    } else {
+
+                        if (EDX_msg.getText().toString().trim().length() > 0) {
+                            appLoader.Show();
+                            String CHCH = "0";
+                            if (CHEK.isChecked())
+                                CHCH = "1";
+
+
+                            HashMap<String, String> Params = new HashMap<>();
+                            Params.put("user_id", AppConstant.UserId);
+                            Params.put("lang_id", AppConstant.Language);
+                            Params.put("sitter_id", ID);
+                            TimeZone tz = TimeZone.getDefault();
+                            Params.put("user_timezone", tz.getID());
+
+                            Params.put("firstname", EDX_first_name.getText().toString());
+                            Params.put("lastname", EDX_last_name.getText().toString());
+
+                            Params.put("add_message", EDX_msg.getText().toString());
+
+                            Params.put("start_date", ((SFNFTextView) findViewById(R.id.startdate)).getText().toString());
+                            Params.put("end_date", ((SFNFTextView) findViewById(R.id.AlterDate)).getText().toString());
+                            Params.put("drop_off", ((SFNFTextView) findViewById(R.id.TXT_DropTime)).getText().toString());
+                            Params.put("pick_up", ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).getText().toString());
+                            Params.put("dont_date", CHCH);
+                            new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
+                                @Override
+                                public void OnSuccess(String Result) {
+                                    appLoader.Dismiss();
+                                    try {
+                                        new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
+                                            @Override
+                                            public void OnOk(boolean res) {
+
+                                            }
+                                        });
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                @Override
+                                public void OnError(String Error, String Response) {
+                                    appLoader.Dismiss();
+                                    try {
+                                        new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                            @Override
+                                            public void OnOk(boolean res) {
+
+                                            }
+                                        });
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                @Override
+                                public void OnError(String Error) {
+                                    appLoader.Dismiss();
+                                }
+                            });
+                        } else {
+                            EDX_msg.setHintTextColor(Color.RED);
+                            EDX_msg.setHint(getString(R.string.please_enter_message));
+                            EDX_msg.requestFocus();
+                        }
+                    }
                 }
-
-
                 break;
-
-
         }
     }
 

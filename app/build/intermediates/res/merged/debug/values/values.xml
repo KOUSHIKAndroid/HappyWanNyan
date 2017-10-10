@@ -1239,7 +1239,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">5c80fb02-fa4c-4782-8e7e-2c8c79bc8a4e</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">0f1cbc79-b6c0-4c31-ae3b-a3d03a7acdde</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1438,6 +1438,8 @@
     <string name="please_enter_correct_cvv">Please enter correct CVV</string>
     <string name="please_enter_correct_holder_number">Please enter correct card holder name</string>
     <string name="please_enter_cvv">Please enter CVV</string>
+    <string name="please_enter_first_name">Please enter first name</string>
+    <string name="please_enter_last_name">Please enter last name</string>
     <string name="please_enter_message">Please type message here</string>
     <string name="please_give_your_ratting">Please give your ratting</string>
     <string name="pleasenteraddress">Please Enter Address</string>

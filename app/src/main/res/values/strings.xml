@@ -270,6 +270,8 @@
     <string name="pdf_show_local_progress_title">Downloading...</string>
     <string name="pdf_show_local_progress_content">File</string>
     <string name="please_give_your_ratting">Please give your ratting</string>
+    <string name="please_enter_first_name">Please enter first name</string>
+    <string name="please_enter_last_name">Please enter last name</string>
 
 
 </resources>
