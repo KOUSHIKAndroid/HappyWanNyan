@@ -24,6 +24,8 @@ import com.happywannyan.Utils.helper.ObservableHorizontalScrollView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 /**
@@ -65,7 +67,11 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
 
             final JSONObject object = MessageList.get(position).getJsonObject();
             holder.tv_name.setText(object.getString("usersname").trim());
-            holder.tv_details.setText(object.getString("message_info").trim());
+            try {
+                holder.tv_details.setText(URLEncoder.encode(object.getString("message_info").trim(), "utf-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
             holder.left_red_view.setText(object.getString("time_difference").trim());
             Glide.with(context).load(object.getString("usersimage").trim()).placeholder(R.drawable.ic_msg_placeholder).into(holder.img_view);
 

@@ -53,7 +53,8 @@ public class DownloaderAndShowFile {
         final File tempFile = new File( context.getExternalFilesDir( Environment.DIRECTORY_DOWNLOADS ), filename );
         if ( tempFile.exists() ) {
             // If we have downloaded the file before, just go ahead and show it.
-            openPDF( context,tempFile);
+            //openPDF( context,tempFile);
+            Toast.makeText(context,context.getResources().getString(R.string.already_downloaded),Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -79,7 +80,8 @@ public class DownloaderAndShowFile {
                 if ( c.moveToFirst() ) {
                     int status = c.getInt( c.getColumnIndex( DownloadManager.COLUMN_STATUS ) );
                     if ( status == DownloadManager.STATUS_SUCCESSFUL ) {
-                        openPDF( context,tempFile);
+                        //openPDF( context,tempFile);
+                        Toast.makeText(context,context.getResources().getString(R.string.download_complete),Toast.LENGTH_SHORT).show();
                     }
                 }
                 c.close();

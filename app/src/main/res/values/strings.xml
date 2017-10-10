@@ -273,6 +273,9 @@
     <string name="please_enter_first_name">Please enter first name</string>
     <string name="please_enter_last_name">Please enter last name</string>
     <string name="not_a_booking">Not a booking</string>
+    <string name="already_downloaded">Already Downloaded</string>
+    <string name="download_complete">Download Complete</string>
+
 
 
 </resources>

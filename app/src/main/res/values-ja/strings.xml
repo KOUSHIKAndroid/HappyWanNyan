@@ -249,5 +249,10 @@
     <string name="pdf_show_local_progress_title">ダウンロード...</string>
     <string name="pdf_show_online_dialog_question">ファイルを開きますか</string>
     <string name="pdf_show_online_dialog_title">開いた</string>
+    <string name="please_enter_first_name">名前を入力してください</string>
+    <string name="please_enter_last_name">姓を入力してください</string>
+    <string name="not_a_booking">予約ではありません</string>
+    <string name="download_complete">ダウンロード完了</string>
+    <string name="already_downloaded">既にダウンロード済み</string>
 
 </resources>
