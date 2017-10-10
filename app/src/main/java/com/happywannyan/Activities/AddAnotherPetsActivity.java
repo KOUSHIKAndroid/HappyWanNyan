@@ -285,7 +285,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
             ((SFNFTextView) findViewById(R.id.TXT_gender)).setText("");
             ((SFNFTextView) findViewById(R.id.TXT_gender)).setTag(null);
 
-            ((SFNFTextView) findViewById(R.id.TXT_Month)).setText("");
+            //((SFNFTextView) findViewById(R.id.TXT_Month)).setText("");
             //((SFNFTextView) findViewById(R.id.TXT_Month)).setTag(null);
 
             ((SFNFTextView) findViewById(R.id.TXT_Year)).setText("");
@@ -302,12 +302,17 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
             for (int j = 0; j < other_info.length(); j++) {
                 JSONObject jsonObject = other_info.getJSONObject(j);
 
-                if(jsonObject.getString("input_field_type").equals("3") && jsonObject.getString("input_name").equals(getResources().getString(R.string.months))){
+                if(jsonObject.getString("input_field_type").equals("3") && jsonObject.getString("input_name").equalsIgnoreCase(getResources().getString(R.string.months))){
+
                     JSONObject jsonObjectMonth=new JSONObject();
                     jsonObjectMonth.put("option_id",jsonObject.getString("option_id"));
                     jsonObjectMonth.put("option_value","0");
                     jsonObjectMonth.put("option_name","");
                     jsonObjectMonth.put("option_status",0);
+
+                    Loger.MSG("jsonObjectMonth",""+jsonObjectMonth);
+
+                    ((SFNFTextView) findViewById(R.id.TXT_Month)).setText("");
                     ((SFNFTextView) findViewById(R.id.TXT_Month)).setTag(jsonObjectMonth);
                 }
 
