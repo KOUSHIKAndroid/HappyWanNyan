@@ -26,6 +26,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
@@ -89,7 +90,8 @@ public class MessageFragment extends Fragment {
     boolean ISPLAY = false;
     RelativeLayout editlayout;
 
-    HorizontalScrollView scrollView_horizontal;
+    //HorizontalScrollView scrollView_horizontal;
+    LinearLayout LL_Top_MSGChooseSection;
     ArrayList<SetGetAPIPostData> Params;
     AdapterMessage adapter_message;
 
@@ -149,7 +151,8 @@ public class MessageFragment extends Fragment {
         tv_unread_message = (SFNFTextView) view.findViewById(R.id.tv_unread_message);
 //        tv_unResponded_message= (SFNFTextView) view.findViewById(R.id.tv_unResponded_message);
         tv_reservation_message = (SFNFTextView) view.findViewById(R.id.tv_reservation_message);
-        scrollView_horizontal = (HorizontalScrollView) view.findViewById(R.id.scrollView_horizontal);
+//        scrollView_horizontal = (HorizontalScrollView) view.findViewById(R.id.scrollView_horizontal);
+        LL_Top_MSGChooseSection= (LinearLayout) view.findViewById(R.id.LL_Top_MSGChooseSection);
         view_between_all_unread_message = view.findViewById(R.id.view_between_all_unread_message);
         view_unResponded_reservation_message = view.findViewById(R.id.view_unResponded_reservation_message);
         edt_search = (EditText) view.findViewById(R.id.edt_search);
@@ -227,7 +230,7 @@ public class MessageFragment extends Fragment {
                 tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 //                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
-                scrollView_horizontal.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+                //scrollView_horizontal.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
                 view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
                 view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
                 AllMessage = new ArrayList<>();
@@ -262,7 +265,7 @@ public class MessageFragment extends Fragment {
                 tv_unread_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
 //                tv_unResponded_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_dark_gray));
                 tv_reservation_message.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
-                scrollView_horizontal.fullScroll(HorizontalScrollView.FOCUS_LEFT);
+                //scrollView_horizontal.fullScroll(HorizontalScrollView.FOCUS_LEFT);
                 view_between_all_unread_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
                 view_unResponded_reservation_message.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
@@ -281,7 +284,8 @@ public class MessageFragment extends Fragment {
                     ISPLAY = false;
                     searchbar.setImageResource(R.drawable.ic_search_list);
                     editlayout.setVisibility(View.GONE);
-                    scrollView_horizontal.setVisibility(View.VISIBLE);
+                    LL_Top_MSGChooseSection.setVisibility(View.VISIBLE);
+                    //scrollView_horizontal.setVisibility(View.VISIBLE);
                     if (isMemberExecute) {
 
                         Params.clear();
@@ -319,7 +323,8 @@ public class MessageFragment extends Fragment {
                 } else {
                     ISPLAY = true;
                     searchbar.setImageResource(R.drawable.ic_close_list);
-                    scrollView_horizontal.setVisibility(View.GONE);
+                    LL_Top_MSGChooseSection.setVisibility(View.GONE);
+                    //scrollView_horizontal.setVisibility(View.GONE);
                     editlayout.setVisibility(View.VISIBLE);
                     edt_search.addTextChangedListener(myTextWatcher);
                 }
