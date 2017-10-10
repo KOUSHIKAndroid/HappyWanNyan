@@ -201,6 +201,8 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         TimeZone tz = TimeZone.getDefault();
         String URL = "messagedetails?user_id=" + AppConstant.UserId + "&message_id=" + getIntent().getStringExtra("message_id") + "&lang_id=" + AppConstant.Language
                 + "&user_timezone=" + tz.getID();
+//                + "&user_timezone=Asia/Tokyo";
+
 
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override

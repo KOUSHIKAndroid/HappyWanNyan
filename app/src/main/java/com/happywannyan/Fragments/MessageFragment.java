@@ -50,6 +50,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TimeZone;
 
 
 /**
@@ -187,8 +188,9 @@ public class MessageFragment extends Fragment {
         setGetAPIPostData.setValues("10");
         Params.add(setGetAPIPostData);
         setGetAPIPostData = new SetGetAPIPostData();
+        TimeZone tz = TimeZone.getDefault();
         setGetAPIPostData.setPARAMS("user_timezone");
-        setGetAPIPostData.setValues("");
+        setGetAPIPostData.setValues(tz.getID());
         Params.add(setGetAPIPostData);
 
 
@@ -301,8 +303,9 @@ public class MessageFragment extends Fragment {
                         setGetAPIPostData.setValues("10");
                         Params.add(setGetAPIPostData);
                         setGetAPIPostData = new SetGetAPIPostData();
+                        TimeZone tz = TimeZone.getDefault();
                         setGetAPIPostData.setPARAMS("user_timezone");
-                        setGetAPIPostData.setValues("");
+                        setGetAPIPostData.setValues(tz.getID());
                         Params.add(setGetAPIPostData);
 
                         edt_search.removeTextChangedListener(myTextWatcher);
@@ -678,8 +681,9 @@ public class MessageFragment extends Fragment {
                         setGetAPIPostData.setValues("10");
                         Params.add(setGetAPIPostData);
                         setGetAPIPostData = new SetGetAPIPostData();
+                        TimeZone tz = TimeZone.getDefault();
                         setGetAPIPostData.setPARAMS("user_timezone");
-                        setGetAPIPostData.setValues("");
+                        setGetAPIPostData.setValues(tz.getID());
                         Params.add(setGetAPIPostData);
 
                         setGetAPIPostData = new SetGetAPIPostData();
