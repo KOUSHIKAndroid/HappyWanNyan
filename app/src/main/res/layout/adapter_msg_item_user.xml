@@ -67,7 +67,7 @@ dschjbsdhb"
                 android:id="@+id/IMG_User_Attach"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ic_sender_background"
+                android:background="#A2DDFF"
                 android:scaleType="fitXY" />
             <ImageView
                 android:id="@+id/img_attached_download"
@@ -92,7 +92,7 @@ dschjbsdhb"
                 android:id="@+id/IMG_User_MAP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ic_sender_background"
+                android:background="#A2DDFF"
                 android:scaleType="fitXY" />
             <!--<ImageView-->
                 <!--android:id="@+id/img_map_download"-->
