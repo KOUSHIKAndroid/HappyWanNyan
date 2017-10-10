@@ -336,7 +336,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                         ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
                         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
                         setGetAPIPostData.setPARAMS("message");
-                        setGetAPIPostData.setValues(URLEncoder.encode("" + EDX_Text.getText(), "UTF-8"));
+                        setGetAPIPostData.setValues(URLEncoder.encode("" + EDX_Text.getText().toString().trim(), "UTF-8"));
                         Params.add(setGetAPIPostData);
                         TimeZone tz = TimeZone.getDefault();
                         setGetAPIPostData = new SetGetAPIPostData();
@@ -516,7 +516,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                 ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
                 SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
                 setGetAPIPostData.setPARAMS("message");
-                setGetAPIPostData.setValues(URLEncoder.encode("" + EDX_Text.getText(), "UTF-8"));
+                setGetAPIPostData.setValues(URLEncoder.encode("" + EDX_Text.getText().toString().trim(), "UTF-8"));
                 Params.add(setGetAPIPostData);
                 TimeZone tz = TimeZone.getDefault();
                 setGetAPIPostData = new SetGetAPIPostData();
