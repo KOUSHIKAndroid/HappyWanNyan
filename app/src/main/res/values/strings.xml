@@ -272,6 +272,7 @@
     <string name="please_give_your_ratting">Please give your ratting</string>
     <string name="please_enter_first_name">Please enter first name</string>
     <string name="please_enter_last_name">Please enter last name</string>
+    <string name="not_a_booking">Not a booking</string>
 
 
 </resources>
