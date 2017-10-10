@@ -504,6 +504,9 @@ public class BaseActivity extends LocationBaseActivity
     }
 
     public void Menu_Drawer() {
+        /////////////////Set Login User Details in Left Drawable///////////////////
+        setProfileLoginUserDetails();
+        ////////////////////////////////////END///////////////////////////////
 
         SharedPreferences pref = getSharedPreferences("unread_msg_count", MODE_PRIVATE); // 0 - for private mode
         SharedPreferences.Editor editor = pref.edit();

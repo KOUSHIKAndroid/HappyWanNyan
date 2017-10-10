@@ -493,10 +493,6 @@ public class MyProfileFragment extends Fragment {
                     ///////////////////////////////////////////////////////END//////////////////////////////////
 
 
-                    /////////////////Set Login User Details in Left Drawable///////////////////
-                    ((BaseActivity)getActivity()).setProfileLoginUserDetails();
-                    ////////////////////////////////////END///////////////////////////////
-
                     Glide.with(getActivity()).load(UserInfo.getString("photo")).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
                     ((EditText) Mview.findViewById(R.id.EDX_FNAME)).setText(UserInfo.getString("firstname"));
                     ((EditText) Mview.findViewById(R.id.EDX_Lname)).setText(UserInfo.getString("lastname"));

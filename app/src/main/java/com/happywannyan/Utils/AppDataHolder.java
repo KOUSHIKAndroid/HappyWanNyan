@@ -75,7 +75,9 @@ public abstract class AppDataHolder {
                         JSONObject jsonObject = new JSONObject(userCredentialString);
 
                         JSONObject info_array=jsonObject.getJSONObject("info_array");
-                        info_array.put("image_path",img);
+                        if (!img.equals("")) {
+                            info_array.put("image_path", img);
+                        }
                         info_array.put("firstname",firstName);
                         info_array.put("lastname",lastName);
 

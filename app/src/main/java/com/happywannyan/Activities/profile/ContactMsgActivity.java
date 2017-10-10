@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
@@ -185,6 +186,12 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                                 @Override
                                 public void OnSuccess(String Result) {
                                     appLoader.Dismiss();
+
+                                    /////////////////////update Share Preference (Login credential)////////////////////////////////////
+                                    new AppConstant(ContactMsgActivity.this).upDateShareDATA(AppDataHolder.UserData,"",EDX_first_name.getText().toString().trim(),EDX_last_name.getText().toString().trim());
+                                    ///////////////////////////////////////////////////////END//////////////////////////////////
+
+
                                     try {
                                         new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
                                             @Override
