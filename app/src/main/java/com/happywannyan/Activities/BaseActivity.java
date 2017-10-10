@@ -611,7 +611,7 @@ public class BaseActivity extends LocationBaseActivity
                 try {
                     Loger.MSG("@@ DADAD", "" + data);
                     Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("image_path")).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
-                    UserName.setText(data.getJSONObject("info_array").getString("firstname"));
+                    UserName.setText(data.getJSONObject("info_array").getString("firstname")+" "+data.getJSONObject("info_array").getString("lastname"));
                     txt_login_label.setVisibility(View.GONE);
                 } catch (JSONException e) {
                     e.printStackTrace();
