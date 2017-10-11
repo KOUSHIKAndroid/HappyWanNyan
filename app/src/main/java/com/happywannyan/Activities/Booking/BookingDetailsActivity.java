@@ -71,7 +71,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             block_user_status = jsonObjectPrevious.getJSONObject("booking_info").getInt("block_user_status");
 
-            Glide.with(this).load(jsonObjectPrevious.getJSONObject("users_profile").getString("booked_user_image")).into(profimage);
+            if (!jsonObjectPrevious.getJSONObject("users_profile").getString("booked_user_image").trim().equals("")) {
+                Glide.with(this).load(jsonObjectPrevious.getJSONObject("users_profile").getString("booked_user_image").trim()).into(profimage);
+            }
             ((SFNFTextView) findViewById(R.id.tv_name)).setText(jsonObjectPrevious.getJSONObject("users_profile").getString("who_booked"));
             ((SFNFTextView) findViewById(R.id.tv_type)).setText(jsonObjectPrevious.getJSONObject("users_profile").getString("booked_user_name"));
 
@@ -265,7 +267,10 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     JSONObject PetObj = PetInfo.getJSONObject(i);
 
                     ImageView petimage = (ImageView) PetView.findViewById(R.id.img_view_pets);
-                    Glide.with(this).load(PetObj.getString("pet_image")).into(petimage);
+
+                    if (!PetObj.getString("pet_image").trim().equals("")) {
+                        Glide.with(this).load(PetObj.getString("pet_image").trim()).into(petimage);
+                    }
 
                     if (PetObj.getJSONArray("pet_info").length() > 0) {
 
@@ -710,9 +715,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
         try {
             rtb_review.setRating(Float.parseFloat(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("type_overall")));
             tv_review_desc.setText(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("review_desc"));
-            if (!jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment").equals("")) {
+            if (!jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment").trim().equals("")) {
                 img_review.setVisibility(View.VISIBLE);
-                Glide.with(this).load(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment")).into(img_review);
+                Glide.with(this).load(jsonObjectPrevious.getJSONObject("booking_info").getJSONObject("review_details").getString("rvw_msg_attachment").trim()).into(img_review);
             } else {
                 img_review.setVisibility(View.GONE);
             }

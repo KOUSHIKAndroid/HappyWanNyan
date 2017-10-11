@@ -233,10 +233,13 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                         findViewById(R.id.LL_Buttom).setVisibility(View.VISIBLE);
                     }
 
-                    Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(IMGE_FROM);
+                    if (!OBJ.getString("message_to_image").trim().equals("")) {
+                        Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(IMGE_FROM);
+                    }
 
-                    Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(USER_IMAGE);
-
+                    if (!OBJ.getString("message_to_image").trim().equals("")) {
+                        Glide.with(MessageDetailsPageActivity.this).load(OBJ.getString("message_to_image")).placeholder(R.drawable.ic_msg_placeholder).into(USER_IMAGE);
+                    }
                     jsonObjectForProfile = OBJ.getJSONArray("all_message_details").getJSONObject(0).getJSONArray("info").getJSONObject(0);
 
 //                    jsonArrayMessage = OBJ.getJSONArray("all_message_details");

@@ -189,9 +189,9 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                     viewHolder2.RL_Map.setVisibility(View.GONE);
                 }
 
-
-                Glide.with(mContext).load(MsgItem.getUsersimage()).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(viewHolder2.IMG_SenderUser);
-
+                if (!MsgItem.getUsersimage().trim().equals("")) {
+                    Glide.with(mContext).load(MsgItem.getUsersimage().trim()).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(viewHolder2.IMG_SenderUser);
+                }
 
                 if (!MsgItem.getMessage_info().equals("")) {
                     viewHolder2.RL_Attached.setVisibility(View.GONE);

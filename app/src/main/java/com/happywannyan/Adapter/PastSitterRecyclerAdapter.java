@@ -73,7 +73,9 @@ public class PastSitterRecyclerAdapter extends RecyclerView.Adapter<PastSitterRe
         final JSONObject object = favouriteArrayList.get(position).getDataObject();
 
         try {
-            Glide.with(context).load(object.getString("image")).into(holder.img_view);
+            if (!object.getString("image").trim().equals("")) {
+                Glide.with(context).load(object.getString("image").trim()).into(holder.img_view);
+            }
             holder.tv_title.setText(object.getString("full_name"));
             holder.tv_address.setText(object.getString("location"));
 //            holder.tv_reserve_or_not_reserve.setText(favouriteArrayList.get(position).getReservation());

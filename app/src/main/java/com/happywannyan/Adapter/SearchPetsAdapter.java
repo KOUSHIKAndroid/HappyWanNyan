@@ -53,7 +53,9 @@ public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.My
 
 
         try {
-            Glide.with(context).load(setGetSearchData.getSearcItem().getString("photo_url")).into(holder.img_view);
+            if (!setGetSearchData.getSearcItem().getString("photo_url").trim().equals("")) {
+                Glide.with(context).load(setGetSearchData.getSearcItem().getString("photo_url").trim()).into(holder.img_view);
+            }
             holder.tv_title.setText(setGetSearchData.getSearcItem().getString("nickname"));
 
 

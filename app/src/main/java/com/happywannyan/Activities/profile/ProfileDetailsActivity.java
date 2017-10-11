@@ -124,7 +124,11 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     lat = BasicInfo.getString("lat");
                     lng = BasicInfo.getString("long");
                     block_user_status = BasicInfo.getInt("block_user_status");
-                    Glide.with(ProfileDetailsActivity.this).load(BasicInfo.getString("sittersimage")).into((ImageView) findViewById(R.id.IMG_Profile));
+
+                    if (!BasicInfo.getString("sittersimage").trim().equals("")) {
+                        Glide.with(ProfileDetailsActivity.this).load(BasicInfo.getString("sittersimage").trim()).into((ImageView) findViewById(R.id.IMG_Profile));
+                    }
+
                     Rating.setRating(Float.parseFloat(BasicInfo.getString("ave_rating")));
                     Rating.setIsIndicator(true);
                     LayerDrawable stars = (LayerDrawable) Rating.getProgressDrawable();

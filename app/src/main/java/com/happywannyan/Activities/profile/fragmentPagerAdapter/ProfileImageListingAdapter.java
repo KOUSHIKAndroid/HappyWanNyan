@@ -48,7 +48,9 @@ public class ProfileImageListingAdapter extends RecyclerView.Adapter<ProfileImag
         holder.imageView.setLayoutParams(params);
 
         try {
-            Glide.with(mContext).load(array.getString(position)).into(holder.imageView);
+            if (!array.getString(position).trim().equals("")) {
+                Glide.with(mContext).load(array.getString(position).trim()).into(holder.imageView);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

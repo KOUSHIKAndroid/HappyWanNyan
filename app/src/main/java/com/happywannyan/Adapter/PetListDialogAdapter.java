@@ -54,10 +54,12 @@ public class PetListDialogAdapter extends RecyclerView.Adapter<PetListDialogAdap
             //holder.tv_walking.setTextColor(Color.parseColor("#F78181"));
             holder.tv_walking.setTextColor(ResourcesCompat.getColor(context.getResources(), R.color.colorBtnRed, null));
 
-            Glide.with(context)
-                    .load(serviceCatListArrayList.get(position).getSelected_image())
+            if (!serviceCatListArrayList.get(position).getSelected_image().trim().equals("")) {
+                Glide.with(context)
+                        .load(serviceCatListArrayList.get(position).getSelected_image().trim())
 //                    .placeholder(R.drawable.ic_photo_black_24dp)
-                    .into(holder.img_walking);
+                        .into(holder.img_walking);
+            }
 
         } else {
             holder.img_tick.setVisibility(View.INVISIBLE);
@@ -65,10 +67,12 @@ public class PetListDialogAdapter extends RecyclerView.Adapter<PetListDialogAdap
 //            holder.tv_walking.setTextColor(Color.parseColor("#000000"));
             holder.tv_walking.setTextColor(ResourcesCompat.getColor(context.getResources(), R.color.colorBlack, null));
 
-            Glide.with(context)
-                    .load(serviceCatListArrayList.get(position).getDefault_image())
+            if (!serviceCatListArrayList.get(position).getDefault_image().trim().equals("")) {
+                Glide.with(context)
+                        .load(serviceCatListArrayList.get(position).getDefault_image().trim())
 //                    .placeholder(R.drawable.ic_photo_black_24dp)
-                    .into(holder.img_walking);
+                        .into(holder.img_walking);
+            }
         }
 
         holder.Rel_main.setOnClickListener(new View.OnClickListener() {

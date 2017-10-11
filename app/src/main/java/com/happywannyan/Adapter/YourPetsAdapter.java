@@ -107,7 +107,9 @@ public class YourPetsAdapter extends RecyclerView.Adapter<YourPetsAdapter.MyView
         }
 
 
-        Glide.with(context).load(data.getPet_image()).into(holder.img_view);
+        if(!data.getPet_image().trim().equals("")) {
+            Glide.with(context).load(data.getPet_image().trim()).into(holder.img_view);
+        }
 
         holder.img_edit.setOnClickListener(new View.OnClickListener() {
             @Override

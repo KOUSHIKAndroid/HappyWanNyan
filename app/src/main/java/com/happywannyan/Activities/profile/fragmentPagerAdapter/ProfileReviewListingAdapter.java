@@ -49,7 +49,9 @@ public class ProfileReviewListingAdapter extends RecyclerView.Adapter<ProfileRev
             holder.UserName.setText(jsonObject.getString("review_user_name"));
             holder.Description.setText(jsonObject.getString("review_message"));
 //            holder.Date.setText(jsonObject.getString(""));
-            Glide.with(mContext).load(jsonObject.getString("review_user_img")).into(holder.IMG_Profile);
+            if(!jsonObject.getString("review_user_img").trim().equals("")) {
+                Glide.with(mContext).load(jsonObject.getString("review_user_img").trim()).into(holder.IMG_Profile);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

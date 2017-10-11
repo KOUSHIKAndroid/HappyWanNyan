@@ -88,7 +88,11 @@ public class ProfileFragAboutFragment extends Fragment {
                     size = size + 40;
                     View item = LayoutInflater.from(getActivity()).inflate(R.layout.profile_about_items_petsize, null);
                     ImageView imageView = (ImageView) item.findViewById(R.id.IMAGE);
-                    Glide.with(getActivity()).load(TemArr.getJSONObject(j).getString("pet_image")).override(size, size).into(imageView);
+
+                    if(!TemArr.getJSONObject(j).getString("pet_image").trim().equals("")) {
+                        Glide.with(getActivity()).load(TemArr.getJSONObject(j).getString("pet_image").trim()).override(size, size).into(imageView);
+                    }
+
                     SFNFTextView textView = (SFNFTextView) item.findViewById(R.id.TXT_SIZE);
                     textView.setText(TemArr.getJSONObject(j).getString("pet_req_name"));
                     Horizental.addView(item);

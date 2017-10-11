@@ -85,7 +85,9 @@ public class EditAnotherPetsActivity extends AppCompatActivity implements View.O
             PetTypeId = MainObject.getString("pet_type_id");
             EditId = MainObject.getString("edit_id");
             ((SFNFTextView) findViewById(R.id.Txt_type)).setText(MainObject.getString("pet_name"));
-            Glide.with(getApplicationContext()).load(MainObject.getString("pet_image")).into(img_pet);
+            if (!MainObject.getString("pet_image").trim().equals("")) {
+                Glide.with(getApplicationContext()).load(MainObject.getString("pet_image").trim()).into(img_pet);
+            }
             SETDatField(MainObject);
         } catch (JSONException e) {
             e.printStackTrace();

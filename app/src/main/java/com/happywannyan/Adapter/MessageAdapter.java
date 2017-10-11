@@ -38,7 +38,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public MessageAdapter(Context mContext, JSONArray array) {
         this.mContext = mContext;
         Array = array;
-        Loger.MSG("Array_length",""+Array.length());
+        Loger.MSG("Array_length", "" + Array.length());
     }
 
     @Override
@@ -56,7 +56,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             for (int i = 0; i < DATAARY.length(); i++) {
 
                 final JSONObject MsgItem = DATAARY.getJSONObject(i);
-                Loger.MSG("MsgItem",""+MsgItem);
+                Loger.MSG("MsgItem", "" + MsgItem);
 
                 if (MsgItem.has("sender_id") && MsgItem.getString("sender_id").equals(AppConstant.UserId)) {
 
@@ -89,7 +89,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                                 String uri = "";
                                 try {
-                                    uri = String.format(Locale.ENGLISH, "geo:%f,%f", Float.parseFloat(MsgItem.getString("msg_lat")),Float.parseFloat(MsgItem.getString("msg_long")));
+                                    uri = String.format(Locale.ENGLISH, "geo:%f,%f", Float.parseFloat(MsgItem.getString("msg_lat")), Float.parseFloat(MsgItem.getString("msg_long")));
                                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                                     intent.setPackage("com.google.android.apps.maps");
                                     mContext.startActivity(intent);
@@ -106,13 +106,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                     if (MsgItem.getString("message_info").equals("")) {
 
-                        if(MsgItem.getString("message_attachment").endsWith(".doc")||MsgItem.getString("message_attachment").endsWith(".pdf")){
+                        if (MsgItem.getString("message_attachment").endsWith(".doc") || MsgItem.getString("message_attachment").endsWith(".pdf")) {
                             TXT_User_Message.setVisibility(View.VISIBLE);
                             TXT_User_Message.setText(MsgItem.getString("message_attachment"));
-                        }
-                        else {
+                        } else {
                             TXT_User_Message.setVisibility(View.GONE);
-                            Glide.with(mContext).load(MsgItem.getString("message_attachment")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_Attach);
+                            if (!MsgItem.getString("message_attachment").trim().equals("")) {
+                                Glide.with(mContext).load(MsgItem.getString("message_attachment").trim()).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_User_Attach);
+                            }
                         }
 
                     } else {
@@ -165,7 +166,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                         String[] words = MsgItem.getString("postedon").split("\\s");
                         TXT_sender_name_time.setText(words[words.length - 2] + " " + words[words.length - 1]);
                         SenderTime = MsgItem.getString("postedon");
-                        Glide.with(mContext).load(MsgItem.getString("usersimage")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_SenderUser);
+                        if (!MsgItem.getString("usersimage").trim().equals("")) {
+                            Glide.with(mContext).load(MsgItem.getString("usersimage").trim()).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_SenderUser);
+                        }
                     } else {
                         RL_Sender.setVisibility(View.GONE);
                         TXT_sender_name_time.setVisibility(View.GONE);
@@ -174,13 +177,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                     if (MsgItem.getString("message_info").equals("")) {
 
-                        if(MsgItem.getString("message_attachment").endsWith(".doc")||MsgItem.getString("message_attachment").endsWith(".pdf")){
+                        if (MsgItem.getString("message_attachment").endsWith(".doc") || MsgItem.getString("message_attachment").endsWith(".pdf")) {
                             TXT_Sender_message.setVisibility(View.VISIBLE);
                             TXT_Sender_message.setText(MsgItem.getString("message_attachment"));
-                        }
-                        else {
+                        } else {
                             TXT_Sender_message.setVisibility(View.GONE);
-                            Glide.with(mContext).load(MsgItem.getString("message_attachment")).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_Sender_Attach);
+                            if (!MsgItem.getString("message_attachment").trim().equals("")) {
+                                Glide.with(mContext).load(MsgItem.getString("message_attachment").trim()).override(600, 600).diskCacheStrategy(DiskCacheStrategy.ALL).into(IMG_Sender_Attach);
+                            }
                         }
 
                     } else {
@@ -191,7 +195,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
                     holder.LLMain.addView(SenderItem);
                 }
-                Loger.MSG("info_size",""+DATAARY.length());
+                Loger.MSG("info_size", "" + DATAARY.length());
             }
         } catch (JSONException e) {
             e.printStackTrace();

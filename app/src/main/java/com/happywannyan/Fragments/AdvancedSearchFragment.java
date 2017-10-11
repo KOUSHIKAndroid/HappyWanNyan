@@ -248,7 +248,10 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
             IMG_SERVICE = (ImageView) view.findViewById(R.id.IMG_SERVICE);
             TXT_SERVICENAME = (SFNFTextView) view.findViewById(R.id.TXT_SERVICENAME);
 
-            Glide.with(getActivity()).load(mParam1.getString("selected_image")).into(IMG_SERVICE);
+            if (mParam1.getString("selected_image").trim().equals("")) {
+                Glide.with(getActivity()).load(mParam1.getString("selected_image")).into(IMG_SERVICE);
+            }
+
             (TXT_SERVICENAME).setText(mParam1.getString("name"));
             TXT_SERVICENAME.setTag(mParam1.getString("id"));
 
@@ -487,7 +490,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                     Loger.MSG("@@ START", StartDate);
                     Loger.MSG("@@ END", EndDate);
-                    TXT_DateRange.setText(StartDate + " "+getActivity().getResources().getString(R.string.to)+" " + EndDate);
+                    TXT_DateRange.setText(StartDate + " " + getActivity().getResources().getString(R.string.to) + " " + EndDate);
 
                     break;
                 case PLACE_AUTOCOMPLETE_REQUEST_CODE:
@@ -599,7 +602,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                         Dialog.dismiss();
                         break;
                     } else if (!arraySetGetPetService.get(i).isTick_value() && i == arraySetGetPetService.size() - 1) {
-                        Toast.makeText(getActivity(),getActivity().getResources().getString(R.string.select_at_least_one_pet_service), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.select_at_least_one_pet_service), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -620,7 +623,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
     public void refreshPage(String id, String name, String ImgSelectedName) {
 
-
         try {
             if (mParam1.getJSONArray("allPetDetails").length() > 0) {
                 TXT_petType.setText(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
@@ -637,7 +639,9 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         LL_Pet_Age.removeAllViews();
         LL_OtherOption.removeAllViews();
 
-        Glide.with(getActivity()).load(ImgSelectedName).into(IMG_SERVICE);
+        if (!ImgSelectedName.trim().equals("")) {
+            Glide.with(getActivity()).load(ImgSelectedName.trim()).into(IMG_SERVICE);
+        }
         (TXT_SERVICENAME).setText(name);
         (TXT_SERVICENAME).setTag(id);
 

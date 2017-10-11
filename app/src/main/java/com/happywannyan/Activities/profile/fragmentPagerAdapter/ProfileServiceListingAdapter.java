@@ -57,7 +57,11 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
             holder.Description.setText(object.getString("description"));
             holder.PricePer.setText(object.getString("service_price") + "/" + object.getString("unit_name"));
 
-            Glide.with(mContext).load(object.getString("service_image")).into(holder.IMG_SERVICES);
+            if(!object.getString("service_image").trim().equals("")) {
+                Glide.with(mContext).load(object.getString("service_image").trim()).into(holder.IMG_SERVICES);
+            }
+
+
             if (object.getString("description").toString().length() > 70) {
                 holder.TXT_ViewMore.setVisibility(View.VISIBLE);
                 holder.Description.setMaxLines(2);

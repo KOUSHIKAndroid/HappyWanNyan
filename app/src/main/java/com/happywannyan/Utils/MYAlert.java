@@ -264,7 +264,9 @@ public class MYAlert {
                 onlyMessage.OnOk(true);
             }
         });
-        Glide.with(mContext).load(ImagePath).into(Image);
+        if (ImagePath.trim().equals("")) {
+            Glide.with(mContext).load(ImagePath.trim()).into(Image);
+        }
 
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);
         alertbuilder.setView(LayView);

@@ -54,7 +54,9 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             final JSONObject object = AllBooking.get(position);
 
-            Glide.with(context).load(object.getJSONObject("users_profile").getString("booked_user_image")).into(holder.img_view);
+            if(!object.getJSONObject("users_profile").getString("booked_user_image").trim().equals("")) {
+                Glide.with(context).load(object.getJSONObject("users_profile").getString("booked_user_image").trim()).into(holder.img_view);
+            }
 
             holder.tv_title.setText(object.getJSONObject("users_profile").getString("who_booked"));
             holder.tv_name.setText(object.getJSONObject("users_profile").getString("booked_user_name"));
