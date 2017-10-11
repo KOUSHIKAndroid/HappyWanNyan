@@ -195,13 +195,6 @@ public class BookingFragment extends Fragment {
             }
         });
 
-        if (AppConstant.go_to.trim().equals("")) {
-            tv_up_coming.performClick();
-        } else {
-            tv_pending.performClick();
-            AppConstant.go_to = "";
-        }
-
 //        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeColors(
 //                Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
 
@@ -219,7 +212,12 @@ public class BookingFragment extends Fragment {
             }
         });
 
-        loadBookingList("0");
+        if (AppConstant.go_to.trim().equals("")) {
+            tv_up_coming.performClick();
+        } else {
+            tv_pending.performClick();
+            AppConstant.go_to = "";
+        }
     }
 
 
