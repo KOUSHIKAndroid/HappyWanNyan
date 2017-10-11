@@ -613,7 +613,11 @@ public class BaseActivity extends LocationBaseActivity
             public void available(boolean available, JSONObject data) {
                 try {
                     Loger.MSG("@@ DADAD", "" + data);
-                    Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("image_path")).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
+
+                    if(!data.getJSONObject("info_array").getString("image_path").trim().equals("")){
+                        Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("image_path")).placeholder(R.drawable.ic_user).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
+                    }
+
                     UserName.setText(data.getJSONObject("info_array").getString("firstname")+" "+data.getJSONObject("info_array").getString("lastname"));
                     txt_login_label.setVisibility(View.GONE);
                 } catch (JSONException e) {
