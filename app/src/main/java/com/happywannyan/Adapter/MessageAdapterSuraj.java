@@ -1,16 +1,20 @@
 package com.happywannyan.Adapter;
 
+import android.app.DownloadManager;
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
@@ -38,9 +42,18 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
     ArrayList<SetGetMessageDetailsPojo> messageDetailsPojoArrayList;
     Context mContext;
 
+
+    private DownloadManager downloadManager;
+    private long refid;
+    private Uri Download_Uri;
+    ArrayList<Long> list = new ArrayList<>();
+
+
     public MessageAdapterSuraj(Context mContext, ArrayList<SetGetMessageDetailsPojo> messageDetailsPojoArrayList) {
         this.mContext = mContext;
         this.messageDetailsPojoArrayList = messageDetailsPojoArrayList;
+        downloadManager = (DownloadManager)mContext.getSystemService(Context.DOWNLOAD_SERVICE);
+        mContext.registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
     }
 
     @Override
@@ -116,9 +129,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
-                                        ShowContentInBrowser(MsgItemTouch);
+                                        DownloadAndShow();
+//                                        ShowContentInBrowser(MsgItemTouch);
                                     }
+                                }
+                                else {
+                                    DownloadAndShow();
                                 }
                             }
                         });
@@ -130,9 +146,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
-                                        ShowContentInBrowser(MsgItemTouch);
+                                        DownloadAndShow();
+//                                        ShowContentInBrowser(MsgItemTouch);
                                     }
+                                }
+                                else {
+                                    DownloadAndShow();
                                 }
                             }
                         });
@@ -144,9 +163,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
-                                        ShowContentInBrowser(MsgItemTouch);
+                                        DownloadAndShow();
+//                                        ShowContentInBrowser(MsgItemTouch);
                                     }
+                                }
+                                else {
+                                    DownloadAndShow();
                                 }
                             }
                         });
@@ -211,9 +233,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
-                                        ShowContentInBrowser(MsgItemTouch);
+                                        DownloadAndShow();
+//                                        ShowContentInBrowser(MsgItemTouch);
                                     }
+                                }
+                                else {
+                                    DownloadAndShow();
                                 }
                             }
                         });
@@ -225,9 +250,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
-                                        ShowContentInBrowser(MsgItemTouch);
+                                        DownloadAndShow();
+//                                        ShowContentInBrowser(MsgItemTouch);
                                     }
+                                }
+                                else {
+                                    DownloadAndShow();
                                 }
                             }
                         });
@@ -239,9 +267,12 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
-                                        ShowContentInBrowser(MsgItemTouch);
+                                        DownloadAndShow();
+//                                        ShowContentInBrowser(MsgItemTouch);
                                     }
+                                }
+                                else {
+                                    DownloadAndShow();
                                 }
                             }
                         });
@@ -311,11 +342,62 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public void DownloadAndShow(){
         DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+
+//        final String filename = MsgItemTouch.substring( MsgItemTouch.lastIndexOf( "/" ) + 1 );
+//
+//        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(MsgItemTouch));
+//        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
+//        request.setAllowedOverRoaming(false);
+//        request.setTitle("Attached File Downloading " + filename);
+//        request.setDescription("Downloading " + filename);
+//        request.setVisibleInDownloadsUi(true);
+//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "/HappyWanNyan/"  + "/" + filename);
+//
+//
+//        refid = downloadManager.enqueue(request);
+//
+//        Loger.MSG("OUT", "" + refid);
+//
+//        list.add(refid);
     }
 
-    public void ShowContentInBrowser(String url) {
-        Loger.MSG("url-->",""+url);
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        mContext.startActivity(browserIntent);
+
+    BroadcastReceiver onComplete = new BroadcastReceiver() {
+
+        public void onReceive(Context ctxt, Intent intent) {
+
+            long referenceId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+
+            Loger.MSG("IN", "" + referenceId);
+
+            list.remove(referenceId);
+
+            if (list.isEmpty())
+            {
+
+                Loger.MSG("INSIDE", "" + referenceId);
+                NotificationCompat.Builder mBuilder =
+                        new NotificationCompat.Builder(mContext)
+                                .setSmallIcon(R.mipmap.ic_launcher1)
+                                .setContentTitle("HappyWanNyan")
+                                .setContentText("All Download completed");
+
+                NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.notify(455, mBuilder.build());
+            }
+        }
+    };
+
+
+    public void unRegister(){
+        mContext.unregisterReceiver(onComplete);
     }
+
+
+
+//    public void ShowContentInBrowser(String url) {
+//        Loger.MSG("url-->",""+url);
+//        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+//        mContext.startActivity(browserIntent);
+//    }
 }

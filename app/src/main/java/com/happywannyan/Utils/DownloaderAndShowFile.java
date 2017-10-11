@@ -50,11 +50,12 @@ public class DownloaderAndShowFile {
 //
 //        Loger.MSG("mimeType",""+mimeType);
         // The place where the downloaded PDF file will be put
-        final File tempFile = new File( context.getExternalFilesDir( Environment.DIRECTORY_DOWNLOADS ), filename );
+
+        final File tempFile = new File( context.getExternalFilesDir( Environment.DIRECTORY_DOWNLOADS ),"/HappyWanNyan/"  + "/"+ filename );
         if ( tempFile.exists() ) {
             // If we have downloaded the file before, just go ahead and show it.
-            //openPDF( context,tempFile);
-            Toast.makeText(context,context.getResources().getString(R.string.already_downloaded),Toast.LENGTH_SHORT).show();
+            openPDF( context,tempFile);
+            //Toast.makeText(context,context.getResources().getString(R.string.already_downloaded),Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -62,8 +63,14 @@ public class DownloaderAndShowFile {
         final ProgressDialog progress = ProgressDialog.show( context, context.getString( R.string.pdf_show_local_progress_title ), context.getString( R.string.pdf_show_local_progress_content ), true );
 
         // Create the download request
-        DownloadManager.Request r = new DownloadManager.Request( Uri.parse( pdfUrl ) );
-        r.setDestinationInExternalFilesDir( context, Environment.DIRECTORY_DOWNLOADS, filename );
+        DownloadManager.Request request = new DownloadManager.Request( Uri.parse( pdfUrl ) );
+        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
+        request.setAllowedOverRoaming(false);
+        request.setTitle("Attached File Downloading " + filename);
+        request.setDescription("Downloading " + filename);
+        request.setVisibleInDownloadsUi(true);
+        request.setDestinationInExternalFilesDir( context, Environment.DIRECTORY_DOWNLOADS,"/HappyWanNyan/"  + "/" + filename );
+//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "/HappyWanNyan/"  + "/" + filename);
         final DownloadManager dm = (DownloadManager) context.getSystemService( Context.DOWNLOAD_SERVICE );
         BroadcastReceiver onComplete = new BroadcastReceiver() {
             @Override
@@ -80,8 +87,8 @@ public class DownloaderAndShowFile {
                 if ( c.moveToFirst() ) {
                     int status = c.getInt( c.getColumnIndex( DownloadManager.COLUMN_STATUS ) );
                     if ( status == DownloadManager.STATUS_SUCCESSFUL ) {
-                        //openPDF( context,tempFile);
-                        Toast.makeText(context,context.getResources().getString(R.string.download_complete),Toast.LENGTH_SHORT).show();
+                        openPDF( context,tempFile);
+                        //Toast.makeText(context,context.getResources().getString(R.string.download_complete),Toast.LENGTH_SHORT).show();
                     }
                 }
                 c.close();
@@ -90,7 +97,7 @@ public class DownloaderAndShowFile {
         context.registerReceiver( onComplete, new IntentFilter( DownloadManager.ACTION_DOWNLOAD_COMPLETE ) );
 
         // Enqueue the request
-        dm.enqueue( r );
+        dm.enqueue( request );
     }
 
     /**

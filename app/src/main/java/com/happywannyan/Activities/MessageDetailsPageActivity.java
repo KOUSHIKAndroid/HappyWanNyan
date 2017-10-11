@@ -809,4 +809,13 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
         return true;
     }
 
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(messageAdapterSuraj!=null){
+            messageAdapterSuraj.unRegister();
+        }
+    }
 }
