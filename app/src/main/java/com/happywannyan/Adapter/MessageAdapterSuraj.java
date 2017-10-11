@@ -116,7 +116,8 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        ShowContentInBrowser(MsgItemTouch);
                                     }
                                 }
                             }
@@ -129,7 +130,8 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        ShowContentInBrowser(MsgItemTouch);
                                     }
                                 }
                             }
@@ -142,7 +144,8 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        ShowContentInBrowser(MsgItemTouch);
                                     }
                                 }
                             }
@@ -208,7 +211,8 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        ShowContentInBrowser(MsgItemTouch);
                                     }
                                 }
                             }
@@ -221,7 +225,8 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        ShowContentInBrowser(MsgItemTouch);
                                     }
                                 }
                             }
@@ -234,7 +239,8 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                                 MsgItemTouch=MsgItem.getMessage_attachment();
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (((MessageDetailsPageActivity) mContext).checkPermissions()) {
-                                        DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        //DownloaderAndShowFile.downloadAndOpenPDF(mContext, MsgItemTouch);
+                                        ShowContentInBrowser(MsgItemTouch);
                                     }
                                 }
                             }
@@ -305,5 +311,11 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public void DownloadAndShow(){
         DownloaderAndShowFile.downloadAndOpenPDF(mContext,MsgItemTouch);
+    }
+
+    public void ShowContentInBrowser(String url) {
+        Loger.MSG("url-->",""+url);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        mContext.startActivity(browserIntent);
     }
 }
