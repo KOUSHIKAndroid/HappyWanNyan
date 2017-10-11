@@ -135,10 +135,8 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
 
-    @Override
-    public int getItemViewType(int position) {
+
         if (position == AllBooking.size() - 1 &&
                 AllBooking.size() % 10 == 0
                 && AllBooking.size() >= 10
@@ -147,8 +145,12 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
             ///////////lazy load here called///////
             from = from + 10;
             //message_fragment.loadList(""+from);
-            bookingFragment.loadList(String.valueOf(from));
+            bookingFragment.loadBookingList(String.valueOf(from));
         }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
         return super.getItemViewType(position);
     }
 

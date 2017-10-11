@@ -137,7 +137,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "upcoming_booking_list";
-                loadList("0");
+                loadBookingList("0");
             }
         });
         tv_current.setOnClickListener(new View.OnClickListener() {
@@ -155,7 +155,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "current_booking_list";
-                loadList("0");
+                loadBookingList("0");
 
             }
         });
@@ -173,7 +173,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "pending_booking_list";
-                loadList("0");
+                loadBookingList("0");
             }
         });
         tv_past.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +191,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "past_booking_list";
-                loadList("0");
+                loadBookingList("0");
             }
         });
 
@@ -214,13 +214,12 @@ public class BookingFragment extends Fragment {
         ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                AllBooking.clear();
-                loadList("0");
+                loadBookingList("0");
                 ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setRefreshing(false);
             }
         });
 
-        loadList("0");
+        loadBookingList("0");
     }
 
 
@@ -231,7 +230,7 @@ public class BookingFragment extends Fragment {
             //AllBooking.clear();
             Loger.MSG("requestCode",""+222);
             AllBooking.clear();
-            loadList("0");
+            loadBookingList("0");
         }
     }
 
@@ -243,7 +242,7 @@ public class BookingFragment extends Fragment {
 //        loadList("0");
 //    }
 
-    public void loadList(final String start_from) {
+    public void loadBookingList(final String start_from) {
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
