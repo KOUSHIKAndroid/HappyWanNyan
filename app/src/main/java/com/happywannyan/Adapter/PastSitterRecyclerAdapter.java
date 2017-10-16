@@ -21,6 +21,7 @@ import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
+import com.happywannyan.Fragments.PastSitterFragment;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
@@ -44,10 +45,14 @@ public class PastSitterRecyclerAdapter extends RecyclerView.Adapter<PastSitterRe
     ArrayList<SetGetFavourite> favouriteArrayList;
     private final ViewBinderHelper binderHelper = new ViewBinderHelper();
     AppLoader appLoader;
+    public int nextData = 1;
+    int from = 0;
+    PastSitterFragment pastSitterFragment;
 
-    public PastSitterRecyclerAdapter(Context context, ArrayList<SetGetFavourite> favouriteArrayList) {
+    public PastSitterRecyclerAdapter(Context context, ArrayList<SetGetFavourite> favouriteArrayList, PastSitterFragment pastSitterFragment) {
         this.context = context;
         this.favouriteArrayList = favouriteArrayList;
+        this.pastSitterFragment=pastSitterFragment;
         displayMetrics = context.getResources().getDisplayMetrics();
         appLoader = new AppLoader(context);
     }
@@ -150,6 +155,16 @@ public class PastSitterRecyclerAdapter extends RecyclerView.Adapter<PastSitterRe
                             });
                 }
             });
+
+            if (position == favouriteArrayList.size() - 1 &&
+                    favouriteArrayList.size() % 10 == 0
+                    && favouriteArrayList.size() >= 10
+                    && nextData == 1) {
+
+                ///////////lazy load here called///////
+                from = from + 10;
+                pastSitterFragment.CallAPIFROMDATA(from);
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();

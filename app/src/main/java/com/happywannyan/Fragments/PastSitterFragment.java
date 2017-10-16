@@ -18,6 +18,7 @@ import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
+import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +38,7 @@ public class PastSitterFragment extends Fragment {
     AppLoader appLoader;
 
     RecyclerView rcv_favourite;
+    SFNFTextView tv_empty;
     ArrayList<SetGetFavourite> favouriteArrayList;
     PastSitterRecyclerAdapter pastSitterRecyclerAdapter;
 
@@ -80,6 +82,7 @@ public class PastSitterFragment extends Fragment {
                 ((BaseActivity) getActivity()).Menu_Drawer();
             }
         });
+        tv_empty= (SFNFTextView) view.findViewById(R.id.tv_empty);
         ((SFNFTextView) view.findViewById(R.id.PAGE_Titile)).setText(getActivity().getResources().getString(R.string.past_sitters));
         rcv_favourite = (RecyclerView) view.findViewById(R.id.recycler_view);
         rcv_favourite.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -92,7 +95,7 @@ public class PastSitterFragment extends Fragment {
 
     }
 
-    private void CallAPIFROMDATA(final int startpoint) {
+    public void CallAPIFROMDATA(final int startpoint) {
         ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("user_id");
@@ -114,6 +117,7 @@ public class PastSitterFragment extends Fragment {
             public void OnSuccess(String Result) {
                 try {
                     JSONObject Object = new JSONObject(Result);
+                    int next_data = Object.getInt("next_data");
                     JSONArray Array = Object.getJSONArray("info_array");
 
                     for (int i = 0; i < Array.length(); i++) {
@@ -125,10 +129,16 @@ public class PastSitterFragment extends Fragment {
 
                     }
                     if (startpoint == 0) {
-                        pastSitterRecyclerAdapter = new PastSitterRecyclerAdapter(getActivity(), favouriteArrayList);
+
+                        rcv_favourite.setVisibility(View.VISIBLE);
+                        tv_empty.setVisibility(View.GONE);
+
+                        pastSitterRecyclerAdapter = new PastSitterRecyclerAdapter(getActivity(), favouriteArrayList,PastSitterFragment.this);
                         rcv_favourite.setAdapter(pastSitterRecyclerAdapter);
-                    } else
+                    } else {
+                        pastSitterRecyclerAdapter.nextData = next_data;
                         pastSitterRecyclerAdapter.notifyDataSetChanged();
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -138,8 +148,33 @@ public class PastSitterFragment extends Fragment {
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
-            }
+                try {
+                    JSONObject jsonObject = new JSONObject(Response);
+                    if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") == 0 && favouriteArrayList.size() == 0) {
 
+                        rcv_favourite.setVisibility(View.GONE);
+                        tv_empty.setVisibility(View.VISIBLE);
+                        rcv_favourite.setAdapter(null);
+
+                        new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_favoritesitter), "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+                    }
+                    else {
+                        new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_favoritesitter),Error, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+            }
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();

@@ -42,11 +42,11 @@ import java.util.ArrayList;
 public class FavouriteSitterRecyclerAdapter extends RecyclerView.Adapter<FavouriteSitterRecyclerAdapter.MyViewHolder> {
     DisplayMetrics displayMetrics;
     Context context;
-    int from = 0;
     ArrayList<SetGetFavourite> favouriteArrayList;
     private final ViewBinderHelper binderHelper = new ViewBinderHelper();
     AppLoader appLoader;
     public int nextData = 1;
+    int from = 0;
     FavouriteFragment favouriteFragment;
 
     public FavouriteSitterRecyclerAdapter(Context context, ArrayList<SetGetFavourite> favouriteArrayList, FavouriteFragment favouriteFragment) {
@@ -157,21 +157,20 @@ public class FavouriteSitterRecyclerAdapter extends RecyclerView.Adapter<Favouri
                             });
                 }
             });
+
+            if (position == favouriteArrayList.size() - 1 &&
+                    favouriteArrayList.size() % 10 == 0
+                    && favouriteArrayList.size() >= 10
+                    && nextData == 1) {
+
+                ///////////lazy load here called///////
+                from = from + 10;
+                favouriteFragment.CallAPIFROMDATA(from);
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        if (position == favouriteArrayList.size() - 1 &&
-                favouriteArrayList.size() % 10 == 0
-                && favouriteArrayList.size() >= 10
-                && nextData == 1) {
-
-            ///////////lazy load here called///////
-            from = from + 10;
-            //message_fragment.loadList(""+from);
-            favouriteFragment.CallAPIFROMDATA(from);
-        }
-
     }
 
     @Override
@@ -247,7 +246,6 @@ public class FavouriteSitterRecyclerAdapter extends RecyclerView.Adapter<Favouri
                         //notifyDataSetChanged();
                         notifyItemRemoved(position);
                     }
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
