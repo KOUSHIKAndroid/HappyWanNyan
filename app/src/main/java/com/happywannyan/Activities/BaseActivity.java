@@ -454,7 +454,7 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 MessageFragment search_basic = new MessageFragment();
-                fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
+                fragmentTransaction.replace(R.id.Base_fargment_layout, search_basic);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             } else {
