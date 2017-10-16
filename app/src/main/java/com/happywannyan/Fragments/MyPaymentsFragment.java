@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.PaymentListAdapter;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
@@ -63,6 +64,8 @@ public class MyPaymentsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    SFNFTextView tv_empty;
+
     public MyPaymentsFragment() {
         // Required empty public constructor
     }
@@ -108,6 +111,8 @@ public class MyPaymentsFragment extends Fragment {
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
         appLoader = new AppLoader(getActivity());
 
+        tv_empty= (SFNFTextView) view.findViewById(R.id.tv_empty);
+
         view.findViewById(R.id.IMG_icon_drwaer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,6 +154,10 @@ public class MyPaymentsFragment extends Fragment {
                     public void OnSuccess(String Result) {
                         Log.i("Result", "" + Result);
                         appLoader.Dismiss();
+
+                        recycler_view.setVisibility(View.VISIBLE);
+                        tv_empty.setVisibility(View.GONE);
+
                         paymentListAdapter = new PaymentListAdapter(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
@@ -160,6 +169,24 @@ public class MyPaymentsFragment extends Fragment {
 
                     @Override
                     public void OnError(String Error, String Response) {
+                        try {
+                            JSONObject MainObject = new JSONObject(Response);
+                            JSONArray ARRY = MainObject.getJSONArray("user_stripe_data");
+
+                            if (ARRY.length()==0){
+                                recycler_view.setVisibility(View.GONE);
+                                tv_empty.setVisibility(View.VISIBLE);
+                                new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_payment), "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                    }
+                                });
+                            }
+
+                        }catch (Exception ex){
+                            ex.printStackTrace();
+                        }
                         appLoader.Dismiss();
                     }
 

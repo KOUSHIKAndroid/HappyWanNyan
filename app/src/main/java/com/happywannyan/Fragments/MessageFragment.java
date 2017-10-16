@@ -535,7 +535,7 @@ public class MessageFragment extends Fragment {
                         });
                     }
                     else {
-                        new MYAlert(getActivity()).AlertOnly("" ,Error, new MYAlert.OnlyMessage() {
+                        new MYAlert(getActivity()).AlertOnly("" + TAGNAME,Error, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
 

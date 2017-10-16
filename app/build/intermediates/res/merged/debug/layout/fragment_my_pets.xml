@@ -32,14 +32,31 @@
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/RL_HEADER"
-        android:background="@color/colorGrayProject">
+        android:layout_below="@+id/RL_HEADER">
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGrayProject">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/empty"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
 
     <ImageView
         android:id="@+id/fab_plus"
