@@ -53,14 +53,6 @@ import java.util.HashMap;
 import java.util.TimeZone;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link MessageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class MessageFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -95,7 +87,6 @@ public class MessageFragment extends Fragment {
     AdapterMessage adapter_message;
 
     String type;
-    private OnFragmentInteractionListener mListener;
     private Paint p = new Paint();
 
     SwipeRefreshLayout swipeContainer;
@@ -409,11 +400,6 @@ public class MessageFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 
     public void loadList(final String start_from) {

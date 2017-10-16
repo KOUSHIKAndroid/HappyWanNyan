@@ -46,7 +46,6 @@ public class MyPetsFragments extends Fragment {
     YourPetsAdapter yourPets_adapter;
     ArrayList<SetGetYourPets> ListPets;
 
-    private OnFragmentInteractionListener mListener;
 
     public MyPetsFragments() {
         // Required empty public constructor
@@ -182,18 +181,6 @@ public class MyPetsFragments extends Fragment {
             }
         });
     }
-
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
-    }
-
 
     @Override
     public void onResume() {

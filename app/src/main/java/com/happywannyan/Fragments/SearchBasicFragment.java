@@ -494,8 +494,4 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
             }
         }
     }
-
-    public interface OnFragmentInteractionListener {
-
-    }
 }
