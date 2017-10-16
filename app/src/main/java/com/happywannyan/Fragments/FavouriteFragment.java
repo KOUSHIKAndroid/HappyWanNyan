@@ -12,11 +12,13 @@ import android.view.ViewGroup;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.FavouriteSitterRecyclerAdapter;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetFavourite;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
+import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +36,8 @@ public class FavouriteFragment extends Fragment {
     private String mParam2;
 
     AppLoader appLoader;
+
+    SFNFTextView tv_empty;
 
     RecyclerView rcv_favourite;
     ArrayList<SetGetFavourite> favouriteArrayList;
@@ -79,6 +83,7 @@ public class FavouriteFragment extends Fragment {
                 ((BaseActivity) getActivity()).Menu_Drawer();
             }
         });
+        tv_empty= (SFNFTextView) view.findViewById(R.id.tv_empty);
         rcv_favourite = (RecyclerView) view.findViewById(R.id.recycler_view);
         rcv_favourite.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -86,11 +91,9 @@ public class FavouriteFragment extends Fragment {
 
 
         CallAPIFROMDATA(0);
-
-
     }
 
-    private void CallAPIFROMDATA(final int startpoint) {
+    public void CallAPIFROMDATA(final int startpoint) {
         ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("user_id");
@@ -112,6 +115,8 @@ public class FavouriteFragment extends Fragment {
             public void OnSuccess(String Result) {
                 try {
                     JSONObject Object = new JSONObject(Result);
+                    int next_data = Object.getInt("next_data");
+
                     JSONArray Array = Object.getJSONArray("info_array");
 
                     for (int i = 0; i < Array.length(); i++) {
@@ -121,10 +126,16 @@ public class FavouriteFragment extends Fragment {
                         favouriteArrayList.add(setGetFavourite);
                     }
                     if (startpoint == 0) {
-                        favouriteSitterRecyclerAdapter = new FavouriteSitterRecyclerAdapter(getActivity(), favouriteArrayList);
+
+                        rcv_favourite.setVisibility(View.VISIBLE);
+                        tv_empty.setVisibility(View.GONE);
+
+                        favouriteSitterRecyclerAdapter = new FavouriteSitterRecyclerAdapter(getActivity(), favouriteArrayList,FavouriteFragment.this);
                         rcv_favourite.setAdapter(favouriteSitterRecyclerAdapter);
-                    } else
+                    } else {
+                        favouriteSitterRecyclerAdapter.nextData = next_data;
                         favouriteSitterRecyclerAdapter.notifyDataSetChanged();
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -134,6 +145,33 @@ public class FavouriteFragment extends Fragment {
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
+
+                try {
+                    JSONObject jsonObject = new JSONObject(Response);
+                    if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") == 0 && favouriteArrayList.size() == 0) {
+
+                        rcv_favourite.setVisibility(View.GONE);
+                        tv_empty.setVisibility(View.VISIBLE);
+                        rcv_favourite.setAdapter(null);
+
+                        new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_favoritesitter), "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+                    }
+                    else {
+                        new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_favoritesitter),Error, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
             }
 
             @Override

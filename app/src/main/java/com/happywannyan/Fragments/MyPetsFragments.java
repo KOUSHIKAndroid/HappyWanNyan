@@ -15,6 +15,7 @@ import com.happywannyan.Activities.AddAnotherPetsActivity;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.YourPetsAdapter;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetYourPets;
 import com.happywannyan.R;
@@ -39,6 +40,8 @@ public class MyPetsFragments extends Fragment {
     private String mParam2;
     AppLoader appLoader;
     RecyclerView recyclerView;
+
+    SFNFTextView tv_empty;
 
     YourPetsAdapter yourPets_adapter;
     ArrayList<SetGetYourPets> ListPets;
@@ -82,6 +85,7 @@ public class MyPetsFragments extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        tv_empty= (SFNFTextView) view.findViewById(R.id.tv_empty);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ListPets = new ArrayList<>();
 
@@ -148,6 +152,10 @@ public class MyPetsFragments extends Fragment {
                         ListPets.add(setGetYourPets);
                     }
                     if (from == 0) {
+
+                        recyclerView.setVisibility(View.VISIBLE);
+                        tv_empty.setVisibility(View.GONE);
+
                         yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets,MyPetsFragments.this);
                         recyclerView.setAdapter(yourPets_adapter);
                     } else {
@@ -162,6 +170,10 @@ public class MyPetsFragments extends Fragment {
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
+                if (from==0 && ListPets.size()==0){
+                    recyclerView.setVisibility(View.GONE);
+                    tv_empty.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override

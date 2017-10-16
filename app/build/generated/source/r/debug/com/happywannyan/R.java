@@ -5570,7 +5570,7 @@ containing a value of this type.
         public static final int LL_Search=0x7f1002e7;
         public static final int LL_SignUp=0x7f100135;
         public static final int LL_Switch_language=0x7f1002fa;
-        public static final int LL_Top_MSGChooseSection=0x7f10029a;
+        public static final int LL_Top_MSGChooseSection=0x7f10029b;
         public static final int LL_Top_Selection=0x7f1002b9;
         public static final int LL_USER_TIME=0x7f100153;
         public static final int LL_UserInfo=0x7f10014a;
@@ -5640,7 +5640,7 @@ containing a value of this type.
         public static final int Radio_Catspayed=0x7f1000f1;
         public static final int Radio_div1=0x7f1000f2;
         public static final int Rating=0x7f100176;
-        public static final int Rec_MSG=0x7f1002a1;
+        public static final int Rec_MSG=0x7f1002a2;
         public static final int Rec_petlist=0x7f1002b3;
         public static final int Rec_petlist_dailog=0x7f1001d8;
         public static final int Rel_main=0x7f10031f;
@@ -5871,9 +5871,9 @@ containing a value of this type.
         public static final int donate_with_google=0x7f100088;
         public static final int drawer_layout=0x7f1000fe;
         public static final int edit_query=0x7f1000c4;
-        public static final int editlayout=0x7f100297;
+        public static final int editlayout=0x7f100298;
         public static final int edt_cvv=0x7f10016d;
-        public static final int edt_search=0x7f100298;
+        public static final int edt_search=0x7f100299;
         public static final int edtxt_card_name=0x7f100162;
         public static final int edtxt_card_number=0x7f100165;
         public static final int email=0x7f10005b;
@@ -6067,7 +6067,7 @@ containing a value of this type.
         public static final int scrollIndicatorUp=0x7f1000ad;
         public static final int scrollView=0x7f1000ae;
         public static final int scrollable=0x7f100079;
-        public static final int search=0x7f100299;
+        public static final int search=0x7f10029a;
         public static final int search_badge=0x7f1000c6;
         public static final int search_bar=0x7f1000c5;
         public static final int search_button=0x7f1000c7;
@@ -6078,7 +6078,7 @@ containing a value of this type.
         public static final int search_plate=0x7f1000ca;
         public static final int search_src_text=0x7f1000cb;
         public static final int search_voice_btn=0x7f1000cf;
-        public static final int searchbar=0x7f100296;
+        public static final int searchbar=0x7f100297;
         public static final int seek_bar=0x7f10021d;
         public static final int seek_bar_controls=0x7f100219;
         public static final int select_dialog_listview=0x7f1000d0;
@@ -6113,7 +6113,7 @@ containing a value of this type.
         public static final int submenuarrow=0x7f1000bc;
         public static final int submit_area=0x7f1000cd;
         public static final int subtitle_view=0x7f100229;
-        public static final int swipeContainer=0x7f1002a0;
+        public static final int swipeContainer=0x7f1002a1;
         public static final int swipe_deck=0x7f1002b6;
         public static final int swipe_layout=0x7f100195;
         public static final int tabMode=0x7f100028;
@@ -6154,7 +6154,7 @@ containing a value of this type.
         public static final int tv_about_us=0x7f1002fd;
         public static final int tv_added_on=0x7f10031e;
         public static final int tv_address=0x7f10019a;
-        public static final int tv_all_message=0x7f10029b;
+        public static final int tv_all_message=0x7f10029c;
         public static final int tv_answer_one=0x7f1001ef;
         public static final int tv_answer_two=0x7f100117;
         public static final int tv_bookingID_name=0x7f1001b9;
@@ -6177,7 +6177,7 @@ containing a value of this type.
         public static final int tv_describe_name=0x7f1001eb;
         public static final int tv_describe_value=0x7f1001ec;
         public static final int tv_details=0x7f1001b1;
-        public static final int tv_empty=0x7f1002a2;
+        public static final int tv_empty=0x7f100296;
         public static final int tv_end_date=0x7f1001bc;
         public static final int tv_end_date_name=0x7f100107;
         public static final int tv_expiremonth=0x7f100166;
@@ -6210,7 +6210,7 @@ containing a value of this type.
         public static final int tv_place=0x7f1002c5;
         public static final int tv_question_one=0x7f1001ee;
         public static final int tv_question_two=0x7f1001f0;
-        public static final int tv_reservation_message=0x7f10029d;
+        public static final int tv_reservation_message=0x7f10029e;
         public static final int tv_reserve_or_not_reserve=0x7f100198;
         public static final int tv_review=0x7f1001af;
         public static final int tv_review_desc=0x7f100240;
@@ -6236,7 +6236,7 @@ containing a value of this type.
         public static final int tv_trust_and_safety_fee_name=0x7f10010d;
         public static final int tv_trust_and_safety_value=0x7f10010e;
         public static final int tv_type=0x7f100104;
-        public static final int tv_unread_message=0x7f10029f;
+        public static final int tv_unread_message=0x7f1002a0;
         public static final int tv_up_coming=0x7f1002ba;
         public static final int tv_walking=0x7f100321;
         public static final int tv_year=0x7f10016a;
@@ -6246,7 +6246,7 @@ containing a value of this type.
         public static final int url=0x7f10006d;
         public static final int useLogo=0x7f10002e;
         public static final int view1=0x7f100241;
-        public static final int view_between_all_unread_message=0x7f10029c;
+        public static final int view_between_all_unread_message=0x7f10029d;
         public static final int view_between_current_pending_booking=0x7f1002bd;
         public static final int view_between_pending_past=0x7f1002bf;
         public static final int view_between_upcoming_current_booking=0x7f1002bb;
@@ -6254,7 +6254,7 @@ containing a value of this type.
         public static final int view_horizontal_line=0x7f1001b3;
         public static final int view_offset_helper=0x7f10001c;
         public static final int view_promo_code=0x7f1002ab;
-        public static final int view_unResponded_reservation_message=0x7f10029e;
+        public static final int view_unResponded_reservation_message=0x7f10029f;
         public static final int viewpager=0x7f10013c;
         public static final int visible=0x7f100344;
         public static final int volume_item_container=0x7f1002df;
