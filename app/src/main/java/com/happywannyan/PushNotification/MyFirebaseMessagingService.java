@@ -1,6 +1,7 @@
 package com.happywannyan.PushNotification;
 
 import android.app.ActivityManager;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -8,8 +9,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -166,14 +169,41 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Bitmap icon = BitmapFactory.decodeResource(getResources(),
                     R.drawable.logo_happywan);
 
-            Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            //Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//            Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+//            if(defaultSoundUri == null){
+//                defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+//                if(defaultSoundUri == null){
+//                    defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//                }
+//            }
+
+            NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
+            bigText.bigText(messageBody.getString("message_info"));
+            bigText.setBigContentTitle(messageBody.getString("usersname"));
+
+
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                     .setLargeIcon(icon)
                     .setSmallIcon(R.drawable.logo_happywan)
                     .setContentTitle(messageBody.getString("usersname"))
                     .setContentText(messageBody.getString("message_info"))
                     .setAutoCancel(true)
-                    .setSound(defaultSoundUri)
+                    .setDefaults(Notification.DEFAULT_ALL)
+
+                    .setStyle(bigText)
+
+//                     //Vibration
+//                    .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
+//
+//                    //LED
+//                    .setLights(Color.GREEN, 3000, 3000)
+
+                     //Ton
+                    //.setSound(Uri.parse("uri://sadfasdfasdf.mp3"))
+                    //.setSound(defaultSoundUri)
+
+                    .setPriority(Notification.PRIORITY_HIGH)
                     .setContentIntent(pendingIntent);
 
             NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
