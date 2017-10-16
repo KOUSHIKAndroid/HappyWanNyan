@@ -32,87 +32,87 @@
     </RelativeLayout>
 
     <!--<HorizontalScrollView-->
-        <!--android:id="@+id/H_SCROLL"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="56dp"-->
-        <!--android:layout_below="@+id/RL_HEADER"-->
-        <!--android:background="@color/colorWhite"-->
-        <!--android:fillViewport="true">-->
+    <!--android:id="@+id/H_SCROLL"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="56dp"-->
+    <!--android:layout_below="@+id/RL_HEADER"-->
+    <!--android:background="@color/colorWhite"-->
+    <!--android:fillViewport="true">-->
 
-        <LinearLayout
-            android:id="@+id/LL_Top_Selection"
-            android:layout_below="@+id/RL_HEADER"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:weightSum="4"
-            android:orientation="horizontal"
-            android:background="@color/colorWhite">
+    <LinearLayout
+        android:id="@+id/LL_Top_Selection"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_below="@+id/RL_HEADER"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:weightSum="4">
 
-            <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_up_coming"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/up_coming_booking"
-                android:textColor="@color/colorTextDarkGray"
-                android:textSize="14sp"
-                android:typeface="sans" />
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_up_coming"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/up_coming_booking"
+            android:textColor="@color/colorTextDarkGray"
+            android:textSize="14sp"
+            android:typeface="sans" />
 
-            <View
-                android:id="@+id/view_between_upcoming_current_booking"
-                android:layout_width="1dip"
-                android:layout_height="15dp"
-                android:layout_gravity="center"
-                android:background="@color/colorGrayProject" />
+        <View
+            android:id="@+id/view_between_upcoming_current_booking"
+            android:layout_width="1dip"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:background="@color/colorGrayProject" />
 
-            <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_current"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/current_booking"
-                android:textColor="@color/colorTextDarkGray"
-                android:textSize="14sp"
-                android:typeface="sans" />
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_current"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/current_booking"
+            android:textColor="@color/colorTextDarkGray"
+            android:textSize="14sp"
+            android:typeface="sans" />
 
-            <View
-                android:id="@+id/view_between_current_pending_booking"
-                android:layout_width="1dip"
-                android:layout_height="15dp"
-                android:layout_gravity="center"
-                android:background="@color/colorGrayProject" />
+        <View
+            android:id="@+id/view_between_current_pending_booking"
+            android:layout_width="1dip"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:background="@color/colorGrayProject" />
 
-            <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_pending"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/pending_booking"
-                android:textColor="@color/colorTextDarkGray"
-                android:textSize="14sp"
-                android:typeface="sans" />
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_pending"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/pending_booking"
+            android:textColor="@color/colorTextDarkGray"
+            android:textSize="14sp"
+            android:typeface="sans" />
 
-            <View
-                android:id="@+id/view_between_pending_past"
-                android:layout_width="1dip"
-                android:layout_height="15dp"
-                android:layout_gravity="center"
-                android:background="@color/colorGrayProject" />
+        <View
+            android:id="@+id/view_between_pending_past"
+            android:layout_width="1dip"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:background="@color/colorGrayProject" />
 
-            <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_past"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/past_booking"
-                android:textColor="@color/colorTextDarkGray"
-                android:textSize="14sp"
-                android:typeface="sans" />
-        </LinearLayout>
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/tv_past"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/past_booking"
+            android:textColor="@color/colorTextDarkGray"
+            android:textSize="14sp"
+            android:typeface="sans" />
+    </LinearLayout>
 
     <!--</HorizontalScrollView>-->
 
@@ -124,18 +124,35 @@
         android:layout_below="@+id/LL_Top_Selection"
         android:background="@color/colorGrayProject" />
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipeContainer"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/horizontal_line">
+        android:layout_below="@+id/horizontal_line"
+        >
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rcv_upcoming_booking"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhite"
-            android:orientation="vertical"></android.support.v7.widget.RecyclerView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcv_upcoming_booking"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"></android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <com.happywannyan.Font.SFNFTextView
+            android:visibility="gone"
+            android:id="@+id/tv_empty"
+            android:text="@string/empty"
+            android:textSize="18sp"
+            android:textColor="@color/colorBlack"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

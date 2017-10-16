@@ -24,7 +24,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -83,7 +82,7 @@ public class MessageFragment extends Fragment {
     PopupWindow popupWindow;
     PlaceCustomListAdapterDialog placeCustomListAdapterDialog = null;
 
-    SFNFTextView tv_all_message, tv_unread_message, tv_reservation_message;
+    SFNFTextView tv_all_message, tv_unread_message, tv_reservation_message, tv_empty;
     View view_between_all_unread_message, view_unResponded_reservation_message;
     EditText edt_search;
     ImageView searchbar, search;
@@ -99,6 +98,7 @@ public class MessageFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private Paint p = new Paint();
 
+    SwipeRefreshLayout swipeContainer;
 
     public MessageFragment() {
         // Required empty public constructor
@@ -151,14 +151,17 @@ public class MessageFragment extends Fragment {
         tv_unread_message = (SFNFTextView) view.findViewById(R.id.tv_unread_message);
 //        tv_unResponded_message= (SFNFTextView) view.findViewById(R.id.tv_unResponded_message);
         tv_reservation_message = (SFNFTextView) view.findViewById(R.id.tv_reservation_message);
+        tv_empty = (SFNFTextView) view.findViewById(R.id.tv_empty);
 //        scrollView_horizontal = (HorizontalScrollView) view.findViewById(R.id.scrollView_horizontal);
-        LL_Top_MSGChooseSection= (LinearLayout) view.findViewById(R.id.LL_Top_MSGChooseSection);
+        LL_Top_MSGChooseSection = (LinearLayout) view.findViewById(R.id.LL_Top_MSGChooseSection);
         view_between_all_unread_message = view.findViewById(R.id.view_between_all_unread_message);
         view_unResponded_reservation_message = view.findViewById(R.id.view_unResponded_reservation_message);
         edt_search = (EditText) view.findViewById(R.id.edt_search);
         searchbar = (ImageView) view.findViewById(R.id.searchbar);
         search = (ImageView) view.findViewById(R.id.search);
         editlayout = (RelativeLayout) view.findViewById(R.id.editlayout);
+
+        swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
 
         view.findViewById(R.id.IMG_icon_drwaer).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -434,6 +437,10 @@ public class MessageFragment extends Fragment {
                         AllMessage.add(setGetMessageDataType);
                     }
                     if (start_from.equals("0")) {
+
+                        swipeContainer.setVisibility(View.VISIBLE);
+                        tv_empty.setVisibility(View.GONE);
+
                         adapter_message = new AdapterMessage(getActivity(), MessageFragment.this, AllMessage);
                         recyclerView.setAdapter(adapter_message);
                     } else {
@@ -512,16 +519,32 @@ public class MessageFragment extends Fragment {
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
-                if (start_from.equals("0")) {
-                    recyclerView.setAdapter(null);
-                    new MYAlert(getActivity()).AlertOnly("" + TAGNAME, "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
-                        @Override
-                        public void OnOk(boolean res) {
+                try {
+                    JSONObject jsonObject = new JSONObject(Response);
+                    if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") == 0 && AllMessage.size() == 0) {
 
-                        }
-                    });
+                        swipeContainer.setVisibility(View.GONE);
+                        tv_empty.setVisibility(View.VISIBLE);
+                        recyclerView.setAdapter(null);
+
+                        new MYAlert(getActivity()).AlertOnly("" + TAGNAME, "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+                    }
+                    else {
+                        new MYAlert(getActivity()).AlertOnly("" ,Error, new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
                 }
-
             }
 
             @Override
@@ -535,9 +558,7 @@ public class MessageFragment extends Fragment {
         new MYAlert(getActivity()).AlertAccept_Cancel(getString(R.string.delete), getString(R.string.delete_message), new MYAlert.OnOkCancel() {
             @Override
             public void OnOk() {
-
                 appLoader.Show();
-
                 try {
                     String MessageID = AllMessage.get(position).getJsonObject().getString("message_id");
                     String ReciverId = AllMessage.get(position).getJsonObject().getString("receiver_id");
@@ -565,9 +586,7 @@ public class MessageFragment extends Fragment {
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
-
                                 }
-
                                 @Override
                                 public void OnError(String Error) {
                                     try {

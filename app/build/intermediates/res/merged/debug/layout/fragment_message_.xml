@@ -79,102 +79,118 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:padding="12dp"
-                android:src="@drawable/ic_search_list"
-                />
+                android:src="@drawable/ic_search_list" />
         </RelativeLayout>
 
         <!--<HorizontalScrollView-->
-            <!--android:id="@+id/scrollView_horizontal"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="56dp"-->
-            <!--android:background="@color/colorWhite"-->
-            <!--android:scrollbars="none">-->
+        <!--android:id="@+id/scrollView_horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="56dp"-->
+        <!--android:background="@color/colorWhite"-->
+        <!--android:scrollbars="none">-->
 
 
-            <LinearLayout
-                android:id="@+id/LL_Top_MSGChooseSection"
-                android:background="@color/colorWhite"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:weightSum="3.3"
-                android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/LL_Top_MSGChooseSection"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal"
+            android:weightSum="3.3">
 
-                <com.happywannyan.Font.SFNFTextView
-                    android:id="@+id/tv_all_message"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/all_messages"
-                    android:textColor="@color/colorTextDarkGray" />
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/tv_all_message"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/all_messages"
+                android:textColor="@color/colorTextDarkGray" />
 
-                <View
-                    android:id="@+id/view_between_all_unread_message"
-                    android:layout_width="1dip"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center"
-                    android:background="@color/colorGrayProject" />
+            <View
+                android:id="@+id/view_between_all_unread_message"
+                android:layout_width="1dip"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@color/colorGrayProject" />
 
-                <com.happywannyan.Font.SFNFTextView
-                    android:id="@+id/tv_reservation_message"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/reservation"
-                    android:textColor="@color/colorTextDarkGray" />
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/tv_reservation_message"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/reservation"
+                android:textColor="@color/colorTextDarkGray" />
 
 
-                <View
-                    android:id="@+id/view_unResponded_reservation_message"
-                    android:layout_width="1dip"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center"
-                    android:background="@color/colorGrayProject" />
-                <!--<com.happywannyan.Font.SFNFTextView-->
-                <!--android:id="@+id/tv_unResponded_message"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:gravity="center"-->
-                <!--android:text="@string/meetgreet"-->
-                <!--android:textColor="@color/text_dark_gray"-->
-                <!--android:paddingLeft="14dp"-->
-                <!--android:paddingRight="14dp"/>-->
+            <View
+                android:id="@+id/view_unResponded_reservation_message"
+                android:layout_width="1dip"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@color/colorGrayProject" />
+            <!--<com.happywannyan.Font.SFNFTextView-->
+            <!--android:id="@+id/tv_unResponded_message"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/meetgreet"-->
+            <!--android:textColor="@color/text_dark_gray"-->
+            <!--android:paddingLeft="14dp"-->
+            <!--android:paddingRight="14dp"/>-->
 
-                <!--<View-->
-                <!--android:id="@+id/view_between_unread_unResponded_message"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_width="1dip"-->
-                <!--android:layout_height="15dp"-->
-                <!--android:background="@color/gray_project"-->
-                <!--/>-->
-                <com.happywannyan.Font.SFNFTextView
-                    android:id="@+id/tv_unread_message"
-                    android:layout_weight="1.3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/generalequerys"
-                    android:textColor="@color/colorTextDarkGray" />
-            </LinearLayout>
+            <!--<View-->
+            <!--android:id="@+id/view_between_unread_unResponded_message"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_width="1dip"-->
+            <!--android:layout_height="15dp"-->
+            <!--android:background="@color/gray_project"-->
+            <!--/>-->
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/tv_unread_message"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.3"
+                android:gravity="center"
+                android:text="@string/generalequerys"
+                android:textColor="@color/colorTextDarkGray" />
+        </LinearLayout>
 
 
         <!--</HorizontalScrollView>-->
 
-
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swipeContainer"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/Rec_MSG"
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipeContainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8px" />
+                android:visibility="visible">
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/Rec_MSG"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8px" />
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/tv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/empty"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 

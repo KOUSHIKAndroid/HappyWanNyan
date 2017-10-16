@@ -39,7 +39,9 @@ public class BookingFragment extends Fragment {
 
     RecyclerView recyclerView;
 
-    SFNFTextView tv_up_coming, tv_current, tv_pending, tv_past;
+    public static String TAGNAME = "";
+
+    SFNFTextView tv_up_coming, tv_current, tv_pending, tv_past, tv_empty;
     View view_between_upcoming_current_booking, view_between_current_pending_booking, view_between_pending_past;
 
     ArrayList<SetGetAPIPostData> Params;
@@ -47,6 +49,8 @@ public class BookingFragment extends Fragment {
     ArrayList<JSONObject> AllBooking;
 
     BookingAdapter bookingAdapter;
+
+    SwipeRefreshLayout swipeContainer;
 
     String type;
 
@@ -73,11 +77,13 @@ public class BookingFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
 
         tv_up_coming = (SFNFTextView) view.findViewById(R.id.tv_up_coming);
         tv_current = (SFNFTextView) view.findViewById(R.id.tv_current);
         tv_pending = (SFNFTextView) view.findViewById(R.id.tv_pending);
         tv_past = (SFNFTextView) view.findViewById(R.id.tv_past);
+        tv_empty = (SFNFTextView) view.findViewById(R.id.tv_empty);
 
         view_between_upcoming_current_booking = view.findViewById(R.id.view_between_upcoming_current_booking);
         view_between_current_pending_booking = view.findViewById(R.id.view_between_current_pending_booking);
@@ -137,6 +143,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "upcoming_booking_list";
+                TAGNAME= tv_up_coming.getText().toString();
                 loadBookingList("0");
             }
         });
@@ -155,6 +162,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "current_booking_list";
+                TAGNAME= tv_current.getText().toString();
                 loadBookingList("0");
 
             }
@@ -173,6 +181,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "pending_booking_list";
+                TAGNAME= tv_pending.getText().toString();
                 loadBookingList("0");
             }
         });
@@ -190,31 +199,34 @@ public class BookingFragment extends Fragment {
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
                 AllBooking.clear();
+                TAGNAME= tv_past.getText().toString();
                 type = "past_booking_list";
                 loadBookingList("0");
             }
         });
 
-//        ((SwipeRefreshLayout)view.findViewById(R.id.swipeContainer)).setColorSchemeColors(
+//        swipeContainer.setColorSchemeColors(
 //                Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
 
-        ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setColorSchemeResources(
+        swipeContainer.setColorSchemeResources(
                 R.color.colorRefreshProgress_1,
                 R.color.colorRefreshProgress_2,
                 R.color.colorRefreshProgress_3);
 
 
-        ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 loadBookingList("0");
-                ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setRefreshing(false);
+                swipeContainer.setRefreshing(false);
             }
         });
 
         if (AppConstant.go_to.trim().equals("")) {
+            TAGNAME= tv_up_coming.getText().toString();
             tv_up_coming.performClick();
         } else {
+            TAGNAME= tv_pending.getText().toString();
             tv_pending.performClick();
             AppConstant.go_to = "";
         }
@@ -226,7 +238,7 @@ public class BookingFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 222 && resultCode == Activity.RESULT_OK) {
             //AllBooking.clear();
-            Loger.MSG("requestCode",""+222);
+            Loger.MSG("requestCode", "" + 222);
             AllBooking.clear();
             loadBookingList("0");
         }
@@ -248,6 +260,7 @@ public class BookingFragment extends Fragment {
             @Override
             public void OnSuccess(String Result) {
                 try {
+                    swipeContainer.setVisibility(View.VISIBLE);
                     JSONObject jsonObject = new JSONObject(Result);
                     JSONArray all_booking = jsonObject.getJSONArray("booking_info_array");
 
@@ -260,6 +273,10 @@ public class BookingFragment extends Fragment {
                     Log.i("AllBookingSize", "" + AllBooking.size());
 
                     if (start_from.equals("0")) {
+
+                        swipeContainer.setVisibility(View.VISIBLE);
+                        tv_empty.setVisibility(View.GONE);
+
                         bookingAdapter = new BookingAdapter(getActivity(), BookingFragment.this, AllBooking);
                         recyclerView.setAdapter(bookingAdapter);
                     } else {
@@ -277,11 +294,22 @@ public class BookingFragment extends Fragment {
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
                 try {
-
                     JSONObject jsonObject = new JSONObject(Response);
                     if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") == 0 && AllBooking.size() == 0) {
+
+                        swipeContainer.setVisibility(View.GONE);
+                        tv_empty.setVisibility(View.VISIBLE);
                         recyclerView.setAdapter(null);
-                        new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.app_name), Error, new MYAlert.OnlyMessage() {
+
+                        new MYAlert(getActivity()).AlertOnly("" + TAGNAME, "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+
+                            }
+                        });
+                    }
+                    else {
+                        new MYAlert(getActivity()).AlertOnly("", Error, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
 
@@ -293,7 +321,6 @@ public class BookingFragment extends Fragment {
                     e.printStackTrace();
                 }
             }
-
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
