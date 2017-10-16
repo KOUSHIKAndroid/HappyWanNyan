@@ -379,8 +379,8 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
                 NotificationCompat.Builder mBuilder =
                         new NotificationCompat.Builder(mContext)
                                 .setSmallIcon(R.mipmap.ic_launcher1)
-                                .setContentTitle("HappyWanNyan")
-                                .setContentText("All Download completed");
+                                .setContentTitle(mContext.getResources().getString(R.string.app_name))
+                                .setContentText(mContext.getResources().getString(R.string.download_complete));
 
                 NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.notify(455, mBuilder.build());
