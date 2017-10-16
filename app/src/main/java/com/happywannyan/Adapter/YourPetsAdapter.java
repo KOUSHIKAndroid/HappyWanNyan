@@ -150,7 +150,7 @@ public class YourPetsAdapter extends RecyclerView.Adapter<YourPetsAdapter.MyView
         });
 
         if(position==setGetYourPetsArrayList.size()-1){
-            myPetsFragments.GET_PETDATA(setGetYourPetsArrayList.size());
+           // myPetsFragments.GET_PETDATA(setGetYourPetsArrayList.size());
         }
     }
 

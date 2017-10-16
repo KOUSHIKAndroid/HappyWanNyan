@@ -23,7 +23,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
@@ -127,7 +126,7 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 MessageFragment search_basic = new MessageFragment();
-                fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
+                fragmentTransaction.replace(R.id.Base_fargment_layout, search_basic);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -195,7 +194,7 @@ public class BaseActivity extends LocationBaseActivity
                             fragmentManager = getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
                             MessageFragment search_basic = new MessageFragment();
-                            fragmentTransaction.add(R.id.Base_fargment_layout, search_basic);
+                            fragmentTransaction.replace(R.id.Base_fargment_layout, search_basic);
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof SearchBasicFragment) {
@@ -225,31 +224,31 @@ public class BaseActivity extends LocationBaseActivity
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPetsFragments) {
                             fragmentManager = getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.add(R.id.Base_fargment_layout, MyPetsFragments.newInstance(null, null));
+                            fragmentTransaction.replace(R.id.Base_fargment_layout, MyPetsFragments.newInstance(null, null));
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPaymentsFragment) {
                             fragmentManager = getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.add(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
+                            fragmentTransaction.replace(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment) {
                             fragmentManager = getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.add(R.id.Base_fargment_layout, FavouriteFragment.newInstance(null, null));
+                            fragmentTransaction.replace(R.id.Base_fargment_layout, FavouriteFragment.newInstance(null, null));
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof ContactUsFragment) {
                             fragmentManager = getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.add(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
+                            fragmentTransaction.replace(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof HelpFragment) {
                             fragmentManager = getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.add(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
+                            fragmentTransaction.replace(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         }
@@ -275,7 +274,7 @@ public class BaseActivity extends LocationBaseActivity
                 drawer.closeDrawer(GravityCompat.START);
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
+                fragmentTransaction.replace(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -384,7 +383,7 @@ public class BaseActivity extends LocationBaseActivity
 
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
+                fragmentTransaction.replace(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
@@ -414,7 +413,7 @@ public class BaseActivity extends LocationBaseActivity
                 drawer.closeDrawer(GravityCompat.START);
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, MyPetsFragments.newInstance(null, null));
+                fragmentTransaction.replace(R.id.Base_fargment_layout, MyPetsFragments.newInstance(null, null));
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -427,7 +426,7 @@ public class BaseActivity extends LocationBaseActivity
                 drawer.closeDrawer(GravityCompat.START);
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
+                fragmentTransaction.replace(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -440,7 +439,7 @@ public class BaseActivity extends LocationBaseActivity
                 drawer.closeDrawer(GravityCompat.START);
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, FavouriteFragment.newInstance(null, null));
+                fragmentTransaction.replace(R.id.Base_fargment_layout, FavouriteFragment.newInstance(null, null));
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }

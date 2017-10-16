@@ -1,5 +1,6 @@
 package com.happywannyan.Fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,6 +30,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * Use the {@link MyPetsFragments#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class MyPetsFragments extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,19 +45,26 @@ public class MyPetsFragments extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
     AppLoader appLoader;
     RecyclerView recyclerView;
-
     SFNFTextView tv_empty;
-
     YourPetsAdapter yourPets_adapter;
     ArrayList<SetGetYourPets> ListPets;
-
 
     public MyPetsFragments() {
         // Required empty public constructor
     }
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment MyPetsFragments.
+     */
+    // TODO: Rename and change types and number of parameters
     public static MyPetsFragments newInstance(String param1, String param2) {
         MyPetsFragments fragment = new MyPetsFragments();
         Bundle args = new Bundle();
@@ -63,11 +77,12 @@ public class MyPetsFragments extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        appLoader = new AppLoader(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        appLoader = new AppLoader(getActivity());
         new AppConstant(getActivity());
     }
 
@@ -75,9 +90,8 @@ public class MyPetsFragments extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_pets, container, false);
+        return inflater.inflate(R.layout.fragment_my_pets_fragments, container, false);
     }
-
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -107,8 +121,16 @@ public class MyPetsFragments extends Fragment {
                 startActivity(new Intent(getActivity(), AddAnotherPetsActivity.class));
             }
         });
+    }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        Loger.MSG("DEBUG", "onResume of HomeFragment");
+        ListPets = new ArrayList<>();
+        GET_PETDATA(0);
+        yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets,MyPetsFragments.this);
+        recyclerView.setAdapter(yourPets_adapter);
     }
 
     public void GET_PETDATA(final int from) {
@@ -182,13 +204,4 @@ public class MyPetsFragments extends Fragment {
         });
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Loger.MSG("DEBUG", "onResume of HomeFragment");
-        ListPets = new ArrayList<>();
-        GET_PETDATA(0);
-        yourPets_adapter = new YourPetsAdapter(getActivity(), ListPets,MyPetsFragments.this);
-        recyclerView.setAdapter(yourPets_adapter);
-    }
 }

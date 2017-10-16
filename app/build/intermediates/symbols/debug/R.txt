@@ -2528,7 +2528,7 @@ int layout fragment_favourite 0x7f04006b
 int layout fragment_help 0x7f04006c
 int layout fragment_message_ 0x7f04006d
 int layout fragment_my_payments 0x7f04006e
-int layout fragment_my_pets 0x7f04006f
+int layout fragment_my_pets_fragments 0x7f04006f
 int layout fragment_my_profile 0x7f040070
 int layout fragment_search_basic 0x7f040071
 int layout fragment_search_list 0x7f040072

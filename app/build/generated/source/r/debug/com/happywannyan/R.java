@@ -6397,7 +6397,7 @@ containing a value of this type.
         public static final int fragment_help=0x7f04006c;
         public static final int fragment_message_=0x7f04006d;
         public static final int fragment_my_payments=0x7f04006e;
-        public static final int fragment_my_pets=0x7f04006f;
+        public static final int fragment_my_pets_fragments=0x7f04006f;
         public static final int fragment_my_profile=0x7f040070;
         public static final int fragment_search_basic=0x7f040071;
         public static final int fragment_search_list=0x7f040072;
