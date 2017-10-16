@@ -248,7 +248,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
             IMG_SERVICE = (ImageView) view.findViewById(R.id.IMG_SERVICE);
             TXT_SERVICENAME = (SFNFTextView) view.findViewById(R.id.TXT_SERVICENAME);
 
-            if (mParam1.getString("selected_image").trim().equals("")) {
+            if (!mParam1.getString("selected_image").trim().equals("")) {
                 Glide.with(getActivity()).load(mParam1.getString("selected_image")).into(IMG_SERVICE);
             }
 
