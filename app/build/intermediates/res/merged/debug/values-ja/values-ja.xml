@@ -204,6 +204,7 @@
     <string name="download_complete">ダウンロード完了</string>
     <string name="dropofftime">お迎え時間</string>
     <string name="email_confirm">ちょうどあなたに送った確認メールを確認してから再度ログインしてください</string>
+    <string name="empty">空の</string>
     <string name="existingcard">あなたのカード</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="expiry_month_and_year">有効期限の月と年</string>

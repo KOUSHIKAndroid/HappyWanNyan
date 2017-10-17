@@ -254,5 +254,6 @@
     <string name="not_a_booking">予約ではありません</string>
     <string name="download_complete">ダウンロード完了</string>
     <string name="already_downloaded">既にダウンロード済み</string>
+    <string name="empty">空の</string>
 
 </resources>
