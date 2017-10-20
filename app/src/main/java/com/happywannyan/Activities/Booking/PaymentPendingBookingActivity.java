@@ -549,15 +549,9 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
                 Loger.MSG("Result-->", Result);
                 try {
                     JSONObject jsonObject = new JSONObject(Result);
-                    if (jsonObject.getBoolean("response")) {
-                        Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
-                        //finish();
-                        Intent intent = new Intent(PaymentPendingBookingActivity.this, BaseActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.putExtra("go_to", "pending_message");
-                        startActivity(intent);
-                        finish();
+                    if (!jsonObject.getBoolean("response")) {
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.cannot_charge_a_customer_that_has_no_active_card), Toast.LENGTH_LONG).show();
+
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
