@@ -24,6 +24,10 @@
         "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/loader_view.xml"
     },
     {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/activity_payment_pending_booking.xml",
+        "source": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/layout/activity_payment_pending_booking.xml"
+    },
+    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml",
         "source": "/home/su/.android/build-cache/430766f9032cff3c42e82927b7f78c7a18733e92/output/res/layout/place_autocomplete_item_prediction.xml"
     },
