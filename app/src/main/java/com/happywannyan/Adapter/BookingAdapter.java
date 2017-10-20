@@ -72,7 +72,12 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             if (object.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")){
                 holder.tv_bookingID_name.setText("");
-                holder.tv_booking_id.setText(context.getResources().getString(R.string.not_a_booking));
+                if (object.getJSONObject("booking_info").getString("booking_type").equalsIgnoreCase("PE")){
+                    holder.tv_booking_id.setText(context.getResources().getString(R.string.pending_booking));
+
+                }else {
+                    holder.tv_booking_id.setText(context.getResources().getString(R.string.not_a_booking));
+                }
             }else {
                 holder.tv_bookingID_name.setText(context.getResources().getString(R.string.up_coming_booking_id));
                 holder.tv_booking_id.setText(object.getJSONObject("booking_info").getString("booking_id"));
