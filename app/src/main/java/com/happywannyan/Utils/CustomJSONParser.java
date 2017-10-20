@@ -563,6 +563,7 @@ public class CustomJSONParser {
             protected void onPostExecute(String result) {
                 if (!isCancelled() && exception == null && !result.equalsIgnoreCase("200")) {
 
+                    Loger.MSG("result",result);
                     try {
                         if (new JSONObject(responseString).getBoolean("response")) {
                             jsonResponseInterface.OnSuccess(responseString);
