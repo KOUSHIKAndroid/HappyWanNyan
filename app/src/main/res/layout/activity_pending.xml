@@ -46,15 +46,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rcv_pending_ped_list_service"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/tv_sub_title"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v7.widget.RecyclerView>
-
     <LinearLayout
         android:id="@+id/LL_FOOTER1"
         android:layout_width="match_parent"
@@ -64,11 +55,83 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="horizontal"
         >
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL_Coupon"
+        android:layout_above="@+id/LL_FOOTER1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_coupon_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/EDX_coupon_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/coupon_code"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10"
+                    android:paddingRight="150dp"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+
+            <com.happywannyan.Font.SFNFTextView
+                android:id="@+id/tv_coupon_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:background="@color/colorPrimary"
+                android:padding="8dp"
+                android:text="@string/apply"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/img_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@+id/tv_coupon_code"
+                android:padding="8dp"
+                android:src="@drawable/ic_close_grey" />
+
+        </RelativeLayout>
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/Tv_coupon_code_valid_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="@string/coupon_code_applied"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_above="@+id/LL_Coupon"
+        android:id="@+id/rcv_pending_ped_list_service"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tv_sub_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 
 </RelativeLayout>

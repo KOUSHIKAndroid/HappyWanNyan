@@ -2,24 +2,30 @@ package com.happywannyan.Activities.Booking;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.happywannyan.Adapter.AdapterPendingBookingPetService;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
+import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetPendingBooking;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
+import com.happywannyan.Utils.Loger;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,12 +46,155 @@ public class AcceptBookingActivity extends AppCompatActivity {
     AdapterPendingBookingPetService adapterPendingBookingPetService;
     LinearLayout LL_FOOTER1;
 
+    EditText EDX_coupon_code;
+
+    public ArrayList<SetGetAPIPostData> postParamCoupon;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending);
         rcv_pending_ped_list_service = (RecyclerView) findViewById(R.id.rcv_pending_ped_list_service);
         rcv_pending_ped_list_service.setLayoutManager(new LinearLayoutManager(AcceptBookingActivity.this));
+
+
+        postParamCoupon = new ArrayList<>();
+
+
+        findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
+        findViewById(R.id.img_clear).setVisibility(View.GONE);
+        EDX_coupon_code = (EditText)findViewById(R.id.EDX_coupon_code);
+
+
+
+        EDX_coupon_code.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!charSequence.toString().toString().equals("")) {
+                    findViewById(R.id.tv_coupon_code).setVisibility(View.VISIBLE);
+                    findViewById(R.id.img_clear).setVisibility(View.VISIBLE);
+                } else {
+                    findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
+                    findViewById(R.id.img_clear).setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
+
+        findViewById(R.id.img_clear).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EDX_coupon_code.setText("");
+            }
+        });
+
+
+
+        findViewById(R.id.tv_coupon_code).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //input_layout_coupon_code.setErrorEnabled(false);
+                //input_layout_coupon_code.setError(null);
+
+                ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.GONE);
+
+                if (EDX_coupon_code.getText().toString().trim().equals("")) {
+                    //input_layout_coupon_code.setErrorEnabled(true);
+                    //input_layout_coupon_code.setError("Field can't be empty");
+                    ((SFNFTextView)findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
+                    ((SFNFTextView)findViewById(R.id.Tv_coupon_code_valid_check)).setText(getResources().getString(R.string.filed_can_not_be_empty));
+                    ((SFNFTextView)findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
+                } else {
+                    if (EDX_coupon_code.getText().toString().trim().length() < 6) {
+                        //input_layout_coupon_code.setErrorEnabled(true);
+                        //input_layout_coupon_code.setError("Field must be greater then 5");
+                        ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
+                        ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setText(getResources().getString(R.string.field_length_must_be_greater_than_five));
+                        ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
+                    } else {
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_id");
+                        setGetAPIPostData.setValues("" + AppConstant.UserId);
+                        postParamCoupon.add(setGetAPIPostData);
+
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("coupon_no");
+                        setGetAPIPostData.setValues(EDX_coupon_code.getText().toString().trim());
+                        postParamCoupon.add(setGetAPIPostData);
+
+                        appLoader.Show();
+
+                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "Api_coupon_exits", postParamCoupon, new CustomJSONParser.JSONResponseInterface() {
+                            @Override
+                            public void OnSuccess(String Result) {
+                                appLoader.Dismiss();
+                                Loger.MSG("Result", Result);
+
+                                try {
+                                    JSONObject jsonObject = new JSONObject(Result);
+                                    ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
+                                    ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setText(jsonObject.getString("message"));
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                        ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.colorGreen, null));
+                                    } else {
+                                        ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(getResources().getColor(R.color.colorGreen));
+                                    }
+
+//                                    coupon_id = jsonObject.getJSONObject("info_array").getString("id");
+//                                    coupon_amount = jsonObject.getJSONObject("info_array").getString("amount");
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+
+                            }
+
+                            @Override
+                            public void OnError(String Error, String Response) {
+                                appLoader.Dismiss();
+                                try {
+                                    JSONObject jsonObject = new JSONObject(Response);
+                                    ((SFNFTextView) findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
+                                    ((SFNFTextView)findViewById(R.id.Tv_coupon_code_valid_check)).setText(jsonObject.getString("message"));
+                                    ((SFNFTextView)findViewById(R.id.Tv_coupon_code_valid_check)).setTextColor(Color.RED);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void OnError(String Error) {
+                                appLoader.Dismiss();
+                            }
+                        });
+
+                    }
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
 
         LL_FOOTER1 = (LinearLayout) findViewById(R.id.LL_FOOTER1);
 

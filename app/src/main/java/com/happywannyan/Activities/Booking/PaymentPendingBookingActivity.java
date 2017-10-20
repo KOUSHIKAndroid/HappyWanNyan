@@ -7,8 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
-
+import android.widget.Toast;
+import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -26,7 +26,6 @@ import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,6 +56,8 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
     AppLoader appLoader;
     Card card;
 
+    public ArrayList<SetGetAPIPostData> params;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,39 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
         setGetCardsArrayList = new ArrayList<>();
 
+
+
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues("" + AppConstant.UserId);
+        params.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("sitter_user_id");
+        setGetAPIPostData.setValues("");
+        params.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("booking_id");
+        setGetAPIPostData.setValues("");
+        params.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("pet_id");
+        setGetAPIPostData.setValues("");
+        params.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("langid");
+        setGetAPIPostData.setValues("");
+        params.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_timezone");
+        setGetAPIPostData.setValues("");
+        params.add(setGetAPIPostData);
+
+
         findViewById(R.id.Card_request).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,8 +110,44 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
                         getResources().getString(R.string.do_you_really_submit_this_payment), new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
+                                try {
+                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("user_card_id");
+                                    setGetAPIPostData.setValues(cardFinalSelection.getString("id"));
+                                    params.add(setGetAPIPostData);
+
+                                    setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("name_on_card");
+                                    setGetAPIPostData.setValues(cardFinalSelection.getString("name_on_card"));
+                                    params.add(setGetAPIPostData);
+
+                                    setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("security_code");
+                                    setGetAPIPostData.setValues(cardFinalSelection.getString("cvv_code"));
+                                    params.add(setGetAPIPostData);
+
+                                    setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("stripeToken");
+                                    setGetAPIPostData.setValues("");
+                                    params.add(setGetAPIPostData);
+
+                                    setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("make_new_card");
+                                    setGetAPIPostData.setValues("");
+                                    params.add(setGetAPIPostData);
+
+                                    setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("action_type_custom");
+                                    setGetAPIPostData.setValues("P");
+                                    params.add(setGetAPIPostData);
 
 
+                                }catch (Exception ex){
+                                    ex.printStackTrace();
+                                }
+
+
+                                submitConfirmReservationRequestPaymentUsingHTTP();
                             }
                             @Override
                             public void OnCancel() {
@@ -464,4 +534,39 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
         void onSelectItemClick(int position, JSONObject data);
     }
 
+    public void submitConfirmReservationRequestPaymentUsingHTTP() {
+        appLoader.Show();
+        new CustomJSONParser().postDataUsingHttp(AppConstant.BASEURL + "accept_booking", params, new CustomJSONParser.JSONResponseInterface() {
+            @Override
+            public void OnSuccess(String Result) {
+                appLoader.Dismiss();
+                Loger.MSG("Result-->", Result);
+                try {
+                    JSONObject jsonObject = new JSONObject(Result);
+                    if (jsonObject.getBoolean("response")) {
+                        Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                        //finish();
+                        Intent intent = new Intent(PaymentPendingBookingActivity.this, BaseActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.putExtra("go_to", "pending_message");
+                        startActivity(intent);
+                        finish();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                appLoader.Dismiss();
+            }
+
+            @Override
+            public void OnError(String Error) {
+                appLoader.Dismiss();
+            }
+        });
+    }
 }
