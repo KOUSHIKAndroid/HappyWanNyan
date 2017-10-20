@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetCards;
 import com.happywannyan.POJO.SetGetStripData;
@@ -57,6 +58,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
     Card card;
 
     public ArrayList<SetGetAPIPostData> params;
+    SFNFBoldTextView tv_total_amount;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,6 +71,8 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
         setGetCardsArrayList = new ArrayList<>();
 
+        ((SFNFBoldTextView)findViewById(R.id.tv_total_amount)).setText(getIntent().getExtras().getString("booked_total_amount"));
+
         params=new ArrayList<>();
 
         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
@@ -78,12 +82,12 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("sitter_user_id");
-        setGetAPIPostData.setValues(getIntent().getExtras().getString("sitter_user_id"));
+        setGetAPIPostData.setValues(getIntent().getExtras().getString("sitter_users_id"));
         params.add(setGetAPIPostData);
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("booking_id");
-        setGetAPIPostData.setValues(getIntent().getExtras().getString("booking_id"));
+        setGetAPIPostData.setValues(getIntent().getExtras().getString("id"));
         params.add(setGetAPIPostData);
 
         setGetAPIPostData = new SetGetAPIPostData();

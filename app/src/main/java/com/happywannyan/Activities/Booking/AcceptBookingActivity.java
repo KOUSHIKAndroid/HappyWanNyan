@@ -42,7 +42,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
     RecyclerView rcv_pending_ped_list_service;
     ArrayList<SetGetPendingBooking> pendingBookingArrayList;
     AppLoader appLoader;
-    String search_id = "";
+    String search_id = "",pet_id="";
     AdapterPendingBookingPetService adapterPendingBookingPetService;
     LinearLayout LL_FOOTER1;
 
@@ -52,7 +52,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
     public ArrayList<SetGetAPIPostData> postParamCoupon;
 
-    String sitter_users_id,booking_id;
+    String sitter_users_id,booking_id,booked_total_amount;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -206,14 +206,19 @@ public class AcceptBookingActivity extends AppCompatActivity {
                 atLeastOnceCheck=false;
                 for (int i=0;i<pendingBookingArrayList.size();i++){
                     if (pendingBookingArrayList.get(i).isChecked()){
+
+                        pet_id=pendingBookingArrayList.get(i).getPet_id()+",";
                         atLeastOnceCheck=true;
                     }
                 }
 
                 if (atLeastOnceCheck){
+                    pet_id=pet_id.substring(0,pet_id.length()-1);
                     Intent intent=new Intent(AcceptBookingActivity.this,PaymentPendingBookingActivity.class);
                     intent.putExtra("sitter_users_id",sitter_users_id);
                     intent.putExtra("booking_id",booking_id);
+                    intent.putExtra("booked_total_amount",booked_total_amount);
+                    intent.putExtra("pet_id",pet_id);
                     startActivity(intent);
                 }else {
                     Toast.makeText(AcceptBookingActivity.this,getResources().getString(R.string.check_at_least_one_pet), Toast.LENGTH_SHORT).show();
@@ -287,6 +292,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
                     sitter_users_id=booking_info.getString("sitter_users_id");
                     booking_id=booking_info.getString("id");
+                    booking_id=booking_info.getString("booked_total_amount");
 
                     for (int i=0;i<petInfoSectionArray.length();i++){
                         SetGetPendingBooking setGetPendingBooking=new SetGetPendingBooking();

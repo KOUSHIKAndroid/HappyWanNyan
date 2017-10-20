@@ -59,6 +59,7 @@
                     android:text="@string/total_Payableamount" />
 
                 <com.happywannyan.Font.SFNFBoldTextView
+                    android:id="@+id/tv_total_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
