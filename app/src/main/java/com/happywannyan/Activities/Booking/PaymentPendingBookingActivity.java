@@ -70,7 +70,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
         setGetCardsArrayList = new ArrayList<>();
 
-
+        params=new ArrayList<>();
 
         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("user_id");
@@ -89,7 +89,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("pet_id");
-        setGetAPIPostData.setValues("");
+        setGetAPIPostData.setValues(getIntent().getExtras().getString("pet_id"));
         params.add(setGetAPIPostData);
 
         setGetAPIPostData = new SetGetAPIPostData();

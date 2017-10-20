@@ -48,6 +48,8 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
     EditText EDX_coupon_code;
 
+    public boolean atLeastOnceCheck=false;
+
     public ArrayList<SetGetAPIPostData> postParamCoupon;
 
     String sitter_users_id,booking_id;
@@ -192,11 +194,6 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
         LL_FOOTER1 = (LinearLayout) findViewById(R.id.LL_FOOTER1);
 
         View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
@@ -206,10 +203,23 @@ public class AcceptBookingActivity extends AppCompatActivity {
         ButtomView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AcceptBookingActivity.this,PaymentPendingBookingActivity.class);
-                intent.putExtra("sitter_users_id",sitter_users_id);
-                intent.putExtra("booking_id",booking_id);
-                startActivity(intent);
+                atLeastOnceCheck=false;
+                for (int i=0;i<pendingBookingArrayList.size();i++){
+                    if (pendingBookingArrayList.get(i).isChecked()){
+                        atLeastOnceCheck=true;
+                    }
+                }
+
+                if (atLeastOnceCheck){
+                    Intent intent=new Intent(AcceptBookingActivity.this,PaymentPendingBookingActivity.class);
+                    intent.putExtra("sitter_users_id",sitter_users_id);
+                    intent.putExtra("booking_id",booking_id);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(AcceptBookingActivity.this,getResources().getString(R.string.check_at_least_one_pet), Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
@@ -275,8 +285,8 @@ public class AcceptBookingActivity extends AppCompatActivity {
                     JSONObject confirmAccept=booking_info.getJSONObject("confirm_accept");
                     JSONArray petInfoSectionArray=confirmAccept.getJSONArray("pet_info_section");
 
-                    sitter_users_id=booking_info.getString("booking_info");
-                    booking_id=booking_info.getString("booking_id");
+                    sitter_users_id=booking_info.getString("sitter_users_id");
+                    booking_id=booking_info.getString("id");
 
                     for (int i=0;i<petInfoSectionArray.length();i++){
                         SetGetPendingBooking setGetPendingBooking=new SetGetPendingBooking();
