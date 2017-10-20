@@ -279,6 +279,7 @@
     <string name="accept_booking">Accept Booking</string>
     <string name="pets_associated_with_this_service">Pets accociated with this service</string>
     <string name="do_you_really_submit_this_payment">Do you really submit this payment?</string>
+    <string name="cannot_charge_a_customer_that_has_no_active_card">Cannot charge a customer that has no active card</string>
 
 
 </resources>

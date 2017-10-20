@@ -87,7 +87,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("booking_id");
-        setGetAPIPostData.setValues(getIntent().getExtras().getString("id"));
+        setGetAPIPostData.setValues(getIntent().getExtras().getString("booking_id"));
         params.add(setGetAPIPostData);
 
         setGetAPIPostData = new SetGetAPIPostData();
@@ -542,7 +542,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
     public void submitConfirmReservationRequestPaymentUsingHTTP() {
         appLoader.Show();
-        new CustomJSONParser().postDataUsingHttp(AppConstant.BASEURL + "accept_booking?", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().postDataUsingHttp(AppConstant.BASEURL + "accept_booking", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
