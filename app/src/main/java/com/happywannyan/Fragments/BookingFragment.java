@@ -30,6 +30,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.TimeZone;
 
 /**
  * Created by su on 5/30/17.
@@ -116,10 +117,13 @@ public class BookingFragment extends Fragment {
         setGetAPIPostData.setValues("10");
         Params.add(setGetAPIPostData);
 
+
         setGetAPIPostData = new SetGetAPIPostData();
+        TimeZone tz = TimeZone.getDefault();
         setGetAPIPostData.setPARAMS("user_timezone");
-        setGetAPIPostData.setValues("");
+        setGetAPIPostData.setValues(tz.getID());
         Params.add(setGetAPIPostData);
+
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("search_param");

@@ -50,6 +50,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
     public ArrayList<SetGetAPIPostData> postParamCoupon;
 
+    String sitter_users_id,booking_id;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -206,6 +207,8 @@ public class AcceptBookingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(AcceptBookingActivity.this,PaymentPendingBookingActivity.class);
+                intent.putExtra("sitter_users_id",sitter_users_id);
+                intent.putExtra("booking_id",booking_id);
                 startActivity(intent);
             }
         });
@@ -271,6 +274,9 @@ public class AcceptBookingActivity extends AppCompatActivity {
                     JSONObject booking_info = booking_info_array.getJSONObject(0).getJSONObject("booking_info");
                     JSONObject confirmAccept=booking_info.getJSONObject("confirm_accept");
                     JSONArray petInfoSectionArray=confirmAccept.getJSONArray("pet_info_section");
+
+                    sitter_users_id=booking_info.getString("booking_info");
+                    booking_id=booking_info.getString("booking_id");
 
                     for (int i=0;i<petInfoSectionArray.length();i++){
                         SetGetPendingBooking setGetPendingBooking=new SetGetPendingBooking();

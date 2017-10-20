@@ -31,6 +31,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.TimeZone;
 
 /**
  * Created by su on 10/20/17.
@@ -78,12 +79,12 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("sitter_user_id");
-        setGetAPIPostData.setValues("");
+        setGetAPIPostData.setValues(getIntent().getExtras().getString("sitter_user_id"));
         params.add(setGetAPIPostData);
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("booking_id");
-        setGetAPIPostData.setValues("");
+        setGetAPIPostData.setValues(getIntent().getExtras().getString("booking_id"));
         params.add(setGetAPIPostData);
 
         setGetAPIPostData = new SetGetAPIPostData();
@@ -93,12 +94,14 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("langid");
-        setGetAPIPostData.setValues("");
+        setGetAPIPostData.setValues(AppConstant.Language);
         params.add(setGetAPIPostData);
 
+
         setGetAPIPostData = new SetGetAPIPostData();
+        TimeZone tz = TimeZone.getDefault();
         setGetAPIPostData.setPARAMS("user_timezone");
-        setGetAPIPostData.setValues("");
+        setGetAPIPostData.setValues(tz.getID());
         params.add(setGetAPIPostData);
 
 
