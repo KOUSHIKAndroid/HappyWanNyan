@@ -16,7 +16,6 @@ import com.happywannyan.POJO.SetGetCards;
 import com.happywannyan.POJO.SetGetStripData;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
-import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.SitterBooking.NewCardAddActivity;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
