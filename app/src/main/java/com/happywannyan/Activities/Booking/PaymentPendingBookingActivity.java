@@ -542,7 +542,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
     public void submitConfirmReservationRequestPaymentUsingHTTP() {
         appLoader.Show();
-        new CustomJSONParser().postDataUsingHttp(AppConstant.BASEURL + "accept_booking", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "accept_booking?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

@@ -96,6 +96,7 @@
     <string name="calender_tips">予約日を選ぶ</string>
     <string name="cancel">キャンセル</string>
     <string name="cancelpolicy">キャンセルポリシー</string>
+    <string name="cannot_charge_a_customer_that_has_no_active_card">アクティブなカードがないお客様には請求できません</string>
     <string name="card_number">カード番号</string>
     <string msgid="4778414446709286370" name="cast_ad_label">"広告"</string>
     <string msgid="366047012176970604" name="cast_casting_to_device">"「%1$s」にキャストしています"</string>

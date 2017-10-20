@@ -1193,6 +1193,7 @@
     <string name="calender_tips">Select the start date and then the end date on the same page</string>
     <string name="cancel">Cancel</string>
     <string name="cancelpolicy">Cancelation Policy</string>
+    <string name="cannot_charge_a_customer_that_has_no_active_card">Cannot charge a customer that has no active card</string>
     <string name="card_number">Card Number</string>
     <string name="card_number_hint">4242 4242 4242 4242</string>
     <string name="cast_ad_label">Ad</string>
@@ -1241,7 +1242,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">51432e32-40a4-4685-b13d-06bbbba63527</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">52a018ea-687e-47de-b492-0cb21f03f348</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
