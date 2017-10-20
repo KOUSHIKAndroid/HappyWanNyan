@@ -57,8 +57,6 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
     AppLoader appLoader;
     Card card;
 
-    ImageView IMG_icon_back;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
