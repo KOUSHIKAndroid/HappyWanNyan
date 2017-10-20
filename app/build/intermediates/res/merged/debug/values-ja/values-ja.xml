@@ -65,6 +65,7 @@
     <string name="acc_label_card_number">"カード番号"</string>
     <string name="acc_label_expiry_date">"有効期限"</string>
     <string msgid="5835639618285370804" name="accept">"同意する"</string>
+    <string name="accept_booking">予約を受け入れる</string>
     <string name="action_settings">設定</string>
     <string name="adapter_your_pets_gender">性別</string>
     <string name="adapter_your_pets_month">月</string>

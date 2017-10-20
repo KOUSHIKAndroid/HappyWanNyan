@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.happywannyan.Activities.Booking.BookingDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/RL_HEADER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/IMG_icon_back"
+            android:layout_width="54dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <com.happywannyan.Font.SFNFTextView
+            android:id="@+id/PAGE_Titile"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/IMG_icon_back"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="20dp"
+            android:text="@string/accept_booking"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/page_titiel" />
+    </RelativeLayout>
+
+    <com.happywannyan.Font.SFNFTextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/tv_sub_title"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/RL_HEADER"
+        android:text="@string/pets_associated_with_this_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_pending_ped_list_service"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tv_sub_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

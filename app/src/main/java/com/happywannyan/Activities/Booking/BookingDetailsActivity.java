@@ -422,7 +422,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             } else if (jsonObjectPrevious.getJSONObject("booking_info").getString("accept_type_booking").equals("P")) {
 //                Open Popup With pet_info_section and  users_payment_section from JSON
-                startActivity(new Intent(this, AcceptBookingActivity.class));
+                Intent intent=new Intent(this,AcceptBookingActivity.class);
+                intent.putExtra("search_id",jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
+                startActivity(intent);
 
             }
         } catch (JSONException e) {

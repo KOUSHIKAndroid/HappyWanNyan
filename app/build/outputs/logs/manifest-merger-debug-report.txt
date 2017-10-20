@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-205:12
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-210:12
 	package
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:3:5-31
 		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
@@ -85,7 +85,7 @@ ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:14:22-63
 application
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:17:5-203:19
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:17:5-208:19
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /home/su/.android/build-cache/94288e218b1896aaaaea2d81bcfde6577caa7fb0/output/AndroidManifest.xml:11:5-20
 MERGED from [com.crashlytics.sdk.android:beta:1.2.5] /home/su/.android/build-cache/586fa9cfbf140c7fc877e08259d19f5e68fc3de6/output/AndroidManifest.xml:11:5-20
 MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.3.17] /home/su/.android/build-cache/53910d88f357352617ab15c767f1aeb80856f06e/output/AndroidManifest.xml:54:5-20
@@ -427,21 +427,21 @@ ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:189:13-69
 provider#android.support.v4.content.FileProvider
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:193:9-201:20
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:198:9-206:20
 	android:authorities
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:195:13-60
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:200:13-60
 	android:grantUriPermissions
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:197:13-47
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:202:13-47
 	android:exported
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:196:13-37
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:201:13-37
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:194:13-67
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:199:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:198:13-200:57
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:203:13-205:57
 	android:resource
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:200:17-54
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:205:17-54
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:199:17-67
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:204:17-67
 uses-sdk
 INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /home/su/.android/build-cache/94288e218b1896aaaaea2d81bcfde6577caa7fb0/output/AndroidManifest.xml:7:5-43

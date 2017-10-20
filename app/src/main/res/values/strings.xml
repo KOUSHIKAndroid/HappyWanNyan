@@ -276,6 +276,8 @@
     <string name="already_downloaded">Already Downloaded</string>
     <string name="download_complete">Download Complete</string>
     <string name="empty">Empty</string>
+    <string name="accept_booking">Accept Booking</string>
+    <string name="pets_associated_with_this_service">Pets accociated with this service</string>
 
 
 </resources>

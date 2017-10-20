@@ -255,5 +255,6 @@
     <string name="download_complete">ダウンロード完了</string>
     <string name="already_downloaded">既にダウンロード済み</string>
     <string name="empty">空の</string>
+    <string name="accept_booking">予約を受け入れる</string>
 
 </resources>
