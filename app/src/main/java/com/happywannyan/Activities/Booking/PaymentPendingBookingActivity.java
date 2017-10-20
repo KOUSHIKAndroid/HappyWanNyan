@@ -547,20 +547,12 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
                 Loger.MSG("Result-->", Result);
-                try {
-                    JSONObject jsonObject = new JSONObject(Result);
-                    if (!jsonObject.getBoolean("response")) {
-                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.cannot_charge_a_customer_that_has_no_active_card), Toast.LENGTH_LONG).show();
-
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
             }
 
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.cannot_charge_a_customer_that_has_no_active_card), Toast.LENGTH_LONG).show();
             }
 
             @Override
