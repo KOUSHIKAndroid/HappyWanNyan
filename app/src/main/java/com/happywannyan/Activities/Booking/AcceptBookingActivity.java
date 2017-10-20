@@ -292,7 +292,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
                     sitter_users_id=booking_info.getString("sitter_users_id");
                     booking_id=booking_info.getString("id");
-                    booking_id=booking_info.getString("booked_total_amount");
+                    booked_total_amount=booking_info.getString("booked_total_amount");
 
                     for (int i=0;i<petInfoSectionArray.length();i++){
                         SetGetPendingBooking setGetPendingBooking=new SetGetPendingBooking();
