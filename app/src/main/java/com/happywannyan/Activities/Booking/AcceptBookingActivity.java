@@ -1,5 +1,6 @@
 package com.happywannyan.Activities.Booking;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -55,7 +56,8 @@ public class AcceptBookingActivity extends AppCompatActivity {
         ButtomView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AcceptBookingActivity.this,"next",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(AcceptBookingActivity.this,PaymentPendingBookingActivity.class);
+                startActivity(intent);
             }
         });
 

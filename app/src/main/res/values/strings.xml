@@ -278,6 +278,7 @@
     <string name="empty">Empty</string>
     <string name="accept_booking">Accept Booking</string>
     <string name="pets_associated_with_this_service">Pets accociated with this service</string>
+    <string name="do_you_really_submit_this_payment">Do you really submit this payment?</string>
 
 
 </resources>
