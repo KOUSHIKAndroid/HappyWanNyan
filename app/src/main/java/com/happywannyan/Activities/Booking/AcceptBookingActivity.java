@@ -1,13 +1,19 @@
 package com.happywannyan.Activities.Booking;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.happywannyan.Adapter.AdapterPendingBookingPetService;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetPendingBooking;
 import com.happywannyan.R;
@@ -31,6 +37,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
     AppLoader appLoader;
     String search_id = "";
     AdapterPendingBookingPetService adapterPendingBookingPetService;
+    LinearLayout LL_FOOTER1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,9 +46,28 @@ public class AcceptBookingActivity extends AppCompatActivity {
         rcv_pending_ped_list_service = (RecyclerView) findViewById(R.id.rcv_pending_ped_list_service);
         rcv_pending_ped_list_service.setLayoutManager(new LinearLayoutManager(AcceptBookingActivity.this));
 
+        LL_FOOTER1 = (LinearLayout) findViewById(R.id.LL_FOOTER1);
+
+        View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
+        ((CardView) ButtomView.findViewById(R.id.Card_AddRevw)).setCardBackgroundColor(Color.parseColor("#bf3e49"));
+        ((SFNFBoldTextView) ButtomView.findViewById(R.id.TXT_ButtonName)).setText(getResources().getString(R.string.next));
+        LL_FOOTER1.addView(ButtomView);
+        ButtomView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AcceptBookingActivity.this,"next",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         pendingBookingArrayList = new ArrayList<>();
         appLoader = new AppLoader(this);
 
+        findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         search_id = getIntent().getExtras().getString("search_id");
 
