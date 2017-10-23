@@ -87,7 +87,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/Hea"
         android:background="@android:color/white"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -363,7 +363,7 @@
                     android:id="@+id/EditDescribe"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/describeyourcat"
+                    android:hint="@string/describeyourpet"
                     android:maxLines="5"
                     android:minLines="4" />
             </android.support.design.widget.TextInputLayout>

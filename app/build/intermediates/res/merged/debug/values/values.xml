@@ -1242,7 +1242,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">18f6a7de-73dd-42a5-ad23-c0747b51b704</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">333707a0-369a-44c9-8dfc-1d71de953944</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1304,7 +1304,7 @@
     <string name="default_web_client_id" translatable="false">279432934653-8a28nsfq9l66ds7knqk1c7o08a30peua.apps.googleusercontent.com</string>
     <string name="delete">Delete</string>
     <string name="delete_message">Delete this message?</string>
-    <string name="describeyourcat">Describe your cat</string>
+    <string name="describeyourpet">Describe your pet</string>
     <string name="description">Description</string>
     <string name="discount_amount">Discount Amount</string>
     <string name="do_you_really_submit_this_payment">Do you really submit this payment?</string>
