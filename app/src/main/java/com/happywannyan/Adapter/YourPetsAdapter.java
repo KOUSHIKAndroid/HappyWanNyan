@@ -229,6 +229,11 @@ public class YourPetsAdapter extends RecyclerView.Adapter<YourPetsAdapter.MyView
                         setGetYourPetsArrayList.remove(position);
                         //notifyDataSetChanged();
                         notifyItemRemoved(position);
+
+                        if (setGetYourPetsArrayList.size()==0){
+                            myPetsFragments.tv_empty.setVisibility(View.VISIBLE);
+                            myPetsFragments.recyclerView.setVisibility(View.VISIBLE);
+                        }
                     }
 
 

@@ -48,8 +48,8 @@ public class MyPetsFragments extends Fragment {
     private String mParam2;
 
     AppLoader appLoader;
-    RecyclerView recyclerView;
-    SFNFTextView tv_empty;
+    public RecyclerView recyclerView;
+    public SFNFTextView tv_empty;
     YourPetsAdapter yourPets_adapter;
     ArrayList<SetGetYourPets> ListPets;
 
