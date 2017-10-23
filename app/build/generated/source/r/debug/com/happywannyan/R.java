@@ -6906,7 +6906,7 @@ containing a value of this type.
         public static final int total_Payableamount=0x7f090169;
         public static final int trust_and_safety_fee=0x7f09016a;
         public static final int trust_safty=0x7f09016b;
-        public static final int tv_add_pet=0x7f09016c;
+        public static final int tv_add_new_pet=0x7f09016c;
         public static final int unable_to_make_book=0x7f09016d;
         public static final int unable_to_make_reservation_request=0x7f09016e;
         public static final int unable_to_send_message=0x7f09016f;
@@ -6937,6 +6937,8 @@ containing a value of this type.
         public static final int Animation_AppCompat_Dialog=0x7f0b00a5;
         public static final int Animation_AppCompat_DropDownUp=0x7f0b00a6;
         public static final int Animation_Design_BottomSheetDialog=0x7f0b00a7;
+        /** <item name="android:windowTranslucentNavigation">true</item>
+         */
         public static final int AppTheme=0x7f0b00a8;
         public static final int AppTheme_AppBarOverlay=0x7f0b00a9;
         public static final int AppTheme_PopupOverlay=0x7f0b00aa;

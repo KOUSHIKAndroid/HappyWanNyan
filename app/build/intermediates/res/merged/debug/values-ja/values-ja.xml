@@ -363,7 +363,7 @@
     <string name="total_Payableamount">支払総額</string>
     <string name="trust_and_safety_fee">信頼と安全料金</string>
     <string name="trust_safty">手数料</string>
-    <string name="tv_add_pet">追加のペット</string>
+    <string name="tv_add_new_pet">新しいペットを追加する</string>
     <string name="unable_to_make_book">今すぐ予約できません。HappyWanYanにご連絡ください。</string>
     <string name="unable_to_make_reservation_request">予約リクエストができません。HappyWanNyanにご連絡ください。</string>
     <string name="unable_to_send_message">メッセージを送信できません。 HappyWanNyanに連絡してください</string>

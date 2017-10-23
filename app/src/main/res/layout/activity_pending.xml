@@ -143,7 +143,7 @@
             android:layout_height="54dp"
             android:background="@color/colorBtnRed"
             android:gravity="center"
-            android:text="@string/tv_add_pet"
+            android:text="@string/tv_add_new_pet"
             android:textColor="@color/colorWhite"
             android:textSize="14sp" />
 

@@ -3031,7 +3031,7 @@ int string tota_amnt 0x7f090168
 int string total_Payableamount 0x7f090169
 int string trust_and_safety_fee 0x7f09016a
 int string trust_safty 0x7f09016b
-int string tv_add_pet 0x7f09016c
+int string tv_add_new_pet 0x7f09016c
 int string unable_to_make_book 0x7f09016d
 int string unable_to_make_reservation_request 0x7f09016e
 int string unable_to_send_message 0x7f09016f
