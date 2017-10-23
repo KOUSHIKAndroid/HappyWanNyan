@@ -258,5 +258,6 @@
     <string name="accept_booking">承認された予約</string>
     <string name="pets_associated_with_this_service">今回のサービスに関連のあるペット</string>
     <string name="cannot_charge_a_customer_that_has_no_active_card">アクティブなカードがないお客様には請求できません</string>
+    <string name="tv_add_pet">追加のペット</string>
 
 </resources>
