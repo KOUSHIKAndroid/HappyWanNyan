@@ -36,15 +36,15 @@
     </RelativeLayout>
 
     <com.happywannyan.Font.SFNFTextView
-        android:layout_marginTop="20dp"
         android:id="@+id/tv_sub_title"
-        android:textSize="16sp"
-        android:textColor="@color/colorBlack"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/RL_HEADER"
-        android:text="@string/pets_associated_with_this_service"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RL_HEADER"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/pets_associated_with_this_service"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:id="@+id/LL_FOOTER1"
@@ -57,16 +57,14 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        >
-    </LinearLayout>
+        android:orientation="horizontal"></LinearLayout>
 
     <LinearLayout
         android:id="@+id/LL_Coupon"
-        android:layout_above="@+id/LL_FOOTER1"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/LL_FOOTER1"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -123,15 +121,33 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_above="@+id/LL_Coupon"
-        android:id="@+id/rcv_pending_ped_list_service"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/tv_sub_title"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/LL_Coupon"
+        android:layout_below="@+id/tv_sub_title"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
 
-    </android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcv_pending_ped_list_service"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"></android.support.v7.widget.RecyclerView>
+
+        <com.happywannyan.Font.SFNFTextView
+            android:visibility="gone"
+            android:id="@+id/tv_add_pet"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@color/colorBtnRed"
+            android:gravity="center"
+            android:text="@string/tv_add_pet"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

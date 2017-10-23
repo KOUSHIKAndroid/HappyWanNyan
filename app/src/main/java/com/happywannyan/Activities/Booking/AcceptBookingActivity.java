@@ -1,5 +1,6 @@
 package com.happywannyan.Activities.Booking;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.happywannyan.Activities.AddAnotherPetsActivity;
 import com.happywannyan.Adapter.AdapterPendingBookingPetService;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
@@ -45,7 +47,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
     String search_id = "",pet_id="";
     AdapterPendingBookingPetService adapterPendingBookingPetService;
     LinearLayout LL_FOOTER1;
-
+    ArrayList<SetGetAPIPostData> params;
     EditText EDX_coupon_code;
 
     public boolean atLeastOnceCheck=false;
@@ -223,8 +225,6 @@ public class AcceptBookingActivity extends AppCompatActivity {
                 }else {
                     Toast.makeText(AcceptBookingActivity.this,getResources().getString(R.string.check_at_least_one_pet), Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
 
@@ -240,8 +240,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
         search_id = getIntent().getExtras().getString("search_id");
 
-
-        ArrayList<SetGetAPIPostData> params = new ArrayList<>();
+        params = new ArrayList<>();
 
         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("user_id");
@@ -275,6 +274,32 @@ public class AcceptBookingActivity extends AppCompatActivity {
         setGetAPIPostData.setValues(search_id);
         params.add(setGetAPIPostData);
 
+        loadAcceptBookingDetails();
+
+        findViewById(R.id.tv_add_pet).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(new Intent(AcceptBookingActivity.this, AddAnotherPetsActivity.class), 1);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String result=data.getStringExtra("result");
+                loadAcceptBookingDetails();
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
+    }
+
+    public void loadAcceptBookingDetails(){
         appLoader.Show();
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pending_booking_list?", params, new CustomJSONParser.JSONResponseInterface() {
 
@@ -294,16 +319,22 @@ public class AcceptBookingActivity extends AppCompatActivity {
                     booking_id=booking_info.getString("id");
                     booked_total_amount=booking_info.getString("booked_total_amount");
 
-                    for (int i=0;i<petInfoSectionArray.length();i++){
-                        SetGetPendingBooking setGetPendingBooking=new SetGetPendingBooking();
-                        setGetPendingBooking.setChecked(false);
-                        setGetPendingBooking.setPet_id(petInfoSectionArray.getJSONObject(i).getString("pet_id"));
-                        setGetPendingBooking.setPet_details(petInfoSectionArray.getJSONObject(i).getString("pet_details"));
-                        pendingBookingArrayList.add(setGetPendingBooking);
+                    if(petInfoSectionArray.length()>0) {
+                        rcv_pending_ped_list_service.setVisibility(View.VISIBLE);
+                        findViewById(R.id.tv_add_pet).setVisibility(View.GONE);
+                        for (int i = 0; i < petInfoSectionArray.length(); i++) {
+                            SetGetPendingBooking setGetPendingBooking = new SetGetPendingBooking();
+                            setGetPendingBooking.setChecked(false);
+                            setGetPendingBooking.setPet_id(petInfoSectionArray.getJSONObject(i).getString("pet_id"));
+                            setGetPendingBooking.setPet_details(petInfoSectionArray.getJSONObject(i).getString("pet_details"));
+                            pendingBookingArrayList.add(setGetPendingBooking);
+                        }
+                        adapterPendingBookingPetService = new AdapterPendingBookingPetService(AcceptBookingActivity.this, pendingBookingArrayList);
+                        rcv_pending_ped_list_service.setAdapter(adapterPendingBookingPetService);
+                    }else {
+                        rcv_pending_ped_list_service.setVisibility(View.GONE);
+                        findViewById(R.id.tv_add_pet).setVisibility(View.VISIBLE);
                     }
-
-                    adapterPendingBookingPetService = new AdapterPendingBookingPetService(AcceptBookingActivity.this, pendingBookingArrayList);
-                    rcv_pending_ped_list_service.setAdapter(adapterPendingBookingPetService);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

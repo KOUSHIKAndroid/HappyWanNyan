@@ -255,8 +255,8 @@
     <string name="download_complete">ダウンロード完了</string>
     <string name="already_downloaded">既にダウンロード済み</string>
     <string name="empty">空の</string>
-    <string name="accept_booking">予約を受け入れる</string>
-    <string name="pets_associated_with_this_service">このサービスに付随するペット</string>
+    <string name="accept_booking">承認された予約</string>
+    <string name="pets_associated_with_this_service">今回のサービスに関連のあるペット</string>
     <string name="cannot_charge_a_customer_that_has_no_active_card">アクティブなカードがないお客様には請求できません</string>
 
 </resources>

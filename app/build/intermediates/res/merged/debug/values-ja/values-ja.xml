@@ -65,7 +65,7 @@
     <string name="acc_label_card_number">"カード番号"</string>
     <string name="acc_label_expiry_date">"有効期限"</string>
     <string msgid="5835639618285370804" name="accept">"同意する"</string>
-    <string name="accept_booking">予約を受け入れる</string>
+    <string name="accept_booking">承認された予約</string>
     <string name="action_settings">設定</string>
     <string name="adapter_your_pets_gender">性別</string>
     <string name="adapter_your_pets_month">月</string>
@@ -300,7 +300,7 @@
     <string name="pet_size">ペットのサイズ</string>
     <string name="pet_type">ペットの種類</string>
     <string name="petrequirement">対応可能なペットのサイズ</string>
-    <string name="pets_associated_with_this_service">このサービスに付随するペット</string>
+    <string name="pets_associated_with_this_service">今回のサービスに関連のあるペット</string>
     <string name="petsitting">ペットの座り</string>
     <string name="pickuptime">お預け時間</string>
     <string msgid="1303870564366209730" name="place_autocomplete_clear_button">"検索をクリア"</string>
