@@ -133,7 +133,7 @@
     <string name="Gender">Gender</string>
     <string name="isyourcatspayedorneutered">Is your cat spayed or neutered?</string>
     <string name="isyourcatfriendlywithotherpets">Is your cat friendly with other pets?</string>
-    <string name="describeyourcat">Describe your cat</string>
+    <string name="describeyourpet">Describe your pet</string>
     <string name="no_reviewFound">No Review found</string>
     <string name="no_ImagesFound">No Images Found</string>
     <string name="no_ServicesFound">No Service Found</string>

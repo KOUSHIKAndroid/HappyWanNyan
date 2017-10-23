@@ -219,7 +219,7 @@
     <string name="remember_me">私を覚えてますか</string>
     <string name="message">メッセージ</string>
     <string name="explain_why_cancel">この予約をキャンセルする理由を説明してください</string>
-    <string name="describeyourcat">あなたの猫を説明してください</string>
+    <string name="describeyourpet">あなたのペットを説明してください</string>
     <string name="slide1_text">完璧なペットシッターを見つける</string>
     <string name="give_the_permission">許可を与える！</string>
     <string name="field_length_must_be_greater_than_five">フィールド長は5より大きくなければなりません</string>
