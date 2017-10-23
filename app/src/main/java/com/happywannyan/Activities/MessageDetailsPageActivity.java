@@ -35,7 +35,7 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
-import com.happywannyan.Adapter.MessageAdapterSuraj;
+import com.happywannyan.Adapter.MessageDetailsAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.MessageFragment;
@@ -66,7 +66,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
     RecyclerView LL_UserInfo;
     //    MessageAdapter messageAdapter;
-    MessageAdapterSuraj messageAdapterSuraj;
+    MessageDetailsAdapter messageDetailsAdapter;
     private LinearLayoutManager mLinearLayoutManager;
 
     String[] permissions = new String[]{
@@ -282,9 +282,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
 //                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
 
-                    messageAdapterSuraj = new MessageAdapterSuraj(MessageDetailsPageActivity.this, messageDetailsPojoArrayList);
+                    messageDetailsAdapter = new MessageDetailsAdapter(MessageDetailsPageActivity.this, messageDetailsPojoArrayList);
 //                  LL_UserInfo.setAdapter(messageAdapter);
-                    LL_UserInfo.setAdapter(messageAdapterSuraj);
+                    LL_UserInfo.setAdapter(messageDetailsAdapter);
 //                    } else
 //                        messageAdapter.notifyDataSetChanged();
                     appLoader.Dismiss();
@@ -692,7 +692,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // do something
-                messageAdapterSuraj.DownloadAndShow();
+                messageDetailsAdapter.DownloadAndShow();
             }
             return;
         }
@@ -777,9 +777,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
 //                    jsonArrayMessage.getJSONObject(jsonArrayMessage.length() - 1).getJSONArray("info").put(new JSONObject(message).getJSONObject("message_info"));
 //                    messageAdapter = new MessageAdapter(MessageDetailsPageActivity.this, jsonArrayMessage);
-                    messageAdapterSuraj = new MessageAdapterSuraj(MessageDetailsPageActivity.this, messageDetailsPojoArrayList);
-                    messageAdapterSuraj.notifyDataSetChanged();
-                    //LL_UserInfo.setAdapter(messageAdapterSuraj);
+                    messageDetailsAdapter = new MessageDetailsAdapter(MessageDetailsPageActivity.this, messageDetailsPojoArrayList);
+                    messageDetailsAdapter.notifyDataSetChanged();
+                    //LL_UserInfo.setAdapter(messageDetailsAdapter);
 
                     Log.d("receiver", "Got message:2 " + message);
                 } else {
@@ -814,8 +814,8 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(messageAdapterSuraj!=null){
-            messageAdapterSuraj.unRegister();
+        if(messageDetailsAdapter !=null){
+            messageDetailsAdapter.unRegister();
         }
     }
 }

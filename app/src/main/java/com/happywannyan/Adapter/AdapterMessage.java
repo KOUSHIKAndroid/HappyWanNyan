@@ -25,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
@@ -68,7 +69,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.MyViewHo
             final JSONObject object = MessageList.get(position).getJsonObject();
             holder.tv_name.setText(object.getString("usersname").trim());
             try {
-                holder.tv_details.setText(URLEncoder.encode(object.getString("message_info").trim(), "utf-8"));
+                holder.tv_details.setText(URLDecoder.decode(object.getString("message_info").trim(), "utf-8"));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }

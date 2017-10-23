@@ -37,7 +37,7 @@ import java.util.Locale;
  * Created by su on 10/4/17.
  */
 
-public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class MessageDetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     String MsgItemTouch;
     ArrayList<SetGetMessageDetailsPojo> messageDetailsPojoArrayList;
     Context mContext;
@@ -49,7 +49,7 @@ public class MessageAdapterSuraj extends RecyclerView.Adapter<RecyclerView.ViewH
     ArrayList<Long> list = new ArrayList<>();
 
 
-    public MessageAdapterSuraj(Context mContext, ArrayList<SetGetMessageDetailsPojo> messageDetailsPojoArrayList) {
+    public MessageDetailsAdapter(Context mContext, ArrayList<SetGetMessageDetailsPojo> messageDetailsPojoArrayList) {
         this.mContext = mContext;
         this.messageDetailsPojoArrayList = messageDetailsPojoArrayList;
         downloadManager = (DownloadManager)mContext.getSystemService(Context.DOWNLOAD_SERVICE);
