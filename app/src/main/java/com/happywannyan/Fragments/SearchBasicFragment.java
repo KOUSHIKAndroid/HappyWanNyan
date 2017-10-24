@@ -220,8 +220,8 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     ((BaseActivity) getActivity()).getLocation(new Events() {
                         @Override
                         public void UpdateLocation(Location location) {
-                            Loger.MSG("@@@ LAT", "--" + location.getLatitude() + location.getLongitude());
-                            new AppLocationProvider().OnGetAddress(getActivity(), location, SearchBasicFragment.this);
+                            Loger.MSG("@@@ LAT/LNG", "-->" + location.getLatitude() +"/"+ location.getLongitude());
+                            new AppLocationProvider().OnGetAddress(((BaseActivity) getActivity()), location, SearchBasicFragment.this);
                         }
                     });
                 }
@@ -231,7 +231,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
 
         if (AppLocationProvider.GPS(getActivity())) {
-
+            GPS=true;
             Loger.MSG("## " + getClass().getName(), " Yewsssss");
             MyLocalLocationManager.setLogType(LogType.GENERAL);
             ((BaseActivity) getActivity()).getLocation(new Events() {
@@ -306,9 +306,10 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     }
 
     @Override
-    public void OnAdresss(String Adreess, JSONObject geo) {
+    public void OnAdresss(String Address, JSONObject geo) {
         if (GPS) {
-            TXT_Loction.setText(Adreess);
+            Loger.MSG("Address-->",Address);
+            TXT_Loction.setText(Address);
             IMG_erase_location.setVisibility(View.VISIBLE);
             LL_PetServiceList.setVisibility(View.VISIBLE);
             this.Geo = geo;

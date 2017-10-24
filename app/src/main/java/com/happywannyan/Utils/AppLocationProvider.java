@@ -32,7 +32,7 @@ public class AppLocationProvider {
     }
 
 
-    public void OnGetAddress(final Context context, final Location location, final AddressListener addressListener) {
+    public void OnGetAddress(Context context, final Location location, final AddressListener addressListener) {
 
         new AsyncTask<Void, Void, String>() {
 
