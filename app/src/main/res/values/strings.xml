@@ -281,6 +281,8 @@
     <string name="do_you_really_submit_this_payment">Do you really submit this payment?</string>
     <string name="cannot_charge_a_customer_that_has_no_active_card">Cannot charge a customer that has no active card</string>
     <string name="tv_add_new_pet">Add new pet</string>
+    <string name="guest">Guest</string>
+    <string name="login_signup">Log In/Sign Up</string>
 
 
 </resources>

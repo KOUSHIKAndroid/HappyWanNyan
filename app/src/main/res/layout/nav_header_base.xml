@@ -29,7 +29,7 @@
         android:layout_marginTop="@dimen/nav_header_vertical_spacing"
         android:layout_toRightOf="@+id/imageView"
         android:paddingLeft="10dp"
-        android:text="Android Studio"
+        android:text="@string/guest"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="@dimen/h1_label" />
 
@@ -40,7 +40,7 @@
         android:layout_below="@+id/TXT_UserName"
         android:layout_toRightOf="@+id/imageView"
         android:paddingLeft="10dp"
-        android:text="@string/Login"
+        android:text="@string/login_signup"
         android:textSize="12sp" />
 
 

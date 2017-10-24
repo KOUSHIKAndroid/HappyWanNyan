@@ -259,5 +259,7 @@
     <string name="pets_associated_with_this_service">今回のサービスに関連のあるペット</string>
     <string name="cannot_charge_a_customer_that_has_no_active_card">アクティブなカードがないお客様には請求できません</string>
     <string name="tv_add_new_pet">新しいペットを追加する</string>
+    <string name="guest">ゲスト</string>
+    <string name="login_signup">ログインサインアップ</string>
 
 </resources>
