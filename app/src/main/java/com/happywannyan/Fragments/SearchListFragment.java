@@ -13,6 +13,7 @@ import com.happywannyan.Activities.SearchResultActivity;
 import com.happywannyan.Adapter.SearchPetsAdapter;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
+import com.happywannyan.Utils.Loger;
 
 public class SearchListFragment extends Fragment {
 
@@ -63,6 +64,7 @@ public class SearchListFragment extends Fragment {
         tv_empty = (SFNFTextView) view.findViewById(R.id.tv_empty);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        Loger.MSG("ListARRY","-->"+((SearchResultActivity) getActivity()).ListARRY.size());
         if (((SearchResultActivity) getActivity()).ListARRY.size()>0){
             recycler_view.setVisibility(View.VISIBLE);
             tv_empty.setVisibility(View.GONE);

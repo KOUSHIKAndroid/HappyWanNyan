@@ -141,7 +141,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
 
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
 
             }
