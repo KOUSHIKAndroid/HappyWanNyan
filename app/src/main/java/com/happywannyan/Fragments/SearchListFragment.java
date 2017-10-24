@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.happywannyan.Activities.SearchResultActivity;
 import com.happywannyan.Adapter.SearchPetsAdapter;
+import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 
 public class SearchListFragment extends Fragment {
@@ -23,6 +24,7 @@ public class SearchListFragment extends Fragment {
     private String mParam2;
 
     RecyclerView recycler_view;
+    SFNFTextView tv_empty;
 
     public SearchListFragment() {
         // Required empty public constructor
@@ -58,10 +60,21 @@ public class SearchListFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recycler_view = (RecyclerView) view.findViewById(R.id.recycler_view);
+        tv_empty = (SFNFTextView) view.findViewById(R.id.tv_empty);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recycler_view.setAdapter(new SearchPetsAdapter(getActivity(), ((SearchResultActivity) getActivity()).ListARRY));
-        ((SearchResultActivity) getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
-        ((SearchResultActivity) getActivity()).findViewById(R.id.fab).setVisibility(View.VISIBLE);
+
+        if (((SearchResultActivity) getActivity()).ListARRY.size()>0){
+            recycler_view.setVisibility(View.VISIBLE);
+            tv_empty.setVisibility(View.GONE);
+            recycler_view.setAdapter(new SearchPetsAdapter(getActivity(), ((SearchResultActivity) getActivity()).ListARRY));
+            ((SearchResultActivity) getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
+            ((SearchResultActivity) getActivity()).findViewById(R.id.fab).setVisibility(View.VISIBLE);
+        }else {
+            recycler_view.setVisibility(View.GONE);
+            tv_empty.setVisibility(View.VISIBLE);
+        }
+
+
 //
 //        ((SearchResultActivity)getActivity()). findViewById(R.id.fab_plus).setOnClickListener(new View.OnClickListener() {
 //            @Override

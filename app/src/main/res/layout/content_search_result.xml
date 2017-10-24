@@ -9,10 +9,28 @@
     tools:context="com.happywannyan.Activities.SearchResultActivity"
     tools:showIn="@layout/activity_search_result">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
     <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorGrayProject"/>
+
+        <com.happywannyan.Font.SFNFTextView
+            android:visibility="visible"
+            android:id="@+id/tv_empty"
+            android:text="@string/empty"
+            android:textSize="18sp"
+            android:textColor="@color/colorBlack"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
