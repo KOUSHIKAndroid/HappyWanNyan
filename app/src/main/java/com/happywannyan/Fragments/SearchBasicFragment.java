@@ -242,8 +242,6 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
                 }
             });
-
-
         } else {
             Loger.MSG("## " + getClass().getName(), " Noooo");
         }
