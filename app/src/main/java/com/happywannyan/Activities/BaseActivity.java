@@ -167,6 +167,8 @@ public class BaseActivity extends LocationBaseActivity
                         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                         onConfigurationChanged(config);
 
+                        ((SFNFTextView) findViewById(R.id.TXT_UserName)).setHint(getResources().getString(R.string.guest));
+                        ((SFNFTextView) findViewById(R.id.TXT_loginlabel)).setHint(getResources().getString(R.string.login_signup));
 
                         ((SFNFTextView) findViewById(R.id.tv_nav_search)).setText(getResources().getString(R.string.search));
                         ((SFNFTextView) findViewById(R.id.tv_nav_message)).setText(getResources().getString(R.string.nav_messages));

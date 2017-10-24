@@ -217,6 +217,7 @@
     <string name="forgot_password">パスワードをお忘れですか</string>
     <string name="generalequerys">一般的なお問い合わせ</string>
     <string name="give_the_permission">許可を与える！</string>
+    <string name="guest">ゲスト</string>
     <string name="hint_search_addrres">郵便番号または住所の検索</string>
     <string name="how_many_times">何回ですか？</string>
     <string name="how_many_visits">何回訪問？</string>
@@ -237,6 +238,7 @@
     <string name="letthesitter">あなたの好みの時間を仲間に知らせる（オプション）</string>
     <string name="loading">読み込んでいます...</string>
     <string name="location">その他のペット</string>
+    <string name="login_signup">ログインサインアップ</string>
     <string name="make_default">デフォルトする</string>
     <string name="meeting_date">会議の開催日</string>
     <string name="message">メッセージ</string>
