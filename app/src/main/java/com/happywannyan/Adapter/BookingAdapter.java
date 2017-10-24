@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -73,8 +75,19 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
             if (object.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")){
                 holder.tv_bookingID_name.setText("");
                 if (object.getJSONObject("booking_info").getString("booking_type").equalsIgnoreCase("PE")){
-                    holder.tv_booking_id.setText(context.getResources().getString(R.string.pending_booking));
 
+                    if(object.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("P")
+                            ||object.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("N")){
+
+                        holder.tv_booking_id.setText(context.getResources().getString(R.string.pending_booking)+">>");
+                        holder.tv_booking_id.setTypeface(null, Typeface.BOLD);
+                        holder.tv_booking_id.setTextColor(Color.parseColor("#bf3e49"));
+
+                    }else {
+                        holder.tv_booking_id.setText(context.getResources().getString(R.string.pending_booking));
+                        holder.tv_booking_id.setTypeface(null, Typeface.BOLD);
+                        holder.tv_booking_id.setTextColor(Color.parseColor("#bf3e49"));
+                    }
                 }else {
                     holder.tv_booking_id.setText(context.getResources().getString(R.string.not_a_booking));
                 }
