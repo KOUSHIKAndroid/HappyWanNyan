@@ -216,6 +216,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 //                    ((ImageView) view.findViewById(R.id.ImgMyLocation)).setImageResource(R.drawable.ic_my_location_white);
                 } else {
                     GPS = true;
+                    place=null;
                     MyLocalLocationManager.setLogType(LogType.GENERAL);
                     ((BaseActivity) getActivity()).getLocation(new Events() {
                         @Override
