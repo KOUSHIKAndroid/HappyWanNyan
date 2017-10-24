@@ -62,7 +62,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     LinearLayout LL_Calender;
     LinearLayout LL_PetServiceList;
     RecyclerView Rec_petlist;
-    ImageView IMG_erase_location, IMG_Location;
+    ImageView IMG_erase_location;
     ArrayList<SetGetPetService> arraySetGetPetService;
     PetListAdapter adapter_petList;
     Place place;
@@ -106,7 +106,6 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
         LL_PetServiceList = (LinearLayout) view.findViewById(R.id.LL_PetServiceList);
         LL_PetServiceList.setVisibility(View.VISIBLE);
         Rec_petlist = (RecyclerView) view.findViewById(R.id.Rec_petlist);
-        IMG_Location = (ImageView) view.findViewById(R.id.ImgMyLocation);
         IMG_erase_location = (ImageView) view.findViewById(R.id.IMG_erase_location);
         Rec_petlist.setLayoutManager(new LinearLayoutManager(getActivity()));
 
