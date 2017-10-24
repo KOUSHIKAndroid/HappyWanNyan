@@ -447,7 +447,6 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
 
-
         if (getIntent().getExtras() != null) {
             //do here
             AppConstant.go_to = getIntent().getStringExtra("go_to");
@@ -468,11 +467,20 @@ public class BaseActivity extends LocationBaseActivity
 
             }
         } else {
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            SearchBasicFragment search_basicFragment = new SearchBasicFragment();
-            fragmentTransaction.add(R.id.Base_fargment_layout, search_basicFragment);
-            fragmentTransaction.commit();
+
+            if(AppConstant.login_status.equals("1")){
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                SearchBasicFragment search_basicFragment = new SearchBasicFragment();
+                fragmentTransaction.add(R.id.Base_fargment_layout, search_basicFragment);
+                fragmentTransaction.commit();
+            }else {
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
         }
 
         if (AppConstant.Language.equals("en")) {
