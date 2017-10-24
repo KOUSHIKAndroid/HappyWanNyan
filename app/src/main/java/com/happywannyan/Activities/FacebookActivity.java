@@ -23,6 +23,7 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -143,6 +144,8 @@ public class FacebookActivity extends AppCompatActivity {
                 try {
                     new AppConstant(FacebookActivity.this).setShareDATA(AppDataHolder.UserData, Result);
                     JSONObject jsonObject1 = new JSONObject(Result);
+                    Loger.MSG("FaceBookLogin-->",""+jsonObject1);
+                    AppConstant.login_status=jsonObject1.getJSONObject("info_array").getString("login_status");
                     switch (jsonObject1.getString("user_status")) {
                         case "not_verified_user":
 
