@@ -64,17 +64,9 @@ public class SearchListFragment extends Fragment {
         tv_empty = (SFNFTextView) view.findViewById(R.id.tv_empty);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        Loger.MSG("ListARRY","-->"+((SearchResultActivity) getActivity()).ListARRY.size());
-        if (((SearchResultActivity) getActivity()).ListARRY.size()>0){
-            recycler_view.setVisibility(View.VISIBLE);
-            tv_empty.setVisibility(View.GONE);
-            recycler_view.setAdapter(new SearchPetsAdapter(getActivity(), ((SearchResultActivity) getActivity()).ListARRY));
-            ((SearchResultActivity) getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
-            ((SearchResultActivity) getActivity()).findViewById(R.id.fab).setVisibility(View.VISIBLE);
-        }else {
-            recycler_view.setVisibility(View.GONE);
-            tv_empty.setVisibility(View.VISIBLE);
-        }
+        recycler_view.setAdapter(new SearchPetsAdapter(getActivity(), ((SearchResultActivity) getActivity()).ListARRY));
+        ((SearchResultActivity) getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
+        ((SearchResultActivity) getActivity()).findViewById(R.id.fab).setVisibility(View.VISIBLE);
 
 
 //

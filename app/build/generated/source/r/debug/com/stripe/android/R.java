@@ -588,7 +588,7 @@ public final class R {
         public static final int bottom = 0x7f10003c;
         public static final int buttonPanel = 0x7f1000a9;
         public static final int cancel_action = 0x7f10030b;
-        public static final int card_number_label = 0x7f100210;
+        public static final int card_number_label = 0x7f100211;
         public static final int checkbox = 0x7f1000b9;
         public static final int chronometer = 0x7f100313;
         public static final int collapseActionView = 0x7f100065;
@@ -601,13 +601,13 @@ public final class R {
         public static final int edit_query = 0x7f1000c4;
         public static final int end = 0x7f100040;
         public static final int end_padder = 0x7f10031b;
-        public static final int et_card_number = 0x7f100211;
-        public static final int et_cvc_number = 0x7f100214;
-        public static final int et_expiry_date = 0x7f100213;
+        public static final int et_card_number = 0x7f100212;
+        public static final int et_cvc_number = 0x7f100215;
+        public static final int et_expiry_date = 0x7f100214;
         public static final int expand_activities_button = 0x7f1000a3;
         public static final int expanded_menu = 0x7f1000b8;
-        public static final int expiry_date_label = 0x7f100212;
-        public static final int frame_container = 0x7f10020f;
+        public static final int expiry_date_label = 0x7f100213;
+        public static final int frame_container = 0x7f100210;
         public static final int home = 0x7f100012;
         public static final int homeAsUp = 0x7f10002a;
         public static final int icon = 0x7f1000a7;
@@ -615,7 +615,7 @@ public final class R {
         public static final int ifRoom = 0x7f100066;
         public static final int image = 0x7f1000a4;
         public static final int info = 0x7f100314;
-        public static final int iv_card_icon = 0x7f10020e;
+        public static final int iv_card_icon = 0x7f10020f;
         public static final int line1 = 0x7f100319;
         public static final int line3 = 0x7f10031a;
         public static final int listMode = 0x7f100026;
@@ -663,7 +663,7 @@ public final class R {
         public static final int submenuarrow = 0x7f1000bc;
         public static final int submit_area = 0x7f1000cd;
         public static final int tabMode = 0x7f100028;
-        public static final int text = 0x7f10023d;
+        public static final int text = 0x7f10023e;
         public static final int text2 = 0x7f100058;
         public static final int textSpacerNoButtons = 0x7f1000b0;
         public static final int textSpacerNoTitle = 0x7f1000af;

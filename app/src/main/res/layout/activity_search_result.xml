@@ -45,6 +45,7 @@
     </RelativeLayout>
 
     <FrameLayout
+        android:visibility="gone"
         android:id="@+id/Container_result"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -54,6 +55,16 @@
         android:orientation="horizontal">
 
     </FrameLayout>
+
+    <com.happywannyan.Font.SFNFTextView
+        android:visibility="gone"
+        android:id="@+id/tv_empty"
+        android:text="@string/empty"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlack"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
     <LinearLayout
