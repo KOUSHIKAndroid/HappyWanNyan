@@ -124,7 +124,7 @@ public class SearchResultActivity extends AppCompatActivity {
                 try {
 
                     findViewById(R.id.Container_result).setVisibility(View.VISIBLE);
-                    findViewById(R.id.Container_result).setVisibility(View.GONE);
+                    findViewById(R.id.tv_empty).setVisibility(View.GONE);
 
                     JSONObject object = new JSONObject(Result);
                     JSONArray ARRA = object.getJSONArray("results");
@@ -158,7 +158,7 @@ public class SearchResultActivity extends AppCompatActivity {
                     if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") == 0) {
 
                         findViewById(R.id.Container_result).setVisibility(View.GONE);
-                        findViewById(R.id.Container_result).setVisibility(View.VISIBLE);
+                        findViewById(R.id.tv_empty).setVisibility(View.VISIBLE);
 
                         new MYAlert(SearchResultActivity.this).AlertOnly(getResources().getString(R.string.app_name), Error, new MYAlert.OnlyMessage() {
                             @Override

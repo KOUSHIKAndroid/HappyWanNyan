@@ -25,7 +25,6 @@ public class SearchListFragment extends Fragment {
     private String mParam2;
 
     RecyclerView recycler_view;
-    SFNFTextView tv_empty;
 
     public SearchListFragment() {
         // Required empty public constructor
@@ -61,7 +60,6 @@ public class SearchListFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recycler_view = (RecyclerView) view.findViewById(R.id.recycler_view);
-        tv_empty = (SFNFTextView) view.findViewById(R.id.tv_empty);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         recycler_view.setAdapter(new SearchPetsAdapter(getActivity(), ((SearchResultActivity) getActivity()).ListARRY));
@@ -69,7 +67,6 @@ public class SearchListFragment extends Fragment {
         ((SearchResultActivity) getActivity()).findViewById(R.id.fab).setVisibility(View.VISIBLE);
 
 
-//
 //        ((SearchResultActivity)getActivity()). findViewById(R.id.fab_plus).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
