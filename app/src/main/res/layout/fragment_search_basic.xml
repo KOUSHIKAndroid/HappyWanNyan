@@ -52,9 +52,9 @@
                 android:layout_toLeftOf="@+id/LLL"
                 android:hint="@string/hint_search_addrres"
                 android:maxLines="1"
+                android:singleLine="true"
                 android:paddingLeft="40dp"
                 android:paddingRight="40dp"
-                android:singleLine="true"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite" />
 
