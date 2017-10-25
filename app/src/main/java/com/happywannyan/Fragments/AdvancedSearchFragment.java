@@ -387,10 +387,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                                                             });
                                                         } catch (JSONException e) {
-
+                                                            e.printStackTrace();
                                                         }
-
-
                                                     }
 
                                                     @Override
