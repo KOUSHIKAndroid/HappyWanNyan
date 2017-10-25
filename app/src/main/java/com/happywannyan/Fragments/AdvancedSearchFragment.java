@@ -462,8 +462,9 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                     TXT_petType.setHintTextColor(Color.RED);
                     SCROLLL.scrollTo(0, TXT_petType.getBottom());
 
-                } else
+                } else {
                     nextIntentShow();
+                }
             }
         });
 

@@ -305,24 +305,52 @@
                     android:layout_height="wrap_content"
                     android:text="@string/whatisyourdailybudgetperpet" />
 
-                <com.happywannyan.Font.SFNFTextView
-                    android:id="@+id/TXT_LoestRange"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:layout_below="@+id/T4"
-                    android:paddingTop="10dp"
-                    android:text="$64646"
-                    android:textColor="@color/colorBlack" />
+                    android:paddingTop="10dp">
 
-                <com.happywannyan.Font.SFNFTextView
-                    android:id="@+id/TXT_highestRange"
+                    <com.happywannyan.Font.SFNFTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥ "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:id="@+id/TXT_LoestRange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$64646"
+                        android:textColor="@color/colorBlack" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/T4"
-                    android:paddingTop="10dp"
-                    android:text="$64646"
-                    android:textColor="@color/colorBlack" />
+                    android:paddingTop="10dp">
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥ "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:id="@+id/TXT_highestRange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$64646"
+                        android:textColor="@color/colorBlack" />
+
+                </LinearLayout>
+
 
                 <LinearLayout
                     android:id="@+id/LL_PriceRange"
