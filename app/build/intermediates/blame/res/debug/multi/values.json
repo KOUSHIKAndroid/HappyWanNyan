@@ -8822,14 +8822,7 @@
                     "endOffset": 105322
                 },
                 "from": {
-                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 164,
-                        "startColumn": 4,
-                        "startOffset": 9084,
-                        "endColumn": 58,
-                        "endOffset": 9138
-                    }
+                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values/strings.xml"
                 }
             },
             {
