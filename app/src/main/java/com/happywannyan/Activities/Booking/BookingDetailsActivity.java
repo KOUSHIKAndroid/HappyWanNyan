@@ -440,7 +440,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
-
+                appLoader.Dismiss();
                 String Message = "";
                 try {
                     Message = new JSONObject(Result).getString("message");
