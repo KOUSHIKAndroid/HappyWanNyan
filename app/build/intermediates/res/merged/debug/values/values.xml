@@ -1242,7 +1242,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">dbd747f6-a284-4c10-814b-9b972d74938e</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">8a6b37a6-cfea-4da3-bb9c-5b9afa0ede9f</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1328,7 +1328,7 @@
     <string name="firebase_database_url" translatable="false">https://happywannyan-168107.firebaseio.com</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="gcm_defaultSenderId" translatable="false">279432934653</string>
-    <string name="generalequerys">General Inquiries</string>
+    <string name="generalequerys">General Inquiry</string>
     <string name="give_the_permission">Give the permission!</string>
     <string name="go_to_sitters_profile">Go to Sitter\'s Profile?</string>
     <string name="google_api_key" translatable="false">AIzaSyAc3KazLjS3IxyJ33NeEDVAKppZ1NLeB-c</string>

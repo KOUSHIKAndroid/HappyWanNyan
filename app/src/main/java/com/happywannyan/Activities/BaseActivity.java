@@ -662,7 +662,8 @@ public class BaseActivity extends LocationBaseActivity
                 navigationView.getHeaderView(0).findViewById(R.id.RL_HEADER).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(BaseActivity.this, LoginActivity.class));
+                        startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
+                        finish();
                     }
                 });
             }
