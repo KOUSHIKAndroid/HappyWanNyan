@@ -117,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/ic_edit_background"
-                        android:gravity="bottom"
+                        android:gravity="top"
                         android:minLines="5"
                         android:padding="10dp" />
 
