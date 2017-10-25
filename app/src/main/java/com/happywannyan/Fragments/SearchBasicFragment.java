@@ -68,7 +68,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     Place place;
     boolean GPS = false;
     JSONObject JSONFULLDATA, Geo;
-    JSONObject SearchJSON;
+    JSONObject SearchJSONSitter;
 
     public SearchBasicFragment() {
     }
@@ -120,6 +120,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     SharedPreferences.Editor editor = pref.edit();
                     Loger.MSG("total_message_count", "" + object.getInt("total_message_count"));
                     editor.putInt("count", object.getInt("total_message_count"));
+                    editor.apply();
                     editor.commit();
                     Loger.MSG("message_count", "" + pref.getInt("count", 0));
 
@@ -174,10 +175,10 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 GPS = false;
                 IMG_erase_location.setVisibility(View.GONE);
 //                IMG_erase_location.setImageResource(R.drawable.ic_my_location_white);
-                for (SetGetPetService setGetPetService : arraySetGetPetService)
-                    setGetPetService.setTick_value(false);
-                arraySetGetPetService.get(0).setTick_value(true);
-                adapter_petList.notifyDataSetChanged();
+//                for (SetGetPetService setGetPetService : arraySetGetPetService)
+//                    setGetPetService.setTick_value(false);
+//                arraySetGetPetService.get(0).setTick_value(true);
+//                adapter_petList.notifyDataSetChanged();
             }
         });
 
@@ -291,7 +292,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 case 101:
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(SearchJSON.toString(), null));
+                    fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(SearchJSONSitter.toString(), null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     break;
@@ -300,7 +301,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     }
 
     public void GotoAdvancedSearched(JSONObject jsondata) {
-        SearchJSON = jsondata;
+        SearchJSONSitter = jsondata;
         searchAndIntent();
     }
 
@@ -319,7 +320,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
         if (TXT_Loction.getText().toString().trim().equals("")) {
             TXT_Loction.setHintTextColor(Color.RED);
-        } else if (SearchJSON == null) {
+        } else if (SearchJSONSitter == null) {
             Toast.makeText(getActivity(),getActivity().getResources().getString(R.string.please_choose_a_type), Toast.LENGTH_SHORT).show();
         } else {
 
@@ -337,13 +338,13 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     ViewPort.put("northeast_LAT", place.getViewport().northeast.latitude + "");
                     ViewPort.put("northeast_LNG", place.getViewport().northeast.longitude + "");
 
-                    SearchJSON.put("LocationName", place.getName());
-                    SearchJSON.put("latlng", latalng);
-                    SearchJSON.put("viewport", ViewPort);
-                    SearchJSON.put("Address", place.getAddress());
-                    SearchJSON.put("StartDate", StartDate);
-                    SearchJSON.put("EndDate", EndDate);
-                    SearchJSON.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
+                    SearchJSONSitter.put("LocationName", place.getName());
+                    SearchJSONSitter.put("latlng", latalng);
+                    SearchJSONSitter.put("viewport", ViewPort);
+                    SearchJSONSitter.put("Address", place.getAddress());
+                    SearchJSONSitter.put("StartDate", StartDate);
+                    SearchJSONSitter.put("EndDate", EndDate);
+                    SearchJSONSitter.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
                 } else if (GPS) {
 
                     JSONObject ViewPort = new JSONObject();
@@ -353,18 +354,18 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     ViewPort.put("northeast_LAT", Geo.getJSONObject("viewport").getJSONObject("northeast").getString("lat") + "");
                     ViewPort.put("northeast_LNG", Geo.getJSONObject("viewport").getJSONObject("northeast").getString("lat") + "");
 
-                    SearchJSON.put("LocationName", TXT_Loction.getText());
-                    SearchJSON.put("latlng", Geo.getJSONObject("location"));
-                    SearchJSON.put("viewport", ViewPort);
-                    SearchJSON.put("Address", TXT_Loction.getText());
-                    SearchJSON.put("StartDate", StartDate);
-                    SearchJSON.put("EndDate", EndDate);
-                    SearchJSON.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
+                    SearchJSONSitter.put("LocationName", TXT_Loction.getText());
+                    SearchJSONSitter.put("latlng", Geo.getJSONObject("location"));
+                    SearchJSONSitter.put("viewport", ViewPort);
+                    SearchJSONSitter.put("Address", TXT_Loction.getText());
+                    SearchJSONSitter.put("StartDate", StartDate);
+                    SearchJSONSitter.put("EndDate", EndDate);
+                    SearchJSONSitter.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            Loger.MSG("@@", "" + SearchJSON.toString());
+            Loger.MSG("@@", "" + SearchJSONSitter.toString());
             ////////
 
 
@@ -389,7 +390,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
                 data = new JSONObject();
                 data.put("name", "serviceCat");
-                data.put("value", SearchJSON.getString("id"));
+                data.put("value", SearchJSONSitter.getString("id"));
                 Searchkeyinfor.put(data);
 
                 data = new JSONObject();
@@ -448,37 +449,37 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 } else {
                     data = new JSONObject();
                     data.put("name", "srch_lon");
-                    data.put("value", SearchJSON.getJSONObject("latlng").getString("lng"));
+                    data.put("value", SearchJSONSitter.getJSONObject("latlng").getString("lng"));
                     Searchkeyinfor.put(data);
 
                     data = new JSONObject();
                     data.put("name", "srch_lat");
-                    data.put("value", SearchJSON.getJSONObject("latlng").getString("lat"));
+                    data.put("value", SearchJSONSitter.getJSONObject("latlng").getString("lat"));
                     Searchkeyinfor.put(data);
 
                     data = new JSONObject();
                     data.put("name", "ne_lng");
-                    data.put("value", SearchJSON.getJSONObject("viewport").getString("northeast_LNG"));
+                    data.put("value", SearchJSONSitter.getJSONObject("viewport").getString("northeast_LNG"));
                     Searchkeyinfor.put(data);
 
                     data = new JSONObject();
                     data.put("name", "ne_lat");
-                    data.put("value", SearchJSON.getJSONObject("viewport").getString("northeast_LAT"));
+                    data.put("value", SearchJSONSitter.getJSONObject("viewport").getString("northeast_LAT"));
                     Searchkeyinfor.put(data);
 
 
                     data = new JSONObject();
                     data.put("name", "sw_lng");
-                    data.put("value", SearchJSON.getJSONObject("viewport").getString("southwest_LNG"));
+                    data.put("value", SearchJSONSitter.getJSONObject("viewport").getString("southwest_LNG"));
                     Searchkeyinfor.put(data);
 
                     data = new JSONObject();
                     data.put("name", "sw_lat");
-                    data.put("value", SearchJSON.getJSONObject("viewport").getString("southwest_LAT"));
+                    data.put("value", SearchJSONSitter.getJSONObject("viewport").getString("southwest_LAT"));
                     Searchkeyinfor.put(data);
 
-                    SEARCHPARAMS.put("Address", SearchJSON.getString("Address"));
-                    SEARCHPARAMS.put("LocationName", SearchJSON.getString("LocationName"));
+                    SEARCHPARAMS.put("Address", SearchJSONSitter.getString("Address"));
+                    SEARCHPARAMS.put("LocationName", SearchJSONSitter.getString("LocationName"));
 
                 }
 
