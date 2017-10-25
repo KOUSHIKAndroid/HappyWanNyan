@@ -538,6 +538,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         Button BTN_OK = (Button) LayView.findViewById(R.id.BTN_OK);
         Button BTN_CANCEL = (Button) LayView.findViewById(R.id.BTN_CANCEL);
 
+        alertbuilder.setView(LayView);
+        Dialog = alertbuilder.create();
 
         new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
@@ -565,8 +567,10 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                     adapter_petlist = new PetListDialogAdapter(AdvancedSearchFragment.this, getActivity(), arraySetGetPetService);
                     Rec_petlist_dailog.setAdapter(adapter_petlist);
 
-                } catch (JSONException e) {
+                    Dialog.show();
 
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             }
 
@@ -615,10 +619,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                 Dialog.dismiss();
             }
         });
-
-        alertbuilder.setView(LayView);
-        Dialog = alertbuilder.create();
-        Dialog.show();
     }
 
     public void refreshPage(String id, String name, String ImgSelectedName) {
