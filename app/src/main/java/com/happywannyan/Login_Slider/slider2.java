@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.happywannyan.R;
 
 public class slider2 extends Fragment {
@@ -48,7 +49,9 @@ public class slider2 extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView imageView = (ImageView) view.findViewById(R.id.IMG);
-        Glide.with(getActivity()).load(R.drawable.img_slider1).into(imageView);
+        Glide.with(getActivity()).load(R.drawable.img_slider1)
+//                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .placeholder(R.drawable.img_slider1).into(imageView);
     }
 
     @Override
