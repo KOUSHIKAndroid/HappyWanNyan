@@ -1105,7 +1105,7 @@
     <string name="Instruction_for_Cancel_req">According to the cancellation policy you will be charged for 50% of the booking total, up to ¥5000.</string>
     <string name="LastName">Last Name</string>
     <string name="LastName_photo">Last Name (Phonetic)</string>
-    <string name="Login">Login</string>
+    <string name="Login">Log in</string>
     <string name="LoginAlertTitle">Alert</string>
     <string name="Loginnow">Log in now</string>
     <string name="Month">Month</string>
@@ -1242,7 +1242,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">1d93f458-00f2-4fe5-9bf4-b968a077d3d6</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">e00a9eca-4387-41e4-9b64-7f09a9b5ac4d</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>

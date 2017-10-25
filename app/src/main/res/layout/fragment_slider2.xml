@@ -16,6 +16,7 @@
         android:layout_height="match_parent"
         android:paddingLeft="40dp"
         android:paddingRight="100dp"
+        android:textAllCaps="true"
         android:paddingTop="40dp"
         android:text="@string/slide1_text"
         android:textColor="@color/colorWhite"
