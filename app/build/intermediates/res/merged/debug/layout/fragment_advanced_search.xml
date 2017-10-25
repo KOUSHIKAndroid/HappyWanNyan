@@ -306,6 +306,7 @@
                     android:text="@string/whatisyourdailybudgetperpet" />
 
                 <LinearLayout
+                    android:id="@+id/LL_RangeShow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -356,7 +357,7 @@
                     android:id="@+id/LL_PriceRange"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/TXT_LoestRange"
+                    android:layout_below="@+id/LL_RangeShow"
                     android:orientation="horizontal"
                     android:paddingTop="10dp"></LinearLayout>
 
