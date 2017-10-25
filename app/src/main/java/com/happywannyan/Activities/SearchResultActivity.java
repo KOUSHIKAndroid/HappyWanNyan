@@ -52,7 +52,9 @@ public class SearchResultActivity extends AppCompatActivity {
             Loger.MSG("@@ SEARCH KEY", SearchKeys.toString());
 
         } catch (JSONException e) {
+            e.printStackTrace();
         } catch (Exception e) {
+            e.printStackTrace();
         }
 
 

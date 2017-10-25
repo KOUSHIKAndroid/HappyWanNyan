@@ -284,6 +284,7 @@
     <string name="guest">Guest</string>
     <string name="login_signup">Log In/Sign Up</string>
     <string name="optional_filter">Optional Filter</string>
+    <string name="no_sitter_found">No sitter found</string>
 
 
 </resources>
