@@ -14,6 +14,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -175,6 +176,9 @@ public class MyProfileFragment extends Fragment {
 
         Check = (CheckBox) Mview.findViewById(R.id.Checked);
         ProfileImg = (ImageView) Mview.findViewById(R.id.IMG_Profile);
+
+        Glide.with(getApplicationContext()).load(R.drawable.ic_profile).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
+
         ProfileImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

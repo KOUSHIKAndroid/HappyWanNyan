@@ -57,7 +57,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:paddingRight="10dp"
-                    android:src="@drawable/ic_profile" />
+                    />
 
                 <ImageView
                     android:layout_width="wrap_content"
