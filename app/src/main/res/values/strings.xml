@@ -283,6 +283,7 @@
     <string name="tv_add_new_pet">Add new pet</string>
     <string name="guest">Guest</string>
     <string name="login_signup">Log In/Sign Up</string>
+    <string name="optional_filter">Optional Filter</string>
 
 
 </resources>

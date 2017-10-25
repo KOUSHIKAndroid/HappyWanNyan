@@ -193,6 +193,7 @@
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/T1"
+                    android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/chose_pettype" />
@@ -230,15 +231,23 @@
                 android:id="@+id/RL_PetSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
-                android:paddingTop="20dp">
+                android:layout_marginTop="20dp">
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:textSize="18sp"
+                    android:id="@+id/tv_optional_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/optional_filter" />
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/T2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_optional_filter"
+                    android:paddingTop="5dp"
                     android:text="@string/pet_size" />
 
 
