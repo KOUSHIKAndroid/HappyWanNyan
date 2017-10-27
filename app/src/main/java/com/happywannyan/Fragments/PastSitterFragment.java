@@ -156,12 +156,12 @@ public class PastSitterFragment extends Fragment {
                         tv_empty.setVisibility(View.VISIBLE);
                         rcv_favourite.setAdapter(null);
 
-                        new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_favoritesitter), "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
-                            @Override
-                            public void OnOk(boolean res) {
-
-                            }
-                        });
+//                        new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_favoritesitter), "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
+//                            @Override
+//                            public void OnOk(boolean res) {
+//
+//                            }
+//                        });
                     }
                     else {
                         new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_favoritesitter),Error, new MYAlert.OnlyMessage() {

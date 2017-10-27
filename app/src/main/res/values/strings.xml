@@ -175,7 +175,7 @@
     <string name="NewCard">New Card</string>
     <string name="TermsCondition"><![CDATA[Terms & Condition]]></string>
     <string name="join">Joined:</string>
-    <string name="no_data_found">No Data found</string>
+    <!--<string name="no_data_found">No Data found</string>-->
     <string name="BookingId">Booking ID:</string>
     <string name="pleasenteraddress">Please Enter Address</string>
     <string name="do_you_want_to_cancel_booking">Are you sure you want to cancel this booking?</string>

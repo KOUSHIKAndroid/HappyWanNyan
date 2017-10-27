@@ -182,7 +182,7 @@
     <string name="available_Pets_Details">利用可能なペットの詳細</string>
     <string name="forgot_password">パスワードをお忘れですか</string>
     <string name="name_on_card">カードの名義</string>
-    <string name="no_data_found">何もデータが見つかりませんでした</string>
+    <!--<string name="no_data_found">何もデータが見つかりませんでした</string>-->
     <string name="generalequerys">一般的なお問い合わせ</string>
     <string name="lbl_cardno">クレジットカード番号</string>
     <string name="image_error">イメージエラー</string>

@@ -277,7 +277,6 @@
     <string name="no">いいえ</string>
     <string name="no_ImagesFound">画像が見つかりません</string>
     <string name="no_ServicesFound">サービスが見つかりません</string>
-    <string name="no_data_found">何もデータが見つかりませんでした</string>
     <string name="no_item_selected_in_pet_friendly">ペットフレンドリーで選択されたアイテムがありません</string>
     <string name="no_item_selected_in_pet_neutered">ペットの妊娠または出産に際して選択された項目がない</string>
     <string name="no_pet_data_found">ペット情報が見つかりません</string>

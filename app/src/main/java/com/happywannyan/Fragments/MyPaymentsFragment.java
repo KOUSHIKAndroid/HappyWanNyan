@@ -150,12 +150,13 @@ public class MyPaymentsFragment extends Fragment {
                             if (ARRY.length()==0){
                                 recycler_view.setVisibility(View.GONE);
                                 tv_empty.setVisibility(View.VISIBLE);
-                                new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_payment), "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
-                                    @Override
-                                    public void OnOk(boolean res) {
 
-                                    }
-                                });
+//                                new MYAlert(getActivity()).AlertOnly("" + getActivity().getResources().getString(R.string.nav_payment), "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
+//                                    @Override
+//                                    public void OnOk(boolean res) {
+//
+//                                    }
+//                                });
                             }
 
                         }catch (Exception ex){

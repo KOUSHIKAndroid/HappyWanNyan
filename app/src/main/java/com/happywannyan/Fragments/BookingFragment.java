@@ -305,12 +305,12 @@ public class BookingFragment extends Fragment {
                         tv_empty.setVisibility(View.VISIBLE);
                         recyclerView.setAdapter(null);
 
-                        new MYAlert(getActivity()).AlertOnly("" + TAGNAME, "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
-                            @Override
-                            public void OnOk(boolean res) {
-
-                            }
-                        });
+//                        new MYAlert(getActivity()).AlertOnly("" + TAGNAME, "" + getString(R.string.no_data_found), new MYAlert.OnlyMessage() {
+//                            @Override
+//                            public void OnOk(boolean res) {
+//
+//                            }
+//                        });
                     }
                     else {
                         new MYAlert(getActivity()).AlertOnly(""+ TAGNAME, Error, new MYAlert.OnlyMessage() {
