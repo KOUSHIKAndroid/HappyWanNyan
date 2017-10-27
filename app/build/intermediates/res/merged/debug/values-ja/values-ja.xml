@@ -323,6 +323,7 @@
     <string name="pleasenteraddress">アドレスを入力してください</string>
     <string name="pleaseselect">選んでください</string>
     <string name="price">価格</string>
+    <string name="profile_info_updated">プロフィールを提出する</string>
     <string name="remember_me">ログインしたままにする</string>
     <string name="request_reservation">予約リクエスト</string>
     <string name="reservation">ご予約に関するメッセージ</string>

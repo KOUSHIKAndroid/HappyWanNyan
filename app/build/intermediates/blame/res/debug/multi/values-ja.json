@@ -203,14 +203,7 @@
                     "endOffset": 884
                 },
                 "from": {
-                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml",
-                    "position": {
-                        "startLine": 162,
-                        "startColumn": 4,
-                        "startOffset": 7949,
-                        "endColumn": 49,
-                        "endOffset": 7994
-                    }
+                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
                 }
             },
             {
@@ -270,14 +263,7 @@
                     "endOffset": 1165
                 },
                 "from": {
-                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml",
-                    "position": {
-                        "startLine": 163,
-                        "startColumn": 4,
-                        "startOffset": 7999,
-                        "endColumn": 48,
-                        "endOffset": 8043
-                    }
+                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
                 }
             },
             {
@@ -3897,20 +3883,27 @@
                     "startLine": 325,
                     "startColumn": 4,
                     "startOffset": 23394,
-                    "endColumn": 51,
-                    "endOffset": 23441
+                    "endColumn": 60,
+                    "endOffset": 23450
                 },
                 "from": {
-                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
+                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml",
+                    "position": {
+                        "startLine": 265,
+                        "startColumn": 4,
+                        "startOffset": 14344,
+                        "endColumn": 60,
+                        "endOffset": 14400
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 326,
                     "startColumn": 4,
-                    "startOffset": 23446,
-                    "endColumn": 55,
-                    "endOffset": 23497
+                    "startOffset": 23455,
+                    "endColumn": 51,
+                    "endOffset": 23502
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -3920,9 +3913,9 @@
                 "to": {
                     "startLine": 327,
                     "startColumn": 4,
-                    "startOffset": 23502,
-                    "endColumn": 52,
-                    "endOffset": 23550
+                    "startOffset": 23507,
+                    "endColumn": 55,
+                    "endOffset": 23558
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -3932,9 +3925,9 @@
                 "to": {
                     "startLine": 328,
                     "startColumn": 4,
-                    "startOffset": 23555,
-                    "endColumn": 55,
-                    "endOffset": 23606
+                    "startOffset": 23563,
+                    "endColumn": 52,
+                    "endOffset": 23611
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -3944,9 +3937,9 @@
                 "to": {
                     "startLine": 329,
                     "startColumn": 4,
-                    "startOffset": 23611,
-                    "endColumn": 39,
-                    "endOffset": 23646
+                    "startOffset": 23616,
+                    "endColumn": 55,
+                    "endOffset": 23667
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -3956,9 +3949,9 @@
                 "to": {
                     "startLine": 330,
                     "startColumn": 4,
-                    "startOffset": 23651,
-                    "endColumn": 36,
-                    "endOffset": 23683
+                    "startOffset": 23672,
+                    "endColumn": 39,
+                    "endOffset": 23707
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -3968,9 +3961,9 @@
                 "to": {
                     "startLine": 331,
                     "startColumn": 4,
-                    "startOffset": 23688,
-                    "endColumn": 37,
-                    "endOffset": 23721
+                    "startOffset": 23712,
+                    "endColumn": 36,
+                    "endOffset": 23744
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -3980,21 +3973,9 @@
                 "to": {
                     "startLine": 332,
                     "startColumn": 4,
-                    "startOffset": 23726,
-                    "endColumn": 77,
-                    "endOffset": 23799
-                },
-                "from": {
-                    "file": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/values-ja/values-ja.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 333,
-                    "startColumn": 4,
-                    "startOffset": 23804,
-                    "endColumn": 95,
-                    "endOffset": 23895
+                    "startOffset": 23749,
+                    "endColumn": 37,
+                    "endOffset": 23782
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4002,11 +3983,23 @@
             },
             {
                 "to": {
+                    "startLine": 333,
+                    "startColumn": 4,
+                    "startOffset": 23787,
+                    "endColumn": 77,
+                    "endOffset": 23860
+                },
+                "from": {
+                    "file": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/values-ja/values-ja.xml"
+                }
+            },
+            {
+                "to": {
                     "startLine": 334,
                     "startColumn": 4,
-                    "startOffset": 23900,
-                    "endColumn": 42,
-                    "endOffset": 23938
+                    "startOffset": 23865,
+                    "endColumn": 95,
+                    "endOffset": 23956
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4016,9 +4009,9 @@
                 "to": {
                     "startLine": 335,
                     "startColumn": 4,
-                    "startOffset": 23943,
-                    "endColumn": 84,
-                    "endOffset": 24023
+                    "startOffset": 23961,
+                    "endColumn": 42,
+                    "endOffset": 23999
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4028,9 +4021,9 @@
                 "to": {
                     "startLine": 336,
                     "startColumn": 4,
-                    "startOffset": 24028,
-                    "endColumn": 61,
-                    "endOffset": 24085
+                    "startOffset": 24004,
+                    "endColumn": 84,
+                    "endOffset": 24084
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4040,9 +4033,9 @@
                 "to": {
                     "startLine": 337,
                     "startColumn": 4,
-                    "startOffset": 24090,
-                    "endColumn": 53,
-                    "endOffset": 24139
+                    "startOffset": 24089,
+                    "endColumn": 61,
+                    "endOffset": 24146
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4052,9 +4045,9 @@
                 "to": {
                     "startLine": 338,
                     "startColumn": 4,
-                    "startOffset": 24144,
-                    "endColumn": 52,
-                    "endOffset": 24192
+                    "startOffset": 24151,
+                    "endColumn": 53,
+                    "endOffset": 24200
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4064,9 +4057,9 @@
                 "to": {
                     "startLine": 339,
                     "startColumn": 4,
-                    "startOffset": 24197,
-                    "endColumn": 35,
-                    "endOffset": 24228
+                    "startOffset": 24205,
+                    "endColumn": 52,
+                    "endOffset": 24253
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4076,9 +4069,9 @@
                 "to": {
                     "startLine": 340,
                     "startColumn": 4,
-                    "startOffset": 24233,
-                    "endColumn": 51,
-                    "endOffset": 24280
+                    "startOffset": 24258,
+                    "endColumn": 35,
+                    "endOffset": 24289
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4088,9 +4081,9 @@
                 "to": {
                     "startLine": 341,
                     "startColumn": 4,
-                    "startOffset": 24285,
-                    "endColumn": 40,
-                    "endOffset": 24321
+                    "startOffset": 24294,
+                    "endColumn": 51,
+                    "endOffset": 24341
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4100,9 +4093,9 @@
                 "to": {
                     "startLine": 342,
                     "startColumn": 4,
-                    "startOffset": 24326,
-                    "endColumn": 34,
-                    "endOffset": 24356
+                    "startOffset": 24346,
+                    "endColumn": 40,
+                    "endOffset": 24382
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4112,9 +4105,9 @@
                 "to": {
                     "startLine": 343,
                     "startColumn": 4,
-                    "startOffset": 24361,
-                    "endColumn": 104,
-                    "endOffset": 24461
+                    "startOffset": 24387,
+                    "endColumn": 34,
+                    "endOffset": 24417
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4124,9 +4117,9 @@
                 "to": {
                     "startLine": 344,
                     "startColumn": 4,
-                    "startOffset": 24466,
-                    "endColumn": 90,
-                    "endOffset": 24552
+                    "startOffset": 24422,
+                    "endColumn": 104,
+                    "endOffset": 24522
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4136,9 +4129,9 @@
                 "to": {
                     "startLine": 345,
                     "startColumn": 4,
-                    "startOffset": 24557,
-                    "endColumn": 45,
-                    "endOffset": 24598
+                    "startOffset": 24527,
+                    "endColumn": 90,
+                    "endOffset": 24613
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4148,9 +4141,9 @@
                 "to": {
                     "startLine": 346,
                     "startColumn": 4,
-                    "startOffset": 24603,
-                    "endColumn": 62,
-                    "endOffset": 24661
+                    "startOffset": 24618,
+                    "endColumn": 45,
+                    "endOffset": 24659
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4160,9 +4153,9 @@
                 "to": {
                     "startLine": 347,
                     "startColumn": 4,
-                    "startOffset": 24666,
-                    "endColumn": 37,
-                    "endOffset": 24699
+                    "startOffset": 24664,
+                    "endColumn": 62,
+                    "endOffset": 24722
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4172,9 +4165,9 @@
                 "to": {
                     "startLine": 348,
                     "startColumn": 4,
-                    "startOffset": 24704,
-                    "endColumn": 43,
-                    "endOffset": 24743
+                    "startOffset": 24727,
+                    "endColumn": 37,
+                    "endOffset": 24760
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4184,9 +4177,9 @@
                 "to": {
                     "startLine": 349,
                     "startColumn": 4,
-                    "startOffset": 24748,
-                    "endColumn": 55,
-                    "endOffset": 24799
+                    "startOffset": 24765,
+                    "endColumn": 43,
+                    "endOffset": 24804
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4196,9 +4189,9 @@
                 "to": {
                     "startLine": 350,
                     "startColumn": 4,
-                    "startOffset": 24804,
-                    "endColumn": 54,
-                    "endOffset": 24854
+                    "startOffset": 24809,
+                    "endColumn": 55,
+                    "endOffset": 24860
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4208,9 +4201,9 @@
                 "to": {
                     "startLine": 351,
                     "startColumn": 4,
-                    "startOffset": 24859,
-                    "endColumn": 43,
-                    "endOffset": 24898
+                    "startOffset": 24865,
+                    "endColumn": 54,
+                    "endOffset": 24915
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4220,9 +4213,21 @@
                 "to": {
                     "startLine": 352,
                     "startColumn": 4,
-                    "startOffset": 24903,
+                    "startOffset": 24920,
+                    "endColumn": 43,
+                    "endOffset": 24959
+                },
+                "from": {
+                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 353,
+                    "startColumn": 4,
+                    "startOffset": 24964,
                     "endColumn": 100,
-                    "endOffset": 24999
+                    "endOffset": 25060
                 },
                 "from": {
                     "file": "/home/su/.android/build-cache/96d943d4eb495f1fc54a9a1e00b3c9cec5d0fd00/output/res/values-ja/values-ja.xml"
@@ -4230,23 +4235,11 @@
             },
             {
                 "to": {
-                    "startLine": 353,
-                    "startColumn": 4,
-                    "startOffset": 25004,
-                    "endColumn": 108,
-                    "endOffset": 25108
-                },
-                "from": {
-                    "file": "/home/su/.android/build-cache/fd328938c5fefcd339fa46da722d3d4001c62835/output/res/values-ja/values.xml"
-                }
-            },
-            {
-                "to": {
                     "startLine": 354,
                     "startColumn": 4,
-                    "startOffset": 25113,
-                    "endColumn": 83,
-                    "endOffset": 25192
+                    "startOffset": 25065,
+                    "endColumn": 108,
+                    "endOffset": 25169
                 },
                 "from": {
                     "file": "/home/su/.android/build-cache/fd328938c5fefcd339fa46da722d3d4001c62835/output/res/values-ja/values.xml"
@@ -4256,21 +4249,21 @@
                 "to": {
                     "startLine": 355,
                     "startColumn": 4,
-                    "startOffset": 25197,
-                    "endColumn": 37,
-                    "endOffset": 25230
+                    "startOffset": 25174,
+                    "endColumn": 83,
+                    "endOffset": 25253
                 },
                 "from": {
-                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
+                    "file": "/home/su/.android/build-cache/fd328938c5fefcd339fa46da722d3d4001c62835/output/res/values-ja/values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 356,
                     "startColumn": 4,
-                    "startOffset": 25235,
-                    "endColumn": 51,
-                    "endOffset": 25282
+                    "startOffset": 25258,
+                    "endColumn": 37,
+                    "endOffset": 25291
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4280,9 +4273,9 @@
                 "to": {
                     "startLine": 357,
                     "startColumn": 4,
-                    "startOffset": 25287,
-                    "endColumn": 46,
-                    "endOffset": 25329
+                    "startOffset": 25296,
+                    "endColumn": 51,
+                    "endOffset": 25343
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4292,9 +4285,9 @@
                 "to": {
                     "startLine": 358,
                     "startColumn": 4,
-                    "startOffset": 25334,
-                    "endColumn": 37,
-                    "endOffset": 25367
+                    "startOffset": 25348,
+                    "endColumn": 46,
+                    "endOffset": 25390
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4304,9 +4297,9 @@
                 "to": {
                     "startLine": 359,
                     "startColumn": 4,
-                    "startOffset": 25372,
-                    "endColumn": 85,
-                    "endOffset": 25453
+                    "startOffset": 25395,
+                    "endColumn": 37,
+                    "endOffset": 25428
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4316,9 +4309,9 @@
                 "to": {
                     "startLine": 360,
                     "startColumn": 4,
-                    "startOffset": 25458,
-                    "endColumn": 120,
-                    "endOffset": 25574
+                    "startOffset": 25433,
+                    "endColumn": 85,
+                    "endOffset": 25514
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4328,9 +4321,9 @@
                 "to": {
                     "startLine": 361,
                     "startColumn": 4,
-                    "startOffset": 25579,
-                    "endColumn": 32,
-                    "endOffset": 25607
+                    "startOffset": 25519,
+                    "endColumn": 120,
+                    "endOffset": 25635
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4340,9 +4333,9 @@
                 "to": {
                     "startLine": 362,
                     "startColumn": 4,
-                    "startOffset": 25612,
-                    "endColumn": 41,
-                    "endOffset": 25649
+                    "startOffset": 25640,
+                    "endColumn": 32,
+                    "endOffset": 25668
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4352,9 +4345,9 @@
                 "to": {
                     "startLine": 363,
                     "startColumn": 4,
-                    "startOffset": 25654,
-                    "endColumn": 42,
-                    "endOffset": 25692
+                    "startOffset": 25673,
+                    "endColumn": 41,
+                    "endOffset": 25710
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4364,9 +4357,9 @@
                 "to": {
                     "startLine": 364,
                     "startColumn": 4,
-                    "startOffset": 25697,
-                    "endColumn": 52,
-                    "endOffset": 25745
+                    "startOffset": 25715,
+                    "endColumn": 42,
+                    "endOffset": 25753
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4376,9 +4369,9 @@
                 "to": {
                     "startLine": 365,
                     "startColumn": 4,
-                    "startOffset": 25750,
-                    "endColumn": 56,
-                    "endOffset": 25802
+                    "startOffset": 25758,
+                    "endColumn": 52,
+                    "endOffset": 25806
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4388,9 +4381,9 @@
                 "to": {
                     "startLine": 366,
                     "startColumn": 4,
-                    "startOffset": 25807,
-                    "endColumn": 43,
-                    "endOffset": 25846
+                    "startOffset": 25811,
+                    "endColumn": 56,
+                    "endOffset": 25863
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4400,9 +4393,9 @@
                 "to": {
                     "startLine": 367,
                     "startColumn": 4,
-                    "startOffset": 25851,
-                    "endColumn": 54,
-                    "endOffset": 25901
+                    "startOffset": 25868,
+                    "endColumn": 43,
+                    "endOffset": 25907
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4412,9 +4405,9 @@
                 "to": {
                     "startLine": 368,
                     "startColumn": 4,
-                    "startOffset": 25906,
-                    "endColumn": 79,
-                    "endOffset": 25981
+                    "startOffset": 25912,
+                    "endColumn": 54,
+                    "endOffset": 25962
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4424,9 +4417,9 @@
                 "to": {
                     "startLine": 369,
                     "startColumn": 4,
-                    "startOffset": 25986,
-                    "endColumn": 98,
-                    "endOffset": 26080
+                    "startOffset": 25967,
+                    "endColumn": 79,
+                    "endOffset": 26042
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4436,9 +4429,9 @@
                 "to": {
                     "startLine": 370,
                     "startColumn": 4,
-                    "startOffset": 26085,
-                    "endColumn": 87,
-                    "endOffset": 26168
+                    "startOffset": 26047,
+                    "endColumn": 98,
+                    "endOffset": 26141
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4448,9 +4441,9 @@
                 "to": {
                     "startLine": 371,
                     "startColumn": 4,
-                    "startOffset": 26173,
-                    "endColumn": 51,
-                    "endOffset": 26220
+                    "startOffset": 26146,
+                    "endColumn": 87,
+                    "endOffset": 26229
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4460,9 +4453,9 @@
                 "to": {
                     "startLine": 372,
                     "startColumn": 4,
-                    "startOffset": 26225,
-                    "endColumn": 58,
-                    "endOffset": 26279
+                    "startOffset": 26234,
+                    "endColumn": 51,
+                    "endOffset": 26281
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4472,9 +4465,9 @@
                 "to": {
                     "startLine": 373,
                     "startColumn": 4,
-                    "startOffset": 26284,
-                    "endColumn": 53,
-                    "endOffset": 26333
+                    "startOffset": 26286,
+                    "endColumn": 58,
+                    "endOffset": 26340
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4484,9 +4477,9 @@
                 "to": {
                     "startLine": 374,
                     "startColumn": 4,
-                    "startOffset": 26338,
-                    "endColumn": 58,
-                    "endOffset": 26392
+                    "startOffset": 26345,
+                    "endColumn": 53,
+                    "endOffset": 26394
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4496,8 +4489,8 @@
                 "to": {
                     "startLine": 375,
                     "startColumn": 4,
-                    "startOffset": 26397,
-                    "endColumn": 60,
+                    "startOffset": 26399,
+                    "endColumn": 58,
                     "endOffset": 26453
                 },
                 "from": {
@@ -4509,8 +4502,8 @@
                     "startLine": 376,
                     "startColumn": 4,
                     "startOffset": 26458,
-                    "endColumn": 63,
-                    "endOffset": 26517
+                    "endColumn": 60,
+                    "endOffset": 26514
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4520,9 +4513,9 @@
                 "to": {
                     "startLine": 377,
                     "startColumn": 4,
-                    "startOffset": 26522,
-                    "endColumn": 61,
-                    "endOffset": 26579
+                    "startOffset": 26519,
+                    "endColumn": 63,
+                    "endOffset": 26578
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4532,9 +4525,9 @@
                 "to": {
                     "startLine": 378,
                     "startColumn": 4,
-                    "startOffset": 26584,
-                    "endColumn": 59,
-                    "endOffset": 26639
+                    "startOffset": 26583,
+                    "endColumn": 61,
+                    "endOffset": 26640
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4544,9 +4537,9 @@
                 "to": {
                     "startLine": 379,
                     "startColumn": 4,
-                    "startOffset": 26644,
-                    "endColumn": 42,
-                    "endOffset": 26682
+                    "startOffset": 26645,
+                    "endColumn": 59,
+                    "endOffset": 26700
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4556,21 +4549,9 @@
                 "to": {
                     "startLine": 380,
                     "startColumn": 4,
-                    "startOffset": 26687,
-                    "endColumn": 97,
-                    "endOffset": 26780
-                },
-                "from": {
-                    "file": "/home/su/.android/build-cache/c71401d365f800dbd2892f462454dd281479d51d/output/res/values-ja/values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 381,
-                    "startColumn": 4,
-                    "startOffset": 26785,
-                    "endColumn": 64,
-                    "endOffset": 26845
+                    "startOffset": 26705,
+                    "endColumn": 42,
+                    "endOffset": 26743
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4578,11 +4559,23 @@
             },
             {
                 "to": {
+                    "startLine": 381,
+                    "startColumn": 4,
+                    "startOffset": 26748,
+                    "endColumn": 97,
+                    "endOffset": 26841
+                },
+                "from": {
+                    "file": "/home/su/.android/build-cache/c71401d365f800dbd2892f462454dd281479d51d/output/res/values-ja/values.xml"
+                }
+            },
+            {
+                "to": {
                     "startLine": 382,
                     "startColumn": 4,
-                    "startOffset": 26850,
-                    "endColumn": 49,
-                    "endOffset": 26895
+                    "startOffset": 26846,
+                    "endColumn": 64,
+                    "endOffset": 26906
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4592,9 +4585,9 @@
                 "to": {
                     "startLine": 383,
                     "startColumn": 4,
-                    "startOffset": 26900,
-                    "endColumn": 78,
-                    "endOffset": 26974
+                    "startOffset": 26911,
+                    "endColumn": 49,
+                    "endOffset": 26956
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4604,9 +4597,9 @@
                 "to": {
                     "startLine": 384,
                     "startColumn": 4,
-                    "startOffset": 26979,
-                    "endColumn": 43,
-                    "endOffset": 27018
+                    "startOffset": 26961,
+                    "endColumn": 78,
+                    "endOffset": 27035
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4616,9 +4609,9 @@
                 "to": {
                     "startLine": 385,
                     "startColumn": 4,
-                    "startOffset": 27023,
-                    "endColumn": 76,
-                    "endOffset": 27095
+                    "startOffset": 27040,
+                    "endColumn": 43,
+                    "endOffset": 27079
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4628,9 +4621,9 @@
                 "to": {
                     "startLine": 386,
                     "startColumn": 4,
-                    "startOffset": 27100,
-                    "endColumn": 57,
-                    "endOffset": 27153
+                    "startOffset": 27084,
+                    "endColumn": 76,
+                    "endOffset": 27156
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4640,9 +4633,9 @@
                 "to": {
                     "startLine": 387,
                     "startColumn": 4,
-                    "startOffset": 27158,
-                    "endColumn": 34,
-                    "endOffset": 27188
+                    "startOffset": 27161,
+                    "endColumn": 57,
+                    "endOffset": 27214
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4652,9 +4645,9 @@
                 "to": {
                     "startLine": 388,
                     "startColumn": 4,
-                    "startOffset": 27193,
-                    "endColumn": 88,
-                    "endOffset": 27277
+                    "startOffset": 27219,
+                    "endColumn": 34,
+                    "endOffset": 27249
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4664,9 +4657,9 @@
                 "to": {
                     "startLine": 389,
                     "startColumn": 4,
-                    "startOffset": 27282,
-                    "endColumn": 62,
-                    "endOffset": 27340
+                    "startOffset": 27254,
+                    "endColumn": 88,
+                    "endOffset": 27338
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
@@ -4676,9 +4669,21 @@
                 "to": {
                     "startLine": 390,
                     "startColumn": 4,
-                    "startOffset": 27345,
+                    "startOffset": 27343,
+                    "endColumn": 62,
+                    "endOffset": 27401
+                },
+                "from": {
+                    "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 391,
+                    "startColumn": 4,
+                    "startOffset": 27406,
                     "endColumn": 63,
-                    "endOffset": 27404
+                    "endOffset": 27465
                 },
                 "from": {
                     "file": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/res/values-ja/strings.xml"

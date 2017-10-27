@@ -286,7 +286,7 @@
     <string name="no_sitter_found">No sitter found</string>
     <string name="are_you_sure_you_want_to_delete_this_information">Are you sure you want to delete this information?</string>
     <string name="to_delete">To delete</string>
-    <string name="profile_info_updated">profile_info_updated!</string>
+    <string name="profile_info_updated">Profile Info Updated!</string>
 
 
 </resources>
