@@ -16,13 +16,13 @@
         android:layout_height="70dp"
         android:layout_alignParentBottom="true">
 
-        <LinearLayout
-            android:id="@+id/LL_dotc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal"
-            android:paddingLeft="30dp"></LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:id="@+id/LL_dotc"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingLeft="30dp"></LinearLayout>-->
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/TXT_skip"

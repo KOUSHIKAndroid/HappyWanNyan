@@ -23,8 +23,8 @@ public class LoginChooserActivity extends AppCompatActivity implements View.OnCl
     LinkedList<Fragment> fragmentList;
     ViewPager viewPager;
     private int dotscount = 0;
-    private ImageView[] dots;
-    LinearLayout LL_dotc;
+//    private ImageView[] dots;
+//    LinearLayout LL_dotc;
     LinearLayout LL_SINGIN;
     LinearLayout LL_Facbook;
     LinearLayout LL_SIGNUP;
@@ -35,7 +35,7 @@ public class LoginChooserActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_choser);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-        LL_dotc = (LinearLayout) findViewById(R.id.LL_dotc);
+//        LL_dotc = (LinearLayout) findViewById(R.id.LL_dotc);
         LL_SINGIN = (LinearLayout) findViewById(R.id.LL_SINGIN);
         LL_SINGIN.setOnClickListener(this);
         LL_Facbook = (LinearLayout) findViewById(R.id.LL_Facbook);
@@ -48,15 +48,15 @@ public class LoginChooserActivity extends AppCompatActivity implements View.OnCl
 
 
         fragmentList.add(new slider1());
-        fragmentList.add(new slider2());
-        fragmentList.add(new slider3());
-        fragmentList.add(new slider4());
+//        fragmentList.add(new slider2());
+//        fragmentList.add(new slider3());
+//        fragmentList.add(new slider4());
 
         LoginFragmentViewPager adapter = new LoginFragmentViewPager(this, getSupportFragmentManager(), fragmentList);
 
         //Adding adapter to pager
         viewPager.setAdapter(adapter);
-        UIindicator(fragmentList.size());
+//        UIindicator(fragmentList.size());
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -66,10 +66,10 @@ public class LoginChooserActivity extends AppCompatActivity implements View.OnCl
 
             @Override
             public void onPageSelected(int position) {
-                for (int i = 0; i < fragmentList.size(); i++) {
-                    dots[i].setImageResource(R.drawable.ic_dot_outline);
-                }
-                dots[position].setImageResource(R.drawable.ic_dot);
+//                for (int i = 0; i < fragmentList.size(); i++) {
+//                    dots[i].setImageResource(R.drawable.ic_dot_outline);
+//                }
+//                dots[position].setImageResource(R.drawable.ic_dot);
 
             }
 
@@ -82,16 +82,16 @@ public class LoginChooserActivity extends AppCompatActivity implements View.OnCl
 
     }
 
-    private void UIindicator(int totalcount) {
-        dots = new ImageView[totalcount];
-        for (int i = 0; i < totalcount; i++) {
-            dots[i] = new ImageView(this);
-            dots[i].setImageResource(R.drawable.ic_dot_outline);
-            dots[i].setPadding(10, 0, 10, 0);
-            LL_dotc.addView(dots[i]);
-        }
-        dots[0].setImageResource(R.drawable.ic_dot);
-    }
+//    private void UIindicator(int totalcount) {
+//        dots = new ImageView[totalcount];
+//        for (int i = 0; i < totalcount; i++) {
+//            dots[i] = new ImageView(this);
+//            dots[i].setImageResource(R.drawable.ic_dot_outline);
+//            dots[i].setPadding(10, 0, 10, 0);
+//            LL_dotc.addView(dots[i]);
+//        }
+//        dots[0].setImageResource(R.drawable.ic_dot);
+//    }
 
     @Override
     public void onClick(View v) {
