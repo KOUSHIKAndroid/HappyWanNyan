@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -334,6 +335,7 @@ public class MyProfileFragment extends Fragment {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
+                        Toast.makeText(getActivity(),getActivity().getResources().getString(R.string.profile_info_updated),Toast.LENGTH_SHORT).show();
                         loadPage();
                     }
 

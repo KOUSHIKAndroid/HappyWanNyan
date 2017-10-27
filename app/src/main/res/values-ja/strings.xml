@@ -160,8 +160,8 @@
     <string name="you_can_not_select_before_current_date">現在の日付より前に選択することはできません</string>
     <string name="whatisyourdailybudgetperpet">ペット1人当たりの1日の予算はいくらですか？</string>
     <string name="wanyanmeetup">ワンニャンは会う</string>
-    <string name="FirstName_photo">名（音名）</string>
-    <string name="LastName_photo">姓（音韻）</string>
+    <string name="FirstName_photo">名（カナ）</string>
+    <string name="LastName_photo">姓（カナ）</string>
     <string name="add_card_error">カードエラーを追加</string>
     <string name="agree_to_the_terms_and_conditions">リクエストの送信をクリックすることにより、HappywanNyanを通じてすべての予約と支払いを行い、利用規約に同意することに同意したことになります</string>
     <string name="card_number">カード番号</string>
@@ -263,6 +263,7 @@
     <string name="login_signup">ログインサインアップ</string>
     <string name="are_you_sure_you_want_to_delete_this_information">この情報を削除してよろしいですか？</string>
     <string name="to_delete">削除す</string>
+    <string name="profile_info_updated">プロフィールを提出する</string>
 
 
 </resources>
