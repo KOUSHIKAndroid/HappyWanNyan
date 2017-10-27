@@ -26,7 +26,7 @@
     <string name="LoginAlertTitle">アラート</string>
     <string name="Loginnow">ここでログイン</string>
     <string name="Month">月</string>
-    <string name="Name">名</string>
+    <string name="Name">ペットの名前</string>
     <string name="NewCard">新しいカード</string>
     <string name="OfDays">日数</string>
     <string name="Password">パスワード</string>
@@ -73,7 +73,7 @@
     <string name="adapter_your_pets_year">年齢</string>
     <string name="add">追加</string>
     <string name="add_a_message">メッセージを追加</string>
-    <string name="add_another_pets">別のペットを追加する</string>
+    <string name="add_another_pets">新しくペットを追加</string>
     <string name="add_card_error">カードエラーを追加</string>
     <string name="add_image">画像を追加</string>
     <string name="added_on">登録日</string>

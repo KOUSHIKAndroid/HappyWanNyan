@@ -47,7 +47,8 @@
     <string name="up_coming_booking_id">予約ID</string>
     <string name="up_coming_booking_service">サービス</string>
     <string name="Gender">性別</string>
-    <string name="Name">名</string>
+    <!--<string name="Name">名</string>-->
+    <string name="Name">ペットの名前</string>
     <string name="Month">月</string>
     <string name="favorite_sitters_delete">削除する</string>
     <string name="expiry_month_and_year">有効期限の月と年</string>
@@ -112,7 +113,7 @@
     <string name="Existing">既存</string>
     <string name="action_settings">設定</string>
     <string name="add_a_message">メッセージを追加</string>
-    <string name="add_another_pets">別のペットを追加する</string>
+    <string name="add_another_pets">新しくペットを追加</string>
     <string name="add_image">画像を追加</string>
     <string name="alternative_date">代替日付</string>
     <string name="choose_cause_type">私は私のペットを探しています..</string>
