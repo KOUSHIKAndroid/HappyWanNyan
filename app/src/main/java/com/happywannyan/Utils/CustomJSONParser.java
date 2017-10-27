@@ -99,6 +99,7 @@ public class CustomJSONParser {
                 if (!isCancelled() && exception == null) {
                     try {
                         if (new JSONObject(responseString).getBoolean("response")) {
+                            Loger.MSG("responseString",""+responseString);
                             jsonResponseInterface.OnSuccess(responseString);
                         } else {
                             jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);

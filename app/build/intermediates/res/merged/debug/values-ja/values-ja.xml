@@ -197,7 +197,7 @@
     <string name="default2">デフォルト</string>
     <string name="delete">削除する</string>
     <string name="delete_message">このメッセージを削除しますか？</string>
-    <string name="describeyourpet">あなたのペットを説明してください</string>
+    <string name="describeyourpet">ペットについて詳しく…</string>
     <string name="description">説明</string>
     <string name="discount_amount">割引額</string>
     <string name="do_you_want_to_cancel_booking">この予約をキャンセルしてもよろしいですか？</string>
@@ -206,7 +206,7 @@
     <string name="download_complete">ダウンロード完了</string>
     <string name="dropofftime">お迎え時間</string>
     <string name="email_confirm">ちょうどあなたに送った確認メールを確認してから再度ログインしてください</string>
-    <string name="empty">空の</string>
+    <string name="empty">予約はありません</string>
     <string name="existingcard">あなたのカード</string>
     <string name="expiry_date_hint">MM/YY</string>
     <string name="expiry_month_and_year">有効期限の月と年</string>
@@ -222,7 +222,7 @@
     <string name="how_many_times">何回ですか？</string>
     <string name="how_many_visits">何回訪問？</string>
     <string name="i_agree_the_terms_and_service">私は利用規約に同意します</string>
-    <string name="i_am_looking">を探しています....</string>
+    <string name="i_am_looking">サービスを探す …</string>
     <string name="ic_vector_favourite_delete">削除する</string>
     <string name="ihavenotdateyet">私はまだ日付がありません</string>
     <string name="image_error">イメージエラー</string>
@@ -324,7 +324,7 @@
     <string name="pleasenteraddress">アドレスを入力してください</string>
     <string name="pleaseselect">選んでください</string>
     <string name="price">価格</string>
-    <string name="remember_me">私を覚えてますか</string>
+    <string name="remember_me">ログインしたままにする</string>
     <string name="request_reservation">予約リクエスト</string>
     <string name="reservation">ご予約に関するメッセージ</string>
     <string name="reservation_request">予約リクエスト</string>
