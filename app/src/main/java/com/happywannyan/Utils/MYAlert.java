@@ -92,7 +92,7 @@ public class MYAlert {
     }
 
 
-    public void AlertOkCancel(String Title,String okString,String cancelString,String Message, final OnOkCancel onlyMessage) {
+    public void AlertOkCancel(String Title,String Message,String okString,String cancelString, final OnOkCancel onlyMessage) {
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
                 (Context.LAYOUT_INFLATER_SERVICE);

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -85,6 +86,39 @@ public class BookingDetailsActivity extends AppCompatActivity {
             } else {
                 ((SFNFBoldTextView) findViewById(R.id.Enddate)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_end_date"));
             }
+
+
+
+            if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")){
+                ((SFNFTextView) findViewById(R.id.tv_booking_id_name)).setText("");
+                if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type").equalsIgnoreCase("PE")){
+
+                    if(jsonObjectPrevious.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("P")
+                            ||jsonObjectPrevious.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("N")){
+
+                        ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(getResources().getString(R.string.pending_booking)+">>");
+                        ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTypeface(null, Typeface.BOLD);
+                        ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTextColor(Color.parseColor("#FFFFFF"));
+                    }else {
+                        ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(getResources().getString(R.string.pending_booking));
+                        ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTypeface(null, Typeface.BOLD);
+                        ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTextColor(Color.parseColor("#FFFFFF"));
+                    }
+                }else {
+                    ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(getResources().getString(R.string.not_a_booking));
+                    ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTypeface(null, Typeface.BOLD);
+                    ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTextColor(Color.parseColor("#FFFFFF"));
+                }
+            }else {
+                ((SFNFTextView) findViewById(R.id.tv_booking_id_name)).setText(getResources().getString(R.string.up_coming_booking_id));
+                ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id"));
+                ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTypeface(null, Typeface.BOLD);
+                ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTextColor(Color.parseColor("#FFFFFF"));
+            }
+
+
+
+
 
             ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id"));
             ((SFNFBoldTextView) findViewById(R.id.tv_service_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_service"));
