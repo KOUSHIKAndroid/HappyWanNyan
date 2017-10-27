@@ -543,7 +543,10 @@ public class BookingDetailsActivity extends AppCompatActivity {
     }
 
     private void Delete_Button() {
-        new MYAlert(BookingDetailsActivity.this).AlertOkCancel("", getString(R.string.are_you_sure_you_want_to_delete), new MYAlert.OnOkCancel() {
+        new MYAlert(BookingDetailsActivity.this).AlertOkCancel("", getString(R.string.are_you_sure_you_want_to_delete),
+                getResources().getString(R.string.ok),
+                getResources().getString(R.string.cancel),
+                new MYAlert.OnOkCancel() {
             @Override
             public void OnOk() {
                 appLoader.Show();
@@ -613,7 +616,10 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
     private void CancelStatusWork(final String BookingID, final String BookingType, String dialogMSG) {
 
-        new MYAlert(BookingDetailsActivity.this).AlertOkCancel(getString(R.string.cancel), dialogMSG, new MYAlert.OnOkCancel() {
+        new MYAlert(BookingDetailsActivity.this).AlertOkCancel(getString(R.string.cancel), dialogMSG,
+                getResources().getString(R.string.ok),
+                getResources().getString(R.string.cancel),
+                new MYAlert.OnOkCancel() {
             @Override
             public void OnOk() {
                 appLoader.Show();

@@ -91,11 +91,13 @@ public class MYAlert {
 
     }
 
-    public void AlertOkCancel(String Title, String Message, final OnOkCancel onlyMessage) {
+
+    public void AlertOkCancel(String Title,String okString,String cancelString,String Message, final OnOkCancel onlyMessage) {
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
                 (Context.LAYOUT_INFLATER_SERVICE);
         View LayView = inflater.inflate(R.layout.alert_dialog_ok_cancel, null);
+
         SFNFTextView TXTMessage = (SFNFTextView) LayView.findViewById(R.id.Message);
         TXTMessage.setText(Message);
         SFNFTextView TXTTitle = (SFNFTextView) LayView.findViewById(R.id.Title);
@@ -107,7 +109,9 @@ public class MYAlert {
         }
 
         Button BTN_OK = (Button) LayView.findViewById(R.id.BTN_OK);
+        BTN_OK.setText(okString);
         Button BTN_CANCEL = (Button) LayView.findViewById(R.id.BTN_CANCEL);
+        BTN_CANCEL.setText(cancelString);
 
         BTN_OK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +133,8 @@ public class MYAlert {
         Dialog = alertbuilder.create();
         Dialog.show();
     }
+
+
 
     public void AlertAccept_Cancel(String Title, String Message, final OnOkCancel onlyMessage) {
         AlertDialog.Builder alertbuilder = new AlertDialog.Builder(mContext);

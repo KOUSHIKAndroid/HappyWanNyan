@@ -112,7 +112,10 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 new MYAlert(PaymentPendingBookingActivity.this).AlertOkCancel("",
 //                        getActivity().getResources().getString(R.string.reservation_request),
-                        getResources().getString(R.string.do_you_really_submit_this_payment), new MYAlert.OnOkCancel() {
+                        getResources().getString(R.string.do_you_really_submit_this_payment),
+                        getResources().getString(R.string.ok),
+                        getResources().getString(R.string.cancel),
+                        new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
                                 try {

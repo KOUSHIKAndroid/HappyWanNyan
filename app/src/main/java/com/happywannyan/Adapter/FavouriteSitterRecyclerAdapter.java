@@ -139,7 +139,10 @@ public class FavouriteSitterRecyclerAdapter extends RecyclerView.Adapter<Favouri
                 @Override
                 public void onClick(View v) {
                     new MYAlert(context).AlertOkCancel("",
-                            context.getResources().getString(R.string.are_you_sure_you_want_to_delete), new MYAlert.OnOkCancel() {
+                            context.getResources().getString(R.string.are_you_sure_you_want_to_delete),
+                            context.getResources().getString(R.string.ok),
+                            context.getResources().getString(R.string.cancel),
+                            new MYAlert.OnOkCancel() {
                                 @Override
                                 public void OnOk() {
                                     //onBackPressed();

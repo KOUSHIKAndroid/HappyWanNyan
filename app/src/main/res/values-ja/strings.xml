@@ -262,5 +262,7 @@
     <string name="guest">ゲスト</string>
     <string name="login_signup">ログインサインアップ</string>
     <string name="are_you_sure_you_want_to_delete_this_information">この情報を削除してよろしいですか？</string>
+    <string name="to_delete">削除す</string>
+
 
 </resources>

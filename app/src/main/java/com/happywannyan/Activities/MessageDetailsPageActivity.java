@@ -173,7 +173,10 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
                 if (!userType.trim().equals("")) {
                     if (userType.equalsIgnoreCase("S")) {
-                        new MYAlert(MessageDetailsPageActivity.this).AlertOkCancel("", getString(R.string.go_to_sitters_profile), new MYAlert.OnOkCancel() {
+                        new MYAlert(MessageDetailsPageActivity.this).AlertOkCancel("", getResources().getString(R.string.go_to_sitters_profile),
+                                getResources().getString(R.string.ok),
+                                getResources().getString(R.string.cancel),
+                                new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
                                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) MessageDetailsPageActivity.this, IMGE_FROM, "cardimage");

@@ -118,7 +118,10 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
                 public void onClick(View view) {
                     try {
                         if(object.getJSONObject("users_profile").getString("type").equalsIgnoreCase("S")){
-                            new MYAlert(context).AlertOkCancel("", context.getString(R.string.go_to_sitters_profile), new MYAlert.OnOkCancel() {
+                            new MYAlert(context).AlertOkCancel("", context.getString(R.string.go_to_sitters_profile),
+                                    context.getResources().getString(R.string.ok),
+                                    context.getResources().getString(R.string.cancel),
+                                    new MYAlert.OnOkCancel() {
                                 @Override
                                 public void OnOk() {
                                     try {

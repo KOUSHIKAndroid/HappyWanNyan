@@ -114,8 +114,10 @@ public class BookingFragmentFoure extends Fragment {
             @Override
             public void onClick(View view) {
                 new MYAlert(getActivity()).AlertOkCancel("",
-//                        getActivity().getResources().getString(R.string.reservation_request),
-                        getActivity().getResources().getString(R.string.this_is_just_a_reservation_request), new MYAlert.OnOkCancel() {
+                        getActivity().getResources().getString(R.string.this_is_just_a_reservation_request),
+                        getActivity().getResources().getString(R.string.ok),
+                        getActivity().getResources().getString(R.string.cancel),
+                        new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
 

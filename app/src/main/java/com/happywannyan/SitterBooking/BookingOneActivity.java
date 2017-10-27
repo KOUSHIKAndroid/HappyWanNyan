@@ -82,7 +82,10 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.PAGE_Cancel:
                 new MYAlert(BookingOneActivity.this).AlertOkCancel("",
-                        getResources().getString(R.string.do_you_want_to_cancel_booking), new MYAlert.OnOkCancel() {
+                        getResources().getString(R.string.do_you_want_to_cancel_booking),
+                        getResources().getString(R.string.ok),
+                        getResources().getString(R.string.cancel),
+                        new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
                                 //onBackPressed();

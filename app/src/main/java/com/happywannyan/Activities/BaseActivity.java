@@ -136,7 +136,10 @@ public class BaseActivity extends LocationBaseActivity
             @Override
             public void onClick(View view) {
 
-                new MYAlert(BaseActivity.this).AlertOkCancel("", getString(R.string.want_to_change_language), new MYAlert.OnOkCancel() {
+                new MYAlert(BaseActivity.this).AlertOkCancel("", getResources().getString(R.string.want_to_change_language),
+                        getResources().getString(R.string.ok),
+                        getResources().getString(R.string.cancel),
+                        new MYAlert.OnOkCancel() {
                     @Override
                     public void OnOk() {
 
@@ -285,7 +288,10 @@ public class BaseActivity extends LocationBaseActivity
         navigationView.findViewById(R.id.LL_Logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MYAlert(BaseActivity.this).AlertOkCancel(getString(R.string.nav_logout), getString(R.string.are_you_sure_want_to_log_out), new MYAlert.OnOkCancel() {
+                new MYAlert(BaseActivity.this).AlertOkCancel(getResources().getString(R.string.nav_logout), getResources().getString(R.string.are_you_sure_want_to_log_out),
+                        getResources().getString(R.string.ok),
+                        getResources().getString(R.string.cancel),
+                        new MYAlert.OnOkCancel() {
                     @Override
                     public void OnOk() {
                         appLoader.Show();
