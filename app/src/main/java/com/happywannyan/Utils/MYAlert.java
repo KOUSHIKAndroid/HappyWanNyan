@@ -270,7 +270,7 @@ public class MYAlert {
                 onlyMessage.OnOk(true);
             }
         });
-        if (ImagePath.trim().equals("")) {
+        if (!ImagePath.trim().equals("")) {
             Glide.with(mContext).load(ImagePath.trim()).into(Image);
         }
 
@@ -280,8 +280,5 @@ public class MYAlert {
         Dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         Dialog.setCancelable(false);
         Dialog.show();
-
-
     }
-
 }

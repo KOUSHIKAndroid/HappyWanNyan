@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.happywannyan.R;
+import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.helper.Utils;
 
@@ -59,6 +60,7 @@ public class ProfileImageListingAdapter extends RecyclerView.Adapter<ProfileImag
             @Override
             public void onClick(View v) {
                 try {
+                    Loger.MSG("img_url-->",""+array.get(position));
                     new MYAlert(mContext).PhotoAlert(array.getString(position), new MYAlert.OnlyMessage() {
                         @Override
                         public void OnOk(boolean res) {
