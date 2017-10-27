@@ -126,7 +126,7 @@ public class YourPetsAdapter extends RecyclerView.Adapter<YourPetsAdapter.MyView
             public void onClick(View v) {
 
                 new MYAlert(context).AlertOkCancel(context.getResources().getString(R.string.delete),
-                        context.getResources().getString(R.string.do_you_want_to_delete), new MYAlert.OnOkCancel() {
+                        context.getResources().getString(R.string.are_you_sure_you_want_to_delete_this_information), new MYAlert.OnOkCancel() {
                             @Override
                             public void OnOk() {
                                 Loger.MSG("ok_alert", "ok");

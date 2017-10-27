@@ -169,7 +169,6 @@
     <string name="description">説明</string>
     <string name="discount_amount">割引額</string>
     <string name="donthaveanacc">アカウントを持っていないのですか？</string>
-    <string name="do_you_want_to_delete">あなたは削除しますか？</string>
     <string name="do_you_want_to_cancel_booking">この予約をキャンセルしてもよろしいですか？</string>
     <string name="invalid_card_please_add">無効なカード正しいカードを追加してください</string>
     <string name="select_service">サービスを選択する</string>
@@ -179,7 +178,7 @@
     <string name="to">に</string>
     <string name="Title_req_meetup">リクエストWan-Nyanが出会う</string>
     <string name="Title_send_a_msg">メッセージを送ります</string>
-    <string name="are_you_sure_you_want_to_delete">消去してもよろしいですか？</string>
+    <string name="are_you_sure_you_want_to_delete">本当に削除してよろしいですか？</string>
     <string name="available_Pets_Details">利用可能なペットの詳細</string>
     <string name="forgot_password">パスワードをお忘れですか</string>
     <string name="name_on_card">カードの名義</string>
@@ -262,5 +261,6 @@
     <string name="tv_add_new_pet">新しいペットを追加する</string>
     <string name="guest">ゲスト</string>
     <string name="login_signup">ログインサインアップ</string>
+    <string name="are_you_sure_you_want_to_delete_this_information">この情報を削除してよろしいですか？</string>
 
 </resources>

@@ -89,6 +89,7 @@
     <string name="are_you_sure_want_to_log_out">ログアウトしてもよろしいですか？</string>
     <string name="are_you_sure_you_want_to_cancel_reservation_request">予約リクエストをキャンセルしてもよろしいですか？</string>
     <string name="are_you_sure_you_want_to_delete">消去してもよろしいですか？</string>
+    <string name="are_you_sure_you_want_to_delete_this_information">この情報を削除してよろしいですか？</string>
     <string name="available_Pets_Details">利用可能なペットの詳細</string>
     <string name="booknow">予約する</string>
     <string name="breed">種類</string>
@@ -201,7 +202,6 @@
     <string name="description">説明</string>
     <string name="discount_amount">割引額</string>
     <string name="do_you_want_to_cancel_booking">この予約をキャンセルしてもよろしいですか？</string>
-    <string name="do_you_want_to_delete">あなたは削除しますか？</string>
     <string name="donthaveanacc">アカウントを持っていないのですか？</string>
     <string name="download_complete">ダウンロード完了</string>
     <string name="dropofftime">お迎え時間</string>
