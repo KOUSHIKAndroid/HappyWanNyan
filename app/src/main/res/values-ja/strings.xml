@@ -72,7 +72,7 @@
     <string name="nav_profile">プロフィール</string>
     <string name="nav_logout">ログアウト</string>
     <string name="nav_help">ヘルプ</string>
-    <string name="nav_messages">メッセージ</string>
+    <string name="nav_messages">メッセージ入力</string>
     <string name="nav_payment">支払い</string>
     <string name="nav_pastsitter">シッター履歴</string>
     <string name="nav_favoritesitter">お気に入りのシッター</string>
