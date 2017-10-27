@@ -1709,7 +1709,6 @@ int id LL_S_F 0x7f100281
 int id LL_Search 0x7f1002ec
 int id LL_SignUp 0x7f100135
 int id LL_Switch_language 0x7f1002ff
-int id LL_Top_MSGChooseSection 0x7f1002a0
 int id LL_Top_Selection 0x7f1002be
 int id LL_USER_TIME 0x7f100152
 int id LL_UserInfo 0x7f100149
@@ -2205,6 +2204,7 @@ int id scroll 0x7f100032
 int id scrollIndicatorDown 0x7f1000b1
 int id scrollIndicatorUp 0x7f1000ad
 int id scrollView 0x7f1000ae
+int id scrollView_horizontal 0x7f1002a0
 int id scrollable 0x7f100079
 int id search 0x7f10029f
 int id search_badge 0x7f1000c6

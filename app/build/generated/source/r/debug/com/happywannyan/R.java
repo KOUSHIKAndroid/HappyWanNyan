@@ -5572,7 +5572,6 @@ containing a value of this type.
         public static final int LL_Search=0x7f1002ec;
         public static final int LL_SignUp=0x7f100135;
         public static final int LL_Switch_language=0x7f1002ff;
-        public static final int LL_Top_MSGChooseSection=0x7f1002a0;
         public static final int LL_Top_Selection=0x7f1002be;
         public static final int LL_USER_TIME=0x7f100152;
         public static final int LL_UserInfo=0x7f100149;
@@ -6068,6 +6067,7 @@ containing a value of this type.
         public static final int scrollIndicatorDown=0x7f1000b1;
         public static final int scrollIndicatorUp=0x7f1000ad;
         public static final int scrollView=0x7f1000ae;
+        public static final int scrollView_horizontal=0x7f1002a0;
         public static final int scrollable=0x7f100079;
         public static final int search=0x7f10029f;
         public static final int search_badge=0x7f1000c6;

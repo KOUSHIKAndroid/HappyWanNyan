@@ -82,83 +82,90 @@
                 android:src="@drawable/ic_search_list" />
         </RelativeLayout>
 
-        <!--<HorizontalScrollView-->
-        <!--android:id="@+id/scrollView_horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="56dp"-->
-        <!--android:background="@color/colorWhite"-->
-        <!--android:scrollbars="none">-->
-
-
-        <LinearLayout
-            android:id="@+id/LL_Top_MSGChooseSection"
+        <HorizontalScrollView
+            android:id="@+id/scrollView_horizontal"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@color/colorWhite"
-            android:orientation="horizontal"
-            android:weightSum="3.3">
-
-            <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_all_message"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/all_messages"
-                android:textColor="@color/colorTextDarkGray" />
-
-            <View
-                android:id="@+id/view_between_all_unread_message"
-                android:layout_width="1dip"
-                android:layout_height="15dp"
-                android:layout_gravity="center"
-                android:background="@color/colorGrayProject" />
-
-            <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_reservation_message"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/reservation"
-                android:textColor="@color/colorTextDarkGray" />
+            android:scrollbars="none">
 
 
-            <View
-                android:id="@+id/view_unResponded_reservation_message"
-                android:layout_width="1dip"
-                android:layout_height="15dp"
-                android:layout_gravity="center"
-                android:background="@color/colorGrayProject" />
-            <!--<com.happywannyan.Font.SFNFTextView-->
-            <!--android:id="@+id/tv_unResponded_message"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:gravity="center"-->
-            <!--android:text="@string/meetgreet"-->
-            <!--android:textColor="@color/text_dark_gray"-->
-            <!--android:paddingLeft="14dp"-->
-            <!--android:paddingRight="14dp"/>-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal">
 
-            <!--<View-->
-            <!--android:id="@+id/view_between_unread_unResponded_message"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:layout_width="1dip"-->
-            <!--android:layout_height="15dp"-->
-            <!--android:background="@color/gray_project"-->
-            <!--/>-->
-            <com.happywannyan.Font.SFNFTextView
-                android:id="@+id/tv_unread_message"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.3"
-                android:gravity="center"
-                android:text="@string/generalequerys"
-                android:textColor="@color/colorTextDarkGray" />
-        </LinearLayout>
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_all_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="@string/all_messages"
+                    android:textColor="@color/colorTextDarkGray" />
+
+                <View
+                    android:id="@+id/view_between_all_unread_message"
+                    android:layout_width="1dip"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorGrayProject" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_reservation_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="@string/reservation"
+                    android:textColor="@color/colorTextDarkGray"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"/>
 
 
-        <!--</HorizontalScrollView>-->
+                <View
+                    android:id="@+id/view_unResponded_reservation_message"
+                    android:layout_width="1dip"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorGrayProject" />
+                <!--<com.happywannyan.Font.SFNFTextView-->
+                <!--android:id="@+id/tv_unResponded_message"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/meetgreet"-->
+                <!--android:textColor="@color/text_dark_gray"-->
+                <!--android:paddingLeft="14dp"-->
+                <!--android:paddingRight="14dp"/>-->
+
+                <!--<View-->
+                <!--android:id="@+id/view_between_unread_unResponded_message"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_width="1dip"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:background="@color/gray_project"-->
+                <!--/>-->
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/tv_unread_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="@string/generalequerys"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/colorTextDarkGray" />
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
 
         <RelativeLayout
             android:layout_width="match_parent"
