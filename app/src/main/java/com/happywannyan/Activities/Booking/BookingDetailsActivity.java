@@ -89,6 +89,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
 
 
+            Loger.MSG("jsonObjectPrevious-->",""+jsonObjectPrevious);
+
             if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")){
                 ((SFNFTextView) findViewById(R.id.tv_booking_id_name)).setText("");
                 if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type").equalsIgnoreCase("PE")){
@@ -116,11 +118,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTextColor(Color.parseColor("#FFFFFF"));
             }
 
-
-
-
-
-            ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id"));
             ((SFNFBoldTextView) findViewById(R.id.tv_service_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_service"));
 
             ((SFNFBoldTextView) findViewById(R.id.tv_trust_and_safety_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("trust_safety_fee"));
@@ -365,8 +362,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
 
     private void CancelWith_Reasons() {
@@ -375,7 +370,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CancelBookingWithReasonsActivity.class);
         intent.putExtra("OBJECTDATA", jsonObjectPrevious + "");
         startActivity(intent);
-
     }
 
     private void GotoMessage(String MsgId) {
