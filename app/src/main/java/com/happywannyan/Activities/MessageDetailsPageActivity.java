@@ -517,7 +517,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             try {
                 Place place = PlacePicker.getPlace(MessageDetailsPageActivity.this, data);
                 Loger.MSG("@@ PLACE", "" + place.getLatLng());
-                String MAPIMGAEURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&zoom=13&size=1000x1000&markers=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M";
+                String MAPIMGAEURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&zoom=13&size=1000x1000&markers=" + place.getLatLng().latitude + "," + place.getLatLng().longitude + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M"+"&language="+AppConstant.Language;
                 appLoader.Show();
                 ArrayList<SetGetAPIPostData> Params = new ArrayList<>();
                 SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();

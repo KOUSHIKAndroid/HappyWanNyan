@@ -5,6 +5,8 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 
+import com.happywannyan.Constant.AppConstant;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,7 +45,7 @@ public class AppLocationProvider {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                PARAMS = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location.getLatitude() + "," + location.getLongitude() + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M";
+                PARAMS = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location.getLatitude() + "," + location.getLongitude() + "&key=AIzaSyDAS-0Wh-K3QII2h7DgO8bd-f1dSy4lW3M"+"&language="+ AppConstant.Language;
             }
 
             @Override
