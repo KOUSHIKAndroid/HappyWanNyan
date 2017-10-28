@@ -29,6 +29,8 @@ public class ProfileFragServiceFragment extends Fragment {
     JSONArray ServiceArray;
     int block_user_status = 0;
 
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class ProfileFragServiceFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView list = (RecyclerView) view.findViewById(R.id.service_recycler);
 
+        String SitterId = this.getArguments().getString("SitterId");
+
         try {
             ServiceArray = new JSONObject(((ProfileDetailsActivity) getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
             final JSONObject BasicInfo = new JSONObject(((ProfileDetailsActivity) getActivity()).JSONRESPONSESTRING).getJSONObject("info_array").getJSONObject("basic_info");
@@ -49,7 +53,7 @@ public class ProfileFragServiceFragment extends Fragment {
             if (ServiceArray.length() > 0) {
                 view.findViewById(R.id.No_Review).setVisibility(View.GONE);
                 list.setLayoutManager(new LinearLayoutManager(getActivity()));
-                list.setAdapter(new ProfileServiceListingAdapter(getActivity(), ServiceArray, block_user_status));
+                list.setAdapter(new ProfileServiceListingAdapter(getActivity(),SitterId, ServiceArray, block_user_status));
             } else {
                 ((SFNFTextView) view.findViewById(R.id.No_Review)).setText(getString(R.string.no_ServicesFound));
                 view.findViewById(R.id.No_Review).setVisibility(View.VISIBLE);

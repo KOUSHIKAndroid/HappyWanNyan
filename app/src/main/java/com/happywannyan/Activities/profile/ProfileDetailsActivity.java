@@ -170,7 +170,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                 }
 
 
-                pagerAdapter = new ProfileFragPagerAdapter(getSupportFragmentManager());
+                pagerAdapter = new ProfileFragPagerAdapter(SitterId,getSupportFragmentManager());
                 viewpager.setAdapter(pagerAdapter);
                 appLoader.Dismiss();
             }

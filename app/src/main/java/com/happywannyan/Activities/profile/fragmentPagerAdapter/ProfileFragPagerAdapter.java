@@ -1,5 +1,6 @@
 package com.happywannyan.Activities.profile.fragmentPagerAdapter;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -17,8 +18,10 @@ import com.happywannyan.Activities.profile.profilepagerFragments.ProfileFragServ
 
 public class ProfileFragPagerAdapter extends FragmentStatePagerAdapter {
 
-    public ProfileFragPagerAdapter(FragmentManager fm) {
+    String SitterId;
+    public ProfileFragPagerAdapter(String SitterId,FragmentManager fm) {
         super(fm);
+        this.SitterId=SitterId;
     }
 
     @Override
@@ -37,7 +40,11 @@ public class ProfileFragPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new ProfileFragAboutFragment();
             case 1:
-                return new ProfileFragServiceFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("SitterId", SitterId );
+                ProfileFragServiceFragment profileFragServiceFragment = new ProfileFragServiceFragment();
+                profileFragServiceFragment.setArguments(bundle);
+                return profileFragServiceFragment;
             case 2:
                 return new ProfileFragReviewFragment();
             case 3:

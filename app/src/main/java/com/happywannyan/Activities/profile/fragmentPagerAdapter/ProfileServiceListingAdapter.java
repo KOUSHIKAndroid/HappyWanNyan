@@ -32,9 +32,11 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
     private Context mContext = null;
     JSONArray ServiceArray;
     int block_user_status;
+    String SitterId;
 
-    public ProfileServiceListingAdapter(Context mContext, JSONArray serviceArray, int block_user_status) {
+    public ProfileServiceListingAdapter(Context mContext,String SitterId,JSONArray serviceArray, int block_user_status) {
         this.mContext = mContext;
+        this.SitterId=SitterId;
         this.ServiceArray = serviceArray;
         this.block_user_status = block_user_status;
     }
@@ -99,11 +101,13 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
                             }
                         });
                     } else {
+                        Loger.MSG("object-->",""+object);
                         Intent intent = new Intent(mContext, BookingOneActivity.class);
                         intent.putExtra("LIST", "");
                         intent.putExtra("ItemDetails", "" + ((ProfileDetailsActivity) mContext).PrevJSONObject);
                         intent.putExtra("Single", true);
                         intent.putExtra("SELECT", "" + object);
+                        intent.putExtra("SitterId", "" + SitterId);
                         mContext.startActivity(intent);
                     }
                 }
