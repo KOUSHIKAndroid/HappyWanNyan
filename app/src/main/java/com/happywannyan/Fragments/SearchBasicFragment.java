@@ -188,6 +188,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
             public void onClick(View view) {
                 try {
                     AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
+                            .setTypeFilter(Place.TYPE_COUNTRY)
                             .setCountry("JP")
                             .build();
                     Intent intent =
