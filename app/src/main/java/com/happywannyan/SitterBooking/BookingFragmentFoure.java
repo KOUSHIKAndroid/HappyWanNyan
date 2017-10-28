@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetCards;
@@ -60,7 +61,7 @@ public class BookingFragmentFoure extends Fragment {
     AppLoader appLoader;
     Card card;
 
-
+    SFNFBoldTextView tv_total_amount;
 
     public BookingFragmentFoure() {
         // Required empty public constructor
@@ -107,6 +108,9 @@ public class BookingFragmentFoure extends Fragment {
 
         REC_Card = (RecyclerView) view.findViewById(R.id.REC_Card);
         REC_Card.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        tv_total_amount= (SFNFBoldTextView) view.findViewById(R.id.tv_total_amount);
+        tv_total_amount.setText(((BookingOneActivity) getActivity()).totalAmount);
 
         setGetCardsArrayList = new ArrayList<>();
 

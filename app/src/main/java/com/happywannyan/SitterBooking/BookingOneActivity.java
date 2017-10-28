@@ -38,6 +38,8 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
     public String ServiceList;
     public String PRESelectService;
 
+    public String totalAmount="";
+
     AppLoader appLoader;
     String SitterId;
     public ArrayList<String> MyPetList;

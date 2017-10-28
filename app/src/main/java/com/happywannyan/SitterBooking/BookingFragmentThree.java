@@ -51,6 +51,8 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
     //TextInputLayout input_layout_coupon_code;
     private OnFragmentInteractionListener mListener;
 
+    SFNFBoldTextView TXT_TotalPrice;
+
     public BookingFragmentThree() {
         // Required empty public constructor
     }
@@ -102,13 +104,15 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
         viewMain.findViewById(R.id.img_clear).setVisibility(View.GONE);
         EDX_coupon_code = (EditText) viewMain.findViewById(R.id.EDX_coupon_code);
 
+        TXT_TotalPrice=(SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice);
+
         new MethodsUtils().setupParent(viewMain.findViewById(R.id.ScrollViewMain), getActivity());
 
         try {
             ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_Unit)).setText(PageObject.getJSONObject("info_array").getString("service_price"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_no_pets)).setText(PageObject.getJSONObject("info_array").getString("no_of_pet"));
-            ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));
+            TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_saftyPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_CancelPolicy)).setText(PageObject.getJSONObject("info_array").getString("cancel_policy"));
 
@@ -223,9 +227,9 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
 
                                     if (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price"))
                                             > Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))) {
-                                        ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice)).setText("" + (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price")) - Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))));
+                                        TXT_TotalPrice.setText("" + (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price")) - Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))));
                                     } else {
-                                        ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
+                                        TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -239,7 +243,7 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
                                 appLoader.Dismiss();
                                 try {
                                     ((LinearLayout) viewMain.findViewById(R.id.LL_subtotal_discount)).setVisibility(View.GONE);
-                                    ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_TotalPrice)).setText(PageObject.getJSONObject("info_array").getString("total_price"));
+                                    TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
                                     JSONObject jsonObject = new JSONObject(Response);
                                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
                                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText(jsonObject.getString("message"));
@@ -292,6 +296,8 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.Card_next:
+
+                ((BookingOneActivity) getActivity()).totalAmount=TXT_TotalPrice.getText().toString();
 
                 for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
                     if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("coupon_id")) {
