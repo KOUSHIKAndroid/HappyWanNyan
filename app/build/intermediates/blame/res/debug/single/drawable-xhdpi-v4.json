@@ -944,12 +944,12 @@
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-xhdpi-v4/ic_media_route_connecting_14_light.png"
     },
     {
-        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_15_dark.png",
-        "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-xhdpi-v4/ic_media_route_on_15_dark.png"
-    },
-    {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_09_dark.png",
         "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-xhdpi-v4/ic_media_route_connecting_09_dark.png"
+    },
+    {
+        "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_15_dark.png",
+        "source": "/home/su/.android/build-cache/08dc745e936adc88e425038a228dc51820c07d6e/output/res/drawable-xhdpi-v4/ic_media_route_on_15_dark.png"
     },
     {
         "merged": "/home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_16_dark.png",

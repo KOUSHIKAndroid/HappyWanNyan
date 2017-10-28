@@ -14,8 +14,7 @@ import java.util.Calendar;
  * Created by su on 6/28/17.
  */
 
-public class AppCalender extends DialogFragment
-        implements DatePickerDialog.OnDateSetListener {
+public class AppCalender extends DialogFragment implements DatePickerDialog.OnDateSetListener {
     private static final String VIEWID = "viewid";
 
     public static AppCalender newInstance(int startdate) {
@@ -57,7 +56,6 @@ public class AppCalender extends DialogFragment
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month, day);
         onDateSelect.Ondate(calendar, getArguments().getInt(VIEWID));
-
     }
 }
 

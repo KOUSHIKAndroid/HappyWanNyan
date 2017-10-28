@@ -1,13 +1,18 @@
 package com.happywannyan.Activities.profile;
 
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -26,12 +31,18 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.TimeZone;
 
-public class ContactMsgActivity extends AppCompatActivity implements View.OnClickListener, AppCalender.OnDateSelect {
+public class ContactMsgActivity extends AppCompatActivity implements View.OnClickListener{
 
+    Date checkIndate = null;
+    Date checkOutdate = null;
 
     JSONArray JSONARRAY = new JSONArray("[{\"name\":\"I am Flexible\",\"value\":\"\"},{\"name\":\"12:00 AM\",\"value\":\"12:00 AM\"},{\"name\":\"12:30 AM\",\"value\":\"12:30 AM\"},{\"name\":\"01:00 AM\",\"value\":\"01:00 AM\"},{\"name\":\"01:30 AM\",\"value\":\"01:30 AM\"},{\"name\":\"02:00 AM\",\"value\":\"02:00 AM\"},{\"name\":\"02:30 AM\",\"value\":\"02:30 AM\"},{\"name\":\"03:00 AM\",\"value\":\"03:00 AM\"},{\"name\":\"03:30 AM\",\"value\":\"03:30 AM\"},{\"name\":\"04:00 AM\",\"value\":\"04:00 AM\"},{\"name\":\"04:30 AM\",\"value\":\"04:30 AM\"},{\"name\":\"05:00 AM\",\"value\":\"05:00 AM\"},{\"name\":\"05:30 AM\",\"value\":\"05:30 AM\"},{\"name\":\"06:00 AM\",\"value\":\"06:00 AM\"},{\"name\":\"06:30 AM\",\"value\":\"06:30 AM\"},{\"name\":\"07:00 AM\",\"value\":\"07:00 AM\"},{\"name\":\"07:30 AM\",\"value\":\"07:30 AM\"},{\"name\":\"08:00 AM\",\"value\":\"08:00 AM\"},{\"name\":\"08:30 AM\",\"value\":\"08:30 AM\"},{\"name\":\"09:00 AM\",\"value\":\"09:00 AM\"},{\"name\":\"09:30 AM\",\"value\":\"09:30 AM\"},{\"name\":\"10:00 AM\",\"value\":\"10:00 AM\"},{\"name\":\"10:30 AM\",\"value\":\"10:30 AM\"},{\"name\":\"11:00 AM\",\"value\":\"11:00 AM\"},{\"name\":\"11:30 AM\",\"value\":\"11:30 AM\"},{\"name\":\"12:00 PM\",\"value\":\"12:00 PM\"},{\"name\":\"12:30 PM\",\"value\":\"12:30 PM\"},{\"name\":\"01:00 PM\",\"value\":\"01:00 PM\"},{\"name\":\"01:30 PM\",\"value\":\"01:30 PM\"},{\"name\":\"02:00 PM\",\"value\":\"02:00 PM\"},{\"name\":\"02:30 PM\",\"value\":\"02:30 PM\"},{\"name\":\"03:00 PM\",\"value\":\"03:00 PM\"},{\"name\":\"03:30 PM\",\"value\":\"03:30 PM\"},{\"name\":\"04:00 PM\",\"value\":\"04:00 PM\"},{\"name\":\"04:30 PM\",\"value\":\"04:30 PM\"},{\"name\":\"05:00 PM\",\"value\":\"05:00 PM\"},{\"name\":\"05:30 PM\",\"value\":\"05:30 PM\"},{\"name\":\"06:00 PM\",\"value\":\"06:00 PM\"},{\"name\":\"06:30 PM\",\"value\":\"06:30 PM\"},{\"name\":\"07:00 PM\",\"value\":\"07:00 PM\"},{\"name\":\"07:30 PM\",\"value\":\"07:30 PM\"},{\"name\":\"08:00 PM\",\"value\":\"08:00 PM\"},{\"name\":\"08:30 PM\",\"value\":\"08:30 PM\"},{\"name\":\"09:00 PM\",\"value\":\"09:00 PM\"},{\"name\":\"09:30 PM\",\"value\":\"09:30 PM\"},{\"name\":\"10:00 PM\",\"value\":\"10:00 PM\"},{\"name\":\"10:30 PM\",\"value\":\"10:30 PM\"},{\"name\":\"11:00 PM\",\"value\":\"11:00 PM\"},{\"name\":\"11:30 PM\",\"value\":\"11:30 PM\"}]");
     EditText EDX_msg, EDX_first_name, EDX_last_name;
@@ -91,12 +102,100 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                 onBackPressed();
                 break;
             case R.id.startdate:
-                DialogFragment newFragment = AppCalender.newInstance(R.id.startdate);
-                newFragment.show(getFragmentManager(), "datePicker");
+
+                View dialoglayout1 = ((LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_date_picker, null);
+                final DatePicker dPicker1 = (DatePicker) dialoglayout1.findViewById(R.id.date_picker);
+
+                Calendar cal1 = Calendar.getInstance();
+
+                Loger.MSG("mYear",""+cal1.get(Calendar.YEAR));
+                Loger.MSG("mMonth",""+cal1.get(Calendar.MONTH));
+                Loger.MSG("mMonth",""+cal1.get(Calendar.DAY_OF_MONTH));
+
+
+                dPicker1.setMinDate(cal1.getTimeInMillis());
+
+                if(checkIndate!=null) {
+                    cal1.setTime(checkIndate);
+                    dPicker1.updateDate(cal1.get(Calendar.YEAR), cal1.get(Calendar.MONTH), cal1.get(Calendar.DAY_OF_MONTH));
+                    dPicker1.setSelected(true);
+                }
+                else {
+                    dPicker1.setSelected(true);
+                }
+
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(ContactMsgActivity.this);
+                builder1.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        try {
+                            checkIndate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse("" + dPicker1.getYear() + "-" + (dPicker1.getMonth() + 1) + "-" + dPicker1.getDayOfMonth());
+                            ((SFNFTextView) findViewById(R.id.startdate)).setText(""+ dPicker1.getYear() + "-" + (dPicker1.getMonth() + 1) + "-" + dPicker1.getDayOfMonth());
+                            ((SFNFTextView) findViewById(R.id.AlterDate)).setText("Set date");
+                            checkOutdate=null;
+                            Loger.MSG("date", "" + checkIndate);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                builder1.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+                builder1.setView(dialoglayout1);
+                builder1.show();
+
                 break;
             case R.id.AlterDate:
-                newFragment = AppCalender.newInstance(R.id.AlterDate);
-                newFragment.show(getFragmentManager(), "datePicker");
+
+                View dialoglayout2 = ((LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_date_picker, null);
+                final DatePicker dPicker2 = (DatePicker) dialoglayout2.findViewById(R.id.date_picker);
+
+                Calendar cal2 = Calendar.getInstance();
+
+                if (checkIndate == null)
+                {
+                    cal2.setTimeInMillis(System.currentTimeMillis()+(1000 * 60 * 60 * 24));
+                    dPicker2.setMinDate(cal2.getTimeInMillis());
+                    dPicker2.setSelected(true);
+                    Loger.MSG("mYear",""+cal2.get(Calendar.YEAR));
+                    Loger.MSG("mMonth",""+cal2.get(Calendar.MONTH));
+                    Loger.MSG("mDay",""+cal2.get(Calendar.DAY_OF_MONTH));
+                }
+                else {
+                    try {
+                            cal2.setTimeInMillis(checkIndate.getTime()+(1000 * 60 * 60 * 24));
+                            dPicker2.setMinDate(cal2.getTimeInMillis());
+                            dPicker2.setSelected(true);
+                            Loger.MSG("mYear",""+cal2.get(Calendar.YEAR));
+                            Loger.MSG("mMonth",""+cal2.get(Calendar.MONTH));
+                            Loger.MSG("mDay",""+cal2.get(Calendar.DAY_OF_MONTH));
+
+                    }catch (Exception ex){
+                        ex.printStackTrace();
+                    }
+                }
+
+
+
+
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(ContactMsgActivity.this);
+                builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        ((SFNFTextView) findViewById(R.id.AlterDate)).setText(""+ dPicker2.getYear() + "-" + (dPicker2.getMonth() + 1) + "-" + dPicker2.getDayOfMonth());
+                    }
+                });
+                builder2.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+                builder2.setView(dialoglayout2);
+                builder2.show();
+
                 break;
 
             case R.id.RL_PickupTime:
@@ -232,21 +331,6 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                     }
                 }
                 break;
-        }
-    }
-
-    @Override
-    public void Ondate(Calendar date, int viewid) {
-        switch (viewid) {
-            case R.id.startdate:
-                Loger.MSG("@@ Date", date.getTime().toString());
-                ((SFNFTextView) findViewById(R.id.startdate)).setText(date.get(Calendar.YEAR) + "-" + date.get(Calendar.MONTH) + "-" + date.get(Calendar.DAY_OF_MONTH));
-                break;
-            case R.id.AlterDate:
-                Loger.MSG("@@ Date", date.getTime().toString());
-                ((SFNFTextView) findViewById(R.id.AlterDate)).setText(date.get(Calendar.YEAR) + "-" + date.get(Calendar.MONTH) + "-" + date.get(Calendar.DAY_OF_MONTH));
-                break;
-
         }
     }
 }
