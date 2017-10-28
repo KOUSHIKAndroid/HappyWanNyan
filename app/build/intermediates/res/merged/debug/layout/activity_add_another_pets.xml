@@ -105,9 +105,9 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                android:src="@drawable/ic_photo_camera"
                 android:onClick="onClick"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_photo_camera" />
 
 
             <android.support.design.widget.TextInputLayout
@@ -473,4 +473,5 @@
                 android:src="@drawable/ic_right_arrow_white" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+
 </RelativeLayout>
