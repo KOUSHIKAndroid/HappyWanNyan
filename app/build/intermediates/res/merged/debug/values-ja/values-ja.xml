@@ -76,6 +76,7 @@
     <string name="add_another_pets">新しくペットを追加</string>
     <string name="add_card_error">カードエラーを追加</string>
     <string name="add_image">画像を追加</string>
+    <string name="added_as_a_favorite_sitter">お気に入りに追加しました</string>
     <string name="added_on">登録日</string>
     <string name="addnewcard">カードを追加</string>
     <string name="address">住所</string>
@@ -212,6 +213,7 @@
     <string name="expiry_date_hint">MM/YY</string>
     <string name="expiry_month_and_year">有効期限の月と年</string>
     <string name="explain_why_cancel">この予約をキャンセルする理由を説明してください</string>
+    <string name="favorite_sitter_removed">お気に入りリストから削除しました</string>
     <string name="favorite_sitters_delete">削除する</string>
     <string name="field_length_must_be_greater_than_five">フィールド長は5より大きくなければなりません</string>
     <string name="filed_can_not_be_empty">フィールドを空にすることはできません</string>
