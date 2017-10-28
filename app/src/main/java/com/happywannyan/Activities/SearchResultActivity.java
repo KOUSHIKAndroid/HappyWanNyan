@@ -162,12 +162,12 @@ public class SearchResultActivity extends AppCompatActivity {
                         findViewById(R.id.Container_result).setVisibility(View.GONE);
                         findViewById(R.id.tv_empty).setVisibility(View.VISIBLE);
 
-                        new MYAlert(SearchResultActivity.this).AlertOnly(getResources().getString(R.string.app_name), Error, new MYAlert.OnlyMessage() {
-                            @Override
-                            public void OnOk(boolean res) {
-
-                            }
-                        });
+//                        new MYAlert(SearchResultActivity.this).AlertOnly(getResources().getString(R.string.app_name), Error, new MYAlert.OnlyMessage() {
+//                            @Override
+//                            public void OnOk(boolean res) {
+//
+//                            }
+//                        });
                     }
 
                 } catch (Exception e) {
