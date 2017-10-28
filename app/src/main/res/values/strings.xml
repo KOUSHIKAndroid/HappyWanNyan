@@ -288,6 +288,8 @@
     <string name="are_you_sure_you_want_to_delete_this_information">Are you sure you want to delete this information?</string>
     <string name="to_delete">To delete</string>
     <string name="profile_info_updated">Profile Info Updated!</string>
+    <string name="added_as_a_favorite_sitter">Added as a Favorite Sitter</string>
+    <string name="favorite_sitter_removed">Favorite Sitter Removed</string>
 
 
 </resources>

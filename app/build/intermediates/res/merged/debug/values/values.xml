@@ -1171,6 +1171,7 @@
     <string name="add_another_pets">Add Another Pets</string>
     <string name="add_card_error">Add Card Error</string>
     <string name="add_image">Add Image</string>
+    <string name="added_as_a_favorite_sitter">Added as a Fovorite Sitter</string>
     <string name="added_on">Added On</string>
     <string name="addnewcard">Add New Card</string>
     <string name="address">Address</string>
@@ -1243,7 +1244,7 @@
     <string name="choose_cause_type">I am looking for my pet..</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="chosedate">Choose Date</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">5d9a2ecf-51a0-42b0-ad5f-faa0a2a4ad08</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">607ea0b0-5606-40af-92e8-85432d27cdf9</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1322,6 +1323,7 @@
     <string name="explain_why_cancel">Explain why you are cancelling this booking</string>
     <string name="facebook">Facebook</string>
     <string name="facebook_app_id" translatable="false">1381434255240015</string>
+    <string name="favorite_sitter_removed">Favorite Sitter Removed</string>
     <string name="favorite_sitters_delete">Delete</string>
     <string name="fb_login_protocol_scheme">fb1381434255240015</string>
     <string name="field_length_must_be_greater_than_five">Field length must be greater then 5</string>

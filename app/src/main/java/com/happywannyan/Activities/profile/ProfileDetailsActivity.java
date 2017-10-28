@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -346,7 +347,13 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     public void OnSuccess(String Result) {
                         try {
                             JSONObject jsonObject = new JSONObject(Result);
-                            Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                            Loger.MSG("Result-->",Result);
+
+                            if (jsonObject.getInt("fav_status")==1){
+                                Toast.makeText(getApplicationContext(), getResources().getString(R.string.added_as_a_favorite_sitter), Toast.LENGTH_SHORT).show();
+                            }else {
+                                Toast.makeText(getApplicationContext(), getResources().getString(R.string.favorite_sitter_removed), Toast.LENGTH_SHORT).show();
+                            }
 
                             if (((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1")) {
                                 ((ImageView) findViewById(R.id.IMG_FAV)).setTag("0");

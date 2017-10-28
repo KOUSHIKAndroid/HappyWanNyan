@@ -265,6 +265,8 @@
     <string name="are_you_sure_you_want_to_delete_this_information">この情報を削除してよろしいですか？</string>
     <string name="to_delete">削除す</string>
     <string name="profile_info_updated">プロフィールを提出する</string>
+    <string name="added_as_a_favorite_sitter">お気に入りに追加しました</string>
+    <string name="favorite_sitter_removed">お気に入りリストから削除しました</string>
 
 
 </resources>
