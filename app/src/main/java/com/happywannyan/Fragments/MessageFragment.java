@@ -349,7 +349,7 @@ public class MessageFragment extends Fragment {
         ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                AllMessage = new ArrayList<>();
+                AllMessage.clear();
                 loadList("0");
                 ((SwipeRefreshLayout) view.findViewById(R.id.swipeContainer)).setRefreshing(false);
             }

@@ -221,6 +221,7 @@ public class BookingFragment extends Fragment {
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                AllBooking.clear();
                 loadBookingList("0");
                 swipeContainer.setRefreshing(false);
             }
