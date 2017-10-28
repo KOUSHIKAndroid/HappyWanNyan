@@ -332,8 +332,10 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                 try {
                     AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
+                            .setTypeFilter(Place.TYPE_COUNTRY)
                             .setCountry("JP")
                             .build();
+
                     Intent intent =
                             new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN).setFilter(typeFilter)
                                     .build(getActivity());
