@@ -35,159 +35,165 @@
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/RL_HEADER"
-        android:background="@color/colorGrayProject"
-        android:orientation="vertical">
+        android:background="@color/colorGrayProject">
 
-        <android.support.v7.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="@color/colorWhite"
-            app:cardElevation="5dp">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardElevation="5dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/H1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/meeting_date" />
-
-                    <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/startdate"
-                        style="@style/Widget.AppCompat.EditText"
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-                        android:backgroundTint="@color/colorGrayProject"
-                        android:onClick="onClick" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_calender_balack" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.happywannyan.Font.SFNFTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/alternative_date" />
-
-                    <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/AlterDate"
-                        style="@style/Widget.AppCompat.EditText"
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-                        android:backgroundTint="@color/colorGrayProject"
-                        android:onClick="onClick" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_calender_balack" />
-                </RelativeLayout>
-
-                <CheckBox
-                    android:id="@+id/Check"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/with_pet"
-                    app:theme="@style/AppTheme" />
-            </LinearLayout>
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.happywannyan.Font.SFNFTextView
+                            android:id="@+id/H1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/meeting_date" />
+
+                        <com.happywannyan.Font.SFNFTextView
+                            android:id="@+id/startdate"
+                            style="@style/Widget.AppCompat.EditText"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="20dp"
+                            android:backgroundTint="@color/colorGrayProject"
+                            android:onClick="onClick" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_calender_balack" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.happywannyan.Font.SFNFTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/alternative_date" />
+
+                        <com.happywannyan.Font.SFNFTextView
+                            android:id="@+id/AlterDate"
+                            style="@style/Widget.AppCompat.EditText"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="20dp"
+                            android:backgroundTint="@color/colorGrayProject"
+                            android:onClick="onClick" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_calender_balack" />
+                    </RelativeLayout>
+
+                    <CheckBox
+                        android:id="@+id/Check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/with_pet"
+                        app:theme="@style/AppTheme" />
+                </LinearLayout>
 
 
-        </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="@color/colorWhite"
-            app:cardElevation="5dp">
-
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardElevation="5dp">
 
-                <com.happywannyan.Font.SFNFTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Enter_your_msg_bellow" />
-
-
-                <EditText
-                    android:id="@+id/EDX_msg"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/ic_edit_background"
-                    android:gravity="bottom"
-                    android:minLines="5"
-                    android:padding="10dp" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
                     <com.happywannyan.Font.SFNFTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/numberofpets" />
+                        android:text="@string/Enter_your_msg_bellow" />
 
-                    <com.happywannyan.Font.SFNFTextView
-                        android:id="@+id/EDX_no_of_pets"
-                        style="@style/Widget.AppCompat.EditText"
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-                        android:backgroundTint="@color/colorGrayProject"
-                        android:enabled="true"
-                        android:onClick="onClick"
-                        android:text="0" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/EDX_msg"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_arrow_black" />
-                </RelativeLayout>
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/ic_edit_background"
+                        android:gravity="bottom"
+                        android:minLines="5"
+                        android:padding="10dp" />
 
-            </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.happywannyan.Font.SFNFTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/numberofpets" />
+
+                        <com.happywannyan.Font.SFNFTextView
+                            android:id="@+id/EDX_no_of_pets"
+                            style="@style/Widget.AppCompat.EditText"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="20dp"
+                            android:backgroundTint="@color/colorGrayProject"
+                            android:enabled="true"
+                            android:onClick="onClick"
+                            android:text="0" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_arrow_black" />
+                    </RelativeLayout>
+
+                </LinearLayout>
 
 
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/reservation"
@@ -217,4 +223,5 @@
             android:layout_margin="10dp"
             android:src="@drawable/profile_ic_chevron_right_white" />
     </LinearLayout>
+
 </RelativeLayout>

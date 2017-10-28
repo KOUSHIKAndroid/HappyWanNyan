@@ -133,12 +133,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.profile.ProfileDetailsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.happywannyan.Activities.BaseActivity"
             android:label="@string/title_activity_base"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.happywannyan.Activities.FacebookActivity"
             android:screenOrientation="portrait" />
@@ -158,22 +160,22 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.Booking.BookingDetailsActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.AddAnotherPetsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.happywannyan.Activities.EditAnotherPetsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.happywannyan.Activities.profile.MeetUpWannyanActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.happywannyan.Activities.profile.ContactMsgActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.happywannyan.Activities.MessageDetailsPageActivity"
             android:screenOrientation="portrait"
