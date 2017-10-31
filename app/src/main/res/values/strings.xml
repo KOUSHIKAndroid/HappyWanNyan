@@ -68,7 +68,7 @@
     <!--new addition for profile-->
     <string name="location">LOCATION</string>
     <string name="about">About</string>
-    <string name="service">Service</string>
+    <string name="service">Services</string>
     <string name="review">Reviews</string>
     <string name="images">Photos</string>
     <string name="specialskill">SPECIAL SKILLS</string>
