@@ -1,10 +1,13 @@
 package com.happywannyan.PushNotification;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.R;
 import com.happywannyan.Utils.CustomJSONParser;
 
 import java.util.HashMap;
@@ -55,7 +58,9 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
             @Override
             public void OnError(String Error) {
-
+                if (Error.equalsIgnoreCase(getApplicationContext().getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(getApplicationContext(),Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

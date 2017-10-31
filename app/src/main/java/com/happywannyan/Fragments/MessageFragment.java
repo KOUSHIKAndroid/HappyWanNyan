@@ -29,9 +29,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.AdapterMessage;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -533,6 +535,9 @@ public class MessageFragment extends Fragment {
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -574,6 +579,11 @@ public class MessageFragment extends Fragment {
                                 public void OnError(String Error) {
                                     try {
                                         appLoader.Dismiss();
+
+                                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                        }
+
                                         new MYAlert(getActivity()).AlertForAPIRESPONSE(getString(R.string.delete), Error, new MYAlert.OnlyMessage() {
                                             @Override
                                             public void OnOk(boolean res) {
@@ -642,7 +652,9 @@ public class MessageFragment extends Fragment {
 
             @Override
             public void OnError(String Error) {
-
+                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                }
                 appLoader.Dismiss();
             }
         });

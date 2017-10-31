@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
+import com.happywannyan.Activities.ResetPasswordActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
@@ -431,6 +432,11 @@ public class BookingDetailsActivity extends AppCompatActivity {
                             @Override
                             public void OnError(String Error) {
                                 appLoader.Dismiss();
+
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                    Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                }
+
                                 MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
@@ -492,6 +498,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -550,6 +559,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                        }
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
@@ -619,6 +631,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }
@@ -699,6 +714,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                        }
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {

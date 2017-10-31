@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -102,7 +103,9 @@ public class BaseActivity extends LocationBaseActivity
 
             @Override
             public void OnError(String Error) {
-
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(BaseActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -328,6 +331,9 @@ public class BaseActivity extends LocationBaseActivity
                             @Override
                             public void OnError(String Error) {
                                 appLoader.Dismiss();
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                    Toast.makeText(BaseActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
                     }

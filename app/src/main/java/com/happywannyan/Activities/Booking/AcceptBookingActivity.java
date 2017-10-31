@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.AddAnotherPetsActivity;
+import com.happywannyan.Activities.ResetPasswordActivity;
 import com.happywannyan.Activities.profile.ContactMsgActivity;
 import com.happywannyan.Adapter.AdapterPendingBookingPetService;
 import com.happywannyan.Constant.AppConstant;
@@ -164,8 +165,6 @@ public class AcceptBookingActivity extends AppCompatActivity {
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-
-
                             }
 
                             @Override
@@ -185,6 +184,9 @@ public class AcceptBookingActivity extends AppCompatActivity {
                             @Override
                             public void OnError(String Error) {
                                 appLoader.Dismiss();
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                    Toast.makeText(AcceptBookingActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
 
@@ -349,6 +351,9 @@ public class AcceptBookingActivity extends AppCompatActivity {
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(AcceptBookingActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

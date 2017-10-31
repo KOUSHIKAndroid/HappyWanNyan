@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -83,10 +84,8 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
 
                                     }
                                 } catch (Exception e) {
-
+                                    e.printStackTrace();
                                 }
-
-
                             }
 
                             @Override
@@ -104,6 +103,11 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
                             public void OnError(String Error) {
                                 Loger.Error("@@ LOGIN", Error);
                                 appLoader.Dismiss();
+
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                    Toast.makeText(ForgotPasswordActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                }
+
                                 new MYAlert(ForgotPasswordActivity.this).AlertOnly(getResources().getString(R.string.ForgotPassword), Error, new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {

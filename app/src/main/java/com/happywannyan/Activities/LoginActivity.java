@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         finish();
                                     }
                                     else {
-                                        Toast.makeText(LoginActivity.this,getResources().getString(R.string.email_confirm),Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LoginActivity.this,getResources().getString(R.string.email_confirm),Toast.LENGTH_SHORT).show();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();

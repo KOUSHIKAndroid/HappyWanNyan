@@ -23,6 +23,7 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.ResetPasswordActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -338,6 +339,9 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(AddReviewActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

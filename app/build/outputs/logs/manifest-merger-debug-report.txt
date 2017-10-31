@@ -143,40 +143,36 @@ MERGED from [io.fabric.sdk.android:fabric:1.3.17] /home/su/.gradle/caches/transf
 MERGED from [io.fabric.sdk.android:fabric:1.3.17] /home/su/.gradle/caches/transforms-1/files-1.1/fabric-1.3.17.aar/d810db2845fe998e698bf39bf0dbfa75/AndroidManifest.xml:29:5-67
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:5:22-64
-uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:5-76
-	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:22-73
 uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:5-79
+MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-maps-10.2.4.aar/a3dd6359a2cbf777e5641aeb22d3c5cd/AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-maps-10.2.4.aar/a3dd6359a2cbf777e5641aeb22d3c5cd/AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.2.4.aar/ca2dd0628aa17a7153c171db31ad9558/AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.2.4.aar/ca2dd0628aa17a7153c171db31ad9558/AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-nearby-10.2.4.aar/074132c98dd5988071e7832a59f2ab6d/AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-nearby-10.2.4.aar/074132c98dd5988071e7832a59f2ab6d/AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-10.2.4.aar/2632dc9711f785afe274d7c236e511a4/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-10.2.4.aar/2632dc9711f785afe274d7c236e511a4/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.4.aar/3657dcbb0946e789f6d14e67bb17581b/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.4.aar/3657dcbb0946e789f6d14e67bb17581b/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.2.4.aar/2ead3f48e79e790aa5a378161fc7b207/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.2.4.aar/2ead3f48e79e790aa5a378161fc7b207/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-maps-10.2.4.aar/a3dd6359a2cbf777e5641aeb22d3c5cd/AndroidManifest.xml:19:5-78
-MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-maps-10.2.4.aar/a3dd6359a2cbf777e5641aeb22d3c5cd/AndroidManifest.xml:19:5-78
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.2.4.aar/ca2dd0628aa17a7153c171db31ad9558/AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.2.4.aar/ca2dd0628aa17a7153c171db31ad9558/AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-nearby-10.2.4.aar/074132c98dd5988071e7832a59f2ab6d/AndroidManifest.xml:4:5-78
-MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-nearby-10.2.4.aar/074132c98dd5988071e7832a59f2ab6d/AndroidManifest.xml:4:5-78
-MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-10.2.4.aar/2632dc9711f785afe274d7c236e511a4/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-10.2.4.aar/2632dc9711f785afe274d7c236e511a4/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.4.aar/3657dcbb0946e789f6d14e67bb17581b/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.4.aar/3657dcbb0946e789f6d14e67bb17581b/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.2.4.aar/2ead3f48e79e790aa5a378161fc7b207/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.2.4.aar/2ead3f48e79e790aa5a378161fc7b207/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:19:5-78
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:19:5-78
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:7:22-76
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:5-79
-	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:9:5-81
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:9:22-78
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#com.sonyericsson.home.permission.BROADCAST_BADGE
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:10:5-88
 	android:name

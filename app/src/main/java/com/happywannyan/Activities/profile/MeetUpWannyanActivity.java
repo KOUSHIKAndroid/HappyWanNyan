@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -158,6 +159,9 @@ public class MeetUpWannyanActivity extends AppCompatActivity implements View.OnC
                         public void OnError(String Error) {
                             Loger.MSG("@@ Err", Error);
                             appLoader.Dismiss();
+                            if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                Toast.makeText(MeetUpWannyanActivity.this,Error,Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                 }

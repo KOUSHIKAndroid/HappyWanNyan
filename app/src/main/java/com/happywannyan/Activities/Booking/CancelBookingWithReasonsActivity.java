@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.happywannyan.Activities.ResetPasswordActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
@@ -134,6 +136,9 @@ public class CancelBookingWithReasonsActivity extends AppCompatActivity implemen
                 @Override
                 public void OnError(String Error) {
                     appLoader.Dismiss();
+                    if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                        Toast.makeText(CancelBookingWithReasonsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                    }
                     myAlert.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
                         @Override
                         public void OnOk(boolean res) {

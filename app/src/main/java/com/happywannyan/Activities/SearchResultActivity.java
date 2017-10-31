@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -174,14 +175,14 @@ public class SearchResultActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-
             }
 
             @Override
             public void OnError(String Error) {
-
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(SearchResultActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

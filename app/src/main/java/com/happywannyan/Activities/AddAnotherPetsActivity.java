@@ -25,6 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.Booking.AddReviewActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -153,6 +154,9 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                         @Override
                                         public void OnError(String Error) {
                                             appLoader.Dismiss();
+                                            if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                                Toast.makeText(AddAnotherPetsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                            }
                                         }
                                     });
 
@@ -637,6 +641,9 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                                         public void OnError(String Error) {
                                                             Loger.MSG("Error2", Error);
                                                             appLoader.Dismiss();
+                                                            if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                                                Toast.makeText(AddAnotherPetsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                                            }
                                                         }
                                                     });
                                                 }

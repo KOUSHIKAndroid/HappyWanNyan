@@ -156,7 +156,7 @@ public class DownloaderAndShowFile {
             }
             context.startActivity(intent);
         } catch (ActivityNotFoundException anfe) {
-            Toast.makeText(context, "No activity found to open this attachment.", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "No activity found to open this attachment.", Toast.LENGTH_SHORT).show();
         }
     }
 }

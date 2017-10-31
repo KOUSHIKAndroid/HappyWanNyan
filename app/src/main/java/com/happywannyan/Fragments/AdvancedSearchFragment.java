@@ -31,6 +31,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.CalenderActivity;
 import com.happywannyan.Activities.SearchResultActivity;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.PetListDialogAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.CustomRangeBar.RangeSeekBar;
@@ -257,6 +258,9 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                                     @Override
                                     public void OnError(String Error) {
                                         appLoader.Dismiss();
+                                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                        }
                                     }
                                 });
 
@@ -273,6 +277,9 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                         @Override
                         public void OnError(String Error) {
                             appLoader.Dismiss();
+                            if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
 
@@ -446,7 +453,9 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                                                     @Override
                                                     public void OnError(String Error) {
-
+                                                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                                                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                                        }
                                                     }
                                                 });
                                     } catch (JSONException e) {
@@ -704,7 +713,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                                     }
                                 });
                             } catch (JSONException e) {
-
+                                e.printStackTrace();
                             }
                         }
 
@@ -715,7 +724,9 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                         @Override
                         public void OnError(String Error) {
-
+                            if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                                Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
 

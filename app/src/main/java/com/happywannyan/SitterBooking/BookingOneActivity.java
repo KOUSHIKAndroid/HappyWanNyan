@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -133,6 +134,9 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(BookingOneActivity.this,Error,Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
@@ -157,6 +161,9 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(BookingOneActivity.this,Error,Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
@@ -194,6 +201,9 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(BookingOneActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -251,7 +261,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 try {
                     JSONObject jsonObject = new JSONObject(Result);
                     if (jsonObject.getBoolean("response")) {
-                        Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                         //finish();
                         Intent intent = new Intent(BookingOneActivity.this, BaseActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -273,6 +283,9 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(BookingOneActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

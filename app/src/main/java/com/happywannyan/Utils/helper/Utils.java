@@ -39,16 +39,4 @@ public class Utils {
         int height = displayMetrics.heightPixels;
         return width;
     }
-
-
-    public static boolean isNetworkAvailable(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        for (Network network : cm.getAllNetworks()) {
-            if (cm.getNetworkInfo(network).isAvailable() && cm.getNetworkInfo(network).isConnected()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
 }

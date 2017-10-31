@@ -28,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -305,6 +306,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(MessageDetailsPageActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -400,6 +404,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                             @Override
                             public void OnError(String Error) {
                                 appLoader.Dismiss();
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                    Toast.makeText(MessageDetailsPageActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
 
@@ -585,6 +592,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(MessageDetailsPageActivity.this,Error,Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }catch (Exception ex){
@@ -653,6 +663,9 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(MessageDetailsPageActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

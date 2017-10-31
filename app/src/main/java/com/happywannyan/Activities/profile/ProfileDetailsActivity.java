@@ -185,6 +185,9 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(ProfileDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -381,7 +384,9 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
 
                     @Override
                     public void OnError(String Error) {
-
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(ProfileDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
         }

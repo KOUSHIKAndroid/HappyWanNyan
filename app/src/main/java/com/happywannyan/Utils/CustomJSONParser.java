@@ -54,7 +54,7 @@ public class CustomJSONParser {
 
 
     public void APIForGetMethod(Context context, final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
-        if (Utils.isNetworkAvailable(context)) {
+        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             new AsyncTask<Void, Void, Void>() {
 
                 private String responseString = null;
@@ -118,13 +118,14 @@ public class CustomJSONParser {
                 }
             }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         } else {
+            Loger.MSG("NetworkFail-->","Yes");
             jsonResponseInterface.OnError(context.getResources().getString(R.string.please_check_your_internet_connection));
         }
 
     }
 
     public void APIForPostMethod(Context context, final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
-        if (Utils.isNetworkAvailable(context)) {
+        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             new AsyncTask<Void, Void, Void>() {
 
                 private String responseString = null;
@@ -192,7 +193,7 @@ public class CustomJSONParser {
     }
 
     public void APIForPostMethod2(Context context, final String URL, final HashMap<String, String> apiPostDataHashMap, final JSONResponseInterface jsonResponseInterface) {
-        if (Utils.isNetworkAvailable(context)) {
+        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             new AsyncTask<Void, Void, Void>() {
                 private String responseString = null;
                 private Exception exception = null;
@@ -264,7 +265,7 @@ public class CustomJSONParser {
     }
 
     public void APIForWithPhotoPostMethod(Context context, final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final ArrayList<File> Photos, final JSONResponseInterface jsonResponseInterface) {
-        if (Utils.isNetworkAvailable(context)) {
+        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
 
             new AsyncTask<Void, Void, Void>() {
@@ -344,7 +345,7 @@ public class CustomJSONParser {
     }
 
     public void APIForWithPhotoPostMethod2(Context context, final String URL, final HashMap<String, String> apiPostDataHashMap, final HashMap<String, File> Photos, final JSONResponseInterface jsonResponseInterface) {
-        if (Utils.isNetworkAvailable(context)) {
+        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
 
             new AsyncTask<Void, Void, Void>() {
@@ -434,7 +435,7 @@ public class CustomJSONParser {
     }
 
     public void GetStripeCustomerID(Context context, final String StripeToken, final JSONResponseInterface jsonResponseInterface) {
-        if (Utils.isNetworkAvailable(context)) {
+        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             new AsyncTask<Void, Void, Void>() {
                 private String responseString = null;
                 private Exception exception = null;
@@ -491,7 +492,7 @@ public class CustomJSONParser {
     }
 
     public void postDataUsingHttp(Context context, final String URL, final ArrayList<SetGetAPIPostData> apiPostData, final JSONResponseInterface jsonResponseInterface) {
-        if (Utils.isNetworkAvailable(context)) {
+        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             new AsyncTask<String, Void, String>() {
 
                 private String responseString = null;
@@ -583,7 +584,7 @@ public class CustomJSONParser {
     }
 
     public void APIForGetMethodUsingHttp(Context context, final String URL, final ArrayList<SetGetAPIPostData> apiPostDataArrayList, final JSONResponseInterface jsonResponseInterface) {
-        if (Utils.isNetworkAvailable(context)) {
+        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             new AsyncTask<Void, Void, Void>() {
 
                 private String responseString = null;

@@ -27,6 +27,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.CalenderActivity;
 import com.happywannyan.Activities.SearchResultActivity;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.PetListAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Events;
@@ -156,7 +157,9 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
             @Override
             public void OnError(String Error) {
-
+                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

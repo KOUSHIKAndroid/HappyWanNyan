@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.chauthai.swipereveallayout.SwipeRevealLayout;
@@ -263,6 +264,9 @@ public class FavouriteSitterRecyclerAdapter extends RecyclerView.Adapter<Favouri
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(context.getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(context,Error,Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

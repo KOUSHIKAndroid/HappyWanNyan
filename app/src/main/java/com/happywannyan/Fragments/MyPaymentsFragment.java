@@ -11,8 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.PaymentListAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -167,6 +169,9 @@ public class MyPaymentsFragment extends Fragment {
 
                     @Override
                     public void OnError(String Error) {
+                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                        }
                         appLoader.Dismiss();
                     }
                 });
@@ -366,6 +371,9 @@ public class MyPaymentsFragment extends Fragment {
                                                             @Override
                                                             public void OnError(String Error) {
                                                                 appLoader.Dismiss();
+                                                                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                                                                    Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                                                }
                                                             }
                                                         });
                                             }
@@ -379,6 +387,9 @@ public class MyPaymentsFragment extends Fragment {
                                             @Override
                                             public void OnError(String Error) {
                                                 appLoader.Dismiss();
+                                                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                                                    Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                                }
                                             }
                                         });
                                     }
@@ -393,6 +404,9 @@ public class MyPaymentsFragment extends Fragment {
                                     @Override
                                     public void OnError(String Error) {
                                         Loger.MSG("@@ CARD Error ->", Error);
+                                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                        }
                                         appLoader.Dismiss();
                                     }
                                 });
@@ -400,13 +414,13 @@ public class MyPaymentsFragment extends Fragment {
 
                             public void onError(Exception error) {
                                 appLoader.Dismiss();
+
                                 new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.add_card_error), error.getLocalizedMessage(), new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
 
                                     }
                                 });
-
                             }
                         }
                 );

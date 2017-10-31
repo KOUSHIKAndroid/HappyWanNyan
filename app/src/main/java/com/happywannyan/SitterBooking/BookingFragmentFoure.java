@@ -11,7 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
@@ -447,6 +449,9 @@ public class BookingFragmentFoure extends Fragment {
                                                             @Override
                                                             public void OnError(String Error) {
                                                                 appLoader.Dismiss();
+                                                                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                                                                    Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                                                }
                                                             }
                                                         });
                                             }
@@ -573,7 +578,9 @@ public class BookingFragmentFoure extends Fragment {
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
-
+                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
     }

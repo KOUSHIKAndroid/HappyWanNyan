@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
@@ -195,6 +196,9 @@ public class PaymentListAdapter extends RecyclerView.Adapter<PaymentListAdapter.
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(mContext.getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(mContext,Error,Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
     }
@@ -232,6 +236,9 @@ public class PaymentListAdapter extends RecyclerView.Adapter<PaymentListAdapter.
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(mContext.getResources().getString(R.string.please_check_your_internet_connection))){
+                            Toast.makeText(mContext,Error,Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
     }

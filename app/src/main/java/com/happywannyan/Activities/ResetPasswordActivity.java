@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.Booking.AcceptBookingActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -85,6 +86,11 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
 
                         @Override
                         public void OnError(String Error) {
+
+                            if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                Toast.makeText(ResetPasswordActivity.this,Error,Toast.LENGTH_SHORT).show();
+                            }
+
                             new MYAlert(ResetPasswordActivity.this).AlertOnly(getResources().getString(R.string.ResetPassword), Error, new MYAlert.OnlyMessage() {
                                 @Override
                                 public void OnOk(boolean res) {

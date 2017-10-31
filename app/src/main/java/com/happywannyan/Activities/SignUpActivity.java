@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.happywannyan.Activities.Booking.AcceptBookingActivity;
 import com.happywannyan.Constant.AppConstant;
@@ -141,6 +142,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             @Override
                             public void OnError(String Error) {
                                 Loger.Error("@@ REG", Error);
+
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                    Toast.makeText(SignUpActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                }
+
                                 new MYAlert(SignUpActivity.this).AlertOnly(getResources().getString(R.string.SignUp), Error, new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
