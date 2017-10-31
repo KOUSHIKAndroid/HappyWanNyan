@@ -2,7 +2,7 @@
     <string name="app_name">Happy Wan Nyan</string>
     <string name="skip">Skip</string>
     <string name="Login">Log in</string>
-    <string name="fb_login_protocol_scheme">fb1381434255240015</string>
+    <string name="fb_login_protocol_scheme">fb280663929110925</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="facebook">Facebook</string>
@@ -55,7 +55,7 @@
     <string name="pet_age">Pet age</string>
     <string name="whatisyourdailybudgetperpet">What is your daily budget per pet?</string>
     <string name="otherOption">Other Option</string>
-    <string name="facebook_app_id" translatable="false">1381434255240015</string>
+    <string name="facebook_app_id" translatable="false">280663929110925</string>
     <string name="title_activity_search_result">Map</string>
     <string name="reservation">Reservation</string>
     <string name="request_reservation">Request Reservation</string>

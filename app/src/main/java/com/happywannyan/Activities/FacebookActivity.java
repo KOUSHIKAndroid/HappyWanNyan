@@ -22,13 +22,9 @@ import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -49,13 +45,11 @@ public class FacebookActivity extends AppCompatActivity {
                 md.update(signature.toByteArray());
                 Loger.MSG("## KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
-        } catch (PackageManager.NameNotFoundException e) {
-
-        } catch (NoSuchAlgorithmException e) {
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        setContentView(R.layout.activity_facebook);
 
+        setContentView(R.layout.activity_facebook);
 
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email", "user_friends"));
 
@@ -64,7 +58,7 @@ public class FacebookActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
 
-                Loger.MSG("@@ FB TOLEN", "" + loginResult.getAccessToken());
+                Loger.MSG("@@ FB TOKEN", "" + loginResult.getAccessToken());
 
                 GraphRequest request = GraphRequest.newMeRequest(
                         loginResult.getAccessToken(),
@@ -77,8 +71,8 @@ public class FacebookActivity extends AppCompatActivity {
 //                                if(response.getJSONObject())
 
 
-//                                Loger.MSG("@@ FB DETAILS",""+object.toString());
-                                Loger.MSG("@@ FB DETAILS", " GARPH ---" + response.getJSONObject());
+                                Loger.MSG("@@ FB DETAILS-->",""+object.toString());
+                                Loger.MSG("@@ FB DETAILS_GRAPH-->",""+ response.getJSONObject());
 
 
                                 LoginWithWanNyaan(response.getJSONObject());
@@ -89,8 +83,6 @@ public class FacebookActivity extends AppCompatActivity {
                 parameters.putString("fields", "id,first_name,last_name,picture.type(large),email,name,gender,birthday,friendlists,age_range,friends");
                 request.setParameters(parameters);
                 request.executeAsync();
-
-
             }
 
             @Override
@@ -109,8 +101,6 @@ public class FacebookActivity extends AppCompatActivity {
 
         ArrayList<SetGetAPIPostData> PostData = new ArrayList<>();
         try {
-
-
             SetGetAPIPostData FACE = new SetGetAPIPostData();
             FACE.setPARAMS("lang_id");
             FACE.setValues(AppConstant.Language);
@@ -136,6 +126,7 @@ public class FacebookActivity extends AppCompatActivity {
             PostData.add(FACE);
 
         } catch (JSONException e) {
+            e.printStackTrace();
         }
 
         new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "facebook_login", PostData, new CustomJSONParser.JSONResponseInterface() {
@@ -189,7 +180,6 @@ public class FacebookActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-
             }
         });
 
