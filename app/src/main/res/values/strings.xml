@@ -290,6 +290,7 @@
     <string name="profile_info_updated">Profile Info Updated!</string>
     <string name="added_as_a_favorite_sitter">Added as a Favorite Sitter</string>
     <string name="favorite_sitter_removed">Favorite Sitter Removed</string>
+    <string name="please_check_your_internet_connection">Please Check your Internet Connection.</string>
 
 
 </resources>

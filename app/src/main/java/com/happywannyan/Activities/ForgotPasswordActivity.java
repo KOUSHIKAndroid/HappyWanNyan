@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
@@ -63,7 +64,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
                         setGetAPIPostDataArrayList.add(setGetAPIPostData);
 
                         appLoader.Show();
-                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_forget_password", setGetAPIPostDataArrayList, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(ForgotPasswordActivity.this,AppConstant.BASEURL + "app_forget_password", setGetAPIPostDataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ LOGIN", Result);

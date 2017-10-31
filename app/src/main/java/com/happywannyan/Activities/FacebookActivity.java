@@ -129,7 +129,7 @@ public class FacebookActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "facebook_login", PostData, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(FacebookActivity.this,AppConstant.BASEURL + "facebook_login", PostData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

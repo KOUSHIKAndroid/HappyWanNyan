@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.SearchListFragment;
@@ -119,7 +120,7 @@ public class SearchResultActivity extends AppCompatActivity {
         }
 
 
-        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(SearchResultActivity.this,AppConstant.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

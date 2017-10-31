@@ -397,7 +397,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         Params.put("langid", AppConstant.Language);
                         Params.put("user_timezone", TimeZone.getDefault().getID());
 
-                        new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this,AppConstant.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 appLoader.Dismiss();
@@ -465,7 +465,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         appLoader.Show();
 
         String URL = AppConstant.BASEURL + "booking_deny_confirm?user_id=" + AppConstant.UserId + "&booking_id=" + BookingID;
-        new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(BookingDetailsActivity.this,URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
@@ -516,7 +516,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 Params.put("lang_id", AppConstant.Language);
                 Params.put("user_timezone", Tz.getID());
 
-                new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this,AppConstant.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -584,7 +584,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                new CustomJSONParser().APIForGetMethod(URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForGetMethod(BookingDetailsActivity.this,URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -658,7 +658,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 Params.put("lang_id", AppConstant.Language);
                 Params.put("user_timezone", Tz.getID());
 
-                new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this,AppConstant.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();

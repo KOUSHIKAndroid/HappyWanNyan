@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+import com.happywannyan.Activities.Booking.AcceptBookingActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
@@ -63,7 +64,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                     data.setValues(Password.getText().toString());
                     valuse.add(data);
 
-                    new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "resetpassword", valuse, new CustomJSONParser.JSONResponseInterface() {
+                    new CustomJSONParser().APIForPostMethod(ResetPasswordActivity.this,AppConstant.BASEURL + "resetpassword", valuse, new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
 

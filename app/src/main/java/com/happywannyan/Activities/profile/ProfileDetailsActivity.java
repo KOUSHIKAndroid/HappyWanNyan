@@ -17,6 +17,7 @@ import android.widget.PopupWindow;
 import android.widget.RatingBar;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.MessageDetailsPageActivity;
 import com.happywannyan.Activities.profile.fragmentPagerAdapter.ProfileFragPagerAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -115,7 +116,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         setGetAPIPostData.setValues(AppTimeZone.GetTimeZone());
         Paramas.add(setGetAPIPostData);
 
-        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(ProfileDetailsActivity.this,AppConstant.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 JSONRESPONSESTRING = Result;
@@ -341,7 +342,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     IDtemp = "1";
 
 
-                new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_favourite_sitters?user_id=" + AppConstant.UserId + "" +
+                new CustomJSONParser().APIForGetMethod(ProfileDetailsActivity.this,AppConstant.BASEURL + "app_favourite_sitters?user_id=" + AppConstant.UserId + "" +
                         "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {

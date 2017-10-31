@@ -231,7 +231,7 @@ public class PastSitterRecyclerAdapter extends RecyclerView.Adapter<PastSitterRe
 
         /////////delete here and api fire////////////////
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_favourite_sitters?", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(context,AppConstant.BASEURL + "app_favourite_sitters?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

@@ -281,7 +281,7 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                             Params.put("drop_off", ((SFNFTextView) findViewById(R.id.TXT_DropTime)).getText().toString());
                             Params.put("pick_up", ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).getText().toString());
                             Params.put("dont_date", CHCH);
-                            new CustomJSONParser().APIForPostMethod2(AppConstant.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
+                            new CustomJSONParser().APIForPostMethod2(ContactMsgActivity.this,AppConstant.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
                                 @Override
                                 public void OnSuccess(String Result) {
                                     appLoader.Dismiss();

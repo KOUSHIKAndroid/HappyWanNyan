@@ -331,7 +331,7 @@ public class MyProfileFragment extends Fragment {
 
                 CustomJSONParser.ImageParam = "photo";
 
-                new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForWithPhotoPostMethod(getActivity(),AppConstant.BASEURL + "app_users_edit", Params, Photos, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -485,7 +485,7 @@ public class MyProfileFragment extends Fragment {
 
     public void loadPage() {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_about?user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "app_users_about?user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

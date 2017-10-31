@@ -7,6 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.EditText;
 
+import com.happywannyan.Activities.Booking.AcceptBookingActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
@@ -90,7 +91,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         setGetAPIPostData.setValues(AppConstant.Language);
                         Loger.MSG("@@ LANG-", " " + AppConstant.Language);
                         setGetAPIPostDataArrayList.add(setGetAPIPostData);
-                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "app_regirsation\n", setGetAPIPostDataArrayList, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(SignUpActivity.this,AppConstant.BASEURL + "app_regirsation\n", setGetAPIPostDataArrayList, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 Loger.MSG("@@ REG", Result);

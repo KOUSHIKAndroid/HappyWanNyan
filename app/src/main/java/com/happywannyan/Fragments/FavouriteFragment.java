@@ -110,7 +110,7 @@ public class FavouriteFragment extends Fragment {
         setGetAPIPostData.setValues("10");
         Params.add(setGetAPIPostData);
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "users_favsetters_list?", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "users_favsetters_list?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

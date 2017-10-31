@@ -154,7 +154,7 @@ public class PaymentListAdapter extends RecyclerView.Adapter<PaymentListAdapter.
 
     public void selectionCard(String default_card_id, final int position, final JSONObject OB) {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "make_card_default?user_id=" + AppConstant.UserId + "&default_card_id=" + default_card_id
+        new CustomJSONParser().APIForGetMethod(mContext,AppConstant.BASEURL + "make_card_default?user_id=" + AppConstant.UserId + "&default_card_id=" + default_card_id
                 , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
@@ -201,7 +201,7 @@ public class PaymentListAdapter extends RecyclerView.Adapter<PaymentListAdapter.
 
     public void deleteCard(String default_card_id, final int position) {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_delete_card?user_id=" + AppConstant.UserId + "&del_card_id=" + default_card_id
+        new CustomJSONParser().APIForGetMethod(mContext,AppConstant.BASEURL + "app_delete_card?user_id=" + AppConstant.UserId + "&del_card_id=" + default_card_id
                 , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {

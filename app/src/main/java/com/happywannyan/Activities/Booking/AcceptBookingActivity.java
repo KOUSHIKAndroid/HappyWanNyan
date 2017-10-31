@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.AddAnotherPetsActivity;
+import com.happywannyan.Activities.profile.ContactMsgActivity;
 import com.happywannyan.Adapter.AdapterPendingBookingPetService;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
@@ -141,7 +142,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
                         appLoader.Show();
 
-                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "Api_coupon_exits", postParamCoupon, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(AcceptBookingActivity.this,AppConstant.BASEURL + "Api_coupon_exits", postParamCoupon, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 appLoader.Dismiss();
@@ -301,7 +302,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
 
     public void loadAcceptBookingDetails(){
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pending_booking_list?", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AcceptBookingActivity.this,AppConstant.BASEURL + "pending_booking_list?", params, new CustomJSONParser.JSONResponseInterface() {
 
             @Override
             public void OnSuccess(String Result) {

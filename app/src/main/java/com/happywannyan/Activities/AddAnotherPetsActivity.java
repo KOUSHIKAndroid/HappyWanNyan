@@ -78,7 +78,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         Rad_catf = (RadioGroup) findViewById(R.id.Rad_catf);
         img_pet = (ImageView) findViewById(R.id.img_pet);
         new AppConstant(this);
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid="+AppConstant.Language+"&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(AddAnotherPetsActivity.this,AppConstant.BASEURL + "parent_service?langid="+AppConstant.Language+"&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -137,7 +137,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                     setGetAPIPostData.setValues(PetTypeId);
                                     params.add(setGetAPIPostData);
                                     appLoader.Show();
-                                    new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONResponseInterface() {
+                                    new CustomJSONParser().APIForGetMethod(AddAnotherPetsActivity.this,AppConstant.BASEURL + "app_users_petinfo?", params, new CustomJSONParser.JSONResponseInterface() {
                                         @Override
                                         public void OnSuccess(String Result) {
                                             findViewById(R.id.Body).setVisibility(View.VISIBLE);
@@ -611,7 +611,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
 
                                                     CustomJSONParser.ImageParam = "petimg";
 
-                                                    new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_users_addpetinfo?", Params, PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
+                                                    new CustomJSONParser().APIForWithPhotoPostMethod(AddAnotherPetsActivity.this,AppConstant.BASEURL + "app_users_addpetinfo?", Params, PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
                                                         @Override
                                                         public void OnSuccess(String Result) {
                                                             appLoader.Dismiss();

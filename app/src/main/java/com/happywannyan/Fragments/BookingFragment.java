@@ -261,7 +261,7 @@ public class BookingFragment extends Fragment {
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + type + "?", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + type + "?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {

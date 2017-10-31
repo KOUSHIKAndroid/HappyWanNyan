@@ -234,7 +234,7 @@ public class FavouriteSitterRecyclerAdapter extends RecyclerView.Adapter<Favouri
 
         /////////delete here and api fire////////////////
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_favourite_sitters?", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(context,AppConstant.BASEURL + "app_favourite_sitters?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

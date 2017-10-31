@@ -169,7 +169,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
             appLoader.Show();
 
-            new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?pet_type_id=" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id") + "&langid=" + AppConstant.Language,
+            new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "pet_type_info?pet_type_id=" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id") + "&langid=" + AppConstant.Language,
                     new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
@@ -220,7 +220,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 //                max.setText(maxValue + "");
                                     }
                                 });
-                                new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "parent_service?langid=en&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                                new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "parent_service?langid=en&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         try {
@@ -379,7 +379,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
 
                                     try {
-                                        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?&pet_type_id=" + jsonObject.getString("id") + "&langid=" + AppConstant.Language,
+                                        new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "pet_type_info?&pet_type_id=" + jsonObject.getString("id") + "&langid=" + AppConstant.Language,
                                                 new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                     @Override
                                                     public void OnSuccess(String Result) {
@@ -651,7 +651,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         (TXT_SERVICENAME).setTag(id);
 
         try {
-            new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "pet_type_info?pet_type_id=" + 1 + "&langid=" + AppConstant.Language,
+            new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "pet_type_info?pet_type_id=" + 1 + "&langid=" + AppConstant.Language,
                     new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {

@@ -116,7 +116,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 setGetAPIPostData.setValues(SitterId);
                 FirstPageData.add(setGetAPIPostData);
 
-                new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod(BookingOneActivity.this,AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -140,7 +140,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 break;
             case "Three":
                 appLoader.Show();
-                new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod(BookingOneActivity.this,AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -179,7 +179,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
     public void submitConfirmReservationRequest() {
         appLoader.Show();
-        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(BookingOneActivity.this,AppConstant.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
@@ -243,7 +243,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
     public void submitConfirmReservationRequestUsingHTTP() {
         appLoader.Show();
-        new CustomJSONParser().postDataUsingHttp(AppConstant.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().postDataUsingHttp(BookingOneActivity.this,AppConstant.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

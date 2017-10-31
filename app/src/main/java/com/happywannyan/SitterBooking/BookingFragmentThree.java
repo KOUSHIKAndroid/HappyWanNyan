@@ -202,7 +202,7 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
 
                         appLoader.Show();
 
-                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "Api_coupon_exits", postParamCoupon, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(getActivity(),AppConstant.BASEURL + "Api_coupon_exits", postParamCoupon, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 appLoader.Dismiss();

@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
+
+import com.happywannyan.Activities.AddAnotherPetsActivity;
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
@@ -231,7 +233,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
                         card,
                         new TokenCallback() {
                             public void onSuccess(final Token token) {
-                                new CustomJSONParser().GetStripeCustomerID(token.getId(), new CustomJSONParser.JSONResponseInterface() {
+                                new CustomJSONParser().GetStripeCustomerID(PaymentPendingBookingActivity.this,token.getId(), new CustomJSONParser.JSONResponseInterface() {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ TokenSuccess", Result);
@@ -359,11 +361,11 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
                                         Params.add(setGetAPIPostData);
 
 
-                                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
+                                        new CustomJSONParser().APIForPostMethod(PaymentPendingBookingActivity.this,AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CARD RESP-", Result);
-                                                new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
+                                                new CustomJSONParser().APIForGetMethod(PaymentPendingBookingActivity.this,AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                                                         , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
@@ -464,7 +466,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
     private void SetCardDetails() {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
+        new CustomJSONParser().APIForGetMethod(PaymentPendingBookingActivity.this,AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                 , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
@@ -544,7 +546,7 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
     public void submitConfirmReservationRequestPaymentUsingHTTP() {
         appLoader.Show();
-        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "accept_booking?", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(PaymentPendingBookingActivity.this,AppConstant.BASEURL + "accept_booking?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

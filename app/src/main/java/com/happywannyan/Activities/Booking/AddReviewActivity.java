@@ -315,7 +315,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
         PhotoFiles.add(photofile);
         Loger.MSG("@@", " SIZE-" + PhotoFiles.size() + "");
 
-        new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "app_add_review", Params, PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForWithPhotoPostMethod(AddReviewActivity.this,AppConstant.BASEURL + "app_add_review", Params, PhotoFiles, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();

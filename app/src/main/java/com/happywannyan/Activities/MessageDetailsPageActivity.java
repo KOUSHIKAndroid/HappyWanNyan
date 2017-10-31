@@ -207,7 +207,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 //                + "&user_timezone=Asia/Tokyo";
 
 
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(MessageDetailsPageActivity.this,AppConstant.BASEURL + URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -375,7 +375,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                         setGetAPIPostData.setValues(AppConstant.Language);
                         Params.add(setGetAPIPostData);
 
-                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod(MessageDetailsPageActivity.this,AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
 //                            try {
@@ -569,7 +569,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
                 setGetAPIPostData.setValues(MAPIMGAEURL);
                 Params.add(setGetAPIPostData);
 
-                new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod(MessageDetailsPageActivity.this,AppConstant.BASEURL + "reply_message", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         FetCh();
@@ -637,7 +637,7 @@ public class MessageDetailsPageActivity extends AppCompatActivity implements Vie
 
         CustomJSONParser.ImageParam = "msg_attachment";
 
-        new CustomJSONParser().APIForWithPhotoPostMethod(AppConstant.BASEURL + "reply_message", Params, Files, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForWithPhotoPostMethod(MessageDetailsPageActivity.this,AppConstant.BASEURL + "reply_message", Params, Files, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 FetCh();

@@ -122,7 +122,7 @@ public class MyPaymentsFragment extends Fragment {
 
     public void LoadPaymentDetails() {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
+        new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                 , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
@@ -212,7 +212,7 @@ public class MyPaymentsFragment extends Fragment {
                         card,
                         new TokenCallback() {
                             public void onSuccess(final Token token) {
-                                new CustomJSONParser().GetStripeCustomerID(token.getId(), new CustomJSONParser.JSONResponseInterface() {
+                                new CustomJSONParser().GetStripeCustomerID(getActivity(),token.getId(), new CustomJSONParser.JSONResponseInterface() {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ TokenSuccess", Result);
@@ -339,11 +339,11 @@ public class MyPaymentsFragment extends Fragment {
                                         Params.add(setGetAPIPostData);
 
 
-                                        new CustomJSONParser().APIForPostMethod(AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
+                                        new CustomJSONParser().APIForPostMethod(getActivity(),AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CARD RESP-", Result);
-                                                new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
+                                                new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                                                         , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {

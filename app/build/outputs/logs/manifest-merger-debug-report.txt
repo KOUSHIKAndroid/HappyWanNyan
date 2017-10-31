@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
-INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
-INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
-INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
+INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
+INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
+INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /home/su/.gradle/caches/transforms-1/files-1.1/crashlytics-2.6.8.aar/320113180a01e8e0f825604bd69f58f6/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:design:25.3.1] /home/su/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/db8d8cfb6935f2b5c0f0a33b3e7f775b/AndroidManifest.xml:17:1-31:12
 MERGED from [com.stripe:stripe-android:4.1.1] /home/su/.gradle/caches/transforms-1/files-1.1/stripe-android-4.1.1.aar/f67e77bf490b2efb2443866fd8f3be94/AndroidManifest.xml:2:1-11:12
@@ -88,20 +88,20 @@ MERGED from [com.android.support:support-media-compat:25.3.1] /home/su/.gradle/c
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/su/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/f5f1a0f30dc64c7a6e062ac3f1307503/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/37f4986139268caba01fcd2c2881fc95/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-compat:25.3.1] /home/su/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/01f57ddf56200c872aac09f5e023c77d/AndroidManifest.xml:17:1-31:12
-INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
-INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
-INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
+INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
+INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
+INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
 	package
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:3:5-31
 		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
 		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
 		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-219:12
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:1-220:12
 		INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:2:11-69
@@ -143,42 +143,46 @@ MERGED from [io.fabric.sdk.android:fabric:1.3.17] /home/su/.gradle/caches/transf
 MERGED from [io.fabric.sdk.android:fabric:1.3.17] /home/su/.gradle/caches/transforms-1/files-1.1/fabric-1.3.17.aar/d810db2845fe998e698bf39bf0dbfa75/AndroidManifest.xml:29:5-67
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:5:22-64
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:5-79
-MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-maps-10.2.4.aar/a3dd6359a2cbf777e5641aeb22d3c5cd/AndroidManifest.xml:19:5-78
-MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-maps-10.2.4.aar/a3dd6359a2cbf777e5641aeb22d3c5cd/AndroidManifest.xml:19:5-78
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.2.4.aar/ca2dd0628aa17a7153c171db31ad9558/AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.2.4.aar/ca2dd0628aa17a7153c171db31ad9558/AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-nearby-10.2.4.aar/074132c98dd5988071e7832a59f2ab6d/AndroidManifest.xml:4:5-78
-MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-nearby-10.2.4.aar/074132c98dd5988071e7832a59f2ab6d/AndroidManifest.xml:4:5-78
-MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-10.2.4.aar/2632dc9711f785afe274d7c236e511a4/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-10.2.4.aar/2632dc9711f785afe274d7c236e511a4/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.4.aar/3657dcbb0946e789f6d14e67bb17581b/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.4.aar/3657dcbb0946e789f6d14e67bb17581b/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.2.4.aar/2ead3f48e79e790aa5a378161fc7b207/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.2.4.aar/2ead3f48e79e790aa5a378161fc7b207/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:19:5-78
-MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:19:5-78
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:5-76
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:22-76
-uses-permission#android.permission.ACCESS_FINE_LOCATION
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:6:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-maps-10.2.4.aar/a3dd6359a2cbf777e5641aeb22d3c5cd/AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-maps-10.2.4.aar/a3dd6359a2cbf777e5641aeb22d3c5cd/AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.2.4.aar/ca2dd0628aa17a7153c171db31ad9558/AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.2.4.aar/ca2dd0628aa17a7153c171db31ad9558/AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-nearby-10.2.4.aar/074132c98dd5988071e7832a59f2ab6d/AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-nearby:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-nearby-10.2.4.aar/074132c98dd5988071e7832a59f2ab6d/AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-10.2.4.aar/2632dc9711f785afe274d7c236e511a4/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-10.2.4.aar/2632dc9711f785afe274d7c236e511a4/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.4.aar/3657dcbb0946e789f6d14e67bb17581b/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.4.aar/3657dcbb0946e789f6d14e67bb17581b/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.2.4.aar/2ead3f48e79e790aa5a378161fc7b207/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.2.4.aar/2ead3f48e79e790aa5a378161fc7b207/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:19:5-78
 	android:name
 		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:5-81
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:8:22-78
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#com.sonyericsson.home.permission.BROADCAST_BADGE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:9:5-88
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:10:5-88
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:9:22-85
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:10:22-85
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:10:5-68
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:11:5-68
 MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-analytics:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-10.2.4.aar/04f0f2ba14b33b63936938635e47d36f/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-analytics-impl:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-10.2.4.aar/7d5e9a4b895a44e84d7a0fe5273176dc/AndroidManifest.xml:24:5-67
@@ -190,25 +194,25 @@ MERGED from [com.google.firebase:firebase-analytics-impl:10.2.4] /home/su/.gradl
 MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:21:5-67
 MERGED from [com.google.firebase:firebase-iid:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.2.4.aar/7206742b686d8d42073a14ccb88f70c0/AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:10:22-65
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:11:22-65
 uses-permission#android.permission.CAMERA
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:11:5-65
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:12:5-65
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:11:22-62
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:12:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:12:5-80
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:13:5-80
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:12:22-77
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:13:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:13:5-81
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:13:22-78
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:14:22-78
 uses-permission#android.permission.VIBRATE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:14:5-66
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:15:5-66
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:14:22-63
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:15:22-63
 application
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:17:5-217:19
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:18:5-218:19
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /home/su/.gradle/caches/transforms-1/files-1.1/crashlytics-2.6.8.aar/320113180a01e8e0f825604bd69f58f6/AndroidManifest.xml:11:5-20
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.6.8] /home/su/.gradle/caches/transforms-1/files-1.1/crashlytics-2.6.8.aar/320113180a01e8e0f825604bd69f58f6/AndroidManifest.xml:11:5-20
 MERGED from [com.android.support:design:25.3.1] /home/su/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/db8d8cfb6935f2b5c0f0a33b3e7f775b/AndroidManifest.xml:29:5-20
@@ -354,303 +358,303 @@ MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/su/.gradl
 MERGED from [com.android.support:support-compat:25.3.1] /home/su/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/01f57ddf56200c872aac09f5e023c77d/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:25.3.1] /home/su/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/01f57ddf56200c872aac09f5e023c77d/AndroidManifest.xml:29:5-20
 	android:supportsRtl
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:23:9-35
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:21:9-41
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:22:9-41
 	android:roundIcon
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:22:9-55
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:23:9-55
 	android:icon
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:20:9-44
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:21:9-44
 	android:allowBackup
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:20:9-35
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:24:9-40
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:25:9-40
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:18:9-50
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:19:9-50
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:25:9-27:55
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:26:9-28:55
 	android:value
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:27:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:28:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:26:13-58
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:27:13-58
 meta-data#com.google.android.gms.version
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:46:9-48:69
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:47:9-49:69
 MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.2.4.aar/f747b1e8c0808d41e17b641e9c007343/AndroidManifest.xml:20:9-121
 MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/su/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.2.4.aar/f747b1e8c0808d41e17b641e9c007343/AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:48:13-66
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:49:13-66
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:47:13-58
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:48:13-58
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:52:9-54:71
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:53:9-55:71
 	android:value
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:54:13-68
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:55:13-68
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:53:13-58
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:54:13-58
 activity#com.facebook.FacebookActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:56:9-59:48
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:57:9-60:48
 MERGED from [com.facebook.android:facebook-common:4.27.0] /home/su/.gradle/caches/transforms-1/files-1.1/facebook-common-4.27.0.aar/b9f6b18e1b4b55af2e83329f733bbca2/AndroidManifest.xml:29:9-32:66
 MERGED from [com.facebook.android:facebook-common:4.27.0] /home/su/.gradle/caches/transforms-1/files-1.1/facebook-common-4.27.0.aar/b9f6b18e1b4b55af2e83329f733bbca2/AndroidManifest.xml:29:9-32:66
 	android:label
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:59:13-45
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:60:13-45
 	android:configChanges
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:58:13-96
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:59:13-96
 	android:theme
 		ADDED from [com.facebook.android:facebook-common:4.27.0] /home/su/.gradle/caches/transforms-1/files-1.1/facebook-common-4.27.0.aar/b9f6b18e1b4b55af2e83329f733bbca2/AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:57:13-57
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:58:13-57
 activity#com.facebook.CustomTabActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:60:9-71:20
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:61:9-72:20
 	android:exported
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:62:13-36
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:63:13-36
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:61:13-58
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:62:13-58
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:63:13-70:29
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:64:13-71:29
 action#android.intent.action.VIEW
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:64:17-69
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:65:17-69
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:64:25-66
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:65:25-66
 category#android.intent.category.DEFAULT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:66:17-76
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:67:17-76
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:66:27-73
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:67:27-73
 category#android.intent.category.BROWSABLE
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:67:17-78
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:68:17-78
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:67:27-75
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:68:27-75
 data
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:69:17-75
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:70:17-75
 	android:scheme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:69:23-72
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:70:23-72
 activity#com.happywannyan.Activities.SplashActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:72:9-80:20
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:73:9-81:20
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:74:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:75:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:73:13-54
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:74:13-54
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:75:13-79:29
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:76:13-80:29
 action#android.intent.action.MAIN
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:76:17-69
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:77:17-69
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:76:25-66
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:77:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:78:17-77
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:79:17-77
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:78:27-74
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:79:27-74
 service#com.happywannyan.PushNotification.MyFirebaseMessagingService
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:82:9-86:19
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:83:9-87:19
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:82:18-77
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:83:18-77
 intent-filter#com.google.firebase.MESSAGING_EVENT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:83:13-85:29
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:84:13-86:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:84:17-78
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:85:17-78
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:84:25-75
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:85:25-75
 service#com.happywannyan.PushNotification.MyFirebaseInstanceIDService
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:87:9-91:19
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:88:9-92:19
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:87:18-78
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:88:18-78
 intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:88:13-90:29
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:89:13-91:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:89:17-80
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:90:17-80
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:89:25-77
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:90:25-77
 activity#com.happywannyan.Activities.LoginChooserActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:99:9-101:52
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:100:9-102:52
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:101:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:102:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:100:13-60
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:101:13-60
 activity#com.happywannyan.Activities.LoginActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:102:9-105:15
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:103:9-106:15
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:104:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:105:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:103:13-53
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:104:13-53
 activity#com.happywannyan.Activities.CalenderActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:106:9-109:46
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:107:9-110:46
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:108:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:109:13-49
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:109:13-44
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:110:13-44
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:107:13-56
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:108:13-56
 activity#com.happywannyan.Activities.SignUpActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:111:9-114:15
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:112:9-115:15
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:113:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:114:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:112:13-54
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:113:13-54
 activity#com.happywannyan.Activities.profile.ProfileDetailsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:116:9-119:54
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:117:9-120:54
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:118:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:119:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:119:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:120:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:117:13-70
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:118:13-70
 activity#com.happywannyan.Activities.BaseActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:121:9-126:54
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:122:9-127:54
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:124:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:125:13-49
 	android:label
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:123:13-56
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:124:13-56
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:126:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:127:13-52
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:125:13-44
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:126:13-44
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:122:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:123:13-52
 activity#com.happywannyan.Activities.FacebookActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:128:9-129:51
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:129:9-130:51
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:129:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:130:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:128:19-62
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:129:19-62
 activity#com.happywannyan.SitterBooking.BookingOneActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:130:9-133:16
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:131:9-134:16
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:132:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:133:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:131:13-61
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:132:13-61
 activity#com.happywannyan.Activities.SearchResultActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:134:9-138:47
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:135:9-139:47
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:137:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:138:13-49
 	android:label
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:136:13-65
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:137:13-65
 	android:theme
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:138:13-44
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:139:13-44
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:135:13-60
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:136:13-60
 activity#com.happywannyan.Activities.ForgotPasswordActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:139:9-142:16
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:140:9-143:16
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:141:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:142:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:140:13-62
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:141:13-62
 activity#com.happywannyan.Activities.ResetPasswordActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:143:9-146:15
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:144:9-147:15
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:145:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:146:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:144:13-61
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:145:13-61
 activity#com.happywannyan.Activities.Booking.BookingDetailsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:147:9-150:16
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:148:9-151:16
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:149:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:150:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:148:13-70
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:149:13-70
 activity#com.happywannyan.Activities.AddAnotherPetsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:151:9-154:54
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:152:9-155:54
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:153:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:154:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:154:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:155:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:152:13-62
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:153:13-62
 activity#com.happywannyan.Activities.EditAnotherPetsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:155:9-157:52
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:156:9-158:52
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:157:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:158:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:156:13-63
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:157:13-63
 activity#com.happywannyan.Activities.profile.MeetUpWannyanActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:159:9-162:55
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:160:9-163:55
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:161:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:162:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:162:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:163:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:160:13-69
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:161:13-69
 activity#com.happywannyan.Activities.profile.ContactMsgActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:163:9-166:54
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:164:9-167:54
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:165:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:166:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:166:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:167:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:164:13-66
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:165:13-66
 activity#com.happywannyan.Activities.MessageDetailsPageActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:167:9-170:55
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:168:9-171:55
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:169:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:170:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:170:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:171:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:168:13-66
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:169:13-66
 activity#com.happywannyan.Activities.Booking.CancelBookingWithReasonsActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:172:9-174:51
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:173:9-175:51
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:174:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:175:13-49
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:173:13-80
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:174:13-80
 meta-data#io.fabric.ApiKey
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:180:9-182:72
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:181:9-183:72
 	android:value
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:182:13-69
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:183:13-69
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:181:13-44
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:182:13-44
 activity#com.happywannyan.Activities.Booking.AcceptBookingActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:184:9-187:55
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:185:9-188:55
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:186:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:187:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:187:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:188:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:185:13-69
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:186:13-69
 activity#com.happywannyan.Activities.Booking.AddReviewActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:188:9-191:55
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:189:9-192:55
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:190:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:191:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:191:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:192:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:189:13-65
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:190:13-65
 activity#com.happywannyan.SitterBooking.NewCardAddActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:192:9-195:55
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:193:9-196:55
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:194:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:195:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:195:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:196:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:193:13-61
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:194:13-61
 activity#com.happywannyan.Activities.SignUpSuccessfullyMsgActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:197:9-200:55
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:198:9-201:55
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:199:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:200:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:200:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:201:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:198:13-69
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:199:13-69
 activity#com.happywannyan.Activities.Booking.PaymentPendingBookingActivity
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:202:9-205:55
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:203:9-206:55
 	android:screenOrientation
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:204:13-49
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:205:13-49
 	android:windowSoftInputMode
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:205:13-52
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:206:13-52
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:203:13-77
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:204:13-77
 provider#android.support.v4.content.FileProvider
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:207:9-215:20
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:208:9-216:20
 	android:grantUriPermissions
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:211:13-47
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:212:13-47
 	android:authorities
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:209:13-60
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:210:13-60
 	android:exported
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:210:13-37
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:211:13-37
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:208:13-67
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:209:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:212:13-214:57
+ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:213:13-215:57
 	android:resource
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:214:17-54
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:215:17-54
 	android:name
-		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:213:17-67
+		ADDED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml:214:17-67
 uses-sdk
 INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/su/Documents/Suraj WorkSpace/LiveProjects/HappyWanNyan/app/src/main/AndroidManifest.xml
