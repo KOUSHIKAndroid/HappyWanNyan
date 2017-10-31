@@ -66,7 +66,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             }
                         });
 
-                    } else if (!Validation.isPassword(EDX_Password.getText().toString()) || EDX_Password.getText().toString().trim().length() < 6) {
+                    } else if (
+//                            !Validation.isPassword(EDX_Password.getText().toString()) ||
+                                    EDX_Password.getText().toString().trim().length() < 4) {
                         new MYAlert(SignUpActivity.this).AlertOnly(getResources().getString(R.string.SignUp), getResources().getString(R.string.signup_password_checkingtext), new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {

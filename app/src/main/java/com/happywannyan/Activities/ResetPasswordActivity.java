@@ -43,7 +43,9 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                     }
                 });
             } else {
-                if (!Validation.isPassword(Password.getText().toString()) || Password.getText().toString().trim().length() < 6) {
+                if (
+//                        !Validation.isPassword(Password.getText().toString()) ||
+                        Password.getText().toString().trim().length() < 4) {
                     new MYAlert(ResetPasswordActivity.this).AlertOnly(getResources().getString(R.string.ResetPassword), getResources().getString(R.string.signup_password_checkingtext), new MYAlert.OnlyMessage() {
                         @Override
                         public void OnOk(boolean res) {
@@ -103,10 +105,6 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
 
                 }
             }
-
-
         }
-
-
     }
 }

@@ -213,7 +213,7 @@
     <string name="how_many_visits">何回訪問？</string>
     <string name="meeting_date">会議の開催日</string>
     <string name="hint_search_addrres">郵便番号または住所の検索</string>
-    <string name="signup_password_checkingtext">パスワードは、英数字と少なくとも1つの特殊文字を含む必要があり、6文字以上である必要があります</string>
+    <string name="signup_password_checkingtext">パスワードには4文字</string>
     <string name="searchpage_txt">私たちのコミュニティは、ペットの親が彼らの座っているニーズに最適なソリューションを見つけるのを助けます。</string>
     <string name="signupsuccess">あなたのメールアドレスを確認してください</string>
     <string name="remember_me">ログインしたままにする</string>

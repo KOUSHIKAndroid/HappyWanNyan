@@ -49,7 +49,7 @@
     <string name="month_name_format">MMMM yyyy</string>
     <string name="day_name_format">EEE</string>
     <!--<string name="invalid_date">Date must be between %1$s and %2$s.</string>-->
-    <string name="signup_password_checkingtext">Password should contain alphanumeric character and at least one special character and should be at least 6 characters</string>
+    <string name="signup_password_checkingtext">Password should contain four characters</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="pet_size">Pet size</string>
     <string name="pet_age">Pet age</string>

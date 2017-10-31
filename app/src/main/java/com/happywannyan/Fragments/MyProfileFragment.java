@@ -502,7 +502,7 @@ public class MyProfileFragment extends Fragment {
                     /////////////////////update Share Preference (Login credential)////////////////////////////////////
                     new AppConstant(getActivity()).upDateShareDATA(AppDataHolder.UserData,UserInfo.getString("photo"),UserInfo.getString("firstname"),UserInfo.getString("lastname"));
                     ///////////////////////////////////////////////////////END//////////////////////////////////
-
+                    Loger.MSG("BALL@@",""+UserInfo);
                     Loger.MSG("PhotoMe",""+UserInfo.getString("photo").trim());
                     if (!UserInfo.getString("photo").trim().equals("")) {
                         Glide.with(getActivity()).load(UserInfo.getString("photo").trim()).transform(new CircleTransform(getActivity())).error(R.drawable.ic_profile).into(ProfileImg);
