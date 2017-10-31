@@ -238,7 +238,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                     case 1:
                         ((View) findViewById(R.id.div2)).setBackgroundColor(Color.parseColor("#bf3e49"));
                         ((SFNFTextView) findViewById(R.id.TXTab2)).setTextColor(Color.BLACK);
-                        reservation.setVisibility(View.GONE);
+//                        reservation.setVisibility(View.GONE);
                         break;
                     case 2:
                         ((View) findViewById(R.id.div3)).setBackgroundColor(Color.parseColor("#bf3e49"));

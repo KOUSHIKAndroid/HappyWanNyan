@@ -78,7 +78,7 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
                 @Override
                 public void onClick(View v) {
                     try {
-                        new MYAlert(mContext).AlertOnly(mContext.getString(R.string.description), object.getString("description"), new MYAlert.OnlyMessage() {
+                        new MYAlert(mContext).AlertOnly(object.getString("service_name"), object.getString("description"), new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
 
