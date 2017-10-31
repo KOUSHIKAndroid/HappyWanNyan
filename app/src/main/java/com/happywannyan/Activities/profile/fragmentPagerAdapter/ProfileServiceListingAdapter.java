@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
@@ -17,6 +18,7 @@ import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+import com.happywannyan.Utils.helper.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -54,6 +56,14 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         try {
+
+            if (position==ServiceArray.length()-1){
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                params.setMargins(0, 0, 0, new Utils(mContext).dpToPx(65));
+                holder.LL_Main.setLayoutParams(params);
+            }
+
+
             final JSONObject object = ServiceArray.getJSONObject(position);
             holder.Title.setText(object.getString("service_name"));
             holder.Description.setText(object.getString("description"));
@@ -124,15 +134,18 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
         SFNFTextView Description;
         SFNFTextView PricePer, TXT_ViewMore;
         RelativeLayout RL_Book;
+        LinearLayout LL_Main;
         ImageView IMG_SERVICES;
 
         public ViewHolder(View itemView) {
             super(itemView);
+
             Title = (SFNFBoldTextView) itemView.findViewById(R.id.Title);
             Description = (SFNFTextView) itemView.findViewById(R.id.Description);
             TXT_ViewMore = (SFNFTextView) itemView.findViewById(R.id.TXT_ViewMore);
             PricePer = (SFNFTextView) itemView.findViewById(R.id.PricePer);
             RL_Book = (RelativeLayout) itemView.findViewById(R.id.RL_Book);
+            LL_Main = (LinearLayout) itemView.findViewById(R.id.LL_Main);
             IMG_SERVICES = (ImageView) itemView.findViewById(R.id.IMG_SERVICES);
 
         }

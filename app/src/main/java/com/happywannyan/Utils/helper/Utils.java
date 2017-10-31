@@ -14,7 +14,7 @@ public class Utils {
         this.mContext = mContext;
     }
 
-    public int dpToPx(int dp) {
+    public  int dpToPx(int dp) {
         DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
         return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
