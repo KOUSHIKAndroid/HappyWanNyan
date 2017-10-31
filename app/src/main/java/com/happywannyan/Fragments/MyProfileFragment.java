@@ -360,6 +360,7 @@ public class MyProfileFragment extends Fragment {
             }
         } else {
 //                    Write Alert Validation
+            Toast.makeText(getActivity(),getActivity().getResources().getString(R.string.please_agree_to_terms_and_services),Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -524,7 +525,8 @@ public class MyProfileFragment extends Fragment {
                     }
 
                     ((SFNFTextView) Mview.findViewById(R.id.TXT_Address)).setText(UserInfo.getString("address"));
-                    ((SFNFTextView) Mview.findViewById(R.id.TXT_Country_Code)).setText(UserInfo.getString("phone_code"));
+//                    ((SFNFTextView) Mview.findViewById(R.id.TXT_Country_Code)).setText(UserInfo.getString("phone_code"));
+                    ((SFNFTextView) Mview.findViewById(R.id.TXT_Country_Code)).setText("81");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
