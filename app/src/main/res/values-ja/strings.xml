@@ -267,7 +267,7 @@
     <string name="profile_info_updated">プロフィールを提出する</string>
     <string name="added_as_a_favorite_sitter">お気に入りに追加しました</string>
     <string name="favorite_sitter_removed">お気に入りリストから削除しました</string>
-    <string name="please_check_your_internet_connection">Please Check your Internet Connection</string>
-    <string name="please_agree_to_terms_and_services">Please Agree to Terms and Services</string>
+    <string name="please_check_your_internet_connection">ネット環境を確認してください</string>
+    <string name="please_agree_to_terms_and_services">利用規約に同意する</string>
 
 </resources>
