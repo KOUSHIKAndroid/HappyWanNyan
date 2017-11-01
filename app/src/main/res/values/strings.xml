@@ -292,6 +292,21 @@
     <string name="favorite_sitter_removed">Favorite Sitter Removed</string>
     <string name="please_check_your_internet_connection">Please Check your Internet Connection</string>
     <string name="please_agree_to_terms_and_services">Please Agree to Terms and Services</string>
+    <string name="nav_account">Account</string>
+    <string name="change_email_address">Change Email Address</string>
+    <string name="new_email_address">New Email Address</string>
+    <string name="confirm_email_address">Confirm Email Address</string>
+    <string name="change_your_password">Change Your Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="please_enter_new_email">Please Enter New Email</string>
+    <string name="both_new_email_and_confirm_email_should_be_same">Both New Email And Confirm Email Should Be Same</string>
+    <string name="please_enter_old_password">Please Enter Old Password</string>
+    <string name="please_enter_new_password">Please Enter New Password</string>
+    <string name="please_enter_confirm_password">Please Enter Confirm Password</string>
+    <string name="both_new_password_and_confirm_password_should_be_same">Both New Password and Confirm Password Should be Same</string>
 
 
 </resources>

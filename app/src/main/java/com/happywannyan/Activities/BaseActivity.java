@@ -24,6 +24,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Constant.ApplicationClass;
 import com.happywannyan.Font.SFNFTextView;
+import com.happywannyan.Fragments.AccountFragment;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.Fragments.ContactUsFragment;
 import com.happywannyan.Fragments.FavouriteFragment;
@@ -133,6 +134,25 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
 
+
+
+        navigationView.findViewById(R.id.LL_Account).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                AccountFragment accountFragment = new AccountFragment();
+                fragmentTransaction.replace(R.id.Base_fargment_layout, accountFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+
+
         navigationView.findViewById(R.id.LL_Switch_language).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -184,6 +204,7 @@ public class BaseActivity extends LocationBaseActivity
                         ((SFNFTextView) findViewById(R.id.tv_nav_pastsitter)).setText(getResources().getString(R.string.nav_pastsitter));
                         ((SFNFTextView) findViewById(R.id.tv_nav_help)).setText(getResources().getString(R.string.nav_help));
                         ((SFNFTextView) findViewById(R.id.tv_about_us)).setText(getResources().getString(R.string.nav_contact_us));
+                        ((SFNFTextView) findViewById(R.id.tv_nav_account)).setText(getResources().getString(R.string.nav_account));
 
 
                         if (AppConstant.Language.equals("en")) {
@@ -255,6 +276,13 @@ public class BaseActivity extends LocationBaseActivity
                             fragmentManager = getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+                        }
+                        else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AccountFragment) {
+                            fragmentManager = getSupportFragmentManager();
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.Base_fargment_layout, AccountFragment.newInstance(null, null));
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         }
