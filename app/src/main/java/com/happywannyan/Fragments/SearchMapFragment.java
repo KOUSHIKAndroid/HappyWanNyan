@@ -215,8 +215,6 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
         try {
             LatLngBounds.Builder builder2 = new LatLngBounds.Builder();
             for (int i = 0; i < ((SearchResultActivity) getActivity()).ListARRY.size(); i++) {
-
-
                 try {
                     LatLng latLng = new LatLng(Double.parseDouble(((SearchResultActivity) getActivity()).ListARRY.get(i).getSearcItem().getString("lat")), Double.parseDouble(((SearchResultActivity) getActivity()).ListARRY.get(i).getSearcItem().getString("long")));
                     MarkerOptions markerOptions = new MarkerOptions().
@@ -231,8 +229,6 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
                 } catch (Exception ee) {
                     Loger.Error(TAG, "3 " + ee.getMessage());
                 }
-
-
             }
 
             LatLngBounds bounds = builder2.build();

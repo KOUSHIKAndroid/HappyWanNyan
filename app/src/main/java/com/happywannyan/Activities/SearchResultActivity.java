@@ -109,8 +109,6 @@ public class SearchResultActivity extends AppCompatActivity {
                     sw_lat = Double.parseDouble(object.getString("value"));
 
             }
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -134,19 +132,13 @@ public class SearchResultActivity extends AppCompatActivity {
                         setGetSearchData.setSearcItem(jjj);
 
                         ListARRY.add(setGetSearchData);
-
                     }
-
-
                     fragmentTransaction.replace(R.id.Container_result, new SearchListFragment());
                     fragmentTransaction.disallowAddToBackStack();
                     fragmentTransaction.commit();
-
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
 
             @Override
