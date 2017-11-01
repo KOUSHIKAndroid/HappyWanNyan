@@ -287,5 +287,6 @@
     <string name="change_password_checkingtext">新しいパスワードには4つ以上のアルファ数値</string>
     <string name="email_miss_match">ミスマッチメール</string>
     <string name="password_miss_match">パスワードミスマッチ</string>
+    <string name="message_has_been_sent_successfully">メッセージが正常に送信されました</string>
 
 </resources>

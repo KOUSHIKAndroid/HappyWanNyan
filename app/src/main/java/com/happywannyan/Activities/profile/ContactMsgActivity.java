@@ -1,6 +1,5 @@
 package com.happywannyan.Activities.profile;
 
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,12 +13,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Activities.Booking.PaymentPendingBookingActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
-import com.happywannyan.Utils.AppCalender;
 import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -35,12 +31,11 @@ import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class ContactMsgActivity extends AppCompatActivity implements View.OnClickListener{
+public class ContactMsgActivity extends AppCompatActivity implements View.OnClickListener {
 
     Date checkIndate = null;
     Date checkOutdate = null;
@@ -109,19 +104,18 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
                 Calendar cal1 = Calendar.getInstance();
 
-                Loger.MSG("mYear",""+cal1.get(Calendar.YEAR));
-                Loger.MSG("mMonth",""+cal1.get(Calendar.MONTH));
-                Loger.MSG("mMonth",""+cal1.get(Calendar.DAY_OF_MONTH));
+                Loger.MSG("mYear", "" + cal1.get(Calendar.YEAR));
+                Loger.MSG("mMonth", "" + cal1.get(Calendar.MONTH));
+                Loger.MSG("mMonth", "" + cal1.get(Calendar.DAY_OF_MONTH));
 
 
                 dPicker1.setMinDate(cal1.getTimeInMillis());
 
-                if(checkIndate!=null) {
+                if (checkIndate != null) {
                     cal1.setTime(checkIndate);
                     dPicker1.updateDate(cal1.get(Calendar.YEAR), cal1.get(Calendar.MONTH), cal1.get(Calendar.DAY_OF_MONTH));
                     dPicker1.setSelected(true);
-                }
-                else {
+                } else {
                     dPicker1.setSelected(true);
                 }
 
@@ -131,9 +125,9 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                     public void onClick(DialogInterface dialog, int id) {
                         try {
                             checkIndate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse("" + dPicker1.getYear() + "-" + (dPicker1.getMonth() + 1) + "-" + dPicker1.getDayOfMonth());
-                            ((SFNFTextView) findViewById(R.id.startdate)).setText(""+ dPicker1.getYear() + "-" + (dPicker1.getMonth() + 1) + "-" + dPicker1.getDayOfMonth());
+                            ((SFNFTextView) findViewById(R.id.startdate)).setText("" + dPicker1.getYear() + "-" + (dPicker1.getMonth() + 1) + "-" + dPicker1.getDayOfMonth());
                             ((SFNFTextView) findViewById(R.id.AlterDate)).setText("Set date");
-                            checkOutdate=null;
+                            checkOutdate = null;
                             Loger.MSG("date", "" + checkIndate);
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -156,37 +150,33 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
                 Calendar cal2 = Calendar.getInstance();
 
-                if (checkIndate == null)
-                {
-                    cal2.setTimeInMillis(System.currentTimeMillis()+(1000 * 60 * 60 * 24));
+                if (checkIndate == null) {
+                    cal2.setTimeInMillis(System.currentTimeMillis() + (1000 * 60 * 60 * 24));
                     dPicker2.setMinDate(cal2.getTimeInMillis());
                     dPicker2.setSelected(true);
-                    Loger.MSG("mYear",""+cal2.get(Calendar.YEAR));
-                    Loger.MSG("mMonth",""+cal2.get(Calendar.MONTH));
-                    Loger.MSG("mDay",""+cal2.get(Calendar.DAY_OF_MONTH));
-                }
-                else {
+                    Loger.MSG("mYear", "" + cal2.get(Calendar.YEAR));
+                    Loger.MSG("mMonth", "" + cal2.get(Calendar.MONTH));
+                    Loger.MSG("mDay", "" + cal2.get(Calendar.DAY_OF_MONTH));
+                } else {
                     try {
-                            cal2.setTimeInMillis(checkIndate.getTime()+(1000 * 60 * 60 * 24));
-                            dPicker2.setMinDate(cal2.getTimeInMillis());
-                            dPicker2.setSelected(true);
-                            Loger.MSG("mYear",""+cal2.get(Calendar.YEAR));
-                            Loger.MSG("mMonth",""+cal2.get(Calendar.MONTH));
-                            Loger.MSG("mDay",""+cal2.get(Calendar.DAY_OF_MONTH));
+                        cal2.setTimeInMillis(checkIndate.getTime() + (1000 * 60 * 60 * 24));
+                        dPicker2.setMinDate(cal2.getTimeInMillis());
+                        dPicker2.setSelected(true);
+                        Loger.MSG("mYear", "" + cal2.get(Calendar.YEAR));
+                        Loger.MSG("mMonth", "" + cal2.get(Calendar.MONTH));
+                        Loger.MSG("mDay", "" + cal2.get(Calendar.DAY_OF_MONTH));
 
-                    }catch (Exception ex){
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
                 }
-
-
 
 
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(ContactMsgActivity.this);
                 builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        ((SFNFTextView) findViewById(R.id.AlterDate)).setText(""+ dPicker2.getYear() + "-" + (dPicker2.getMonth() + 1) + "-" + dPicker2.getDayOfMonth());
+                        ((SFNFTextView) findViewById(R.id.AlterDate)).setText("" + dPicker2.getYear() + "-" + (dPicker2.getMonth() + 1) + "-" + dPicker2.getDayOfMonth());
                     }
                 });
                 builder2.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -270,7 +260,7 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
 
                             try {
-                                Params.put("firstname",EDX_first_name.getText().toString().trim());
+                                Params.put("firstname", EDX_first_name.getText().toString().trim());
                                 Params.put("lastname", EDX_last_name.getText().toString().trim());
                                 Params.put("add_message", URLEncoder.encode("" + EDX_msg.getText().toString().trim(), "UTF-8"));
                             } catch (UnsupportedEncodingException e) {
@@ -282,26 +272,21 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                             Params.put("drop_off", ((SFNFTextView) findViewById(R.id.TXT_DropTime)).getText().toString());
                             Params.put("pick_up", ((SFNFTextView) findViewById(R.id.TXT_PickupTime)).getText().toString());
                             Params.put("dont_date", CHCH);
-                            new CustomJSONParser().APIForPostMethod2(ContactMsgActivity.this,AppConstant.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
+                            new CustomJSONParser().APIForPostMethod2(ContactMsgActivity.this, AppConstant.BASEURL + "contact_sitter", Params, new CustomJSONParser.JSONResponseInterface() {
                                 @Override
                                 public void OnSuccess(String Result) {
                                     appLoader.Dismiss();
 
                                     /////////////////////update Share Preference (Login credential)////////////////////////////////////
-                                    new AppConstant(ContactMsgActivity.this).upDateShareDATA(AppDataHolder.UserData,"",EDX_first_name.getText().toString().trim(),EDX_last_name.getText().toString().trim());
+                                    new AppConstant(ContactMsgActivity.this).upDateShareDATA(AppDataHolder.UserData, "", EDX_first_name.getText().toString().trim(), EDX_last_name.getText().toString().trim());
                                     ///////////////////////////////////////////////////////END//////////////////////////////////
+                                    new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), getResources().getString(R.string.message_has_been_sent_successfully), new MYAlert.OnlyMessage() {
+                                        @Override
+                                        public void OnOk(boolean res) {
 
+                                        }
+                                    });
 
-                                    try {
-                                        new MYAlert(ContactMsgActivity.this).AlertOnly(getString(R.string.contact), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
-                                            @Override
-                                            public void OnOk(boolean res) {
-
-                                            }
-                                        });
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
                                 }
 
                                 @Override
@@ -322,8 +307,8 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
                                 @Override
                                 public void OnError(String Error) {
                                     appLoader.Dismiss();
-                                    if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                                        Toast.makeText(ContactMsgActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                    if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                                        Toast.makeText(ContactMsgActivity.this, Error, Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
