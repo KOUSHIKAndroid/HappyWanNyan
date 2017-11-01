@@ -309,6 +309,6 @@
     <string name="change_password_checkingtext">New Password should be contain four or more Alpha Numeric</string>
     <string name="email_miss_match">Email Miss Match</string>
     <string name="password_miss_match">Password Miss Match</string>
-    <string name="message_has_been_sent_successfully">message has been sent successfully</string>
+    <string name="message_has_been_sent_successfully">Message has been sent successfully</string>
 
 </resources>
