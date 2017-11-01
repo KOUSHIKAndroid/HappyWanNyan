@@ -139,7 +139,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     JSONObject jsonObject=new JSONObject(Result);
                                     if (jsonObject.getString("email_verified_status").equals("1")){
 
+                                        ////////////Share Data/////////////////////////////////////////////////////////////////
                                         new AppConstant(LoginActivity.this).setShareDATA(AppDataHolder.UserData, Result);
+                                        //////////////////////////////////////////End//////////////////////////////////////////
 
                                         AppConstant.UserEmail=jsonObject.getJSONObject("info_array").getString("emailid");
 

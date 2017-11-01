@@ -49,7 +49,7 @@
     <string name="month_name_format">MMMM yyyy</string>
     <string name="day_name_format">EEE</string>
     <!--<string name="invalid_date">Date must be between %1$s and %2$s.</string>-->
-    <string name="signup_password_checkingtext">Password should contain four characters</string>
+    <string name="signup_password_checkingtext">Password should be contain four or more AlphaNumeric</string>
     <string name="chose_pettype">Chose pet type</string>
     <string name="pet_size">Pet size</string>
     <string name="pet_age">Pet age</string>
@@ -302,11 +302,12 @@
     <string name="change_password">Change Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="please_enter_new_email">Please Enter New Email</string>
-    <string name="both_new_email_and_confirm_email_should_be_same">Both New Email And Confirm Email Should Be Same</string>
     <string name="please_enter_old_password">Please Enter Old Password</string>
     <string name="please_enter_new_password">Please Enter New Password</string>
     <string name="please_enter_confirm_password">Please Enter Confirm Password</string>
-    <string name="both_new_password_and_confirm_password_should_be_same">Both New Password and Confirm Password Should be Same</string>
-
+    <string name="your_current_email">Your current Email</string>
+    <string name="change_password_checkingtext">New Password should be contain four or more Alpha Numeric</string>
+    <string name="email_miss_match">Email Miss Match</string>
+    <string name="password_miss_match">Password Miss Match</string>
 
 </resources>

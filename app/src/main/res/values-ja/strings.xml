@@ -271,4 +271,21 @@
     <string name="please_agree_to_terms_and_services">利用規約に同意する</string>
     <string name="nav_account">アカウント</string>
 
+    <string name="change_email_address">メールアドレスを変更する</string>
+    <string name="new_email_address">新しいメールアドレス</string>
+    <string name="confirm_email_address">メールアドレスを確認</string>
+    <string name="change_your_password">パスワードを変更してください</string>
+    <string name="old_password">以前のパスワード</string>
+    <string name="new_password">新しいパスワード</string>
+    <string name="change_password">パスワードを変更する</string>
+    <string name="confirm_password">パスワードを認証する</string>
+    <string name="please_enter_new_email">新しいメールを入力してください</string>
+    <string name="please_enter_old_password">古いパスワードを入力してください</string>
+    <string name="please_enter_new_password">新しいパスワードを入力してください</string>
+    <string name="please_enter_confirm_password">パスワードを入力してください</string>
+    <string name="your_current_email">あなたの現在の電子メール</string>
+    <string name="change_password_checkingtext">新しいパスワードには4つ以上のアルファ数値</string>
+    <string name="email_miss_match">ミスマッチメール</string>
+    <string name="password_miss_match">パスワードミスマッチ</string>
+
 </resources>

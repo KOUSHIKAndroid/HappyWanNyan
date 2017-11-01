@@ -7,20 +7,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
-
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
+import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
+import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.Validation;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -38,7 +41,7 @@ public class AccountFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    SFNFTextView EDX_new_email, EDX_confirm_email, EDX_old_password, EDX_new_password, EDX_confirm_password;
+    EditText EDX_new_email, EDX_confirm_email, EDX_old_password, EDX_new_password, EDX_confirm_password;
     AppLoader appLoader;
 
 
@@ -92,15 +95,17 @@ public class AccountFragment extends Fragment {
             }
         });
 
-        ((SFNFTextView) view.findViewById(R.id.tv_email_show)).setText(AppConstant.UserEmail);
+        Loger.MSG("AppConstant.UserEmail", "-->" + AppConstant.UserEmail);
+
+        ((SFNFTextView) view.findViewById(R.id.tv_email_show)).setText(getActivity().getResources().getString(R.string.your_current_email) + ": " + AppConstant.UserEmail);
 
         appLoader = new AppLoader(getActivity());
 
-        EDX_new_email = (SFNFTextView) view.findViewById(R.id.tv_email_show);
-        EDX_confirm_email = (SFNFTextView) view.findViewById(R.id.EDX_confirm_email);
-        EDX_old_password = (SFNFTextView) view.findViewById(R.id.EDX_old_password);
-        EDX_new_password = (SFNFTextView) view.findViewById(R.id.EDX_new_password);
-        EDX_confirm_password = (SFNFTextView) view.findViewById(R.id.EDX_confirm_password);
+        EDX_new_email = (EditText) view.findViewById(R.id.EDX_new_email);
+        EDX_confirm_email = (EditText) view.findViewById(R.id.EDX_confirm_email);
+        EDX_old_password = (EditText) view.findViewById(R.id.EDX_old_password);
+        EDX_new_password = (EditText) view.findViewById(R.id.EDX_new_password);
+        EDX_confirm_password = (EditText) view.findViewById(R.id.EDX_confirm_password);
 
         view.findViewById(R.id.tv_change_email).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,26 +145,57 @@ public class AccountFragment extends Fragment {
                     EDX_confirm_email.requestFocus();
                 } else {
                     if (!EDX_new_email.getText().toString().trim().equals(EDX_confirm_email.getText().toString().trim())) {
-
-                        EDX_confirm_email.setHintTextColor(Color.RED);
-                        EDX_confirm_email.setHint(getString(R.string.both_new_email_and_confirm_email_should_be_same));
-                        EDX_confirm_email.requestFocus();
+                        new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.LoginAlertTitle), getResources().getString(R.string.email_miss_match), new MYAlert.OnlyMessage() {
+                            @Override
+                            public void OnOk(boolean res) {
+                                if (res) {
+                                    EDX_confirm_email.requestFocus();
+                                }
+                            }
+                        });
                     } else {
 
                         appLoader.Show();
+                        ArrayList<SetGetAPIPostData> apiPostData=new ArrayList<>();
 
-                        HashMap<String, String> Params = new HashMap<>();
-                        Params.put("User_id", AppConstant.UserId);
-                        Params.put("langid", AppConstant.Language);
-                        Params.put("Emailid", AppConstant.UserEmail);
-                        Params.put("conf_emailid", EDX_confirm_email.getText().toString().trim());
+                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("user_id");
+                        setGetAPIPostData.setValues(AppConstant.UserId);
+                        apiPostData.add(setGetAPIPostData);
 
-                        new CustomJSONParser().APIForPostMethod2(getActivity(), AppConstant.BASEURL + "app_users_changeemail", Params, new CustomJSONParser.JSONResponseInterface() {
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("langid");
+                        setGetAPIPostData.setValues(AppConstant.Language);
+                        apiPostData.add(setGetAPIPostData);
+
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("emailid");
+                        setGetAPIPostData.setValues(EDX_confirm_email.getText().toString().trim());
+                        apiPostData.add(setGetAPIPostData);
+
+                        setGetAPIPostData = new SetGetAPIPostData();
+                        setGetAPIPostData.setPARAMS("conf_emailid");
+                        setGetAPIPostData.setValues(EDX_confirm_email.getText().toString().trim());
+                        apiPostData.add(setGetAPIPostData);
+
+//                        HashMap<String, String> Params = new HashMap<>();
+//                        Params.put("user_id", AppConstant.UserId);
+//                        Params.put("langid", AppConstant.Language);
+//                        Params.put("emailid", EDX_confirm_email.getText().toString().trim());
+//                        Params.put("conf_emailid", EDX_confirm_email.getText().toString().trim());
+
+                        new CustomJSONParser().APIForPostMethod(getActivity(), AppConstant.BASEURL + "app_users_changeemail", apiPostData, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 appLoader.Dismiss();
                                 try {
-                                    new MYAlert(getActivity()).AlertOnly(getString(R.string.change_email_address), new JSONObject(Result).getString("Status"), new MYAlert.OnlyMessage() {
+                                    AppConstant.UserEmail=EDX_confirm_email.getText().toString().trim();
+
+                                    /////////////////////update Share Preference (Login credential)////////////////////////////////////
+                                    new AppConstant(getActivity()).upDateShareDATAEmail(AppDataHolder.UserData,AppConstant.UserEmail);
+                                    ///////////////////////////////////////////////////////END//////////////////////////////////
+
+                                    new MYAlert(getActivity()).AlertOnly(getString(R.string.change_email_address), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
                                         @Override
                                         public void OnOk(boolean res) {
 
@@ -174,7 +210,7 @@ public class AccountFragment extends Fragment {
                             public void OnError(String Error, String Response) {
                                 appLoader.Dismiss();
                                 try {
-                                    new MYAlert(getActivity()).AlertOnly(getString(R.string.change_email_address), new JSONObject(Response).getString("Status"), new MYAlert.OnlyMessage() {
+                                    new MYAlert(getActivity()).AlertOnly(getString(R.string.change_email_address), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
                                         @Override
                                         public void OnOk(boolean res) {
 
@@ -206,72 +242,88 @@ public class AccountFragment extends Fragment {
             EDX_old_password.setHint(getString(R.string.please_enter_old_password));
             EDX_old_password.requestFocus();
         } else {
-
             if (EDX_new_password.getText().toString().trim().equals("")) {
                 EDX_new_password.setHintTextColor(Color.RED);
                 EDX_new_password.setHint(getString(R.string.please_enter_new_password));
                 EDX_new_password.requestFocus();
             } else {
-
-                if (EDX_confirm_password.getText().toString().trim().equals("")) {
-                    EDX_confirm_password.setHintTextColor(Color.RED);
-                    EDX_confirm_password.setHint(getString(R.string.please_enter_confirm_password));
-                    EDX_confirm_password.requestFocus();
+                if (EDX_new_password.getText().toString().trim().length() < 4) {
+                    new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.LoginAlertTitle), getResources().getString(R.string.change_password_checkingtext), new MYAlert.OnlyMessage() {
+                        @Override
+                        public void OnOk(boolean res) {
+                            if (res) {
+                                EDX_new_password.requestFocus();
+                            }
+                        }
+                    });
                 } else {
-                    if (!EDX_new_password.getText().toString().trim().equals(EDX_confirm_password.getText().toString().trim())) {
+                    if (EDX_confirm_password.getText().toString().trim().equals("")) {
                         EDX_confirm_password.setHintTextColor(Color.RED);
-                        EDX_confirm_password.setHint(getString(R.string.both_new_password_and_confirm_password_should_be_same));
+                        EDX_confirm_password.setHint(getString(R.string.please_enter_confirm_password));
                         EDX_confirm_password.requestFocus();
                     } else {
+                        if (!EDX_new_password.getText().toString().trim().equals(EDX_confirm_password.getText().toString().trim())) {
 
-                        appLoader.Show();
-
-                        HashMap<String, String> Params = new HashMap<>();
-                        Params.put("user_id", AppConstant.UserId);
-                        Params.put("lang_id", AppConstant.Language);
-                        Params.put("old_pass", EDX_old_password.getText().toString().trim());
-                        Params.put("new_pass", EDX_new_password.getText().toString().trim());
-                        Params.put("conf_password", EDX_confirm_password.getText().toString().trim());
-
-                        new CustomJSONParser().APIForPostMethod2(getActivity(), AppConstant.BASEURL + "change_password", Params, new CustomJSONParser.JSONResponseInterface() {
-                            @Override
-                            public void OnSuccess(String Result) {
-                                appLoader.Dismiss();
-                                try {
-                                    new MYAlert(getActivity()).AlertOnly(getString(R.string.change_password), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
-                                        @Override
-                                        public void OnOk(boolean res) {
-
-                                        }
-                                    });
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+                            new MYAlert(getActivity()).AlertOnly(getResources().getString(R.string.LoginAlertTitle), getResources().getString(R.string.password_miss_match), new MYAlert.OnlyMessage() {
+                                @Override
+                                public void OnOk(boolean res) {
+                                    if (res) {
+                                        EDX_confirm_password.requestFocus();
+                                    }
                                 }
-                            }
+                            });
 
-                            @Override
-                            public void OnError(String Error, String Response) {
-                                appLoader.Dismiss();
-                                try {
-                                    new MYAlert(getActivity()).AlertOnly(getString(R.string.change_password), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
-                                        @Override
-                                        public void OnOk(boolean res) {
+                        } else {
 
-                                        }
-                                    });
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+                            appLoader.Show();
+
+                            HashMap<String, String> Params = new HashMap<>();
+                            Params.put("user_id", AppConstant.UserId);
+                            Params.put("lang_id", AppConstant.Language);
+                            Params.put("old_pass", EDX_old_password.getText().toString().trim());
+                            Params.put("new_pass", EDX_new_password.getText().toString().trim());
+                            Params.put("conf_password", EDX_confirm_password.getText().toString().trim());
+
+                            new CustomJSONParser().APIForPostMethod2(getActivity(), AppConstant.BASEURL + "change_password", Params, new CustomJSONParser.JSONResponseInterface() {
+                                @Override
+                                public void OnSuccess(String Result) {
+                                    appLoader.Dismiss();
+                                    try {
+                                        new MYAlert(getActivity()).AlertOnly(getString(R.string.change_password), new JSONObject(Result).getString("message"), new MYAlert.OnlyMessage() {
+                                            @Override
+                                            public void OnOk(boolean res) {
+
+                                            }
+                                        });
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
-                            }
 
-                            @Override
-                            public void OnError(String Error) {
-                                appLoader.Dismiss();
-                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
-                                    Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
+                                @Override
+                                public void OnError(String Error, String Response) {
+                                    appLoader.Dismiss();
+                                    try {
+                                        new MYAlert(getActivity()).AlertOnly(getString(R.string.change_password), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                            @Override
+                                            public void OnOk(boolean res) {
+
+                                            }
+                                        });
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
-                            }
-                        });
+
+                                @Override
+                                public void OnError(String Error) {
+                                    appLoader.Dismiss();
+                                    if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                                        Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        }
                     }
                 }
             }

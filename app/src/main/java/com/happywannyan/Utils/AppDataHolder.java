@@ -97,6 +97,37 @@ public abstract class AppDataHolder {
         }
     }
 
+
+    public void upDateShareDATAEmail(int DataName, String email) {
+        switch (DataName) {
+            case UserData:
+                String userCredentialString = AppUserData.getString("UserData", "NO");
+                if (userCredentialString.trim().length() > 0) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(userCredentialString);
+
+                        JSONObject info_array=jsonObject.getJSONObject("info_array");
+
+                        info_array.put("emailid",email);
+
+                        jsonObject.put("info_array",info_array);
+
+
+                        SharedPreferences.Editor editor = AppUserData.edit();
+                        editor.putString("UserData", jsonObject.toString());
+                        editor.apply();
+                        editor.commit();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    break;
+                }
+        }
+    }
+
+
     public void setRememberShare(String id, String password) {
         SharedPreferences.Editor editor = AppUserData.edit();
         editor.putString("rememberID", id);
