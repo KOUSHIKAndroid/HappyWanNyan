@@ -1,6 +1,7 @@
 package com.happywannyan.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -16,6 +17,7 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Constant.ApplicationClass;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
@@ -148,6 +150,17 @@ public class FacebookActivity extends AppCompatActivity {
 
                     Intent intent = new Intent();
                     setResult(RESULT_OK, intent);
+
+
+                    ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference=getApplicationContext().getSharedPreferences("Redirect", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference.edit();
+
+                    editor.putInt("value", 1);
+
+                    // Save the changes in SharedPreferences
+                    editor.apply();
+                    editor.commit(); // commit changes
+
 
 //                    startActivity(new Intent(FacebookActivity.this,BaseActivity.class));
                     finish();

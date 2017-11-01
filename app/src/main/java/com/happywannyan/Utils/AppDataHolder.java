@@ -16,7 +16,6 @@ public abstract class AppDataHolder {
     //    ******* Global Identifires ***************
     public static final int UserData = 1;
 
-
     public abstract Void userDetailsAbstract(String UserId);
 
     SharedPreferences AppUserData;

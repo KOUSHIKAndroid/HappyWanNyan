@@ -1,6 +1,7 @@
 package com.happywannyan.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Constant.ApplicationClass;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
@@ -120,6 +122,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 Loger.MSG("@@ LOGIN", Result);
                                 appLoader.Dismiss();
                                 try {
+                                    //////////////////after first time and every time login and redirect to map////////////////
+
+                                    ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference=getApplicationContext().getSharedPreferences("Redirect", MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference.edit();
+
+                                    editor.putInt("value", 1);
+
+                                    // Save the changes in SharedPreferences
+                                    editor.apply();
+                                    editor.commit(); // commit changes
+
+                                    ///////////////////////////////End////////////////////////////////////
+
+
                                     JSONObject jsonObject=new JSONObject(Result);
                                     if (jsonObject.getString("email_verified_status").equals("1")){
 

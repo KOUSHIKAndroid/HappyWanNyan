@@ -1,8 +1,6 @@
 package com.happywannyan.Activities;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -21,10 +19,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.happywannyan.Constant.AppConstant;
+import com.happywannyan.Constant.ApplicationClass;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.Fragments.ContactUsFragment;
@@ -311,6 +309,17 @@ public class BaseActivity extends LocationBaseActivity
                                         AppConstant.UserEmail="";
                                         AppConstant.UserName="";
 
+
+                                        ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference=getApplicationContext().getSharedPreferences("Redirect", MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference.edit();
+
+                                        editor.putInt("value", 0);
+
+                                        // Save the changes in SharedPreferences
+                                        editor.apply();
+                                        editor.commit(); // commit changes
+
+
                                         new AppConstant(BaseActivity.this).logOutClearAllData();
                                         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                                         drawer.closeDrawer(GravityCompat.START);
@@ -548,6 +557,7 @@ public class BaseActivity extends LocationBaseActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         drawer.openDrawer(navigationView);
 
+        editor.apply();
         editor.commit();
 
     }

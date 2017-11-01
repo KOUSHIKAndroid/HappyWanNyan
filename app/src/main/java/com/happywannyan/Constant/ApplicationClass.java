@@ -17,7 +17,7 @@ public class ApplicationClass extends Application {
 
     private static ApplicationClass instance = null;
     private RequestQueue mRequestQueue;
-
+    public SharedPreferences everyTimeRedirectAfterLoginPreference ;
 
     public static final String TAG = ApplicationClass.class.getSimpleName();
     //    public static int firstDayPosition = calendar.get(Calendar.DAY_OF_WEEK);
@@ -57,4 +57,5 @@ public class ApplicationClass extends Application {
             mRequestQueue.cancelAll(tag);
         }
     }
+
 }
