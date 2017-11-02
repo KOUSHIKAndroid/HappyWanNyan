@@ -310,5 +310,6 @@
     <string name="email_miss_match">Email Miss Match</string>
     <string name="password_miss_match">Password Miss Match</string>
     <string name="message_has_been_sent_successfully">Message has been sent successfully</string>
+    <string name="are_you_sure_want_to_close">Are you sure want to close</string>
 
 </resources>

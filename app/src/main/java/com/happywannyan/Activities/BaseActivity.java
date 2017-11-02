@@ -495,14 +495,14 @@ public class BaseActivity extends LocationBaseActivity
             if (AppConstant.go_to.trim().equals("message_all")) {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new MessageFragment());
+                fragmentTransaction.add(R.id.Base_fargment_layout, new MessageFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
             else {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
+                fragmentTransaction.add(R.id.Base_fargment_layout, new BookingFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -512,21 +512,21 @@ public class BaseActivity extends LocationBaseActivity
                 if(!AppConstant.SearchJSONSitter.equals("")){
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitter, null));
+                    fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitter, null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     AppConstant.SearchJSONSitter="";
                 }else {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.Base_fargment_layout, new SearchBasicFragment());
+                    fragmentTransaction.add(R.id.Base_fargment_layout, new SearchBasicFragment());
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }
             }else {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
+                fragmentTransaction.add(R.id.Base_fargment_layout, new MyProfileFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -540,7 +540,24 @@ public class BaseActivity extends LocationBaseActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        if(fragmentManager.getBackStackEntryCount()==1){
+
+//            new MYAlert(BaseActivity.this).AlertOkCancel("", getResources().getString(R.string.are_you_sure_want_to_close),
+//                    getResources().getString(R.string.ok),
+//                    getResources().getString(R.string.cancel),
+//                    new MYAlert.OnOkCancel() {
+//                        @Override
+//                        public void OnOk() {
+//
+//                        }
+//
+//                        @Override
+//                        public void OnCancel() {
+//                        }
+//                    });
+        }
+        else {
             super.onBackPressed();
         }
     }

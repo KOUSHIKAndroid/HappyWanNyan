@@ -767,12 +767,12 @@ public final class R {
         public static final int abc_toolbar_collapse_description = 0x7f0f0047;
         public static final int acc_label_card_number = 0x7f0f004a;
         public static final int acc_label_expiry_date = 0x7f0f004b;
-        public static final int card_number_hint = 0x7f0f0072;
-        public static final int cvc_amex_hint = 0x7f0f00d8;
-        public static final int cvc_number_hint = 0x7f0f00d9;
-        public static final int expiry_date_hint = 0x7f0f00f2;
-        public static final int search_menu_title = 0x7f0f0192;
-        public static final int status_bar_notification_info_overflow = 0x7f0f01a6;
+        public static final int card_number_hint = 0x7f0f0073;
+        public static final int cvc_amex_hint = 0x7f0f00d9;
+        public static final int cvc_number_hint = 0x7f0f00da;
+        public static final int expiry_date_hint = 0x7f0f00f3;
+        public static final int search_menu_title = 0x7f0f0193;
+        public static final int status_bar_notification_info_overflow = 0x7f0f01a7;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;
