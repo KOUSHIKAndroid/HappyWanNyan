@@ -31,7 +31,6 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.CalenderActivity;
 import com.happywannyan.Activities.SearchResultActivity;
-import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.PetListDialogAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.CustomRangeBar.RangeSeekBar;
@@ -91,6 +90,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
     PetListDialogAdapter adapter_petlist;
 
     ArrayList<SetGetPetService> arraySetGetPetService;
+
+    JSONObject AllPetJsonObject = null;
 
     public AdvancedSearchFragment() {
         // Required empty public constructor
@@ -162,130 +163,153 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         try {
             appLoader.Show();
 
-            new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "pet_type_info?pet_type_id=" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id") + "&langid=" + AppConstant.Language,
-                    new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
-                        @Override
-                        public void OnSuccess(String Result) {
-                            try {
-                                Pet_size_age = new JSONObject(Result);
-                                MaxPrice = Pet_size_age.getString("max_price_default").split("\\.")[0];
-                                MinPrice = Pet_size_age.getString("min_price_default").split("\\.")[0];
-                                TXT_LoestRange.setText(MinPrice);
-                                TXT_highestRange.setText(MaxPrice);
-                                if (Pet_size_age.getJSONArray("petSizeDet").length() > 0) {
-                                    for (int j = 0; j < Pet_size_age.getJSONArray("petSizeDet").length(); j++) {
-                                        CheckBox Chkbox = new CheckBox(getActivity());
-                                        Chkbox.setText(Pet_size_age.getJSONArray("petSizeDet").getJSONObject(j).getString("option_name"));
-                                        LL_PetSizeValue.addView(Chkbox);
-                                    }
-                                }
+            new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "parent_service?langid=en&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                @Override
+                public void OnSuccess(String Result) {
+                    try {
+                        JSONObject object = new JSONObject(Result);
 
-                                if (Pet_size_age.getJSONArray("petAgeDet").length() > 0)
-                                    for (int i = 0; i < Pet_size_age.getJSONArray("petAgeDet").length(); i++) {
-                                        CheckBox Chkbox = new CheckBox(getActivity());
-                                        Chkbox.setText(Pet_size_age.getJSONArray("petAgeDet").getJSONObject(i).getString("option_name"));
-                                        LL_Pet_Age.addView(Chkbox);
-                                    }
+                        AllPetJsonObject = object;
 
-                                if (Pet_size_age.getJSONArray("exp_medical_opt").length() > 0)
-                                    for (int i = 0; i < Pet_size_age.getJSONArray("exp_medical_opt").length(); i++) {
-                                        CheckBox Chkbox = new CheckBox(getActivity());
-                                        Chkbox.setText(Pet_size_age.getJSONArray("exp_medical_opt").getJSONObject(i).getString("option_name"));
-                                        LL_OtherOption.addView(Chkbox);
-                                    }
+                        JSONArray PetService = object.getJSONArray("serviceCatList");
+                        for (int i = 0; i < PetService.length(); i++) {
+                            JSONObject OBJE = PetService.getJSONObject(i);
+                            SetGetPetService setGetPetService = new SetGetPetService();
+                            setGetPetService.setId(OBJE.getString("id"));
+                            setGetPetService.setName(OBJE.getString("name"));
+                            setGetPetService.setDefault_image(OBJE.getString("default_image"));
+                            setGetPetService.setSelected_image(OBJE.getString("selected_image"));
+                            setGetPetService.setTooltip_name(OBJE.getString("tooltip_name"));
+                            setGetPetService.setJsondata(OBJE);
+                            setGetPetService.setTick_value(false);
 
-                                LL_PriceRange.removeAllViewsInLayout();
-                                seekBar = new RangeSeekBar<Long>(Long.parseLong(MinPrice), Long.parseLong(MaxPrice), getContext());
-                                LL_PriceRange.addView(seekBar);
-                                seekBar.setOnRangeSeekBarChangeListener(new RangeSeekBar.OnRangeSeekBarChangeListener<Long>() {
-                                    @Override
-                                    public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Long minValue, Long maxValue) {
-                                        LowPrice = minValue.toString();
-                                        HighPrice = maxValue.toString();
-
-                                        TXT_LoestRange.setText(minValue.toString());
-                                        TXT_highestRange.setText(maxValue.toString());
-                                    }
-
-                                    @Override
-                                    public void onRangeSeekBarValuesChanging(RangeSeekBar<?> bar, int minValue, int maxValue) {
-//                min.setText(minValue + "");
-//                max.setText(maxValue + "");
-                                    }
-                                });
-                                new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "parent_service?langid=en&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
-                                    @Override
-                                    public void OnSuccess(String Result) {
-                                        try {
-                                            appLoader.Dismiss();
-                                            JSONObject object = new JSONObject(Result);
-
-                                            JSONArray PetService = object.getJSONArray("serviceCatList");
-                                            for (int i = 0; i < PetService.length(); i++) {
-                                                JSONObject OBJE = PetService.getJSONObject(i);
-                                                SetGetPetService setGetPetService = new SetGetPetService();
-                                                setGetPetService.setId(OBJE.getString("id"));
-                                                setGetPetService.setName(OBJE.getString("name"));
-                                                setGetPetService.setDefault_image(OBJE.getString("default_image"));
-                                                setGetPetService.setSelected_image(OBJE.getString("selected_image"));
-                                                setGetPetService.setTooltip_name(OBJE.getString("tooltip_name"));
-                                                setGetPetService.setJsondata(OBJE);
-                                                setGetPetService.setTick_value(false);
-
-                                                arraySetGetPetService.add(setGetPetService);
-                                            }
+                            arraySetGetPetService.add(setGetPetService);
+                        }
 //                    arraySetGetPetService.get(0).setTick_value(true);
 
-                                            if (object.getJSONArray("allPetDetails").length() > 0) {
-                                                TXT_petType.setText(object.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
-                                                TXT_petType.setTag(object.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
-                                                Loger.MSG("mParam_allPetDetails", "" + object.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
-                                            }
+                        if (AllPetJsonObject.getJSONArray("allPetDetails").length() > 0) {
+                            TXT_petType.setText(AllPetJsonObject.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
+                            TXT_petType.setTag(AllPetJsonObject.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
+                            Loger.MSG("mParam_allPetDetails", "" + AllPetJsonObject.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
+                        }
+
+                        IMG_SERVICE = (ImageView) view.findViewById(R.id.IMG_SERVICE);
+                        TXT_SERVICENAME = (SFNFTextView) view.findViewById(R.id.TXT_SERVICENAME);
+
+                        if (!mParam1.getString("selected_image").trim().equals("")) {
+                            Glide.with(getActivity()).load(mParam1.getString("selected_image")).into(IMG_SERVICE);
+                        }
+
+                        (TXT_SERVICENAME).setText(mParam1.getString("name"));
+                        TXT_SERVICENAME.setTag(mParam1.getString("id"));
+
+                        TXT_Loction.setText(mParam1.getString("LocationName"));
+
+                        if (mParam1.getString("LocationName").trim().length() > 0)
+                            IMG_erase_location.setVisibility(View.VISIBLE);
+
+                        if (EndDate.length() > 0)
+                            TXT_DateRange.setText(StartDate + "  to   " + EndDate);
+                        else
+                            TXT_DateRange.setText(StartDate);
 
 
-                                        } catch (JSONException e) {
-                                            e.printStackTrace();
-                                            appLoader.Dismiss();
+                        new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "pet_type_info?pet_type_id=" + AllPetJsonObject.getJSONArray("allPetDetails").getJSONObject(0).getString("id") + "&langid=" + AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                            @Override
+                            public void OnSuccess(String Result) {
+                                try {
+                                    appLoader.Dismiss();
+
+                                    Pet_size_age = new JSONObject(Result);
+                                    MaxPrice = Pet_size_age.getString("max_price_default").split("\\.")[0];
+                                    MinPrice = Pet_size_age.getString("min_price_default").split("\\.")[0];
+                                    TXT_LoestRange.setText(MinPrice);
+                                    TXT_highestRange.setText(MaxPrice);
+                                    if (Pet_size_age.getJSONArray("petSizeDet").length() > 0) {
+                                        for (int j = 0; j < Pet_size_age.getJSONArray("petSizeDet").length(); j++) {
+                                            CheckBox Chkbox = new CheckBox(getActivity());
+                                            Chkbox.setText(Pet_size_age.getJSONArray("petSizeDet").getJSONObject(j).getString("option_name"));
+                                            LL_PetSizeValue.addView(Chkbox);
                                         }
                                     }
 
-                                    @Override
-                                    public void OnError(String Error, String Response) {
-                                        appLoader.Dismiss();
-                                    }
-
-                                    @Override
-                                    public void OnError(String Error) {
-                                        appLoader.Dismiss();
-                                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
-                                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                    if (Pet_size_age.getJSONArray("petAgeDet").length() > 0)
+                                        for (int i = 0; i < Pet_size_age.getJSONArray("petAgeDet").length(); i++) {
+                                            CheckBox Chkbox = new CheckBox(getActivity());
+                                            Chkbox.setText(Pet_size_age.getJSONArray("petAgeDet").getJSONObject(i).getString("option_name"));
+                                            LL_Pet_Age.addView(Chkbox);
                                         }
-                                    }
-                                });
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                    if (Pet_size_age.getJSONArray("exp_medical_opt").length() > 0)
+                                        for (int i = 0; i < Pet_size_age.getJSONArray("exp_medical_opt").length(); i++) {
+                                            CheckBox Chkbox = new CheckBox(getActivity());
+                                            Chkbox.setText(Pet_size_age.getJSONArray("exp_medical_opt").getJSONObject(i).getString("option_name"));
+                                            LL_OtherOption.addView(Chkbox);
+                                        }
+
+                                    LL_PriceRange.removeAllViewsInLayout();
+                                    seekBar = new RangeSeekBar<Long>(Long.parseLong(MinPrice), Long.parseLong(MaxPrice), getContext());
+                                    LL_PriceRange.addView(seekBar);
+                                    seekBar.setOnRangeSeekBarChangeListener(new RangeSeekBar.OnRangeSeekBarChangeListener<Long>() {
+                                        @Override
+                                        public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Long minValue, Long maxValue) {
+                                            LowPrice = minValue.toString();
+                                            HighPrice = maxValue.toString();
+
+                                            TXT_LoestRange.setText(minValue.toString());
+                                            TXT_highestRange.setText(maxValue.toString());
+                                        }
+
+                                        @Override
+                                        public void onRangeSeekBarValuesChanging(RangeSeekBar<?> bar, int minValue, int maxValue) {
+//                min.setText(minValue + "");
+//                max.setText(maxValue + "");
+                                        }
+                                    });
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    appLoader.Dismiss();
+                                }
+                            }
+
+                            @Override
+                            public void OnError(String Error, String Response) {
                                 appLoader.Dismiss();
                             }
-                        }
-                        @Override
-                        public void OnError(String Error, String Response) {
-                            appLoader.Dismiss();
-                        }
 
-                        @Override
-                        public void OnError(String Error) {
-                            appLoader.Dismiss();
-                            if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                                Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                            @Override
+                            public void OnError(String Error) {
+                                appLoader.Dismiss();
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                                    Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
+                        });
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        appLoader.Dismiss();
+                    }
+                }
+
+                @Override
+                public void OnError(String Error, String Response) {
+                    appLoader.Dismiss();
+                }
+
+                @Override
+                public void OnError(String Error) {
+                    appLoader.Dismiss();
+                    if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))) {
+                        Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
         view.findViewById(R.id.IMG_icon_drwaer).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -294,33 +318,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
             }
         });
         LL_Calender = (LinearLayout) view.findViewById(R.id.LL_Calender);
-
-        try {
-            IMG_SERVICE = (ImageView) view.findViewById(R.id.IMG_SERVICE);
-            TXT_SERVICENAME = (SFNFTextView) view.findViewById(R.id.TXT_SERVICENAME);
-
-            if (!mParam1.getString("selected_image").trim().equals("")) {
-                Glide.with(getActivity()).load(mParam1.getString("selected_image")).into(IMG_SERVICE);
-            }
-
-            (TXT_SERVICENAME).setText(mParam1.getString("name"));
-            TXT_SERVICENAME.setTag(mParam1.getString("id"));
-
-            TXT_Loction.setText(mParam1.getString("LocationName"));
-
-            if (mParam1.getString("LocationName").trim().length() > 0)
-                IMG_erase_location.setVisibility(View.VISIBLE);
-
-            if (EndDate.length() > 0)
-                TXT_DateRange.setText(StartDate + "  to   " + EndDate);
-            else
-                TXT_DateRange.setText(StartDate);
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
 
         view.findViewById(R.id.RL_Search).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -369,7 +366,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
             public void onClick(View v) {
                 try {
 
-                    new MYAlert(getActivity()).AlertTextLsit(getString(R.string.chose_pettype), mParam1.getJSONArray("allPetDetails"), "name"
+                    new MYAlert(getActivity()).AlertTextLsit(getString(R.string.chose_pettype), AllPetJsonObject.getJSONArray("allPetDetails"), "name"
                             , new MYAlert.OnSingleListTextSelected() {
                                 @Override
                                 public void OnSelectedTEXT(JSONObject jsonObject) {
@@ -382,7 +379,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                                         e.printStackTrace();
                                     }
                                     try {
-                                        new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "pet_type_info?&pet_type_id=" + jsonObject.getString("id") + "&langid=" + AppConstant.Language,
+                                        new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "pet_type_info?&pet_type_id=" + jsonObject.getString("id") + "&langid=" + AppConstant.Language,
                                                 new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                     @Override
                                                     public void OnSuccess(String Result) {
@@ -449,8 +446,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                                                     @Override
                                                     public void OnError(String Error) {
-                                                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
-                                                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))) {
+                                                            Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
                                                         }
                                                     }
                                                 });
@@ -501,7 +498,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                         }
                     });
                 }
-
             }
         });
         view.findViewById(R.id.RL_Serach).setOnClickListener(new View.OnClickListener() {
@@ -559,7 +555,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         } else if (requestCode == 101) {
             getActivity().onBackPressed();
         }
-
     }
 
 
@@ -634,10 +629,9 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
     public void refreshPage(String id, String name, String ImgSelectedName) {
 
         try {
-            if (mParam1.getJSONArray("allPetDetails").length() > 0) {
-                TXT_petType.setText(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
-                TXT_petType.setTag(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
-
+            if (AllPetJsonObject.getJSONArray("allPetDetails").length() > 0) {
+                TXT_petType.setText(AllPetJsonObject.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
+                TXT_petType.setTag(AllPetJsonObject.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
             }
 
         } catch (JSONException e) {
@@ -656,7 +650,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         (TXT_SERVICENAME).setTag(id);
 
         try {
-            new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "pet_type_info?pet_type_id=" + 1 + "&langid=" + AppConstant.Language,
+            new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "pet_type_info?pet_type_id=" + 1 + "&langid=" + AppConstant.Language,
                     new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                         @Override
                         public void OnSuccess(String Result) {
@@ -720,8 +714,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                         @Override
                         public void OnError(String Error) {
-                            if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
-                                Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                            if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))) {
+                                Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

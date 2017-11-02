@@ -1,7 +1,6 @@
 package com.happywannyan.Activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.Constant.ApplicationClass;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.SearchListFragment;
 import com.happywannyan.Fragments.SearchMapFragment;
@@ -42,7 +40,6 @@ public class SearchResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
         appLoader = new AppLoader(this);
-
 
         try {
             SearchKeys = new JSONObject(getIntent().getStringExtra(SEARCHKEY));
@@ -123,7 +120,6 @@ public class SearchResultActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
 
