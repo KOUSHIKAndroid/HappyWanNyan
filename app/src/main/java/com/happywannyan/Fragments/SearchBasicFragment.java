@@ -68,7 +68,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     PetListAdapter adapter_petList;
     Place place;
     boolean GPS = false;
-    JSONObject JSONFULLDATA, Geo;
+    JSONObject Geo;
     JSONObject SearchJSONSitter;
 
     public SearchBasicFragment() {
@@ -115,7 +115,8 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
             public void OnSuccess(String Result) {
                 try {
                     JSONObject object = new JSONObject(Result);
-                    JSONFULLDATA = object;
+
+                    Loger.MSG("object-->","-->"+object);
 
                     SharedPreferences pref = getActivity().getSharedPreferences("unread_msg_count", 0); // 0 - for private mode
                     SharedPreferences.Editor editor = pref.edit();
@@ -347,7 +348,6 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     SearchJSONSitter.put("Address", place.getAddress());
                     SearchJSONSitter.put("StartDate", StartDate);
                     SearchJSONSitter.put("EndDate", EndDate);
-                    SearchJSONSitter.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
                 } else if (GPS) {
 
                     JSONObject ViewPort = new JSONObject();
@@ -363,7 +363,6 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                     SearchJSONSitter.put("Address", TXT_Loction.getText());
                     SearchJSONSitter.put("StartDate", StartDate);
                     SearchJSONSitter.put("EndDate", EndDate);
-                    SearchJSONSitter.put("allPetDetails", JSONFULLDATA.getJSONArray("allPetDetails"));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

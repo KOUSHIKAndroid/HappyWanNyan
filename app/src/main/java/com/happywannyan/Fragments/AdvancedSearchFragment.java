@@ -114,7 +114,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                 Loger.MSG("@@ PARAM", mParam1.toString());
 
-
                 if (mParam1.has("StartDate")) {
                     StartDate = mParam1.getString("StartDate");
                 }
@@ -161,13 +160,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         arraySetGetPetService = new ArrayList<>();
 
         try {
-            if (mParam1.getJSONArray("allPetDetails").length() > 0) {
-                TXT_petType.setText(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
-            }
-            TXT_petType.setTag(mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
-
-            Loger.MSG("mParam_allPetDetails", "" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
-
             appLoader.Show();
 
             new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "pet_type_info?pet_type_id=" + mParam1.getJSONArray("allPetDetails").getJSONObject(0).getString("id") + "&langid=" + AppConstant.Language,
@@ -244,6 +236,13 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                                             }
 //                    arraySetGetPetService.get(0).setTick_value(true);
 
+                                            if (object.getJSONArray("allPetDetails").length() > 0) {
+                                                TXT_petType.setText(object.getJSONArray("allPetDetails").getJSONObject(0).getString("name"));
+                                                TXT_petType.setTag(object.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
+                                                Loger.MSG("mParam_allPetDetails", "" + object.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
+                                            }
+
+
                                         } catch (JSONException e) {
                                             e.printStackTrace();
                                             appLoader.Dismiss();
@@ -282,7 +281,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                             }
                         }
                     });
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -383,8 +381,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
-
-
                                     try {
                                         new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "pet_type_info?&pet_type_id=" + jsonObject.getString("id") + "&langid=" + AppConstant.Language,
                                                 new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {

@@ -151,19 +151,6 @@ public class FacebookActivity extends AppCompatActivity {
                     Intent intent = new Intent();
                     setResult(RESULT_OK, intent);
 
-
-                    //////////////////after first time and every time login and redirect to map////////////////
-                    ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference=getApplicationContext().getSharedPreferences("Redirect", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference.edit();
-
-                    editor.putInt("value", 1);
-
-                    // Save the changes in SharedPreferences
-                    editor.apply();
-                    editor.commit(); // commit changes
-
-                    ///////////////////////////////End////////////////////////////////////
-
 //                    startActivity(new Intent(FacebookActivity.this,BaseActivity.class));
                     finish();
 

@@ -337,17 +337,6 @@ public class BaseActivity extends LocationBaseActivity
                                         AppConstant.UserEmail="";
                                         AppConstant.UserName="";
 
-                                        //////////////////after first time and every time login and redirect to map////////////////
-                                        ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference=getApplicationContext().getSharedPreferences("Redirect", MODE_PRIVATE);
-                                        SharedPreferences.Editor editor = ApplicationClass.getInstance().everyTimeRedirectAfterLoginPreference.edit();
-
-                                        editor.putInt("value", 0);
-
-                                        // Save the changes in SharedPreferences
-                                        editor.apply();
-                                        editor.commit(); // commit changes
-                                        ///////////////////////////////End////////////////////////////////////
-
                                         new AppConstant(BaseActivity.this).logOutClearAllData();
                                         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                                         drawer.closeDrawer(GravityCompat.START);
