@@ -208,7 +208,6 @@ public class SearchResultActivity extends AppCompatActivity {
 
                 if (AppConstant.alwaysRedirectAfterLogin) {
                     AppConstant.alwaysRedirectAfterLogin = false;
-
                     try {
                         JSONObject latalng = new JSONObject();
                         JSONObject SearchJSONSitter = new JSONObject();
@@ -234,6 +233,8 @@ public class SearchResultActivity extends AppCompatActivity {
                         intent.putExtra("go_to", "AfterLoginSecondTimeOrMoreRedirect");
                         intent.putExtra("SearchJSONSitter", SearchJSONSitter.toString());
                         startActivity(intent);
+                        finish();
+
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
@@ -362,11 +363,9 @@ public class SearchResultActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (AppConstant.alwaysRedirectAfterLogin) {
-
             Intent intent = new Intent(SearchResultActivity.this, BaseActivity.class);
             startActivity(intent);
             finish();
-
             AppConstant.alwaysRedirectAfterLogin = false;
         } else {
             Intent intent = new Intent();
