@@ -497,12 +497,6 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.replace(R.id.Base_fargment_layout, search_basic);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-            } else if(getIntent().getStringExtra("go_to").equals("AfterLoginSecondTimeOrMoreRedirect")){
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(getIntent().getStringExtra("SearchJSONSitter"), null));
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
             }
             else {
                 fragmentManager = getSupportFragmentManager();
@@ -514,11 +508,20 @@ public class BaseActivity extends LocationBaseActivity
         } else {
 
             if(AppConstant.login_status.equals("1")){
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                SearchBasicFragment search_basicFragment = new SearchBasicFragment();
-                fragmentTransaction.add(R.id.Base_fargment_layout, search_basicFragment);
-                fragmentTransaction.commit();
+                if(!AppConstant.SearchJSONSitter.equals("")){
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitter, null));
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
+                        AppConstant.SearchJSONSitter="";
+                }else {
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    SearchBasicFragment search_basicFragment = new SearchBasicFragment();
+                    fragmentTransaction.add(R.id.Base_fargment_layout, search_basicFragment);
+                    fragmentTransaction.commit();
+                }
             }else {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
@@ -527,11 +530,13 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.commit();
             }
         }
+
         if (AppConstant.Language.equals("en")) {
             ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("日本語");
         } else {
             ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("English");
         }
+
     }
 
 

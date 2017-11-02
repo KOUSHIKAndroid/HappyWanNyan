@@ -229,8 +229,7 @@ public class SearchResultActivity extends AppCompatActivity {
                         SearchJSONSitter.put("EndDate", "");
 
                         Intent intent = new Intent(SearchResultActivity.this, BaseActivity.class);
-                        intent.putExtra("go_to", "AfterLoginSecondTimeOrMoreRedirect");
-                        intent.putExtra("SearchJSONSitter", SearchJSONSitter.toString());
+                        AppConstant.SearchJSONSitter=SearchJSONSitter.toString();
                         startActivity(intent);
                         finish();
 

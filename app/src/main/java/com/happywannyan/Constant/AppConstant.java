@@ -24,6 +24,7 @@ public class AppConstant extends AppDataHolder {
     public static String login_status = "1";
     public static String message_object_string = "";
     public static boolean alwaysRedirectAfterLogin=false;
+    public static String SearchJSONSitter="";
 
     public AppConstant(Activity activity) {
         super(activity);
