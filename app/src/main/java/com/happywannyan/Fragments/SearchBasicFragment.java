@@ -311,10 +311,10 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     }
 
     @Override
-    public void OnAdresss(String Address, JSONObject geo) {
+    public void OnAdresss(String Adreess, JSONObject geo) {
         if (GPS) {
-            Loger.MSG("Address-->",Address);
-            TXT_Loction.setText(Address);
+            Loger.MSG("Address-->",Adreess);
+            TXT_Loction.setText(Adreess);
             IMG_erase_location.setVisibility(View.VISIBLE);
             LL_PetServiceList.setVisibility(View.VISIBLE);
             this.Geo = geo;

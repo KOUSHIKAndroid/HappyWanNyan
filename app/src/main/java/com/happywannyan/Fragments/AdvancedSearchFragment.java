@@ -503,12 +503,9 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         view.findViewById(R.id.RL_Serach).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 if (TXT_petType.getText().toString().trim().equals("")) {
                     TXT_petType.setHintTextColor(Color.RED);
                     SCROLLL.scrollTo(0, TXT_petType.getBottom());
-
                 } else {
                     nextIntentShow();
                 }
@@ -561,6 +558,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
     @Override
     public void OnAdresss(String Adreess, JSONObject geo) {
         if (GPS) {
+            Loger.MSG("Address-->",Adreess);
             TXT_Loction.setText(Adreess);
             IMG_erase_location.setVisibility(View.VISIBLE);
         }
