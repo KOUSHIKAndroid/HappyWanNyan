@@ -37,12 +37,15 @@ public class SearchResultActivity extends AppCompatActivity {
     JSONObject SearchKeys;
     public double ne_lng, ne_lat, sw_lng, sw_lat;
     AppLoader appLoader;
+    ImageView fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
         appLoader = new AppLoader(this);
+
+        fab = (ImageView) findViewById(R.id.fab);
 
         if (AppConstant.alwaysRedirectAfterLogin) {
             try {
@@ -127,8 +130,6 @@ public class SearchResultActivity extends AppCompatActivity {
                 Loger.Error("@@", "Error" + e.getMessage());
             }
 
-            findViewById(R.id.fab).performClick();
-
         } else {
             try {
                 SearchKeys = new JSONObject(getIntent().getStringExtra(SEARCHKEY));
@@ -155,9 +156,11 @@ public class SearchResultActivity extends AppCompatActivity {
 
         SecondTimeAfterLogin();
 
-        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Loger.MSG("fab-->", "fab-->");
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.Container_result, new SearchMapFragment());
                 fragmentTransaction.disallowAddToBackStack();
@@ -204,11 +207,11 @@ public class SearchResultActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (AppConstant.alwaysRedirectAfterLogin) {
-                    AppConstant.alwaysRedirectAfterLogin=false;
+                    AppConstant.alwaysRedirectAfterLogin = false;
 
                     try {
                         JSONObject latalng = new JSONObject();
-                        JSONObject SearchJSONSitter=new JSONObject();
+                        JSONObject SearchJSONSitter = new JSONObject();
 
                         latalng.put("lat", "35.689487");
                         latalng.put("lng", "139.691706");
@@ -227,16 +230,15 @@ public class SearchResultActivity extends AppCompatActivity {
                         SearchJSONSitter.put("StartDate", "");
                         SearchJSONSitter.put("EndDate", "");
 
-                        Intent intent=new Intent(SearchResultActivity.this,BaseActivity.class);
+                        Intent intent = new Intent(SearchResultActivity.this, BaseActivity.class);
                         intent.putExtra("go_to", "AfterLoginSecondTimeOrMoreRedirect");
                         intent.putExtra("SearchJSONSitter", SearchJSONSitter.toString());
                         startActivity(intent);
-                    }
-                    catch (Exception ex){
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
 
-                }else {
+                } else {
                     Intent intent = new Intent();
                     setResult(RESULT_OK, intent);
                     finish();
@@ -263,7 +265,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("per_page");
-        setGetAPIPostData.setValues("10");
+        setGetAPIPostData.setValues("100");
         PostData.add(setGetAPIPostData);
 
 
@@ -312,9 +314,13 @@ public class SearchResultActivity extends AppCompatActivity {
 
                         ListARRY.add(setGetSearchData);
                     }
-                    fragmentTransaction.replace(R.id.Container_result, new SearchListFragment());
-                    fragmentTransaction.disallowAddToBackStack();
-                    fragmentTransaction.commit();
+                    if (AppConstant.alwaysRedirectAfterLogin) {
+                        fab.performClick();
+                    } else {
+                        fragmentTransaction.replace(R.id.Container_result, new SearchListFragment());
+                        fragmentTransaction.disallowAddToBackStack();
+                        fragmentTransaction.commit();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -355,15 +361,14 @@ public class SearchResultActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (AppConstant.alwaysRedirectAfterLogin){
+        if (AppConstant.alwaysRedirectAfterLogin) {
 
-            Intent intent=new Intent(SearchResultActivity.this,BaseActivity.class);
+            Intent intent = new Intent(SearchResultActivity.this, BaseActivity.class);
             startActivity(intent);
             finish();
 
-            AppConstant.alwaysRedirectAfterLogin=false;
-        }
-        else {
+            AppConstant.alwaysRedirectAfterLogin = false;
+        } else {
             Intent intent = new Intent();
             setResult(RESULT_FIRST_USER, intent);
             finish();
