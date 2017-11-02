@@ -25,6 +25,7 @@ import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Constant.ApplicationClass;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.AccountFragment;
+import com.happywannyan.Fragments.AdvancedSearchFragment;
 import com.happywannyan.Fragments.BookingFragment;
 import com.happywannyan.Fragments.ContactUsFragment;
 import com.happywannyan.Fragments.FavouriteFragment;
@@ -496,7 +497,16 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.replace(R.id.Base_fargment_layout, search_basic);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-            } else {
+            } else if(getIntent().getStringExtra("go_to").equals("AfterLoginSecondTimeOrMoreRedirect")){
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(getIntent().getStringExtra("SearchJSONSitter"), null));
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+            }
+            else {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());

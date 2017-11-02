@@ -150,7 +150,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         /////////////////////End////////////////////////////////////
 
                                         AppConstant.login_status=jsonObject.getJSONObject("info_array").getString("login_status");
-                                        startActivity(new Intent(LoginActivity.this, BaseActivity.class));
+
+//                                        startActivity(new Intent(LoginActivity.this, BaseActivity.class));
+//                                        finish();
+
+                                        AppConstant.alwaysRedirectAfterLogin=true;
+
+                                        startActivity(new Intent(LoginActivity.this, SearchResultActivity.class));
                                         finish();
                                     }
                                     else {

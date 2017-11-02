@@ -306,6 +306,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
     public void GotoAdvancedSearched(JSONObject jsondata) {
         SearchJSONSitter = jsondata;
+        Loger.MSG("ClickOnListData-->",""+jsondata);
         searchAndIntent();
     }
 

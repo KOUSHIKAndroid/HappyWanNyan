@@ -155,6 +155,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         RL_Search = (RelativeLayout) view.findViewById(R.id.RL_Search);
         SCROLLL = (ScrollView) view.findViewById(R.id.SCROLLL);
         TXT_petType = (SFNFTextView) view.findViewById(R.id.TXT_petType);
+        IMG_SERVICE = (ImageView) view.findViewById(R.id.IMG_SERVICE);
+        TXT_SERVICENAME = (SFNFTextView) view.findViewById(R.id.TXT_SERVICENAME);
 
         appLoader = new AppLoader(getActivity());
 
@@ -193,15 +195,13 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                             Loger.MSG("mParam_allPetDetails", "" + AllPetJsonObject.getJSONArray("allPetDetails").getJSONObject(0).getString("id"));
                         }
 
-                        IMG_SERVICE = (ImageView) view.findViewById(R.id.IMG_SERVICE);
-                        TXT_SERVICENAME = (SFNFTextView) view.findViewById(R.id.TXT_SERVICENAME);
 
-                        if (!mParam1.getString("selected_image").trim().equals("")) {
-                            Glide.with(getActivity()).load(mParam1.getString("selected_image")).into(IMG_SERVICE);
+                        if (!AllPetJsonObject.getJSONArray("serviceCatList").getJSONObject(0).getString("selected_image").trim().equals("")) {
+                            Glide.with(getActivity()).load(AllPetJsonObject.getJSONArray("serviceCatList").getJSONObject(0).getString("selected_image")).into(IMG_SERVICE);
                         }
+                        (TXT_SERVICENAME).setText(AllPetJsonObject.getJSONArray("serviceCatList").getJSONObject(0).getString("name"));
+                        TXT_SERVICENAME.setTag(AllPetJsonObject.getJSONArray("serviceCatList").getJSONObject(0).getString("id"));
 
-                        (TXT_SERVICENAME).setText(mParam1.getString("name"));
-                        TXT_SERVICENAME.setTag(mParam1.getString("id"));
 
                         TXT_Loction.setText(mParam1.getString("LocationName"));
 
