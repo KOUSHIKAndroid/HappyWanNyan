@@ -265,7 +265,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
         setGetAPIPostData = new SetGetAPIPostData();
         setGetAPIPostData.setPARAMS("per_page");
-        setGetAPIPostData.setValues("100");
+        setGetAPIPostData.setValues("10");
         PostData.add(setGetAPIPostData);
 
 
