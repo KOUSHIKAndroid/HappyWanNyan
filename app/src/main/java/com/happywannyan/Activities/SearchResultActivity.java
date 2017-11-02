@@ -366,6 +366,7 @@ public class SearchResultActivity extends AppCompatActivity {
             finish();
             AppConstant.alwaysRedirectAfterLogin = false;
         } else {
+            Loger.MSG("AdvanceSearchBack-->",""+"Yes");
             Intent intent = new Intent();
             setResult(RESULT_FIRST_USER, intent);
             finish();

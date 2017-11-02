@@ -554,7 +554,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         }
     }
 
-
     @Override
     public void OnAdresss(String Adreess, JSONObject geo) {
         if (GPS) {
@@ -563,7 +562,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
             IMG_erase_location.setVisibility(View.VISIBLE);
         }
     }
-
 
     public void dialogChooseCause() {
 

@@ -154,6 +154,7 @@
             android:label="@string/title_activity_search_result"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+'
         <activity
             android:name="com.happywannyan.Activities.ForgotPasswordActivity"
             android:screenOrientation="portrait" />

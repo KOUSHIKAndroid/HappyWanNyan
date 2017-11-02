@@ -93,8 +93,8 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
         mapFragment.getMapAsync(this);
 
 
-        ((SearchResultActivity) getActivity()).findViewById(R.id.list).setVisibility(View.VISIBLE);
-        ((SearchResultActivity) getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
+        getActivity().findViewById(R.id.list).setVisibility(View.VISIBLE);
+        getActivity().findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
 
 //        ((SearchResultActivity)getActivity()). findViewById(R.id.fab_plus).setOnClickListener(new View.OnClickListener() {
 //            @Override
