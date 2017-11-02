@@ -155,7 +155,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                                        finish();
 
                                         AppConstant.alwaysRedirectAfterLogin=true;
-
                                         startActivity(new Intent(LoginActivity.this, SearchResultActivity.class));
                                         finish();
                                     }

@@ -47,6 +47,8 @@ public class SearchResultActivity extends AppCompatActivity {
 
         fab = (ImageView) findViewById(R.id.fab);
 
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
         if (AppConstant.alwaysRedirectAfterLogin) {
             try {
                 JSONObject SEARCHPARAMS = new JSONObject();
@@ -138,12 +140,10 @@ public class SearchResultActivity extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         }
 
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
         ListARRY = new ArrayList<>();
 
         findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
@@ -160,7 +160,6 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Loger.MSG("fab-->", "fab-->");
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.Container_result, new SearchMapFragment());
                 fragmentTransaction.disallowAddToBackStack();

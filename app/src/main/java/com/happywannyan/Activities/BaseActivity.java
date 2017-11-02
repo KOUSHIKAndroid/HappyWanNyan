@@ -367,10 +367,8 @@ public class BaseActivity extends LocationBaseActivity
 
                     @Override
                     public void OnCancel() {
-
                     }
                 });
-
             }
         });
 
@@ -486,6 +484,8 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
 
+
+
         if (getIntent().getExtras() != null) {
             //do here
             AppConstant.go_to = getIntent().getStringExtra("go_to");
@@ -498,13 +498,11 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             } else if(getIntent().getStringExtra("go_to").equals("AfterLoginSecondTimeOrMoreRedirect")){
-
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(getIntent().getStringExtra("SearchJSONSitter"), null));
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-
             }
             else {
                 fragmentManager = getSupportFragmentManager();
@@ -512,7 +510,6 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-
             }
         } else {
 
@@ -530,13 +527,16 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.commit();
             }
         }
-
         if (AppConstant.Language.equals("en")) {
             ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("日本語");
         } else {
             ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("English");
         }
     }
+
+
+
+
 
 
     @Override
