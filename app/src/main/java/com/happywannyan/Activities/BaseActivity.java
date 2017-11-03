@@ -690,8 +690,8 @@ public class BaseActivity extends LocationBaseActivity
                 try {
                     Loger.MSG("@@ DADAD", "" + data);
 
-                    if(!data.getJSONObject("info_array").getString("image_path").trim().equals("")){
-                        Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("image_path").trim()).placeholder(R.drawable.ic_user).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
+                    if(!data.getJSONObject("info_array").getString("photo").trim().equals("")){
+                        Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("photo").trim()).placeholder(R.drawable.ic_user).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
                     }
 
                     UserName.setText(data.getJSONObject("info_array").getString("firstname")+" "+data.getJSONObject("info_array").getString("lastname"));
