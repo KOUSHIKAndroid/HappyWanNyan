@@ -548,12 +548,12 @@ public final class R {
         public static final int decline = 0x7f0f00e1;
         public static final int place_autocomplete_clear_button = 0x7f0f0171;
         public static final int place_autocomplete_search_hint = 0x7f0f0172;
-        public static final int store_picture_message = 0x7f0f01aa;
-        public static final int store_picture_title = 0x7f0f01ab;
-        public static final int tagmanager_preview_dialog_button = 0x7f0f01b0;
-        public static final int tagmanager_preview_dialog_message = 0x7f0f01b1;
-        public static final int tagmanager_preview_dialog_title = 0x7f0f01b2;
-        public static final int wallet_buy_button_place_holder = 0x7f0f01ca;
+        public static final int store_picture_message = 0x7f0f01ab;
+        public static final int store_picture_title = 0x7f0f01ac;
+        public static final int tagmanager_preview_dialog_button = 0x7f0f01b1;
+        public static final int tagmanager_preview_dialog_message = 0x7f0f01b2;
+        public static final int tagmanager_preview_dialog_title = 0x7f0f01b3;
+        public static final int wallet_buy_button_place_holder = 0x7f0f01cb;
     }
     public static final class style {
         public static final int CastExpandedController = 0x7f1000a6;

@@ -41,7 +41,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
-            android:onClick="onClick">
+            >
 
 
             <com.happywannyan.Font.SFNFTextView
@@ -114,7 +114,6 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
-            android:onClick="onClick"
             android:orientation="horizontal">
 
             <ImageView
