@@ -92,6 +92,7 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
     ArrayList<SetGetPetService> arraySetGetPetService;
 
     JSONObject AllPetJsonObject = null;
+    JSONObject Geo;
 
     public AdvancedSearchFragment() {
         // Required empty public constructor
@@ -488,6 +489,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                     GPS = false;
                     IMG_erase_location.setVisibility(View.GONE);
                 } else {
+                    mParam1 = null;
+                    place = null;
                     GPS = true;
                     MyLocalLocationManager.setLogType(LogType.GENERAL);
                     ((BaseActivity) getActivity()).getLocation(new Events() {
@@ -539,6 +542,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
                     break;
                 case PLACE_AUTOCOMPLETE_REQUEST_CODE:
+                    mParam1 = null;
+                    Geo = null;
                     place = PlacePicker.getPlace(getActivity(), data);
                     Loger.MSG("@@ PLACE", "" + place.getLatLng());
                     Loger.MSG("@@ PLACE", "- " + place.getName());
@@ -546,7 +551,6 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
                     String Location = "" + place.getName();
                     TXT_Loction.setText(Location);
                     break;
-
             }
 
         } else if (requestCode == 101) {
@@ -557,9 +561,10 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
     @Override
     public void OnAdresss(String Adreess, JSONObject geo) {
         if (GPS) {
-            Loger.MSG("Address-->",Adreess);
+            Loger.MSG("Address-->", Adreess);
             TXT_Loction.setText(Adreess);
             IMG_erase_location.setVisibility(View.VISIBLE);
+            this.Geo = geo;
         }
     }
 
@@ -725,123 +730,166 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
 
         Intent intent = new Intent(new Intent(getActivity(), SearchResultActivity.class));
         try {
-            JSONObject SEARCHPARAMS = new JSONObject();
+
+            if (TXT_Loction.getText().toString().trim().equals("")) {
+                TXT_Loction.setHintTextColor(Color.RED);
+            } else {
+
+                JSONObject SEARCHPARAMS = new JSONObject();
 
                     /*
                      @@ Make JSONARRY for Next Page Serach
                      */
 
-            JSONArray Searchkeyinfor = new JSONArray();
-            JSONObject data = new JSONObject();
-            data.put("name", "start_date");
-            data.put("value", StartDate);
-            Searchkeyinfor.put(data);
-
-            data = new JSONObject();
-            data.put("name", "end_date");
-            data.put("value", EndDate);
-            Searchkeyinfor.put(data);
-
-            data = new JSONObject();
-            data.put("name", "serviceCat");
-            data.put("value", "" + TXT_SERVICENAME.getTag());
-            Searchkeyinfor.put(data);
-
-            data = new JSONObject();
-            data.put("name", "pet_type");
-            data.put("value", TXT_petType.getTag());
-            Searchkeyinfor.put(data);
-
-            data = new JSONObject();
-            data.put("name", "high_price");
-            data.put("value", HighPrice);
-            Searchkeyinfor.put(data);
-
-            data = new JSONObject();
-            data.put("name", "low_price");
-            data.put("value", LowPrice);
-            Searchkeyinfor.put(data);
-
-
-            if (place != null) {
-
-                data = new JSONObject();
-                data.put("name", "srch_lon");
-                data.put("value", place.getLatLng().longitude);
+                JSONArray Searchkeyinfor = new JSONArray();
+                JSONObject data = new JSONObject();
+                data.put("name", "start_date");
+                data.put("value", StartDate);
                 Searchkeyinfor.put(data);
 
                 data = new JSONObject();
-                data.put("name", "srch_lat");
-                data.put("value", place.getLatLng().latitude);
+                data.put("name", "end_date");
+                data.put("value", EndDate);
                 Searchkeyinfor.put(data);
 
                 data = new JSONObject();
-                data.put("name", "ne_lng");
-                data.put("value", place.getViewport().northeast.longitude);
+                data.put("name", "serviceCat");
+                data.put("value", "" + TXT_SERVICENAME.getTag());
                 Searchkeyinfor.put(data);
 
                 data = new JSONObject();
-                data.put("name", "ne_lat");
-                data.put("value", place.getViewport().northeast.latitude);
-                Searchkeyinfor.put(data);
-
-
-                data = new JSONObject();
-                data.put("name", "sw_lng");
-                data.put("value", place.getViewport().southwest.longitude);
+                data.put("name", "pet_type");
+                data.put("value", TXT_petType.getTag());
                 Searchkeyinfor.put(data);
 
                 data = new JSONObject();
-                data.put("name", "sw_lat");
-                data.put("value", place.getViewport().southwest.latitude);
-                Searchkeyinfor.put(data);
-
-
-                SEARCHPARAMS.put("LocationName", place.getName());
-
-                SEARCHPARAMS.put("Address", place.getAddress());
-            } else {
-                data = new JSONObject();
-                data.put("name", "srch_lon");
-                data.put("value", mParam1.getJSONObject("latlng").getString("lng"));
+                data.put("name", "high_price");
+                data.put("value", HighPrice);
                 Searchkeyinfor.put(data);
 
                 data = new JSONObject();
-                data.put("name", "srch_lat");
-                data.put("value", mParam1.getJSONObject("latlng").getString("lat"));
-                Searchkeyinfor.put(data);
-
-                data = new JSONObject();
-                data.put("name", "ne_lng");
-                data.put("value", mParam1.getJSONObject("viewport").getString("northeast_LNG"));
-                Searchkeyinfor.put(data);
-
-                data = new JSONObject();
-                data.put("name", "ne_lat");
-                data.put("value", mParam1.getJSONObject("viewport").getString("northeast_LAT"));
+                data.put("name", "low_price");
+                data.put("value", LowPrice);
                 Searchkeyinfor.put(data);
 
 
-                data = new JSONObject();
-                data.put("name", "sw_lng");
-                data.put("value", mParam1.getJSONObject("viewport").getString("southwest_LNG"));
-                Searchkeyinfor.put(data);
+                if (place != null) {
 
-                data = new JSONObject();
-                data.put("name", "sw_lat");
-                data.put("value", mParam1.getJSONObject("viewport").getString("southwest_LAT"));
-                Searchkeyinfor.put(data);
+                    data = new JSONObject();
+                    data.put("name", "srch_lon");
+                    data.put("value", place.getLatLng().longitude);
+                    Searchkeyinfor.put(data);
 
-                SEARCHPARAMS.put("Address", mParam1.getString("Address"));
-                SEARCHPARAMS.put("LocationName", mParam1.getString("LocationName"));
+                    data = new JSONObject();
+                    data.put("name", "srch_lat");
+                    data.put("value", place.getLatLng().latitude);
+                    Searchkeyinfor.put(data);
 
+                    data = new JSONObject();
+                    data.put("name", "ne_lng");
+                    data.put("value", place.getViewport().northeast.longitude);
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "ne_lat");
+                    data.put("value", place.getViewport().northeast.latitude);
+                    Searchkeyinfor.put(data);
+
+
+                    data = new JSONObject();
+                    data.put("name", "sw_lng");
+                    data.put("value", place.getViewport().southwest.longitude);
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "sw_lat");
+                    data.put("value", place.getViewport().southwest.latitude);
+                    Searchkeyinfor.put(data);
+
+
+                    SEARCHPARAMS.put("LocationName", place.getName());
+
+                    SEARCHPARAMS.put("Address", place.getAddress());
+                } else if (mParam1 != null) {
+                    data = new JSONObject();
+                    data.put("name", "srch_lon");
+                    data.put("value", mParam1.getJSONObject("latlng").getString("lng"));
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "srch_lat");
+                    data.put("value", mParam1.getJSONObject("latlng").getString("lat"));
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "ne_lng");
+                    data.put("value", mParam1.getJSONObject("viewport").getString("northeast_LNG"));
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "ne_lat");
+                    data.put("value", mParam1.getJSONObject("viewport").getString("northeast_LAT"));
+                    Searchkeyinfor.put(data);
+
+
+                    data = new JSONObject();
+                    data.put("name", "sw_lng");
+                    data.put("value", mParam1.getJSONObject("viewport").getString("southwest_LNG"));
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "sw_lat");
+                    data.put("value", mParam1.getJSONObject("viewport").getString("southwest_LAT"));
+                    Searchkeyinfor.put(data);
+
+                    SEARCHPARAMS.put("Address", mParam1.getString("Address"));
+                    SEARCHPARAMS.put("LocationName", mParam1.getString("LocationName"));
+
+                } else {
+
+                    data = new JSONObject();
+                    data.put("name", "srch_lon");
+                    data.put("value", Geo.getJSONObject("location").getString("lng"));
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "srch_lat");
+                    data.put("value", Geo.getJSONObject("location").getString("lat"));
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "ne_lng");
+                    data.put("value", Geo.getJSONObject("viewport").getJSONObject("southwest").getString("lng") + "");
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "ne_lat");
+                    data.put("value", Geo.getJSONObject("viewport").getJSONObject("northeast").getString("lat") + "");
+                    Searchkeyinfor.put(data);
+
+
+                    data = new JSONObject();
+                    data.put("name", "sw_lng");
+                    data.put("value", Geo.getJSONObject("viewport").getJSONObject("southwest").getString("lng") + "");
+                    Searchkeyinfor.put(data);
+
+                    data = new JSONObject();
+                    data.put("name", "sw_lat");
+                    data.put("value", Geo.getJSONObject("viewport").getJSONObject("southwest").getString("lat") + "");
+                    Searchkeyinfor.put(data);
+
+                    SEARCHPARAMS.put("Address", TXT_Loction.getText());
+                    SEARCHPARAMS.put("LocationName", TXT_Loction.getText());
+
+
+                }
+
+
+                SEARCHPARAMS.put("keyinfo", Searchkeyinfor);
+
+                intent.putExtra(SearchResultActivity.SEARCHKEY, SEARCHPARAMS.toString());
+                startActivityForResult(intent, 101);
             }
-
-
-            SEARCHPARAMS.put("keyinfo", Searchkeyinfor);
-
-            intent.putExtra(SearchResultActivity.SEARCHKEY, SEARCHPARAMS.toString());
-            startActivityForResult(intent, 101);
 
         } catch (JSONException e) {
             Loger.Error(TAG, " " + e.getMessage());

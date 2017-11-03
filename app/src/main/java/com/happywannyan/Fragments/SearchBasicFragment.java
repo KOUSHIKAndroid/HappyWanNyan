@@ -360,6 +360,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
 
                     SearchJSONSitter.put("LocationName", TXT_Loction.getText());
                     SearchJSONSitter.put("latlng", Geo.getJSONObject("location"));
+                    Loger.MSG("Geo_LatLng",""+Geo.getJSONObject("location"));
                     SearchJSONSitter.put("viewport", ViewPort);
                     SearchJSONSitter.put("Address", TXT_Loction.getText());
                     SearchJSONSitter.put("StartDate", StartDate);
