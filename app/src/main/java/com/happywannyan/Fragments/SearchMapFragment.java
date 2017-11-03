@@ -172,7 +172,7 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
         Map.setOnCameraIdleListener(this);
         Map.setOnCameraMoveStartedListener(this);
         Map.setOnCameraMoveListener(this);
-        Map.setMinZoomPreference((float) 4.99);
+//        Map.setMinZoomPreference((float) 4.99);
         Map.getUiSettings().setRotateGesturesEnabled(false);
         Map.getUiSettings().setScrollGesturesEnabled(true);
         Map.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
