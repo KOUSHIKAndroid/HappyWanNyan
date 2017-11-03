@@ -38,7 +38,6 @@ public class AppLocationProvider {
 
 
     public void OnGetAddress(Context context, final Location location, final AddressListener addressListener) {
-        if (NetworkUtil.getInstance().isNetworkAvailable(context)) {
             new AsyncTask<Void, Void, String>() {
 
                 private String respose = null;
@@ -94,9 +93,5 @@ public class AppLocationProvider {
                     }
                 }
             }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        } else {
-            Loger.MSG("NetworkFail-->", "Yes");
-            Toast.makeText(context, context.getResources().getString(R.string.please_check_your_internet_connection), Toast.LENGTH_SHORT).show();
-        }
     }
 }
