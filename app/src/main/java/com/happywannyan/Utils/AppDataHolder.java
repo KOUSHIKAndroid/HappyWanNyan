@@ -19,6 +19,7 @@ public abstract class AppDataHolder {
     public abstract Void userDetailsAbstract(String UserId);
 
     SharedPreferences AppUserData;
+
     Activity activity;
 
     public void logOutClearAllData() {
