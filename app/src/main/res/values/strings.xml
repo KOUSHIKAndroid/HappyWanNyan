@@ -311,5 +311,8 @@
     <string name="password_miss_match">Password Miss Match</string>
     <string name="message_has_been_sent_successfully">Message has been sent successfully</string>
     <string name="are_you_sure_want_to_close">Are you sure want to close</string>
+    <string name="please_select_start_date">Please select Start Date</string>
+    <string name="please_select_end_date">Please select End Date</string>
+    <string name="reservation_request_sent">Reservation Request Sent !</string>
 
 </resources>

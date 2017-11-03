@@ -407,7 +407,7 @@ public class MyProfileFragment extends Fragment {
             place = PlacePicker.getPlace(getActivity(), data);
             Loger.MSG("@@ PLACE", "" + place.getLatLng());
             Loger.MSG("@@ ViewPosrt", "- " + place.getViewport().toString());
-            String Location = "" + place.getName();
+            String Location = ""+place.getAddress();
             TXT_Loction.setText(Location);
         } else {
 //            Toast.makeText(getActivity(), "Image Error", Toast.LENGTH_SHORT).show();

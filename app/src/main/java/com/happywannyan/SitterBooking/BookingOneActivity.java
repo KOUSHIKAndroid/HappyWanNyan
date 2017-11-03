@@ -261,7 +261,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 try {
                     JSONObject jsonObject = new JSONObject(Result);
                     if (jsonObject.getBoolean("response")) {
-                        Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.reservation_request_sent), Toast.LENGTH_SHORT).show();
                         //finish();
                         Intent intent = new Intent(BookingOneActivity.this, BaseActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
