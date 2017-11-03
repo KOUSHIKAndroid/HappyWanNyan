@@ -723,6 +723,7 @@ public class BaseActivity extends LocationBaseActivity
                 navigationView.findViewById(R.id.LL_Logout).setVisibility(View.GONE);
                 navigationView.findViewById(R.id.LL_Favorite).setVisibility(View.GONE);
                 navigationView.findViewById(R.id.LL_Past_Favorite).setVisibility(View.GONE);
+                navigationView.findViewById(R.id.LL_Account).setVisibility(View.GONE);
 
                 navigationView.getHeaderView(0).findViewById(R.id.RL_HEADER).setOnClickListener(new View.OnClickListener() {
                     @Override
