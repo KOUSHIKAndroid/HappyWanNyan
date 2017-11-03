@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.happywannyan.Adapter.LoginFragmentViewPager;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Login_Slider.slider1;
 import com.happywannyan.Login_Slider.slider2;
@@ -97,7 +98,8 @@ public class LoginChooserActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.TXT_skip:
-                startActivity(new Intent(LoginChooserActivity.this, BaseActivity.class));
+                startActivity(new Intent(LoginChooserActivity.this, SearchResultActivity.class));
+                AppConstant.alwaysRedirectAfterLogin=true;
                 finish();
                 break;
             case R.id.LL_Facbook:
