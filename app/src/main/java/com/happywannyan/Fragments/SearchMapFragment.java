@@ -125,11 +125,19 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
     @Override
     public void onCameraIdle() {
         Loger.MSG("@@ Zoom", " " + Map.getCameraPosition().zoom);
+        Loger.MSG("@@southwestLatitude", " " + Map.getProjection().getVisibleRegion().latLngBounds.southwest.latitude);
+        Loger.MSG("@@southwestLongitude", " " + Map.getProjection().getVisibleRegion().latLngBounds.southwest.longitude);
+        Loger.MSG("@@northeastLatitude", " " + Map.getProjection().getVisibleRegion().latLngBounds.northeast.latitude);
+        Loger.MSG("@@northeastLatitude", " " + Map.getProjection().getVisibleRegion().latLngBounds.northeast.longitude);
     }
 
     @Override
     public void onCameraMove() {
 //        Loger.MSG("@@ ViewPost"," "+Map.getProjection().getVisibleRegion().latLngBounds.southwest.latitude);
+//        Loger.MSG("@@southwestLatitude"," "+Map.getProjection().getVisibleRegion().latLngBounds.southwest.latitude);
+//        Loger.MSG("@@southwestLongitude"," "+Map.getProjection().getVisibleRegion().latLngBounds.southwest.longitude);
+//        Loger.MSG("@@northeastLatitude"," "+Map.getProjection().getVisibleRegion().latLngBounds.northeast.latitude);
+//        Loger.MSG("@@northeastLatitude"," "+Map.getProjection().getVisibleRegion().latLngBounds.northeast.longitude);
 //
 //        if(Map.getCameraPosition().zoom>5 && Map.getProjection().getVisibleRegion().latLngBounds.northeast.latitude<
 //                PresetLatBounds.northeast.latitude && Map.getProjection().getVisibleRegion().latLngBounds.southwest.latitude> PresetLatBounds.southwest.latitude
@@ -145,7 +153,11 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
 
     @Override
     public void onCameraMoveStarted(int i) {
-
+//        Loger.MSG("@@southwestLatitude", " " + Map.getProjection().getVisibleRegion().latLngBounds.southwest.latitude);
+//        Loger.MSG("@@southwestLongitude", " " + Map.getProjection().getVisibleRegion().latLngBounds.southwest.longitude);
+//        Loger.MSG("@@northeastLatitude", " " + Map.getProjection().getVisibleRegion().latLngBounds.northeast.latitude);
+//        Loger.MSG("@@northeastLatitude", " " + Map.getProjection().getVisibleRegion().latLngBounds.northeast.longitude);
+//        Loger.MSG("onCameraMoveStarted", "-->" + i);
     }
 
     @Override
@@ -158,6 +170,7 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
     public void onMapReady(GoogleMap googleMap) {
         Map = googleMap;
         Map.setOnCameraIdleListener(this);
+        Map.setOnCameraMoveStartedListener(this);
         Map.setOnCameraMoveListener(this);
         Map.setMinZoomPreference((float) 4.99);
         Map.getUiSettings().setRotateGesturesEnabled(false);
