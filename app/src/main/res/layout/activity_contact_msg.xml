@@ -37,11 +37,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/RL_HEADER">
+        android:layout_below="@+id/RL_HEADER"
+        android:fillViewport="true">
 
         <RelativeLayout
+            android:id="@+id/contactmsglayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingBottom="20dp">
 
             <android.support.v7.widget.CardView
@@ -65,19 +67,19 @@
                         android:background="@drawable/ic_edit_background"
                         android:gravity="bottom"
                         android:hint="@string/FirestName"
-                        android:singleLine="true"
-                        android:padding="10dp" />
+                        android:padding="10dp"
+                        android:singleLine="true" />
 
                     <EditText
-                        android:layout_marginTop="10dp"
                         android:id="@+id/EDX_last_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/ic_edit_background"
                         android:gravity="bottom"
                         android:hint="@string/LastName"
-                        android:singleLine="true"
-                        android:padding="10dp" />
+                        android:padding="10dp"
+                        android:singleLine="true" />
 
                 </LinearLayout>
 
@@ -85,10 +87,10 @@
 
 
             <android.support.v7.widget.CardView
-                android:layout_below="@+id/Crad0"
                 android:id="@+id/Crad1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/Crad0"
                 android:layout_margin="5dp"
                 app:cardBackgroundColor="@color/colorWhite"
                 app:cardElevation="5dp">
@@ -114,12 +116,15 @@
                     <EditText
                         android:id="@+id/EDX_msg"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/ic_edit_background"
                         android:gravity="top"
-                        android:minLines="5"
-                        android:padding="10dp" />
+                        android:nestedScrollingEnabled="true"
+                        android:overScrollMode="always"
+                        android:padding="10dp"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical" />
 
                 </LinearLayout>
 

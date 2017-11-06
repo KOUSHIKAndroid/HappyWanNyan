@@ -184,7 +184,7 @@
         <activity
             android:name="com.happywannyan.Activities.profile.ContactMsgActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.happywannyan.Activities.MessageDetailsPageActivity"
             android:screenOrientation="portrait"
