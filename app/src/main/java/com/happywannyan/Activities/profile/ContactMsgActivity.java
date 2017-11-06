@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.happywannyan.Constant.AppConstant;
@@ -49,6 +50,7 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
     String ID = "";
     AppLoader appLoader;
     CheckBox CHEK;
+    ScrollView contactmsglayout;
 
     public ContactMsgActivity() throws JSONException {
     }
@@ -60,9 +62,21 @@ public class ContactMsgActivity extends AppCompatActivity implements View.OnClic
 
         setupParent(findViewById(R.id.contactmsglayout));
 
+        contactmsglayout= (ScrollView) findViewById(R.id.contactmsglayout);
+
         EDX_msg = (EditText) findViewById(R.id.EDX_msg);
         EDX_first_name = (EditText) findViewById(R.id.EDX_first_name);
         EDX_last_name = (EditText) findViewById(R.id.EDX_last_name);
+
+        EDX_msg.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                contactmsglayout.requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
+
+
 
         CHEK = (CheckBox) findViewById(R.id.CHEK);
         ID = getIntent().getStringExtra("DATA");

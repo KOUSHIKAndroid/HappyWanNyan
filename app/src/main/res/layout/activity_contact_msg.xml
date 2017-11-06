@@ -35,13 +35,13 @@
     </RelativeLayout>
 
     <ScrollView
+        android:id="@+id/contactmsglayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/RL_HEADER"
         android:fillViewport="true">
 
         <RelativeLayout
-            android:id="@+id/contactmsglayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp">
@@ -120,10 +120,7 @@
                         android:layout_marginTop="10dp"
                         android:background="@drawable/ic_edit_background"
                         android:gravity="top"
-                        android:nestedScrollingEnabled="true"
-                        android:overScrollMode="always"
                         android:padding="10dp"
-                        android:scrollbarStyle="insideInset"
                         android:scrollbars="vertical" />
 
                 </LinearLayout>
