@@ -17,6 +17,7 @@ import com.happywannyan.Login_Slider.slider2;
 import com.happywannyan.Login_Slider.slider3;
 import com.happywannyan.Login_Slider.slider4;
 import com.happywannyan.R;
+import com.happywannyan.Utils.Loger;
 
 import java.util.LinkedList;
 
@@ -122,7 +123,14 @@ public class LoginChooserActivity extends AppCompatActivity implements View.OnCl
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == FacebookActivity.FacebookResponse && resultCode == RESULT_OK) {
-            startActivity(new Intent(LoginChooserActivity.this, BaseActivity.class));
+//            startActivity(new Intent(LoginChooserActivity.this, BaseActivity.class));
+//            finish();
+
+            AppConstant.alwaysRedirectAfterLogin = true;
+
+            Loger.MSG("RedirectAfterLogin-->","True");
+
+            startActivity(new Intent(LoginChooserActivity.this, SearchResultActivity.class));
             finish();
         }
 

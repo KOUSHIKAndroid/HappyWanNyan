@@ -73,7 +73,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == FacebookActivity.FacebookResponse && resultCode == RESULT_OK) {
 
+
             AppConstant.alwaysRedirectAfterLogin = true;
+
+            Loger.MSG("RedirectAfterLogin-->","True");
+
             startActivity(new Intent(LoginActivity.this, SearchResultActivity.class));
             finish();
 //
