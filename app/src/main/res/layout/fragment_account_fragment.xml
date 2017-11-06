@@ -32,15 +32,15 @@
     </RelativeLayout>
 
     <ScrollView
-        android:fillViewport="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/RL_HEADER">
+        android:layout_below="@+id/RL_HEADER"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:padding="10dp"
             android:orientation="vertical">
 
             <com.happywannyan.Font.SFNFTextView
@@ -55,7 +55,7 @@
                 android:id="@+id/tv_email_show"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Your current Email: koushik.sarkar@esolzmail.com"
                 android:textColor="@color/colorBlack"
                 android:textSize="14sp" />
@@ -67,13 +67,13 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/new_email_address"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/EDX_new_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_curve_border"
                 android:minLines="1"
                 android:padding="10dp"
@@ -82,16 +82,16 @@
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/confirm_email_address"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/EDX_confirm_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_curve_border"
                 android:minLines="1"
                 android:padding="10dp"
@@ -102,6 +102,7 @@
                 android:id="@+id/tv_change_email"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:textSize="16dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
@@ -120,16 +121,16 @@
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/old_password"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/EDX_old_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_curve_border"
                 android:minLines="1"
                 android:padding="10dp"
@@ -139,16 +140,16 @@
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/new_password"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/EDX_new_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_curve_border"
                 android:minLines="1"
                 android:padding="10dp"
@@ -158,16 +159,16 @@
             <com.happywannyan.Font.SFNFTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/confirm_password"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/EDX_confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_curve_border"
                 android:minLines="1"
                 android:padding="10dp"
@@ -180,6 +181,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
+                android:textSize="16dp"
                 android:text="@string/change_password" />
 
         </LinearLayout>
