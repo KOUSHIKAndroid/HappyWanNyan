@@ -16,12 +16,16 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -49,35 +53,52 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class AddAnotherPetsActivity extends AppCompatActivity implements View.OnClickListener {
-    JSONArray other_info;
-    AppLoader appLoader;
-    JSONArray PetService;
-    String PetTypeId = "";
-    EditText TXTName;
-    JSONArray SelectObject;
-    RadioGroup Radio_Catspayed, Rad_catf;
-    JSONArray Text, InputArea, Select, RadioArray;
+    private JSONArray other_info;
+    private AppLoader appLoader;
+    private JSONArray PetService;
+    private String PetTypeId = "";
+    private EditText TXTName;
+    private JSONArray SelectObject;
+    private RadioGroup Radio_Catspayed, Rad_catf;
+    private JSONArray Text, InputArea, Select, RadioArray;
 
-    AlertDialog Dialog;
-    ImageView img_pet;
+    private AlertDialog Dialog;
+    private ImageView img_pet;
     private static final int REQUEST_WRITE_PERMISSION1 = 3000;
     private static final int REQUEST_WRITE_PERMISSION2 = 4000;
     final String BITMAP_STORAGE_URL = "IMAGE_URL";
     private int PICK_IMAGE_REQUEST = 100;
     private int CAMERA_CAPTURE = 200;
 
-    File photofile = null;
+    private File photofile = null;
+
+    private EditText EditDescribe;
+    private ScrollView add_another_Scrolllayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_another_pets);
+
+        setupParent(findViewById(R.id.add_another_Scrolllayout));
+
         appLoader = new AppLoader(this);
         appLoader.Show();
         TXTName = (EditText) findViewById(R.id.TXTName);
         Radio_Catspayed = (RadioGroup) findViewById(R.id.Radio_Catspayed);
         Rad_catf = (RadioGroup) findViewById(R.id.Rad_catf);
         img_pet = (ImageView) findViewById(R.id.img_pet);
+        add_another_Scrolllayout= (ScrollView) findViewById(R.id.add_another_Scrolllayout);
+        EditDescribe= (EditText) findViewById(R.id.EditDescribe);
+
+        EditDescribe.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                add_another_Scrolllayout.requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
+
         new AppConstant(this);
         new CustomJSONParser().APIForGetMethod(AddAnotherPetsActivity.this,AppConstant.BASEURL + "parent_service?langid="+AppConstant.Language+"&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
@@ -847,5 +868,37 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         returnIntent.putExtra("result","done");
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
+    }
+
+    private void setupParent(View view)
+    {
+        if(!(view instanceof EditText))
+        {
+            view.setOnTouchListener(new View.OnTouchListener()
+            {
+                public boolean onTouch(View v, MotionEvent event)
+                {
+                    hideSoftKeyboard();
+                    return false;
+                }
+            });
+        }
+        if (view instanceof ViewGroup)
+        {
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++)
+            {
+                View innerView = ((ViewGroup) view).getChildAt(i);
+                setupParent(innerView);
+            }
+        }
+    }
+
+    private void hideSoftKeyboard()
+    {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        if (getCurrentFocus()!=null)
+        {
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
     }
 }

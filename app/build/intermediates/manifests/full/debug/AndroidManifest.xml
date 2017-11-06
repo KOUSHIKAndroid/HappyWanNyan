@@ -172,7 +172,7 @@
         <activity
             android:name="com.happywannyan.Activities.AddAnotherPetsActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.happywannyan.Activities.EditAnotherPetsActivity"
             android:screenOrientation="portrait"

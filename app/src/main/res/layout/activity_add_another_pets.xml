@@ -36,22 +36,23 @@
     </RelativeLayout>
 
     <ScrollView
+        android:id="@+id/add_another_Scrolllayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/RL_HEADER"
-        android:fillViewport="true">
+        android:fillViewport="true"
+       >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/colorWhite">
 
             <RelativeLayout
                 android:id="@+id/Hea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/RL_HEADER"
                 android:onClick="onClick"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
@@ -365,14 +366,14 @@
                         android:layout_marginTop="10dp">
 
                         <EditText
-                            android:scrollbars="vertical"
                             android:id="@+id/EditDescribe"
-                            android:gravity="top"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="100dp"
                             android:hint="@string/describeyourpet"
-                            android:maxLines="5"
-                            android:minLines="4" />
+                            android:gravity="top"
+                            android:padding="10dp"
+                            android:scrollbars="vertical" />
+
                     </android.support.design.widget.TextInputLayout>
 
 
@@ -394,9 +395,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/B1"
                             android:orientation="horizontal"
-                            android:tag="A">
+                            android:tag="A"/>
 
-                        </RadioGroup>
                     </RelativeLayout>
 
                     <View
@@ -425,9 +425,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/C1"
                             android:orientation="horizontal"
-                            android:tag="A">
-
-                        </RadioGroup>
+                            android:tag="A"/>
                     </RelativeLayout>
 
                     <View
