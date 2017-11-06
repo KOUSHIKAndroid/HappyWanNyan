@@ -75,9 +75,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
             AppConstant.alwaysRedirectAfterLogin = true;
-
-            Loger.MSG("RedirectAfterLogin-->","True");
-
             startActivity(new Intent(LoginActivity.this, SearchResultActivity.class));
             finish();
 //
