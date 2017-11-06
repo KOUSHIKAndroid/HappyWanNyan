@@ -23,6 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -58,6 +59,7 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
+
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
@@ -70,6 +72,7 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Activities.SplashActivity"
             android:screenOrientation="portrait">
@@ -85,11 +88,13 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <service android:name=".PushNotification.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
         <!-- <service android:name=".MyJobService" -->
         <!-- android:exported="false"> -->
         <!-- <intent-filter> -->
@@ -100,39 +105,40 @@
         <activity
             android:name=".Activities.LoginChooserActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activities.LoginActivity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activities.CalenderActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
 
         <activity
             android:name=".Activities.SignUpActivity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".Activities.profile.ProfileDetailsActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|adjustResize"
-            />
+            android:windowSoftInputMode="adjustPan" />
 
         <activity
             android:name=".Activities.BaseActivity"
             android:label="@string/title_activity_base"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan|adjustResize"/>
+            android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name=".Activities.FacebookActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.FacebookActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".SitterBooking.BookingOneActivity"
-            android:screenOrientation="portrait"
-             />
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activities.SearchResultActivity"
             android:label="@string/title_activity_search_result"
@@ -142,33 +148,36 @@
 
         <activity
             android:name=".Activities.ForgotPasswordActivity"
-            android:screenOrientation="portrait"
-             />
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activities.ResetPasswordActivity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activities.Booking.BookingDetailsActivity"
-            android:screenOrientation="portrait"
-             />
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activities.AddAnotherPetsActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|adjustResize"/>
+            android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name=".Activities.EditAnotherPetsActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
 
         <activity
             android:name=".Activities.profile.MeetUpWannyanActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name=".Activities.profile.ContactMsgActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name=".Activities.MessageDetailsPageActivity"
             android:screenOrientation="portrait"
@@ -176,7 +185,8 @@
 
         <activity
             android:name=".Activities.Booking.CancelBookingWithReasonsActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
         <!--<activity android:name="com.cooltechworks.creditcarddesign.CardEditActivity"-->
         <!--android:theme="@style/AppTheme"-->
         <!--android:screenOrientation="portrait"-->
@@ -190,24 +200,29 @@
             android:name=".Activities.Booking.AcceptBookingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name=".Activities.Booking.AddReviewActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name=".SitterBooking.NewCardAddActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+
 
         <activity
             android:name=".Activities.SignUpSuccessfullyMsgActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
+
         <activity
             android:name=".Activities.Booking.PaymentPendingBookingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -218,6 +233,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_path" />
         </provider>
+
 
     </application>
 
