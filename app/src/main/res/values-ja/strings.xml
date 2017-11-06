@@ -293,5 +293,6 @@
     <string name="please_select_start_date">開始日を選択してください</string>
     <string name="please_select_end_date">終了日を選択してください</string>
     <string name="reservation_request_sent">予約リクエストを送信しました</string>
+    <string name="optional_filter">オプションのフィルタ</string>
 
 </resources>

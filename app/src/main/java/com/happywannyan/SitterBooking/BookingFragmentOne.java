@@ -48,6 +48,9 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
 
     JSONArray ExtraPopup;
 
+    boolean boolean_how_many_times=false,boolean_no_of_visits=false;
+
+
     LinearLayout LL_S_F;
     RelativeLayout RL_SingleDate, RL_ExtraDropDown;
     private OnFragmentInteractionListener mListener;
@@ -339,6 +342,9 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                                             no_of_times = "1";
                                             no_of_visit = "0";
                                             ExtraPopup = jsonObject.getJSONArray("no_of_times_dropdown");
+
+                                            boolean_how_many_times=true;
+
                                             TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                                             TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
                                         }
@@ -349,6 +355,9 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                                             no_of_times = "0";
                                             no_of_visit = "1";
                                             ExtraPopup = jsonObject.getJSONArray("no_of_visit_dropdown");
+
+                                            boolean_no_of_visits=true;
+
                                             TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                                             TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
                                         }
@@ -372,17 +381,34 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
 
             case R.id.RL_ExtraDropDown:
                 Loger.MSG("ExtraPopup", "" + ExtraPopup);
-                new MYAlert(getActivity()).AlertTextLsit("", ExtraPopup, "name", new MYAlert.OnSingleListTextSelected() {
-                    @Override
-                    public void OnSelectedTEXT(JSONObject jsonObject) {
-                        try {
-                            TXT_ExtarItem.setText(jsonObject.getString("name"));
-                            TXT_ExtarItem.setTag(jsonObject.getString("value"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+
+                if (boolean_how_many_times) {
+                    new MYAlert(getActivity()).AlertTextLsit(getActivity().getResources().getString(R.string.how_many_times), ExtraPopup, "name", new MYAlert.OnSingleListTextSelected() {
+                        @Override
+                        public void OnSelectedTEXT(JSONObject jsonObject) {
+                            try {
+                                TXT_ExtarItem.setText(jsonObject.getString("name"));
+                                TXT_ExtarItem.setTag(jsonObject.getString("value"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
-                    }
-                });
+                    });
+                }
+
+                if (boolean_no_of_visits) {
+                    new MYAlert(getActivity()).AlertTextLsit(getActivity().getResources().getString(R.string.how_many_visits), ExtraPopup, "name", new MYAlert.OnSingleListTextSelected() {
+                        @Override
+                        public void OnSelectedTEXT(JSONObject jsonObject) {
+                            try {
+                                TXT_ExtarItem.setText(jsonObject.getString("name"));
+                                TXT_ExtarItem.setTag(jsonObject.getString("value"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                }
                 break;
 
             case R.id.RL_SingleDate:
