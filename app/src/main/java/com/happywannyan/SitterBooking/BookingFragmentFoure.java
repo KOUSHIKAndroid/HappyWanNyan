@@ -517,6 +517,7 @@ public class BookingFragmentFoure extends Fragment {
                         try {
                             JSONObject MainObject = new JSONObject(Result);
                             JSONArray arrayJson = MainObject.getJSONArray("user_stripe_data");
+                            cardFinalSelection = arrayJson.getJSONObject(0);
                             for (int i = 0; i < arrayJson.length(); i++) {
                                 if (arrayJson.getJSONObject(i).getString("is_default").equalsIgnoreCase("1")) {
                                     cardFinalSelection = arrayJson.getJSONObject(i);
