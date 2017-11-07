@@ -20,6 +20,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
+import com.facebook.login.LoginManager;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Constant.ApplicationClass;
@@ -284,7 +289,6 @@ public class BaseActivity extends LocationBaseActivity
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         }
-
                     }
                     @Override
                     public void OnCancel() {
@@ -337,6 +341,16 @@ public class BaseActivity extends LocationBaseActivity
                                         AppConstant.UserEmail="";
                                         AppConstant.UserName="";
                                         AppConstant.UserId="";
+
+
+//                                        /////////////////Facebook logout///////////session//
+//                                        logoutFromFacebook(new LogoutFromFacebookListener() {
+//                                            @Override
+//                                            public void onLoggedOutFromFacebook() {
+//                                                Loger.MSG("Facebook-->","logout");
+//                                            }
+//                                        });
+//                                        /////////////end///////////////////////////////////
 
                                         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                                         drawer.closeDrawer(GravityCompat.START);
@@ -739,4 +753,32 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
     }
+
+
+//    ///////////////////facebook logout////////////////
+//
+//    public void logoutFromFacebook(final LogoutFromFacebookListener listener) {
+//
+//        if (AccessToken.getCurrentAccessToken() == null) {
+//            // already logged out
+//            listener.onLoggedOutFromFacebook();
+//            return;
+//        }
+//
+//        new GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, new GraphRequest
+//                .Callback() {
+//
+//            @Override
+//            public void onCompleted(GraphResponse graphResponse) {
+//
+//                LoginManager.getInstance().logOut();
+//                listener.onLoggedOutFromFacebook();
+//            }
+//        }).executeAsync();
+//    }
+//
+//    public interface LogoutFromFacebookListener {
+//
+//        void onLoggedOutFromFacebook();
+//    }
 }
