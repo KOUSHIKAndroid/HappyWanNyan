@@ -138,6 +138,9 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                             tv_times_visit.setText(getString(R.string.how_many_times));
                             no_of_times = "1";
                             no_of_visit = "0";
+
+                            boolean_how_many_times=true;
+
                             ExtraPopup = jsonObject.getJSONArray("no_of_times_dropdown");
                             TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                             TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
@@ -146,8 +149,13 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                         if (jsonObject.getString("no_of_visit").equals("1")) {
                             RL_ExtraDropDown.setVisibility(View.VISIBLE);
                             tv_times_visit.setText(getString(R.string.how_many_visits));
+
                             no_of_times = "0";
                             no_of_visit = "1";
+
+                            boolean_no_of_visits=true;
+
+
                             ExtraPopup = jsonObject.getJSONArray("no_of_visit_dropdown");
                             TXT_ExtarItem.setText(ExtraPopup.getJSONObject(0).getString("name"));
                             TXT_ExtarItem.setTag(ExtraPopup.getJSONObject(0).getString("value"));
@@ -314,6 +322,8 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
 
                 break;
             case R.id.RL_ChoseCat:
+                boolean_how_many_times=false;
+                boolean_no_of_visits=false;
                 if (!((BookingOneActivity) getActivity()).DropDown)
                     try {
                         new MYAlert(getActivity()).AlertTextLsit("" + getString(R.string.ChooseService), new JSONArray(mParam1), "service_name", new MYAlert.OnSingleListTextSelected() {
