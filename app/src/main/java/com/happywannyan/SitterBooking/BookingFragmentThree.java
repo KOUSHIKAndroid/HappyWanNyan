@@ -115,6 +115,7 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_Unit)).setText(PageObject.getJSONObject("info_array").getString("service_price"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_no_pets)).setText(PageObject.getJSONObject("info_array").getString("no_of_pet"));
             TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
+            Loger.MSG("info_array",""+PageObject.getJSONObject("info_array"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_saftyPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_CancelPolicy)).setText(PageObject.getJSONObject("info_array").getString("cancel_policy"));
 
