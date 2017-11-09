@@ -24,6 +24,7 @@ public class AppConstant extends AppDataHolder {
 
     public static String go_to = "";
     public static String login_status = "1";
+    public static boolean messageAndBookingConditionCheck = false;
     public static String message_object_string = "";
     public static boolean alwaysRedirectAfterLogin=false;
     public static String SearchJSONSitter="";

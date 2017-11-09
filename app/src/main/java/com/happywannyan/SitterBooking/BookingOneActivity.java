@@ -266,7 +266,8 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                         Intent intent = new Intent(BookingOneActivity.this, BaseActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.putExtra("go_to", "pending_message");
+                        AppConstant.go_to="pending_message";
+                        AppConstant.messageAndBookingConditionCheck=true;
                         startActivity(intent);
                         finish();
                     }

@@ -139,6 +139,7 @@ public class FacebookActivity extends AppCompatActivity {
                     JSONObject jsonObject1 = new JSONObject(Result);
                     Loger.MSG("FaceBookLogin-->",""+jsonObject1);
                     AppConstant.login_status=jsonObject1.getJSONObject("info_array").getString("login_status");
+                    AppConstant.messageAndBookingConditionCheck=false;
                     switch (jsonObject1.getString("user_status")) {
                         case "not_verified_user":
 

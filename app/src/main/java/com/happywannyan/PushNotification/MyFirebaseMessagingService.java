@@ -20,6 +20,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
 
@@ -157,9 +158,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
             Intent intent = new Intent(this, BaseActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            intent.putExtra("go_to", "message_all");
-            Loger.MSG("object", "" + messageBody.toString());
-            intent.putExtra("object", messageBody.toString());
+            AppConstant.go_to="message_all";
+            AppConstant.message_object_string=messageBody.toString();
+            AppConstant.messageAndBookingConditionCheck=true;
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                     PendingIntent.FLAG_ONE_SHOT
 //                0

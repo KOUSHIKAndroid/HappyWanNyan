@@ -152,6 +152,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         /////////////////////End////////////////////////////////////
 
                                         AppConstant.login_status = jsonObject.getJSONObject("info_array").getString("login_status");
+                                        AppConstant.messageAndBookingConditionCheck=false;
 
 //                                        startActivity(new Intent(LoginActivity.this, BaseActivity.class));
 //                                        finish();

@@ -504,11 +504,11 @@ public class BaseActivity extends LocationBaseActivity
 
 
 
-        if (getIntent().getExtras() != null) {
+        if (AppConstant.messageAndBookingConditionCheck) {
             //do here
-            AppConstant.go_to = getIntent().getStringExtra("go_to");
-            AppConstant.message_object_string = getIntent().getStringExtra("object");
+
             if (AppConstant.go_to.trim().equals("message_all")) {
+                AppConstant.messageAndBookingConditionCheck=false;
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.Base_fargment_layout, new MessageFragment());
@@ -516,6 +516,7 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.commit();
             }
             else {
+                AppConstant.messageAndBookingConditionCheck=false;
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.Base_fargment_layout, new BookingFragment());
@@ -523,7 +524,6 @@ public class BaseActivity extends LocationBaseActivity
                 fragmentTransaction.commit();
             }
         } else {
-
             if(AppConstant.login_status.equals("1")){
                 if(!AppConstant.SearchJSONSitter.equals("")){
                     fragmentManager = getSupportFragmentManager();
