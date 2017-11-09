@@ -459,9 +459,9 @@ public final class R {
         public static final int thing_proto = 0x7f0902d3;
         public static final int title_view = 0x7f0902d8;
         public static final int toolbar = 0x7f0902da;
-        public static final int url = 0x7f090345;
-        public static final int wide = 0x7f090354;
-        public static final int wrap_content = 0x7f090357;
+        public static final int url = 0x7f090346;
+        public static final int wide = 0x7f090355;
+        public static final int wrap_content = 0x7f090358;
     }
     public static final class integer {
         public static final int cast_libraries_material_featurehighlight_pulse_base_alpha = 0x7f0a0005;

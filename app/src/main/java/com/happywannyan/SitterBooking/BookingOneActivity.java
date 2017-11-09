@@ -290,4 +290,9 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

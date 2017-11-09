@@ -88,6 +88,19 @@
                     android:layout_alignParentBottom="true"
                     android:background="@color/colorGrayProject" />
 
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_add_new_pet"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBtnRed"
+                    android:text="@string/tv_add_new_pet"/>
+
+
                 <com.happywannyan.Font.SFNFTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -1,6 +1,7 @@
 package com.happywannyan.SitterBooking;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,12 +15,17 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.happywannyan.Activities.AddAnotherPetsActivity;
+import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppDataHolder;
+import com.happywannyan.Utils.AppLoader;
+import com.happywannyan.Utils.CustomJSONParser;
+import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.MethodsUtils;
 
@@ -28,6 +34,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
+
+import static android.app.Activity.RESULT_OK;
 
 
 public class BookingFragmentTwo extends Fragment implements View.OnClickListener {
@@ -41,9 +50,11 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
     private String mParam2;
 
     LinearLayout LL_MYPETS;
-    SFNFTextView TXT_PickupTime, TXT_dropTime;
+    SFNFTextView TXT_PickupTime, TXT_dropTime,tv_add_new_pet;
 
     EditText EDX_Fname, EDX_Lname;
+
+    AppLoader appLoader;
 
     private OnFragmentInteractionListener mListener;
 
@@ -77,6 +88,9 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
         super.onViewCreated(view, savedInstanceState);
         EDX_Fname = (EditText) view.findViewById(R.id.EDX_Fname);
         EDX_Lname = (EditText) view.findViewById(R.id.EDX_Lname);
+        tv_add_new_pet = (SFNFTextView) view.findViewById(R.id.tv_add_new_pet);
+
+        appLoader = new AppLoader(getActivity());
 
         new MethodsUtils().setupParent(view.findViewById(R.id.RLParent), getActivity());
 
@@ -203,18 +217,32 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
 
         SetPetList();
 
+        tv_add_new_pet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(), AddAnotherPetsActivity.class);
+                startActivityForResult(intent,100);
+            }
+        });
+
     }
 
     private void SetPetList() {
         try {
             JSONObject MainJ = new JSONObject(mParam1).getJSONObject("info_array");
             JSONArray Array = MainJ.getJSONArray("pet_section");
-            for (int i = 0; i < Array.length(); i++) {
-                CheckBox chk = new CheckBox(getActivity());
-                chk.setGravity(View.LAYOUT_DIRECTION_LTR);
-                chk.setText(Array.getJSONObject(i).getString("name"));
-                chk.setTag(Array.getJSONObject(i).getString("id"));
-                LL_MYPETS.addView(chk);
+
+            if (Array.length()>0) {
+                tv_add_new_pet.setVisibility(View.GONE);
+                for (int i = 0; i < Array.length(); i++) {
+                    CheckBox chk = new CheckBox(getActivity());
+                    chk.setGravity(View.LAYOUT_DIRECTION_LTR);
+                    chk.setText(Array.getJSONObject(i).getString("name"));
+                    chk.setTag(Array.getJSONObject(i).getString("id"));
+                    LL_MYPETS.addView(chk);
+                }
+            }else {
+                tv_add_new_pet.setVisibility(View.VISIBLE);
             }
 
         } catch (JSONException e) {
@@ -299,5 +327,41 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+            if (resultCode == RESULT_OK) {
+                if (requestCode==100) {
+                    Loger.MSG("Load-->", "Again");
+
+                    appLoader.Show();
+
+                    new CustomJSONParser().APIForPostMethod(getActivity(),AppConstant.BASEURL + "before_booking_info",((BookingOneActivity)getActivity()).FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+                        @Override
+                        public void OnSuccess(String Result) {
+                            appLoader.Dismiss();
+                            mParam1=Result;
+                            SetPetList();
+                        }
+
+                        @Override
+                        public void OnError(String Error, String Response) {
+                            appLoader.Dismiss();
+                        }
+
+                        @Override
+                        public void OnError(String Error) {
+                            appLoader.Dismiss();
+                            if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                                Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                }
+            }
+
     }
 }
