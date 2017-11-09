@@ -273,7 +273,7 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                         if (tv_times_visit.getText().toString().equalsIgnoreCase(getString(R.string.how_many_times))) {
 
                             setGetAPIPostData = new SetGetAPIPostData();
-                            setGetAPIPostData.setPARAMS("no_times");
+                            setGetAPIPostData.setPARAMS("no_of_times");
                             setGetAPIPostData.setValues(TXT_ExtarItem.getTag() + "");
                             ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
@@ -288,7 +288,7 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                             ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
 
                             setGetAPIPostData = new SetGetAPIPostData();
-                            setGetAPIPostData.setPARAMS("no_times");
+                            setGetAPIPostData.setPARAMS("no_of_times");
                             setGetAPIPostData.setValues("");
                             ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                         }
