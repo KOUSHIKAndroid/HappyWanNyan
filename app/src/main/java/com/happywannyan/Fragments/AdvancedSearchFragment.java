@@ -112,6 +112,8 @@ public class AdvancedSearchFragment extends Fragment implements AppLocationProvi
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             try {
+
+                Loger.MSG("mParam1",""+getArguments().getString(ARG_PARAM1));
                 mParam1 = new JSONObject(getArguments().getString(ARG_PARAM1));
 
                 Loger.MSG("@@ PARAM", mParam1.toString());

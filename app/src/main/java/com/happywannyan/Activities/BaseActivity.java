@@ -289,6 +289,17 @@ public class BaseActivity extends LocationBaseActivity
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         }
+                        else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AdvancedSearchFragment){
+                            fragmentManager = getSupportFragmentManager();
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.Base_fargment_layout,AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitterLanguageChange, null));
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+                            if (AppConstant.SearchJSONSitterLanguageChange.equals("")) {
+                                AppConstant.SearchJSONSitterLanguageChange = AppConstant.SearchJSONSitter;
+                            }
+                            AppConstant.SearchJSONSitter="";
+                        }
                     }
                     @Override
                     public void OnCancel() {
@@ -511,7 +522,7 @@ public class BaseActivity extends LocationBaseActivity
                 AppConstant.messageAndBookingConditionCheck=false;
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, new MessageFragment());
+                fragmentTransaction.replace(R.id.Base_fargment_layout, new MessageFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -519,7 +530,7 @@ public class BaseActivity extends LocationBaseActivity
                 AppConstant.messageAndBookingConditionCheck=false;
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, new BookingFragment());
+                fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -528,21 +539,23 @@ public class BaseActivity extends LocationBaseActivity
                 if(!AppConstant.SearchJSONSitter.equals("")){
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitter, null));
+                    AdvancedSearchFragment advancedSearchFragment=AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitter, null);
+                    fragmentTransaction.replace(R.id.Base_fargment_layout, advancedSearchFragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
+                    AppConstant.SearchJSONSitterLanguageChange = AppConstant.SearchJSONSitter;
                     AppConstant.SearchJSONSitter="";
                 }else {
                     fragmentManager = getSupportFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.Base_fargment_layout, new SearchBasicFragment());
+                    fragmentTransaction.replace(R.id.Base_fargment_layout, new SearchBasicFragment());
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }
             }else {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.Base_fargment_layout, new MyProfileFragment());
+                fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
