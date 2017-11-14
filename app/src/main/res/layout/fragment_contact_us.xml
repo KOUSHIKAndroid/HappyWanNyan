@@ -31,14 +31,14 @@
             android:textSize="@dimen/page_titiel" />
     </RelativeLayout>
 
+
     <WebView
-        android:layout_below="@+id/RL_HEADER"
         android:id="@+id/Web"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/RL_HEADER"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"></WebView>
-
+        tools:layout_editor_absoluteY="8dp" />
 
 
 </RelativeLayout>

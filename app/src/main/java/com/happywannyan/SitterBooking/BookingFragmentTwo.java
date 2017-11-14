@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.AddAnotherPetsActivity;
-import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.OnFragmentInteractionListener;
@@ -28,13 +27,10 @@ import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.MethodsUtils;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 import static android.app.Activity.RESULT_OK;
 
