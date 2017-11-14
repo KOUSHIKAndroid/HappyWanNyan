@@ -80,7 +80,7 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_another_pets);
 
-        setupParent(findViewById(R.id.add_another_Scrolllayout));
+//        setupParent(findViewById(R.id.add_another_Scrolllayout));
 
         appLoader = new AppLoader(this);
         appLoader.Show();
@@ -165,6 +165,10 @@ public class AddAnotherPetsActivity extends AppCompatActivity implements View.On
                                             findViewById(R.id.Body).setVisibility(View.VISIBLE);
                                             SETDatField(Result);
                                             appLoader.Dismiss();
+
+
+                                            TXTName.setText("");
+                                            EditDescribe.setText("");
                                         }
 
                                         @Override

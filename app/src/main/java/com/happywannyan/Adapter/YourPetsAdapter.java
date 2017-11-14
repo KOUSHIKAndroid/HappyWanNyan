@@ -129,7 +129,7 @@ public class YourPetsAdapter extends RecyclerView.Adapter<YourPetsAdapter.MyView
 
                 new MYAlert(context).AlertOkCancel(context.getResources().getString(R.string.delete),
                         context.getResources().getString(R.string.are_you_sure_you_want_to_delete_this_information),
-                        context.getResources().getString(R.string.to_delete),
+                        context.getResources().getString(R.string.delete),
                         context.getResources().getString(R.string.cancel),
                          new MYAlert.OnOkCancel() {
                             @Override

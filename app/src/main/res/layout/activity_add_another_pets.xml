@@ -42,13 +42,11 @@
         android:layout_below="@+id/RL_HEADER"
         android:fillViewport="true"
        >
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorWhite">
-
             <RelativeLayout
                 android:id="@+id/Hea"
                 android:layout_width="match_parent"
@@ -91,7 +89,6 @@
                     android:layout_marginTop="5dp"
                     android:background="@color/colorGrayProject" />
             </RelativeLayout>
-
             <LinearLayout
                     android:id="@+id/Body"
                     android:layout_width="match_parent"
@@ -370,7 +367,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
                             android:hint="@string/describeyourpet"
-                            android:gravity="bottom"
+                            android:gravity="top"
                             android:padding="10dp"
                             android:scrollbars="vertical" />
 
@@ -436,7 +433,6 @@
                         android:layout_marginTop="5dp"
                         android:background="@color/colorGrayProject" />
                 </LinearLayout>
-
         </LinearLayout>
 
     </ScrollView>
