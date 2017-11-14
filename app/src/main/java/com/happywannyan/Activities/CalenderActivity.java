@@ -172,6 +172,13 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
+        findViewById(R.id.TXT_CANCEL).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         findViewById(R.id.img_previous_date).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -487,8 +494,6 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
     public void onBackPressed() {
         setResult(RESULT_CANCELED);
         finish();
-
-
 //        super.onBackPressed();
     }
 
