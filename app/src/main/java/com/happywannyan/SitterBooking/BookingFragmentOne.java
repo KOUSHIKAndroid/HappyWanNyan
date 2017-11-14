@@ -418,6 +418,7 @@ public class BookingFragmentOne extends Fragment implements View.OnClickListener
                 datePickerFragment.DatePickerFragment(new DatePickerFragment.DateSelect() {
                     @Override
                     public void OnDateSelected(int year, int month, int day) {
+                        month=month+1;
                         Log.d("@@ DATE", " DAte-" + year + "/" + month + "/" + day);
                         TXT_SingleDate.setText(day + "-" + month + "-" + year);
                         TXT_StartDate.setText("");
