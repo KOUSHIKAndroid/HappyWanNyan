@@ -200,7 +200,7 @@ public class BookingFragmentFoure extends Fragment {
                                     }
 
                                 }
-                                ((BookingOneActivity) getActivity()).showConfirmReservationRequest();
+                                //((BookingOneActivity) getActivity()).showConfirmReservationRequest();
                                 //((BookingOneActivity) getActivity()).submitConfirmReservationRequest();
                                 //((BookingOneActivity) getActivity()).submitConfirmReservationRequestByVolley();
                                 ((BookingOneActivity) getActivity()).submitConfirmReservationRequestUsingHTTP();

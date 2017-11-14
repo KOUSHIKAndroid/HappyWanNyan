@@ -112,11 +112,11 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
 
         try {
             ((SFNFBoldTextView) viewMain.findViewById(R.id.TXT_ServiceName)).setText(PageObject.getJSONObject("info_array").getString("service_name"));
-            ((SFNFTextView) viewMain.findViewById(R.id.TXT_Unit)).setText(PageObject.getJSONObject("info_array").getString("service_price"));
+            ((SFNFTextView) viewMain.findViewById(R.id.TXT_Unit)).setText("¥"+PageObject.getJSONObject("info_array").getString("service_price"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_no_pets)).setText(PageObject.getJSONObject("info_array").getString("no_of_pet"));
-            TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
+            TXT_TotalPrice.setText("¥"+PageObject.getJSONObject("info_array").getString("total_price"));
             Loger.MSG("info_array",""+PageObject.getJSONObject("info_array"));
-            ((SFNFTextView) viewMain.findViewById(R.id.TXT_saftyPrice)).setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
+            ((SFNFTextView) viewMain.findViewById(R.id.TXT_saftyPrice)).setText("¥"+PageObject.getJSONObject("info_array").getString("trust_safety_price"));
             ((SFNFTextView) viewMain.findViewById(R.id.TXT_CancelPolicy)).setText(PageObject.getJSONObject("info_array").getString("cancel_policy"));
 
             Loger.MSG("DoubleDate", "" + ((BookingOneActivity) getActivity()).DoubleDate);
@@ -230,9 +230,9 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
 
                                     if (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price"))
                                             > Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))) {
-                                        TXT_TotalPrice.setText("" + (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price")) - Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))));
+                                        TXT_TotalPrice.setText("¥" + (Double.parseDouble(PageObject.getJSONObject("info_array").getString("total_price")) - Double.parseDouble(jsonObject.getJSONObject("info_array").getString("amount"))));
                                     } else {
-                                        TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("trust_safety_price"));
+                                        TXT_TotalPrice.setText("¥"+PageObject.getJSONObject("info_array").getString("trust_safety_price"));
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -244,7 +244,7 @@ public class BookingFragmentThree extends Fragment implements View.OnClickListen
                                 appLoader.Dismiss();
                                 try {
                                     ((LinearLayout) viewMain.findViewById(R.id.LL_subtotal_discount)).setVisibility(View.GONE);
-                                    TXT_TotalPrice.setText(PageObject.getJSONObject("info_array").getString("total_price"));
+                                    TXT_TotalPrice.setText("¥"+PageObject.getJSONObject("info_array").getString("total_price"));
                                     JSONObject jsonObject = new JSONObject(Response);
                                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setVisibility(View.VISIBLE);
                                     ((SFNFTextView) viewMain.findViewById(R.id.Tv_coupon_code_valid_check)).setText(jsonObject.getString("message"));

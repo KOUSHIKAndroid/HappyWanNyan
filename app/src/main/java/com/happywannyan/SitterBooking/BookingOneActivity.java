@@ -48,6 +48,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
     public boolean DoubleDate = true;
 
     public ArrayList<SetGetAPIPostData> FirstPageData;
+
     FragmentTransaction fragmentTransaction;
 
     @Override
@@ -253,7 +254,38 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
 
     public void submitConfirmReservationRequestUsingHTTP() {
         appLoader.Show();
-        new CustomJSONParser().postDataUsingHttp(BookingOneActivity.this,AppConstant.BASEURL + "confirm_reservation_request", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
+        ArrayList<SetGetAPIPostData> FinalPageData=new ArrayList<>();
+        for (int j=0;j<FirstPageData.size();j++){
+
+            SetGetAPIPostData setGetAPIPostData=new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS(FirstPageData.get(j).getPARAMS());
+            setGetAPIPostData.setValues(FirstPageData.get(j).getValues());
+            FinalPageData.add(setGetAPIPostData);
+        }
+
+        for (int i = 0; i < FinalPageData.size(); i++) {
+            if (FinalPageData.get(i).getPARAMS().equalsIgnoreCase("no_of_pet")) {
+                FinalPageData.get(i).setPARAMS("total_pets");
+            }
+            else if(FinalPageData.get(i).getPARAMS().equalsIgnoreCase("no_of_times"))
+            {
+                FinalPageData.get(i).setPARAMS("no_times");
+            }
+            else if(FinalPageData.get(i).getPARAMS().equalsIgnoreCase("no_of_visit"))
+            {
+                FinalPageData.get(i).setPARAMS("no_of_visits");
+            }
+        }
+
+
+        for (int i = 0; i < FinalPageData.size(); i++) {
+            Loger.MSG(FinalPageData.get(i).getPARAMS(), "-->" + FinalPageData.get(i).getValues());
+        }
+
+
+
+
+        new CustomJSONParser().postDataUsingHttp(BookingOneActivity.this,AppConstant.BASEURL + "confirm_reservation_request", FinalPageData, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
