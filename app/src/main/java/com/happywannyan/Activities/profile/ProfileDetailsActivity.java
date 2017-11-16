@@ -16,23 +16,30 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RatingBar;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Activities.LoginChooserActivity;
 import com.happywannyan.Activities.MessageDetailsPageActivity;
+import com.happywannyan.Activities.SplashActivity;
 import com.happywannyan.Activities.profile.fragmentPagerAdapter.ProfileFragPagerAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingOneActivity;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.provider.AppTimeZone;
 import com.happywannyan.Utils.provider.RatingColor;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -74,10 +81,9 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                 SitterId = PrevJSONObject.getString("sitter_user_id");
             } else if (PrevJSONObject.has("sitter_users_id")) {
                 SitterId = PrevJSONObject.getString("sitter_users_id");
-            }else if(PrevJSONObject.has("receiver_id")){
+            } else if (PrevJSONObject.has("receiver_id")) {
                 SitterId = PrevJSONObject.getString("receiver_id");
-            }
-            else{
+            } else {
                 SitterId = PrevJSONObject.getString("id");
             }
 
@@ -116,7 +122,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         setGetAPIPostData.setValues(AppTimeZone.GetTimeZone());
         Paramas.add(setGetAPIPostData);
 
-        new CustomJSONParser().APIForPostMethod(ProfileDetailsActivity.this,AppConstant.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod(ProfileDetailsActivity.this, AppConstant.BASEURL + "app_users_sitterinfo", Paramas, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 JSONRESPONSESTRING = Result;
@@ -172,7 +178,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
                 }
 
 
-                pagerAdapter = new ProfileFragPagerAdapter(SitterId,getSupportFragmentManager());
+                pagerAdapter = new ProfileFragPagerAdapter(SitterId, getSupportFragmentManager());
                 viewpager.setAdapter(pagerAdapter);
                 appLoader.Dismiss();
             }
@@ -185,8 +191,8 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
-                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                    Toast.makeText(ProfileDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                    Toast.makeText(ProfileDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -194,6 +200,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         findViewById(R.id.Menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
                 LayoutInflater layoutInflater = getLayoutInflater();
                 View popupView = layoutInflater.inflate(R.layout.profile_menu, null);
@@ -266,32 +273,58 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
             @Override
             public void onClick(View view) {
 
-                if (block_user_status == 0) {
-                    Intent intent = new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
-                    try {
-                        intent.putExtra("LIST", "" + new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist"));
-                        intent.putExtra("SitterId", "" + SitterId);
-                        intent.putExtra("Single", false);
-                        JSONArray ARRYA = new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
-                        for (int j = 0; j < ARRYA.length(); j++) {
-                            JSONObject OBJECT = ARRYA.getJSONObject(j);
-                            if (OBJECT.getString("service_id").equals(PrevJSONObject.getString("manage_service_id"))) {
-                                intent.putExtra("SELECT", "" + OBJECT);
-                                break;
+                new AppConstant(ProfileDetailsActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
+                    @Override
+                    public void available(boolean available, JSONObject data) {
+                        ///////////If login then work/////////////////////////////////////////////////////
+                        if (block_user_status == 0) {
+                            Intent intent = new Intent(ProfileDetailsActivity.this, BookingOneActivity.class);
+                            try {
+                                intent.putExtra("LIST", "" + new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist"));
+                                intent.putExtra("SitterId", "" + SitterId);
+                                intent.putExtra("Single", false);
+                                JSONArray ARRYA = new JSONObject(JSONRESPONSESTRING).getJSONObject("info_array").getJSONArray("servicelist");
+                                for (int j = 0; j < ARRYA.length(); j++) {
+                                    JSONObject OBJECT = ARRYA.getJSONObject(j);
+                                    if (OBJECT.getString("service_id").equals(PrevJSONObject.getString("manage_service_id"))) {
+                                        intent.putExtra("SELECT", "" + OBJECT);
+                                        break;
+                                    }
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    startActivity(intent);
-                } else {
-                    new MYAlert(ProfileDetailsActivity.this).AlertOnly(getResources().getString(R.string.request_reservation), getResources().getString(R.string.unable_to_make_reservation_request), new MYAlert.OnlyMessage() {
-                        @Override
-                        public void OnOk(boolean res) {
+                            startActivity(intent);
+                        } else {
+                            new MYAlert(ProfileDetailsActivity.this).AlertOnly(getResources().getString(R.string.request_reservation), getResources().getString(R.string.unable_to_make_reservation_request), new MYAlert.OnlyMessage() {
+                                @Override
+                                public void OnOk(boolean res) {
 
+                                }
+                            });
                         }
-                    });
-                }
+                        ///////////End/////////////////////////////////////////////////////
+                    }
+
+                    @Override
+                    public void notAvailable(String Error) {
+
+                        new MYAlert(ProfileDetailsActivity.this).AlertOkCancel("", getResources().getString(R.string.please_login), getResources().getString(R.string.ok), getResources().getString(R.string.cancel), new MYAlert.OnOkCancel() {
+                            @Override
+                            public void OnOk() {
+                                Intent intent = new Intent(ProfileDetailsActivity.this, LoginChooserActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                finish();
+                            }
+
+                            @Override
+                            public void OnCancel() {
+
+                            }
+                        });
+                    }
+                });
             }
         });
 
@@ -327,66 +360,147 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         switch (view.getId()) {
             case R.id.ID_MitUp:
                 popupWindow.dismiss();
-                Intent inten = new Intent(this, MeetUpWannyanActivity.class);
-                inten.putExtra("DATA", SitterId);
-                startActivity(inten);
+                new AppConstant(ProfileDetailsActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
+                    @Override
+                    public void available(boolean available, JSONObject data) {
+                        ///////////If login then work/////////////////////////////////////////////////////
+                        Intent intent = new Intent(ProfileDetailsActivity.this, MeetUpWannyanActivity.class);
+                        intent.putExtra("DATA", SitterId);
+                        startActivity(intent);
+                        ///////////End/////////////////////////////////////////////////////
+                    }
+
+                    @Override
+                    public void notAvailable(String Error) {
+                        new MYAlert(ProfileDetailsActivity.this).AlertOkCancel("", getResources().getString(R.string.please_login), getResources().getString(R.string.ok), getResources().getString(R.string.cancel), new MYAlert.OnOkCancel() {
+                            @Override
+                            public void OnOk() {
+                                Intent intent = new Intent(ProfileDetailsActivity.this, LoginChooserActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                finish();
+                            }
+
+                            @Override
+                            public void OnCancel() {
+
+                            }
+                        });
+                    }
+                });
+
                 break;
+
+
             case R.id.Contact:
                 popupWindow.dismiss();
-                inten = new Intent(this, ContactMsgActivity.class);
-                inten.putExtra("DATA", SitterId);
-                startActivity(inten);
+                new AppConstant(ProfileDetailsActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
+                    @Override
+                    public void available(boolean available, JSONObject data) {
+                        ///////////If login then work/////////////////////////
+                        Intent inten = new Intent(ProfileDetailsActivity.this, ContactMsgActivity.class);
+                        inten.putExtra("DATA", SitterId);
+                        startActivity(inten);
+                        //////////////End/////////////////////////////////////
+                    }
+
+                    @Override
+                    public void notAvailable(String Error) {
+                        new MYAlert(ProfileDetailsActivity.this).AlertOkCancel("", getResources().getString(R.string.please_login), getResources().getString(R.string.ok), getResources().getString(R.string.cancel), new MYAlert.OnOkCancel() {
+                            @Override
+                            public void OnOk() {
+                                Intent intent = new Intent(ProfileDetailsActivity.this, LoginChooserActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                finish();
+                            }
+
+                            @Override
+                            public void OnCancel() {
+
+                            }
+                        });
+                    }
+                });
+
                 break;
             case R.id.IMG_FAV:
-                String IDtemp = "";
-                if (((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1"))
-                    IDtemp = "0";
-                else
-                    IDtemp = "1";
-
-
-                new CustomJSONParser().APIForGetMethod(ProfileDetailsActivity.this,AppConstant.BASEURL + "app_favourite_sitters?user_id=" + AppConstant.UserId + "" +
-                        "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                new AppConstant(ProfileDetailsActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
                     @Override
-                    public void OnSuccess(String Result) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(Result);
-                            Loger.MSG("Result-->",Result);
+                    public void available(boolean available, JSONObject data) {
 
-                            if (jsonObject.getInt("fav_status")==1){
-                                Toast.makeText(getApplicationContext(), getResources().getString(R.string.added_as_a_favorite_sitter), Toast.LENGTH_SHORT).show();
-                            }else {
-                                Toast.makeText(getApplicationContext(), getResources().getString(R.string.favorite_sitter_removed), Toast.LENGTH_SHORT).show();
+                        ///////////If login then work/////////////////////////////////////////////////////
+                        String IDtemp = "";
+                        if (((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1"))
+                            IDtemp = "0";
+                        else
+                            IDtemp = "1";
+
+
+                        new CustomJSONParser().APIForGetMethod(ProfileDetailsActivity.this, AppConstant.BASEURL + "app_favourite_sitters?user_id=" + AppConstant.UserId + "" +
+                                "&sitter_user_id=" + SitterId + "&fav_status=" + IDtemp, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                            @Override
+                            public void OnSuccess(String Result) {
+                                try {
+                                    JSONObject jsonObject = new JSONObject(Result);
+                                    Loger.MSG("Result-->", Result);
+
+                                    if (jsonObject.getInt("fav_status") == 1) {
+                                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.added_as_a_favorite_sitter), Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.favorite_sitter_removed), Toast.LENGTH_SHORT).show();
+                                    }
+
+                                    if (((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1")) {
+                                        ((ImageView) findViewById(R.id.IMG_FAV)).setTag("0");
+                                        ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_white);
+                                    } else {
+                                        ((ImageView) findViewById(R.id.IMG_FAV)).setTag("1");
+                                        ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
-                            if (((ImageView) findViewById(R.id.IMG_FAV)).getTag().equals("1")) {
-                                ((ImageView) findViewById(R.id.IMG_FAV)).setTag("0");
-                                ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_white);
-                            } else {
-                                ((ImageView) findViewById(R.id.IMG_FAV)).setTag("1");
-                                ((ImageView) findViewById(R.id.IMG_FAV)).setImageResource(R.drawable.profile_ic_favorite_blue);
+                            @Override
+                            public void OnError(String Error, String Response) {
+                                try {
+                                    JSONObject jsonObject = new JSONObject(Response);
+                                    Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                            @Override
+                            public void OnError(String Error) {
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                                    Toast.makeText(ProfileDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                        //////////////////////////////End///////////////////////
                     }
 
                     @Override
-                    public void OnError(String Error, String Response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(Response);
-                            Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
+                    public void notAvailable(String Error) {
 
-                    @Override
-                    public void OnError(String Error) {
-                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                            Toast.makeText(ProfileDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
-                        }
+                        new MYAlert(ProfileDetailsActivity.this).AlertOkCancel("", getResources().getString(R.string.please_login), getResources().getString(R.string.ok), getResources().getString(R.string.cancel), new MYAlert.OnOkCancel() {
+                            @Override
+                            public void OnOk() {
+                                Intent intent = new Intent(ProfileDetailsActivity.this, LoginChooserActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                finish();
+                            }
+
+                            @Override
+                            public void OnCancel() {
+
+                            }
+                        });
                     }
                 });
         }

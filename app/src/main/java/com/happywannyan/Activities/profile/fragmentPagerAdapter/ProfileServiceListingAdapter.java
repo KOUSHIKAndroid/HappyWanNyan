@@ -11,11 +11,15 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
+import com.happywannyan.Activities.LoginChooserActivity;
+import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingOneActivity;
+import com.happywannyan.Utils.AppDataHolder;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 import com.happywannyan.Utils.helper.Utils;
@@ -103,23 +107,50 @@ public class ProfileServiceListingAdapter extends RecyclerView.Adapter<ProfileSe
             holder.RL_Book.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (block_user_status == 1) {
-                        new MYAlert(mContext).AlertOnly(mContext.getResources().getString(R.string.booknow), mContext.getResources().getString(R.string.unable_to_make_book), new MYAlert.OnlyMessage() {
-                            @Override
-                            public void OnOk(boolean res) {
 
+                    new AppConstant((ProfileDetailsActivity)mContext).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
+                        @Override
+                        public void available(boolean available, JSONObject data) {
+                            ///////////If login then work/////////////////////////////////////////////////////
+                            if (block_user_status == 1) {
+                                new MYAlert(mContext).AlertOnly(mContext.getResources().getString(R.string.booknow), mContext.getResources().getString(R.string.unable_to_make_book), new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                    }
+                                });
+                            } else {
+                                Loger.MSG("object-->",""+object);
+                                Intent intent = new Intent(mContext, BookingOneActivity.class);
+                                intent.putExtra("LIST", "");
+                                intent.putExtra("ItemDetails", "" + ((ProfileDetailsActivity) mContext).PrevJSONObject);
+                                intent.putExtra("Single", true);
+                                intent.putExtra("SELECT", "" + object);
+                                intent.putExtra("SitterId", "" + SitterId);
+                                mContext.startActivity(intent);
                             }
-                        });
-                    } else {
-                        Loger.MSG("object-->",""+object);
-                        Intent intent = new Intent(mContext, BookingOneActivity.class);
-                        intent.putExtra("LIST", "");
-                        intent.putExtra("ItemDetails", "" + ((ProfileDetailsActivity) mContext).PrevJSONObject);
-                        intent.putExtra("Single", true);
-                        intent.putExtra("SELECT", "" + object);
-                        intent.putExtra("SitterId", "" + SitterId);
-                        mContext.startActivity(intent);
-                    }
+                            ///////////End/////////////////////////////////////////////////////
+                        }
+
+                        @Override
+                        public void notAvailable(String Error) {
+
+                            new MYAlert(mContext).AlertOkCancel("", mContext.getResources().getString(R.string.please_login), mContext.getResources().getString(R.string.ok), mContext.getResources().getString(R.string.cancel), new MYAlert.OnOkCancel() {
+                                @Override
+                                public void OnOk() {
+                                    Intent intent=new Intent(mContext, LoginChooserActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    ((ProfileDetailsActivity)mContext).startActivity(intent);
+                                    ((ProfileDetailsActivity)mContext).finish();
+                                }
+
+                                @Override
+                                public void OnCancel() {
+
+                                }
+                            });
+                        }
+                    });
                 }
             });
 
