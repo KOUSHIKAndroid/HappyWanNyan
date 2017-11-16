@@ -252,7 +252,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         try {
                             Loger.MSG("refund_status-->", "" + jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status"));
                             if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 0)
-                                CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.do_you_want_to_cancel_booking));
+                                CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.do_you_want_to_cancel_booking));
                             if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 1) {
                                 CancelWith_Reasons();
                             }
