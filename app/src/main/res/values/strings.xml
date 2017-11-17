@@ -315,5 +315,6 @@
     <string name="please_select_end_date">Please select End Date</string>
     <string name="reservation_request_sent">Reservation Request Sent !</string>
     <string name="please_login">Please Login</string>
+    <string name="invalid_email_password">Invalid Email/Password</string>
 
 </resources>

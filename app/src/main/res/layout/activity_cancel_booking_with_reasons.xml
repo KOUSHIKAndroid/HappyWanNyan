@@ -69,16 +69,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/select_cancel_reason" />
 
-                <com.happywannyan.Font.SFNFTextView
-                    android:id="@+id/TXT_ResonText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/T5"
-                    android:hint="@string/select"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp"
-                    android:textColor="@color/colorBlack" />
-
                 <ImageView
                     android:id="@+id/I3"
                     android:layout_width="wrap_content"
@@ -87,6 +77,18 @@
                     android:layout_below="@+id/T5"
                     android:paddingTop="5dp"
                     android:src="@drawable/ic_arrow_black" />
+
+                <com.happywannyan.Font.SFNFTextView
+                    android:id="@+id/TXT_ResonText"
+                    android:layout_toLeftOf="@+id/I3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/T5"
+                    android:layout_marginRight="5dp"
+                    android:hint="@string/select"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/colorBlack" />
 
                 <View
                     android:layout_width="match_parent"

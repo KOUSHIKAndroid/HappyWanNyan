@@ -171,7 +171,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             @Override
                             public void OnError(String Error, String Response) {
                                 appLoader.Dismiss();
-                                new MYAlert(LoginActivity.this).AlertOnly(getResources().getString(R.string.LoginAlertTitle), Error, new MYAlert.OnlyMessage() {
+                                new MYAlert(LoginActivity.this).AlertOnly(getResources().getString(R.string.LoginAlertTitle), getResources().getString(R.string.invalid_email_password), new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
                                     }
@@ -182,7 +182,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             public void OnError(String Error) {
                                 Loger.Error("@@ LOGIN", Error);
                                 appLoader.Dismiss();
-                                new MYAlert(LoginActivity.this).AlertOnly(getResources().getString(R.string.LoginAlertTitle), Error, new MYAlert.OnlyMessage() {
+                                new MYAlert(LoginActivity.this).AlertOnly(getResources().getString(R.string.LoginAlertTitle),Error, new MYAlert.OnlyMessage() {
                                     @Override
                                     public void OnOk(boolean res) {
                                     }

@@ -295,5 +295,7 @@
     <string name="reservation_request_sent">予約リクエストを送信しました</string>
     <string name="optional_filter">オプションのフィルタ</string>
     <string name="please_login">ログインしてください。</string>
+    <string name="invalid_email_password">無効なEメール/パスワード</string>
+
 
 </resources>
