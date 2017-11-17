@@ -1,8 +1,6 @@
 package com.happywannyan.SitterBooking;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,12 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
-import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
-import com.happywannyan.OnFragmentInteractionListener;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.POJO.SetGetCards;
 import com.happywannyan.POJO.SetGetStripData;
@@ -156,14 +151,18 @@ public class BookingFragmentFoure extends Fragment {
                                 }
 
                                 for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                                    try {
                                     if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("stripeToken")) {
                                         ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues("");
                                         break;
                                     } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
                                         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
                                         setGetAPIPostData.setPARAMS("stripeToken");
-                                        setGetAPIPostData.setValues("");
+                                        setGetAPIPostData.setValues(cardFinalSelection.getString("strip_id"));
                                         ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+                                    }
+                                    } catch (Exception ex) {
+                                        ex.printStackTrace();
                                     }
                                 }
 
@@ -521,6 +520,7 @@ public class BookingFragmentFoure extends Fragment {
                             for (int i = 0; i < arrayJson.length(); i++) {
                                 if (arrayJson.getJSONObject(i).getString("is_default").equalsIgnoreCase("1")) {
                                     cardFinalSelection = arrayJson.getJSONObject(i);
+                                    Loger.MSG("@@SelectedData", "" + cardFinalSelection);
                                     break;
                                 }
                             }
@@ -564,7 +564,7 @@ public class BookingFragmentFoure extends Fragment {
                             @Override
                             public void onSelectItemClick(int position, JSONObject data) {
                                 cardFinalSelection = data;
-                                Loger.MSG("SelectedData", "" + data);
+                                Loger.MSG("@@SelectedData", "" + cardFinalSelection);
                             }
                         });
                         REC_Card.setAdapter(cardAdapter);
