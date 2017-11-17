@@ -71,6 +71,8 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                         @Override
                         public void OnSuccess(String Result) {
 
+                            Toast.makeText(ResetPasswordActivity.this,getResources().getString(R.string.password_updated_sucessfully),Toast.LENGTH_SHORT).show();
+
                             startActivity(new Intent(ResetPasswordActivity.this, LoginActivity.class));
                             finish();
 
