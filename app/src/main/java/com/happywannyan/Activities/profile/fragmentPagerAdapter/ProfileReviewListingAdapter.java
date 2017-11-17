@@ -7,12 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
-
 import com.bumptech.glide.Glide;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
