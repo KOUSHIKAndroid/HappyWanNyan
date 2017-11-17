@@ -51,7 +51,5 @@ public class ProfileFragReviewFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
 }

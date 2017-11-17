@@ -52,11 +52,11 @@ public class ProfileReviewListingAdapter extends RecyclerView.Adapter<ProfileRev
             if(!jsonObject.getString("review_user_img").trim().equals("")) {
                 Glide.with(mContext).load(jsonObject.getString("review_user_img").trim()).into(holder.IMG_Profile);
             }
+
+            holder.Rating.setRating(Float.parseFloat(jsonObject.getString("review_rating")));
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
