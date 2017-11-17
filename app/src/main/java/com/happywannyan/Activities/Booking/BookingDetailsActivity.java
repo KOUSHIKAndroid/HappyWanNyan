@@ -252,6 +252,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         try {
                             Loger.MSG("refund_status-->", "" + jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status"));
                             if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 0)
+
+                                Loger.MSG("bookingId",jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
+
                                 CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.do_you_want_to_cancel_booking));
                             if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 1) {
                                 CancelWith_Reasons();
@@ -278,6 +281,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Loger.MSG("cancel_status_button-->", "Cancel");
                         try {
+                            Loger.MSG("bookingId",jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
                             CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.are_you_sure_you_want_to_cancel_reservation_request));
                         } catch (JSONException e) {
                             e.printStackTrace();
