@@ -69,6 +69,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     boolean GPS = false;
     JSONObject Geo;
     JSONObject SearchJSONSitter;
+    View mainView;
 
     public SearchBasicFragment() {
     }
@@ -108,6 +109,8 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
         Rec_petlist = (RecyclerView) view.findViewById(R.id.Rec_petlist);
         IMG_erase_location = (ImageView) view.findViewById(R.id.IMG_erase_location);
         Rec_petlist.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        mainView=view;
 
         new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "parent_service?langid="+AppConstant.Language+"&user_id=" + AppConstant.UserId, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
@@ -185,10 +188,10 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
             }
         });
 
-
         view.findViewById(R.id.RL_Location).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                removeListener();
                 try {
                     AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
                             .setTypeFilter(Place.TYPE_COUNTRY)
@@ -262,7 +265,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        setListenerOnSearch();
         if (resultCode == RESULT_OK) {
 
             switch (requestCode) {
@@ -496,5 +499,33 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 Loger.Error("@@", "Error" + e.getMessage());
             }
         }
+    }
+
+    public void setListenerOnSearch(){
+        mainView.setClickable(true);
+        mainView.findViewById(R.id.RL_Location).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
+                            .setTypeFilter(Place.TYPE_COUNTRY)
+                            .setCountry("JP")
+                            .build();
+                    Intent intent =
+                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN).setFilter(typeFilter)
+                                    .build(getActivity());
+                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+                } catch (GooglePlayServicesRepairableException e) {
+                    Loger.MSG("@@ SERVICE", " " + e.getMessage());
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    Loger.MSG("@@ SERVICE", " 2 " + e.getMessage());
+                }
+            }
+        });
+    }
+
+    public void removeListener(){
+        mainView.findViewById(R.id.RL_Location).setOnClickListener(null);
+        mainView.setClickable(false);
     }
 }
