@@ -316,5 +316,6 @@
     <string name="reservation_request_sent">Reservation Request Sent !</string>
     <string name="please_login">Please Login</string>
     <string name="invalid_email_password">Invalid Email/Password</string>
+    <string name="this_is_wrong_password">This is wrong password</string>
 
 </resources>

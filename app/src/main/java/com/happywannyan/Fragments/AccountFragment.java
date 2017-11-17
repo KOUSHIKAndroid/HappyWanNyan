@@ -303,16 +303,12 @@ public class AccountFragment extends Fragment {
                                 @Override
                                 public void OnError(String Error, String Response) {
                                     appLoader.Dismiss();
-                                    try {
-                                        new MYAlert(getActivity()).AlertOnly(getString(R.string.change_password), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                        new MYAlert(getActivity()).AlertOnly(getString(R.string.change_password), getActivity().getResources().getString(R.string.this_is_wrong_password), new MYAlert.OnlyMessage() {
                                             @Override
                                             public void OnOk(boolean res) {
 
                                             }
                                         });
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
                                 }
 
                                 @Override
