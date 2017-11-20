@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.SearchListFragment;
@@ -25,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SearchResultActivity extends AppCompatActivity {
 
@@ -46,6 +48,38 @@ public class SearchResultActivity extends AppCompatActivity {
         appLoader = new AppLoader(this);
 
         fab = (ImageView) findViewById(R.id.fab);
+
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Loger.MSG(getClass().getName(), "Refreshed token: " + refreshedToken);
+
+
+        HashMap<String, String> Params = new HashMap<>();
+        Params.put("user_id", AppConstant.UserId);
+        Params.put("anorid_device_id", refreshedToken + "");
+
+        Loger.MSG("@user_id-->",AppConstant.UserId);
+        Loger.MSG("@anorid_device_id-->",refreshedToken + "");
+
+        new CustomJSONParser().APIForPostMethod2(SearchResultActivity.this,AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
+            @Override
+            public void OnSuccess(String Result) {
+                Loger.MSG("@userDevice","Updated");
+
+
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+
+            }
+
+            @Override
+            public void OnError(String Error) {
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
+                    Toast.makeText(SearchResultActivity.this,Error,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
@@ -154,7 +188,7 @@ public class SearchResultActivity extends AppCompatActivity {
         });
 
 
-        SecondTimeAfterLogin();
+        SearchLoading();
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -247,7 +281,7 @@ public class SearchResultActivity extends AppCompatActivity {
     }
 
 
-    public void SecondTimeAfterLogin() {
+    public void SearchLoading() {
 
         appLoader.Show();
 
@@ -299,7 +333,6 @@ public class SearchResultActivity extends AppCompatActivity {
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
                 try {
-
                     findViewById(R.id.Container_result).setVisibility(View.VISIBLE);
                     findViewById(R.id.tv_empty).setVisibility(View.GONE);
 
