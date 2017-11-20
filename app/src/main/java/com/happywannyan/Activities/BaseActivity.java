@@ -79,7 +79,7 @@ public class BaseActivity extends LocationBaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Log.d(getClass().getName(), "Refreshed token: " + refreshedToken);
+        Loger.MSG(getClass().getName(), "Refreshed token: " + refreshedToken);
         new AppConstant(this);
 
         appLoader = new AppLoader(BaseActivity.this);
@@ -88,11 +88,14 @@ public class BaseActivity extends LocationBaseActivity
         Params.put("user_id", AppConstant.UserId);
         Params.put("anorid_device_id", refreshedToken + "");
 
+        Loger.MSG("@user_id-->",AppConstant.UserId);
+        Loger.MSG("@anorid_device_id-->",refreshedToken + "");
+
 
         new CustomJSONParser().APIForPostMethod2(BaseActivity.this,AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
-                Loger.MSG("UserDevice","Updated");
+                Loger.MSG("@userDevice","Updated");
             }
 
             @Override
