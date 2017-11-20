@@ -92,7 +92,7 @@ public class BaseActivity extends LocationBaseActivity
         new CustomJSONParser().APIForPostMethod2(BaseActivity.this,AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
-
+                Loger.MSG("UserDevice","Updated");
             }
 
             @Override
