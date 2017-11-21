@@ -175,7 +175,8 @@ public class BaseActivity extends LocationBaseActivity
                         Configuration config = getBaseContext().getResources().getConfiguration();
                         Locale locale;
 
-                        if (sharedPreferences.getString("shortLanguage", "NO").equalsIgnoreCase("en")) {
+                        if (sharedPreferences.getString("shortLanguage", "NO").equalsIgnoreCase("en")||
+                                sharedPreferences.getString("shortLanguage", "NO").equalsIgnoreCase("No")) {
                             editor.putString("shortLanguage", "ja");
                             AppConstant.Language = "ja";
                             locale = new Locale("ja");
