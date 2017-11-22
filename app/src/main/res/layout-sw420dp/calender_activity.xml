@@ -265,13 +265,14 @@
         android:visibility="visible">
 
         <ImageView
+            android:layout_marginTop="100dp"
             android:id="@+id/IMG_Tutorial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/TXT"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="50dp"
-            android:paddingLeft="40dp" />
+            />
 
         <com.happywannyan.Font.SFNFTextView
             android:id="@+id/TXT"

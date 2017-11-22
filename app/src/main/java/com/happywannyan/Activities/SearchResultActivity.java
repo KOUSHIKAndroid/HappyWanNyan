@@ -183,6 +183,7 @@ public class SearchResultActivity extends AppCompatActivity {
         findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AppConstant.onBackPressCheckerForBaseActivity=true;
                 onBackPressed();
             }
         });

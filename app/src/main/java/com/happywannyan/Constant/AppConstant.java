@@ -29,6 +29,7 @@ public class AppConstant extends AppDataHolder {
     public static boolean alwaysRedirectAfterLogin=false;
     public static String SearchJSONSitter="";
     public static String SearchJSONSitterLanguageChange="";
+    public static boolean onBackPressCheckerForBaseActivity=false;
 
     public AppConstant(Activity activity) {
         super(activity);

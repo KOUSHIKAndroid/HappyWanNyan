@@ -485,20 +485,22 @@ public class BaseActivity extends LocationBaseActivity
             drawer.closeDrawer(GravityCompat.START);
         }
         if(fragmentManager.getBackStackEntryCount()==1){
+            if (!AppConstant.onBackPressCheckerForBaseActivity) {
+                new MYAlert(BaseActivity.this).AlertOkCancel("", getResources().getString(R.string.are_you_sure_want_to_close),
+                        getResources().getString(R.string.ok),
+                        getResources().getString(R.string.cancel),
+                        new MYAlert.OnOkCancel() {
+                            @Override
+                            public void OnOk() {
+                                finish();
+                            }
 
-//            new MYAlert(BaseActivity.this).AlertOkCancel("", getResources().getString(R.string.are_you_sure_want_to_close),
-//                    getResources().getString(R.string.ok),
-//                    getResources().getString(R.string.cancel),
-//                    new MYAlert.OnOkCancel() {
-//                        @Override
-//                        public void OnOk() {
-//                            finish();
-//                        }
-//
-//                       @Override
-//                        public void OnCancel() {
-//                       }
-//                    });
+                            @Override
+                            public void OnCancel() {
+                            }
+                        });
+            }
+            AppConstant.onBackPressCheckerForBaseActivity=false;
         }
         else {
             super.onBackPressed();
