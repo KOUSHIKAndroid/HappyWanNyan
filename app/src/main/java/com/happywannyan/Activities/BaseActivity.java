@@ -883,10 +883,13 @@ public class BaseActivity extends LocationBaseActivity
      */
     private void transactAdvancedSearchFragment() {
 //        fragmentManager = getSupportFragmentManager();
-        fragmentManager.popBackStack();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitterLanguageChange, null));
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        if (!AppConstant.SearchJSONSitterLanguageChange.equals(""))
+        {
+            fragmentManager.popBackStack();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitterLanguageChange, null));
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
     }
 }

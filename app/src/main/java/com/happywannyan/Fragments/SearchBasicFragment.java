@@ -298,6 +298,7 @@ public class SearchBasicFragment extends Fragment implements AppLocationProvider
                 case 101:
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    AppConstant.SearchJSONSitterLanguageChange=SearchJSONSitter.toString();
                     fragmentTransaction.add(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(SearchJSONSitter.toString(), null));
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
