@@ -14,7 +14,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -84,6 +83,8 @@ public class BaseActivity extends LocationBaseActivity
 
         appLoader = new AppLoader(BaseActivity.this);
 
+        fragmentManager = getSupportFragmentManager();
+
         HashMap<String, String> Params = new HashMap<>();
         Params.put("user_id", AppConstant.UserId);
         Params.put("anorid_device_id", refreshedToken + "");
@@ -113,7 +114,7 @@ public class BaseActivity extends LocationBaseActivity
 
         /*
         @Koushik
-        Navigation Control respect of UserCredintial
+        Navigation Control respect of UserCredential
          */
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
@@ -128,11 +129,7 @@ public class BaseActivity extends LocationBaseActivity
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
 
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new MessageFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                transactMessageFragment();
             }
         });
 
@@ -144,12 +141,8 @@ public class BaseActivity extends LocationBaseActivity
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
 
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                AccountFragment accountFragment = new AccountFragment();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, accountFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                transactAccountFragment();
+
             }
         });
 
@@ -221,78 +214,55 @@ public class BaseActivity extends LocationBaseActivity
 
 
                         if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MessageFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, new MessageFragment());
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactMessageFragment();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof SearchBasicFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, new SearchBasicFragment());
-                            fragmentTransaction.commit();
+
+                            transactSearchBasicFragment();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof BookingFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactBookingFragment();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof PastSitterFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, new PastSitterFragment());
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactPastSitterFragment();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyProfileFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactMyProfileFragment();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPetsFragments) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, MyPetsFragments.newInstance(null, null));
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactMyPetsFragments();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPaymentsFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactMyPaymentsFragment();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, FavouriteFragment.newInstance(null, null));
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactFavouriteFragment();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof ContactUsFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactContactUsFragment();
+
                         } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof HelpFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactHelpFragment();
+
                         }
                         else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AccountFragment) {
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout, AccountFragment.newInstance(null, null));
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactAccountFragment();
+
                         }
                         else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AdvancedSearchFragment){
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.Base_fargment_layout,AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitterLanguageChange, null));
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
+                            transactAdvancedSearchFragment();
+
                             if (AppConstant.SearchJSONSitterLanguageChange.equals("")) {
                                 AppConstant.SearchJSONSitterLanguageChange = AppConstant.SearchJSONSitter;
                             }
@@ -317,11 +287,9 @@ public class BaseActivity extends LocationBaseActivity
             public void onClick(View view) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, ContactUsFragment.newInstance(null, null));
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+
+                transactContactUsFragment();
+
             }
         });
 
@@ -400,10 +368,8 @@ public class BaseActivity extends LocationBaseActivity
             public void onClick(View view) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new SearchBasicFragment());
-                fragmentTransaction.commit();
+
+                transactSearchBasicFragment();
             }
         });
 
@@ -413,11 +379,7 @@ public class BaseActivity extends LocationBaseActivity
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
 //                startActivity(new Intent(BaseActivity.this,BookingOneActivity.class));
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                transactBookingFragment();
             }
         });
         navigationView.findViewById(R.id.LL_Past_Favorite).setOnClickListener(new View.OnClickListener() {
@@ -426,12 +388,7 @@ public class BaseActivity extends LocationBaseActivity
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
 //                startActivity(new Intent(BaseActivity.this,BookingOneActivity.class));
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new PastSitterFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-
+                transactPastSitterFragment();
             }
         });
 
@@ -441,11 +398,7 @@ public class BaseActivity extends LocationBaseActivity
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
 
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, HelpFragment.newInstance(null, null));
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                transactHelpFragment();
 
                 // startActivity(new Intent(BaseActivity.this, HelpActivity.class));
             }
@@ -457,12 +410,7 @@ public class BaseActivity extends LocationBaseActivity
             public void onClick(View v) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                transactMyProfileFragment();
             }
         });
 
@@ -471,11 +419,8 @@ public class BaseActivity extends LocationBaseActivity
             public void onClick(View v) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, MyPetsFragments.newInstance(null, null));
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+
+                transactMyPetsFragments();
             }
         });
 
@@ -484,11 +429,8 @@ public class BaseActivity extends LocationBaseActivity
             public void onClick(View view) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, MyPaymentsFragment.newInstance(null, null));
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+
+                transactMyPaymentsFragment();
             }
         });
 
@@ -497,11 +439,8 @@ public class BaseActivity extends LocationBaseActivity
             public void onClick(View v) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, FavouriteFragment.newInstance(null, null));
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+
+                transactFavouriteFragment();
             }
         });
 
@@ -518,44 +457,26 @@ public class BaseActivity extends LocationBaseActivity
 
             if (AppConstant.go_to.trim().equals("message_all")) {
                 AppConstant.messageAndBookingConditionCheck=false;
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new MessageFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                transactMessageFragment();
             }
             else {
                 AppConstant.messageAndBookingConditionCheck=false;
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+
+                transactBookingFragment();
             }
         } else {
             if(AppConstant.login_status.equals("1")){
                 if(!AppConstant.SearchJSONSitter.equals("")){
-                    fragmentManager = getSupportFragmentManager();
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    AdvancedSearchFragment advancedSearchFragment=AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitter, null);
-                    fragmentTransaction.replace(R.id.Base_fargment_layout, advancedSearchFragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
+
+                    transactAdvancedSearchFragment();
+
                     AppConstant.SearchJSONSitterLanguageChange = AppConstant.SearchJSONSitter;
                     AppConstant.SearchJSONSitter="";
                 }else {
-                    fragmentManager = getSupportFragmentManager();
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.Base_fargment_layout, new SearchBasicFragment());
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
+                    transactSearchBasicFragment();
                 }
             }else {
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                transactMyProfileFragment();
             }
         }
 
@@ -570,19 +491,19 @@ public class BaseActivity extends LocationBaseActivity
         }
         if(fragmentManager.getBackStackEntryCount()==1){
 
-//            new MYAlert(BaseActivity.this).AlertOkCancel("", getResources().getString(R.string.are_you_sure_want_to_close),
-//                    getResources().getString(R.string.ok),
-//                    getResources().getString(R.string.cancel),
-//                    new MYAlert.OnOkCancel() {
-//                        @Override
-//                        public void OnOk() {
-//
-//                        }
-//
-//                        @Override
-//                        public void OnCancel() {
-//                        }
-//                    });
+            new MYAlert(BaseActivity.this).AlertOkCancel("", getResources().getString(R.string.are_you_sure_want_to_close),
+                    getResources().getString(R.string.ok),
+                    getResources().getString(R.string.cancel),
+                    new MYAlert.OnOkCancel() {
+                        @Override
+                        public void OnOk() {
+                            finish();
+                        }
+
+                       @Override
+                        public void OnCancel() {
+                       }
+                    });
         }
         else {
             super.onBackPressed();
@@ -731,11 +652,7 @@ public class BaseActivity extends LocationBaseActivity
                         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                         drawer.closeDrawer(GravityCompat.START);
 
-                        fragmentManager = getSupportFragmentManager();
-                        fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
+                        transactMyProfileFragment();
                     }
                 });
             }
@@ -792,4 +709,189 @@ public class BaseActivity extends LocationBaseActivity
 //
 //        void onLoggedOutFromFacebook();
 //    }
+
+    /**
+     * \
+     * Fragment transaction of HelpFragmentFragment
+     */
+    private void transactHelpFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new HelpFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+    /**
+     * \
+     * Fragment transaction of MessageFragment
+     */
+    private void transactMessageFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new MessageFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+
+    /**
+     * \
+     * Fragment transaction of AccountFragment
+     */
+    private void transactAccountFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new AccountFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+//        fragmentManager = getSupportFragmentManager();
+//        fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.Base_fargment_layout, new AccountFragment());
+//        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.commit();
+    }
+
+
+
+    /**
+     * \
+     * Fragment transaction of SearchBasicFragment
+     */
+    private void transactSearchBasicFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new SearchBasicFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+//        fragmentManager = getSupportFragmentManager();
+//        fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.Base_fargment_layout, new SearchBasicFragment());
+//        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.commit();
+    }
+
+
+    /**
+     * \
+     * Fragment transaction of BookingFragment
+     */
+    private void transactBookingFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new BookingFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+    /**
+     * \
+     * Fragment transaction of PastSitterFragment
+     */
+    private void transactPastSitterFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new PastSitterFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+    /**
+     * \
+     * Fragment transaction of MyProfileFragment
+     */
+    private void transactMyProfileFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new MyProfileFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+
+    /**
+     * \
+     * Fragment transaction of MyPetsFragments
+     */
+    private void transactMyPetsFragments() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new MyPetsFragments());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+
+
+    /**
+     * \
+     * Fragment transaction of MyPaymentsFragment
+     */
+    private void transactMyPaymentsFragment() {
+
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new MyPaymentsFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+    /**
+     * \
+     * Fragment transaction of FavouriteFragment
+     */
+    private void transactFavouriteFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new FavouriteFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+    /**
+     * \
+     * Fragment transaction of ContactUsFragment
+     */
+    private void transactContactUsFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, new ContactUsFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+    /**
+     * \
+     * Fragment transaction of AdvancedSearchFragment
+     */
+    private void transactAdvancedSearchFragment() {
+//        fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitter, null));
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 }
