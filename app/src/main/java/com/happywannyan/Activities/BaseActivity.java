@@ -260,13 +260,7 @@ public class BaseActivity extends LocationBaseActivity
 
                         }
                         else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AdvancedSearchFragment){
-
                             transactAdvancedSearchFragment();
-
-                            if (AppConstant.SearchJSONSitterLanguageChange.equals("")) {
-                                AppConstant.SearchJSONSitterLanguageChange = AppConstant.SearchJSONSitter;
-                            }
-                            AppConstant.SearchJSONSitter="";
                         }
                     }
                     @Override
@@ -457,6 +451,7 @@ public class BaseActivity extends LocationBaseActivity
 
             if (AppConstant.go_to.trim().equals("message_all")) {
                 AppConstant.messageAndBookingConditionCheck=false;
+
                 transactMessageFragment();
             }
             else {
@@ -468,10 +463,10 @@ public class BaseActivity extends LocationBaseActivity
             if(AppConstant.login_status.equals("1")){
                 if(!AppConstant.SearchJSONSitter.equals("")){
 
-                    transactAdvancedSearchFragment();
-
                     AppConstant.SearchJSONSitterLanguageChange = AppConstant.SearchJSONSitter;
+                    transactAdvancedSearchFragment();
                     AppConstant.SearchJSONSitter="";
+
                 }else {
                     transactSearchBasicFragment();
                 }
@@ -890,7 +885,7 @@ public class BaseActivity extends LocationBaseActivity
 //        fragmentManager = getSupportFragmentManager();
         fragmentManager.popBackStack();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitter, null));
+        fragmentTransaction.replace(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitterLanguageChange, null));
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
