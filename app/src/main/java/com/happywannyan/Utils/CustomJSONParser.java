@@ -331,6 +331,7 @@ public class CustomJSONParser {
                                 jsonResponseInterface.OnError(new JSONObject(responseString).getString("message") + "", responseString);
                             }
                         } catch (Exception e) {
+                            e.printStackTrace();
                         }
 
 
@@ -632,8 +633,10 @@ public class CustomJSONParser {
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
+                        exception=e;
                     } catch (Exception ex) {
                         ex.printStackTrace();
+                        exception=ex;
                     }
                     return null;
                 }
