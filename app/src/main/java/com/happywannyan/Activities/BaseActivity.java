@@ -18,7 +18,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
+import com.facebook.AccessToken;
+import com.facebook.FacebookRequestError;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
+import com.facebook.login.LoginManager;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -65,7 +72,7 @@ public class BaseActivity extends LocationBaseActivity
     SharedPreferences sharedPreferences;
 
     ImageView UserImage;
-    SFNFTextView txt_login_label ,UserName;
+    SFNFTextView txt_login_label, UserName;
 
     @Override
     protected void onPause() {
@@ -89,14 +96,14 @@ public class BaseActivity extends LocationBaseActivity
         Params.put("user_id", AppConstant.UserId);
         Params.put("anorid_device_id", refreshedToken + "");
 
-        Loger.MSG("@user_id-->",AppConstant.UserId);
-        Loger.MSG("@anorid_device_id-->",refreshedToken + "");
+        Loger.MSG("@user_id-->", AppConstant.UserId);
+        Loger.MSG("@anorid_device_id-->", refreshedToken + "");
 
 
-        new CustomJSONParser().APIForPostMethod2(BaseActivity.this,AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod2(BaseActivity.this, AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
-                Loger.MSG("@userDevice","Updated");
+                Loger.MSG("@userDevice", "Updated");
             }
 
             @Override
@@ -106,8 +113,8 @@ public class BaseActivity extends LocationBaseActivity
 
             @Override
             public void OnError(String Error) {
-                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                    Toast.makeText(BaseActivity.this,Error,Toast.LENGTH_SHORT).show();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                    Toast.makeText(BaseActivity.this, Error, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -134,7 +141,6 @@ public class BaseActivity extends LocationBaseActivity
         });
 
 
-
         navigationView.findViewById(R.id.LL_Account).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,7 +153,6 @@ public class BaseActivity extends LocationBaseActivity
         });
 
 
-
         navigationView.findViewById(R.id.LL_Switch_language).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,118 +161,117 @@ public class BaseActivity extends LocationBaseActivity
                         getResources().getString(R.string.ok),
                         getResources().getString(R.string.cancel),
                         new MYAlert.OnOkCancel() {
-                    @Override
-                    public void OnOk() {
+                            @Override
+                            public void OnOk() {
 
-                        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                        drawer.closeDrawer(GravityCompat.START);
+                                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                                drawer.closeDrawer(GravityCompat.START);
 
-                        sharedPreferences = getSharedPreferences("AutoLanguage", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                sharedPreferences = getSharedPreferences("AutoLanguage", MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                        Configuration config = getBaseContext().getResources().getConfiguration();
-                        Locale locale;
+                                Configuration config = getBaseContext().getResources().getConfiguration();
+                                Locale locale;
 
-                        if (sharedPreferences.getString("shortLanguage", "NO").equalsIgnoreCase("en")||
-                                sharedPreferences.getString("shortLanguage", "NO").equalsIgnoreCase("No")) {
-                            editor.putString("shortLanguage", "ja");
-                            AppConstant.Language = "ja";
-                            locale = new Locale("ja");
-                        } else {
-                            editor.putString("shortLanguage", "en");
-                            AppConstant.Language = "en";
-                            locale = new Locale("en");
-                        }
+                                if (sharedPreferences.getString("shortLanguage", "NO").equalsIgnoreCase("en") ||
+                                        sharedPreferences.getString("shortLanguage", "NO").equalsIgnoreCase("No")) {
+                                    editor.putString("shortLanguage", "ja");
+                                    AppConstant.Language = "ja";
+                                    locale = new Locale("ja");
+                                } else {
+                                    editor.putString("shortLanguage", "en");
+                                    AppConstant.Language = "en";
+                                    locale = new Locale("en");
+                                }
 
-                        editor.apply();
-                        editor.commit();
+                                editor.apply();
+                                editor.commit();
 
-                        Locale.setDefault(locale);
-                        config.locale = locale;
-                        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-                        onConfigurationChanged(config);
+                                Locale.setDefault(locale);
+                                config.locale = locale;
+                                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+                                onConfigurationChanged(config);
 
-                        ((SFNFTextView) findViewById(R.id.TXT_UserName)).setHint(getResources().getString(R.string.guest));
-                        ((SFNFTextView) findViewById(R.id.TXT_loginlabel)).setHint(getResources().getString(R.string.login_signup));
+                                ((SFNFTextView) findViewById(R.id.TXT_UserName)).setHint(getResources().getString(R.string.guest));
+                                ((SFNFTextView) findViewById(R.id.TXT_loginlabel)).setHint(getResources().getString(R.string.login_signup));
 
-                        ((SFNFTextView) findViewById(R.id.tv_nav_search)).setText(getResources().getString(R.string.search));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_message)).setText(getResources().getString(R.string.nav_messages));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_booking)).setText(getResources().getString(R.string.nav_booking));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_your_pet)).setText(getResources().getString(R.string.nav_yourpet));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_payment)).setText(getResources().getString(R.string.nav_payment));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_profile)).setText(getResources().getString(R.string.nav_profile));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_favoritesitter)).setText(getResources().getString(R.string.nav_favoritesitter));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_pastsitter)).setText(getResources().getString(R.string.nav_pastsitter));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_help)).setText(getResources().getString(R.string.nav_help));
-                        ((SFNFTextView) findViewById(R.id.tv_about_us)).setText(getResources().getString(R.string.nav_contact_us));
-                        ((SFNFTextView) findViewById(R.id.tv_nav_account)).setText(getResources().getString(R.string.nav_account));
-
-
-                        if (AppConstant.Language.equals("en")) {
-                            ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("日本語");
-                        } else {
-                            ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("English");
-                        }
+                                ((SFNFTextView) findViewById(R.id.tv_nav_search)).setText(getResources().getString(R.string.search));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_message)).setText(getResources().getString(R.string.nav_messages));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_booking)).setText(getResources().getString(R.string.nav_booking));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_your_pet)).setText(getResources().getString(R.string.nav_yourpet));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_payment)).setText(getResources().getString(R.string.nav_payment));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_profile)).setText(getResources().getString(R.string.nav_profile));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_favoritesitter)).setText(getResources().getString(R.string.nav_favoritesitter));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_pastsitter)).setText(getResources().getString(R.string.nav_pastsitter));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_help)).setText(getResources().getString(R.string.nav_help));
+                                ((SFNFTextView) findViewById(R.id.tv_about_us)).setText(getResources().getString(R.string.nav_contact_us));
+                                ((SFNFTextView) findViewById(R.id.tv_nav_account)).setText(getResources().getString(R.string.nav_account));
 
 
-                        ((SFNFTextView) findViewById(R.id.tv_nav_logout)).setText(getResources().getString(R.string.nav_logout));
+                                if (AppConstant.Language.equals("en")) {
+                                    ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("日本語");
+                                } else {
+                                    ((SFNFTextView) findViewById(R.id.tv_nav_switch_language)).setText("English");
+                                }
 
 
-                        if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MessageFragment) {
+                                ((SFNFTextView) findViewById(R.id.tv_nav_logout)).setText(getResources().getString(R.string.nav_logout));
 
-                            transactMessageFragment();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof SearchBasicFragment) {
+                                if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MessageFragment) {
 
-                            transactSearchBasicFragment();
+                                    transactMessageFragment();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof BookingFragment) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof SearchBasicFragment) {
 
-                            transactBookingFragment();
+                                    transactSearchBasicFragment();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof PastSitterFragment) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof BookingFragment) {
 
-                            transactPastSitterFragment();
+                                    transactBookingFragment();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyProfileFragment) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof PastSitterFragment) {
 
-                            transactMyProfileFragment();
+                                    transactPastSitterFragment();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPetsFragments) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyProfileFragment) {
 
-                            transactMyPetsFragments();
+                                    transactMyProfileFragment();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPaymentsFragment) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPetsFragments) {
 
-                            transactMyPaymentsFragment();
+                                    transactMyPetsFragments();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof MyPaymentsFragment) {
 
-                            transactFavouriteFragment();
+                                    transactMyPaymentsFragment();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof ContactUsFragment) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof FavouriteFragment) {
 
-                            transactContactUsFragment();
+                                    transactFavouriteFragment();
 
-                        } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof HelpFragment) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof ContactUsFragment) {
 
-                            transactHelpFragment();
+                                    transactContactUsFragment();
 
-                        }
-                        else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AccountFragment) {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof HelpFragment) {
 
-                            transactAccountFragment();
+                                    transactHelpFragment();
 
-                        }
-                        else if((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AdvancedSearchFragment){
-                            transactAdvancedSearchFragment();
-                        }
-                    }
-                    @Override
-                    public void OnCancel() {
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AccountFragment) {
 
-                    }
-                });
+                                    transactAccountFragment();
+
+                                } else if ((getSupportFragmentManager().findFragmentById(R.id.Base_fargment_layout)) instanceof AdvancedSearchFragment) {
+                                    transactAdvancedSearchFragment();
+                                }
+                            }
+
+                            @Override
+                            public void OnCancel() {
+
+                            }
+                        });
             }
         });
 
@@ -294,65 +298,63 @@ public class BaseActivity extends LocationBaseActivity
                         getResources().getString(R.string.ok),
                         getResources().getString(R.string.cancel),
                         new MYAlert.OnOkCancel() {
-                    @Override
-                    public void OnOk() {
-                        appLoader.Show();
-                        String URL = AppConstant.BASEURL + "app_logout?user_id=" + AppConstant.UserId + "&anorid_status=1";
-                        new CustomJSONParser().APIForGetMethod(BaseActivity.this,URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                             @Override
-                            public void OnSuccess(String Result) {
-                                appLoader.Dismiss();
-                                Loger.MSG("Result", Result);
+                            public void OnOk() {
+                                appLoader.Show();
+                                String URL = AppConstant.BASEURL + "app_logout?user_id=" + AppConstant.UserId + "&anorid_status=1";
+                                new CustomJSONParser().APIForGetMethod(BaseActivity.this, URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                                    @Override
+                                    public void OnSuccess(String Result) {
+                                        appLoader.Dismiss();
+                                        Loger.MSG("Result", Result);
 
-                                try {
-                                    if (new JSONObject(Result).getBoolean("response")) {
+                                        try {
+                                            if (new JSONObject(Result).getBoolean("response")) {
 
-                                        new AppConstant(BaseActivity.this).logOutClearAllData();
+                                                new AppConstant(BaseActivity.this).logOutClearAllData();
 
-                                        AppConstant.UserEmail="";
-                                        AppConstant.UserName="";
-                                        AppConstant.UserId="";
+                                                AppConstant.UserEmail = "";
+                                                AppConstant.UserName = "";
+                                                AppConstant.UserId = "";
 
 
 //                                        /////////////////Facebook logout///////////session//
-//                                        logoutFromFacebook(new LogoutFromFacebookListener() {
-//                                            @Override
-//                                            public void onLoggedOutFromFacebook() {
-//                                                Loger.MSG("Facebook-->","logout");
-//                                            }
-//                                        });
+                                                if (AccessToken.getCurrentAccessToken() != null && com.facebook.Profile.getCurrentProfile() != null) {
+                                                    LoginManager.getInstance().logOut();
+                                                }
 //                                        /////////////end///////////////////////////////////
 
-                                        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                                        drawer.closeDrawer(GravityCompat.START);
-                                        startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
-                                        finish();
+                                                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                                                drawer.closeDrawer(GravityCompat.START);
+                                                startActivity(new Intent(BaseActivity.this, LoginChooserActivity.class));
+                                                finish();
+
+                                            }
+
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
                                     }
 
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
+                                    @Override
+                                    public void OnError(String Error, String Response) {
+                                        appLoader.Dismiss();
+                                    }
+
+                                    @Override
+                                    public void OnError(String Error) {
+                                        appLoader.Dismiss();
+                                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                                            Toast.makeText(BaseActivity.this, Error, Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
                             }
 
                             @Override
-                            public void OnError(String Error, String Response) {
-                                appLoader.Dismiss();
-                            }
-
-                            @Override
-                            public void OnError(String Error) {
-                                appLoader.Dismiss();
-                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                                    Toast.makeText(BaseActivity.this,Error,Toast.LENGTH_SHORT).show();
-                                }
+                            public void OnCancel() {
                             }
                         });
-                    }
-
-                    @Override
-                    public void OnCancel() {
-                    }
-                });
             }
         });
 
@@ -445,32 +447,30 @@ public class BaseActivity extends LocationBaseActivity
         }
 
 
-
         if (AppConstant.messageAndBookingConditionCheck) {
             //do here
 
             if (AppConstant.go_to.trim().equals("message_all")) {
-                AppConstant.messageAndBookingConditionCheck=false;
+                AppConstant.messageAndBookingConditionCheck = false;
 
                 transactMessageFragment();
-            }
-            else {
-                AppConstant.messageAndBookingConditionCheck=false;
+            } else {
+                AppConstant.messageAndBookingConditionCheck = false;
 
                 transactBookingFragment();
             }
         } else {
-            if(AppConstant.login_status.equals("1")){
-                if(!AppConstant.SearchJSONSitter.equals("")){
+            if (AppConstant.login_status.equals("1")) {
+                if (!AppConstant.SearchJSONSitter.equals("")) {
 
                     AppConstant.SearchJSONSitterLanguageChange = AppConstant.SearchJSONSitter;
                     transactAdvancedSearchFragment();
-                    AppConstant.SearchJSONSitter="";
+                    AppConstant.SearchJSONSitter = "";
 
-                }else {
+                } else {
                     transactSearchBasicFragment();
                 }
-            }else {
+            } else {
                 transactMyProfileFragment();
             }
         }
@@ -484,7 +484,7 @@ public class BaseActivity extends LocationBaseActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
-        if(fragmentManager.getBackStackEntryCount()==1){
+        if (fragmentManager.getBackStackEntryCount() == 1) {
             if (!AppConstant.onBackPressCheckerForBaseActivity) {
                 new MYAlert(BaseActivity.this).AlertOkCancel("", getResources().getString(R.string.are_you_sure_want_to_close),
                         getResources().getString(R.string.ok),
@@ -500,14 +500,11 @@ public class BaseActivity extends LocationBaseActivity
                             }
                         });
             }
-            AppConstant.onBackPressCheckerForBaseActivity=false;
-        }
-        else {
+            AppConstant.onBackPressCheckerForBaseActivity = false;
+        } else {
             super.onBackPressed();
         }
     }
-
-
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -626,18 +623,18 @@ public class BaseActivity extends LocationBaseActivity
         super.onConfigurationChanged(newConfig);
     }
 
-    public void setProfileLoginUserDetails(){
+    public void setProfileLoginUserDetails() {
         new AppConstant(BaseActivity.this).getShareData(AppDataHolder.UserData, new AppDataHolder.AppSharePreferenceDataInterface() {
             @Override
             public void available(boolean available, JSONObject data) {
                 try {
                     Loger.MSG("@@ DADAD", "" + data);
 
-                    if(!data.getJSONObject("info_array").getString("image_path").trim().equals("")){
+                    if (!data.getJSONObject("info_array").getString("image_path").trim().equals("")) {
                         Glide.with(BaseActivity.this).load(data.getJSONObject("info_array").getString("image_path").trim()).placeholder(R.drawable.ic_user).transform(new CircleTransform(BaseActivity.this)).into(UserImage);
                     }
 
-                    UserName.setText(data.getJSONObject("info_array").getString("firstname")+" "+data.getJSONObject("info_array").getString("lastname"));
+                    UserName.setText(data.getJSONObject("info_array").getString("firstname") + " " + data.getJSONObject("info_array").getString("lastname"));
                     txt_login_label.setVisibility(View.GONE);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -669,7 +666,7 @@ public class BaseActivity extends LocationBaseActivity
                 navigationView.getHeaderView(0).findViewById(R.id.RL_HEADER).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(BaseActivity.this, LoginChooserActivity.class);
+                        Intent intent = new Intent(BaseActivity.this, LoginChooserActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         finish();
@@ -678,34 +675,6 @@ public class BaseActivity extends LocationBaseActivity
             }
         });
     }
-
-
-//    ///////////////////facebook logout////////////////
-//
-//    public void logoutFromFacebook(final LogoutFromFacebookListener listener) {
-//
-//        if (AccessToken.getCurrentAccessToken() == null) {
-//            // already logged out
-//            listener.onLoggedOutFromFacebook();
-//            return;
-//        }
-//
-//        new GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, new GraphRequest
-//                .Callback() {
-//
-//            @Override
-//            public void onCompleted(GraphResponse graphResponse) {
-//
-//                LoginManager.getInstance().logOut();
-//                listener.onLoggedOutFromFacebook();
-//            }
-//        }).executeAsync();
-//    }
-//
-//    public interface LogoutFromFacebookListener {
-//
-//        void onLoggedOutFromFacebook();
-//    }
 
     /**
      * \
@@ -735,7 +704,6 @@ public class BaseActivity extends LocationBaseActivity
     }
 
 
-
     /**
      * \
      * Fragment transaction of AccountFragment
@@ -754,7 +722,6 @@ public class BaseActivity extends LocationBaseActivity
 //        fragmentTransaction.addToBackStack(null);
 //        fragmentTransaction.commit();
     }
-
 
 
     /**
@@ -819,7 +786,6 @@ public class BaseActivity extends LocationBaseActivity
     }
 
 
-
     /**
      * \
      * Fragment transaction of MyPetsFragments
@@ -832,8 +798,6 @@ public class BaseActivity extends LocationBaseActivity
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-
-
 
 
     /**
@@ -885,8 +849,7 @@ public class BaseActivity extends LocationBaseActivity
      */
     private void transactAdvancedSearchFragment() {
 //        fragmentManager = getSupportFragmentManager();
-        if (!AppConstant.SearchJSONSitterLanguageChange.equals(""))
-        {
+        if (!AppConstant.SearchJSONSitterLanguageChange.equals("")) {
             fragmentManager.popBackStack();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.Base_fargment_layout, AdvancedSearchFragment.newInstance(AppConstant.SearchJSONSitterLanguageChange, null));
