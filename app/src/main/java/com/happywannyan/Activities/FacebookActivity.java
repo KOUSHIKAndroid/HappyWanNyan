@@ -8,6 +8,7 @@ import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -89,12 +90,15 @@ public class FacebookActivity extends AppCompatActivity {
 
             @Override
             public void onCancel() {
-
+                Toast.makeText(getApplicationContext(), "Cancel", Toast.LENGTH_SHORT).show();
+                finish();
             }
 
             @Override
             public void onError(FacebookException error) {
                 Loger.MSG("@@ FB ERROR", "" + error.toString());
+                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }
