@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.location.Location;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -14,6 +16,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -52,10 +56,12 @@ import com.happywannyan.Utils.LocationListener.LocationBaseActivity;
 import com.happywannyan.Utils.LocationListener.LocationConfiguration;
 import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
+import com.happywannyan.Utils.NetworkUtil;
 import com.happywannyan.Utils.constants.ProviderType;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,7 +76,7 @@ public class BaseActivity extends LocationBaseActivity
     AppLoader appLoader;
     NavigationView navigationView;
     SharedPreferences sharedPreferences;
-
+    private float currentVersion;
     ImageView UserImage;
     SFNFTextView txt_login_label, UserName;
 
@@ -475,6 +481,14 @@ public class BaseActivity extends LocationBaseActivity
             }
         }
 
+        if (NetworkUtil.getInstance().isNetworkAvailable(BaseActivity.this)) {
+            try {
+                currentVersion = Float.parseFloat(getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
+                new GetVersionCode().execute();
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
@@ -857,4 +871,63 @@ public class BaseActivity extends LocationBaseActivity
             fragmentTransaction.commit();
         }
     }
+
+
+
+    private class GetVersionCode extends AsyncTask<Void, String, String> {
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            String newVersion = null;
+            try {
+                newVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=" + BaseActivity.this.getPackageName() + "&hl=de")
+                        .timeout(30000)
+                        .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+                        .referrer("http://www.google.com")
+                        .get()
+                        .select("div[itemprop=softwareVersion]")
+                        .first()
+                        .ownText();
+                return newVersion;
+            } catch (Exception e) {
+                return e.getMessage();
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String onlineVersion) {
+            super.onPostExecute(onlineVersion);
+            if (onlineVersion != null && !onlineVersion.isEmpty()) {
+//                if (Float.valueOf(currentVersion) < Float.valueOf(onlineVersion)) {
+//                    //show dialog
+//                }
+
+                float playstoreversion= Float.parseFloat(onlineVersion);
+
+                if (currentVersion<playstoreversion) {
+                    //show dialog
+
+                    new MYAlert(BaseActivity.this).AlertOkCancel("", getResources().getString(R.string.please_login), getResources().getString(R.string.ok), getResources().getString(R.string.cancel), new MYAlert.OnOkCancel() {
+                        @Override
+                        public void OnOk() {
+
+                            final String appPackageName = getPackageName(); // getPackageName() from Context or Activity  object
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + appPackageName)));
+                            }
+                        }
+
+                        @Override
+                        public void OnCancel() {
+
+                        }
+                    });
+                }
+            }
+            Loger.MSG("update", "Current version " + currentVersion + "playstore version " + onlineVersion);
+        }
+    }
+
 }
