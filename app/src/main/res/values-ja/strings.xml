@@ -195,7 +195,7 @@
     <string name="no_item_selected_in_pet_neutered">ペットの妊娠または出産に際して選択された項目がない</string>
     <string name="no_ServicesFound">サービスが見つかりません</string>
     <string name="no_ImagesFound">画像が見つかりません</string>
-    <string name="please_check_your_mail">あなたのメールをチェックしてください</string>
+    <string name="please_check_your_mail">メールで確認コードが送信されます</string>
     <string name="please_choose_a_type">タイプをお選びください</string>
     <string name="please_choose_month">月を選んでください</string>
     <string name="please_choose_year">年を選んでください</string>
