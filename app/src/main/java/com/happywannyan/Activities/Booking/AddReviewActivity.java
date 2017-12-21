@@ -96,6 +96,7 @@ public class AddReviewActivity extends AppCompatActivity implements View.OnClick
             }
             Log.i("@@", "onRestoreInstanceState : " + photofile.getAbsolutePath().toString());
         } catch (NullPointerException e) {
+            e.printStackTrace();
         }
 
     }
