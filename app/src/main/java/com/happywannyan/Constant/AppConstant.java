@@ -15,6 +15,7 @@ public class AppConstant extends AppDataHolder {
 
 //    public static String BASEURL = "http://esolz.co.in/lab6/HappywanNyan/";
     public static String BASEURL = "http://www.happywannyan.com/";
+
     public static String Language = "en";
     public static String UserId = "";
     public static String UserName = "";
