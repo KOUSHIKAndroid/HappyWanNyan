@@ -158,7 +158,7 @@ public class BookingFragmentFoure extends Fragment {
                                     } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
                                         SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
                                         setGetAPIPostData.setPARAMS("stripeToken");
-                                        setGetAPIPostData.setValues(cardFinalSelection.getString("strip_id"));
+                                        setGetAPIPostData.setValues(cardFinalSelection.getString("stripe_id"));
                                         ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                     }
                                     } catch (Exception ex) {

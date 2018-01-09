@@ -118,13 +118,31 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 setGetAPIPostData.setValues(SitterId);
                 FirstPageData.add(setGetAPIPostData);
 
+
+
+
                 new CustomJSONParser().APIForPostMethod(BookingOneActivity.this,AppConstant.BASEURL + "before_booking_info", FirstPageData, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.add(R.id.Body, BookingFragmentTwo.newInstance(Result, null));
-                        fragmentTransaction.addToBackStack(null).commit();
+
+                        try {
+                            SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                            setGetAPIPostData.setPARAMS("no_of_days");
+                            setGetAPIPostData.setValues(new JSONObject(Result).getJSONObject("info_array").getString("no_of_days"));
+                            FirstPageData.add(setGetAPIPostData);
+
+                            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                            fragmentTransaction.add(R.id.Body, BookingFragmentTwo.newInstance(Result, null));
+                            fragmentTransaction.addToBackStack(null).commit();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+
+
                     }
 
                     @Override
@@ -253,7 +271,6 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
     }
 
 
-
     public void submitConfirmReservationRequestUsingHTTP() {
         appLoader.Show();
         ArrayList<SetGetAPIPostData> FinalPageData=new ArrayList<>();
@@ -276,6 +293,10 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             else if(FinalPageData.get(i).getPARAMS().equalsIgnoreCase("no_of_visit"))
             {
                 FinalPageData.get(i).setPARAMS("no_of_visits");
+            }
+            else if(FinalPageData.get(i).getPARAMS().equalsIgnoreCase("no_of_days"))
+            {
+                FinalPageData.get(i).setPARAMS("total_days");
             }
         }
 
