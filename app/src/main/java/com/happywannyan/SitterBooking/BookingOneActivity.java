@@ -129,7 +129,14 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                         try {
                             SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
                             setGetAPIPostData.setPARAMS("no_of_days");
-                            setGetAPIPostData.setValues(new JSONObject(Result).getJSONObject("info_array").getString("no_of_days"));
+
+                            if (new JSONObject(Result).getJSONObject("info_array").has("no_of_days")) {
+                                setGetAPIPostData.setValues(new JSONObject(Result).getJSONObject("info_array").getString("no_of_days"));
+                            }
+                            else {
+                                setGetAPIPostData.setValues(new JSONObject(Result).getJSONObject("info_array").getString("no_of_nights"));
+                            }
+
                             FirstPageData.add(setGetAPIPostData);
 
                             fragmentTransaction = getSupportFragmentManager().beginTransaction();
