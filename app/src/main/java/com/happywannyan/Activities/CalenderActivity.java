@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.happywannyan.Adapter.CalendarAdapter;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.POJO.SetGetCalender;
@@ -86,7 +87,8 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
             findViewById(R.id.RL_Tutorial).setVisibility(View.VISIBLE);
         }
         IMG_Tutorial = (ImageView) findViewById(R.id.IMG_Tutorial);
-        IMG_Tutorial.setImageResource(R.drawable.calender_tutorail);
+        Glide.with(getApplicationContext()).load("").placeholder(R.drawable.calender_tutorail).into(IMG_Tutorial);
+//        IMG_Tutorial.setImageResource(R.drawable.calender_tutorail);
 
         // Get the background, which has been compiled to an AnimationDrawable object.
         AnimationDrawable frameAnimation = (AnimationDrawable) IMG_Tutorial.getDrawable();
