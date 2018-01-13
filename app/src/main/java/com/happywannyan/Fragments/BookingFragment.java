@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.BookingAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
