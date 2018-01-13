@@ -89,30 +89,29 @@ public class BookingDetailsActivity extends AppCompatActivity {
             }
 
 
+            Loger.MSG("jsonObjectPrevious-->", "" + jsonObjectPrevious);
 
-            Loger.MSG("jsonObjectPrevious-->",""+jsonObjectPrevious);
-
-            if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")){
+            if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")) {
                 ((SFNFTextView) findViewById(R.id.tv_booking_id_name)).setText("");
-                if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type").equalsIgnoreCase("PE")){
+                if (jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type").equalsIgnoreCase("PE")) {
 
-                    if(jsonObjectPrevious.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("P")
-                            ||jsonObjectPrevious.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("N")){
+                    if (jsonObjectPrevious.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("P")
+                            || jsonObjectPrevious.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("N")) {
 
-                        ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(getResources().getString(R.string.pending_booking)+">>");
+                        ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(getResources().getString(R.string.pending_booking) + ">>");
                         ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTypeface(null, Typeface.BOLD);
                         ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTextColor(Color.parseColor("#FFFFFF"));
-                    }else {
+                    } else {
                         ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(getResources().getString(R.string.pending_booking));
                         ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTypeface(null, Typeface.BOLD);
                         ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTextColor(Color.parseColor("#FFFFFF"));
                     }
-                }else {
+                } else {
                     ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(getResources().getString(R.string.not_a_booking));
                     ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTypeface(null, Typeface.BOLD);
                     ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTextColor(Color.parseColor("#FFFFFF"));
                 }
-            }else {
+            } else {
                 ((SFNFTextView) findViewById(R.id.tv_booking_id_name)).setText(getResources().getString(R.string.up_coming_booking_id));
                 ((SFNFBoldTextView) findViewById(R.id.BookingId)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_id"));
                 ((SFNFBoldTextView) findViewById(R.id.BookingId)).setTypeface(null, Typeface.BOLD);
@@ -125,9 +124,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             if (jsonObjectPrevious.getJSONObject("booking_info").getString("coupon_amount").equals("")) {
                 ((SFNFTextView) findViewById(R.id.tv_total_amount)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_amount"));
-                ((SFNFTextView) findViewById(R.id.tv_coupon)).setVisibility(View.GONE);
-            }else {
-                ((SFNFTextView) findViewById(R.id.tv_coupon)).setVisibility(View.VISIBLE);
+                findViewById(R.id.LL_Coupon).setVisibility(View.GONE);
+            } else {
+                findViewById(R.id.LL_Coupon).setVisibility(View.VISIBLE);
                 ((SFNFTextView) findViewById(R.id.tv_total_amount)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("sub_amount"));
                 ((SFNFTextView) findViewById(R.id.tv_coupon)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("coupon_amount"));
             }
@@ -260,9 +259,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                             Loger.MSG("refund_status-->", "" + jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status"));
                             if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 0)
 
-                                Loger.MSG("bookingId",jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
+                                Loger.MSG("bookingId", jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
 
-                                CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.do_you_want_to_cancel_booking));
+                            CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.do_you_want_to_cancel_booking));
                             if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 1) {
                                 CancelWith_Reasons();
                             }
@@ -288,7 +287,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Loger.MSG("cancel_status_button-->", "Cancel");
                         try {
-                            Loger.MSG("bookingId",jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
+                            Loger.MSG("bookingId", jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
                             CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.are_you_sure_you_want_to_cancel_reservation_request));
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -409,7 +408,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         Params.put("langid", AppConstant.Language);
                         Params.put("user_timezone", TimeZone.getDefault().getID());
 
-                        new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this,AppConstant.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
+                        new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this, AppConstant.BASEURL + "normal_accept_booking", Params, new CustomJSONParser.JSONResponseInterface() {
                             @Override
                             public void OnSuccess(String Result) {
                                 appLoader.Dismiss();
@@ -444,8 +443,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
                             public void OnError(String Error) {
                                 appLoader.Dismiss();
 
-                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                                    Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                                    Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
                                 }
 
                                 MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
@@ -467,8 +466,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             } else if (jsonObjectPrevious.getJSONObject("booking_info").getString("accept_type_booking").equals("P")) {
 //                Open Popup With pet_info_section and  users_payment_section from JSON
-                Intent intent=new Intent(this,AcceptBookingActivity.class);
-                intent.putExtra("search_id",jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
+                Intent intent = new Intent(this, AcceptBookingActivity.class);
+                intent.putExtra("search_id", jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
                 startActivity(intent);
 
             }
@@ -482,7 +481,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         appLoader.Show();
 
         String URL = AppConstant.BASEURL + "booking_deny_confirm?user_id=" + AppConstant.UserId + "&booking_id=" + BookingID;
-        new CustomJSONParser().APIForGetMethod(BookingDetailsActivity.this,URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(BookingDetailsActivity.this, URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
@@ -509,8 +508,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
-                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                    Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                    Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -536,7 +535,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 Params.put("lang_id", AppConstant.Language);
                 Params.put("user_timezone", Tz.getID());
 
-                new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this,AppConstant.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
+                new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this, AppConstant.BASEURL + "start_message_api", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
                         appLoader.Dismiss();
@@ -570,8 +569,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
-                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                            Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                            Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
                         }
                         MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
                             @Override
@@ -598,62 +597,62 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 getResources().getString(R.string.ok),
                 getResources().getString(R.string.cancel),
                 new MYAlert.OnOkCancel() {
-            @Override
-            public void OnOk() {
-                appLoader.Show();
-                String URL = null;
-                try {
-                    URL = AppConstant.BASEURL + "delete_booking_api?user_id=" + AppConstant.UserId + "&booking_id=" + jsonObjectPrevious.getJSONObject("booking_info").getString("id");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                new CustomJSONParser().APIForGetMethod(BookingDetailsActivity.this,URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
-                    public void OnSuccess(String Result) {
-                        appLoader.Dismiss();
-                        Loger.MSG("Result", Result);
+                    public void OnOk() {
+                        appLoader.Show();
+                        String URL = null;
                         try {
-                            if (new JSONObject(Result).getBoolean("response")) {
-                                Toast.makeText(BookingDetailsActivity.this, new JSONObject(Result).getString("messege"), Toast.LENGTH_SHORT).show();
-
-                                Intent resultIntent = new Intent();
-                                resultIntent.putExtra("value", "done");
-                                setResult(Activity.RESULT_OK, resultIntent);
-
-                                finish();
-                            }
+                            URL = AppConstant.BASEURL + "delete_booking_api?user_id=" + AppConstant.UserId + "&booking_id=" + jsonObjectPrevious.getJSONObject("booking_info").getString("id");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                    }
+                        new CustomJSONParser().APIForGetMethod(BookingDetailsActivity.this, URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                            @Override
+                            public void OnSuccess(String Result) {
+                                appLoader.Dismiss();
+                                Loger.MSG("Result", Result);
+                                try {
+                                    if (new JSONObject(Result).getBoolean("response")) {
+                                        Toast.makeText(BookingDetailsActivity.this, new JSONObject(Result).getString("messege"), Toast.LENGTH_SHORT).show();
 
-                    @Override
-                    public void OnError(String Error, String Response) {
-                        appLoader.Dismiss();
-                        try {
-                            if (new JSONObject(Response).getBoolean("response")) {
-                                Toast.makeText(BookingDetailsActivity.this, new JSONObject(Response).getString("message"), Toast.LENGTH_SHORT).show();
+                                        Intent resultIntent = new Intent();
+                                        resultIntent.putExtra("value", "done");
+                                        setResult(Activity.RESULT_OK, resultIntent);
+
+                                        finish();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+
+                            @Override
+                            public void OnError(String Error, String Response) {
+                                appLoader.Dismiss();
+                                try {
+                                    if (new JSONObject(Response).getBoolean("response")) {
+                                        Toast.makeText(BookingDetailsActivity.this, new JSONObject(Response).getString("message"), Toast.LENGTH_SHORT).show();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void OnError(String Error) {
+                                appLoader.Dismiss();
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                                    Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                     }
 
                     @Override
-                    public void OnError(String Error) {
-                        appLoader.Dismiss();
-                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                            Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
-                        }
+                    public void OnCancel() {
+
                     }
                 });
-            }
-
-            @Override
-            public void OnCancel() {
-
-            }
-        });
     }
 
     private void AddReviewStatus() {
@@ -674,75 +673,75 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 getResources().getString(R.string.ok),
                 getResources().getString(R.string.cancel),
                 new MYAlert.OnOkCancel() {
-            @Override
-            public void OnOk() {
-                appLoader.Show();
-                HashMap<String, String> Params = new HashMap<String, String>();
-                Params.put("booking_id", BookingID);
-                Params.put("booking_type", BookingType);
-                Params.put("user_id", AppConstant.UserId);
-                Params.put("lang_id", AppConstant.Language);
-                Params.put("user_timezone", Tz.getID());
-
-                new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this,AppConstant.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                     @Override
-                    public void OnSuccess(String Result) {
-                        appLoader.Dismiss();
-                        String Message = "";
-                        try {
-                            Message = new JSONObject(Result).getString("message");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Message, new MYAlert.OnlyMessage() {
+                    public void OnOk() {
+                        appLoader.Show();
+                        HashMap<String, String> Params = new HashMap<String, String>();
+                        Params.put("booking_id", BookingID);
+                        Params.put("booking_type", BookingType);
+                        Params.put("user_id", AppConstant.UserId);
+                        Params.put("lang_id", AppConstant.Language);
+                        Params.put("user_timezone", Tz.getID());
+
+                        new CustomJSONParser().APIForPostMethod2(BookingDetailsActivity.this, AppConstant.BASEURL + "cancel_reservation_request", Params, new CustomJSONParser.JSONResponseInterface() {
                             @Override
-                            public void OnOk(boolean res) {
-
-                                Intent resultIntent = new Intent();
-                                resultIntent.putExtra("value", "done");
-                                setResult(Activity.RESULT_OK, resultIntent);
-
-                                finish();
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void OnError(String Error, String Response) {
-                        appLoader.Dismiss();
-                        try {
-                            MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
-                                @Override
-                                public void OnOk(boolean res) {
-
+                            public void OnSuccess(String Result) {
+                                appLoader.Dismiss();
+                                String Message = "";
+                                try {
+                                    Message = new JSONObject(Result).getString("message");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
-                            });
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
-                        }
+                                MYALERT.AlertForAPIRESPONSE(getString(R.string.sucess), Message, new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                        Intent resultIntent = new Intent();
+                                        resultIntent.putExtra("value", "done");
+                                        setResult(Activity.RESULT_OK, resultIntent);
+
+                                        finish();
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void OnError(String Error, String Response) {
+                                appLoader.Dismiss();
+                                try {
+                                    MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                        @Override
+                                        public void OnOk(boolean res) {
+
+                                        }
+                                    });
+                                } catch (Exception ex) {
+                                    ex.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void OnError(String Error) {
+                                appLoader.Dismiss();
+                                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                                    Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
+                                }
+                                MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                    }
+                                });
+                            }
+                        });
                     }
 
                     @Override
-                    public void OnError(String Error) {
-                        appLoader.Dismiss();
-                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                            Toast.makeText(BookingDetailsActivity.this,Error,Toast.LENGTH_SHORT).show();
-                        }
-                        MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
-                            @Override
-                            public void OnOk(boolean res) {
+                    public void OnCancel() {
 
-                            }
-                        });
                     }
                 });
-            }
-
-            @Override
-            public void OnCancel() {
-
-            }
-        });
     }
 
     @Override
