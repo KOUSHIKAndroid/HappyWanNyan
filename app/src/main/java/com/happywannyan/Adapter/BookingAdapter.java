@@ -98,7 +98,12 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             holder.tv_service_value.setText(object.getJSONObject("booking_info").getString("booking_service"));
             holder.tv_total_pets_value.setText(object.getJSONObject("booking_info").getString("booked_total_pet"));
-            holder.tv_total_amount_value.setText(object.getJSONObject("booking_info").getString("booked_total_amount"));
+
+            if (object.getJSONObject("booking_info").getString("coupon_amount").equals("")) {
+                holder.tv_total_amount_value.setText(object.getJSONObject("booking_info").getString("booked_total_amount"));
+            }else {
+                holder.tv_total_amount_value.setText(object.getJSONObject("booking_info").getString("sub_amount"));
+            }
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
