@@ -289,14 +289,34 @@
                             android:textColor="@color/colorGrayProject"
                             android:textSize="12sp" />
 
-                        <com.happywannyan.Font.SFNFTextView
-                            android:id="@+id/tv_total_amount"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="2100"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="12sp" />
+                            android:orientation="vertical">
+
+                            <com.happywannyan.Font.SFNFTextView
+                                android:id="@+id/tv_total_amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="2100"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="12sp" />
+
+
+                            <com.happywannyan.Font.SFNFTextView
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/tv_coupon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="#coupon"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
