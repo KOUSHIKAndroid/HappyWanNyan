@@ -56,7 +56,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             final JSONObject object = AllBooking.get(position);
 
-            if(!object.getJSONObject("users_profile").getString("booked_user_image").trim().equals("")) {
+            if (!object.getJSONObject("users_profile").getString("booked_user_image").trim().equals("")) {
                 Glide.with(context).load(object.getJSONObject("users_profile").getString("booked_user_image").trim()).into(holder.img_view);
             }
 
@@ -65,33 +65,33 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             holder.tv_start_date.setText(object.getJSONObject("booking_info").getString("booking_start_date"));
 
-            if(object.getJSONObject("booking_info").getString("booking_end_date").trim().equals("")){
+            if (object.getJSONObject("booking_info").getString("booking_end_date").trim().equals("")) {
                 holder.tv_end_date.setText(object.getJSONObject("booking_info").getString("booking_start_date"));
-            }else {
+            } else {
                 holder.tv_end_date.setText(object.getJSONObject("booking_info").getString("booking_end_date"));
             }
 
 
-            if (object.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")){
+            if (object.getJSONObject("booking_info").getString("booking_id").equalsIgnoreCase("")) {
                 holder.tv_bookingID_name.setText("");
-                if (object.getJSONObject("booking_info").getString("booking_type").equalsIgnoreCase("PE")){
+                if (object.getJSONObject("booking_info").getString("booking_type").equalsIgnoreCase("PE")) {
 
-                    if(object.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("P")
-                            ||object.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("N")){
+                    if (object.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("P")
+                            || object.getJSONObject("booking_info").getString("accept_type_booking").equalsIgnoreCase("N")) {
 
-                        holder.tv_booking_id.setText(context.getResources().getString(R.string.pending_booking)+">>");
+                        holder.tv_booking_id.setText(context.getResources().getString(R.string.pending_booking) + ">>");
                         holder.tv_booking_id.setTypeface(null, Typeface.BOLD);
                         holder.tv_booking_id.setTextColor(Color.parseColor("#bf3e49"));
 
-                    }else {
+                    } else {
                         holder.tv_booking_id.setText(context.getResources().getString(R.string.pending_booking));
                         holder.tv_booking_id.setTypeface(null, Typeface.BOLD);
                         holder.tv_booking_id.setTextColor(Color.parseColor("#bf3e49"));
                     }
-                }else {
+                } else {
                     holder.tv_booking_id.setText(context.getResources().getString(R.string.not_a_booking));
                 }
-            }else {
+            } else {
                 holder.tv_bookingID_name.setText(context.getResources().getString(R.string.up_coming_booking_id));
                 holder.tv_booking_id.setText(object.getJSONObject("booking_info").getString("booking_id"));
             }
@@ -101,7 +101,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
             if (object.getJSONObject("booking_info").getString("coupon_amount").equals("")) {
                 holder.tv_total_amount_value.setText(object.getJSONObject("booking_info").getString("booked_total_amount"));
-            }else {
+            } else {
                 holder.tv_total_amount_value.setText(object.getJSONObject("booking_info").getString("sub_amount"));
             }
 
@@ -122,31 +122,30 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
                 @Override
                 public void onClick(View view) {
                     try {
-                        if(object.getJSONObject("users_profile").getString("type").equalsIgnoreCase("S")){
+                        if (object.getJSONObject("users_profile").getString("type").equalsIgnoreCase("S")) {
                             new MYAlert(context).AlertOkCancel("", context.getString(R.string.go_to_sitters_profile),
                                     context.getResources().getString(R.string.ok),
                                     context.getResources().getString(R.string.cancel),
                                     new MYAlert.OnOkCancel() {
-                                @Override
-                                public void OnOk() {
-                                    try {
-                                        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
-                                        Intent intent = new Intent(context, ProfileDetailsActivity.class);
-                                        intent.putExtra("data", "" + object.getJSONObject("booking_info"));
-                                        context.startActivity(intent, options.toBundle());
-                                    } catch (Exception ex) {
-                                        ex.printStackTrace();
-                                    }
-                                }
+                                        @Override
+                                        public void OnOk() {
+                                            try {
+                                                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, holder.img_view, "cardimage");
+                                                Intent intent = new Intent(context, ProfileDetailsActivity.class);
+                                                intent.putExtra("data", "" + object.getJSONObject("booking_info"));
+                                                context.startActivity(intent, options.toBundle());
+                                            } catch (Exception ex) {
+                                                ex.printStackTrace();
+                                            }
+                                        }
 
-                                @Override
-                                public void OnCancel() {
+                                        @Override
+                                        public void OnCancel() {
 
-                                }
-                            });
+                                        }
+                                    });
                         }
-                    }catch (Exception ex)
-                    {
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
                 }
@@ -187,9 +186,9 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         AppCompatImageView img_view;
-        SFNFTextView tv_title, tv_name,tv_bookingID_name;
+        SFNFTextView tv_title, tv_name, tv_bookingID_name;
         CardView img_card_view;
-        SFNFBoldTextView tv_start_date, tv_end_date,tv_booking_id, tv_service_value, tv_total_pets_value, tv_total_amount_value;
+        SFNFBoldTextView tv_start_date, tv_end_date, tv_booking_id, tv_service_value, tv_total_pets_value, tv_total_amount_value;
 
         public MyViewHolder(View itemView) {
             super(itemView);

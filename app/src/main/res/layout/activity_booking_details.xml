@@ -252,12 +252,12 @@
                     android:background="#9F2C3A" />
 
                 <LinearLayout
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:id="@+id/ExtraLL_Coupon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/horizontal_line_one"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:orientation="horizontal"
                     android:weightSum="5">
 
@@ -294,13 +294,13 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:id="@+id/ExtraLL_Subtotal"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/ExtraLL_Coupon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
                     android:weightSum="5">
 
@@ -335,7 +335,6 @@
                     </LinearLayout>
 
                 </LinearLayout>
-
 
 
                 <LinearLayout

@@ -148,7 +148,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "upcoming_booking_list";
-                TAGNAME= tv_up_coming.getText().toString();
+                TAGNAME = tv_up_coming.getText().toString();
                 loadBookingList("0");
             }
         });
@@ -167,7 +167,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "current_booking_list";
-                TAGNAME= tv_current.getText().toString();
+                TAGNAME = tv_current.getText().toString();
                 loadBookingList("0");
 
             }
@@ -186,7 +186,7 @@ public class BookingFragment extends Fragment {
 
                 AllBooking.clear();
                 type = "pending_booking_list";
-                TAGNAME= tv_pending.getText().toString();
+                TAGNAME = tv_pending.getText().toString();
                 loadBookingList("0");
             }
         });
@@ -204,7 +204,7 @@ public class BookingFragment extends Fragment {
                 view_between_pending_past.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
 
                 AllBooking.clear();
-                TAGNAME= tv_past.getText().toString();
+                TAGNAME = tv_past.getText().toString();
                 type = "past_booking_list";
                 loadBookingList("0");
             }
@@ -229,10 +229,10 @@ public class BookingFragment extends Fragment {
         });
 
         if (AppConstant.go_to.trim().equals("")) {
-            TAGNAME= tv_up_coming.getText().toString();
+            TAGNAME = tv_up_coming.getText().toString();
             tv_up_coming.performClick();
         } else {
-            TAGNAME= tv_pending.getText().toString();
+            TAGNAME = tv_pending.getText().toString();
             tv_pending.performClick();
             AppConstant.go_to = "";
         }
@@ -262,7 +262,7 @@ public class BookingFragment extends Fragment {
         appLoader.Show();
         Params.get(0).setValues(start_from);
 
-        new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + type + "?", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + type + "?", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 try {
@@ -313,9 +313,8 @@ public class BookingFragment extends Fragment {
 //
 //                            }
 //                        });
-                    }
-                    else {
-                        new MYAlert(getActivity()).AlertOnly(""+ TAGNAME, Error, new MYAlert.OnlyMessage() {
+                    } else {
+                        new MYAlert(getActivity()).AlertOnly("" + TAGNAME, Error, new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
 
@@ -327,12 +326,13 @@ public class BookingFragment extends Fragment {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
                 recyclerView.setAdapter(null);
-                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
-                    Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))) {
+                    Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
                 }
             }
         });

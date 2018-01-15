@@ -134,8 +134,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
             }
 
 
-
-
             if (jsonObjectPrevious.getJSONObject("booking_info").has("accept_button") && !jsonObjectPrevious.getJSONObject("booking_info").getString("accept_button").trim().equals("")) {
 
                 View ButtomView = getLayoutInflater().inflate(R.layout.footer_card_button, null);
