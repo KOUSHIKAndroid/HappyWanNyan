@@ -129,7 +129,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 findViewById(R.id.LL_Coupon).setVisibility(View.GONE);
             } else {
                 findViewById(R.id.LL_Coupon).setVisibility(View.VISIBLE);
-                ((SFNFTextView) findViewById(R.id.tv_total_amount)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("sub_amount"));
+                ((SFNFTextView) findViewById(R.id.tv_total_amount)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_amount"));
                 ((SFNFTextView) findViewById(R.id.tv_coupon)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("coupon_amount"));
             }
 
