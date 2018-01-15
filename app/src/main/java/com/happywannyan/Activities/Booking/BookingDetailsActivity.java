@@ -122,6 +122,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             ((SFNFBoldTextView) findViewById(R.id.tv_trust_and_safety_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("trust_safety_fee"));
 
+            ((SFNFTextView) findViewById(R.id.tv_subtotal)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_amount"));
+
             if (jsonObjectPrevious.getJSONObject("booking_info").getString("coupon_amount").equals("")) {
                 ((SFNFTextView) findViewById(R.id.tv_total_amount)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_amount"));
                 findViewById(R.id.LL_Coupon).setVisibility(View.GONE);
@@ -130,6 +132,9 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 ((SFNFTextView) findViewById(R.id.tv_total_amount)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("sub_amount"));
                 ((SFNFTextView) findViewById(R.id.tv_coupon)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("coupon_amount"));
             }
+
+
+
 
             if (jsonObjectPrevious.getJSONObject("booking_info").has("accept_button") && !jsonObjectPrevious.getJSONObject("booking_info").getString("accept_button").trim().equals("")) {
 

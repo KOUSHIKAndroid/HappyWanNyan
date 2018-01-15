@@ -319,6 +319,7 @@
     <string name="this_is_wrong_password">This is wrong password</string>
     <string name="password_updated_successfully">Password updated successfully</string>
     <string name="discount">Discount</string>
+    <string name="sub_total">Sub Total</string>
 
 
 </resources>

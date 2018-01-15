@@ -299,5 +299,7 @@
     <string name="this_is_wrong_password">これは間違ったパスワードです</string>
     <string name="password_updated_successfully">パスワードを正常に更新しました</string>
     <string name="discount">ディスカウント</string>
+    <string name="sub_total">小計</string>
+
 
 </resources>
