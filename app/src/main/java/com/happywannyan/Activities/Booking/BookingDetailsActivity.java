@@ -120,7 +120,16 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
             ((SFNFBoldTextView) findViewById(R.id.tv_service_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booking_service"));
 
+//            if (!jsonObjectPrevious.getJSONObject("booking_info").getString("trust_safety_fee").equals("")){
+//                findViewById(R.id.LLSafetyAndCoupon).setVisibility(View.VISIBLE);
+//                ((SFNFBoldTextView) findViewById(R.id.tv_trust_and_safety_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("trust_safety_fee"));
+//            }else {
+//                findViewById(R.id.LLSafetyAndCoupon).setVisibility(View.GONE);
+//            }
+
             ((SFNFBoldTextView) findViewById(R.id.tv_trust_and_safety_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("trust_safety_fee"));
+
+
 
             if (AppConstant.UserId.equals(jsonObjectPrevious.getJSONObject("booking_info").getString("buyer_id").trim())){
 

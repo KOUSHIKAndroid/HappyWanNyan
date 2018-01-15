@@ -189,12 +189,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/LLStartEndDateBookingValue"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:orientation="vertical">
 
                     <com.happywannyan.Font.SFNFTextView
                         android:id="@+id/tv_trust_and_safety_fee_name"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
@@ -204,26 +203,26 @@
                         android:textSize="12sp" />
 
 
+                    <com.happywannyan.Font.SFNFBoldTextView
+                        android:id="@+id/tv_trust_and_safety_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/LLSafetyAndCoupon"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="#225"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp" />
+
+
                 </LinearLayout>
-
-
-                <com.happywannyan.Font.SFNFBoldTextView
-                    android:id="@+id/tv_trust_and_safety_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/LLSafetyAndCoupon"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:text="#225"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="12sp" />
 
 
                 <com.happywannyan.Font.SFNFTextView
                     android:id="@+id/tv_service_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_trust_and_safety_value"
+                    android:layout_below="@+id/LLSafetyAndCoupon"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:text="@string/service"
@@ -301,8 +300,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/ExtraLL_Subtotal"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
                     android:weightSum="5">
 
