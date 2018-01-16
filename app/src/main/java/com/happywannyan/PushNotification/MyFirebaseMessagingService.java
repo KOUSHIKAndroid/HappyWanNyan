@@ -92,6 +92,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             SharedPreferences.Editor editor = pref.edit();
 
             editor.putInt("count", pref.getInt("count", 0) + 1);
+            editor.apply();
             editor.commit();
 
             Loger.MSG("after_push_msg_count", "" + pref.getInt("count", 0));
