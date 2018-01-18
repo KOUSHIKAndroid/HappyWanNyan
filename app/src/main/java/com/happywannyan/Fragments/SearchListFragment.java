@@ -25,6 +25,7 @@ public class SearchListFragment extends Fragment {
     private String mParam2;
 
     RecyclerView recycler_view;
+    public SearchPetsAdapter searchPetsAdapter;
 
     public SearchListFragment() {
         // Required empty public constructor
@@ -62,7 +63,10 @@ public class SearchListFragment extends Fragment {
         recycler_view = (RecyclerView) view.findViewById(R.id.recycler_view);
         recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        recycler_view.setAdapter(new SearchPetsAdapter(getActivity(), ((SearchResultActivity) getActivity()).ListARRY));
+        searchPetsAdapter=new SearchPetsAdapter(getActivity(),SearchListFragment.this, ((SearchResultActivity) getActivity()).ListARRY);
+
+        recycler_view.setAdapter(searchPetsAdapter);
+
         ((SearchResultActivity) getActivity()).findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
         ((SearchResultActivity) getActivity()).findViewById(R.id.fab).setVisibility(View.VISIBLE);
 
@@ -90,5 +94,10 @@ public class SearchListFragment extends Fragment {
 //                }
 //            }
 //        });
+    }
+
+    public void lazyLoad(int startPage){
+        ((SearchResultActivity) getActivity()).start_form=startPage;
+        ((SearchResultActivity) getActivity()).searchLoadingLazy();
     }
 }

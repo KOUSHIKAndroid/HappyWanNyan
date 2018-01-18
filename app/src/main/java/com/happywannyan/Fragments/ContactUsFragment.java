@@ -6,8 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
@@ -97,6 +99,15 @@ public class ContactUsFragment extends Fragment {
         webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
         webSettings.setUseWideViewPort(true);
         webSettings.setSaveFormData(true);
+
+
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                view.loadUrl(request.toString());
+                return true;
+            }
+        });
 
         appLoader = new AppLoader(getActivity());
 

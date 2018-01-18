@@ -5,7 +5,6 @@ import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
-import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.R;
 import com.happywannyan.Utils.CustomJSONParser;

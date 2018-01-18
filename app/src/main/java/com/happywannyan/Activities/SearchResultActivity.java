@@ -32,8 +32,10 @@ public class SearchResultActivity extends AppCompatActivity {
 
     public static final String SEARCHKEY = "@Data";
     private static final String TAG = "@@ SRCH_RESULT";
+    public int start_form = 0, next_data;
 
     FragmentTransaction fragmentTransaction;
+    SearchListFragment searchListFragment;
 
     public ArrayList<SetGetSearchData> ListARRY;
     JSONObject SearchKeys;
@@ -57,13 +59,13 @@ public class SearchResultActivity extends AppCompatActivity {
         Params.put("user_id", AppConstant.UserId);
         Params.put("anorid_device_id", refreshedToken + "");
 
-        Loger.MSG("@user_id-->",AppConstant.UserId);
-        Loger.MSG("@anorid_device_id-->",refreshedToken + "");
+        Loger.MSG("@user_id-->", AppConstant.UserId);
+        Loger.MSG("@anorid_device_id-->", refreshedToken + "");
 
-        new CustomJSONParser().APIForPostMethod2(SearchResultActivity.this,AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().APIForPostMethod2(SearchResultActivity.this, AppConstant.BASEURL + "users_device_update", Params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
-                Loger.MSG("@userDevice","Updated");
+                Loger.MSG("@userDevice", "Updated");
 
 
             }
@@ -75,8 +77,8 @@ public class SearchResultActivity extends AppCompatActivity {
 
             @Override
             public void OnError(String Error) {
-                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
-                    Toast.makeText(SearchResultActivity.this,Error,Toast.LENGTH_SHORT).show();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                    Toast.makeText(SearchResultActivity.this, Error, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -183,13 +185,13 @@ public class SearchResultActivity extends AppCompatActivity {
         findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppConstant.onBackPressCheckerForBaseActivity=true;
+                AppConstant.onBackPressCheckerForBaseActivity = true;
                 onBackPressed();
             }
         });
 
 
-        SearchLoading();
+        searchLoading();
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,7 +213,8 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.Container_result, new SearchListFragment());
+                searchListFragment = new SearchListFragment();
+                fragmentTransaction.replace(R.id.Container_result, searchListFragment);
                 fragmentTransaction.disallowAddToBackStack();
                 fragmentTransaction.commit();
                 ((ImageView) findViewById(R.id.fab_plus)).setImageResource(R.drawable.ic_fab_plus);
@@ -264,7 +267,7 @@ public class SearchResultActivity extends AppCompatActivity {
                         SearchJSONSitter.put("EndDate", "");
 
                         Intent intent = new Intent(SearchResultActivity.this, BaseActivity.class);
-                        AppConstant.SearchJSONSitter=SearchJSONSitter.toString();
+                        AppConstant.SearchJSONSitter = SearchJSONSitter.toString();
                         startActivity(intent);
                         finish();
 
@@ -282,7 +285,7 @@ public class SearchResultActivity extends AppCompatActivity {
     }
 
 
-    public void SearchLoading() {
+    public void searchLoading() {
 
         appLoader.Show();
 
@@ -303,6 +306,12 @@ public class SearchResultActivity extends AppCompatActivity {
         PostData.add(setGetAPIPostData);
 
 
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("start_form");
+        setGetAPIPostData.setValues(String.valueOf(start_form));
+        PostData.add(setGetAPIPostData);
+
+
         try {
             setGetAPIPostData = new SetGetAPIPostData();
             setGetAPIPostData.setPARAMS("search_location");
@@ -311,10 +320,12 @@ public class SearchResultActivity extends AppCompatActivity {
 
             for (int i = 0; i < SearchKeys.getJSONArray("keyinfo").length(); i++) {
                 JSONObject object = SearchKeys.getJSONArray("keyinfo").getJSONObject(i);
+
                 setGetAPIPostData = new SetGetAPIPostData();
                 setGetAPIPostData.setPARAMS(object.getString("name"));
                 setGetAPIPostData.setValues(object.getString("value"));
                 PostData.add(setGetAPIPostData);
+
                 if (object.getString("name").equals("ne_lng"))
                     ne_lng = Double.parseDouble(object.getString("value"));
                 if (object.getString("name").equals("ne_lat"))
@@ -338,19 +349,23 @@ public class SearchResultActivity extends AppCompatActivity {
                     findViewById(R.id.tv_empty).setVisibility(View.GONE);
 
                     JSONObject object = new JSONObject(Result);
+                    next_data = object.getInt("next_data");
+
                     JSONArray ARRA = object.getJSONArray("results");
 
                     for (int i = 0; i < ARRA.length(); i++) {
-                        JSONObject jjj = ARRA.getJSONObject(i);
+
+                        JSONObject jsonObjectME = ARRA.getJSONObject(i);
                         SetGetSearchData setGetSearchData = new SetGetSearchData();
-                        setGetSearchData.setSearcItem(jjj);
+                        setGetSearchData.setSearcItem(jsonObjectME);
 
                         ListARRY.add(setGetSearchData);
                     }
                     if (AppConstant.alwaysRedirectAfterLogin) {
                         fab.performClick();
                     } else {
-                        fragmentTransaction.replace(R.id.Container_result, new SearchListFragment());
+                        searchListFragment = new SearchListFragment();
+                        fragmentTransaction.replace(R.id.Container_result, searchListFragment);
                         fragmentTransaction.disallowAddToBackStack();
                         fragmentTransaction.commit();
                     }
@@ -392,6 +407,117 @@ public class SearchResultActivity extends AppCompatActivity {
         });
     }
 
+    public void searchLoadingLazy() {
+
+        if (next_data==1) {
+
+            appLoader.Show();
+
+            ArrayList<SetGetAPIPostData> PostData = new ArrayList<>();
+            SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("user_id");
+            setGetAPIPostData.setValues(AppConstant.UserId);
+            PostData.add(setGetAPIPostData);
+
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("langid");
+            setGetAPIPostData.setValues(AppConstant.Language);
+            PostData.add(setGetAPIPostData);
+
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("per_page");
+            setGetAPIPostData.setValues("10");
+            PostData.add(setGetAPIPostData);
+
+
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("start_form");
+            setGetAPIPostData.setValues(String.valueOf(start_form));
+            PostData.add(setGetAPIPostData);
+
+
+            try {
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS("search_location");
+                setGetAPIPostData.setValues(SearchKeys.getString("LocationName"));
+                PostData.add(setGetAPIPostData);
+
+                for (int i = 0; i < SearchKeys.getJSONArray("keyinfo").length(); i++) {
+                    JSONObject object = SearchKeys.getJSONArray("keyinfo").getJSONObject(i);
+
+                    setGetAPIPostData = new SetGetAPIPostData();
+                    setGetAPIPostData.setPARAMS(object.getString("name"));
+                    setGetAPIPostData.setValues(object.getString("value"));
+                    PostData.add(setGetAPIPostData);
+
+                    if (object.getString("name").equals("ne_lng"))
+                        ne_lng = Double.parseDouble(object.getString("value"));
+                    if (object.getString("name").equals("ne_lat"))
+                        ne_lat = Double.parseDouble(object.getString("value"));
+                    if (object.getString("name").equals("sw_lng"))
+                        sw_lng = Double.parseDouble(object.getString("value"));
+                    if (object.getString("name").equals("sw_lat"))
+                        sw_lat = Double.parseDouble(object.getString("value"));
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            new CustomJSONParser().APIForPostMethod(SearchResultActivity.this, AppConstant.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONResponseInterface() {
+                @Override
+                public void OnSuccess(String Result) {
+                    appLoader.Dismiss();
+                    try {
+                        findViewById(R.id.Container_result).setVisibility(View.VISIBLE);
+                        findViewById(R.id.tv_empty).setVisibility(View.GONE);
+
+                        JSONObject object = new JSONObject(Result);
+                        next_data = object.getInt("next_data");
+
+                        JSONArray ARRA = object.getJSONArray("results");
+
+                        for (int i = 0; i < ARRA.length(); i++) {
+
+                            JSONObject jsonObjectME = ARRA.getJSONObject(i);
+                            SetGetSearchData setGetSearchData = new SetGetSearchData();
+                            setGetSearchData.setSearcItem(jsonObjectME);
+
+                            ListARRY.add(setGetSearchData);
+                            searchListFragment.searchPetsAdapter.notifyDataSetChanged();
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void OnError(String Error, String Response) {
+                    appLoader.Dismiss();
+                    try {
+                        JSONObject jsonObject = new JSONObject(Response);
+                        if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") != 0) {
+                            //////no data more found
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void OnError(String Error) {
+                    appLoader.Dismiss();
+                    if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                        Toast.makeText(SearchResultActivity.this, Error, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+
+
     @Override
     public void onBackPressed() {
         if (AppConstant.alwaysRedirectAfterLogin) {
@@ -400,7 +526,7 @@ public class SearchResultActivity extends AppCompatActivity {
             finish();
             AppConstant.alwaysRedirectAfterLogin = false;
         } else {
-            Loger.MSG("AdvanceSearchBack-->",""+"Yes");
+            Loger.MSG("AdvanceSearchBack-->", "" + "Yes");
             Intent intent = new Intent();
             setResult(RESULT_FIRST_USER, intent);
             finish();

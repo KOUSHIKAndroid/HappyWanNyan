@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
+import com.happywannyan.Fragments.SearchListFragment;
 import com.happywannyan.POJO.SetGetSearchData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.Loger;
@@ -34,10 +35,12 @@ import java.util.ArrayList;
 public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.MyViewHolder> {
 
     Context context;
+    SearchListFragment searchListFragment;
     ArrayList<SetGetSearchData> searchPetArrayList;
 
-    public SearchPetsAdapter(Context context, ArrayList<SetGetSearchData> searchPetArrayList) {
+    public SearchPetsAdapter(Context context, SearchListFragment searchListFragment, ArrayList<SetGetSearchData> searchPetArrayList) {
         this.context = context;
+        this.searchListFragment=searchListFragment;
         this.searchPetArrayList = searchPetArrayList;
     }
 
@@ -85,13 +88,15 @@ public class SearchPetsAdapter extends RecyclerView.Adapter<SearchPetsAdapter.My
                 }
             });
 
+            if (position==searchPetArrayList.size()-1){
+                searchListFragment.lazyLoad(searchPetArrayList.size());
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     @Override
