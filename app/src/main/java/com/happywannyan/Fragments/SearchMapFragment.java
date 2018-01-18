@@ -210,7 +210,7 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
 
 //              ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity)getActivity(), holder.img_view, "cardimage");
                 Intent intent = new Intent(getActivity(), ProfileDetailsActivity.class);
-                intent.putExtra("data", "" + ((SearchResultActivity) getActivity()).ListARRYMAP.get((Integer) marker.getTag()).getSearcItem());
+                intent.putExtra("data", "" + ((SearchResultActivity) getActivity()).ListArrayMap.get((Integer) marker.getTag()).getSearcItem());
                 startActivity(intent);
             }
         });
@@ -224,16 +224,16 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
 
         try {
             LatLngBounds.Builder builder2 = new LatLngBounds.Builder();
-            for (int i = 0; i < ((SearchResultActivity) getActivity()).ListARRYMAP.size(); i++) {
+            for (int i = 0; i < ((SearchResultActivity) getActivity()).ListArrayMap.size(); i++) {
                 try {
-                    LatLng latLng = new LatLng(Double.parseDouble(((SearchResultActivity) getActivity()).ListARRYMAP.get(i).getSearcItem().getString("lat")), Double.parseDouble(((SearchResultActivity) getActivity()).ListARRYMAP.get(i).getSearcItem().getString("long")));
+                    LatLng latLng = new LatLng(Double.parseDouble(((SearchResultActivity) getActivity()).ListArrayMap.get(i).getSearcItem().getString("lat")), Double.parseDouble(((SearchResultActivity) getActivity()).ListArrayMap.get(i).getSearcItem().getString("long")));
                     MarkerOptions markerOptions = new MarkerOptions().
                             icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_map_icon)).
                             position(latLng).zIndex(0.0f);
 //                        .anchor(iconFactory.getAnchorU(), iconFactory.getAnchorV());
 
                     Marker lomarakar = Map.addMarker(markerOptions);
-                    lomarakar.setTitle(((SearchResultActivity) getActivity()).ListARRYMAP.get(i).getSearcItem() + "");
+                    lomarakar.setTitle(((SearchResultActivity) getActivity()).ListArrayMap.get(i).getSearcItem() + "");
                     builder2.include(markerOptions.getPosition());
                     lomarakar.setTag(i);
                 } catch (Exception ee) {
@@ -267,6 +267,4 @@ public class SearchMapFragment extends Fragment implements OnMapReadyCallback, G
         getActivity().findViewById(R.id.list).setVisibility(View.VISIBLE);
         getActivity().findViewById(R.id.IMG_Tinderr).setVisibility(View.VISIBLE);
     }
-
-
 }

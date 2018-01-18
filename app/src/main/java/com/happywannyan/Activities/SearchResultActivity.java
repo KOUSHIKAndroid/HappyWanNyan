@@ -2,6 +2,7 @@ package com.happywannyan.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -37,13 +38,16 @@ public class SearchResultActivity extends AppCompatActivity {
     FragmentTransaction fragmentTransaction;
     SearchMapFragment searchMapFragment;
     SearchListFragment searchListFragment;
+    SearchTinderFragment searchTinderFragment;
 
     public ArrayList<SetGetSearchData> ListARRY;
-    public ArrayList<SetGetSearchData> ListARRYMAP;
+    public ArrayList<SetGetSearchData> ListArrayMap;
+    public ArrayList<SetGetSearchData> ListArrayTinder;
     JSONObject SearchKeys;
     public double ne_lng, ne_lat, sw_lng, sw_lat;
     AppLoader appLoader;
     ImageView fab;
+    private FragmentManager fragmentManager = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,8 @@ public class SearchResultActivity extends AppCompatActivity {
         appLoader = new AppLoader(this);
 
         fab = (ImageView) findViewById(R.id.fab);
+
+        fragmentManager = getSupportFragmentManager();
 
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Loger.MSG(getClass().getName(), "Refreshed token: " + refreshedToken);
@@ -183,8 +189,8 @@ public class SearchResultActivity extends AppCompatActivity {
 
 
         ListARRY = new ArrayList<>();
-
-        ListARRYMAP = new ArrayList<>();
+        ListArrayMap = new ArrayList<>();
+        ListArrayTinder = new ArrayList<>();
 
         findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,11 +207,20 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                searchMapFragment= new SearchMapFragment();
-                fragmentTransaction.replace(R.id.Container_result,searchMapFragment);
-                fragmentTransaction.disallowAddToBackStack();
-                fragmentTransaction.commit();
+                Loger.MSG("Map-->","Yes");
+
+                if (fragmentManager.getBackStackEntryCount() > 0 && fragmentManager.findFragmentByTag("" + SearchMapFragment.class.getCanonicalName()) != null) {
+                    Loger.MSG("back_stack", "Removed *****" + SearchMapFragment.class.getCanonicalName());
+                    fragmentManager.beginTransaction().remove(fragmentManager.findFragmentByTag("" + SearchMapFragment.class.getCanonicalName())).commit();
+                    fragmentManager.popBackStack("" + SearchMapFragment.class.getCanonicalName(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                }
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                searchMapFragment=new SearchMapFragment();
+                transaction.replace(R.id.Container_result, searchMapFragment, "" + SearchMapFragment.class.getCanonicalName());
+                transaction.addToBackStack("" + SearchMapFragment.class.getCanonicalName());
+                transaction.commit();
+
+
                 ((ImageView) findViewById(R.id.fab_plus)).setImageResource(R.drawable.ic_fab_plus);
                 findViewById(R.id.fab).setVisibility(View.GONE);
                 findViewById(R.id.list).setVisibility(View.GONE);
@@ -217,11 +232,24 @@ public class SearchResultActivity extends AppCompatActivity {
         findViewById(R.id.list).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                searchListFragment = new SearchListFragment();
-                fragmentTransaction.replace(R.id.Container_result, searchListFragment);
-                fragmentTransaction.disallowAddToBackStack();
-                fragmentTransaction.commit();
+
+                Loger.MSG("List-->","Yes");
+
+//                if (fragmentManager.getBackStackEntryCount() > 0 && fragmentManager.findFragmentByTag("" + SearchListFragment.class.getCanonicalName()) != null) {
+//                    Loger.MSG("back_stack", "Removed *****" + SearchListFragment.class.getCanonicalName());
+//                    fragmentManager.beginTransaction().remove(fragmentManager.findFragmentByTag("" + SearchListFragment.class.getCanonicalName())).commit();
+//                    fragmentManager.popBackStack("" + SearchListFragment.class.getCanonicalName(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+//                }
+//
+//                FragmentTransaction transaction = fragmentManager.beginTransaction();
+//                searchListFragment=new SearchListFragment();
+//                transaction.replace(R.id.Container_result, searchListFragment, "" + SearchListFragment.class.getCanonicalName());
+//                transaction.addToBackStack("" + SearchListFragment.class.getCanonicalName());
+//                transaction.commit();
+
+                searchLoading();
+
+
                 ((ImageView) findViewById(R.id.fab_plus)).setImageResource(R.drawable.ic_fab_plus);
                 findViewById(R.id.fab).setVisibility(View.GONE);
                 findViewById(R.id.list).setVisibility(View.GONE);
@@ -232,10 +260,21 @@ public class SearchResultActivity extends AppCompatActivity {
         findViewById(R.id.IMG_Tinderr).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.Container_result, new SearchTinderFragment());
-                fragmentTransaction.disallowAddToBackStack();
-                fragmentTransaction.commit();
+
+                Loger.MSG("Tinder-->","Yes");
+
+                if (fragmentManager.getBackStackEntryCount() > 0 && fragmentManager.findFragmentByTag("" + SearchTinderFragment.class.getCanonicalName()) != null) {
+                    Loger.MSG("back_stack", "Removed *****" + SearchTinderFragment.class.getCanonicalName());
+                    fragmentManager.beginTransaction().remove(fragmentManager.findFragmentByTag("" + SearchTinderFragment.class.getCanonicalName())).commit();
+                    fragmentManager.popBackStack("" + SearchTinderFragment.class.getCanonicalName(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                }
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                searchTinderFragment=new SearchTinderFragment();
+                transaction.replace(R.id.Container_result, searchTinderFragment, "" + SearchTinderFragment.class.getCanonicalName());
+                transaction.addToBackStack("" + SearchTinderFragment.class.getCanonicalName());
+                transaction.commit();
+
+
                 ((ImageView) findViewById(R.id.fab_plus)).setImageResource(R.drawable.ic_fab_plus);
                 findViewById(R.id.fab).setVisibility(View.GONE);
                 findViewById(R.id.list).setVisibility(View.GONE);
@@ -291,7 +330,8 @@ public class SearchResultActivity extends AppCompatActivity {
 
 
     public void searchLoading() {
-
+        ListARRY.clear();
+        start_form=0;
         appLoader.Show();
 
         ArrayList<SetGetAPIPostData> PostData = new ArrayList<>();
@@ -369,10 +409,18 @@ public class SearchResultActivity extends AppCompatActivity {
                     if (AppConstant.alwaysRedirectAfterLogin) {
                         fab.performClick();
                     } else {
+
+                        if (fragmentManager.getBackStackEntryCount() > 0 && fragmentManager.findFragmentByTag("" + SearchTinderFragment.class.getCanonicalName()) != null) {
+                            Loger.MSG("back_stack", "Removed *****" + SearchTinderFragment.class.getCanonicalName());
+                            fragmentManager.beginTransaction().remove(fragmentManager.findFragmentByTag("" + SearchTinderFragment.class.getCanonicalName())).commit();
+                            fragmentManager.popBackStack("" + SearchTinderFragment.class.getCanonicalName(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                        }
+                        FragmentTransaction transaction = fragmentManager.beginTransaction();
                         searchListFragment = new SearchListFragment();
-                        fragmentTransaction.replace(R.id.Container_result, searchListFragment);
-                        fragmentTransaction.disallowAddToBackStack();
-                        fragmentTransaction.commit();
+                        transaction.replace(R.id.Container_result, searchListFragment, "" + SearchTinderFragment.class.getCanonicalName());
+                        transaction.addToBackStack("" + SearchTinderFragment.class.getCanonicalName());
+                        transaction.commit();
+
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -412,7 +460,7 @@ public class SearchResultActivity extends AppCompatActivity {
         });
     }
 
-    public void searchLoadingLazy() {
+    public void searchListLoadingLazy() {
 
         if (next_data==1) {
 
@@ -522,8 +570,9 @@ public class SearchResultActivity extends AppCompatActivity {
         }
     }
 
-
     public void searchLoadingMap() {
+
+        ListArrayMap.clear();
 
         appLoader.Show();
 
@@ -597,10 +646,129 @@ public class SearchResultActivity extends AppCompatActivity {
                         SetGetSearchData setGetSearchData = new SetGetSearchData();
                         setGetSearchData.setSearcItem(jsonObjectME);
 
-                        ListARRYMAP.add(setGetSearchData);
+                        ListArrayMap.add(setGetSearchData);
                     }
 
                     searchMapFragment.MapCallByMe();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                appLoader.Dismiss();
+                try {
+                    JSONObject jsonObject = new JSONObject(Response);
+                    if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") == 0) {
+
+                        findViewById(R.id.Container_result).setVisibility(View.GONE);
+                        findViewById(R.id.tv_empty).setVisibility(View.VISIBLE);
+
+//                        new MYAlert(SearchResultActivity.this).AlertOnly(getResources().getString(R.string.app_name), Error, new MYAlert.OnlyMessage() {
+//                            @Override
+//                            public void OnOk(boolean res) {
+//
+//                            }
+//                        });
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void OnError(String Error) {
+                appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                    Toast.makeText(SearchResultActivity.this, Error, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    public void searchLoadingTinder() {
+
+        ListArrayTinder.clear();
+
+        appLoader.Show();
+
+        ArrayList<SetGetAPIPostData> PostData = new ArrayList<>();
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        PostData.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("langid");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        PostData.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("per_page");
+        setGetAPIPostData.setValues("1000000");
+        PostData.add(setGetAPIPostData);
+
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("start_form");
+        setGetAPIPostData.setValues("0");
+        PostData.add(setGetAPIPostData);
+
+
+        try {
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("search_location");
+            setGetAPIPostData.setValues(SearchKeys.getString("LocationName"));
+            PostData.add(setGetAPIPostData);
+
+            for (int i = 0; i < SearchKeys.getJSONArray("keyinfo").length(); i++) {
+                JSONObject object = SearchKeys.getJSONArray("keyinfo").getJSONObject(i);
+
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS(object.getString("name"));
+                setGetAPIPostData.setValues(object.getString("value"));
+                PostData.add(setGetAPIPostData);
+
+                if (object.getString("name").equals("ne_lng"))
+                    ne_lng = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("ne_lat"))
+                    ne_lat = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("sw_lng"))
+                    sw_lng = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("sw_lat"))
+                    sw_lat = Double.parseDouble(object.getString("value"));
+
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new CustomJSONParser().APIForPostMethod(SearchResultActivity.this, AppConstant.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONResponseInterface() {
+            @Override
+            public void OnSuccess(String Result) {
+                appLoader.Dismiss();
+                try {
+                    findViewById(R.id.Container_result).setVisibility(View.VISIBLE);
+                    findViewById(R.id.tv_empty).setVisibility(View.GONE);
+
+                    JSONObject object = new JSONObject(Result);
+                    next_data = object.getInt("next_data");
+
+                    JSONArray ARRA = object.getJSONArray("results");
+
+                    for (int i = 0; i < ARRA.length(); i++) {
+
+                        JSONObject jsonObjectME = ARRA.getJSONObject(i);
+                        SetGetSearchData setGetSearchData = new SetGetSearchData();
+                        setGetSearchData.setSearcItem(jsonObjectME);
+
+                        ListArrayTinder.add(setGetSearchData);
+                    }
+
+                    searchTinderFragment.initializationCallByMe();
 
                 } catch (Exception e) {
                     e.printStackTrace();

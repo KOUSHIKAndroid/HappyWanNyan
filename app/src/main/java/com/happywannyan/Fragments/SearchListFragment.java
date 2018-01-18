@@ -98,6 +98,6 @@ public class SearchListFragment extends Fragment {
 
     public void lazyLoad(int startPage){
         ((SearchResultActivity) getActivity()).start_form=startPage;
-        ((SearchResultActivity) getActivity()).searchLoadingLazy();
+        ((SearchResultActivity) getActivity()).searchListLoadingLazy();
     }
 }

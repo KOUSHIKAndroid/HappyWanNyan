@@ -13,7 +13,7 @@ import com.happywannyan.Activities.SearchResultActivity;
 import com.happywannyan.Adapter.TinderViewAdapter;
 import com.happywannyan.R;
 import com.happywannyan.Utils.cardstack.SwipeDeck;
-import com.mindorks.placeholderview.SwipePlaceHolderView;
+
 
 public class SearchTinderFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -25,8 +25,8 @@ public class SearchTinderFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private int TotalNo = 0;
-    private SwipePlaceHolderView mSwipeView;
     SwipeDeck cardStack;
+    TinderViewAdapter adapter;
 
     public SearchTinderFragment() {
         // Required empty public constructor
@@ -64,21 +64,7 @@ public class SearchTinderFragment extends Fragment {
 
         cardStack = (SwipeDeck) view.findViewById(R.id.swipe_deck);
 
-
-        TotalNo = ((SearchResultActivity) getActivity()).ListARRY.size();
-        if (TotalNo <= 1) {
-            cardStack.NUMBER_OF_CARDS = 1;
-        } else if (TotalNo < 3) {
-            cardStack.NUMBER_OF_CARDS = 2;
-        } else {
-            cardStack.NUMBER_OF_CARDS = 3;
-        }
-
-
-        final TinderViewAdapter adapter = new TinderViewAdapter(((SearchResultActivity) getActivity()).ListARRY, getActivity());
-        cardStack.setAdapter(adapter);
-        cardStack.setLeftImage(R.id.right_image);
-        cardStack.setRightImage(R.id.left_image);
+        ((SearchResultActivity) getActivity()).searchLoadingTinder();
 
         cardStack.setEventCallback(new SwipeDeck.SwipeEventCallback() {
             @Override
@@ -89,7 +75,7 @@ public class SearchTinderFragment extends Fragment {
 //                    ((ImageView) view.findViewById(R.id.IMG_Left)).setVisibility(View.GONE);
 //                    ((ImageView) view.findViewById(R.id.IMG_Right)).setVisibility(View.GONE);
                     cardStack.setAdapter(adapter);
-                    TotalNo = ((SearchResultActivity) getActivity()).ListARRY.size();
+                    TotalNo = ((SearchResultActivity) getActivity()).ListArrayTinder.size();
                 }
                 if (TotalNo <= 1) {
                     cardStack.NUMBER_OF_CARDS = 1;
@@ -109,7 +95,7 @@ public class SearchTinderFragment extends Fragment {
 //                    ((ImageView) view.findViewById(R.id.IMG_Left)).setVisibility(View.GONE);
 //                    ((ImageView) view.findViewById(R.id.IMG_Right)).setVisibility(View.GONE);
                     cardStack.setAdapter(adapter);
-                    TotalNo = ((SearchResultActivity) getActivity()).ListARRY.size();
+                    TotalNo = ((SearchResultActivity) getActivity()).ListArrayTinder.size();
                 }
                 if (TotalNo <= 1) {
                     cardStack.NUMBER_OF_CARDS = 1;
@@ -209,6 +195,21 @@ public class SearchTinderFragment extends Fragment {
 //                }
 //            }
 //        });
+    }
+    public void initializationCallByMe(){
 
+        TotalNo = ((SearchResultActivity) getActivity()).ListArrayTinder.size();
+        if (TotalNo <= 1) {
+            cardStack.NUMBER_OF_CARDS = 1;
+        } else if (TotalNo < 3) {
+            cardStack.NUMBER_OF_CARDS = 2;
+        } else {
+            cardStack.NUMBER_OF_CARDS = 3;
+        }
+
+        adapter = new TinderViewAdapter(((SearchResultActivity) getActivity()).ListArrayTinder,getActivity());
+        cardStack.setAdapter(adapter);
+        cardStack.setLeftImage(R.id.right_image);
+        cardStack.setRightImage(R.id.left_image);
     }
 }
