@@ -1,29 +1,24 @@
 package com.happywannyan.Fragments;
 
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Constant.AppConstant;
-import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
 import com.happywannyan.Utils.AppLoader;
-import com.happywannyan.Utils.CustomJSONParser;
-import com.happywannyan.Utils.Loger;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -101,19 +96,56 @@ public class ContactUsFragment extends Fragment {
         webSettings.setSaveFormData(true);
 
 
-        webView.setWebViewClient(new WebViewClient(){
+        webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 view.loadUrl(request.toString());
                 return true;
             }
+
+
+            @Override
+            public void onLoadResource(WebView view, String url) {
+                super.onLoadResource(view, url);
+
+            }
+
+
+            //Show loader on url load
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                // Then show progress  Dialog
+                // in standard case YourActivity.this
+                if (appLoader == null) {
+                    appLoader = new AppLoader(getActivity());
+                    appLoader.Show();
+                }
+            }
+            // Called when all page resources loaded
+            public void onPageFinished(WebView view, String url) {
+                try {
+                    // Close progressDialog
+                    if (appLoader.isShowing()) {
+                        appLoader.Dismiss();
+                        appLoader = null;
+                    }
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+
         });
 
-        appLoader = new AppLoader(getActivity());
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+                // Return the app name after finish loading
+            }
+        });
 
-        //appLoader.Show();
 
-        webView.loadUrl(AppConstant.BASEURL+"contact-page?lang_id="+AppConstant.Language+"&user_name="+AppConstant.UserName+"&user_email="+AppConstant.UserEmail);
+
+        webView.loadUrl(AppConstant.BASEURL + "contact-page?lang_id=" + AppConstant.Language + "&user_name=" + AppConstant.UserName + "&user_email=" + AppConstant.UserEmail);
 
 
 //        new CustomJSONParser().APIForGetMethod(AppConstant.BASEURL + "contact?lang_id=" + AppConstant.Language, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {

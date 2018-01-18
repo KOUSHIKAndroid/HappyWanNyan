@@ -41,4 +41,12 @@ public class AppLoader {
     public void Dismiss() {
         Dialog.dismiss();
     }
+
+    public boolean isShowing(){
+        if(Dialog.isShowing()){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }
