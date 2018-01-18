@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.POJO.SetGetAPIPostData;
 import com.happywannyan.R;
-import com.happywannyan.Utils.helper.Utils;
 
 import org.json.JSONObject;
 
