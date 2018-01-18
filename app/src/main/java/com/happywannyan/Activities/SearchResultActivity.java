@@ -35,9 +35,11 @@ public class SearchResultActivity extends AppCompatActivity {
     public int start_form = 0, next_data;
 
     FragmentTransaction fragmentTransaction;
+    SearchMapFragment searchMapFragment;
     SearchListFragment searchListFragment;
 
     public ArrayList<SetGetSearchData> ListARRY;
+    public ArrayList<SetGetSearchData> ListARRYMAP;
     JSONObject SearchKeys;
     public double ne_lng, ne_lat, sw_lng, sw_lat;
     AppLoader appLoader;
@@ -182,6 +184,8 @@ public class SearchResultActivity extends AppCompatActivity {
 
         ListARRY = new ArrayList<>();
 
+        ListARRYMAP = new ArrayList<>();
+
         findViewById(R.id.IMG_icon_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,7 +202,8 @@ public class SearchResultActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.Container_result, new SearchMapFragment());
+                searchMapFragment= new SearchMapFragment();
+                fragmentTransaction.replace(R.id.Container_result,searchMapFragment);
                 fragmentTransaction.disallowAddToBackStack();
                 fragmentTransaction.commit();
                 ((ImageView) findViewById(R.id.fab_plus)).setImageResource(R.drawable.ic_fab_plus);
@@ -516,6 +521,125 @@ public class SearchResultActivity extends AppCompatActivity {
             });
         }
     }
+
+
+    public void searchLoadingMap() {
+
+        appLoader.Show();
+
+        ArrayList<SetGetAPIPostData> PostData = new ArrayList<>();
+        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("user_id");
+        setGetAPIPostData.setValues(AppConstant.UserId);
+        PostData.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("langid");
+        setGetAPIPostData.setValues(AppConstant.Language);
+        PostData.add(setGetAPIPostData);
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("per_page");
+        setGetAPIPostData.setValues("1000000");
+        PostData.add(setGetAPIPostData);
+
+
+        setGetAPIPostData = new SetGetAPIPostData();
+        setGetAPIPostData.setPARAMS("start_form");
+        setGetAPIPostData.setValues("0");
+        PostData.add(setGetAPIPostData);
+
+
+        try {
+            setGetAPIPostData = new SetGetAPIPostData();
+            setGetAPIPostData.setPARAMS("search_location");
+            setGetAPIPostData.setValues(SearchKeys.getString("LocationName"));
+            PostData.add(setGetAPIPostData);
+
+            for (int i = 0; i < SearchKeys.getJSONArray("keyinfo").length(); i++) {
+                JSONObject object = SearchKeys.getJSONArray("keyinfo").getJSONObject(i);
+
+                setGetAPIPostData = new SetGetAPIPostData();
+                setGetAPIPostData.setPARAMS(object.getString("name"));
+                setGetAPIPostData.setValues(object.getString("value"));
+                PostData.add(setGetAPIPostData);
+
+                if (object.getString("name").equals("ne_lng"))
+                    ne_lng = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("ne_lat"))
+                    ne_lat = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("sw_lng"))
+                    sw_lng = Double.parseDouble(object.getString("value"));
+                if (object.getString("name").equals("sw_lat"))
+                    sw_lat = Double.parseDouble(object.getString("value"));
+
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new CustomJSONParser().APIForPostMethod(SearchResultActivity.this, AppConstant.BASEURL + "search_setter", PostData, new CustomJSONParser.JSONResponseInterface() {
+            @Override
+            public void OnSuccess(String Result) {
+                appLoader.Dismiss();
+                try {
+                    findViewById(R.id.Container_result).setVisibility(View.VISIBLE);
+                    findViewById(R.id.tv_empty).setVisibility(View.GONE);
+
+                    JSONObject object = new JSONObject(Result);
+                    next_data = object.getInt("next_data");
+
+                    JSONArray ARRA = object.getJSONArray("results");
+
+                    for (int i = 0; i < ARRA.length(); i++) {
+
+                        JSONObject jsonObjectME = ARRA.getJSONObject(i);
+                        SetGetSearchData setGetSearchData = new SetGetSearchData();
+                        setGetSearchData.setSearcItem(jsonObjectME);
+
+                        ListARRYMAP.add(setGetSearchData);
+                    }
+
+                    searchMapFragment.MapCallByMe();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                appLoader.Dismiss();
+                try {
+                    JSONObject jsonObject = new JSONObject(Response);
+                    if (jsonObject.getInt("next_data") == 0 && jsonObject.getInt("start_form") == 0) {
+
+                        findViewById(R.id.Container_result).setVisibility(View.GONE);
+                        findViewById(R.id.tv_empty).setVisibility(View.VISIBLE);
+
+//                        new MYAlert(SearchResultActivity.this).AlertOnly(getResources().getString(R.string.app_name), Error, new MYAlert.OnlyMessage() {
+//                            @Override
+//                            public void OnOk(boolean res) {
+//
+//                            }
+//                        });
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void OnError(String Error) {
+                appLoader.Dismiss();
+                if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                    Toast.makeText(SearchResultActivity.this, Error, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
 
 
     @Override
