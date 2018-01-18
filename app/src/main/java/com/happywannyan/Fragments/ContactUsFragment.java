@@ -1,6 +1,5 @@
 package com.happywannyan.Fragments;
 
-import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
