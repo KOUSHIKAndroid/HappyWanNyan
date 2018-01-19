@@ -320,6 +320,7 @@
     <string name="password_updated_successfully">Password updated successfully</string>
     <string name="discount">Discount</string>
     <string name="sub_total">Sub Total</string>
+    <string name="deny">Deny</string>
 
 
 </resources>

@@ -511,7 +511,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void Deny_Button(String BookingID) {
         appLoader.Show();
 
-        String URL = AppConstant.BASEURL + "booking_deny_confirm?user_id=" + AppConstant.UserId + "&booking_id=" + BookingID;
+        String URL = AppConstant.BASEURL + "booking_deny_confirm?user_id=" + AppConstant.UserId + "&booking_id=" + BookingID+"&lang_id="+AppConstant.Language;
         new CustomJSONParser().APIForGetMethod(BookingDetailsActivity.this, URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
@@ -532,20 +532,31 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-
             }
 
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
-            }
+                Loger.Error("Error-->",Error);
+                Loger.Error("Response-->",Response);
+                try {
+                    MYALERT.AlertForAPIRESPONSE(getString(R.string.deny), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                        @Override
+                        public void OnOk(boolean res) {
 
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
                 if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
                     Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
                 }
+                Loger.Error("Error-->",Error);
             }
         });
 

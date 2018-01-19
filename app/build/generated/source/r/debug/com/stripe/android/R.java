@@ -766,9 +766,9 @@ public final class R {
         public static final int card_number_hint = 0x7f0f0071;
         public static final int cvc_amex_hint = 0x7f0f00d7;
         public static final int cvc_number_hint = 0x7f0f00d8;
-        public static final int expiry_date_hint = 0x7f0f00f2;
-        public static final int search_menu_title = 0x7f0f0198;
-        public static final int status_bar_notification_info_overflow = 0x7f0f01ac;
+        public static final int expiry_date_hint = 0x7f0f00f3;
+        public static final int search_menu_title = 0x7f0f0199;
+        public static final int status_bar_notification_info_overflow = 0x7f0f01ad;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;

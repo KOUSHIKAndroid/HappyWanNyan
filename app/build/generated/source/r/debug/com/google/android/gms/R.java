@@ -546,14 +546,14 @@ public final class R {
         public static final int debug_menu_title = 0x7f0f00dd;
         public static final int debug_menu_troubleshooting = 0x7f0f00de;
         public static final int decline = 0x7f0f00df;
-        public static final int place_autocomplete_clear_button = 0x7f0f0172;
-        public static final int place_autocomplete_search_hint = 0x7f0f0173;
-        public static final int store_picture_message = 0x7f0f01ad;
-        public static final int store_picture_title = 0x7f0f01ae;
-        public static final int tagmanager_preview_dialog_button = 0x7f0f01b4;
-        public static final int tagmanager_preview_dialog_message = 0x7f0f01b5;
-        public static final int tagmanager_preview_dialog_title = 0x7f0f01b6;
-        public static final int wallet_buy_button_place_holder = 0x7f0f01cf;
+        public static final int place_autocomplete_clear_button = 0x7f0f0173;
+        public static final int place_autocomplete_search_hint = 0x7f0f0174;
+        public static final int store_picture_message = 0x7f0f01ae;
+        public static final int store_picture_title = 0x7f0f01af;
+        public static final int tagmanager_preview_dialog_button = 0x7f0f01b5;
+        public static final int tagmanager_preview_dialog_message = 0x7f0f01b6;
+        public static final int tagmanager_preview_dialog_title = 0x7f0f01b7;
+        public static final int wallet_buy_button_place_holder = 0x7f0f01d0;
     }
     public static final class style {
         public static final int CastExpandedController = 0x7f1000b0;
