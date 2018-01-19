@@ -443,6 +443,11 @@ public class BookingDetailsActivity extends AppCompatActivity {
                                         @Override
                                         public void OnOk(boolean res) {
 
+                                            Intent resultIntent = new Intent();
+                                            resultIntent.putExtra("value", "done");
+                                            setResult(Activity.RESULT_OK, resultIntent);
+                                            finish();
+
                                         }
                                     });
                                 } catch (JSONException e) {
@@ -521,6 +526,10 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void OnOk(boolean res) {
 
+                        Intent resultIntent = new Intent();
+                        resultIntent.putExtra("value", "done");
+                        setResult(Activity.RESULT_OK, resultIntent);
+                        finish();
                     }
                 });
 
@@ -644,7 +653,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
                                         Intent resultIntent = new Intent();
                                         resultIntent.putExtra("value", "done");
                                         setResult(Activity.RESULT_OK, resultIntent);
-
                                         finish();
                                     }
                                 } catch (JSONException e) {
@@ -726,7 +734,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
                                         Intent resultIntent = new Intent();
                                         resultIntent.putExtra("value", "done");
                                         setResult(Activity.RESULT_OK, resultIntent);
-
                                         finish();
                                     }
                                 });
@@ -785,7 +792,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 Intent resultIntent = new Intent();
                 resultIntent.putExtra("value", "done");
                 setResult(Activity.RESULT_OK, resultIntent);
-
                 finish();
             }
         }

@@ -146,10 +146,6 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
-
-
-
                     }
 
                     @Override
