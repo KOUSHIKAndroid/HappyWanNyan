@@ -130,8 +130,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
             ((SFNFBoldTextView) findViewById(R.id.tv_trust_and_safety_value)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("trust_safety_fee"));
 
 
-
-            if (AppConstant.UserId.equals(jsonObjectPrevious.getJSONObject("booking_info").getString("buyer_id").trim())){
+            if (AppConstant.UserId.equals(jsonObjectPrevious.getJSONObject("booking_info").getString("buyer_id").trim())) {
 
                 if (jsonObjectPrevious.getJSONObject("booking_info").getString("coupon_amount").equals("")) {
 
@@ -147,14 +146,13 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     ((SFNFTextView) findViewById(R.id.tv_subtotal)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_amount"));
                     ((SFNFTextView) findViewById(R.id.tv_coupon)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("coupon_amount"));
                 }
-            }else {
+            } else {
 
                 findViewById(R.id.ExtraLL_Subtotal).setVisibility(View.VISIBLE);
                 findViewById(R.id.ExtraLL_Coupon).setVisibility(View.GONE);
                 ((SFNFTextView) findViewById(R.id.tv_total_amount)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("booked_total_amount"));
                 ((SFNFTextView) findViewById(R.id.tv_subtotal)).setText(jsonObjectPrevious.getJSONObject("booking_info").getString("sub_amount"));
             }
-
 
 
             if (jsonObjectPrevious.getJSONObject("booking_info").has("accept_button") && !jsonObjectPrevious.getJSONObject("booking_info").getString("accept_button").trim().equals("")) {
@@ -283,12 +281,11 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         try {
                             Loger.MSG("refund_status-->", "" + jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status"));
-                            if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 0)
-
+                            if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 0) {
                                 Loger.MSG("bookingId", jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
-
-                            CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.do_you_want_to_cancel_booking));
-                            if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 1) {
+                                CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.do_you_want_to_cancel_booking));
+                            }
+                            else if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 1) {
                                 CancelWith_Reasons();
                             }
 
@@ -511,7 +508,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
     private void Deny_Button(String BookingID) {
         appLoader.Show();
 
-        String URL = AppConstant.BASEURL + "booking_deny_confirm?user_id=" + AppConstant.UserId + "&booking_id=" + BookingID+"&lang_id="+AppConstant.Language;
+        String URL = AppConstant.BASEURL + "booking_deny_confirm?user_id=" + AppConstant.UserId + "&booking_id=" + BookingID + "&lang_id=" + AppConstant.Language;
         new CustomJSONParser().APIForGetMethod(BookingDetailsActivity.this, URL, new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
@@ -537,8 +534,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
-                Loger.Error("Error-->",Error);
-                Loger.Error("Response-->",Response);
+                Loger.Error("Error-->", Error);
+                Loger.Error("Response-->", Response);
                 try {
                     MYALERT.AlertForAPIRESPONSE(getString(R.string.deny), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
                         @Override
@@ -550,13 +547,14 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void OnError(String Error) {
                 appLoader.Dismiss();
                 if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
                     Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
                 }
-                Loger.Error("Error-->",Error);
+                Loger.Error("Error-->", Error);
             }
         });
 
