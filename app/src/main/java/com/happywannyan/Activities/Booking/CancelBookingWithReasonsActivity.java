@@ -83,10 +83,7 @@ public class CancelBookingWithReasonsActivity extends AppCompatActivity implemen
             case R.id.IMG_icon_back:
                 onBackPressed();
                 break;
-
-
         }
-
     }
 
     private void ConfirmCancel() {
@@ -151,7 +148,5 @@ public class CancelBookingWithReasonsActivity extends AppCompatActivity implemen
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
 }
