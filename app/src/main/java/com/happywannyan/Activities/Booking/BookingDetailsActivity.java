@@ -180,7 +180,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try {
-                            Deny_Button(jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
+                            DenyButton(jsonObjectPrevious.getJSONObject("booking_info").getString("id"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -205,7 +205,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         try {
                             if (jsonObjectPrevious.getJSONObject("booking_info").has("send_msg_show") && jsonObjectPrevious.getJSONObject("booking_info").getInt("send_msg_show") == 0) {
                                 if (block_user_status == 0) {
-                                    Send_Message(jsonObjectPrevious.getJSONObject("booking_info").getString("send_msg_status"), getString(R.string.please_enter_message), getString(R.string.submit)
+                                    SendMessage(jsonObjectPrevious.getJSONObject("booking_info").getString("send_msg_status"), getString(R.string.please_enter_message), getString(R.string.submit)
                                             , jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"));
                                 } else {
                                     MYALERT.AlertOnly(getResources().getString(R.string.message), getResources().getString(R.string.unable_to_send_message), new MYAlert.OnlyMessage() {
@@ -236,7 +236,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                 ButtomView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Delete_Button();
+                        DeleteBookingButton();
                     }
                 });
             }
@@ -285,7 +285,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                                 CancelStatusWork(jsonObjectPrevious.getJSONObject("booking_info").getString("id"), jsonObjectPrevious.getJSONObject("booking_info").getString("booking_type"), getString(R.string.do_you_want_to_cancel_booking));
                             }
                             else if (jsonObjectPrevious.getJSONObject("booking_info").getInt("refund_status") == 1) {
-                                CancelWith_Reasons();
+                                CancelBookingWithReasons();
                             }
 
                         } catch (JSONException e) {
@@ -397,7 +397,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         }
     }
 
-    private void CancelWith_Reasons() {
+    private void CancelBookingWithReasons() {
         Loger.MSG("@@BBB", jsonObjectPrevious + " 33");
 
         Intent intent = new Intent(this, CancelBookingWithReasonsActivity.class);
@@ -504,7 +504,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
     }
 
-    private void Deny_Button(String BookingID) {
+    private void DenyButton(String BookingID) {
         appLoader.Show();
 
         String URL = AppConstant.BASEURL + "booking_deny_confirm?user_id=" + AppConstant.UserId + "&booking_id=" + BookingID + "&lang_id=" + AppConstant.Language;
@@ -554,13 +554,20 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
                 }
                 Loger.Error("Error-->", Error);
+
+                MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
+                    @Override
+                    public void OnOk(boolean res) {
+
+                    }
+                });
             }
         });
 
 
     }
 
-    private void Send_Message(String Title, String Hint, String ButtonName, final String BookingID, final String BookingType) {
+    private void SendMessage(String Title, String Hint, String ButtonName, final String BookingID, final String BookingType) {
         new MYAlert(this).AlertBoxMessageSend(Title, Hint, ButtonName, new MYAlert.OnEditTexSubmit() {
             @Override
             public void OnEditSubmit(String Messge) {
@@ -621,7 +628,6 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
                             }
                         });
-
                     }
                 });
 
@@ -635,7 +641,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
 
     }
 
-    private void Delete_Button() {
+    private void DeleteBookingButton() {
         new MYAlert(BookingDetailsActivity.this).AlertOkCancel("", getString(R.string.are_you_sure_you_want_to_delete),
                 getResources().getString(R.string.ok),
                 getResources().getString(R.string.cancel),
@@ -672,9 +678,13 @@ public class BookingDetailsActivity extends AppCompatActivity {
                             public void OnError(String Error, String Response) {
                                 appLoader.Dismiss();
                                 try {
-                                    if (new JSONObject(Response).getBoolean("response")) {
-                                        Toast.makeText(BookingDetailsActivity.this, new JSONObject(Response).getString("message"), Toast.LENGTH_SHORT).show();
-                                    }
+
+                                    MYALERT.AlertForAPIRESPONSE(getString(R.string.delete), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                        @Override
+                                        public void OnOk(boolean res) {
+
+                                        }
+                                    });
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -686,6 +696,12 @@ public class BookingDetailsActivity extends AppCompatActivity {
                                 if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
                                     Toast.makeText(BookingDetailsActivity.this, Error, Toast.LENGTH_SHORT).show();
                                 }
+                                MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Error, new MYAlert.OnlyMessage() {
+                                    @Override
+                                    public void OnOk(boolean res) {
+
+                                    }
+                                });
                             }
                         });
                     }
