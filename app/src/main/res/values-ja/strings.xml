@@ -302,4 +302,13 @@
     <string name="sub_total">小計</string>
     <string name="deny">否定する</string>
 
+    <string name="booking_message_send_successfully">予約メッセージが正常に送信されました</string>
+    <string name="some_thing_wrong">何か問題でも</string>
+
+    <string name="booking_delete_successfully">予約の削除に成功しました</string>
+    <string name="already_booking_deleted">既に予約が削除されました</string>
+    <string name="add_a_Message">メッセージを追加</string>
+    <string name="add_details_about_your_schedule_ask_questions_or_just_introduce_yourself">あなたのスケジュールについての詳細を追加したり、質問したり、自分自身を紹介してください。</string>
+
+
 </resources>

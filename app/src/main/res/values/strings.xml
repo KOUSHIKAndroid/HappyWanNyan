@@ -322,5 +322,13 @@
     <string name="sub_total">Sub Total</string>
     <string name="deny">Deny</string>
 
+    <string name="booking_message_send_successfully">Booking message send successfully</string>
+    <string name="some_thing_wrong">Some thing wrong</string>
+
+    <string name="booking_delete_successfully">Booking delete successfully</string>
+    <string name="already_booking_deleted">already booking deleted</string>
+    <string name="add_a_Message">Add a Message</string>
+    <string name="add_details_about_your_schedule_ask_questions_or_just_introduce_yourself">Add details about your schedule, ask questions, or just introduce yourself!</string>
+
 
 </resources>

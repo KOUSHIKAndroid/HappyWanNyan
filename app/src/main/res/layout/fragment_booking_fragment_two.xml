@@ -219,6 +219,33 @@
 
 
             </LinearLayout>
+
+
+            <com.happywannyan.Font.SFNFTextView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_a_Message" />
+
+
+            <EditText
+                android:id="@+id/EDX_Add_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:hint="@string/add_details_about_your_schedule_ask_questions_or_just_introduce_yourself"
+                android:inputType="textAutoCorrect|textMultiLine"
+                android:lines="4"
+                android:padding="5dp"
+                android:scrollbars="vertical" />
+
+
+
         </LinearLayout>
     </ScrollView>
 

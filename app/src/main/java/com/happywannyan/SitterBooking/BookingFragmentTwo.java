@@ -48,7 +48,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
     LinearLayout LL_MYPETS;
     SFNFTextView TXT_PickupTime, TXT_dropTime,tv_add_new_pet;
 
-    EditText EDX_Fname, EDX_Lname;
+    EditText EDX_Fname, EDX_Lname,EDX_Add_message;
 
     AppLoader appLoader;
 
@@ -84,6 +84,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
         super.onViewCreated(view, savedInstanceState);
         EDX_Fname = (EditText) view.findViewById(R.id.EDX_Fname);
         EDX_Lname = (EditText) view.findViewById(R.id.EDX_Lname);
+        EDX_Add_message = (EditText) view.findViewById(R.id.EDX_Add_message);
         tv_add_new_pet = (SFNFTextView) view.findViewById(R.id.tv_add_new_pet);
 
         appLoader = new AppLoader(getActivity());
@@ -171,6 +172,19 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                                     ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
                                 }
                             }
+
+                            for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
+                                if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("add_message")) {
+                                    ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues(EDX_Add_message.getText().toString().trim());
+                                    break;
+                                } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
+                                    SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                    setGetAPIPostData.setPARAMS("add_message");
+                                    setGetAPIPostData.setValues(EDX_Add_message.getText().toString().trim());
+                                    ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+                                }
+                            }
+
                             ((BookingOneActivity)getActivity()).showConfirmReservationRequest();
 
                             mListener.onFragmentInteraction("Three");

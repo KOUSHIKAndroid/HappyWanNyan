@@ -591,7 +591,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
                         appLoader.Dismiss();
                         String Message = "";
                         try {
-                            Message = new JSONObject(Result).getString("message");
+                            Message = new JSONObject(Result).getString(getResources().getString(R.string.booking_message_send_successfully));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -607,7 +607,8 @@ public class BookingDetailsActivity extends AppCompatActivity {
                     @Override
                     public void OnError(String Error, String Response) {
                         appLoader.Dismiss();
-                        MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), Response, new MYAlert.OnlyMessage() {
+
+                        MYALERT.AlertForAPIRESPONSE(getString(R.string.Error), getResources().getString(R.string.some_thing_wrong), new MYAlert.OnlyMessage() {
                             @Override
                             public void OnOk(boolean res) {
 
@@ -662,7 +663,10 @@ public class BookingDetailsActivity extends AppCompatActivity {
                                 Loger.MSG("Result", Result);
                                 try {
                                     if (new JSONObject(Result).getBoolean("response")) {
-                                        Toast.makeText(BookingDetailsActivity.this, new JSONObject(Result).getString("messege"), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(BookingDetailsActivity.this,
+//                                                new JSONObject(Result).getString("messege")
+                                                getResources().getString(R.string.booking_delete_successfully)
+                                                , Toast.LENGTH_SHORT).show();
 
                                         Intent resultIntent = new Intent();
                                         resultIntent.putExtra("value", "done");
@@ -677,17 +681,20 @@ public class BookingDetailsActivity extends AppCompatActivity {
                             @Override
                             public void OnError(String Error, String Response) {
                                 appLoader.Dismiss();
-                                try {
+//                                try {
 
-                                    MYALERT.AlertForAPIRESPONSE(getString(R.string.delete), new JSONObject(Response).getString("message"), new MYAlert.OnlyMessage() {
+                                    MYALERT.AlertForAPIRESPONSE(getString(R.string.delete),
+//                                            new JSONObject(Response).getString("message")
+                                            getResources().getString(R.string.already_booking_deleted)
+                                            , new MYAlert.OnlyMessage() {
                                         @Override
                                         public void OnOk(boolean res) {
 
                                         }
                                     });
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
+//                                } catch (JSONException e) {
+//                                    e.printStackTrace();
+//                                }
                             }
 
                             @Override

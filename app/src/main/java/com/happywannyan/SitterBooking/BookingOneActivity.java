@@ -337,6 +337,14 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void OnError(String Error, String Response) {
                 appLoader.Dismiss();
+//                try {
+                    Toast.makeText(BookingOneActivity.this,
+getResources().getString(R.string.some_thing_wrong)
+//                            new JSONObject(Response).getString("message")
+                            ,Toast.LENGTH_SHORT).show();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
             }
 
             @Override
@@ -345,6 +353,7 @@ public class BookingOneActivity extends AppCompatActivity implements View.OnClic
                 if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))){
                     Toast.makeText(BookingOneActivity.this,Error,Toast.LENGTH_SHORT).show();
                 }
+                Toast.makeText(BookingOneActivity.this,Error,Toast.LENGTH_SHORT).show();
             }
         });
     }
