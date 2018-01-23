@@ -348,16 +348,18 @@ public class MyPaymentsFragment extends Fragment {
                                             @Override
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CARD RESP-", Result);
+
+                                                try {
+                                                    Toast.makeText(getActivity(),new JSONObject(Result).getString("message"),Toast.LENGTH_SHORT).show();
+                                                } catch (JSONException e) {
+                                                    e.printStackTrace();
+                                                }
+
                                                 new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                                                         , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
                                                                 appLoader.Dismiss();
-                                                                try {
-                                                                    Toast.makeText(getActivity(),new JSONObject(Result).getString("message"),Toast.LENGTH_SHORT).show();
-                                                                } catch (JSONException e) {
-                                                                    e.printStackTrace();
-                                                                }
                                                                 paymentListAdapter = new PaymentListAdapter(getActivity(), Result, new BookingFragmentFoure.onClickItem() {
                                                                     @Override
                                                                     public void onSelectItemClick(int position, JSONObject data) {
