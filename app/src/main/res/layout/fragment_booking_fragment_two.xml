@@ -239,7 +239,6 @@
                 android:hint="@string/add_details_about_your_schedule_ask_questions_or_just_introduce_yourself"
                 android:inputType="textAutoCorrect|textMultiLine"
                 android:lines="4"
-                android:padding="5dp"
                 android:scrollbars="vertical" />
 
         </LinearLayout>
