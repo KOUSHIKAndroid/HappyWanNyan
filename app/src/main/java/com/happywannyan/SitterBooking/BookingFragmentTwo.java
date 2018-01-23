@@ -369,9 +369,7 @@ public class BookingFragmentTwo extends Fragment implements View.OnClickListener
                             }
                         }
                     });
-
                 }
             }
-
     }
 }
