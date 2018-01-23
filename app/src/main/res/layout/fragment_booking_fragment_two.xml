@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical">
 
                 <android.support.design.widget.TextInputLayout
@@ -220,7 +220,6 @@
 
             </LinearLayout>
 
-
             <com.happywannyan.Font.SFNFTextView
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="30dp"
@@ -228,7 +227,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/add_a_Message" />
-
 
             <EditText
                 android:id="@+id/EDX_Add_message"
@@ -244,9 +242,8 @@
                 android:padding="5dp"
                 android:scrollbars="vertical" />
 
-
-
         </LinearLayout>
+
     </ScrollView>
 
 
