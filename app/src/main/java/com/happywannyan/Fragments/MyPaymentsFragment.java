@@ -1,7 +1,6 @@
 package com.happywannyan.Fragments;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
-import com.happywannyan.Activities.profile.MeetUpWannyanActivity;
 import com.happywannyan.Adapter.PaymentListAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
