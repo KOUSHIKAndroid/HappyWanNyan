@@ -203,6 +203,7 @@ public class MyPaymentsFragment extends Fragment {
             Loger.MSG("@@ Expiry-", "make_defaultValue-" + make_defaultValue);
 
             card = new Card(cardNumber, month, year, cvv);
+
             if (card.validateCard()) {
                 Loger.MSG("@@ Card ID->", card.getId() + "");
                 Loger.MSG("@@ Card Number->", card.getNumber() + "");
