@@ -21,10 +21,10 @@ public class AppConstant extends AppDataHolder {
     public static String UserId = "";
     public static String UserName = "";
     public static String UserEmail = "";
-//    public static String STRIPE_PUBLISH_KEY = "pk_test_xlxSWhvDxMIkyQYmgmHEWRoM";
-    public static String STRIPE_PUBLISH_KEY = "pk_live_sQYWU0LHLjrwyAY1dcdBqb01";
-//    public static String STRIPE_SECRATE_KEY = "sk_test_1HkmfB8tpsf5yd1f8DUmRLdS";
-    public static String STRIPE_SECRATE_KEY = "sk_live_buGsBZ5V1jRvNcOINxn9kP4S";
+
+    public static String STRIPE_PUBLISH_KEY = "pk_test_xlxSWhvDxMIkyQYmgmHEWRoM";
+    public static String STRIPE_SECRATE_KEY = "sk_test_1HkmfB8tpsf5yd1f8DUmRLdS";
+
 
     public static String go_to = "";
     public static String login_status = "1";
