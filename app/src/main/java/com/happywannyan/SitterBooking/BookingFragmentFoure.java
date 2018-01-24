@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
@@ -106,7 +107,7 @@ public class BookingFragmentFoure extends Fragment {
         REC_Card = (RecyclerView) view.findViewById(R.id.REC_Card);
         REC_Card.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        tv_total_amount= (SFNFBoldTextView) view.findViewById(R.id.tv_total_amount);
+        tv_total_amount = (SFNFBoldTextView) view.findViewById(R.id.tv_total_amount);
         tv_total_amount.setText(((BookingOneActivity) getActivity()).totalAmount);
 
         setGetCardsArrayList = new ArrayList<>();
@@ -152,15 +153,15 @@ public class BookingFragmentFoure extends Fragment {
 
                                 for (int i = 0; i < ((BookingOneActivity) getActivity()).FirstPageData.size(); i++) {
                                     try {
-                                    if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("stripeToken")) {
-                                        ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues("");
-                                        break;
-                                    } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
-                                        SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
-                                        setGetAPIPostData.setPARAMS("stripeToken");
-                                        setGetAPIPostData.setValues(cardFinalSelection.getString("stripe_id"));
-                                        ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
-                                    }
+                                        if (((BookingOneActivity) getActivity()).FirstPageData.get(i).getPARAMS().equalsIgnoreCase("stripeToken")) {
+                                            ((BookingOneActivity) getActivity()).FirstPageData.get(i).setValues("");
+                                            break;
+                                        } else if (i == ((BookingOneActivity) getActivity()).FirstPageData.size() - 1) {
+                                            SetGetAPIPostData setGetAPIPostData = new SetGetAPIPostData();
+                                            setGetAPIPostData.setPARAMS("stripeToken");
+                                            setGetAPIPostData.setValues(cardFinalSelection.getString("stripe_id"));
+                                            ((BookingOneActivity) getActivity()).FirstPageData.add(setGetAPIPostData);
+                                        }
                                     } catch (Exception ex) {
                                         ex.printStackTrace();
                                     }
@@ -232,7 +233,7 @@ public class BookingFragmentFoure extends Fragment {
 //                });
             }
         });
-        SetCardDetails();
+        getApiLiveSecreteKeyForStrip();
     }
 
     @Override
@@ -272,7 +273,7 @@ public class BookingFragmentFoure extends Fragment {
                         card,
                         new TokenCallback() {
                             public void onSuccess(final Token token) {
-                                new CustomJSONParser().GetStripeCustomerID(getActivity(),token.getId(), new CustomJSONParser.JSONResponseInterface() {
+                                new CustomJSONParser().GetStripeCustomerID(getActivity(), token.getId(), new CustomJSONParser.JSONResponseInterface() {
                                     @Override
                                     public void OnSuccess(String Result) {
                                         Loger.MSG("@@ TokenSuccess", Result);
@@ -400,19 +401,19 @@ public class BookingFragmentFoure extends Fragment {
                                         Params.add(setGetAPIPostData);
 
 
-                                        new CustomJSONParser().APIForPostMethod(getActivity(),AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
+                                        new CustomJSONParser().APIForPostMethod(getActivity(), AppConstant.BASEURL + "add_save_card", Params, new CustomJSONParser.JSONResponseInterface() {
                                             @Override
                                             public void OnSuccess(String Result) {
                                                 Loger.MSG("@@ CARD RESP-", Result);
 
                                                 try {
-                                                    Toast.makeText(getActivity(),new JSONObject(Result).getString("message"),Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getActivity(), new JSONObject(Result).getString("message"), Toast.LENGTH_SHORT).show();
                                                 } catch (JSONException e) {
                                                     e.printStackTrace();
                                                 }
 
 
-                                                new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
+                                                new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                                                         , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                                                             @Override
                                                             public void OnSuccess(String Result) {
@@ -456,8 +457,8 @@ public class BookingFragmentFoure extends Fragment {
                                                             @Override
                                                             public void OnError(String Error) {
                                                                 appLoader.Dismiss();
-                                                                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
-                                                                    Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                                                                if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))) {
+                                                                    Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
                                                                 }
                                                             }
                                                         });
@@ -514,9 +515,45 @@ public class BookingFragmentFoure extends Fragment {
         }
     }
 
+    private void getApiLiveSecreteKeyForStrip() {
+        new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "app_sitesetting", new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+            @Override
+            public void OnSuccess(String Result) {
+
+                Loger.MSG("Result-->", Result);
+                try {
+                    JSONObject jsonObject = new JSONObject(Result);
+
+                    if (jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_pay_type").equals("1")) {
+
+                        AppConstant.STRIPE_SECRATE_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_live_secret_key");
+                        AppConstant.STRIPE_PUBLISH_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_live_public_key");
+                    } else {
+                        AppConstant.STRIPE_SECRATE_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_sandbox_secret_key");
+                        AppConstant.STRIPE_PUBLISH_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_sandbox_public_key");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                SetCardDetails();
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                Loger.MSG("Error-->", Response);
+            }
+
+            @Override
+            public void OnError(String Error) {
+                Loger.MSG("Error-->", Error);
+            }
+        });
+    }
+
     private void SetCardDetails() {
         appLoader.Show();
-        new CustomJSONParser().APIForGetMethod(getActivity(),AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
+        new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "app_users_accountinfo?lang_id=" + AppConstant.Language + "&user_id=" + AppConstant.UserId
                 , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
                     @Override
                     public void OnSuccess(String Result) {
@@ -587,8 +624,8 @@ public class BookingFragmentFoure extends Fragment {
                     @Override
                     public void OnError(String Error) {
                         appLoader.Dismiss();
-                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))){
-                            Toast.makeText(getActivity(),Error,Toast.LENGTH_SHORT).show();
+                        if (Error.equalsIgnoreCase(getActivity().getResources().getString(R.string.please_check_your_internet_connection))) {
+                            Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

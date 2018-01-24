@@ -117,8 +117,10 @@ public class MyPaymentsFragment extends Fragment {
             }
         });
 
-        LoadPaymentDetails();
+        getApiLiveSecreteKeyForStrip();
     }
+
+
 
     public void LoadPaymentDetails() {
         appLoader.Show();
@@ -174,6 +176,43 @@ public class MyPaymentsFragment extends Fragment {
                     }
                 });
     }
+
+    private void getApiLiveSecreteKeyForStrip() {
+        new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "app_sitesetting", new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+            @Override
+            public void OnSuccess(String Result) {
+
+                Loger.MSG("Result-->",Result);
+                try {
+                    JSONObject jsonObject=new JSONObject(Result);
+
+                    if (jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_pay_type").equals("1")) {
+
+                        AppConstant.STRIPE_SECRATE_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_live_secret_key");
+                        AppConstant.STRIPE_PUBLISH_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_live_public_key");
+                    } else {
+                        AppConstant.STRIPE_SECRATE_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_sandbox_secret_key");
+                        AppConstant.STRIPE_PUBLISH_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_sandbox_public_key");
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                LoadPaymentDetails();
+            }
+
+            @Override
+            public void OnError(String Error, String Response) {
+                Loger.MSG("Error-->",Response);
+            }
+
+            @Override
+            public void OnError(String Error) {
+                Loger.MSG("Error-->",Error);
+            }
+        });
+    }
+
 
     //    public interface onClickItem {
 //        void onSelectItemClick(int position, JSONObject data);
