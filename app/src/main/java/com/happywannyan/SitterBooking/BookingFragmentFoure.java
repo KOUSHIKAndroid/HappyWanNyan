@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -532,10 +533,13 @@ public class BookingFragmentFoure extends Fragment {
                         AppConstant.STRIPE_SECRATE_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_sandbox_secret_key");
                         AppConstant.STRIPE_PUBLISH_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_sandbox_public_key");
                     }
+
+//                    Loger.MSG("STRIPE_SECRATE_KEY",AppConstant.STRIPE_SECRATE_KEY);
+//                    Loger.MSG("STRIPE_PUBLISH_KEY",AppConstant.STRIPE_PUBLISH_KEY);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
                 SetCardDetails();
             }
 

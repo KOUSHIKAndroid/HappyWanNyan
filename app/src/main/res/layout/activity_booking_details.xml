@@ -113,7 +113,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
                         android:text="@string/StartDate"
                         android:textColor="@color/colorGrayProject"
                         android:textSize="12sp" />
@@ -157,7 +156,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
                         android:text="SEP 20,2017"
                         android:textColor="@color/colorWhite"
                         android:textSize="12sp" />
@@ -188,29 +186,62 @@
                     android:id="@+id/LLSafetyAndCoupon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/LLStartEndDateBookingValue"
-                    android:orientation="vertical">
+                    android:layout_below="@id/LLStartEndDateBookingValue"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
 
                     <com.happywannyan.Font.SFNFTextView
                         android:id="@+id/tv_trust_and_safety_fee_name"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
                         android:layout_weight="1"
                         android:text="@string/trust_and_safety_fee"
+                        android:textColor="@color/colorGrayProject"
+                        android:textSize="12sp" />
+
+
+                    <com.happywannyan.Font.SFNFTextView
+                        android:id="@+id/tv_visits_or_times"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/number_of_times"
+                        android:textColor="@color/colorGrayProject"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LLSafetyAndCouponValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/LLSafetyAndCoupon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <com.happywannyan.Font.SFNFBoldTextView
+                        android:id="@+id/tv_trust_and_safety_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
                         android:textColor="@color/colorWhite"
                         android:textSize="12sp" />
 
 
                     <com.happywannyan.Font.SFNFBoldTextView
-                        android:id="@+id/tv_trust_and_safety_value"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tv_visits_or_times_value"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/LLSafetyAndCoupon"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
-                        android:text="#225"
+                        android:layout_weight="1"
+                        android:text=""
                         android:textColor="@color/colorWhite"
                         android:textSize="12sp" />
 
@@ -222,13 +253,12 @@
                     android:id="@+id/tv_service_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/LLSafetyAndCoupon"
+                    android:layout_below="@+id/LLSafetyAndCouponValue"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:text="@string/service"
                     android:textColor="@color/colorWhite"
                     android:textSize="12sp" />
-
 
                 <com.happywannyan.Font.SFNFBoldTextView
                     android:id="@+id/tv_service_value"
@@ -237,7 +267,7 @@
                     android:layout_below="@+id/tv_service_name"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="Day Care for Cats"
+                    android:text=""
                     android:textColor="@color/colorWhite"
                     android:textSize="12sp" />
 

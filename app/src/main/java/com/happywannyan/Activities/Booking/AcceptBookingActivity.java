@@ -64,9 +64,7 @@ public class AcceptBookingActivity extends AppCompatActivity {
         rcv_pending_ped_list_service = (RecyclerView) findViewById(R.id.rcv_pending_ped_list_service);
         rcv_pending_ped_list_service.setLayoutManager(new LinearLayoutManager(AcceptBookingActivity.this));
 
-
         postParamCoupon = new ArrayList<>();
-
 
         findViewById(R.id.tv_coupon_code).setVisibility(View.GONE);
         findViewById(R.id.img_clear).setVisibility(View.GONE);

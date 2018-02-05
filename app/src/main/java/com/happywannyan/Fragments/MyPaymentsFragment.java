@@ -195,6 +195,9 @@ public class MyPaymentsFragment extends Fragment {
                         AppConstant.STRIPE_PUBLISH_KEY = jsonObject.getJSONArray("info_array").getJSONObject(0).getString("stripe_sandbox_public_key");
                     }
 
+//                    Loger.MSG("STRIPE_SECRATE_KEY",AppConstant.STRIPE_SECRATE_KEY);
+//                    Loger.MSG("STRIPE_PUBLISH_KEY",AppConstant.STRIPE_PUBLISH_KEY);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

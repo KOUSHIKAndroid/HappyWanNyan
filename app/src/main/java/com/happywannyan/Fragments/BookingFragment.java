@@ -283,7 +283,7 @@ public class BookingFragment extends Fragment {
                         swipeContainer.setVisibility(View.VISIBLE);
                         tv_empty.setVisibility(View.GONE);
 
-                        bookingAdapter = new BookingAdapter(getActivity(), BookingFragment.this, AllBooking);
+                        bookingAdapter = new BookingAdapter(getActivity(), BookingFragment.this, AllBooking,type);
                         recyclerView.setAdapter(bookingAdapter);
                     } else {
                         bookingAdapter.nextData = next_data;

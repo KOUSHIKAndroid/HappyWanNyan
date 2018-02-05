@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -36,12 +37,14 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
     BookingFragment bookingFragment;
     public int nextData = 1;
     int from = 0;
+    String type;
     ArrayList<JSONObject> AllBooking;
 
-    public BookingAdapter(Context context, BookingFragment bookingFragment, ArrayList<JSONObject> AllBooking) {
+    public BookingAdapter(Context context, BookingFragment bookingFragment, ArrayList<JSONObject> AllBooking,String type) {
         this.context = context;
         this.bookingFragment = bookingFragment;
         this.AllBooking = AllBooking;
+        this.type=type;
     }
 
     @Override
@@ -53,8 +56,25 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         try {
-
             final JSONObject object = AllBooking.get(position);
+
+
+            if (type.equals("pending_booking_list") && object.getJSONObject("booking_info").getString("status_seen").trim().equals("0")){
+                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorBtnRed));
+            }
+            else if (type.equals("pending_booking_list") && !object.getJSONObject("booking_info").getString("status_seen").trim().equals("0")){
+                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
+            }
+            else if (type.equals("upcoming_booking_list") && object.getJSONObject("booking_info").getString("status_seen").trim().equals("1")){
+                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorBtnRed));
+            }
+            else if (type.equals("upcoming_booking_list") && !object.getJSONObject("booking_info").getString("status_seen").trim().equals("1")){
+                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
+            }else {
+                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
+            }
+
+
 
             if (!object.getJSONObject("users_profile").getString("booked_user_image").trim().equals("")) {
                 Glide.with(context).load(object.getJSONObject("users_profile").getString("booked_user_image").trim()).into(holder.img_view);
@@ -188,6 +208,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         AppCompatImageView img_view;
         SFNFTextView tv_title, tv_name, tv_bookingID_name;
         CardView img_card_view;
+        View left_red_view;
         SFNFBoldTextView tv_start_date, tv_end_date, tv_booking_id, tv_service_value, tv_total_pets_value, tv_total_amount_value;
 
         public MyViewHolder(View itemView) {
@@ -205,6 +226,8 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
             tv_total_pets_value = (SFNFBoldTextView) itemView.findViewById(R.id.tv_total_pets_value);
             tv_total_amount_value = (SFNFBoldTextView) itemView.findViewById(R.id.tv_total_amount_value);
             img_card_view = (CardView) itemView.findViewById(R.id.img_card_view);
+
+            left_red_view=itemView.findViewById(R.id.left_red_view);
         }
     }
 }

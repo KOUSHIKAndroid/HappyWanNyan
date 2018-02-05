@@ -329,6 +329,8 @@
     <string name="already_booking_deleted">already booking deleted</string>
     <string name="add_a_Message">Add a Message</string>
     <string name="add_details_about_your_schedule_ask_questions_or_just_introduce_yourself">Add details about your schedule, ask questions, or just introduce yourself!</string>
+    <string name="number_of_visits">Number Of Visits</string>
+    <string name="number_of_times">Number Of Times</string>
 
 
 </resources>

@@ -1,5 +1,6 @@
 package com.happywannyan.Activities.Booking;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.AddAnotherPetsActivity;
+import com.happywannyan.Activities.BaseActivity;
 import com.happywannyan.Activities.ResetPasswordActivity;
 import com.happywannyan.Adapter.CardAdapter;
 import com.happywannyan.Constant.AppConstant;
@@ -19,6 +21,7 @@ import com.happywannyan.POJO.SetGetCards;
 import com.happywannyan.POJO.SetGetStripData;
 import com.happywannyan.R;
 import com.happywannyan.SitterBooking.BookingFragmentFoure;
+import com.happywannyan.SitterBooking.BookingOneActivity;
 import com.happywannyan.SitterBooking.NewCardAddActivity;
 import com.happywannyan.Utils.AppLoader;
 import com.happywannyan.Utils.CustomJSONParser;
@@ -557,11 +560,37 @@ public class PaymentPendingBookingActivity extends AppCompatActivity {
 
     public void submitConfirmReservationRequestPaymentUsingHTTP() {
         appLoader.Show();
-        new CustomJSONParser().APIForPostMethod(PaymentPendingBookingActivity.this,AppConstant.BASEURL + "accept_booking?", params, new CustomJSONParser.JSONResponseInterface() {
+        new CustomJSONParser().postDataUsingHttp(PaymentPendingBookingActivity.this,AppConstant.BASEURL + "accept_booking?", params, new CustomJSONParser.JSONResponseInterface() {
             @Override
             public void OnSuccess(String Result) {
                 appLoader.Dismiss();
                 Loger.MSG("Result-->", Result);
+                /////////////////
+
+                try {
+                    if (new JSONObject(Result).getBoolean("response")){
+
+//                        Intent resultIntent = new Intent();
+//                        resultIntent.putExtra("PUBLIC_STATIC_STRING_IDENTIFIER", "done");
+//                        setResult(Activity.RESULT_OK, resultIntent);
+//                        finish();
+
+                        Toast.makeText(getApplicationContext(),new JSONObject(Result).getString("message"), Toast.LENGTH_LONG).show();
+                        //finish();
+                        Intent intent = new Intent(PaymentPendingBookingActivity.this, BaseActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        AppConstant.go_to="pending_message";
+                        AppConstant.messageAndBookingConditionCheck=true;
+                        startActivity(intent);
+                        finish();
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
             @Override
