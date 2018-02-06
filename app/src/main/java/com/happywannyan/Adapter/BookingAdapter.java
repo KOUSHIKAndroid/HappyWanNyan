@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Activities.profile.ProfileDetailsActivity;
+import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFBoldTextView;
 import com.happywannyan.Font.SFNFTextView;
 import com.happywannyan.Fragments.BookingFragment;
@@ -58,22 +59,22 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         try {
             final JSONObject object = AllBooking.get(position);
 
-
-            if (type.equals("pending_booking_list") && object.getJSONObject("booking_info").getString("status_seen").trim().equals("0")){
-                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorBtnRed));
+            if(AppConstant.UserId.equals(object.getJSONObject("booking_info").getString("sitter_users_id"))){
+                if (type.equals("pending_booking_list") && object.getJSONObject("booking_info").getString("status_seen").trim().equals("0")){
+                    holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorBtnRed));
+                }
+                else if (type.equals("pending_booking_list") && !object.getJSONObject("booking_info").getString("status_seen").trim().equals("0")){
+                    holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
+                }
+                else if (type.equals("upcoming_booking_list") && object.getJSONObject("booking_info").getString("status_seen").trim().equals("1")){
+                    holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorBtnRed));
+                }
+                else if (type.equals("upcoming_booking_list") && !object.getJSONObject("booking_info").getString("status_seen").trim().equals("1")){
+                    holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
+                }else {
+                    holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
+                }
             }
-            else if (type.equals("pending_booking_list") && !object.getJSONObject("booking_info").getString("status_seen").trim().equals("0")){
-                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
-            }
-            else if (type.equals("upcoming_booking_list") && object.getJSONObject("booking_info").getString("status_seen").trim().equals("1")){
-                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorBtnRed));
-            }
-            else if (type.equals("upcoming_booking_list") && !object.getJSONObject("booking_info").getString("status_seen").trim().equals("1")){
-                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
-            }else {
-                holder.left_red_view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
-            }
-
 
 
             if (!object.getJSONObject("users_profile").getString("booked_user_image").trim().equals("")) {

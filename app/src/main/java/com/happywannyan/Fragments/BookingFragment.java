@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.happywannyan.Activities.BaseActivity;
+import com.happywannyan.Activities.Booking.BookingDetailsActivity;
 import com.happywannyan.Adapter.BookingAdapter;
 import com.happywannyan.Constant.AppConstant;
 import com.happywannyan.Font.SFNFTextView;
@@ -28,6 +29,7 @@ import com.happywannyan.Utils.Loger;
 import com.happywannyan.Utils.MYAlert;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -169,12 +171,14 @@ public class BookingFragment extends Fragment {
                 type = "current_booking_list";
                 TAGNAME = tv_current.getText().toString();
                 loadBookingList("0");
+                seenStatus();
 
             }
         });
         tv_pending.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 tv_up_coming.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
                 tv_current.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorTextDarkGray));
                 tv_pending.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorBlack));
@@ -188,6 +192,7 @@ public class BookingFragment extends Fragment {
                 type = "pending_booking_list";
                 TAGNAME = tv_pending.getText().toString();
                 loadBookingList("0");
+                seenStatus();
             }
         });
         tv_past.setOnClickListener(new View.OnClickListener() {
@@ -236,6 +241,7 @@ public class BookingFragment extends Fragment {
             tv_pending.performClick();
             AppConstant.go_to = "";
         }
+        seenStatus();
     }
 
 
@@ -270,6 +276,27 @@ public class BookingFragment extends Fragment {
                     JSONObject jsonObject = new JSONObject(Result);
                     JSONArray all_booking = jsonObject.getJSONArray("booking_info_array");
 
+//                        if (jsonObject.has("unseen_status")) {
+//
+//                            if (!jsonObject.getString("unseen_status").equals("0")) {
+//                                if (type.equals("upcoming_booking_list")) {
+//                                    tv_up_coming.setText(getResources().getString(R.string.up_coming_booking) + " (" + jsonObject.getString("unseen_status") + ")");
+//                                    tv_up_coming.setBackgroundColor(getResources().getColor(R.color.colorPendingUpcoming));
+//                                } else if (type.equals("pending_booking_list")) {
+//                                    tv_pending.setText(getResources().getString(R.string.pending_booking) + " (" + jsonObject.getString("unseen_status") + ")");
+//                                    tv_pending.setBackgroundColor(getResources().getColor(R.color.colorPendingUpcoming));
+//                                }
+//                            }else {
+//                                if (type.equals("upcoming_booking_list")) {
+//                                    tv_up_coming.setText(getResources().getString(R.string.up_coming_booking));
+//                                    tv_up_coming.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+//                                } else if (type.equals("pending_booking_list")) {
+//                                    tv_pending.setText(getResources().getString(R.string.pending_booking));
+//                                    tv_pending.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+//                                }
+//                            }
+//                        }
+
                     int next_data = jsonObject.getInt("next_data");
                     Loger.MSG("next_data", "" + next_data);
 
@@ -283,7 +310,7 @@ public class BookingFragment extends Fragment {
                         swipeContainer.setVisibility(View.VISIBLE);
                         tv_empty.setVisibility(View.GONE);
 
-                        bookingAdapter = new BookingAdapter(getActivity(), BookingFragment.this, AllBooking,type);
+                        bookingAdapter = new BookingAdapter(getActivity(), BookingFragment.this, AllBooking, type);
                         recyclerView.setAdapter(bookingAdapter);
                     } else {
                         bookingAdapter.nextData = next_data;
@@ -336,6 +363,47 @@ public class BookingFragment extends Fragment {
                 }
             }
         });
+    }
+
+
+    private void seenStatus() {
+
+        new CustomJSONParser().APIForGetMethod(getActivity(), AppConstant.BASEURL + "app_booking_seen_status?user_id=" + AppConstant.UserId
+                , new ArrayList<SetGetAPIPostData>(), new CustomJSONParser.JSONResponseInterface() {
+                    @Override
+                    public void OnSuccess(String Result) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(Result);
+
+                            if (jsonObject.getBoolean("pending_unseen_status")) {
+                                tv_pending.setBackgroundColor(getResources().getColor(R.color.colorPendingUpcoming));
+                            } else {
+                                tv_pending.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                            }
+
+                            if (jsonObject.getBoolean("upcoming_unseen_status")) {
+                                tv_up_coming.setBackgroundColor(getResources().getColor(R.color.colorPendingUpcoming));
+                            } else {
+                                tv_up_coming.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void OnError(String Error, String Response) {
+                    }
+
+                    @Override
+                    public void OnError(String Error) {
+                        appLoader.Dismiss();
+                        if (Error.equalsIgnoreCase(getResources().getString(R.string.please_check_your_internet_connection))) {
+                            Toast.makeText(getActivity(), Error, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 }

@@ -16,4 +16,6 @@
     <color name="colorRefreshProgress_1" >#558F9B</color>
     <color name="colorRefreshProgress_2">#558F9B</color>
     <color name="colorRefreshProgress_3">#558F9B</color>
+
+    <color name="colorPendingUpcoming">#FADBD8</color>
 </resources>
